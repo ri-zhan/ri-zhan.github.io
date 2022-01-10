@@ -1,0 +1,152 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+    flex-basis: auto;
+}
+
+.homepage {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+/* .startingpoint is a placeholder for the .svg logo to come. learning how to do transitions in css right now. */
+
+.startingpoint {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 60px;
+    transform: rotate(45deg);
+    background-color: red;
+}
+
+.startingpoint:hover + .homepage {
+    visibility: visible;
+}
+
+#main-logo-nav {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+#main-logo-text {
+    color: green;
+    font-size: 7pt;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-uxui {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+}
+
+.nav-text-uxui {
+    visibility: hidden;
+    font-size: 7pt;
+    color: green;
+    background-color: violet;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+.nav-text-graphic {
+    visibility: hidden;
+    font-size: 7pt;
+    color: green;
+    background-color: violet;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+.nav-text-about {
+    visibility: hidden;
+    font-size: 7pt;
+    color: green;
+    background-color: violet;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+.nav-text-journal {
+    visibility: hidden;
+    font-size: 7pt;
+    color: green;
+    background-color: violet;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+#nav-uxui:hover ~ .nav-text-uxui,
+#nav-graphic:hover ~ .nav-text-graphic,
+#nav-about:hover ~ .nav-text-about,
+#nav-journal:hover ~ .nav-text-journal {
+    visibility: visible;
+}
+
+#nav-graphic {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+}
+
+#nav-about {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+}
+
+#nav-journal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+}
+
