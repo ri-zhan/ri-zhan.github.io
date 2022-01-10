@@ -8,6 +8,7 @@ body {
     flex-basis: auto;
 }
 
+/*
 .homepage {
     visibility: hidden;
     display: flex;
@@ -33,8 +34,19 @@ body {
     background-color: red;
 }
 
+/* trying to fix hovering and flickering problem*/
+
 .startingpoint:hover + .homepage {
     visibility: visible;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    flex-wrap: wrap;
 }
 
 #main-logo-nav {
