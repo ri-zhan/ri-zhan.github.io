@@ -31,6 +31,7 @@ body {
     align-items: center;
     display: flex;
     margin: 70px;
+    transition-duration: 500ms
 }
 
 /*
@@ -47,6 +48,7 @@ gap: 210px 360px;
 */
 .homepage-nav:hover #nav-main-logo {
     transform: scale(0.6);
+    transform: rotate(135deg);
     transition-duration: 500ms;
     background-color: green;
 }
@@ -72,6 +74,7 @@ gap: 210px 360px;
     width: 90px;
     gap: 0px 0px; /*subtract 90px from width and height*/
     flex-wrap: wrap;
+    transition-duration: 500ms;
 }
 
 .nav {
@@ -136,48 +139,12 @@ a:hover, a:active {
     transform: rotate(180deg);
 }
 
-.nav-text-uxui {
-    visibility: hidden;
-    font-size: 7pt;
-    color: green;
-    background-color: violet;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-}
-
-.nav-text-graphic {
-    visibility: hidden;
-    font-size: 7pt;
-    color: green;
-    background-color: violet;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-}
-
-.nav-text-about {
-    visibility: hidden;
-    font-size: 7pt;
-    color: green;
-    background-color: violet;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-}
-
+.nav-text-uxui,
+.nav-text-graphic,
+.nav-text-about,
 .nav-text-journal {
     visibility: hidden;
-    font-size: 7pt;
+    font-size: 24pt;
     color: green;
     background-color: violet;
     display: flex;
@@ -185,7 +152,7 @@ a:hover, a:active {
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 50px;
+    width: auto;
 }
 
 #nav-uxui:hover ~ .nav-text-uxui,
