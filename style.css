@@ -50,7 +50,7 @@ gap: 210px 360px;
     transform: scale(0.6);
     transform: rotate(135deg);
     transition-duration: 500ms;
-    background-color: green;
+    background-color: white;
 }
 
 .homepage-nav:hover {
@@ -86,36 +86,6 @@ gap: 210px 360px;
     background-color: none;
 }
 
-/* .startingpoint is a placeholder for the .svg logo to come. learning how to do transitions in css right now. 
-
-
-.startingpoint {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    padding: 60px;
-    transform: rotate(45deg);
-    background-color: red;
-}
- 
-trying to fix hovering and flickering problem
-
-.startingpoint:hover + .homepage {
-    visibility: visible;
-    cursor: pointer;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 250px;
-    background-color: white;
-    flex-wrap: wrap;
-}
-*/
-
 a:link, a:visited {
     color: white;
 }
@@ -128,8 +98,10 @@ a:hover, a:active {
     transform: rotate(-90deg);
 }
 
+/*
 #nav-graphic {
 }
+*/
 
 #nav-about {
     transform: rotate(90deg);
@@ -144,15 +116,15 @@ a:hover, a:active {
 .nav-text-about,
 .nav-text-journal {
     visibility: hidden;
-    font-size: 24pt;
-    color: green;
-    background-color: violet;
+    font-family:  'Courier New', Courier, monospace; 
+    font-size: 30pt;
+    color: white;
+    background-color: none;
     display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: auto;
 }
 
 #nav-uxui:hover ~ .nav-text-uxui,
@@ -160,4 +132,20 @@ a:hover, a:active {
 #nav-about:hover ~ .nav-text-about,
 #nav-journal:hover ~ .nav-text-journal {
     visibility: visible;
+}
+
+#nav-uxui:hover ~ #nav-main-logo,
+#nav-graphic:hover ~ #nav-main-logo,
+#nav-about:hover ~ #nav-main-logo,
+#nav-journal:hover ~ #nav-main-logo {
+    transform: scale(0.7);
+    transition: 50ms;
+}
+
+#nav-uxui:hover ~ #nav-main-logo,
+#nav-graphic:hover ~ #nav-main-logo,
+#nav-about:hover ~ #nav-main-logo,
+#nav-journal:hover ~ #nav-main-logo {
+    opacity: 50%;
+    transition: 300ms;
 }
