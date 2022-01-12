@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    font-family: 'Courier New', Courier, monospace; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,18 +8,6 @@ body {
     width: auto;
     flex-basis: auto;
 }
-
-/*
-.homepage-main-logo {
-    height: 300px;
-    width: 450px;
-    background-color: green;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 70px;
-}
-*/
 
 #nav-main-logo {
     height: 70px;
@@ -34,37 +23,22 @@ body {
     transition-duration: 500ms
 }
 
-/*
-.homepage-main-logo:hover #nav-main-logo {
-    transform: scale(-0.5);
-}
-
-.homepage-main-logo:hover + .homepage-nav {
-    visibility: visible;
-}
-
-gap: 210px 360px;
-
-*/
-.homepage-nav:hover #nav-main-logo {
+#landingPage-nav:hover #nav-main-logo {
     transform: scale(0.6);
     transform: rotate(135deg);
     transition-duration: 500ms;
     background-color: white;
 }
 
-.homepage-nav:hover {
+#landingPage-nav:hover {
     display: flex;
     height: 300px;
     width: 450px;
-    border: 120px;
-    border-color: none;
-    border-style: solid;
-    gap: 210px 360px;
+    gap: 230px 380px; /*70px off of height and width*/
     transition-duration: 500ms;
 }
 
-.homepage-nav {
+#landingPage-nav {
     display: none;
     background: none;
     display: flex;
@@ -77,15 +51,6 @@ gap: 210px 360px;
     transition-duration: 500ms;
 }
 
-.nav {
-    border-width: 5px 5px 0 0;
-    border-style: solid;
-    margin: 5px;
-    width: 30px;
-    height: 30px;
-    background-color: none;
-}
-
 a:link, a:visited {
     color: white;
 }
@@ -96,41 +61,57 @@ a:hover, a:active {
 
 #nav-uxui {
     transform: rotate(-90deg);
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
 }
 
-/*
 #nav-graphic {
+       border-width: 5px 5px 0 0;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
 }
-*/
 
 #nav-about {
     transform: rotate(90deg);
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
 }
 
 #nav-journal {
     transform: rotate(180deg);
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
 }
 
-.nav-text-uxui,
-.nav-text-graphic,
-.nav-text-about,
-.nav-text-journal {
+.landingPage-nav-text {
     visibility: hidden;
-    font-family:  'Courier New', Courier, monospace; 
+    font-family: 'Courier New', Courier, monospace; 
     font-size: 30pt;
     color: white;
-    background-color: none;
     display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
-    height: 50px;
 }
 
-#nav-uxui:hover ~ .nav-text-uxui,
-#nav-graphic:hover ~ .nav-text-graphic,
-#nav-about:hover ~ .nav-text-about,
-#nav-journal:hover ~ .nav-text-journal {
+#nav-text-uxui,
+#nav-text-graphic,
+#nav-text-about,
+#nav-text-journal {
+    position: absolute;
+}
+
+#nav-uxui:hover ~ .landingPage-nav-text #nav-text-uxui,
+#nav-graphic:hover ~ .landingPage-nav-text #nav-text-graphic,
+#nav-about:hover ~ .landingPage-nav-text #nav-text-about,
+#nav-journal:hover ~ .landingPage-nav-text #nav-text-journal {
     visibility: visible;
 }
 
@@ -148,4 +129,55 @@ a:hover, a:active {
 #nav-journal:hover ~ #nav-main-logo {
     opacity: 50%;
     transition: 300ms;
+}
+
+#projectPage-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#projectPage-nav > #nav-graphic{
+    display: flex;
+    background-color: green;
+    justify-self: flex-end;
+    align-self: flex-start;
+}
+
+#projectPage-nav > #nav-uxui{
+    display: flex;
+    background-color: magenta;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+#projectPage-nav > #nav-journal{
+    background-color: blue;
+}
+
+#projectPage-nav > #nav-about{
+    background-color: yellow;
+}
+.projectPage-nav-text {
+    display: flex;
+}
+
+.project-frame {
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    --b: 5px; /*border thickness*/
+    --c: white; /*border color*/
+    --w: 35px; /*corner length*/
+    --g:#0000 90deg,var(--c) 0;
+    background:
+      conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--g)) 0    0,
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--g)) 100% 0,
+      conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--g)) 0    100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--g)) 100% 100%;
+    background-size:var(--w) var(--w);
+    background-origin:border-box;
+    background-repeat:no-repeat;
 }
