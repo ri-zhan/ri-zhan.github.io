@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
 #nav-main-logo {
@@ -23,7 +24,7 @@ body {
     width: 70px;
     height: 70px;
     background-color: yellow;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
