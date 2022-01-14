@@ -5,8 +5,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: auto;
-    flex-basis: auto;
 }
 
 #nav-main-logo {
@@ -18,37 +16,38 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
-    display: flex;
-    margin: 70px;
-    transition-duration: 500ms
-}
-
-#landingPage-nav:hover #nav-main-logo {
-    transform: scale(0.6);
-    transform: rotate(135deg);
-    transition-duration: 500ms;
-    background-color: white;
-}
-
-#landingPage-nav:hover {
-    display: flex;
-    height: 300px;
-    width: 450px;
-    gap: 230px 380px; /*70px off of height and width*/
     transition-duration: 500ms;
 }
 
 #landingPage-nav {
-    display: none;
-    background: none;
-    display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: yellow;
     position: absolute;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    gap: 0px 0px; /*subtract 90px from width and height*/
-    flex-wrap: wrap;
-    transition-duration: 500ms;
+    margin: 20px;
+}
+
+#landingPage-nav:hover > #nav-main-logo {
+    transform: scale(0.6);
+    transform: rotate(135deg);
+    transition-duration: 300ms;
+}
+
+#landingPage-nav:hover {
+    width: 458px;
+    height: 358px;
+    background-color: green;
+}
+
+#landingPage-nav a {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-width: 5px 5px 0 0;
+    border-style: solid;
 }
 
 a:link, a:visited {
@@ -61,33 +60,27 @@ a:hover, a:active {
 
 #nav-uxui {
     transform: rotate(-90deg);
-    border-width: 5px 5px 0 0;
-    border-style: solid;
-    width: 30px;
-    height: 30px;
+    top: 0;
+    left: 0;
 }
 
 #nav-graphic {
-       border-width: 5px 5px 0 0;
+    border-width: 5px 5px 0 0;
     border-style: solid;
-    width: 30px;
-    height: 30px;
+    right: 0;
+    top: 0;
 }
 
 #nav-about {
     transform: rotate(90deg);
-    border-width: 5px 5px 0 0;
-    border-style: solid;
-    width: 30px;
-    height: 30px;
+    right: 0;
+    bottom: 0;
 }
 
 #nav-journal {
     transform: rotate(180deg);
-    border-width: 5px 5px 0 0;
-    border-style: solid;
-    width: 30px;
-    height: 30px;
+    left: 0;
+    bottom: 0;
 }
 
 .landingPage-nav-text {
@@ -118,10 +111,21 @@ a:hover, a:active {
 #nav-uxui:hover ~ #nav-main-logo,
 #nav-graphic:hover ~ #nav-main-logo,
 #nav-about:hover ~ #nav-main-logo,
+#nav-journal:hover #nav-main-logo {
+    transform: scale(0.7);
+    transition: 300ms;
+    background-color: darkblue;
+}
+
+/*
+#nav-uxui:hover ~ #nav-main-logo,
+#nav-graphic:hover ~ #nav-main-logo,
+#nav-about:hover ~ #nav-main-logo,
 #nav-journal:hover ~ #nav-main-logo {
     transform: scale(0.7);
     transition: 50ms;
 }
+
 
 #nav-uxui:hover ~ #nav-main-logo,
 #nav-graphic:hover ~ #nav-main-logo,
@@ -130,6 +134,8 @@ a:hover, a:active {
     opacity: 50%;
     transition: 300ms;
 }
+*/
+
 
 #projectPage-nav {
     display: flex;
