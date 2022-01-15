@@ -1,3 +1,4 @@
+/* sass --watch style.scss output.css */
 body {
   background-color: black;
   font-family: "Courier New", Courier, monospace;
@@ -11,7 +12,7 @@ body {
 #landingPage-nav {
   width: 70px;
   height: 70px;
-  background-color: yellow;
+  background-color: green;
   position: relative;
   display: flex;
   justify-content: center;
@@ -20,8 +21,8 @@ body {
 }
 #landingPage-nav .landingPage-nav-link {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }
 #landingPage-nav .landingPage-nav-link:before {
   content: "";
@@ -46,7 +47,7 @@ body {
 #landingPage-nav:hover {
   width: 458px;
   height: 358px;
-  background-color: green;
+  background-color: blue;
 }
 #landingPage-nav:hover #nav-logo {
   transform: scale(0.6);
@@ -79,7 +80,6 @@ a:active {
   top: 0;
 }
 #nav-top-right:before {
-  border-width: 5px 5px 0 0;
   right: 0;
   top: 0;
 }
@@ -108,7 +108,7 @@ a:active {
   position: absolute;
   font-family: "Courier New", Courier, monospace;
   font-size: 30pt;
-  color: white;
+  color: green;
   display: none;
 }
 
@@ -127,7 +127,7 @@ a:active {
   }
   to {
     transform: scale(0.7) rotate(360deg);
-    background-color: darkblue;
+    background-color: pink;
   }
 }
 
