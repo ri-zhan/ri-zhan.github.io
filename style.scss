@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+    font-family: "Courier New", Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #landingPage-nav {
+    width: 70px;
+    height: 70px;
+    background-color: yellow;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    .landingPage-nav-link {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-width: 5px 5px 0 0;
+        border-style: solid;
+      }
+    }
+    #nav-logo {
+      height: 70px;
+      width: 70px;
+      transform: rotate(
+        45deg
+      ); /* remember to undo this when actual svg is inserted */
+      background-color: white;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      transition-duration: 500ms;
+    }
+    &:hover {
+      width: 458px;
+      height: 358px;
+      background-color: green;
+      #nav-logo {
+        transform: scale(0.6);
+        transform: rotate(135deg);
+        transition-duration: 300ms;
+      }
+    }
+  }
+  
+  a:link,
+  a:visited {
+    color: white;
+  }
+  
+  a:hover,
+  a:active {
+    color: black;
+  }
+  
+  #nav-top-left {
+    top: 0;
+    left: 0;
+    &:before {
+      transform: rotate(-90deg);
+      top: 0;
+      left: 0;
+    }
+  }
+  
+  #nav-top-right {
+    right: 0;
+    top: 0;
+    &:before {
+      border-width: 5px 5px 0 0;
+      right: 0;
+      top: 0;
+    }
+  }
+  
+  #nav-bottom-right {
+    right: 0;
+    bottom: 0;
+    &:before {
+      transform: rotate(90deg);
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  #nav-bottom-left {
+    left: 0;
+    bottom: 0;
+    &:before {
+      transform: rotate(180deg);
+      bottom: 0;
+      left: 0;
+    }
+  }
+  
+  
+  .landingPage-nav-text {
+    position: absolute;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30pt;
+    color: white;
+    display: none;
+  }
+  
+  .landingPage-nav-link:hover {
+    & ~ .landingPage-nav-text  {
+      display: block;
+    }
+    & ~ #nav-logo {
+      animation: logo-spin 300ms linear;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+
+  @keyframes logo-spin {
+    from {
+      transform: scale(0.6) rotate(135deg);
+      background-color: white;
+    }
+    to {
+      transform: scale(0.7) rotate(360deg);
+      background-color: darkblue;
+    }
+  }
