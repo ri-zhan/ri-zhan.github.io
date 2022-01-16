@@ -32,7 +32,7 @@ body {
   border-width: 5px 5px 0 0;
   border-style: solid;
 }
-#landingPage-nav #nav-logo {
+#landingPage-nav #landingPage-nav-logo {
   height: 70px;
   width: 70px;
   transform: rotate(45deg);
@@ -49,7 +49,7 @@ body {
   height: 358px;
   background-color: blue;
 }
-#landingPage-nav:hover #nav-logo {
+#landingPage-nav:hover #landingPage-nav-logo {
   transform: scale(0.6);
   transform: rotate(135deg);
   transition-duration: 300ms;
@@ -115,7 +115,7 @@ a:active {
 .landingPage-nav-link:hover ~ .landingPage-nav-text {
   display: block;
 }
-.landingPage-nav-link:hover ~ #nav-logo {
+.landingPage-nav-link:hover ~ #landingPage-nav-logo {
   animation: logo-spin 300ms linear;
   animation-fill-mode: forwards;
 }
@@ -129,6 +129,59 @@ a:active {
     transform: scale(0.7) rotate(360deg);
     background-color: pink;
   }
+}
+#projectPage-nav {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  /* &:hover {
+    width: 458px;
+    height: 358px;
+    background-color: blue;
+    #projectPage-nav-logo {
+      transform: scale(0.6);
+      transform: rotate(135deg);
+      transition-duration: 300ms;
+    }
+  } */
+}
+#projectPage-nav .projectPage-nav-link {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+}
+#projectPage-nav .projectPage-nav-link:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-width: 5px 5px 0 0;
+  border-style: solid;
+}
+#projectPage-nav #projectPage-nav-logo {
+  height: 70px;
+  width: 70px;
+  transform: rotate(45deg);
+  /* remember to undo this when actual svg is inserted */
+  background-color: white;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 500ms;
+}
+
+.projectPage-nav-link:hover ~ .projectPage-nav-text {
+  display: block;
+}
+.projectPage-nav-link:hover ~ #projectPage-nav-logo {
+  animation: logo-spin 300ms linear;
+  animation-fill-mode: forwards;
 }
 
 /*# sourceMappingURL=output.css.map */
