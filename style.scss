@@ -2,11 +2,23 @@
 body {
   background-color: black;
   font-family: "Courier New", Courier, monospace;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: yellow;
+  position: absolute;
+  translate: translate (-50%, -50%);
+  pointer-events: none;
 }
 
 #landingPage-nav {
@@ -25,8 +37,8 @@ body {
     &:before {
       content: "";
       position: absolute;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border-width: 5px 5px 0 0;
       border-style: solid;
     }
@@ -43,8 +55,8 @@ body {
     transition-duration: 500ms;
   }
   &:hover {
-    width: 458px;
-    height: 358px;
+    width: 577px;
+    height: 390px;
     background-color: blue;
     #landingPage-nav-logo {
       transform: scale(0.6);
@@ -65,6 +77,7 @@ a:active {
 }
 
 #nav-top-left {
+  z-index: 1;
   top: 0;
   left: 0;
   &:before {
@@ -72,18 +85,33 @@ a:active {
     top: 0;
     left: 0;
   }
+  &:hover ~ #landingPage-uxui {
+    display: block;
+  }
 }
 
 #nav-top-right {
+  z-index: 1;
   right: 0;
   top: 0;
   &:before {
     right: 0;
     top: 0;
   }
+  &:hover ~ #landingPage-graphic {
+    display: block;
+  }
+  &:hover ~ #projectPage-graphic {
+    z-index: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 #nav-bottom-right {
+  z-index: 1;
   right: 0;
   bottom: 0;
   &:before {
@@ -91,9 +119,13 @@ a:active {
     right: 0;
     bottom: 0;
   }
+  &:hover ~ #landingPage-about {
+    display: block;
+  }
 }
 
 #nav-bottom-left {
+  z-index: 1;
   left: 0;
   bottom: 0;
   &:before {
@@ -101,10 +133,12 @@ a:active {
     bottom: 0;
     left: 0;
   }
+  &:hover ~ #landingPage-journal {
+    display: block;
+  }
 }
 
-
-.landingPage-nav-text {
+.nav-text {
   position: absolute;
   font-family: "Courier New", Courier, monospace;
   font-size: 30pt;
@@ -113,31 +147,29 @@ a:active {
 }
 
 .landingPage-nav-link:hover {
-  & ~ .landingPage-nav-text  {
-    display: block;
-  }
   & ~ #landingPage-nav-logo {
-    animation: logo-spin 300ms linear;
+    animation: logo-spin 200ms linear;
     animation-fill-mode: forwards;
   }
 }
 
-
 @keyframes logo-spin {
   from {
-    transform: scale(0.6) rotate(135deg);
+    transform: scale(0.6) rotate(45deg);
     background-color: white;
   }
   to {
-    transform: scale(0.7) rotate(360deg);
+    transform: scale(0.7) rotate(135deg);
     background-color: pink;
   }
 }
 
+/* projectPage */
+
 #projectPage-nav {
   height: 100%;
   width: 100%;
-  background-color: green;
+  background-color: orange;
   position: relative;
   display: flex;
   justify-content: center;
@@ -145,8 +177,8 @@ a:active {
   margin: 20px;
   .projectPage-nav-link {
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 10%;
+    height: 10%;
     &:before {
       content: "";
       position: absolute;
@@ -167,16 +199,6 @@ a:active {
     align-items: center;
     transition-duration: 500ms;
   }
-  /* &:hover {
-    width: 458px;
-    height: 358px;
-    background-color: blue;
-    #projectPage-nav-logo {
-      transform: scale(0.6);
-      transform: rotate(135deg);
-      transition-duration: 300ms;
-    }
-  } */
 }
 
 .projectPage-nav-link:hover {
@@ -187,4 +209,35 @@ a:active {
     animation: logo-spin 300ms linear;
     animation-fill-mode: forwards;
   }
+}
+
+.project-frame {
+  width: 696px;
+  height: 440px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  overflow: scroll;
+  --b:5px;   /* thickness of the border */
+  --c:green;   /* color of the border */
+  --w:30px;  /* width of border */
+  border:var(--b) solid transparent; /* space for the border */
+  --g:#0000 90deg,var(--c) 0;
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--g)) 0    0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--g)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--g)) 0    100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--g)) 100% 100%;
+  background-size:var(--w) var(--w);
+  background-origin:border-box;
+  background-repeat:no-repeat;
+}
+
+.project {
+  height: 180px;
+  width: auto;
+  background-color: red;
+  margin: 10px;
+  overflow: scroll;
 }
