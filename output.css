@@ -255,6 +255,8 @@ a:active {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  object-fit: cover;
+  position: relative;
 }
 .project-collection .project:hover .project-hover {
   width: 100%;
@@ -269,15 +271,10 @@ a:active {
 }
 .project-collection .project .project-cover {
   max-width: 100%;
-  overflow: hidden;
   position: absolute;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
-}
-
-img {
-  object-fit: contain;
+  float: left;
 }
 
 /*# sourceMappingURL=output.css.map */
