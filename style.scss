@@ -167,15 +167,15 @@ a:active {
 
 /* projectPage */
 
-#projectPage-nav {
-  height: 100%;
-  width: 100%;
-  background-color: orange;
+.projectPage-nav {
+  height: 97%;
+  width: 97%;
+  background-color: orange; /*change to none*/
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  z-index: -1; /*remove when design is done*/
   .projectPage-nav-link {
     position: absolute;
     width: 10%;
@@ -279,6 +279,74 @@ a:active {
       float: left;
     }
   }
+}
+
+.project-content {
+  height: 95%;
+  width: 95%;
+  overflow: scroll;
+  display: inline-block;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .header {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  } 
+  .description {
+    max-width: 100%;
+    padding: +20px 10px;
+    display: flex;
+    margin: 20px 0px;
+    border-style: solid;
+    border-left: 1px;
+    border-right: 1px;
+    border-color: white;
+    #overview {
+      width: 50%;
+    }
+    #tools {
+      width: 30%;
+    }
+    #classification{
+      width: 20%;
+    }
+  }
+  .process {
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    padding: 0px 10px;
+    margin: 20px 0;
+    #process-left {
+      width: 20%;
+      border-right: solid;
+      padding: 10px 0;
+    }
+    #process-right {
+      width: 80%;
+      display: flex;
+      overflow: scroll;
+      object-fit: scale-down;
+      gap: 10px;
+      margin-left: 20px;
+      padding: 10px 0;
+    }
+  }
+  .final-product {
+    img {
+      max-width: 100%;
+      margin: 7px 0;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  object-position: bottom;
 }
 
 

@@ -164,22 +164,24 @@ a:active {
   }
 }
 /* projectPage */
-#projectPage-nav {
-  height: 100%;
-  width: 100%;
+.projectPage-nav {
+  height: 97%;
+  width: 97%;
   background-color: orange;
+  /*change to none*/
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  z-index: -1;
+  /*remove when design is done*/
 }
-#projectPage-nav .projectPage-nav-link {
+.projectPage-nav .projectPage-nav-link {
   position: absolute;
   width: 10%;
   height: 10%;
 }
-#projectPage-nav .projectPage-nav-link:before {
+.projectPage-nav .projectPage-nav-link:before {
   content: "";
   position: absolute;
   width: 30px;
@@ -187,7 +189,7 @@ a:active {
   border-width: 5px 5px 0 0;
   border-style: solid;
 }
-#projectPage-nav #projectPage-nav-logo {
+.projectPage-nav #projectPage-nav-logo {
   height: 70px;
   width: 70px;
   transform: rotate(45deg);
@@ -275,6 +277,72 @@ a:active {
   justify-content: center;
   align-items: center;
   float: left;
+}
+
+.project-content {
+  height: 95%;
+  width: 95%;
+  overflow: scroll;
+  display: inline-block;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.project-content .header {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.project-content .description {
+  max-width: 100%;
+  padding: 20px 10px;
+  display: flex;
+  margin: 20px 0px;
+  border-style: solid;
+  border-left: 1px;
+  border-right: 1px;
+  border-color: white;
+}
+.project-content .description #overview {
+  width: 50%;
+}
+.project-content .description #tools {
+  width: 30%;
+}
+.project-content .description #classification {
+  width: 20%;
+}
+.project-content .process {
+  max-width: 100%;
+  height: 500px;
+  display: flex;
+  padding: 0px 10px;
+  margin: 20px 0;
+}
+.project-content .process #process-left {
+  width: 20%;
+  border-right: solid;
+  padding: 10px 0;
+}
+.project-content .process #process-right {
+  width: 80%;
+  display: flex;
+  overflow: scroll;
+  object-fit: scale-down;
+  gap: 10px;
+  margin-left: 20px;
+  padding: 10px 0;
+}
+.project-content .final-product img {
+  max-width: 100%;
+  margin: 7px 0;
+}
+
+footer {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  object-position: bottom;
 }
 
 /*will-change: transform;
