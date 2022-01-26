@@ -12,36 +12,38 @@ body {
 }
 
 .cursor {
-  width: 30px;
-  height: 30px;
-  position: fixed;
-  translate: translate (-50%, -50%);
-  pointer-events: none;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  #cursor-back {
+    position: absolute;
+  }
 }
 
 #cursor-overlay {
-  #nav-top-right {
-    :hover {
-    transform: rotate(45deg);
-    transform: scale(1.5);
-  }
-};
+  position: absolute;
+  height: 60px;
+  width: 60px;
+}
+
 
 #landingPage-nav {
   width: 70px;
   height: 70px;
-  background-color: green;
+  background-color: none;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
+  transition-duration: 500ms;
   .landingPage-nav-link {
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
+    transition-duration: 300ms;
     &:before {
       content: "";
       position: absolute;
@@ -50,26 +52,29 @@ body {
       border-width: 5px 5px 0 0;
       border-style: solid;
     }
-  }
-  #landingPage-nav-logo {
-    height: 60px;
-    width: 60px;
-    transform: rotate(45deg); /* remember to undo this when actual svg is inserted */
-    background-color: white;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 500ms;
+    &:hover {
+      transform: scale(0.9);
+    }
   }
   &:hover {
     width: 577px;
     height: 390px;
-    background-color: blue;
-    #landingPage-nav-logo {
-      transform: scale(0.6);
-      transform: rotate(135deg);
+    background-color: none;
+    .cursor {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      translate: translate (-50%, -50%);
+      pointer-events: none;
       transition-duration: 300ms;
+      transition-timing-function: ease-out;
+      #cursor-overlay{
+        position: fixed;
+      }
+      #cursor-back {
+        position: absolute;
+        transition-duration: 500ms;
+      }
     }
   }
 }
@@ -81,7 +86,7 @@ a:visited {
 
 a:hover,
 a:active {
-  color: black;
+  color: #CF3632;
 }
 
 #nav-top-left {
@@ -116,6 +121,9 @@ a:active {
     margin: 0px 40px;
     right: 0;
     top: 0;
+  }
+  &:hover ~ #cursor-overlay {
+    transform: rotate(-135deg) scale(1.9);
   }
 }
 
@@ -155,23 +163,6 @@ a:active {
   display: none;
 }
 
-.landingPage-nav-link:hover {
-  & ~ #landingPage-nav-logo {
-    animation: logo-spin 200ms linear;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes logo-spin {
-  from {
-    transform: scale(0.6) rotate(45deg);
-    background-color: white;
-  }
-  to {
-    transform: scale(0.7) rotate(135deg);
-    background-color: pink;
-  }
-}
 
 /* projectPage */
 
@@ -386,7 +377,7 @@ a:active {
 
 
 
-/*will-change: transform;
+/* will-change: transform;
     transform: translate3d(-3.4146rem, 0px, 0px) scale3d(1, 1, 1) rotateX(
 0deg
 ) rotateY(
@@ -398,12 +389,12 @@ a:active {
 , 
 0deg
 );
-    transform-style: preserve-3d;
-    
-    
-    
-        will-change: transform;
-    transform: translate3d(-14.4334vw, 0px, 0px) scale3d(1, 1, 1) rotateX(
+transform-style: preserve-3d;
+
+
+
+will-change: transform;
+transform: translate3d(-14.4334vw, 0px, 0px) scale3d(1, 1, 1) rotateX(
 0deg
 ) rotateY(
 0deg
@@ -414,4 +405,4 @@ a:active {
 , 
 0deg
 );
-    transform-style: preserve-3d;*/
+    transform-style: preserve-3d; */ 
