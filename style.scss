@@ -12,14 +12,22 @@ body {
 }
 
 .cursor {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: yellow;
-  position: absolute;
+  width: 30px;
+  height: 30px;
+  position: fixed;
   translate: translate (-50%, -50%);
   pointer-events: none;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
 }
+
+#cursor-overlay {
+  #nav-top-right {
+    :hover {
+    transform: rotate(45deg);
+    transform: scale(1.5);
+  }
+};
 
 #landingPage-nav {
   width: 70px;
@@ -44,8 +52,8 @@ body {
     }
   }
   #landingPage-nav-logo {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     transform: rotate(45deg); /* remember to undo this when actual svg is inserted */
     background-color: white;
     display: flex;
