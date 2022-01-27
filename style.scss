@@ -64,20 +64,23 @@ body {
       width: 40px;
       height: 40px;
       position: fixed;
+  }
+    #cursor-overlay{
+      position: fixed;
       translate: translate (-50%, -50%);
       pointer-events: none;
       transition-duration: 300ms;
       transition-timing-function: ease-out;
-      #cursor-overlay{
-        position: fixed;
-      }
-      #cursor-back {
-        position: absolute;
-        transition-duration: 500ms;
-      }
+    }
+    #cursor-back {
+      transition-duration: 550ms;
+      translate: translate (-50%, -50%);
+      pointer-events: none;
+      transition-timing-function: ease-out;
     }
   }
 }
+
 
 a:link,
 a:visited {
@@ -93,6 +96,9 @@ a:active {
   z-index: 1;
   top: 0;
   left: 0;
+  &:hover ~ #cursor-overlay {
+    transform: rotate(135deg) scale(1.9);
+  }
   &:before {
     transform: rotate(-90deg);
     top: 0;
@@ -107,6 +113,9 @@ a:active {
   z-index: 1;
   right: 0;
   top: 0;
+  &:hover ~ #cursor-overlay {
+    transform: rotate(-135deg) scale(1.9);
+  }
   &:before {
     right: 0;
     top: 0;
@@ -122,15 +131,15 @@ a:active {
     right: 0;
     top: 0;
   }
-  &:hover ~ #cursor-overlay {
-    transform: rotate(-135deg) scale(1.9);
-  }
 }
 
 #nav-bottom-right {
   z-index: 1;
   right: 0;
   bottom: 0;
+  &:hover ~ #cursor-overlay {
+    transform: rotate(-45deg) scale(1.9);
+  }
   &:before {
     transform: rotate(90deg);
     right: 0;
@@ -145,6 +154,9 @@ a:active {
   z-index: 1;
   left: 0;
   bottom: 0;
+  &:hover ~ #cursor-overlay {
+    transform: rotate(45deg) scale(1.9);
+  }
   &:before {
     transform: rotate(180deg);
     bottom: 0;
@@ -159,7 +171,7 @@ a:active {
   position: absolute;
   font-family: "Courier New", Courier, monospace;
   font-size: 30pt;
-  color: green;
+  color: white;
   display: none;
 }
 
