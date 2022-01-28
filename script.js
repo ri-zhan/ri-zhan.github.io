@@ -1,7 +1,11 @@
 console.log( "ready!" );
 
 $('#landingPage-nav').mousemove(function(e){
-  $(".cursor").css({left: e.pageX, top:e.pageY});
+  $("#cursor-overlay").css({left: e.pageX, top:e.pageY});
+});
+
+$('#landingPage-nav').mousemove(function(e){
+  $("#cursor-back").css({left: e.pageX, top:e.pageY});
 });
 
 $('#landingPage-nav').mouseleave(function(){
