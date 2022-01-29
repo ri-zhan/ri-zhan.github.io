@@ -18,14 +18,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-.cursor #cursor-back {
-  position: absolute;
-}
 
 #cursor-overlay {
   position: absolute;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
 }
 
 #landingPage-nav {
@@ -56,6 +53,10 @@ body {
 #landingPage-nav .landingPage-nav-link:hover {
   transform: scale(0.9);
 }
+#landingPage-nav #cursor-overlay {
+  width: 60px;
+  height: 60px;
+}
 #landingPage-nav:hover {
   width: 577px;
   height: 390px;
@@ -67,13 +68,15 @@ body {
   position: fixed;
 }
 #landingPage-nav:hover #cursor-overlay {
+  width: 40px;
+  height: 40px;
   position: fixed;
   translate: translate -50%, -50%;
   pointer-events: none;
   transition-duration: 300ms;
   transition-timing-function: ease-out;
 }
-#landingPage-nav:hover #cursor-back {
+#landingPage-nav:hover #landingPage-diamond {
   transition-duration: 550ms;
   translate: translate -50%, -50%;
   pointer-events: none;
@@ -95,9 +98,6 @@ a:active {
   top: 0;
   left: 0;
 }
-#nav-top-left:hover ~ #cursor-overlay {
-  transform: rotate(135deg) scale(1.9);
-}
 #nav-top-left:before {
   transform: rotate(-90deg);
   top: 0;
@@ -105,6 +105,24 @@ a:active {
 }
 #nav-top-left:hover ~ #landingPage-uxui {
   display: block;
+}
+#nav-top-left:hover ~ #cursor-overlay {
+  transform: rotate(135deg) scale(1.9);
+}
+#nav-top-left:hover ~ #projectPage-uxui {
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  margin: 7px 40px;
+  left: 0;
+  top: 0;
+}
+#nav-top-left:hover ~ #projectPage-diamond {
+  display: flex;
+  position: absolute;
+  margin: 10px 10px;
+  left: 0;
+  top: 0;
 }
 
 #nav-top-right {
@@ -126,7 +144,14 @@ a:active {
   z-index: 0;
   display: flex;
   position: absolute;
-  margin: 0px 40px;
+  margin: 7px 40px;
+  right: 0;
+  top: 0;
+}
+#nav-top-right:hover ~ #projectPage-diamond {
+  display: flex;
+  position: absolute;
+  margin: 10px 10px;
   right: 0;
   top: 0;
 }
@@ -147,6 +172,21 @@ a:active {
 #nav-bottom-right:hover ~ #landingPage-about {
   display: block;
 }
+#nav-bottom-right:hover ~ #projectPage-about {
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  margin: 7px 40px;
+  right: 0;
+  bottom: 0;
+}
+#nav-bottom-right:hover ~ #projectPage-diamond {
+  display: flex;
+  position: absolute;
+  margin: 10px 10px;
+  right: 0;
+  bottom: 0;
+}
 
 #nav-bottom-left {
   z-index: 1;
@@ -164,19 +204,34 @@ a:active {
 #nav-bottom-left:hover ~ #landingPage-journal {
   display: block;
 }
+#nav-bottom-left:hover ~ #projectPage-journal {
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  margin: 7px 40px;
+  left: 0;
+  bottom: 0;
+}
+#nav-bottom-left:hover ~ #projectPage-diamond {
+  display: flex;
+  position: absolute;
+  margin: 10px 10px;
+  left: 0;
+  bottom: 0;
+}
 
 .nav-text {
   position: absolute;
   font-family: "Courier New", Courier, monospace;
-  font-size: 30pt;
+  font-size: 20pt;
   color: white;
   display: none;
 }
 
 /* projectPage */
 #projectPage-nav {
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
   margin: 20px;
   position: absolute;
   background-color: none;
@@ -184,18 +239,28 @@ a:active {
   display: inline-block;
   justify-content: center;
   align-items: center;
-  /* z-index: -1; remove when design is done*/
-  /* #projectPage-nav-logo {
-    height: 70px;
-    width: 70px;
-    transform: rotate(45deg); /* remember to undo this when actual svg is inserted 
-    background-color: white;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 500ms;
-  } */
+}
+#projectPage-nav #cursor-overlay {
+  display: none;
+}
+#projectPage-nav #landingPage-diamond {
+  display: none;
+}
+#projectPage-nav:hover #cursor-overlay {
+  display: flex;
+  position: fixed;
+  translate: translate -50%, -50%;
+  pointer-events: none;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+#projectPage-nav:hover #landingPage-diamond {
+  display: flex;
+  position: fixed;
+  transition-duration: 550ms;
+  translate: translate -50%, -50%;
+  pointer-events: none;
+  transition-timing-function: ease-out;
 }
 #projectPage-nav .projectPage-nav-link {
   position: absolute;
@@ -210,13 +275,18 @@ a:active {
   border-width: 5px 5px 0 0;
   border-style: solid;
 }
+#projectPage-nav #projectPage-diamond {
+  display: none;
+  height: 25px;
+  width: 25px;
+}
+#projectPage-nav:hover ~ .project-content {
+  opacity: 0.65;
+  transition-duration: 300ms;
+}
 
 .projectPage-nav-link:hover ~ .projectPage-nav-text {
   display: block;
-}
-.projectPage-nav-link:hover ~ #projectPage-nav-logo {
-  animation: logo-spin 300ms linear;
-  animation-fill-mode: forwards;
 }
 
 .project-frame {
@@ -294,8 +364,8 @@ a:active {
 }
 
 .project-content {
-  max-height: 100%;
-  max-width: 100%;
+  height: calc(100% - 60px);
+  width: calc(100% - 60px);
   margin: 20px;
   overflow: scroll;
   display: inline-block;
