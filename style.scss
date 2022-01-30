@@ -437,9 +437,24 @@ a:active {
     }
   }
   .final-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       max-width: 100%;
       margin: 7px 0;
+    }
+    .prev {
+      position: absolute;
+      background-color: black;
+      padding: 10px;
+      left: 0;
+    }
+    .next {
+      position: absolute;
+      background-color: black;
+      padding: 10px;
+      right: 0;
     }
   }
   footer {
@@ -470,6 +485,7 @@ a:active {
 .project-content::-webkit-scrollbar {
   display: none;
 }
+
 
 /* will-change: transform;
     transform: translate3d(-3.4146rem, 0px, 0px) scale3d(1, 1, 1) rotateX(
