@@ -305,9 +305,9 @@ a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+  background-color: white;
   --b:5px;   /* thickness of the border */
-  --c:green;   /* color of the border */
+  --c:white;   /* color of the border */
   --w:30px;  /* width of border */
   border:var(--b) solid transparent; /* space for the border */
   --g:#0000 90deg,var(--c) 0;
@@ -336,7 +336,7 @@ a:active {
     .project {
     height: 180px;
     width: auto;
-    background-color: red;  
+    background-color: none;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,25 +452,28 @@ a:active {
     }
   }
   footer {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: absolute;
-    background-color: green;
-    padding: 30px 0;
+    background-color: none;
+    padding: 20px 0;
     .project-prev-next {
       display: flex;
       width: 100%;
       justify-content: center;
-      padding-bottom: 50px;
+      padding-bottom: 20px;
       column-gap: 70px;
+      color: white;
     }
     .contact {
       display: flex;
-      width: 100%;
+      width: 30%;
       justify-content: space-around;
       align-items: center;
+      color: white;
     }
   }
 }
