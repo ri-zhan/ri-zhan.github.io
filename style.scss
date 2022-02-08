@@ -93,9 +93,12 @@ a:visited {
   color: white;
 }
 
-a:hover,
-a:active {
+a:hover {
   color: #CF3632;
+}
+
+a:active {
+  color: #832A28;
 }
 
 #nav-top-left {
@@ -443,11 +446,14 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    overflow: scroll;
     column-gap: 16px;
     margin: 16px 0 16px 0;
+    white-space: nowrap; 
     img {
       height: 700px;
+      position: relative;
+      flex:0 0 100vw;
     }
   }
   footer {

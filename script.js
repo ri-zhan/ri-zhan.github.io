@@ -95,6 +95,44 @@ if (document.readyState !== 'loading') {
   doc.addEventListener('DOMContentLoaded', init, false)
 }
 
+
+
+
+/*horizontal scroll*/
+var page = document.getElementById('horizontal-loop');
+var last_loop = page.getElementsByClassName('loop');
+last_loop = last_loop[last_loop.length-1];
+var dummy_x = null;
+
+window.onscroll = function () {
+  // Horizontal Scroll.
+  var y = document.body.getBoundingClientRect().top;
+  page.scrollLeft = -y;
+  
+  // Looping Scroll.
+  var diff = window.scrollY - dummy_x;
+  if (diff > 0) {
+    window.scrollTo(0, diff);
+  }
+  else if (window.scrollY == 0) {
+    window.scrollTo(0, dummy_x);
+  }
+}
+// Adjust the body height if the window resizes.
+window.onresize = resize;
+// Initial resize.
+resize();
+
+// Reset window-based vars
+function resize() {
+  var w = page.scrollWidth-window.innerWidth+window.innerHeight;
+  document.body.style.height = w + 'px';
+  
+  dummy_x = last_loop.getBoundingClientRect().left+window.scrollY;
+}
+
+
+
 // let slideIndex = 1;
 // showSlides(slideIndex)
 
