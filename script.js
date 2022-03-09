@@ -153,3 +153,20 @@ function resize() {
  // }
 //  $('.slides')[slideIndex-1].style.display = "block";
 // }
+
+
+
+let direction = '';
+
+//rotate cursor
+$('.landingPage-nav-link').hover(
+  function() {
+    direction = $(this).attr('id');
+    console.log(direction);
+    $('#cursor-overlay').addClass( "hover" );
+    $('#cursor-overlay').addClass( "hover-top-left" );
+  }, function() {
+    $('#cursor-overlay').removeClass( "hover" );
+    $('#cursor-overlay').removeClass( "hover-top-left" );
+  }
+);

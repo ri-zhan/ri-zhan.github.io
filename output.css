@@ -249,6 +249,8 @@ a:active {
 }
 #projectPage-nav #cursor-overlay {
   display: none;
+  z-index: 4;
+  transition-duration: 200ms;
 }
 #projectPage-nav #landingPage-diamond {
   display: none;

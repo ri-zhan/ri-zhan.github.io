@@ -249,6 +249,8 @@ a:active {
   align-items: center;
   #cursor-overlay {
     display: none;
+    z-index: 4;
+    transition-duration: 200ms;
   }
   #landingPage-diamond {
     display: none;
