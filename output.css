@@ -15,6 +15,189 @@ body {
   overflow: hidden;
 }
 
+.follower {
+  position: absolute;
+  pointer-events: none;
+}
+.follower .center {
+  position: fixed;
+  width: 1rem;
+  height: 1rem;
+  background-color: #E63223;
+  border-radius: 50%;
+}
+.follower .around {
+  position: fixed;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  border: 0.125rem solid #E63223;
+  border-radius: 50%;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.container {
+  z-index: 88888;
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 14.75rem;
+  width: 19.875rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.container .projects {
+  grid-column: span 4;
+  grid-column-gap: 1rem;
+  display: grid;
+}
+.container .projects:hover ~ .circle .circle-gap {
+  width: 19.875rem;
+  transition: width 300ms ease-in-out;
+}
+.container .projects .project {
+  position: absolute;
+}
+.container .projects .top-left {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0.125rem 0 0 0.125rem;
+  top: 0;
+  left: 0;
+}
+.container .projects .top-left:hover ~ .top-left-name {
+  opacity: 1;
+  position: relative;
+}
+.container .projects .top-right {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0.125rem 0.125rem 0 0;
+  top: 0;
+  right: 0;
+}
+.container .projects .top-right:hover ~ .top-right-name {
+  opacity: 1;
+  position: relative;
+}
+.container .projects .bottom-right {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0 0.125rem 0.125rem 0;
+  bottom: 0;
+  right: 0;
+}
+.container .projects .bottom-right:hover ~ .bottom-right-name {
+  opacity: 1;
+  position: relative;
+}
+.container .projects .bottom-left {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0 0 0.125rem 0.125rem;
+  bottom: 0;
+  left: 0;
+}
+.container .projects .bottom-left:hover ~ .bottom-left-name {
+  opacity: 1;
+  position: relative;
+}
+.container .project-name {
+  opacity: 0;
+  z-index: -3;
+  position: absolute;
+  font-size: 1.25rem;
+}
+.container .circle {
+  z-index: -2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .circle .left {
+  position: relative;
+  overflow: hidden;
+  height: 5.9375rem;
+  width: 2.5rem;
+}
+.container .circle .left .inside {
+  height: 5.9375rem;
+  width: 5.9375rem;
+  border-radius: 5.9375rem;
+  border: 0.16rem solid white;
+  background-color: black;
+  position: absolute;
+}
+.container .circle .circle-gap {
+  width: 1rem;
+  transition: width 300ms ease-in-out;
+}
+.container .circle .right {
+  position: relative;
+  overflow: hidden;
+  height: 5.9375rem;
+  width: 2.5rem;
+}
+.container .circle .right .inside {
+  height: 5.9375rem;
+  width: 5.9375rem;
+  border-radius: 5.9375rem;
+  border: 0.16rem solid white;
+  background-color: black;
+  position: absolute;
+  left: -3.4375rem;
+}
+
+.nav {
+  display: grid;
+  width: calc(100% - 1rem);
+  height: calc(100vh - 1rem);
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 2rem;
+  margin: 0;
+}
+.nav .menu {
+  position: absolute;
+}
+.nav .top-left {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0.25rem 0 0 0.25rem;
+  top: 1rem;
+  left: 1rem;
+}
+.nav .top-right {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0.25rem 0.25rem 0 0;
+  top: 1rem;
+  right: 1rem;
+}
+.nav .bottom-right {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0 0.25rem 0.25rem 0;
+  bottom: 1rem;
+  right: 1rem;
+}
+.nav .bottom-left {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0 0 0.25rem 0.25rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+
 .cursor {
   position: absolute;
   height: 100px;

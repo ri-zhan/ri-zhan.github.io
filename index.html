@@ -7,21 +7,43 @@
     <link rel="stylesheet" href="output.css">
     <title>Portfolio</title>
 </head>
-<body>    
-    <nav id="landingPage-nav">
-        <a href="uxui.html" class="landingPage-nav-link" id="nav-top-left"></a>
-        <a href="graphic.html" class="landingPage-nav-link" id="nav-top-right"></a>
-        <a href="about.html" class="landingPage-nav-link" id="nav-bottom-right"></a>
-        <a href="journal.html" class="landingPage-nav-link" id="nav-bottom-left"></a>
+<body> 
+    <span class="follower">
+        <span class="center"></span>
+        <span class="around"></span>
+    </span>
+    
+    <div class="container">
+        <div class="projects">
+            <a href="project1.html" class="project top-left"></a>
+            <a href="project2.html" class="project top-right"></a>
+            <a href="project3.html" class="project bottom-right"></a>
+            <a href="more.html" class="project bottom-left"></a>
 
-        <img src="diamond.svg" id="landingPage-diamond" class="cursor">
-        <img src="cursor-overlay.svg" id="cursor-overlay" class="cursor">
+            <span class="project-name top-left-name">project 1</span>
+            <span class="project-name top-right-name">project 2</span>
+            <span class="project-name bottom-right-name">project 3</span>
+            <span class="project-name bottom-left-name">more</span>
+        </div>
 
-        <div class="nav-text" id="landingPage-uxui">ux/ui</div>
-        <div class="nav-text" id="landingPage-graphic">graphic</div>
-        <div class="nav-text" id="landingPage-about">about</div>
-        <div class="nav-text" id="landingPage-journal">journal</div>
-    </nav>
+        <span class="circle">
+            <span class="left">
+                <span class="inside"></span>
+            </span>
+            <span class="circle-gap"></span>
+            <span class="right">
+                <span class="inside"></span>
+            </span>
+        </span>
+    </div>
+
+    <div class="nav">
+        <a href="projects.html" class="menu top-left"></a>
+        <a href="about.html" class="menu top-right"></a>
+        <a href="resume.html" class="menu bottom-right"></a>
+        <a href="more.html" class="menu bottom-left"></a>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script src="script.js"></script>
 </body>

@@ -1,21 +1,12 @@
 console.log( "ready!" );
 
-$('#landingPage-nav').mousemove(function(e){
-  $("#cursor-overlay").css({left: e.pageX, top:e.pageY});
+$(document).mousemove(function(e){
+  $(".follower").css({left: e.pageX, top:e.pageY});
 });
 
-$('#landingPage-nav').mousemove(function(e){
-  $("#landingPage-diamond").css({left: e.pageX, top:e.pageY});
+$(document).mouseleave(function(){
+  $(".follower").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
 });
-
-$('#landingPage-nav').mouseleave(function(){
-  $(".cursor").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
-});
-
-$('#projectPage-nav').mousemove(function(e){
-  $("#cursor-overlay").css({left: e.pageX, top:e.pageY});
-});
-
 
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
@@ -154,19 +145,3 @@ function resize() {
 //  $('.slides')[slideIndex-1].style.display = "block";
 // }
 
-
-
-let direction = '';
-
-//rotate cursor
-$('.landingPage-nav-link').hover(
-  function() {
-    direction = $(this).attr('id');
-    console.log(direction);
-    $('#cursor-overlay').addClass( "hover" );
-    $('#cursor-overlay').addClass( "hover-top-left" );
-  }, function() {
-    $('#cursor-overlay').removeClass( "hover" );
-    $('#cursor-overlay').removeClass( "hover-top-left" );
-  }
-);
