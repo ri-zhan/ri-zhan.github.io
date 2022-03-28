@@ -8,6 +8,7 @@ $(document).mouseleave(function(){
   $(".follower").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
 });
 
+
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
   clones = context.querySelectorAll('.is-clone'),
