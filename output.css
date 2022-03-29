@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #000000;
   font-family: "Courier New", Courier, monospace;
   color: white;
   display: flex;
@@ -166,29 +166,57 @@ body {
   position: absolute;
   text-decoration: none;
 }
-.nav .menu .text:hover .nav-name {
-  opacity: 1;
-  transition: all 100ms ease-in-out;
-}
-.nav .menu .text:hover .material-icons-outlined {
-  font-size: 2rem;
-  transition: font-size 100ms ease-in;
-}
-.nav .menu .text:hover .top-left-icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  transition: all 100ms ease-in-out;
-}
-.nav .text {
-  column-gap: 1rem;
+.nav .menu .navbar {
   display: flex;
   align-items: center;
 }
-.nav .text .nav-name {
-  opacity: 0;
+.nav .menu .navbar .material-icons-outlined {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: font-size 100ms ease-in;
+}
+.nav .menu .navbar .navbar-div {
+  height: 2rem;
+  width: auto;
+  padding: 0.5rem;
+  margin: 0 1rem 1rem 0;
+  border: 0.0625rem solid #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #000000;
+}
+.nav .menu .navbar .navbar-div:hover .hide {
+  display: flex;
   transition: all 100ms ease-in-out;
 }
-.nav .top-left {
+.nav .menu .navbar .navbar-div .material-icons-outlined {
+  font-size: 1.5rem;
+}
+.nav .menu .navbar .navbar-div .navtext {
+  margin-left: 0.5rem;
+}
+.nav .menu .navbar .navbar-div .hide {
+  display: none;
+  transition: all 100ms ease-in-out;
+}
+
+.bottom-right {
+  height: 3.125rem;
+  width: 3.125rem;
+  border: solid white;
+  border-width: 0 0.25rem 0.25rem 0;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.top-left {
   height: 3.125rem;
   width: 3.125rem;
   border: solid white;
@@ -199,19 +227,34 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.nav .top-left .text {
-  margin: 1rem 0 0 1rem;
+.top-left:hover .top-left-name {
+  opacity: 1;
+  transition: all 100ms ease-in-out;
 }
-.nav .top-left .top-left-icon {
+.top-left:hover .top-left-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  transition: all 100ms ease-in-out;
+}
+.top-left .play-info {
+  display: flex;
+  margin: 1rem 0 0 1rem;
+  align-items: center;
+}
+.top-left .top-left-icon {
   display: inline-block;
   height: 1.25rem;
   width: 1.25rem;
   border-radius: 50%;
   background-color: #E63223;
-  transition: all 100ms ease-in-out;
+  margin-right: 0.5rem;
   transition: all 100ms ease-in-out;
 }
-.nav .top-right {
+.top-left .top-left-name {
+  opacity: 0;
+}
+
+.top-right {
   height: 3.125rem;
   width: 3.125rem;
   border: solid white;
@@ -222,41 +265,8 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
 }
-.nav .top-right .text {
-  margin: 1rem 1rem 0 0;
-}
-.nav .top-right .material-icons-outlined {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  color: #ffffff;
-  transition: font-size 100ms ease-in;
-}
-.nav .bottom-right {
-  height: 3.125rem;
-  width: 3.125rem;
-  border: solid white;
-  border-width: 0 0.25rem 0.25rem 0;
-  bottom: 1rem;
-  right: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.nav .bottom-right .text {
-  margin: 0 1rem 1rem 0;
-}
-.nav .bottom-right .material-icons-outlined {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  color: #ffffff;
-  transform: rotate(-45deg);
-  transition: font-size 100ms ease-in;
-}
-.nav .bottom-left {
+
+.bottom-left {
   height: 3.125rem;
   width: 3.125rem;
   border: solid white;
@@ -265,17 +275,6 @@ body {
   left: 1rem;
   display: flex;
   align-items: flex-end;
-}
-.nav .bottom-left .text {
-  margin: 0 0 1rem 1rem;
-}
-.nav .bottom-left .material-icons-outlined {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  color: #ffffff;
-  transition: font-size 100ms ease-in;
 }
 
 .content-img {
