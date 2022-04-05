@@ -9,6 +9,10 @@ $(document).mouseleave(function(){
 });
 
 
+$(".filmstrip").css({
+  'width': ((($(".content-img").width()+13) * 4) - 13 + 'px')
+});
+
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
   clones = context.querySelectorAll('.is-clone'),

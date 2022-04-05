@@ -207,7 +207,7 @@ body {
 .bottom-right {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0 0.25rem 0.25rem 0;
   bottom: 1rem;
   right: 1rem;
@@ -219,7 +219,7 @@ body {
 .top-left {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0.25rem 0 0 0.25rem;
   top: 1rem;
   left: 1rem;
@@ -257,7 +257,7 @@ body {
 .top-right {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0.25rem 0.25rem 0 0;
   top: 1rem;
   right: 1rem;
@@ -269,19 +269,12 @@ body {
 .bottom-left {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0 0 0.25rem 0.25rem;
   bottom: 1rem;
   left: 1rem;
   display: flex;
   align-items: flex-end;
-}
-
-.content-img {
-  width: 100%;
-  height: auto;
-  grid-column: span 8;
-  margin-bottom: 0.5rem;
 }
 
 .content {
@@ -297,7 +290,56 @@ body {
   grid-template-columns: repeat(8, 1fr);
   grid-column-gap: 1rem;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: clip;
+}
+.content .content-scroll .heading {
+  grid-column: span 8;
+  position: relative;
+  height: auto;
+  margin: 0;
+  display: flex;
+}
+.content .content-scroll .heading .heading-img {
+  width: 100%;
+  height: auto;
+}
+.content .content-scroll .heading .icon {
+  background-color: #000000;
+  border: 0.0625rem solid #ffffff;
+  height: 3rem;
+  width: 3rem;
+  bottom: 0;
+  position: absolute;
+  margin-right: 2rem;
+}
+.content .content-scroll .horizontal {
+  height: 300px;
+  grid-column: span 8;
+  width: 100%;
+  overflow-x: scroll;
+}
+.content .content-scroll .horizontal .filmstrip {
+  justify-self: flex-start;
+  display: flex;
+  background: #ffffff;
+  height: 300px;
+  width: auto;
+  --background: rgba(0, 0, 0);
+  --size: 0.8rem;
+  background-image: linear-gradient(to right, var(--background) var(--size), transparent var(--size)), linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)), linear-gradient(to right, var(--background) var(--size), transparent var(--size)), linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)), linear-gradient(to bottom, transparent var(--size), var(--background) var(--size));
+  background-size: calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), 100% calc(100% - var(--size) * 3);
+  background-repeat: repeat-x;
+  background-position: -1rem var(--size), top left, -1rem calc(100% - var(--size)), bottom left, 0 var(--size);
+  padding: calc(var(--size) * 3) 0;
+}
+.content .content-scroll .horizontal .filmstrip .content-img {
+  width: auto;
+  height: 100%;
+  padding-right: 0.8rem;
+}
+.content .content-scroll .horizontal .filmstrip .content-img:last-child {
+  padding-right: 0;
 }
 .content .content-scroll .border {
   grid-column: span 8;
@@ -306,7 +348,7 @@ body {
   position: absolute;
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0.125rem 0 0 0.125rem;
   top: 0;
   left: 0;
@@ -315,7 +357,7 @@ body {
   position: absolute;
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0.125rem 0.125rem 0 0;
   top: 0;
   right: 0;
@@ -324,7 +366,7 @@ body {
   position: absolute;
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0 0.125rem 0.125rem 0;
   bottom: 0;
   right: 0;
@@ -333,7 +375,7 @@ body {
   position: absolute;
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid #ffffff;
   border-width: 0 0 0.125rem 0.125rem;
   bottom: 0;
   left: 0;
@@ -413,7 +455,7 @@ body {
 
 a:link,
 a:visited {
-  color: white;
+  color: #ffffff;
 }
 
 a:hover {

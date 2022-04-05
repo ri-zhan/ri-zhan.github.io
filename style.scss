@@ -218,7 +218,7 @@ $width: 19.875rem;
 .bottom-right {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid $white;
   border-width: 0 0.25rem 0.25rem 0;
   bottom: 1rem;
   right: 1rem;
@@ -230,7 +230,7 @@ $width: 19.875rem;
 .top-left {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid $white;
   border-width: 0.25rem 0 0 0.25rem;
   top: 1rem;
   left: 1rem;
@@ -268,7 +268,7 @@ $width: 19.875rem;
 .top-right {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid $white;
   border-width: 0.25rem 0.25rem 0 0;
   top: 1rem;
   right: 1rem;
@@ -280,7 +280,7 @@ $width: 19.875rem;
 .bottom-left {
   height: 3.125rem;
   width: 3.125rem;
-  border: solid white;
+  border: solid $white;
   border-width: 0 0 0.25rem 0.25rem;
   bottom: 1rem;
   left: 1rem;
@@ -290,15 +290,6 @@ $width: 19.875rem;
 
 
 /////////////////////// project page ///////////////////////////
-
-$filmheight: 13.125rem;
-
-.content-img {
-  width: 100%;
-  height: auto;
-  grid-column: span 8;
-  margin-bottom: 0.5rem;
-}
 
 .content {
   height: calc(100vh - 1rem);
@@ -312,14 +303,69 @@ $filmheight: 13.125rem;
     grid-template-columns: repeat(8, 1fr);
     grid-column-gap: 1rem;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-x: clip;
+    .heading {
+      grid-column: span 8;
+      position: relative;
+      height: auto;
+      margin: 0;
+      display: flex;
+      .heading-img {
+        width: 100%;
+        height: auto;
+      }
+      .icon {
+        background-color: $black;
+        border: 0.0625rem solid $white;
+        height: 3rem;
+        width: 3rem;
+        bottom: 0;
+        position: absolute;
+        margin-right: 2rem;
+      }
+    }
+    .horizontal {
+      height: 300px;
+      grid-column: span 8;
+      width: 100%;
+      overflow-x: scroll;
+      .filmstrip {
+        justify-self: flex-start;
+        display: flex;
+        background: $white;
+        height: 300px;
+        width: auto;
+        --background: rgba(0, 0, 0);
+        --size: 0.8rem;
+        background-image:
+          linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+          linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+          linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+          linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+          linear-gradient(to bottom, transparent var(--size), var(--background) var(--size));
+        background-size: calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), 100% calc(100% - var(--size) * 3);
+        background-repeat: repeat-x;
+        background-position: -1rem var(--size), top left, -1rem calc(100% - var(--size)), bottom left, 0 var(--size);
+        padding: calc(var(--size) * 3) 0;
+        .content-img {
+          width: auto;
+          height: 100%;
+          padding-right: 0.8rem;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    
     .border {
       grid-column: span 8;
       .top-left {
         position: absolute;
         height: 3.125rem;
         width: 3.125rem;
-        border: solid white;
+        border: solid $white;
         border-width: 0.125rem 0 0 0.125rem;
         top: 0;
         left: 0;
@@ -328,7 +374,7 @@ $filmheight: 13.125rem;
         position: absolute;
         height: 3.125rem;
         width: 3.125rem;
-        border: solid white;
+        border: solid $white;
         border-width: 0.125rem 0.125rem 0 0;
         top: 0;
         right: 0;
@@ -337,7 +383,7 @@ $filmheight: 13.125rem;
         position: absolute;
         height: 3.125rem;
         width: 3.125rem;
-        border: solid white;
+        border: solid $white;
         border-width: 0 0.125rem 0.125rem 0;
         bottom: 0;
         right: 0;
@@ -346,7 +392,7 @@ $filmheight: 13.125rem;
         position: absolute;
         height: 3.125rem;
         width: 3.125rem;
-        border: solid white;
+        border: solid $white;
         border-width: 0 0 0.125rem 0.125rem;
         bottom: 0;
         left: 0;
@@ -354,7 +400,6 @@ $filmheight: 13.125rem;
     }
   }
 }
-
 
 .cursor {
   position: absolute;
@@ -431,7 +476,7 @@ $filmheight: 13.125rem;
 
 a:link,
 a:visited {
-  color: white;
+  color: $white;
 }
 
 a:hover {
