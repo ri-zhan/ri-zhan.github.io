@@ -304,14 +304,39 @@ body {
   width: 100%;
   height: auto;
 }
-.content .content-scroll .heading .icon {
+.content .content-scroll .heading .icons {
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+.content .content-scroll .heading .icons .icon {
+  margin-right: 0.8rem;
   background-color: #000000;
   border: 0.0625rem solid #ffffff;
   height: 3rem;
-  width: 3rem;
-  bottom: 0;
-  position: absolute;
-  margin-right: 2rem;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.content .content-scroll .title {
+  grid-column: span 2;
+}
+.content .content-scroll .description {
+  grid-column: span 5;
+  float: right;
+}
+.content .content-scroll .text {
+  grid-column: span 8;
+  display: flex;
+}
+.content .content-scroll .text h2 {
+  grid-column: span 2;
+}
+.content .content-scroll .text p {
+  grid-column: span 5;
 }
 .content .content-scroll .horizontal {
   height: 300px;
@@ -463,7 +488,7 @@ a:hover {
 }
 
 a:active {
-  color: #E63223 #832A28;
+  color: #E63223;
 }
 
 #nav-top-left {

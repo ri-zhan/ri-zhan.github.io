@@ -315,14 +315,39 @@ $width: 19.875rem;
         width: 100%;
         height: auto;
       }
-      .icon {
-        background-color: $black;
-        border: 0.0625rem solid $white;
-        height: 3rem;
-        width: 3rem;
+      .icons {
         bottom: 0;
         position: absolute;
-        margin-right: 2rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem;
+        .icon {
+          margin-right: 0.8rem;
+          background-color: $black;
+          border: 0.0625rem solid $white;
+          height: 3rem;
+          width: auto;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+        }
+      }
+    }
+    .title {
+      grid-column: span 2;
+    }
+    .description{
+      grid-column: span 5;
+      float: right;
+    }
+    .text {
+      grid-column: span 8;
+      display: flex;
+      h2 {
+        grid-column: span 2;
+      }
+      p {
+        grid-column: span 5;
       }
     }
     .horizontal {
@@ -484,7 +509,7 @@ a:hover {
 }
 
 a:active {
-  color: $red#832A28;
+  color: $red;
 }
 
 #nav-top-left {
