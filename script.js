@@ -8,10 +8,28 @@ $(document).mouseleave(function(){
   $(".follower").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
 });
 
+$(".content").css({
+  'height': ($(".border").height() - 12 + 'px')
+});
+
+$(".content").css({
+  'max-width': ($(".border").width() - 12 + 'px')
+});
+
+
+
+// check the 12px after you remove the scrollbar
+$(".horizontal").css({
+  'width': ($(".content").width() - 1 + 'px') 
+});
+
+// let imgcount = $(".filmstrip img").length; 
 
 $(".filmstrip").css({
-  'width': ((($(".content-img").width()+13) * 4) - 13 + 'px')
+  'width': ((($(".filmstrip-img").width() +16) * 3) + 32 +'px')
 });
+
+
 
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
