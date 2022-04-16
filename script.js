@@ -8,6 +8,8 @@ $(document).mouseleave(function(){
   $(".follower").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
 });
 
+
+// .content size
 $(".content").css({
   'height': ($(".border").height() - 12 + 'px')
 });
@@ -18,70 +20,55 @@ $(".content").css({
 
 
 
-// check the 12px after you remove the scrollbar
+// $(".content").css({
+//   '@media (min-width:600px)': ($(".border").width() - 12 + 'px')
+// });
+
+// .horizontal width
 $(".horizontal").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
 
-// let imgcount = $(".filmstrip img").length; 
+// change height of .horizontal when it reaches center of screen. problem is that it applies it to all of them at 
+// once so when the first .horizontal reaches the center all the rest follow and don't do it individually
+ 
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
 
-$(".filmstrip").css({
-  'width': ((($(".filmstrip-img").width() +16) * 3) + 20 +'px')
-});
+  var viewportTop = $(window).scrollTop() + $(window).height() / 2;
+  var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
 
-// window.onscroll = function(e) {
-//   if(window.scrollY) {
-//       if(window.pageYOffset > 50) {
-//           $(".horizontal").style.height = (600 + 'px');
-//       } else {
-//           $(".horizontal").style.height = (200 + 'px');
-//       }
-//   }
-// }
-
-
-// let windowCenter = $(window).height() / 2;
-
-// if($('.horizontal').offset().top() / 2 <= windowCenter){
-//   $('.horizontal').fadeIn();
-// }  
-// else if($('.horizontal').offset().top() / 2 >= windowCenter){
-//   $('.horizontal').fadeOut();
-// } 
-
-
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
 $(".content").scroll(function() {
-  increaseSize()
+  let imgCount = $(".filmstrip-img").length;
+  let filmImg = $(".filmstrip-img")
+
+    $(".content").each(function() {
+    if ($(".horizontal").isInViewport()) {
+      $(".horizontal").addClass("enlarge")
+
+      // code for changing width of filmstrip depending on how many iamges there are
+      $(".filmstrip").css({
+        'width': ((filmImg.innerWidth() * imgCount) + 36 +'px')
+      });
+    }
+    else {
+      $(".horizontal").removeClass("enlarge")
+
+      // code for changing width of filmstrip depending on how many iamges there are
+      $(".filmstrip").css({
+        'width': ((filmImg.innerWidth() * imgCount) + 20 +'px')
+      });
+    }
+    
+  });
 });
 
-function increaseSize () {
-  console.log("existing");
-  let screenCenter = $(window).scrollTop() + $(window).height() / 2;
 
-  if ($(".horizontal").offset() >= screenCenter) {
-    $(".horizontal").style.height = (600 + 'px');
-    console.log( "working!" );
-  }
-  else if ($(".horizontal").offset() <= screenCenter) {
-    $(".horizontal").style.height = (200 + 'px');
-    console.log( "working2!" );
-  }
-}
-
-
-// $(window).on('scroll', function () {
-//   var scrollTop = $(window).scrollTop();
-//   if (scrollTop > 50) {
-//       $('.filmstrip-img').stop().animate({height: "30px"},200);
-//   }
-//   else {
-//        $('.filmstrip-img').stop().animate({height: "50px"},200);   
-//   }
-// });
-
-
-
+// infinite scroll loop
 // var doc = window.document,
 //   context = doc.querySelector('.js-loop'),
 //   clones = context.querySelectorAll('.is-clone'),
