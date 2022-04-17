@@ -18,6 +18,17 @@ $(".content").css({
   'max-width': ($(".border").width() - 12 + 'px')
 });
 
+$(window).resize(function() {
+  $(".content").css({
+    'height': ($(".border").height() - 12 + 'px')
+  });
+  
+  $(".content").css({
+    'max-width': ($(".border").width() - 12 + 'px')
+  });
+});
+
+
 
 
 // $(".content").css({
@@ -32,40 +43,130 @@ $(".horizontal").css({
 // change height of .horizontal when it reaches center of screen. problem is that it applies it to all of them at 
 // once so when the first .horizontal reaches the center all the rest follow and don't do it individually
  
-$.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = elementTop + $(this).outerHeight();
+// $.fn.isInViewport = function() {
+//   var elementTop = $(this).offset().top;
+//   var elementBottom = elementTop + $(this).outerHeight();
 
-  var viewportTop = $(window).scrollTop() + $(window).height() / 2;
-  var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
+//   var viewportTop = $(window).scrollTop() + $(window).height() / 21;
+//   var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
 
-  return elementBottom > viewportTop && elementTop < viewportBottom;
+//   return elementBottom > viewportTop && elementTop < viewportBottom;
+// };
+
+
+// if ($('.horizontal').isInViewport()) {
+//   $(this).addClass("enlarge")
+
+//   // code for changing width of filmstrip depending on how many iamges there are
+
+//   $('.filmstrip').each(function() {
+//     let imgWidth = $('.filmstrip-img').innerWidth();
+//     let imgCount = $(".filmstrip-img", $(this)).length;
+
+//     $(this).css({
+//       'width': (imgWidth * (imgCount) + 36 +'px')
+//     });
+//   })
+// }
+// else {
+//   $('.horizontal').removeClass("enlarge")
+//   console.log('isnt in viewport')
+//   // code for changing width of filmstrip depending on how many iamges there are
+//   $('.filmstrip').each(function() {
+//     let imgWidth = $('.filmstrip-img').innerWidth();
+//     let imgCount = $(".filmstrip-img", $(this)).length;
+    
+//     $(this).css({
+//       'width': (imgWidth * (imgCount) + 20 +'px')
+//     });
+//   })
+// }
+
+
+
+
+const enlargeSize = document.querySelectorAll('.horizontal');
+
+const appearOptions = {
+  rootMargin: '-50% 0% -50% 0%'
 };
 
-$(".content").scroll(function() {
-  let imgCount = $(".filmstrip-img").length;
-  let filmImg = $(".filmstrip-img")
+const appearWhenCenter = new IntersectionObserver
+(function(
+  entries, 
+  appearWhenCenter
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('enlarge');
 
-    $(".content").each(function() {
-    if ($(".horizontal").isInViewport()) {
-      $(".horizontal").addClass("enlarge")
+        $('.filmstrip').each(function() {
+          let imgWidth = $('.filmstrip-img').innerWidth();
+          let imgCount = $(".filmstrip-img", $(this)).length;
+  
+          $(this).css({
+            'width': (imgWidth * (imgCount) + 50 +'px')
+          });
+        })
+      } else {
+        entry.target.classList.remove('enlarge');
+        $('.filmstrip').each(function() {
+          let imgWidth = $('.filmstrip-img').innerWidth();
+          let imgCount = $(".filmstrip-img", $(this)).length;
+          
+          $(this).css({
+            'width': (imgWidth * (imgCount) + 20 +'px')
+          });
+        })
+      }
+    })
+  }, appearOptions);
 
-      // code for changing width of filmstrip depending on how many iamges there are
-      $(".filmstrip").css({
-        'width': ((filmImg.innerWidth() * imgCount) + 36 +'px')
-      });
-    }
-    else {
-      $(".horizontal").removeClass("enlarge")
+enlargeSize.forEach(enlargeSize =>{
+  appearWhenCenter.observe(enlargeSize);
+})
 
-      // code for changing width of filmstrip depending on how many iamges there are
-      $(".filmstrip").css({
-        'width': ((filmImg.innerWidth() * imgCount) + 20 +'px')
-      });
-    }
-    
-  });
-});
+
+
+
+
+
+
+
+
+
+// $(".content").scroll(function() { 
+
+//   $(".horizontal").each(function() {
+//     if ($(this).isInViewport()) {
+//       $(this).addClass("enlarge")
+
+//       // code for changing width of filmstrip depending on how many iamges there are
+
+//       $('.filmstrip').each(function() {
+//         let imgWidth = $('.filmstrip-img').innerWidth();
+//         let imgCount = $(".filmstrip-img", $(this)).length;
+
+//         $(this).css({
+//           'width': (imgWidth * (imgCount) + 36 +'px')
+//         });
+//       })
+//     }
+//     else {
+//       $(this).removeClass("enlarge")
+
+//       // code for changing width of filmstrip depending on how many iamges there are
+//       $('.filmstrip').each(function() {
+//         let imgWidth = $('.filmstrip-img').innerWidth();
+//         let imgCount = $(".filmstrip-img", $(this)).length;
+        
+//         $(this).css({
+//           'width': (imgWidth * (imgCount) + 20 +'px')
+//         });
+//       })
+//     }
+//   });
+// });
 
 
 // infinite scroll loop
