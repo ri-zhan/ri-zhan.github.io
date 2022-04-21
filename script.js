@@ -28,63 +28,12 @@ $(window).resize(function() {
   });
 });
 
-
-
-
-// $(".content").css({
-//   '@media (min-width:600px)': ($(".border").width() - 12 + 'px')
-// });
-
 // .horizontal width
 $(".horizontal").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
 
-// change height of .horizontal when it reaches center of screen. problem is that it applies it to all of them at 
-// once so when the first .horizontal reaches the center all the rest follow and don't do it individually
- 
-// $.fn.isInViewport = function() {
-//   var elementTop = $(this).offset().top;
-//   var elementBottom = elementTop + $(this).outerHeight();
-
-//   var viewportTop = $(window).scrollTop() + $(window).height() / 21;
-//   var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
-
-//   return elementBottom > viewportTop && elementTop < viewportBottom;
-// };
-
-
-// if ($('.horizontal').isInViewport()) {
-//   $(this).addClass("enlarge")
-
-//   // code for changing width of filmstrip depending on how many iamges there are
-
-//   $('.filmstrip').each(function() {
-//     let imgWidth = $('.filmstrip-img').innerWidth();
-//     let imgCount = $(".filmstrip-img", $(this)).length;
-
-//     $(this).css({
-//       'width': (imgWidth * (imgCount) + 36 +'px')
-//     });
-//   })
-// }
-// else {
-//   $('.horizontal').removeClass("enlarge")
-//   console.log('isnt in viewport')
-//   // code for changing width of filmstrip depending on how many iamges there are
-//   $('.filmstrip').each(function() {
-//     let imgWidth = $('.filmstrip-img').innerWidth();
-//     let imgCount = $(".filmstrip-img", $(this)).length;
-    
-//     $(this).css({
-//       'width': (imgWidth * (imgCount) + 20 +'px')
-//     });
-//   })
-// }
-
-
-
-
+// change height of .horizontal when it reaches center of screen.
 const enlargeSize = document.querySelectorAll('.horizontal');
 
 const appearOptions = {
@@ -98,18 +47,22 @@ const appearWhenCenter = new IntersectionObserver
   ) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // for first .horizontal.enlarge in html, after it enlarges the width stays as enlarged width??
         entry.target.classList.add('enlarge');
 
         $('.filmstrip').each(function() {
           let imgWidth = $('.filmstrip-img').innerWidth();
           let imgCount = $(".filmstrip-img", $(this)).length;
-  
+
+          // width here incorrect because it's using width from remove('enlarge')
           $(this).css({
-            'width': (imgWidth * (imgCount) + 50 +'px')
+            'width': (imgWidth * (imgCount) + 76 +'px')
           });
+          // appearWhenCenter.unobserve(entry, target);
         })
       } else {
         entry.target.classList.remove('enlarge');
+
         $('.filmstrip').each(function() {
           let imgWidth = $('.filmstrip-img').innerWidth();
           let imgCount = $(".filmstrip-img", $(this)).length;
@@ -118,6 +71,7 @@ const appearWhenCenter = new IntersectionObserver
             'width': (imgWidth * (imgCount) + 20 +'px')
           });
         })
+        // appearWhenCenter.unobserve(entry, target);
       }
     })
   }, appearOptions);
@@ -127,17 +81,74 @@ enlargeSize.forEach(enlargeSize =>{
 })
 
 
+///////////////////////////////get end of transition////////////////////////
+let input = document.querySelector('.filmstrip');
+let transitionEndEventName = getTransitionEndEventName();
+
+
+$('.filmstrip').each(function(ev, data) {
+  $('.filmstrip').getTransitionEndEventName(function(ev, data) {
+  let imgWidth = $('.filmstrip-img').innerWidth();
+  let imgCount = $(".filmstrip-img", $(this)).length;
+
+  // width here incorrect because it's using width from remove('enlarge')
+  $(this).css({
+    'width': (imgWidth * (imgCount) + 76 +'px')
+  });
+  // appearWhenCenter.unobserve(entry, target);
+
+  $(this).addEventListener(transitionEndEventName, callback);
+  })
+})
+
+
+input.addEventListener('focus',  function(ev, data) {
+  input.classList.add('expand'); input.addEventListener(transitionEndEventName, callback);
+});
+input.addEventListener('focusout',  function(ev, data) {
+  input.classList.remove('expand');
+});
+
+
+function getTransitionEndEventName() {
+  var transitions = {
+      "transition"      : "transitionend",
+      "OTransition"     : "oTransitionEnd",
+      "MozTransition"   : "transitionend",
+      "WebkitTransition": "webkitTransitionEnd"
+   }
+  let bodyStyle = document.body.style;
+  for(let transition in transitions) {
+      if(bodyStyle[transition] != undefined) {
+          return transitions[transition];
+      } 
+  }
+}
+
+function callback(){
+  input.removeEventListener(transitionEndEventName, callback);
+console.log("Transition finished");
+}
+///////////////////////////////END OF get end of transition////////////////////////
 
 
 
+//////////////////////////PREVIOUS SCROLL EVENT LISTNER////////////////////////////
+// $.fn.isInViewport = function() {
+//   var elementTop = $(this).offset().top;
+//   var elementBottom = elementTop + $(this).outerHeight();
 
+//   var viewportTop = $(window).scrollTop() + $(window).height() / 2;
+//   var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
 
+//   return elementBottom > viewportTop && elementTop < viewportBottom;
+// };
 
 
 
 // $(".content").scroll(function() { 
 
-//   $(".horizontal").each(function() {
+//     $(".horizontal").each(function() {
 //     if ($(this).isInViewport()) {
 //       $(this).addClass("enlarge")
 
@@ -165,8 +176,10 @@ enlargeSize.forEach(enlargeSize =>{
 //         });
 //       })
 //     }
+    
 //   });
 // });
+//////////////////////////END OF PREVIOUS SCROLL EVENT LISTNER////////////////////////////
 
 
 // infinite scroll loop
