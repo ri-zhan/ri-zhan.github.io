@@ -33,6 +33,9 @@ $(".horizontal").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
 
+
+
+
 // change height of .horizontal when it reaches center of screen.
 const enlargeSize = document.querySelectorAll('.horizontal');
 
@@ -51,13 +54,22 @@ const appearWhenCenter = new IntersectionObserver
         entry.target.classList.add('enlarge');
 
         $('.filmstrip').each(function() {
-          let imgWidth = $('.filmstrip-img').innerWidth();
-          let imgCount = $(".filmstrip-img", $(this)).length;
+          // i don't know why this code is wrong but it's wrong lol. 
+          //was attempting to make the variable get the value after transition but it's not working
+          let imgCount = $('.filmstrip-img').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+                $('.filmstrip-imgs', (this)).length
+                console.log(imgCount)
+          });
+          let imgWidth = $('.filmstrip-img').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+                $(this).innerWidth();
+          });
 
           // width here incorrect because it's using width from remove('enlarge')
           $(this).css({
-            'width': (imgWidth * (imgCount) + 76 +'px')
-          });
+            'width': (imgWidth * (imgCount) + 60 +'px')
+          });         
           // appearWhenCenter.unobserve(entry, target);
         })
       } else {
@@ -80,35 +92,21 @@ enlargeSize.forEach(enlargeSize =>{
   appearWhenCenter.observe(enlargeSize);
 })
 
+input.addEventListener('focus',  function(ev) {
+  input.classList.add('expand');
+  input.addEventListener(transitionEndEventName, callback);
+});
+
+
+
+
+
+
+
+
 
 ///////////////////////////////get end of transition////////////////////////
-let input = document.querySelector('.filmstrip');
 let transitionEndEventName = getTransitionEndEventName();
-
-
-$('.filmstrip').each(function(ev, data) {
-  $('.filmstrip').getTransitionEndEventName(function(ev, data) {
-  let imgWidth = $('.filmstrip-img').innerWidth();
-  let imgCount = $(".filmstrip-img", $(this)).length;
-
-  // width here incorrect because it's using width from remove('enlarge')
-  $(this).css({
-    'width': (imgWidth * (imgCount) + 76 +'px')
-  });
-  // appearWhenCenter.unobserve(entry, target);
-
-  $(this).addEventListener(transitionEndEventName, callback);
-  })
-})
-
-
-input.addEventListener('focus',  function(ev, data) {
-  input.classList.add('expand'); input.addEventListener(transitionEndEventName, callback);
-});
-input.addEventListener('focusout',  function(ev, data) {
-  input.classList.remove('expand');
-});
-
 
 function getTransitionEndEventName() {
   var transitions = {
@@ -123,11 +121,6 @@ function getTransitionEndEventName() {
           return transitions[transition];
       } 
   }
-}
-
-function callback(){
-  input.removeEventListener(transitionEndEventName, callback);
-console.log("Transition finished");
 }
 ///////////////////////////////END OF get end of transition////////////////////////
 
