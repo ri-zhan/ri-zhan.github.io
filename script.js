@@ -1,15 +1,15 @@
 console.log( "ready!" );
 
 $(document).mousemove(function(e){
-  $(".follower").css({left: e.pageX, top:e.pageY});
+  $(".follower-around").css({left: e.pageX, top:e.pageY});
 });
 
-$(document).mouseleave(function(){
-  $(".follower").css({left: '50%', top:'50%', transform: 'translate(-50%, -50%)'});
+$(document).mousemove(function(e){
+  $(".follower-center").css({left: e.pageX, top:e.pageY});
 });
 
 
-// .content size
+///////////////// .content size
 $(".content").css({
   'height': ($(".border").height() - 12 + 'px')
 });
@@ -28,7 +28,7 @@ $(window).resize(function() {
   });
 });
 
-// .horizontal width
+///////////// .horizontal width
 $(".horizontal").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
@@ -36,7 +36,7 @@ $(".horizontal").css({
 
 
 
-// change height of .horizontal when it reaches center of screen.
+/////////////// change height of .horizontal when it reaches center of screen.
 const enlargeSize = document.querySelectorAll('.horizontal');
 
 const appearOptions = {

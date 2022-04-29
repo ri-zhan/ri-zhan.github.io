@@ -49,25 +49,29 @@ section {
 }
 
 .follower {
+  z-index: 18;
   position: absolute;
-  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
-.follower .center {
-  position: fixed;
+@media (max-width: 600px) {
+  .follower {
+    display: none;
+  }
+}
+
+.follower-center {
   width: 1rem;
   height: 1rem;
   background-color: #E63223;
-  border-radius: 50%;
+  transition: all 100ms ease-out;
 }
-.follower .around {
-  position: fixed;
+
+.follower-around {
   width: 1.5rem;
   height: 1.5rem;
-  position: absolute;
   border: 0.125rem solid #E63223;
-  border-radius: 50%;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
+  transition: all 400ms ease-out;
 }
 
 a:link,
@@ -128,7 +132,6 @@ a:active {
   }
 }
 .container {
-  z-index: 88888;
   position: absolute;
   display: grid;
   justify-items: center;
@@ -138,16 +141,18 @@ a:active {
   grid-template-columns: repeat(4, 1fr);
 }
 .container .projects {
+  z-index: 999999;
   grid-column: span 4;
   grid-column-gap: 1rem;
   display: grid;
 }
 .container .projects:hover ~ .circle .circle-gap {
   width: 19.875rem;
-  transition: width 300ms ease-in-out;
+  transition: width 400ms ease-out;
 }
 .container .projects .top-left, .container .projects .top-right, .container .projects .bottom-left, .container .projects .bottom-right {
   position: absolute;
+  z-index: -55555;
 }
 .container .projects .top-left {
   height: 3.125rem;
@@ -255,6 +260,7 @@ a:active {
   color: #000000;
   opacity: 0;
   transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
+  pointer-events: none;
 }
 .container .circle {
   z-index: 1;
@@ -273,13 +279,14 @@ a:active {
   height: 5.9375rem;
   width: 5.9375rem;
   border-radius: 5.9375rem;
-  border: 0.16rem solid white;
-  background-color: black;
+  border: 0.125rem solid #ffffff;
+  background-color: #000000;
   position: absolute;
 }
 .container .circle .circle-gap {
   width: 1rem;
-  transition: width 300ms ease-in-out;
+  height: 0;
+  transition: width 400ms ease-out;
   background-color: #000000;
 }
 .container .circle .right {
@@ -292,8 +299,8 @@ a:active {
   height: 5.9375rem;
   width: 5.9375rem;
   border-radius: 5.9375rem;
-  border: 0.16rem solid white;
-  background-color: black;
+  border: 0.125rem solid #ffffff;
+  background-color: #000000;
   position: absolute;
   left: -3.4375rem;
 }
@@ -307,6 +314,7 @@ a:active {
   margin: 0;
 }
 .nav .menu {
+  z-index: 9999;
   position: absolute;
   text-decoration: none;
 }
@@ -332,6 +340,21 @@ a:active {
   align-items: center;
   text-decoration: none;
   background-color: #000000;
+  transition: transform 200ms ease-out;
+}
+.nav .menu .navbar .navbar-div:hover {
+  transform: scale(1.1);
+  transition: transform 200ms ease-out;
+  background-color: #ffffff;
+}
+.nav .menu .navbar .navbar-div:hover .navtext, .nav .menu .navbar .navbar-div:hover .material-icons-outlined {
+  color: #000000;
+}
+.nav .menu .navbar .navbar-div:active {
+  background-color: #E63223;
+}
+.nav .menu .navbar .navbar-div:active .navtext, .nav .menu .navbar .navbar-div:active .material-icons-outlined {
+  color: #ffffff;
 }
 @media (max-width: 600px) {
   .nav .menu .navbar .navbar-div {
@@ -349,6 +372,7 @@ a:active {
 }
 .nav .menu .navbar .navbar-div .material-icons-outlined {
   font-size: 1.5rem;
+  color: #ffffff;
 }
 .nav .menu .navbar .navbar-div .navtext {
   margin-left: 0.5rem;
