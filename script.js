@@ -126,6 +126,7 @@ function getTransitionEndEventName() {
 
 
 
+
 //////////////////////////PREVIOUS SCROLL EVENT LISTNER////////////////////////////
 // $.fn.isInViewport = function() {
 //   var elementTop = $(this).offset().top;
@@ -175,7 +176,37 @@ function getTransitionEndEventName() {
 //////////////////////////END OF PREVIOUS SCROLL EVENT LISTNER////////////////////////////
 
 
-// infinite scroll loop
+
+
+
+
+/////////////////////////show play-description-text depending on tag
+if ($('.play-description')) {
+  //show play description by default
+  if ($('.art-history')) {
+    //////////if the card clicked on has art history tag then replace with art histry description
+  }
+  if ($('.photography')) {
+ //////////if the card clicked on has photography tag then replace with photography description
+  }
+  if ($('.projects')) {
+ //////////if the card clicked on has projects tag then replace with projects description
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////// infinite scroll loop
 // var doc = window.document,
 //   context = doc.querySelector('.js-loop'),
 //   clones = context.querySelectorAll('.is-clone'),
