@@ -34,8 +34,6 @@ $(".horizontal").css({
 });
 
 
-
-
 /////////////// change height of .horizontal when it reaches center of screen.
 const enlargeSize = document.querySelectorAll('.horizontal');
 
@@ -92,10 +90,10 @@ enlargeSize.forEach(enlargeSize =>{
   appearWhenCenter.observe(enlargeSize);
 })
 
-input.addEventListener('focus',  function(ev) {
-  input.classList.add('expand');
-  input.addEventListener(transitionEndEventName, callback);
-});
+// input.addEventListener('focus',  function(ev) {
+//   input.classList.add('expand');
+//   input.addEventListener(transitionEndEventName, callback);
+// });
 
 
 
@@ -181,24 +179,59 @@ function getTransitionEndEventName() {
 
 
 /////////////////////////show play-description-text depending on tag
-if ($('.play-description')) {
-  //show play description by default
-  if ($('.art-history')) {
-    //////////if the card clicked on has art history tag then replace with art histry description
-  }
-  if ($('.photography')) {
- //////////if the card clicked on has photography tag then replace with photography description
-  }
-  if ($('.projects')) {
- //////////if the card clicked on has projects tag then replace with projects description
+// if ($('.play-card').selected==True) {
+//   //show play description by default
+//   if ($('.play-card-text').hasClass($('.art-history'))) {
+//     // if ($('.play-card-text').hasClass($('.p')))
+//     //////////if the card clicked on has art history tag then replace with art histry description
+//   }
+//   if ($('.photography')) {
+//  //////////if the card clicked on has photography tag then replace with photography description
+//   }
+//   if ($('.projects')) {
+//  //////////if the card clicked on has projects tag then replace with projects description
+//   }
+// }
+
+
+
+
+// $('.play-card').each(function() {
+  
+// });
+
+$('.play-card').click(function() {
+  $(this).toggleClass('expand');
+  ///////////// .play-card.expand width
+});
+
+$(".play-card.expand").css({
+  'width': (($(".play-column").width() + 16) * 4 + 'px')
+  ('background-color', 'yellow' )
+});
+
+$(".expand").css("background-color","red");
+// $('.play-card').each(function() {
+//   var playCardTag = $('.play-card-text');
+//   var playCard = $( this );
+//   var playDescription = $('.play-description')
+//   playCard.click(function() {
+//     playCardTag.find($('.tag')).hasClass($('.art-history'));
+    // $('.art-history').css("display", "flex");
+//   });
+// });
+
+
+
+function myFunction() {
+  let date = $('.play-date')
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Hello") {
+    x.innerHTML = "Swapped text!";
+  } else {
+    x.innerHTML = "Hello";
   }
 }
-
-
-
-
-
-
 
 
 

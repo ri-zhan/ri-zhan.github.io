@@ -716,12 +716,25 @@ a:active {
   /* Background */
   background: #000000;
 }
+.play-container .play-column .play-card.expand {
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 656px;
+  background-color: darkgreen;
+  z-index: 9999;
+  transition: all 300ms ease-out, left 300ms ease-out;
+}
 .play-container .play-column .play-card {
+  left: auto;
+  top: auto;
   padding: 1rem 10px;
-  width: 100%;
+  width: 152px;
   min-height: 150px;
   height: auto;
   background-color: grey;
+  transition: all 300ms ease-out, left 300ms ease-out;
 }
 .play-container .play-column .play-card .play-card-text {
   display: block;
@@ -767,9 +780,6 @@ a:active {
 }
 .play-container .play-description button:hover .material-icons-outlined {
   color: #000000;
-}
-.play-container .play-description .play-date {
-  display: block;
 }
 .play-container .play-description .play-description-text {
   align-self: flex-end;

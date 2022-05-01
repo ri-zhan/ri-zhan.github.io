@@ -698,12 +698,25 @@ a:active {
     &::-webkit-scrollbar-track { /* Background */
       background: $black;
     }
+    .play-card.expand {
+      left: 0;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      width: calc((152px * 4) + (16px * 3));
+      background-color: darkgreen;
+      z-index: 9999;
+      transition: all 300ms ease-out, left 300ms ease-out;
+    }
     .play-card {
+      left: auto;
+      top: auto;
       padding: 1rem 10px;
-      width: 100%;
+      width: 152px;
       min-height: 150px;
       height: auto;
       background-color: grey;
+      transition: all 300ms ease-out, left 300ms ease-out;
       .play-card-text {
         display: block;
         .tag {
@@ -749,9 +762,6 @@ a:active {
           color: $black;
         }
       }
-    }
-    .play-date {
-      display: block;
     }
     .play-description-text {
       align-self: flex-end;
