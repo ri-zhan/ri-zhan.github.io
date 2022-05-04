@@ -722,7 +722,7 @@ a:active {
 .play-container .play-column .play-card {
   padding: 1rem 10px;
   width: 152px;
-  height: 160px;
+  height: fit-content;
   background-color: grey;
   margin-bottom: 1rem;
   transition: all 300ms ease-out;

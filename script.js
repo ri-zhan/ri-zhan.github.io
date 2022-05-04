@@ -202,14 +202,28 @@ function getTransitionEndEventName() {
 
 let cardPosition = function() {
   $('.play-column').each(function() {
-    $(".play-column div:nth-child(3)").css({
-      'background-color': 'red',
-      'top': $(".play-column div:nth-child(1)").outerHeight() +$(".play-column div:nth-child(2)").outerHeight() + 32 + 'px',
+    $(".play-column div:nth-child(2)").css({
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + 'px',
       'left': '0'
     });
-    $(".play-column div:nth-child(2)").css({
-      'background-color': 'red',
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + 'px',
+    $(".play-column div:nth-child(3)").css({
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 + 'px',
+      'left': '0'
+    });
+    $(".play-column div:nth-child(4)").css({
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 
+      + $(".play-column div:nth-child(3)").outerHeight() + 16 + 'px',
+      'left': '0'
+    });
+    $(".play-column div:nth-child(5)").css({
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16
+      + $(".play-column div:nth-child(3)").outerHeight() + 16 + $(".play-column div:nth-child(4)").outerHeight() + 16 + 'px',
+      'left': '0'
+    });
+    $(".play-column div:nth-child(6)").css({
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 
+      + $(".play-column div:nth-child(3)").outerHeight() + 16 + $(".play-column div:nth-child(4)").outerHeight() + 16 
+      + $(".play-column div:nth-child(4)").outerHeight() + 16 + 'px',
       'left': '0'
     });
   });
@@ -232,7 +246,7 @@ let cardPosition = function() {
     'top': '0',
     'position': 'absolute'
   });
-  $(".play-description").addClass('seehere').css({
+  $(".play-description").css({
     'left': (152 + 16) * 4+ 'px',
     'right': '0',
     'top': '0',
@@ -243,6 +257,7 @@ let cardPosition = function() {
 $(document).ready(function(e){
   cardPosition();
 });
+
 // if ($('play-card').eq(0)) {
 //   $(this).css({
 //     'top': $(this).index()
@@ -279,7 +294,7 @@ $('.play-card').click(function() {
   } else {
     $(this).css({
       'width': '152px',
-      'height': '150px',
+      'height': 'fit-content',
     });
     $('.play-column').css({
       'left': '0',
