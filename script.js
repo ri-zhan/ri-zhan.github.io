@@ -200,17 +200,110 @@ function getTransitionEndEventName() {
   
 // });
 
+let cardPosition = function() {
+  $('.play-column').each(function() {
+    $(".play-column div:nth-child(3)").css({
+      'background-color': 'red',
+      'top': $(".play-column div:nth-child(1)").outerHeight() +$(".play-column div:nth-child(2)").outerHeight() + 32 + 'px',
+      'left': '0'
+    });
+    $(".play-column div:nth-child(2)").css({
+      'background-color': 'red',
+      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + 'px',
+      'left': '0'
+    });
+  });
+  $(".play-container .play-column:nth-child(1)").css({
+    'left': '0',
+    'top': '0'
+  });
+  $(".play-container .play-column:nth-child(2)").css({
+    'left': (152 + 16) * 1 + 'px',
+    'top': '0',
+    'position': 'absolute'
+  });
+  $(".play-container .play-column:nth-child(3)").css({
+    'left': (152 + 16) * 2+ 'px',
+    'top': '0',
+    'position': 'absolute'
+  });
+  $(".play-container .play-column:nth-child(4)").css({
+    'left': (152 + 16) * 3+ 'px',
+    'top': '0',
+    'position': 'absolute'
+  });
+  $(".play-description").addClass('seehere').css({
+    'left': (152 + 16) * 4+ 'px',
+    'right': '0',
+    'top': '0',
+    'position': 'absolute'
+  });
+} 
+
+$(document).ready(function(e){
+  cardPosition();
+});
+// if ($('play-card').eq(0)) {
+//   $(this).css({
+//     'top': $(this).index()
+//   });
+// } else if ($('play-card').eq(1)) {
+//   $(this).css({
+//     'top': $(this).index() + $('play-card').eq(0).outerHeight()
+//   });
+// } else if ($('play-card').eq(2)) {
+//   $(this).css({
+//     'top': $('play-card').eq(0).outerHeight() + $('play-card').eq(1).outerHeight()
+//   });
+// } 
+
+
+
 $('.play-card').click(function() {
   $(this).toggleClass('expand');
-  ///////////// .play-card.expand width
+  console.log ($('.play-column').width())
+  if ($(this).hasClass('expand')) {
+    $(this).css({
+      'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
+      'height': '100%',
+      'left':0,
+      'top': 0,
+      'background-color':"yellow",
+      'position': 'absolute',
+    });
+    $('.play-column').css({
+      'left': 0,
+      'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
+      'overflow': 'hidden',
+    });
+  } else {
+    $(this).css({
+      'width': '152px',
+      'height': '150px',
+    });
+    $('.play-column').css({
+      'left': '0',
+      'width': '152px',
+      'overflow-y': 'auto',
+      'overflow-x': 'hidden',
+    });
+    cardPosition()
+  }
 });
 
-$(".play-card.expand").css({
-  'width': (($(".play-column").width() + 16) * 4 + 'px')
-  ('background-color', 'yellow' )
-});
 
-$(".expand").css("background-color","red");
+// $(".expand").css({
+//   'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
+//   'position': 'absolute',
+//   'left': '0'
+// });
+
+// $(".play-card").css({
+//     'width': $('.play-column'),
+//     'left': 'auto'
+//   });
+
+
 // $('.play-card').each(function() {
 //   var playCardTag = $('.play-card-text');
 //   var playCard = $( this );
@@ -220,6 +313,10 @@ $(".expand").css("background-color","red");
     // $('.art-history').css("display", "flex");
 //   });
 // });
+
+
+
+
 
 
 
