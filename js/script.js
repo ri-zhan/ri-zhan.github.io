@@ -104,22 +104,22 @@ enlargeSize.forEach(enlargeSize =>{
 
 
 ///////////////////////////////get end of transition////////////////////////
-let transitionEndEventName = getTransitionEndEventName();
+// let transitionEndEventName = getTransitionEndEventName();
 
-function getTransitionEndEventName() {
-  var transitions = {
-      "transition"      : "transitionend",
-      "OTransition"     : "oTransitionEnd",
-      "MozTransition"   : "transitionend",
-      "WebkitTransition": "webkitTransitionEnd"
-   }
-  let bodyStyle = document.body.style;
-  for(let transition in transitions) {
-      if(bodyStyle[transition] != undefined) {
-          return transitions[transition];
-      } 
-  }
-}
+// function getTransitionEndEventName() {
+//   var transitions = {
+//       "transition"      : "transitionend",
+//       "OTransition"     : "oTransitionEnd",
+//       "MozTransition"   : "transitionend",
+//       "WebkitTransition": "webkitTransitionEnd"
+//    }
+//   let bodyStyle = document.body.style;
+//   for(let transition in transitions) {
+//       if(bodyStyle[transition] != undefined) {
+//           return transitions[transition];
+//       } 
+//   }
+// }
 ///////////////////////////////END OF get end of transition////////////////////////
 
 
@@ -196,113 +196,22 @@ function getTransitionEndEventName() {
 
 
 
-// $('.play-card').each(function() {
-  
-// });
-
-let cardPosition = function() {
-  $('.play-column').each(function() {
-    $(".play-column div:nth-child(2)").css({
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + 'px',
-      'left': '0'
-    });
-    $(".play-column div:nth-child(3)").css({
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 + 'px',
-      'left': '0'
-    });
-    $(".play-column div:nth-child(4)").css({
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 
-      + $(".play-column div:nth-child(3)").outerHeight() + 16 + 'px',
-      'left': '0'
-    });
-    $(".play-column div:nth-child(5)").css({
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16
-      + $(".play-column div:nth-child(3)").outerHeight() + 16 + $(".play-column div:nth-child(4)").outerHeight() + 16 + 'px',
-      'left': '0'
-    });
-    $(".play-column div:nth-child(6)").css({
-      'top': $(".play-column div:nth-child(1)").outerHeight() + 16 + $(".play-column div:nth-child(2)").outerHeight() + 16 
-      + $(".play-column div:nth-child(3)").outerHeight() + 16 + $(".play-column div:nth-child(4)").outerHeight() + 16 
-      + $(".play-column div:nth-child(4)").outerHeight() + 16 + 'px',
-      'left': '0'
-    });
-  });
-  $(".play-container .play-column:nth-child(1)").css({
-    'left': '0',
-    'top': '0'
-  });
-  $(".play-container .play-column:nth-child(2)").css({
-    'left': (152 + 16) * 1 + 'px',
-    'top': '0',
-    'position': 'absolute'
-  });
-  $(".play-container .play-column:nth-child(3)").css({
-    'left': (152 + 16) * 2+ 'px',
-    'top': '0',
-    'position': 'absolute'
-  });
-  $(".play-container .play-column:nth-child(4)").css({
-    'left': (152 + 16) * 3+ 'px',
-    'top': '0',
-    'position': 'absolute'
-  });
-  $(".play-description").css({
-    'left': (152 + 16) * 4+ 'px',
-    'right': '0',
-    'top': '0',
-    'position': 'absolute'
-  });
-} 
-
-$(document).ready(function(e){
-  cardPosition();
-});
-
-// if ($('play-card').eq(0)) {
-//   $(this).css({
-//     'top': $(this).index()
-//   });
-// } else if ($('play-card').eq(1)) {
-//   $(this).css({
-//     'top': $(this).index() + $('play-card').eq(0).outerHeight()
-//   });
-// } else if ($('play-card').eq(2)) {
-//   $(this).css({
-//     'top': $('play-card').eq(0).outerHeight() + $('play-card').eq(1).outerHeight()
-//   });
-// } 
-
-
-
 $('.play-card').click(function() {
-  $(this).toggleClass('expand');
-  console.log ($('.play-column').width())
-  if ($(this).hasClass('expand')) {
+  if ($(this).hasClass('play-card-expand')) {
+    $('.play-card').removeClass('play-card-expand')
     $(this).css({
-      'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
-      'height': '100%',
-      'left':0,
-      'top': 0,
-      'background-color':"yellow",
-      'position': 'absolute',
+      'width': '',
     });
-    $('.play-column').css({
-      'left': 0,
-      'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
-      'overflow': 'hidden',
+    $(this).delay(500).queue(function() { 
+      $(this).css('z-index','').dequeue();
     });
   } else {
+    $(this).addClass('play-card-expand')
+    let expandedWidth = $('.play-container').width() - $('.play-card').outerWidth() - 16 + 'px';
     $(this).css({
-      'width': '152px',
-      'height': 'fit-content',
+      'width': expandedWidth,
+      'z-index': '999999',
     });
-    $('.play-column').css({
-      'left': '0',
-      'width': '152px',
-      'overflow-y': 'auto',
-      'overflow-x': 'hidden',
-    });
-    cardPosition()
   }
 });
 
@@ -335,15 +244,15 @@ $('.play-card').click(function() {
 
 
 
-function myFunction() {
-  let date = $('.play-date')
-  var x = document.getElementById("myDIV");
-  if (x.innerHTML === "Hello") {
-    x.innerHTML = "Swapped text!";
-  } else {
-    x.innerHTML = "Hello";
-  }
-}
+// function myFunction() {
+//   let date = $('.play-date')
+//   var x = document.getElementById("myDIV");
+//   if (x.innerHTML === "Hello") {
+//     x.innerHTML = "Swapped text!";
+//   } else {
+//     x.innerHTML = "Hello";
+//   }
+// }
 
 
 
