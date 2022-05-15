@@ -8,6 +8,40 @@ $(document).mousemove(function(e){
   $(".follower-center").css({left: e.pageX, top:e.pageY});
 });
 
+//////////////////////// inner container hover //////////////////
+$('.inner-border-top-left').hover(
+  function(){
+    console.log('hover working')
+    $('.inner-border-top-left-name').addClass('visible')
+  }, function(){
+    $('.inner-border-top-left-name').removeClass('visible')
+  }
+)
+
+$('.inner-border-top-right').hover(
+  function(){
+    $('.inner-border-top-right-name').addClass('visible')
+  }, function(){
+    $('.inner-border-top-right-name').removeClass('visible')
+  }
+)
+
+$('.inner-border-bottom-left').hover(
+  function(){
+    $('.inner-border-bottom-left-name').addClass('visible')
+  }, function(){
+    $('.inner-border-bottom-left-name').removeClass('visible')
+  }
+)
+
+$('.inner-border-bottom-right').hover(
+  function(){
+    $('.inner-border-bottom-right-name').addClass('visible')
+  }, function(){
+    $('.inner-border-bottom-right-name').removeClass('visible')
+  }
+)
+
 
 ///////////////// .content size
 $(".content").css({
