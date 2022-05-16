@@ -43,7 +43,7 @@ $('.inner-border-bottom-right').hover(
 )
 
 
-///////////////// .content size
+///////////////// .content size//////////////////////////
 $(".content").css({
   'height': ($(".border").height() - 12 + 'px')
 });
@@ -62,14 +62,39 @@ $(window).resize(function() {
   });
 });
 
-///////////// .horizontal width
-$(".horizontal").css({
+///////////// .content-imgs width/////////////////
+$(".content-imgs").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
 
 
-/////////////// change height of .horizontal when it reaches center of screen.
-const enlargeSize = document.querySelectorAll('.horizontal');
+
+$('.filmstrip').each(function(){
+  let thisFilmstrip = $(this);
+  let imgWidth;
+  let imgCount;
+
+   thisFilmstrip.on(
+      "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+      function() {
+          imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+          console.log('width ' + imgWidth)
+          
+          imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+          console.log('img count is '+ imgCount)   
+
+          
+  // width here incorrect because it's using width from remove('enlarge')  
+
+          $(this).css({
+            'width': (imgWidth * (imgCount) + 24 +'px')
+          });                
+    });
+})
+
+
+/////////////// change height of .content-imgs when it reaches center of screen.
+const enlargeSize = document.querySelectorAll('.content-imgs');
 
 const appearOptions = {
   rootMargin: '-50% 0% -50% 0%'
@@ -82,40 +107,62 @@ const appearWhenCenter = new IntersectionObserver
   ) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // for first .horizontal.enlarge in html, after it enlarges the width stays as enlarged width??
+        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
         entry.target.classList.add('enlarge');
 
-        $('.filmstrip').each(function() {
-          // i don't know why this code is wrong but it's wrong lol. 
-          //was attempting to make the variable get the value after transition but it's not working
-          let imgCount = $('.filmstrip-img').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-                $('.filmstrip-imgs', (this)).length
-                console.log(imgCount)
-          });
-          let imgWidth = $('.filmstrip-img').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-                $(this).innerWidth();
-          });
+        
+        $('.filmstrip').each(function(){
+          let thisFilmstrip = $(this);
+          let imgWidth;
+          let imgCount;
 
-          // width here incorrect because it's using width from remove('enlarge')
-          $(this).css({
-            'width': (imgWidth * (imgCount) + 60 +'px')
-          });         
-          // appearWhenCenter.unobserve(entry, target);
+           thisFilmstrip.on(
+              "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+              function() {
+                  imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+                  console.log('width ' + imgWidth)
+                  
+                  imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+                  console.log('img count is '+ imgCount)   
+
+
+          // width here incorrect because it's using width from remove('enlarge')  
+
+                  $(this).css({
+                    'width': (imgWidth * (imgCount) + 16 +'px')
+                  });                 
+            });
         })
+        $('.content-imgs').css('opacity', '')
+
+        // appearWhenCenter.unobserve(entry, target);
+        // })
       } else {
         entry.target.classList.remove('enlarge');
 
-        $('.filmstrip').each(function() {
-          let imgWidth = $('.filmstrip-img').innerWidth();
-          let imgCount = $(".filmstrip-img", $(this)).length;
-          
-          $(this).css({
-            'width': (imgWidth * (imgCount) + 20 +'px')
-          });
+        $('.filmstrip').each(function(){
+          let thisFilmstrip = $(this);
+          let imgWidth;
+          let imgCount;
+
+           thisFilmstrip.on(
+              "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+              function() {
+                  imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+                  console.log('width ' + imgWidth)
+                  
+                  imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+                  console.log('img count is '+ imgCount)   
+
+                  
+          // width here incorrect because it's using width from remove('enlarge')  
+
+                  $(this).css({
+                    'width': (imgWidth * (imgCount) + 16 +'px')
+                  });                
+            });
         })
-        // appearWhenCenter.unobserve(entry, target);
+        $('.content-imgs').css('opacity', '0.4')
       }
     })
   }, appearOptions);
@@ -174,7 +221,7 @@ enlargeSize.forEach(enlargeSize =>{
 
 // $(".content").scroll(function() { 
 
-//     $(".horizontal").each(function() {
+//     $(".content-imgs").each(function() {
 //     if ($(this).isInViewport()) {
 //       $(this).addClass("enlarge")
 
@@ -376,14 +423,14 @@ $('.play-card').click(function() {
 
 
 
-// /*horizontal scroll*/
-// var page = document.getElementById('horizontal-loop');
+// /*content-imgs scroll*/
+// var page = document.getElementById('content-imgs-loop');
 // var last_loop = page.getElementsByClassName('loop');
 // last_loop = last_loop[last_loop.length-1];
 // var dummy_x = null;
 
 // window.onscroll = function () {
-//   // Horizontal Scroll.
+//   // content-imgs Scroll.
 //   var y = document.body.getBoundingClientRect().top;
 //   page.scrollLeft = -y;
   

@@ -8,8 +8,11 @@ $black: #000000;
 
 body {
   background-color: $black;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1.125rem;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   color: $white;
   display: flex;
   justify-content: center;
@@ -19,36 +22,50 @@ body {
 }
 
 h2 {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 1.375rem;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-size: 1.75rem;
   color: $white;
-  margin: 0 0 0.375rem 0;
-  font-weight: 600;
+  margin: 0 0 1.375rem 0;
+  font-weight: 900;
   font-style: bold;
+  line-height: 2.375rem;
 }
 
 h3 {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Darker Grotesque', sans-serif;
   font-size: 1.25rem;
   color: $white;
-  margin: 0;
+  margin: 0 0 0.625rem 0;
   text-transform: uppercase;
-  font-weight: 500;
-  font-style: medium;
-  margin-bottom: 0.375rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: 'Darker Grotesque', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
 }
 
 p, button {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1.125rem;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   color: $white;
   margin: 0;
-  line-height: 1.25;
 }
 
-section {
+//section class
+.block {
+  display: grid;
   grid-column: span 8;
-  margin-bottom: 5rem;
+  margin-bottom: 5.625rem;
   &:last-child {
     margin-bottom: 0;
   }
@@ -411,30 +428,30 @@ a:active {
   @media (max-width: 600px) {
     height: 40.625rem;
     }
-  .top-left, .top-right, .bottom-right, .bottom-left {
+  &-top-left, &-top-right, &-bottom-right, &-bottom-left {
     height: 3.75rem;
     width: 3.75rem;
     position: absolute;
   }
-  .top-left {
+  &-top-left {
     border: solid $white;
     border-width: 0.125rem 0 0 0.125rem;
     top: 0;
     left: 0;
   }
-  .top-right {
+  &-top-right {
     border: solid $white;
     border-width: 0.125rem 0.125rem 0 0;
     top: 0;
     right: 0;
   }
-  .bottom-right {
+  &-bottom-right {
     border: solid $white;
     border-width: 0 0.125rem 0.125rem 0;
     bottom: 0;
     right: 0;
   }
-  .bottom-left {
+  &-bottom-left {
     border: solid $white;
     border-width: 0 0 0.125rem 0.125rem;
     bottom: 0;
@@ -461,13 +478,13 @@ a:active {
   &::-webkit-scrollbar-track { /* Background */
     background: $black;
   }
-  .heading {
+  &-hero {
     grid-column: span 8;
     position: relative;
     height: auto;
     margin: 0 0 1.875rem;
     display: flex;
-    .heading-img {
+    &-img {
       width: 100%;
       height: auto;
     }
@@ -489,24 +506,44 @@ a:active {
       }
     }
   }
-  .design-system {
+  &-about {
     grid-column: span 8;
     width: 100%;
-    height: auto;
-  }
-  .about {
-    grid-column: span 8;
-    width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 1rem;
     justify-content: space-between;
-    .about-details {
+    &-text {
       min-width: 120px;
     }
     &:not(:last-child){
       margin-bottom: 1.875rem;
     }
+    &-heading {
+      grid-column: span 5;
+      background-color: $white;
+      color: $black;
+      padding: 2rem;
+    }
+    &-box {
+      grid-column: span 3;
+      flex-direction: column;
+      &-text {
+        border: 0.0625rem $white solid;
+      padding: 1rem;
+        &:not(:last-child){
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
-  .block {
+  ///////////////////change this
+  .design-system {
+    grid-column: span 8;
+    width: 100%;
+    height: auto;
+  }
+  &-heading {
     background-color: $white;
     color: $black;
     grid-column: span 8;
@@ -518,7 +555,8 @@ a:active {
     align-items: center;
     margin-bottom: 2.5rem;
   }
-  .box {
+  &-box {
+    grid-column: span 8;
     max-width: 100%;;
     display: flex;
     justify-content: space-between;
@@ -527,45 +565,31 @@ a:active {
       flex-direction: column;
       row-gap: 1rem;
       }
-    .box-details {
+    &-text {
       border: 0.0625rem $white solid;
       padding: 1rem;
     }
   }
-  .brief {
+  &-text {
     grid-column: span 8;
     flex-wrap: wrap;
     &:not(:last-child){
       margin-bottom: 1.875rem;
     }
   }
-  .final-details {
-    display: grid;
-    grid-template-columns: 2fr 6fr;
-    grid-column-gap: 1rem;
-    flex-wrap: wrap;
-    &:not(:last-child) {
-      margin-bottom: 1.875rem;
-    }
-    &:not(:first-child) {
-      margin-top: 3.125rem;
-    }
-  }
-  .horizontal.enlarge {
-    transition: all 300ms ease-in-out;
-    height: 37.5rem;
-    .filmstrip {
-      --size: 1.5rem;
-      padding: 3.75rem 0;
-      transition: padding 0ms linear;
-      transition: all 300ms ease-in-out;
-      .filmstrip-imgs {
-        padding: 0 0.5rem;
-        transition: all 300ms ease-in-out;
-      }
-    }
-  }
-  .horizontal {
+  // .final-details {
+  //   display: grid;
+  //   grid-template-columns: 2fr 6fr;
+  //   grid-column-gap: 1rem;
+  //   flex-wrap: wrap;
+  //   &:not(:last-child) {
+  //     margin-bottom: 1.875rem;
+  //   }
+  //   &:not(:first-child) {
+  //     margin-top: 3.125rem;
+  //   }
+  // }
+  &-imgs {
     transition: all 300ms ease-in-out;
     height: 25rem;
     grid-column: span 8;
@@ -575,8 +599,8 @@ a:active {
     border-width: 0.0625rem 0 0;
     border-style: solid;
     border-color: $white;
-    padding: 0 1rem;
-    margin: 0;
+    // padding: 0 1rem;
+    margin: 0 0 4.5rem 0;
     &::-webkit-scrollbar {
       height: 0.0625rem ; /* Mostly for vertical scrollbars */
     }
@@ -591,7 +615,7 @@ a:active {
       overflow: hidden;
       background: $white;
       height: 100%;
-      --background: rgba(0, 0, 0);
+      --background: rgba(0, 0, 0, 0.9);
       --size: 1rem;
       background-image:
         linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
@@ -606,12 +630,15 @@ a:active {
       transition: padding 0ms linear;
       transition: all 300ms ease-in-out;
       .filmstrip-imgs {
+        display: flex;
         flex-wrap: nowrap;
         width: 100%;
         height: 100%;
         transition: all 300ms ease-in-out;
-        // overflow: hidden;
+        overflow: hidden;
+        padding: 0 0.5rem;
         .filmstrip-img {
+          transition: all 300ms ease-in-out;
           width: auto;
           height: 100%;
           padding: 0.5rem;
@@ -619,9 +646,22 @@ a:active {
       }
     }
   }
+  &-imgs.enlarge {
+    transition: all 300ms ease-in-out;
+    height: 37.5rem;
+    .filmstrip {
+      --size: 1.5rem;
+      padding: 3.75rem 0;
+      transition: padding 0ms linear, all 300ms ease-in-out;
+      .filmstrip-imgs {
+        padding: 0 0.5rem;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
 }
 
-//////////////////////////play section
+//////////////////////////play section///////////////////////////////
 .play {
   position: absolute;
   width: 824px;
