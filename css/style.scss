@@ -51,7 +51,7 @@ h4 {
   margin: 0;
 }
 
-p, button {
+p, .button {
   font-family: 'Darker Grotesque', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -60,6 +60,79 @@ p, button {
   color: $white;
   margin: 0;
 }
+
+
+.button {
+  text-transform: uppercase;
+  height: 2.5rem;
+  width: auto;
+  padding: 0.75rem;
+  margin: 0 1rem 1rem 0;
+  border: 0.0625rem solid $white;   
+  display: flex;   
+  align-items: center;
+  text-decoration: none;
+  background-color: $black;
+  transition: transform 200ms ease-out;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 200ms ease-out;
+    background-color: $white;
+    .bottom-right-nav-text, .top-left-name, .material-symbols-outlined {
+      color: $black;
+    }
+  }
+  &:active {
+    background-color: $red;
+    .bottom-right-nav-text, .top-left-name, .material-symbols-outlined {
+      color: $white;
+    }
+  }
+  @media (max-width: 600px) {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    &:hover {
+      padding: 0.5rem;
+    }
+  }
+  &:hover .outer-frame-text {
+    flex: 1;
+    width: auto;
+    opacity: 1;
+    transition: all 200ms ease-in;
+  }
+  .material-symbols-outlined {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: $white;
+    transition: font-size 100ms ease-in;
+    margin-right: 0.5rem;
+  }
+  p {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1rem;
+  }
+}
+
+  // &-text {
+  //   margin-left: 0.5rem;
+  //   flex: 1;
+  //   @media (max-width: 600px) {
+  //     flex: 0;
+  //     overflow: hidden;
+  //     opacity: 0;
+  //     width: 0;
+  //     transition: all 200ms ease-in;
+  //   }
+  // }
+
+
+
+
+
+
+
 
 //section class
 .block {
@@ -292,54 +365,54 @@ a:active {
     .bottom-right {
       display: flex;
       align-items: center;
-      &-nav {
-        height: 2.5rem;
-        width: auto;
-        padding: 0.75rem;
-        margin: 0 1rem 1rem 0;
-        border: 0.0625rem solid $white;   
-        display: flex;   
-        align-items: center;
-        text-decoration: none;
-        background-color: $black;
-        transition: transform 200ms ease-out;
-        &:hover {
-          transform: scale(1.1);
-          transition: transform 200ms ease-out;
-          background-color: $white;
-          .bottom-right-nav-text, .top-left-name, .material-icons-outlined {
-            color: $black;
-          }
-        }
-        &:active {
-          background-color: $red;
-          .bottom-right-nav-text, .top-left-name, .material-icons-outlined {
-            color: $white;
-          }
-        }
-        @media (max-width: 600px) {
-          padding: 0.5rem 0 0.5rem 0.5rem;
-          &:hover {
-            padding: 0.5rem;
-          }
-        }
-        &:hover .outer-frame-text {
-          flex: 1;
-          width: auto;
-          opacity: 1;
-          transition: all 200ms ease-in;
-        }
-      }
-      .material-icons-outlined {
-        font-family: 'Material Icons';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1.5rem;
-        color: $white;
-        transition: font-size 100ms ease-in;
-        margin-right: 0.5rem;
-      }
-      &-text {
+    //   &-nav {
+    //     height: 2.5rem;
+    //     width: auto;
+    //     padding: 0.75rem;
+    //     margin: 0 1rem 1rem 0;
+    //     border: 0.0625rem solid $white;   
+    //     display: flex;   
+    //     align-items: center;
+    //     text-decoration: none;
+    //     background-color: $black;
+    //     transition: transform 200ms ease-out;
+    //     &:hover {
+    //       transform: scale(1.1);
+    //       transition: transform 200ms ease-out;
+    //       background-color: $white;
+    //       .bottom-right-nav-text, .top-left-name, .material-icons-outlined {
+    //         color: $black;
+    //       }
+    //     }
+    //     &:active {
+    //       background-color: $red;
+    //       .bottom-right-nav-text, .top-left-name, .material-icons-outlined {
+    //         color: $white;
+    //       }
+    //     }
+    //     @media (max-width: 600px) {
+    //       padding: 0.5rem 0 0.5rem 0.5rem;
+    //       &:hover {
+    //         padding: 0.5rem;
+    //       }
+    //     }
+    //     &:hover .outer-frame-text {
+    //       flex: 1;
+    //       width: auto;
+    //       opacity: 1;
+    //       transition: all 200ms ease-in;
+    //     }
+    //   }
+    //   .material-icons-outlined {
+    //     font-family: 'Material Icons';
+    //     font-weight: normal;
+    //     font-style: normal;
+    //     font-size: 1.5rem;
+    //     color: $white;
+    //     transition: font-size 100ms ease-in;
+    //     margin-right: 0.5rem;
+    //   }
+      &-nav-text {
         margin-left: 0.5rem;
         flex: 1;
         @media (max-width: 600px) {
@@ -513,13 +586,13 @@ a:active {
     grid-template-columns: repeat(8, 1fr);
     grid-column-gap: 1rem;
     justify-content: space-between;
+    margin-bottom: 1.875rem;
     &-text {
       min-width: 120px;
     }
-    &:not(:last-child){
-      margin-bottom: 1.875rem;
-    }
     &-heading {
+      align-items: center;
+      display: flex;
       grid-column: span 5;
       background-color: $white;
       color: $black;
@@ -530,7 +603,7 @@ a:active {
       flex-direction: column;
       &-text {
         border: 0.0625rem $white solid;
-      padding: 1rem;
+        padding: 1rem;
         &:not(:last-child){
           margin-bottom: 1rem;
         }
@@ -627,8 +700,7 @@ a:active {
       background-repeat: repeat-x;
       background-position: -1rem var(--size), top left, -1rem calc(100% - var(--size)), bottom left, 0 var(--size);
       padding: 2.5rem 0;
-      transition: padding 0ms linear;
-      transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out, opacity 100ms ease-in-out, padding 0ms linear;
       .filmstrip-imgs {
         display: flex;
         flex-wrap: nowrap;
@@ -647,7 +719,7 @@ a:active {
     }
   }
   &-imgs.enlarge {
-    transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out, opacity 100ms ease-in-out;
     height: 37.5rem;
     .filmstrip {
       --size: 1.5rem;

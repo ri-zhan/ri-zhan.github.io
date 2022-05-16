@@ -62,13 +62,22 @@ $(window).resize(function() {
   });
 });
 
-///////////// .content-imgs width/////////////////
+
+///////////////content-about-heading height
+$('.content-about-heading').css({
+  'height': ($('.content-about-box')).height(),
+});
+
+
+
+
+///////////// set .content-imgs width/////////////////
 $(".content-imgs").css({
   'width': ($(".content").width() - 1 + 'px') 
 });
 
 
-
+///////////// set .filmstrip width/////////////////
 $('.filmstrip').each(function(){
   let thisFilmstrip = $(this);
   let imgWidth;
@@ -83,15 +92,14 @@ $('.filmstrip').each(function(){
           imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
           console.log('img count is '+ imgCount)   
 
-          
-  // width here incorrect because it's using width from remove('enlarge')  
-
           $(this).css({
             'width': (imgWidth * (imgCount) + 24 +'px')
-          });                
+          });   
+     
     });
 })
 
+$('.content-imgs').css('opacity', '0.4')   
 
 /////////////// change height of .content-imgs when it reaches center of screen.
 const enlargeSize = document.querySelectorAll('.content-imgs');
@@ -125,15 +133,13 @@ const appearWhenCenter = new IntersectionObserver
                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
                   console.log('img count is '+ imgCount)   
 
-
-          // width here incorrect because it's using width from remove('enlarge')  
-
                   $(this).css({
                     'width': (imgWidth * (imgCount) + 16 +'px')
                   });                 
+                  $(this).parent('.content-imgs').css('opacity', '1')           
+
             });
         })
-        $('.content-imgs').css('opacity', '')
 
         // appearWhenCenter.unobserve(entry, target);
         // })
@@ -154,15 +160,12 @@ const appearWhenCenter = new IntersectionObserver
                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
                   console.log('img count is '+ imgCount)   
 
-                  
-          // width here incorrect because it's using width from remove('enlarge')  
-
                   $(this).css({
                     'width': (imgWidth * (imgCount) + 16 +'px')
-                  });                
+                  });     
+                  $(this).parent('.content-imgs').css('opacity', '0.4')           
             });
         })
-        $('.content-imgs').css('opacity', '0.4')
       }
     })
   }, appearOptions);
@@ -170,93 +173,6 @@ const appearWhenCenter = new IntersectionObserver
 enlargeSize.forEach(enlargeSize =>{
   appearWhenCenter.observe(enlargeSize);
 })
-
-// input.addEventListener('focus',  function(ev) {
-//   input.classList.add('expand');
-//   input.addEventListener(transitionEndEventName, callback);
-// });
-
-
-
-
-
-
-
-
-
-///////////////////////////////get end of transition////////////////////////
-// let transitionEndEventName = getTransitionEndEventName();
-
-// function getTransitionEndEventName() {
-//   var transitions = {
-//       "transition"      : "transitionend",
-//       "OTransition"     : "oTransitionEnd",
-//       "MozTransition"   : "transitionend",
-//       "WebkitTransition": "webkitTransitionEnd"
-//    }
-//   let bodyStyle = document.body.style;
-//   for(let transition in transitions) {
-//       if(bodyStyle[transition] != undefined) {
-//           return transitions[transition];
-//       } 
-//   }
-// }
-///////////////////////////////END OF get end of transition////////////////////////
-
-
-
-
-//////////////////////////PREVIOUS SCROLL EVENT LISTNER////////////////////////////
-// $.fn.isInViewport = function() {
-//   var elementTop = $(this).offset().top;
-//   var elementBottom = elementTop + $(this).outerHeight();
-
-//   var viewportTop = $(window).scrollTop() + $(window).height() / 2;
-//   var viewportBottom = $(window).scrollTop() + $(window).height() / 2;
-
-//   return elementBottom > viewportTop && elementTop < viewportBottom;
-// };
-
-
-
-// $(".content").scroll(function() { 
-
-//     $(".content-imgs").each(function() {
-//     if ($(this).isInViewport()) {
-//       $(this).addClass("enlarge")
-
-//       // code for changing width of filmstrip depending on how many iamges there are
-
-//       $('.filmstrip').each(function() {
-//         let imgWidth = $('.filmstrip-img').innerWidth();
-//         let imgCount = $(".filmstrip-img", $(this)).length;
-
-//         $(this).css({
-//           'width': (imgWidth * (imgCount) + 36 +'px')
-//         });
-//       })
-//     }
-//     else {
-//       $(this).removeClass("enlarge")
-
-//       // code for changing width of filmstrip depending on how many iamges there are
-//       $('.filmstrip').each(function() {
-//         let imgWidth = $('.filmstrip-img').innerWidth();
-//         let imgCount = $(".filmstrip-img", $(this)).length;
-        
-//         $(this).css({
-//           'width': (imgWidth * (imgCount) + 20 +'px')
-//         });
-//       })
-//     }
-    
-//   });
-// });
-//////////////////////////END OF PREVIOUS SCROLL EVENT LISTNER////////////////////////////
-
-
-
-
 
 
 /////////////////////////show play-description-text depending on tag
