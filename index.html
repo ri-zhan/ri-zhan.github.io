@@ -21,12 +21,35 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
 <body> 
     <span class="follower-center follower"></span>
     <span class="follower-around follower"></span>
-    
-    <div class="inner-frame">
+
+    <!-- simplified frame -->
+    <div class="inner-frame simplified">
+        <div class="inner-border">
+            <a href="project1.html" class="inner-border-top-left"></a>
+            <a href="project2.html" class="inner-border-top-right"></a>
+            <a href="project3.html" class="inner-border-bottom-right"></a>
+            <a href="more.html" class="inner-border-bottom-left"></a>
+        </div>
+
+        <span class="circle">
+            <span class="circle-left">
+                <span class="circle-left-inside"></span>
+            </span>
+            <span class="circle-gap"></span>
+            <span class="circle-right">
+                <span class="circle-right-inside"></span>
+            </span>
+        </span>
+    </div>
+
+
+<!-- stylized frame -->
+    <!-- <div class="inner-frame stylized">
         <div class="inner-border">
             <a href="project1.html" class="inner-border-top-left"></a>
             <a href="project2.html" class="inner-border-top-right"></a>
@@ -48,7 +71,7 @@
                 <span class="circle-right-inside"></span>
             </span>
         </span>
-    </div>
+    </div> -->
 
     <div class="outer-frame">
         <div class="outer-frame-border outer-frame-top-left">
@@ -57,7 +80,11 @@
                 <span class="outer-frame-text top-left-name">PLAY</span>
             </a>
         </div>
-        <div class="outer-frame-border outer-frame-top-right"></div>
+        <div class="outer-frame-border outer-frame-top-right">
+            <span class="material-symbols-outlined" class="button">
+                change_circle
+            </span>
+        </div>
         <div class="outer-frame-border outer-frame-bottom-right">
             <span class="bottom-right">
                 <a href="aboutme.html" class="button">
