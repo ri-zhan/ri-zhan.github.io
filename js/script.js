@@ -8,6 +8,28 @@ $(document).mousemove(function(e){
   $(".follower-center").css({left: e.pageX, top:e.pageY});
 });
 
+
+//////////////////////// simplified inner container hover //////////////////
+$('.inner-border').css({
+  'width': ($(".inner-box").outerWidth() + 24 + 'px'),
+  'height': ($(".inner-box").outerHeight() + 24 + 'px')
+});
+
+// $('.inner-border').hover(function(){
+//   $(this).addClass('inner-border show');
+// });
+
+$('.inner-border').mouseenter(function(){
+  $(this).addClass('show');
+  $(this).parent().css({'transform': 'scale(1.05)'})
+});
+
+$('.inner-border').mouseleave(function(){
+  $(this).removeClass('show');
+  $(this).parent().css({'transform': ''})
+});
+
+
 //////////////////////// inner container hover //////////////////
 if ($('.inner-frame').hasClass('stylized')) {
   $('.inner-border-top-left').hover(
