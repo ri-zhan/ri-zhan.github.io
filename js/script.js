@@ -67,30 +67,44 @@ if ($('.inner-frame').hasClass('stylized')) {
 }
 
 
-///////////////// .content size//////////////////////////
-$(".content").css({
-  'height': ($(".border").height() - 12 + 'px')
-});
+// ///////////////// .content size based off of content-border//////////////////////////
+// $(".content").css({
+//   'height': ($(".content-border").height() - 12 + 'px')
+// });
 
-$(".content").css({
-  'max-width': ($(".border").width() - 12 + 'px')
-});
+// $(".content").css({
+//   'max-width': ($(".content-border").width() - 12 + 'px')
+// });
 
-$(window).resize(function() {
-  $(".content").css({
-    'height': ($(".border").height() - 12 + 'px')
-  });
+// $(window).resize(function() {
+//   $(".content").css({
+//     'height': ($(".content-border").height() - 12 + 'px')
+//   });
   
-  $(".content").css({
-    'max-width': ($(".border").width() - 12 + 'px')
-  });
-});
+//   $(".content").css({
+//     'max-width': ($(".content-border").width() - 12 + 'px')
+//   });
+// });
 
 
-///////////////content-about-heading height
-$('.content-about-heading').css({
-  'height': ($('.content-about-box')).height(),
-});
+// /// content size based off of outer frame
+// $(".content").css({
+//     'max-width': ($(".outer-frame").width()/ 12 * 8 + 'px')
+// });
+
+// $(window).resize(function() {
+//   $(".content").css({
+//     'max-width': ($(".outer-frame").width()/ 12 * 8 + 'px')
+//   });
+// });
+
+
+  
+
+// ///////////////content-about-heading height
+// $('.content-about-heading').css({
+//   'height': ($('.content-about-box')).height(),
+// });
 
 
 
@@ -123,80 +137,193 @@ $('.filmstrip').each(function(){
     });
 })
 
-$('.content-imgs').css('opacity', '0.4')   
+// $('.content-imgs').css('opacity', '0.4')   
 
-/////////////// change height of .content-imgs when it reaches center of screen.
-const enlargeSize = document.querySelectorAll('.content-imgs');
 
-const appearOptions = {
-  rootMargin: '-50% 0% -50% 0%'
-};
+// /////////////// change height of .content-imgs when it reaches center of screen.
+// const enlargeSize = document.querySelectorAll('.content-imgs');
 
-const appearWhenCenter = new IntersectionObserver
-(function(
-  entries, 
-  appearWhenCenter
-  ) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        entry.target.classList.add('enlarge');
+// const appearOptions = {
+//   rootMargin: '-50% 0% -50% 0%'
+// };
+
+// const appearWhenCenter = new IntersectionObserver
+// (function(
+//   entries, 
+//   appearWhenCenter
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         entry.target.classList.add('enlarge');
 
         
-        $('.filmstrip').each(function(){
-          let thisFilmstrip = $(this);
-          let imgWidth;
-          let imgCount;
+//         $('.filmstrip').each(function(){
+//           let thisFilmstrip = $(this);
+//           let imgWidth;
+//           let imgCount;
 
-           thisFilmstrip.on(
-              "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
-              function() {
-                  imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
-                  console.log('width ' + imgWidth)
+//            thisFilmstrip.on(
+//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+//               function() {
+//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+//                   console.log('width ' + imgWidth)
                   
-                  imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
-                  console.log('img count is '+ imgCount)   
+//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+//                   console.log('img count is '+ imgCount)   
 
-                  $(this).css({
-                    'width': (imgWidth * (imgCount) + 16 +'px')
-                  });                 
-                  $(this).parent('.content-imgs').css('opacity', '1')           
+//                   $(this).css({
+//                     'width': (imgWidth * (imgCount) + 16 +'px')
+//                   });                 
+//                   $(this).parent('.content-imgs').css('opacity', '1')           
 
-            });
-        })
+//             });
+//         })
 
-        // appearWhenCenter.unobserve(entry, target);
-        // })
-      } else {
-        entry.target.classList.remove('enlarge');
+//         // appearWhenCenter.unobserve(entry, target);
+//         // })
+//       } else {
+//         entry.target.classList.remove('enlarge');
 
-        $('.filmstrip').each(function(){
-          let thisFilmstrip = $(this);
-          let imgWidth;
-          let imgCount;
+//         $('.filmstrip').each(function(){
+//           let thisFilmstrip = $(this);
+//           let imgWidth;
+//           let imgCount;
 
-           thisFilmstrip.on(
-              "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
-              function() {
-                  imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
-                  console.log('width ' + imgWidth)
+//            thisFilmstrip.on(
+//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+//               function() {
+//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+//                   console.log('width ' + imgWidth)
                   
-                  imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
-                  console.log('img count is '+ imgCount)   
+//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+//                   console.log('img count is '+ imgCount)   
 
-                  $(this).css({
-                    'width': (imgWidth * (imgCount) + 16 +'px')
-                  });     
-                  $(this).parent('.content-imgs').css('opacity', '0.4')           
-            });
-        })
-      }
-    })
-  }, appearOptions);
+//                   $(this).css({
+//                     'width': (imgWidth * (imgCount) + 16 +'px')
+//                   });     
+//                   $(this).parent('.content-imgs').css('opacity', '0.4')           
+//             });
+//         })
+//       }
+//     })
+//   }, appearOptions);
 
-enlargeSize.forEach(enlargeSize =>{
-  appearWhenCenter.observe(enlargeSize);
-})
+// enlargeSize.forEach(enlargeSize =>{
+//   appearWhenCenter.observe(enlargeSize);
+// })
+
+
+
+
+// /////////////// horizontal movement as vertical scroll
+// const moveHorizontal = document.querySelectorAll('.content-imgs');
+
+// const appearOptions = {
+//   rootMargin: '0% 0% 0% 0%'
+// };
+
+// const appearWhenCenter = new IntersectionObserver
+// (function(
+//   entries, 
+//   appearWhenCenter
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         entry.target.classList.add('moveHorizontal');
+
+//         // start at left (0%) then move to right 100%
+//         // get width off screen
+//         // on scroll move left to right
+//         // top 0% bottom 100%, left to right
+
+//         // change contnet images to hidden not scroll
+//         // get (contents-imgsLeftPos/content-imgs) * 100
+
+//         // make y  = 100/ screenPercentage
+
+//         var lastScrollTop = 0;
+//         $(window).scroll(function(event){
+//           var st = $(this).scrollTop();
+//           if (st > lastScrollTop){
+//               // downscroll code
+//           } else {
+//               // upscroll code
+//           }
+//           lastScrollTop = st;
+//         });
+
+//         $('.filmstrip').each(function(){
+//           $(this).mousemove(function(e){
+//             $(".follower-around").css({left: e.pageX, top:e.pageY});
+//           });
+//         });
+
+
+//         $(document).mousemove(function(e){
+//           $(".follower-around").css({left: e.pageX, top:e.pageY});
+//         });
+        
+//         $(document).mousemove(function(e){
+//           $(".follower-center").css({left: e.pageX, top:e.pageY});
+//         });
+
+        
+//         $('.filmstrip').each(function(){
+//           let thisFilmstrip = $(this);
+//           let imgWidth;
+//           let imgCount;
+
+//            thisFilmstrip.on(
+//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+//               function() {
+//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+//                   console.log('width ' + imgWidth)
+                  
+//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+//                   console.log('img count is '+ imgCount)   
+
+//                   $(this).css({
+//                     'width': (imgWidth * (imgCount) + 16 +'px')
+//                   });                 
+//                   $(this).parent('.content-imgs').css('opacity', '1')           
+
+//             });
+//         });
+
+//         // appearWhenCenter.unobserve(entry, target);
+//         // })
+//       } else {
+//         entry.target.classList.remove('moveHorizontal');
+
+//         $('.filmstrip').each(function(){
+//           let thisFilmstrip = $(this);
+//           let imgWidth;
+//           let imgCount;
+
+//            thisFilmstrip.on(
+//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+//               function() {
+//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
+//                   console.log('width ' + imgWidth)
+                  
+//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
+//                   console.log('img count is '+ imgCount)   
+
+//                   $(this).css({
+//                     'width': (imgWidth * (imgCount) + 16 +'px')
+//                   });     
+//                   $(this).parent('.content-imgs').css('opacity', '0.4')           
+//             });
+//         })
+//       }
+//     })
+//   }, appearOptions);
+
+// enlargeSize.forEach(enlargeSize =>{
+//   appearWhenCenter.observe(enlargeSize);
+// })
 
 
 /////////////////////////show play-description-text depending on tag
@@ -235,6 +362,18 @@ $('.play-card').click(function() {
     });
   }
 });
+
+
+const target = document.getElementById("target");
+
+document.addEventListener("wheel", function(e){
+  // prevent the default scrolling event
+  e.preventDefault();
+
+  // scroll the div
+  target.scrollBy(e.deltaX, e.deltaY);
+})
+
 
 
 // $(".expand").css({
