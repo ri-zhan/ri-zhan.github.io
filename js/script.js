@@ -32,12 +32,12 @@ $('.inner-border').mouseleave(function(){
 
 //////////////////////// inner container hover //////////////////
 if ($('.inner-frame').hasClass('stylized')) {
-  $('.inner-border-top-left').hover(
+  $('.inner-border-bottom-left').hover(
     function(){
       console.log('hover working')
-      $('.inner-border-top-left-name').addClass('visible')
+      $('.inner-border-bottom-left-name').addClass('visible')
     }, function(){
-      $('.inner-border-top-left-name').removeClass('visible')
+      $('.inner-border-bottom-left-name').removeClass('visible')
     }
   )
   
@@ -99,7 +99,33 @@ if ($('.inner-frame').hasClass('stylized')) {
 // });
 
 
+$('.outer-frame-border-individual').css({
+  'height': $(".outer-frame-border-individual").width() + 'px',
+})
+
+$('.outer-frame-btns').css({
+  'height': $('.outer-frame-border').height() - 12 + 'px',
+  'width': $('.outer-frame-border').width() - 12 + 'px',
+})
+
+
+$(window).resize(function() {
+
+  $('.inner-border').css({
+    'width': ($(".inner-box").outerWidth() + 24 + 'px'),
+    'height': ($(".inner-box").outerHeight() + 24 + 'px')
+  });
   
+  $('.outer-frame-border-individual').css({
+    'height': $(".outer-frame-border-individual").width() + 'px',
+  })
+  
+  $('.outer-frame-btns').css({
+    'height': $('.outer-frame-border').height() - 12 + 'px',
+    'width': $('.outer-frame-border').width() - 12 + 'px',
+  })
+});
+
 
 // ///////////////content-about-heading height
 // $('.content-about-heading').css({
@@ -214,6 +240,34 @@ $('.filmstrip').each(function(){
 // })
 
 
+/////////////// animate section-heading upon entering screen
+const expandHeading = document.querySelectorAll('.section-heading');
+
+const appearOptions = {
+  rootMargin: '-10% 0% 0% 0%'
+};
+
+const appearWhenCenter = new IntersectionObserver
+(function(
+  entries, 
+  appearWhenCenter
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+        entry.target.classList.add('expand');
+
+      
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        entry.target.classList.remove('expand');
+      }
+    })
+  }, appearOptions);
+
+expandHeading.forEach(expandHeading =>{
+  appearWhenCenter.observe(expandHeading);
+})
 
 
 // /////////////// horizontal movement as vertical scroll
