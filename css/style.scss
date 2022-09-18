@@ -75,7 +75,7 @@ button {
   font-weight: 400;
   line-height: 1.75rem;
   color: $black;
-  margin: 0;
+  gap: 0.5rem;
   text-transform: uppercase;
   height: 2.5rem;
   width: auto;
@@ -87,21 +87,28 @@ button {
   justify-content: center;
   text-decoration: none;
   background-color: $white;
-  transition: transform 200ms ease-out;
+  transition: all 100ms ease-out;
   &:hover {
     transform: scale(1.1);
-    transition: transform 200ms ease-out;
+    transition: all 100ms ease-out;
     background-color: $black;
     color: $white;
+    .btn-individual {
+      color: $white;
+      .material-symbols-outlined {
+        color: $white;
+      }
+      .bottom-left-icon {
+        background-color: $white;
+      }
+    }
     p {
       color: $white;
     }
-    ////fix
-    .btn-icon {
-      &.material-symbols-outlined {
-        color: $white;
-      }
-    }
+    // .btn-icon {
+    //   color: white;
+    //   background-color: $white;
+    // }
   }
   &:active {
     background-color: $red;
@@ -119,7 +126,7 @@ button {
     font-size: 1.5rem;
     color: $black;
     transition: font-size 100ms ease-in;
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
   }
   p {
     font-family: 'Cutive Mono', monospace;
@@ -501,6 +508,7 @@ a:active {
 
 
 .outer-frame {
+  z-index: -999999;
   display: grid;
   width: calc(100% - 1rem);
   height: calc(100% - 1rem);
@@ -572,17 +580,25 @@ a:active {
         opacity: 0;
       }
     }
-    .btn-icon {
+    .btn-individual {
       display: flex;
       width: fit-content;
+      align-self: center;
+      justify-self: flex-start;
+      transition: all 100ms ease-in;
+      column-gap: 0.5rem;
+      .btn-icon {
+        align-self: center;
+        justify-content: flex-start;
+        // margin-right: 0.5rem;  
+        transition: all 100ms ease-in;
+      }
       .bottom-left-icon {
           display: inline-block;
           height: 1.5rem;
           width: 1.5rem;
           border-radius: 50%;
           background-color: $red;
-          margin-right: 0.5rem;
-          transition: all 100ms ease-in-out;
         }
       //   &-name {
       //     opacity: 0;
@@ -619,8 +635,6 @@ a:active {
         font-style: normal;
         font-size: 1.5rem;
         color: $black;
-        transition: font-size 100ms ease-in;
-        margin-right: 0.5rem;
       }
       p {
         font-family: 'Cutive Mono', monospace;
@@ -808,23 +822,6 @@ a:active {
         height: 20rem;
         width: 100%;
       }
-      .icons {
-        bottom: 0;
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        padding: 0.8rem;
-        .icon {
-          margin-right: 0.8rem;
-          background-color: $white;
-          border: 0.0625rem solid $black;
-          height: 3rem;
-          width: auto;
-          align-items: center;
-          justify-content: center;
-          padding: 1rem;
-        }
-      }
     }
     .column-4-6 {
       display: grid;
@@ -885,24 +882,25 @@ a:active {
         grid-column: 3/11;
       }
     }
-    &-about {
+    .column-1-1 {
       grid-column: span 10;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: 1fr 4fr 1fr;
+      grid-template-rows: 1fr 2fr 5fr 1fr;
       justify-content: space-between;
       margin-bottom: 3.75rem;
-      &-heading {
+      // padding: 2.625rem;
+      .column-1 {
         align-items: center;
         display: flex;
         margin-bottom: 0;
         grid-column: 2/10;
+        grid-row: 3;
+      }
+      >.section-heading {
+        grid-column: 2/10;
         grid-row: 2;
-        // if using background block, add back in js content-about-heading height
-        .content-border {
-          border-color: $black;
-        }
       }
       // &-box {
       //   grid-column: span 10;
@@ -928,11 +926,11 @@ a:active {
       height: auto;
     }
     .section-heading {
-      background-color: $black;
-      color: $white;
+      // background-color: $black;
+      color: $black;
       grid-column: span 10;
       width: 40%;
-      padding: 2rem 2.625rem;
+      max-height: fit-content;
       justify-self: center;
       display: flex;
       justify-content: center;
@@ -942,6 +940,16 @@ a:active {
       &.expand {
         width: 100%;
         transition: all 500ms ease-in-out;
+      }
+      &-line {
+        width: 100%;
+        height: -50%;
+        border-bottom: 1px solid $black;
+      }
+      >h2 {
+        margin-bottom: 0;
+        padding: 0 2rem;
+        min-width: fit-content;
       }
     }
     .column-5-5 {
@@ -1171,6 +1179,7 @@ a:active {
       width: auto;
       padding: 0.5rem;
       margin: 0 0 1rem 0;
+      column-gap: 0.5rem;
       border: 0.0625rem solid $black;   
       display: flex;   
       align-items: center;
