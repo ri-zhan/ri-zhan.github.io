@@ -109,6 +109,21 @@ $('.outer-frame-btns').css({
 })
 
 
+// $('.btn-individual').css({
+//   'width': $('.outer-frame-border').width() - 12 + 'px',
+// })
+
+// $('.outer-frame').hover(function(){
+//   $(this).css({
+//     'z-index': '999',
+//   });
+// });
+
+$('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left').hover(function() {
+  $('.btn-individual').toggleClass('minimized');
+});
+
+
 $(window).resize(function() {
 
   $('.inner-border').css({
