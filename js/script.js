@@ -18,15 +18,32 @@ $('.inner-border').css({
 // $('.inner-border').hover(function(){
 //   $(this).addClass('inner-border show');
 // });
+let position;
 
-$('.inner-border').mouseenter(function(){
-  $(this).addClass('show');
-  $(this).parent().css({'transform': 'scale(1.05)'})
+// $('inner-box').hover(function(){
+//   $(this).css({'transform': 'scale(1.05)'});
+//   position = $(this).position();
+//   console.log(position);
+// });
+
+$('.inner-box').mouseenter(function(){
+  $(this).css({'transform': 'scale(1.025)'});
+  $('.inner-border').addClass('show');
+  position = $(this).position();
+  console.log(position);
+  $('.inner-border').css({
+    'left': position.left - 12 + 'px',
+    'top': position.top - 12 + 'px',
+  });
 });
 
-$('.inner-border').mouseleave(function(){
-  $(this).removeClass('show');
-  $(this).parent().css({'transform': ''})
+$('.inner-box').mouseleave(function(){
+  $(this).css({'transform': ''});
+  $('.inner-border').removeClass('show');
+  $('.inner-border').css({
+    'left': '',
+    'top': '',
+  });
 });
 
 
