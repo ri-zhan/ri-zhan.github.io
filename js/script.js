@@ -19,9 +19,7 @@ $('.inner-border').css({
 let position;
 
 
-$( document ).ready(function() {
-  innerBorderPos(this);
-});
+// 
 
 // get content-frame size
 // iframe = content-frame size
@@ -31,6 +29,8 @@ $('.fullFrameVideo').css({
   'width': contentSize + 'px',
 });
 
+
+
 // $( document ).ready(function() {
 //   $('fullFrameVideo').css({
 //     'width': contentSize + 'px',
@@ -39,12 +39,22 @@ $('.fullFrameVideo').css({
 
 function innerBorderPos() {
   position = $('.inner-frame').children('.inner-box').eq(1).position();
+
+  $('.inner-frame').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
+    position = $('.inner-frame').children('.inner-box').eq(1).position();
+  });
   $('.inner-border').css({
     'left': position.left - 12 + 'px',
     'top': position.top - 12 + 'px',
     // 'transition': 'top 0s, left 0s;'
   });
 };
+
+$( document ).ready(function() {
+  innerBorderPos(this);
+});
+
+
 
 $('.inner-box').mouseenter(function(){
   $(this).css({'transform': 'scale(1.025)'});
