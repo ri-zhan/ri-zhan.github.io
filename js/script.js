@@ -23,6 +23,19 @@ $( document ).ready(function() {
   innerBorderPos(this);
 });
 
+// get content-frame size
+// iframe = content-frame size
+
+let contentSize = $('.content').width();
+$('.fullFrameVideo').css({
+  'width': contentSize + 'px',
+});
+
+// $( document ).ready(function() {
+//   $('fullFrameVideo').css({
+//     'width': contentSize + 'px',
+//   })
+// });
 
 function innerBorderPos() {
   position = $('.inner-frame').children('.inner-box').eq(1).position();
