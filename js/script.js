@@ -30,48 +30,69 @@ $('.fullFrameVideo').css({
 });
 
 
+
+// $('.openGIF.general-border > img').css({
+//   'height': $('.content').height() - 96 + 'px',
+//   'width': $('.content').width() - 20 + 'px',
+// });
+
+
+$('.fullFrameContainer').css({
+  'height': $('.content').height() - 64 + 'px',
+  'width': $('.content').width() - 20 + 'px',
+});
+
+
+$('.fullFrameContainer > img').css({
+  'height': $('.content').height() - 128 + 'px',
+  'width': $('.content').width() - 64 + 'px',
+});
+
+
+
 $('#slideshow').css({
   'height': ($('#slideshow > div > img')).outerHeight(),
 });
 
-const playSlideShow = document.querySelectorAll('#slideshow');
+
+const openGIF = document.querySelectorAll('.fullFrameContainer');
 
 const appearWhen = {
-  rootMargin: '0% 0% 0% 0%'
+  rootMargin: '10% 30%'
 };
 
 const appearAtCenter = new IntersectionObserver
 (function(
   entries, 
-  appearWhenCenter
+  appearAtCenter
   ) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        entry.target.classList.add('playSlideShow');
+        entry.target.classList.add('openGIF');
 
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        entry.target.classList.remove('playSlideShow');
+        entry.target.classList.remove('openGIF');
       }
     })
   }, appearWhen);
 
-playSlideShow.forEach(playSlideShow =>{
-  appearAtCenter.observe(playSlideShow);
+openGIF.forEach(openGIF =>{
+  appearAtCenter.observe(openGIF);
 });
 
 
-$(".playSlideShow > div:gt(0)").hide();
+// $(".openGIF > div:gt(0)").hide();
 
-setInterval(function() { 
-  $('.playSlideShow > div:first')
-  .fadeOut(700)
-  .next()
-  .fadeIn(700)
-  .end()
-  .appendTo('.playSlideShow');
-}, 2000); 
+// setInterval(function() { 
+//   $('.openGIF > div:first')
+//   .fadeOut(700)
+//   .next()
+//   .fadeIn(700)
+//   .end()
+//   .appendTo('.openGIF');
+// }, 2000); 
 
 
 

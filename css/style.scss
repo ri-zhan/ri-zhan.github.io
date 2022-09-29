@@ -154,11 +154,65 @@ section {
   justify-content: space-between;
 }
 
-
-.fullFrameVideo {
-  height: auto;
+.fullFrameContainer {
+  width: 5rem;
+  grid-column: span 10;
   min-height: 30rem;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+  transition: all 600ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  // .fullFrame {
+  //   grid-column: span 10;
+  //   height: 100%;
+  //   overflow: hidden;
+  //   width: 0px;
+  //   transition: all 600ms ease-in-out;
+    // .general-border {
+    //   width: 3rem;
+    //   justify-self: center;
+    //   transition: all 600ms ease-in-out;
+    // }
+    img {
+      position: absolute;
+      justify-self: center;
+      margin: 2rem 0 2rem 0;
+      width: auto;
+      object-fit: scale-down;
+      transition: all 600ms ease-in-out;
+    }
+    &.openGIF {
+      .general-border-container {
+        .general-border-cover {
+          width: 0;
+        }
+      }
+    }
+    .general-border-container {
+      display: flex;
+      width: 100%;
+      justify-self: center;
+      transition: all 600ms ease-in-out;
+      position: absolute;
+      height: 100%;
+      .general-border-cover {
+        width: 80%;
+        height: 100%;
+        background-color: $black;
+        transition: all 600ms ease-in-out;
+      }
+      .general-border {
+        min-width: 5rem;
+        height: 100%;
+        transition: all 600ms ease-in-out;
+      }
+    }
+    
+  // }
 }
+
 
 // for scrolling outside of div //
 #target{
@@ -224,6 +278,7 @@ a:active {
 }
 
 .general-border {
+  width: 100%;
   grid-template-rows: 1fr 4fr 1fr;
   --b: 0.125rem;   /* thickness of the border */
   --c: white;   /* color of the border */
@@ -899,23 +954,23 @@ a:active {
       display: grid;
       grid-column: span 10;
       width: 100%;
-      row-gap: 2rem;
+      row-gap: 0.5rem;
       margin-bottom: 3.75rem;
       overflow-x: hidden;
     }
-    #slideshow { 
-      position: relative; 
-      grid-column: span 10;
-      width: 100%; 
-      height: 50rem; 
-      overflow: hidden;
-    }
-    #slideshow > div { 
-      position: absolute; 
-      img {
-        object-fit: cover;
-      }
-    }
+    // #slideshow { 
+    //   position: relative; 
+    //   grid-column: span 10;
+    //   width: 100%; 
+    //   height: 50rem; 
+    //   overflow: hidden;
+    // }
+    // #slideshow > div { 
+    //   position: absolute; 
+    //   img {
+    //     object-fit: cover;
+    //   }
+    // }
     .column-2-8 {
       display: grid;
       grid-column: span 10;
@@ -933,6 +988,8 @@ a:active {
         height: 100%;
         width: 100%;
         grid-column: 3/11;
+        display: flex;
+        flex-direction: column;
       }
       > img {
         margin-top: 2rem;
