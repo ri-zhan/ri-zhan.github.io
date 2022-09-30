@@ -19,7 +19,80 @@ $('.inner-border').css({
 let position;
 
 
-// 
+
+
+// function parallax() {
+//   var s = document.getElementsByClassName("content-hero");
+//   var yPos = 0 - window.pageYOffset/5;  
+// s.style.top = 50 + yPos + "%"; 
+// };
+
+// function parallax() {
+//   let contentHero = $('.content-hero > img')
+//   var yPos = 0 - window.pageYOffset/5;  
+//   contentHero.style.top = 50 + yPos + "%"; 
+// };
+
+
+
+// function slowScroll(){
+//     // let contentHeroIMG = $('.content-hero-img');
+    
+//     // ( 0px," + window.pageYOffset * 10 + "%)"
+//     // contentHero.style.transform = "translate-y(" + scrolledAmount /2 + ")";
+// }
+
+$('.content').scroll(function(){
+  // slowScroll($('.contentHero'));
+  var scrolledAmount = ($('.content').scrollTop());
+  $('.content-hero-img').css({
+    'transform': 'translateY(' + scrolledAmount * 0.1 + 'px',
+  })
+});
+
+$('#content-hero').css({
+  'height': $('.content-hero-img').outerHeight() + 132 + 'px',
+})
+
+// var item = document.getElementById('item')
+// var item1 = document.getElementById('item1')
+// ;(function(){
+//   var throttle = function(type, name, obj){
+//     var obj = obj || window;
+//     var running = false;
+//     var func = function(){
+//       if (running){ return; }
+//       running = true;
+//       requestAnimationFrame(function(){
+//         obj.dispatchEvent(new CustomEvent(name));
+//         running = false;
+//       });
+//     };
+//     obj.addEventListener(type, func);
+//   };
+  
+//   throttle("scroll", "optimizedScroll");
+// })();
+
+// window.addEventListener("optimizedScroll", function(){
+//   item.style.transform = "translate( 0px," + window.pageYOffset * 10 + "%)";
+//   item1.style.transform = "translate( 0px," + window.pageYOffset * 5 + "%)";
+// })
+  
+// ($('.content-hero > img')).css({
+//   'transfrom': 'translate(, , )'
+// })
+
+
+// (function () {
+//   var a = document.body,
+//       e = document.documentElement;
+//   $(window).unbind("scroll").scroll(function () {
+//       a.style.backgroundPosition = "0px " + -(Math.max(e.scrollTop, a.scrollTop) / 8) + "px";
+//   });
+// })();
+
+
 
 // get content-frame size
 // iframe = content-frame size
@@ -45,7 +118,7 @@ $('.fullFrameContainer').css({
 
 $('.fullFrameContainer > img').css({
   'height': $('.content').height() - 128 + 'px',
-  'width': $('.content').width() - 64 + 'px',
+  'width': $('.content').width() - 256 + 'px',
 });
 
 
@@ -58,7 +131,7 @@ $('#slideshow').css({
 const openGIF = document.querySelectorAll('.fullFrameContainer');
 
 const appearWhen = {
-  rootMargin: '10% 30%'
+  rootMargin: '10%'
 };
 
 const appearAtCenter = new IntersectionObserver
@@ -369,7 +442,7 @@ $('.filmstrip').each(function(){
 const expandHeading = document.querySelectorAll('.section-heading');
 
 const appearOptions = {
-  rootMargin: '-10% 0% 0% 0%'
+  rootMargin: '10%'
 };
 
 const appearWhenCenter = new IntersectionObserver
@@ -546,7 +619,7 @@ const target = document.getElementById("target");
 
 document.addEventListener("wheel", function(e){
   // prevent the default scrolling event
-  e.preventDefault();
+  // e.preventDefault();
 
   // scroll the div
   target.scrollBy(e.deltaX, e.deltaY);
