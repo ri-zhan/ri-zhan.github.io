@@ -46,7 +46,7 @@ $('.content').scroll(function(){
   // slowScroll($('.contentHero'));
   var scrolledAmount = ($('.content').scrollTop());
   $('.content-hero-img').css({
-    'transform': 'translateY(' + scrolledAmount * 0.1 + 'px',
+    'transform': 'translateY(' + scrolledAmount * 0.105 + 'px',
   })
 });
 
@@ -303,9 +303,11 @@ $('.outer-frame-btns').css({
 //   });
 // });
 
-$('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left').hover(function() {
+$('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left').hover(function() {
   $('.btn-individual').toggleClass('minimized');
 });
+
+
 
 $(window).resize(function() {
 
