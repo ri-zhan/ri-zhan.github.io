@@ -7,11 +7,7 @@ $(document).mousemove(function(e){
 });
 
 
-//////////////////////// simplified inner container hover //////////////////
-$('.inner-border').css({
-  'width': ($(".inner-box").outerWidth() + 24 + 'px'),
-  'height': ($(".inner-box").outerHeight() + 24 + 'px')
-});
+
 
 // $('.inner-border').hover(function(){
 //   $(this).addClass('inner-border show');
@@ -21,106 +17,179 @@ let position;
 
 
 
-// function parallax() {
-//   var s = document.getElementsByClassName("content-hero");
-//   var yPos = 0 - window.pageYOffset/5;  
-// s.style.top = 50 + yPos + "%"; 
-// };
+const showFooterLine = document.querySelectorAll('.footer');
 
-// function parallax() {
-//   let contentHero = $('.content-hero > img')
-//   var yPos = 0 - window.pageYOffset/5;  
-//   contentHero.style.top = 50 + yPos + "%"; 
-// };
+const appearBottom = {
+  rootMargin: '-96px'
+};
+
+const appeatWhenEnter = new IntersectionObserver
+(function(
+  entries, 
+  appeatWhenEnter
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+        entry.target.classList.add('show');
+
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        entry.target.classList.remove('show');
+      }
+    })
+  }, appearBottom);
+
+showFooterLine.forEach(showFooterLine =>{
+  appeatWhenEnter.observe(showFooterLine);
+});
 
 
 
-// function slowScroll(){
-//     // let contentHeroIMG = $('.content-hero-img');
-    
-//     // ( 0px," + window.pageYOffset * 10 + "%)"
-//     // contentHero.style.transform = "translate-y(" + scrolledAmount /2 + ")";
-// }
+
+
 
 $('.content').scroll(function(){
   // slowScroll($('.contentHero'));
   var scrolledAmount = ($('.content').scrollTop());
   $('.content-hero-img').css({
     'transform': 'translateY(' + scrolledAmount * 0.105 + 'px',
-  })
-});
+  });
 
-$('#content-hero').css({
-  'height': $('.content-hero-img').outerHeight() + 132 + 'px',
-})
+  var slidesContainerPosition = $('.slidesContainer').position();
+  var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
 
-// var item = document.getElementById('item')
-// var item1 = document.getElementById('item1')
-// ;(function(){
-//   var throttle = function(type, name, obj){
-//     var obj = obj || window;
-//     var running = false;
-//     var func = function(){
-//       if (running){ return; }
-//       running = true;
-//       requestAnimationFrame(function(){
-//         obj.dispatchEvent(new CustomEvent(name));
-//         running = false;
-//       });
-//     };
-//     obj.addEventListener(type, func);
-//   };
+  $("#slideShowRow:nth-child(even)").children($('.slidesContainer')).find($('.slides')).css({
+    'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.05 + 'px',
+    'right': 0,
+  });
+
+  $("#slideShowRow:nth-child(odd)").children($('.slidesContainer')).find($('.slides')).css({
+    'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.05 + 'px',
+    'left': 0,
+  });
+
   
-//   throttle("scroll", "optimizedScroll");
-// })();
+  var mockupIMGposition = $('.mockupIMG-container').position();
+  var scrolledAmountRelativeMockup = ($('.content').scrollTop()) - (mockupIMGposition.top);
 
-// window.addEventListener("optimizedScroll", function(){
-//   item.style.transform = "translate( 0px," + window.pageYOffset * 10 + "%)";
-//   item1.style.transform = "translate( 0px," + window.pageYOffset * 5 + "%)";
-// })
+  $('.mockupIMG').css({
+    'transform': 'translateY(' + (scrolledAmountRelativeMockup * -1) * 0.08 + 'px',
+    'top': -30,
+  });
   
-// ($('.content-hero > img')).css({
-//   'transfrom': 'translate(, , )'
-// })
-
-
-// (function () {
-//   var a = document.body,
-//       e = document.documentElement;
-//   $(window).unbind("scroll").scroll(function () {
-//       a.style.backgroundPosition = "0px " + -(Math.max(e.scrollTop, a.scrollTop) / 8) + "px";
-//   });
-// })();
-
-
-
-// get content-frame size
-// iframe = content-frame size
-
-let contentSize = $('.content').width();
-$('.fullFrameVideo').css({
-  'width': contentSize + 'px',
 });
 
 
 
-// $('.openGIF.general-border > img').css({
-//   'height': $('.content').height() - 96 + 'px',
-//   'width': $('.content').width() - 20 + 'px',
+function contentHeroSize(){
+  if($(window).width() >= 1025) {
+    //desktop size
+    $('#content-hero').css({
+      'height': $('.content-hero-img').outerHeight() + 132 + 'px',
+    });
+  } else if($(window).width() >= 961) {
+    //tablet size
+    $('#content-hero').css({
+      'height': $('.content-hero-img').outerHeight() + 132 + 'px',
+    });
+  } else if($(window).width() >= 481) {
+    //phone size
+    $('#content-hero').css({
+      'height': 'fit-content',
+    });
+  } else {
+    $('#content-hero').css({
+      'height': 'fit-content',
+    });
+  }
+};
+
+contentHeroSize();
+
+
+
+
+// const moveSlide = document.querySelectorAll('.slidesContainer');
+
+// const appearAt = {
+//   rootMargin: '0%'
+// };
+
+// const appearInFrame = new IntersectionObserver
+// (function(
+//   entries, 
+//   appearInFrame
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         entry.target.classList.add('moveSlide');
+
+//         // appearWhenCenter.unobserve(entry, target);
+//       } else {
+//         entry.target.classList.remove('moveSlide');
+//       }
+//     })
+//   }, appearAt);
+
+// moveSlide.forEach(openGIF =>{
+//   appearInFrame.observe(openGIF);
 // });
 
 
-$('.fullFrameContainer').css({
-  'height': $('.content').height() - 64 + 'px',
+
+$('.openGIF.general-border > .GIF').css({
+  'height': $('.content').height() - 96 + 'px',
   'width': $('.content').width() - 20 + 'px',
 });
 
+function GIFcontainerSize(){
+  if($(window).width() >= 1025) {
+    //desktop size
+    $('.GIFcontainer .slidesContainer').css({
+      'height': $('.content').height() - 128 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
 
-$('.fullFrameContainer > img').css({
-  'height': $('.content').height() - 128 + 'px',
-  'width': $('.content').width() - 256 + 'px',
-});
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 256 + 'px',
+    });
+  } else if($(window).width() >= 961) {
+    //tablet size
+    $('.GIFcontainer').css({
+      'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
 
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 48 + 'px',
+    });
+  } else if($(window).width() >= 481) {
+    //phone size
+    $('.GIFcontainer').css({
+      'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 64 + 'px',
+    });
+  } else {
+    $('.GIFcontainer').css({
+      // 'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      // 'height': 100 + '%',
+      'width': $('.content').width() + 'px',
+    });
+  }
+}
+GIFcontainerSize();
+
+  
 
 
 $('#slideshow').css({
@@ -128,7 +197,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.fullFrameContainer');
+const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -156,26 +225,6 @@ openGIF.forEach(openGIF =>{
 });
 
 
-// $(".openGIF > div:gt(0)").hide();
-
-// setInterval(function() { 
-//   $('.openGIF > div:first')
-//   .fadeOut(700)
-//   .next()
-//   .fadeIn(700)
-//   .end()
-//   .appendTo('.openGIF');
-// }, 2000); 
-
-
-
-
-
-// $( document ).ready(function() {
-//   $('fullFrameVideo').css({
-//     'width': contentSize + 'px',
-//   })
-// });
 
 function innerBorderPos() {
   position = $('.inner-frame').children('.inner-box').eq(1).position();
@@ -188,30 +237,40 @@ function innerBorderPos() {
     'top': position.top - 12 + 'px',
     // 'transition': 'top 0s, left 0s;'
   });
+
+  //////////////////////// simplified inner container hover //////////////////
+  $('.inner-border').css({
+    'width': ($(".inner-box").outerWidth() + 24 + 'px'),
+    'height': ($(".inner-box").outerHeight() + 24 + 'px')
+  });
+  
 };
 
 $( document ).ready(function() {
   innerBorderPos(this);
-});
+  
 
-
-
-$('.inner-box').mouseenter(function(){
-  $(this).css({'transform': 'scale(1.025)'});
-  $('.inner-border').addClass('show');
-  position = $(this).position();
-  $('.inner-border').css({
-    'left': position.left - 12 + 'px',
-    'top': position.top - 12 + 'px',
-    'transition': ''
+  $('.inner-box').mouseenter(function(){
+    $(this).css({'transform': 'scale(1.025)'});
+    $('.inner-border').addClass('show');
+    position = $(this).position();
+    $('.inner-border').css({
+      'left': position.left - 12 + 'px',
+      'top': position.top - 12 + 'px',
+      'transition': ''
+    });
+  });
+  
+  $('.inner-box').mouseleave(function(){
+    $(this).css({'transform': ''});
+    $('.inner-border').removeClass('show');
+    innerBorderPos(this);
   });
 });
 
-$('.inner-box').mouseleave(function(){
-  $(this).css({'transform': ''});
-  $('.inner-border').removeClass('show');
-  innerBorderPos(this);
-});
+
+
+
 
 
 //////////////////////// inner container hover //////////////////
@@ -283,62 +342,104 @@ if ($('.inner-frame').hasClass('stylized')) {
 // });
 
 
-$('.outer-frame-border-individual').css({
-  'height': $(".outer-frame-border-individual").width() + 'px',
-})
 
-$('.outer-frame-btns').css({
-  'height': $('.outer-frame-border').height() - 12 + 'px',
-  'width': $('.outer-frame-border').width() - 12 + 'px',
-})
-
-
-// $('.btn-individual').css({
-//   'width': $('.outer-frame-border').width() - 12 + 'px',
-// })
-
-// $('.outer-frame').hover(function(){
-//   $(this).css({
-//     'z-index': '999',
-//   });
-// });
 
 $('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left').hover(function() {
   $('.btn-individual').toggleClass('minimized');
 });
 
 
+function GIFcontainerSize(){
+  if($(window).width() >= 1025) {
+    //desktop size
+    $('.GIFcontainer').css({
+      'height': $('.content').height() - 128 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 256 + 'px',
+    });
+  } else if($(window).width() >= 961) {
+    //tablet size
+    $('.GIFcontainer').css({
+      'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 48 + 'px',
+    });
+  } else if($(window).width() >= 481) {
+    //phone size
+    $('.GIFcontainer').css({
+      'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      'width': $('.content').width() - 64 + 'px',
+    });
+  } else {
+    $('.GIFcontainer').css({
+      // 'height': $('.content').height()/2 + 'px',
+      'width': $('.content').width() - 20 + 'px',
+    });
+
+    $('.GIFcontainer > img').css({
+      // 'height': 100 + '%',
+      'width': $('.content').width() + 'px',
+    });
+  };
+};
+GIFcontainerSize();
+
+
+
+
+function outerFrameSize() {
+  if($(window).width() >= 1025) {
+    //desktop size
+    $('.outer-frame-border-individual').css({
+      'height': $(".outer-frame-border-individual").width() + 'px',
+      'width': '100%', 
+    });
+  } else if($(window).width() >= 961) {
+    //tablet size
+    $('.outer-frame-border-individual').css({
+      'height': $(".outer-frame-border-individual").width() + 'px',
+      'width': '100%',
+    });
+  } else if($(window).width() >= 481) {
+    //phone size
+    $('.outer-frame-border-individual').css({
+      'height': 2 + 'rem',
+      'width': 2 +'rem'
+    });
+  } else {
+    $('.outer-frame-border-individual').css({
+      'height': 1 + 'rem',
+      'width': 1 +'rem'
+    });
+  }
+
+};
+
+outerFrameSize();
 
 $(window).resize(function() {
+  outerFrameSize();
 
-  // $('.inner-border').css({
-  //   'width': ($(".inner-box").outerWidth() + 24 + 'px'),
-  //   'height': ($(".inner-box").outerHeight() + 24 + 'px')
-  // });
+  GIFcontainerSize();
+
+  contentHeroSize();
+
+  innerBorderPos();
   
-  $('.outer-frame-border-individual').css({
-    'height': $(".outer-frame-border-individual").width() + 'px',
-  });
-  
-  $('.outer-frame-btns').css({
-    'height': $('.outer-frame-border').height() - 12 + 'px',
-    'width': $('.outer-frame-border').width() - 12 + 'px',
-  });
 });
 
 
-// ///////////////content-about-heading height
-// $('.content-about-heading').css({
-//   'height': ($('.content-about-box')).height(),
-// });
 
-
-
-
-///////////// set .content-imgs width/////////////////
-$(".content-imgs").css({
-  'width': ($(".content").width() - 1 + 'px') 
-});
 
 
 ///////////// set .filmstrip width/////////////////
@@ -468,131 +569,6 @@ expandHeading.forEach(expandHeading =>{
   appearWhenCenter.observe(expandHeading);
 })
 
-
-// /////////////// horizontal movement as vertical scroll
-// const moveHorizontal = document.querySelectorAll('.content-imgs');
-
-// const appearOptions = {
-//   rootMargin: '0% 0% 0% 0%'
-// };
-
-// const appearWhenCenter = new IntersectionObserver
-// (function(
-//   entries, 
-//   appearWhenCenter
-//   ) {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-//         entry.target.classList.add('moveHorizontal');
-
-//         // start at left (0%) then move to right 100%
-//         // get width off screen
-//         // on scroll move left to right
-//         // top 0% bottom 100%, left to right
-
-//         // change contnet images to hidden not scroll
-//         // get (contents-imgsLeftPos/content-imgs) * 100
-
-//         // make y  = 100/ screenPercentage
-
-//         var lastScrollTop = 0;
-//         $(window).scroll(function(event){
-//           var st = $(this).scrollTop();
-//           if (st > lastScrollTop){
-//               // downscroll code
-//           } else {
-//               // upscroll code
-//           }
-//           lastScrollTop = st;
-//         });
-
-//         $('.filmstrip').each(function(){
-//           $(this).mousemove(function(e){
-//             $(".follower-around").css({left: e.pageX, top:e.pageY});
-//           });
-//         });
-
-
-//         $(document).mousemove(function(e){
-//           $(".follower-around").css({left: e.pageX, top:e.pageY});
-//         });
-        
-//         $(document).mousemove(function(e){
-//           $(".follower-center").css({left: e.pageX, top:e.pageY});
-//         });
-
-        
-//         $('.filmstrip').each(function(){
-//           let thisFilmstrip = $(this);
-//           let imgWidth;
-//           let imgCount;
-
-//            thisFilmstrip.on(
-//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
-//               function() {
-//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
-//                   console.log('width ' + imgWidth)
-                  
-//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
-//                   console.log('img count is '+ imgCount)   
-
-//                   $(this).css({
-//                     'width': (imgWidth * (imgCount) + 16 +'px')
-//                   });                 
-//                   $(this).parent('.content-imgs').css('opacity', '1')           
-
-//             });
-//         });
-
-//         // appearWhenCenter.unobserve(entry, target);
-//         // })
-//       } else {
-//         entry.target.classList.remove('moveHorizontal');
-
-//         $('.filmstrip').each(function(){
-//           let thisFilmstrip = $(this);
-//           let imgWidth;
-//           let imgCount;
-
-//            thisFilmstrip.on(
-//               "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
-//               function() {
-//                   imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
-//                   console.log('width ' + imgWidth)
-                  
-//                   imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
-//                   console.log('img count is '+ imgCount)   
-
-//                   $(this).css({
-//                     'width': (imgWidth * (imgCount) + 16 +'px')
-//                   });     
-//                   $(this).parent('.content-imgs').css('opacity', '0.4')           
-//             });
-//         })
-//       }
-//     })
-//   }, appearOptions);
-
-// enlargeSize.forEach(enlargeSize =>{
-//   appearWhenCenter.observe(enlargeSize);
-// })
-
-
-/////////////////////////show play-description-text depending on tag
-// if ($('.play-card').selected==True) {
-//   //show play description by default
-//   if ($('.play-card-text').hasClass($('.art-history'))) {
-//     // if ($('.play-card-text').hasClass($('.p')))
-//     //////////if the card clicked on has art history tag then replace with art histry description
-//   }
-//   if ($('.photography')) {
-//  //////////if the card clicked on has photography tag then replace with photography description
-//   }
-//   if ($('.projects')) {
-//  //////////if the card clicked on has projects tag then replace with projects description
-//   }
-// }
 
 
 

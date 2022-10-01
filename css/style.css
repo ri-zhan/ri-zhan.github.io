@@ -172,12 +172,8 @@ section {
   margin-bottom: 5.625rem;
 }
 
-section:last-child {
-  margin-bottom: 4rem;
-}
-
 section:first-child {
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 section img {
@@ -203,31 +199,49 @@ section img {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-bottom: 2.5rem;
+  margin-bottom: 6rem;
+  position: relative;
+  -webkit-transition: all 500ms ease-in-out, height 200ms ease-in;
+  transition: all 500ms ease-in-out, height 200ms ease-in;
+}
+
+.footer.show {
+  -webkit-transition: all 500ms ease-in-out, height 200ms ease-in;
+  transition: all 500ms ease-in-out, height 200ms ease-in;
+}
+
+.footer.show #footer-section-heading-line {
+  margin-top: 2rem;
+  top: -0.75rem;
+  width: 100%;
+  height: 3rem;
+  border: solid #EAE5E2;
+  border-width: 0.0625rem 0.0625rem 0 0;
+  -webkit-transition: all 500ms ease-in-out, height 500ms ease-in;
+  transition: all 500ms ease-in-out, height 500ms ease-in;
 }
 
 .footer h2 {
   margin-bottom: 0;
-  margin-right: 0;
+  padding-right: 1rem;
   white-space: nowrap;
+  background-color: #1f1f1f;
+  z-index: 2;
 }
 
-.footer .section-heading-line {
-  right: 0;
-  height: 1rem;
+.footer #footer-section-heading-line {
+  margin-top: 0rem;
+  position: absolute;
+  top: 1.25rem;
+  width: 60%;
+  height: 0rem;
   border: solid #EAE5E2;
-  border-width: 0 0.0625rem 0 0;
+  border-width: 0 0 0 0;
+  -webkit-transition: all 500ms ease-in-out, height 50ms ease-in;
+  transition: all 500ms ease-in-out, height 50ms ease-in;
 }
 
-.footer-socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
-}
-
-.fullFrameContainer {
+.GIFcontainer, .slidesContainer {
   width: 5rem;
   grid-column: span 10;
   min-height: 30rem;
@@ -244,9 +258,49 @@ section img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  justify-self: center;
 }
 
-.fullFrameContainer img {
+.GIFcontainer.openGIF, .slidesContainer.openGIF {
+  width: 100%;
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover {
+  width: 0;
+}
+
+.GIFcontainer .slides, .slidesContainer .slides {
+  padding: 4rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  height: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.GIFcontainer .slides img, .slidesContainer .slides img {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  margin-right: 1rem;
+}
+
+.GIFcontainer .slides img:last-child, .slidesContainer .slides img:last-child {
+  margin-right: 0;
+}
+
+.GIFcontainer .GIF, .slidesContainer .GIF {
   position: absolute;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -258,11 +312,16 @@ section img {
   transition: all 600ms ease-in-out;
 }
 
-.fullFrameContainer.openGIF .general-border-container .general-border-cover {
+.GIFcontainer.openGIF, .slidesContainer.openGIF {
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover {
   width: 0;
 }
 
-.fullFrameContainer .general-border-container {
+.GIFcontainer .general-border-container, .slidesContainer .general-border-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,7 +333,7 @@ section img {
   height: 100%;
 }
 
-.fullFrameContainer .general-border-container .general-border-cover {
+.GIFcontainer .general-border-container .general-border-cover, .slidesContainer .general-border-container .general-border-cover {
   width: 80%;
   height: 100%;
   background-color: #1f1f1f;
@@ -282,7 +341,7 @@ section img {
   transition: all 600ms ease-in-out;
 }
 
-.fullFrameContainer .general-border-container .general-border {
+.GIFcontainer .general-border-container .general-border, .slidesContainer .general-border-container .general-border {
   min-width: 5rem;
   height: 100%;
   -webkit-transition: all 600ms ease-in-out;
@@ -578,6 +637,8 @@ a:active {
   height: min-content;
   -o-object-fit: cover;
      object-fit: cover;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   grid-row: span 2;
 }
 
@@ -891,7 +952,7 @@ a:active {
   display: -ms-grid;
   display: grid;
   width: calc(100% - 1rem);
-  height: 100%;
+  height: calc(100% - 0.5rem);
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: 1fr 1fr;
@@ -1223,6 +1284,22 @@ a:active {
 .content-container .content::-webkit-scrollbar-track {
   /* Background */
   background: #1f1f1f;
+  margin-bottom: 7rem;
+  margin-top: 6rem;
+}
+
+.content-container .content .mockupIMG-container {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+}
+
+.content-container .content .mockupIMG-container .mockupIMG {
+  width: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content-container .content .column-4-6 {
@@ -1238,7 +1315,7 @@ a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 3.75rem;
+  margin-bottom: 2rem;
 }
 
 .content-container .content .column-4-6:last-child {
@@ -1280,11 +1357,19 @@ a:active {
   margin-bottom: 1rem;
 }
 
+.content-container .content .column-4-6 .column-4 .row .row-section:last-child {
+  margin-bottom: 0;
+}
+
 .content-container .content .column-4-6 .column-4 .row .row-section h3 {
   margin-bottom: 0.2rem;
 }
 
 .content-container .content .column-4-6 .column-4 .row .row-section p {
+  margin-bottom: 0;
+}
+
+.content-container .content .column-4-6 .column-4 .row .row-section p:last-child {
   margin-bottom: 0;
 }
 
@@ -1315,7 +1400,7 @@ a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .content-container .content .column-2-8 .column-2 {

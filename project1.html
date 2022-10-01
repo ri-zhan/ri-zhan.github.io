@@ -29,27 +29,24 @@
         <div class="content" id="target">
 
             <section>
-                <div class="content-hero">
-                    <img src="/images/tclibrary/TCLIbrary-Mockups.png" alt="Onboarding screens for TCLibrary" class="content-hero-img">
-                </div>
-                
-                <div class="column-1-1 general-border">
-                    <div class="section-heading column-1">
-                        <div class="section-heading-line"></div>
-                        <h2>TCLIbrary</h2>
-                        <div class="section-heading-line"></div>
-                    </div>
-                    <h2 class="column-1" style="text-align: center;">An app aimed to improve access to different genres and categories rich in 
+                <div class="column-1-1 general-border" id="content-hero">
+                    <h1 style="text-align: center; margin-bottom: 0; z-index: 2;">TCLIbrary</h1>
+
+                    <h2 class="column-1" style="text-align: center; z-index: 2;">An app aimed to improve access to different genres and categories rich in 
                         journals, literature, and books to aid reading and learning, placing as runner-up for Ada’s Base ProtoJam 2022 
                         competition.</h2> 
+                    <img src="/images/tclibrary/TCLIbrary-hero.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+
                 </div>
+                
 
                 <div class="column-5-5">
                     <div class="column-5">
                         <h3>Challenge</h3>
                         <p>The challenge was to redesign a digital library in 48 hours, where users can borrow and return books. 
                             By improving access to books and literature, it reflects TCLI Foundation’s goal towards effecting 
-                            societal changes through literature, arts and culture.</p>
+                            societal changes through literature, arts and culture.
+                        </p>
                     </div>
     
                     <div class="column-5">
@@ -57,7 +54,8 @@
                         <p>Our application provides users with a wide selection of literature with common word choices in order to 
                             be more accessible to a wider range of audiences. We focused on user engagement through gamification 
                             and engaging the users in a community, as well as user-friendliness through simple word choices and 
-                            information buttons.</p>
+                            information buttons.
+                        </p>
                     </div>
                 </div>
                 
@@ -67,11 +65,11 @@
                         <div class="row">
                             <div class="row-section">
                                 <h3>My Role</h3>
-                                <p>Explore page, Bookshelf, and Profile</p>
+                                <p>Explore page, Bookshelf, Profile</p>
                             </div>
                             <div class="row-section">
                                 <h3>Timeline</h3>
-                                <p>3 days, 48 hours</p>
+                                <p>1 month</p>
                             </div>
                             <div class="row-section">
                                 <h3>Tools</h3>
@@ -79,8 +77,13 @@
                             </div>
                         </div>
                     </div>
-                    <img src="/images/tclibrary/TCLIbrary-Mockups.png" alt="Onboarding screens for TCLibrary" class="column-6" style="height: 20rem;">                    
+                    <div class="column-6 mockupIMG-container">
+                        <img src="/images/tclibrary/TCLIbrary-Mockups.png" alt="Onboarding screens for TCLibrary" class="mockupIMG">                    
+                    </div>               
                 </div>
+        
+
+            </section>
             
                 <!-- <div class="content-imgs">
                     <div class="filmstrip">
@@ -106,13 +109,33 @@
                     <div class="section-heading-line"></div>
                 </div>
 
-                <div class="column-2-8">
-                    <h3 class="column-2">Exploration</h3>
-                    <p class="column-8">Our explore page provided users with the typical recommendations section as well as a community board, further 
-                        engaging the audience. In our search tool, we provide a typical filter but with elements from scholarly 
-                        databases. This provides users with the ability to expand their knowledge in academic realms or casually.</p>
-                    <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img">
+                <div class="fullRow" id="slideShowRow">
+                    <div class="column-2-8">
+                        <h3 class="column-2">Exploration</h3>
+                        <p class="column-8">Our explore page provided users with the typical recommendations section as well as a community board, further 
+                            engaging the audience. In our search tool, we provide a typical filter but with elements from scholarly 
+                            databases. This provides users with the ability to expand their knowledge in academic realms or casually.</p>
+                        <!-- <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img"> -->
+                    
+                        <div class="slidesContainer">
+                            <div class="slides">
+                                <img src="/images/tclibrary/TCLIbrary-1.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-2.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-3.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-4.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-5.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-6.png" alt="Onboarding">
+                                <img src="/images/tclibrary/TCLIbrary-7.png" alt="Onboarding">
+                            </div>
+                            <div class="general-border-container">
+                                <div class="general-border-cover"></div>
+                                <div class="general-border"></div>
+                                <div class="general-border-cover"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
 
                 <!-- <div class="content-imgs">
                     <div class="filmstrip">
@@ -123,13 +146,33 @@
                     </div>
                 </div> -->
 
-                <div class="column-2-8">
-                    <h3 class="column-2">Engagement</h3>
-                    <p class="column-8">Our community page provides users with the opportunity to discuss a variety of topics amongst themselves and 
-                        the ability to participate in community activities in the club tab. We further this engagement when the users 
-                        return their book, giving them the option to join in on the recent discussions.</p>
-                    <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img">
+                <div class="fullRow" id="slideShowRow">
+                    <div class="column-2-8">
+                        <h3 class="column-2">Engagement</h3>
+                        <p class="column-8">Our community page provides users with the opportunity to discuss a variety of topics amongst themselves and 
+                            the ability to participate in community activities in the club tab. We further this engagement when the users 
+                            return their book, giving them the option to join in on the recent discussions.</p>
+                        <!-- <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img"> -->
+                    </div>
+                    <div class="slidesContainer">
+                        <div class="slides">
+                            <img src="/images/tclibrary/TCLIbrary-8.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-9.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-10.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-11.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-12.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-15.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-13.png" alt="Onboarding">
+                        </div>
+                        <div class="general-border-container">
+                            <div class="general-border-cover"></div>
+                            <div class="general-border"></div>
+                            <div class="general-border-cover"></div>
+                        </div>
+                    </div>
                 </div>
+
+                
 
                 
                 <!-- <div class="content-imgs">
@@ -142,17 +185,36 @@
                     </div>
                 </div> -->
 
-            
-                <div class="column-2-8">
-                    <h3 class="column-2">Gamification</h3>
-                    <p class="column-8">Our goal was to keep the user engaged and motivated while navigating through the app and create a welcoming 
-                        community for newcomers. Learning is fun! And we wanted to make sure that idea was translated through the 
-                        screen. A timer? A level status? We’ve got it covered! We included a points system to help users feel 
-                        accomplished when they completed a task, whether that be reading for a couple of minutes, finishing a book, 
-                        or posting something in the discussion tab.</p>
-                    <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img">
-            
+                <div class="fullRow" id="slideShowRow">
+                    <div class="column-2-8">
+                        <h3 class="column-2">Gamification</h3>
+                        <p class="column-8">Our goal was to keep the user engaged and motivated while navigating through the app and create a welcoming 
+                            community for newcomers. Learning is fun! And we wanted to make sure that idea was translated through the 
+                            screen. A timer? A level status? We’ve got it covered! We included a points system to help users feel 
+                            accomplished when they completed a task, whether that be reading for a couple of minutes, finishing a book, 
+                            or posting something in the discussion tab.</p>
+                        <!-- <img src="/images/tclibrary/TCLIbrary-Profile.png" alt="Onboarding screens for TCLibrary" class="filmstrip-img"> -->
+                
+                    </div>
+                    <div class="slidesContainer">
+                        <div class="slides">
+                            <img src="/images/tclibrary/TCLIbrary-15.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-17.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-14.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-16.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-18.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-19.png" alt="Onboarding">
+                            <img src="/images/tclibrary/TCLIbrary-20.png" alt="Onboarding">
+                        </div>
+                        <div class="general-border-container">
+                            <div class="general-border-cover"></div>
+                            <div class="general-border"></div>
+                            <div class="general-border-cover"></div>
+                        </div>
+                    </div>
                 </div>
+
+                
 
 
 <!--                 
@@ -211,13 +273,13 @@
                 <img src="/images/tclibrary/TCLIbrary-DesignSystem.png" alt="" class="design-system">
             </section>
 
-            <section class="footer">
-                <p>design and coded by me.</p>
-                <div>
-                    <a href="mailto: zhan.rita.info@gmail.com"><p class="material-symbols-outlined">attach_file</p></a>
-                </div>
-            </section>
+            <footer class="footer">
+                <h2>this site is designed and coded by me. let's connect!</h2>
+                <div id="footer-section-heading-line"></div>
+            </footer>
         </div>
+        <div class="content-cover"></div>
+
     </div>
 
     <div class="outer-frame minimized">
@@ -229,6 +291,15 @@
         </div>
 
         <div class="outer-frame-btns">
+            <div class="outer-frame-btns-top-left">
+                <button>
+                    <a href="index.html" class="btn-individual minimized">
+                        <p class="material-symbols-outlined btn-icon">home</p>
+                        <span class="outer-frame-text top-left-name">RITA ZHAN</span>
+                    </a>
+                </button>
+            </div>
+
             <div class="outer-frame-btns-bottom-left">
                 <button>
                     <a href="play.html" class="btn-individual minimized">
@@ -264,6 +335,7 @@
             
         </div>
     </div>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script src="/js/script.js"></script>
