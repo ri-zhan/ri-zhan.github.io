@@ -353,40 +353,65 @@ if ($('.inner-frame').hasClass('stylized')) {
 // });
 
 
-let mobileNavBar = true;
-$('#mobileMinimized').find($('#navBarOpener')).parent($('button')).click(function(){
-  if (mobileNavBar == true) {
-  mobileNavBar = false;
-    $('#mobileMinimized').children($('outer-frame-btns-top-left')).children($('button')).css({
-      'height': 'auto',
-      'position': 'inherit',
+
+
+
+
+/////////////////mobile navbar
+
+function mobileNavBarSize() {
+  if($(window).width() <= 600) { 
+    $('.outer-frame-btns-top-left').css({
+      'height': $('.dropDownBtn').outerHeight() + 12 + 'px',
+      'width': $('.dropDownBtn').outerWidth() + 12 + 'px',
     });
-
-    $('#navBarOpener').children($('.btn-icon')).css({
-      'transform': 'rotate(180deg)',
-    })
-
-    $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).removeClass('minimized');
-
-
-  } else if (mobileNavBar == false) {
-  mobileNavBar = true;
-  $('#mobileMinimized').children($('outer-frame-btns-top-left')).children($('button')).css({
-      'height': '',
-      'position': '',
+  
+    let mobileNavBar = true;
+    $('#mobileMinimized').find($('#dropDownBtnIcon')).parent($('button')).click(function(){
+      if (mobileNavBar == true) {
+      mobileNavBar = false;
+        $('#mobileMinimized').children($('outer-frame-btns-top-left')).children($('button')).css({
+          'height': 'auto',
+          'position': 'inherit',
+        });
+  
+        $('#dropDownBtnIcon').children($('.btn-icon')).css({
+          'transform': 'rotate(180deg)',
+        })
+  
+        $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).removeClass('minimized');
+  
+        $('.outer-frame-btns-top-left').css({
+          'height': '',
+          'width': '',
+        });
+  
+      } else if (mobileNavBar == false) {
+      mobileNavBar = true;
+      $('#mobileMinimized').children($('outer-frame-btns-top-left')).children($('button')).css({
+          'height': '',
+          'position': '',
+        });
+  
+        $('#dropDownBtnIcon').children($('.btn-icon')).css({
+  
+          'transform': '',
+        })
+  
+  
+        $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).addClass('minimized');
+  
+        $('.outer-frame-btns-top-left').css({
+          'height': $('.content-container').outerHeight() + 'px',
+          'width': $('.dropDownBtn').outerWidth() + 16 + 'px',
+        });
+      };
+  
     });
+  }
+}
 
-    $('#navBarOpener').children($('.btn-icon')).css({
-      'transform': '',
-    })
-
-
-    $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).addClass('minimized');
-
-  };
-
-  // $('.b')
-});
+mobileNavBarSize();
 
 
 $('#minimized').find($('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left')).hover(function() {
@@ -427,13 +452,12 @@ function GIFcontainerSize(){
     });
   } else {
     $('.GIFcontainer').css({
-      // 'height': $('.content').height()/2 + 'px',
+      'height': $('.content').height()/2.5 + 'px',
       'width': $('.content').width() - 20 + 'px',
     });
 
     $('.GIFcontainer > img').css({
-      // 'height': 100 + '%',
-      'width': $('.content').width() + 'px',
+      'width': $('.content').width() - 32 + 'px',
     });
   };
 };
@@ -443,20 +467,19 @@ GIFcontainerSize();
 
 function navBar(){
   if($(window).width() >= 481) {
-    $('.outer-frame').removeClass('minimized');
+    // $('.outer-frame').removeClass('minimized');
 
   } else {
     // small phone
-    
     $('.outer-frame').addClass('minimized');
     $('#minimized').addClass('minimized');
     $('#mobileMinimized').addClass('mobileMinimized');
 
-
   };
 };
-
 navBar();
+
+
 
 function outerFrameSize() {
   if($(window).width() >= 1025) {
@@ -465,6 +488,7 @@ function outerFrameSize() {
       'height': $(".outer-frame-border-individual").width() + 'px',
       'width': '100%', 
     });
+    
 
 
   } else if($(window).width() >= 961) {
@@ -489,8 +513,20 @@ function outerFrameSize() {
       'width': 1 +'rem'
     });
 
+
+    $('#mobileMinimized').css({
+      'width': $('.content').innerWidth() + 'px',
+      'height': $('.outer-frame').height() - 4+ 'px',
+    })
   }
 };
+
+
+
+
+
+
+
 
 outerFrameSize();
 
@@ -504,6 +540,8 @@ $(window).resize(function() {
   innerBorderPos();
   
   navBar();
+  
+  mobileNavBarSize();
 });
 
 
