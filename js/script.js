@@ -9,6 +9,17 @@ $(document).mousemove(function(e){
 
 
 
+$(document.body).on('touchmove', onScroll); // for mobile
+$(window).on('scroll', onScroll); 
+
+// callback
+function onScroll(){ 
+    if( $(window).scrollTop() + window.innerHeight >= document.body.scrollHeight ) { 
+        track_page++; 
+        load_contents(track_page); 
+    }
+}
+
 // $('.inner-border').hover(function(){
 //   $(this).addClass('inner-border show');
 // });

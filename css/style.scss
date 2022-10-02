@@ -1052,7 +1052,7 @@ a:active {
     height: 100%;
     background-color: $black;
     color: $white;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     overflow-x: hidden;
     @media (max-width: 600px) {
       grid-template-columns: repeat(4, 1fr);
