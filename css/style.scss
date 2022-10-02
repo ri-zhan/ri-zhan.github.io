@@ -130,12 +130,12 @@ button {
   &:active {
     background-color: $red;
   }
-  @media (max-width: 600px) {
-    // padding: 0.5rem 0 0.5rem 0.5rem;
-    &:hover {
-      padding: 0.5rem;
-    }
-  }
+  // @media (max-width: 600px) {
+  //   // padding: 0.5rem 0 0.5rem 0.5rem;
+  //   &:hover {
+  //     padding: 0.5rem;
+  //   }
+  // }
   .material-symbols-outlined {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -736,8 +736,35 @@ a:active {
   align-self: center;
   overflow: visible;
   transition: all 300ms ease-in-out;
+  #mobileMinimized {
+    display: none;
+  }
   @media (max-width: 600px) {
-    z-index: -999;
+    #mobileMinimized {
+      display: grid;
+      .outer-frame-btns-top-left {
+        position: relative;
+        button {
+          position: absolute;
+          top: 0;
+          &:first-child {
+            z-index: 999;
+          }
+        }
+      }
+    }
+    #minimized {
+      display: none;
+    }
+    z-index: 999;
+    .outer-frame-border {
+      &.mobile {
+        z-index: -999;
+        .showMobileView {
+          z-index: 99;
+        }
+      }
+    }
   }
   &-border { 
     width: 100%;
@@ -758,7 +785,7 @@ a:active {
   }
   // z-index: -1;
   &.minimized {
-    .outer-frame-btns {
+    .outer-frame-btns.minimized {
       .btn-individual.minimized {
           .outer-frame-text {
             white-space: nowrap;
@@ -767,12 +794,8 @@ a:active {
             overflow: hidden;
             transition: all 300ms ease-in-out;
           }
-        }
+      }
     }
-    // .outer-frame-btns {
-    //   display: none;
-    //   //add expand nav manu buttons
-    // }
   }
   &-btns {
     display: grid;

@@ -352,10 +352,35 @@ if ($('.inner-frame').hasClass('stylized')) {
 //   });
 // });
 
+$('#mobileMinimized').find($('a')).removeAttr('href');
+
+let mobileNavBar = true;
+$('#mobileMinimized').find($('.outer-frame-btns-top-left')).click(function(){
+  if (mobileNavBar == true) {
+  mobileNavBar = false;
+    $(this).children($('button')).css({
+      'height': 'auto',
+      'position': 'inherit',
+    });
+
+    $(this).find($('.btn-individual')).removeClass('minimized');
+
+  } else if (mobileNavBar == false) {
+  mobileNavBar = true;
+    $(this).children($('button')).css({
+      'height': '',
+      'position': '',
+    });
+
+    $(this).find($('.btn-individual')).addClass('minimized');
+
+  };
+
+  // $('.b')
+});
 
 
-
-$('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left').hover(function() {
+$('#minimized').find($('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left')).hover(function() {
   $('.btn-individual').toggleClass('minimized');
 });
 
@@ -407,6 +432,22 @@ GIFcontainerSize();
 
 
 
+function navBar(){
+  if($(window).width() >= 481) {
+    $('.outer-frame').removeClass('minimized');
+
+  } else {
+    // small phone
+    
+    $('.outer-frame').addClass('minimized');
+    $('#minimized').addClass('minimized');
+    $('#mobileMinimized').addClass('mobileMinimized');
+
+
+  };
+};
+
+navBar();
 
 function outerFrameSize() {
   if($(window).width() >= 1025) {
@@ -416,7 +457,6 @@ function outerFrameSize() {
       'width': '100%', 
     });
 
-    $('.outer-frame').removeClass('minimized');
 
   } else if($(window).width() >= 961) {
     //tablet size
@@ -425,7 +465,6 @@ function outerFrameSize() {
       'width': '100%',
     });
 
-    $('.outer-frame').removeClass('minimized');
 
   } else if($(window).width() >= 481) {
     //phone size
@@ -434,16 +473,14 @@ function outerFrameSize() {
       'width': 2 +'rem'
     });
 
-    $('.outer-frame').removeClass('minimized');
-
   } else {
+    // small phone
     $('.outer-frame-border-individual').css({
       'height': 1 + 'rem',
       'width': 1 +'rem'
     });
-    $('.outer-frame').addClass('minimized');
-  }
 
+  }
 };
 
 outerFrameSize();
@@ -457,6 +494,7 @@ $(window).resize(function() {
 
   innerBorderPos();
   
+  navBar();
 });
 
 
