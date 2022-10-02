@@ -1018,7 +1018,7 @@ a:active {
 }
 
 .outer-frame {
-  z-index: -999;
+  z-index: 999;
   display: -ms-grid;
   display: grid;
   width: calc(100% - 1rem);
@@ -1033,6 +1033,12 @@ a:active {
   overflow: visible;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .outer-frame {
+    z-index: -999;
+  }
 }
 
 .outer-frame-border {
