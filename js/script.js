@@ -415,23 +415,33 @@ function outerFrameSize() {
       'height': $(".outer-frame-border-individual").width() + 'px',
       'width': '100%', 
     });
+
+    $('.outer-frame').removeClass('minimized');
+
   } else if($(window).width() >= 961) {
     //tablet size
     $('.outer-frame-border-individual').css({
       'height': $(".outer-frame-border-individual").width() + 'px',
       'width': '100%',
     });
+
+    $('.outer-frame').removeClass('minimized');
+
   } else if($(window).width() >= 481) {
     //phone size
     $('.outer-frame-border-individual').css({
       'height': 2 + 'rem',
       'width': 2 +'rem'
     });
+
+    $('.outer-frame').removeClass('minimized');
+
   } else {
     $('.outer-frame-border-individual').css({
       'height': 1 + 'rem',
       'width': 1 +'rem'
     });
+    $('.outer-frame').addClass('minimized');
   }
 
 };
