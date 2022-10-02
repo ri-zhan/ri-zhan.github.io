@@ -725,7 +725,7 @@ a:active {
 
 
 .outer-frame {
-  z-index: 999;
+  z-index: -999;
   display: grid;
   width: calc(100% - 1rem);
   height: calc(100% - 1rem);
