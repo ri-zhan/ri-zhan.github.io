@@ -70,13 +70,13 @@ $('.content').scroll(function(){
   var slidesContainerPosition = $('.slidesContainer').position();
   var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
 
-  $("#slideShowRow:nth-child(even)").children($('.slidesContainer')).find($('.slides')).css({
-    'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.05 + 'px',
+  $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+    'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
     'right': 0,
   });
 
-  $("#slideShowRow:nth-child(odd)").children($('.slidesContainer')).find($('.slides')).css({
-    'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.05 + 'px',
+  $("#slideShowRow:nth-child(odd)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+    'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.025 + 'px',
     'left': 0,
   });
 
@@ -158,7 +158,7 @@ $('.openGIF.general-border > .GIF').css({
 function GIFcontainerSize(){
   if($(window).width() >= 1025) {
     //desktop size
-    $('.GIFcontainer .slidesContainer').css({
+    $('.GIFcontainer').css({
       'height': $('.content').height() - 128 + 'px',
       'width': $('.content').width() - 20 + 'px',
     });
@@ -353,7 +353,9 @@ if ($('.inner-frame').hasClass('stylized')) {
 // });
 
 
-
+// if ($('.outer-frames-btns').hasClass('mobileMinimized')) {
+//   $
+// }
 
 
 
@@ -381,7 +383,7 @@ function mobileNavBarSize() {
   
         $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).removeClass('minimized');
   
-        $('.outer-frame-btns-top-left').css({
+        $('.outer-frame-btns-top-left .outer-frame-btns').css({
           'height': '',
           'width': '',
         });
@@ -394,17 +396,19 @@ function mobileNavBarSize() {
         });
   
         $('#dropDownBtnIcon').children($('.btn-icon')).css({
-  
           'transform': '',
         })
   
   
         $('#mobileMinimized').children($('outer-frame-btns-top-left')).find($('.btn-individual')).addClass('minimized');
   
-        $('.outer-frame-btns-top-left').css({
+        $('.outer-frame-btns-top-left .outer-frame-btns').css({
           'height': $('.content-container').outerHeight() + 'px',
-          'width': $('.dropDownBtn').outerWidth() + 16 + 'px',
+          'width': $('.dropDownBtn').outerWidth() + 12 + 'px',
+          'width': '36px',
         });
+
+        
       };
   
     });

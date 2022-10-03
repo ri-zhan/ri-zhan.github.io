@@ -275,6 +275,21 @@ section img {
   transition: all 500ms ease-in-out, height 50ms ease-in;
 }
 
+.slidesContainer {
+  grid-column: span 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 24rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.slidesContainer .slides img {
+  height: 100%;
+}
+
 .GIFcontainer, .slidesContainer {
   width: 5rem;
   grid-column: span 10;
@@ -305,7 +320,7 @@ section img {
 }
 
 .GIFcontainer .slides, .slidesContainer .slides {
-  padding: 4rem;
+  padding: 2rem 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1111,6 +1126,11 @@ a:active {
   margin-top: 1.25rem;
 }
 
+.outer-frame-btns#mobileMinimized {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
 .outer-frame-btns {
   display: -ms-grid;
   display: grid;
@@ -1434,7 +1454,6 @@ a:active {
   -ms-grid-row: 2;
   grid-row: 2;
   height: 100%;
-  background-color: #1f1f1f;
   color: #EAE5E2;
   overflow-y: scroll !important;
   overflow-x: hidden;

@@ -228,15 +228,19 @@ section {
   }
 }
 
-// .slidesContainer {
-//   grid-column: span 10;
-//   display: flex;
-//   position: relative;
-//   height: 24rem;
-//   overflow: hidden;
-//   margin-top: 2rem;
-    
-// }
+.slidesContainer {
+  grid-column: span 10;
+  display: flex;
+  position: relative;
+  height: 24rem;
+  overflow: hidden;
+  margin-top: 2rem;
+  .slides {
+    img {
+      height: 100%;
+    }
+  }
+}
 
 .GIFcontainer, .slidesContainer {
   width: 5rem;
@@ -259,7 +263,7 @@ section {
     }
   }
   .slides {
-    padding: 4rem;
+    padding: 2rem 0;
     justify-content: space-between;
     position: absolute;
     height: 100%;
@@ -806,6 +810,9 @@ a:active {
     margin: 0.75rem;
     margin-top: 1.25rem;
   }
+  &-btns#mobileMinimized {
+    grid-template-columns: 1fr;
+  }
   &-btns {
     display: grid;
     width: calc(100% - 1rem);
@@ -1081,7 +1088,7 @@ a:active {
     grid-column: 2/12;
     grid-row: 2;
     height: 100%;
-    background-color: $black;
+    // background-color: $black;
     color: $white;
     overflow-y: scroll !important;
     overflow-x: hidden;
