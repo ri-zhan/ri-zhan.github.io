@@ -401,11 +401,12 @@ section img {
 }
 
 .follower {
-  z-index: -99;
+  z-index: 99;
   position: absolute;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 @media (max-width: 1000px) {

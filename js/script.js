@@ -740,7 +740,7 @@ const target = document.getElementById("target");
 
 document.addEventListener("wheel", function(e){
   // prevent the default scrolling event
-  // e.preventDefault();
+  e.preventDefault();
 
   // scroll the div
   target.scrollBy(e.deltaX, e.deltaY);
