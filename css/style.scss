@@ -1097,7 +1097,7 @@ a:active {
     margin: 0 2rem;
   }
   .content-cover {
-    z-index: -1000;
+    z-index: 1;
     grid-column: 2/12;
     left: 0;
     position: absolute;

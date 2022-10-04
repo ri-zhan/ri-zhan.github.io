@@ -1424,7 +1424,7 @@ a:active {
 }
 
 .content-container .content-cover {
-  z-index: -1000;
+  z-index: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2/12;
