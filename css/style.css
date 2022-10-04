@@ -401,7 +401,7 @@ section img {
 }
 
 .follower {
-  z-index: 18;
+  z-index: -99;
   position: absolute;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -415,8 +415,8 @@ section img {
 }
 
 .follower-center {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #E63223;
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
@@ -1025,81 +1025,31 @@ a:active {
   left: -3.4375rem;
 }
 
-.outer-frame {
-  z-index: 999;
-  display: -ms-grid;
-  display: grid;
+.outer-frame-border {
   width: calc(100% - 1rem);
   height: calc(100% - 1rem);
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  overflow: visible;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-.outer-frame #mobileMinimized {
-  display: none;
-}
-
-@media (max-width: 600px) {
-  .outer-frame {
-    z-index: 999;
-  }
-  .outer-frame #mobileMinimized {
-    display: -ms-grid;
-    display: grid;
-  }
-  .outer-frame #mobileMinimized .outer-frame-btns-top-left {
-    overflow: hidden;
-    -webkit-transition: all 600ms ease-in-out;
-    transition: all 600ms ease-in-out;
-    position: relative;
-  }
-  .outer-frame #mobileMinimized .outer-frame-btns-top-left button {
-    position: absolute;
-    top: 0;
-  }
-  .outer-frame #mobileMinimized .outer-frame-btns-top-left button.dropDownBtn {
-    -webkit-transition: all 600ms ease-in-out;
-    transition: all 600ms ease-in-out;
-  }
-  .outer-frame #mobileMinimized .outer-frame-btns-top-left button:first-child {
-    z-index: 999;
-  }
-  .outer-frame #minimized {
-    display: none;
-  }
-  .outer-frame .outer-frame-border.mobile {
-    z-index: -999;
-  }
-  .outer-frame .outer-frame-border.mobile .showMobileView {
-    z-index: 99;
-  }
-}
-
-.outer-frame-border {
-  width: 100%;
-  height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[16];
-      grid-template-columns: repeat(16, 1fr);
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
   grid-column-gap: 2rem;
-  margin: 0;
+  margin: 2rem;
   position: absolute;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
       align-self: center;
   overflow: visible;
+  z-index: -999;
+}
+
+.outer-frame-border.minimized .outer-frame-btns.minimized .btn-individual.minimized .outer-frame-text {
+  white-space: nowrap;
+  width: 0px;
+  margin: -0.25rem;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -1111,42 +1061,62 @@ a:active {
   }
 }
 
-.outer-frame.minimized .outer-frame-btns.minimized .btn-individual.minimized .outer-frame-text {
+.outer-frame-btns {
+  display: -ms-grid;
+  display: grid;
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 1.5rem);
+  margin: 0;
+  position: fixed;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.outer-frame-btns .outer-frame-btns-bottom-right, .outer-frame-btns .outer-frame-btns-bottom-left, .outer-frame-btns .outer-frame-btns-top-left {
+  z-index: 999;
+}
+
+.outer-frame-btns#mobileMinimized {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  top: 32px;
+  left: 32px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.outer-frame-btns#mobileMinimized button {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  margin-left: 0;
+}
+
+.outer-frame-btns#mobileMinimized button#dropDownBtn {
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+.outer-frame-btns#mobileMinimized button:first-child {
+  z-index: 9999;
+}
+
+.outer-frame-btns#minimized .btn-individual.minimized .outer-frame-text {
   white-space: nowrap;
   width: 0px;
   margin: -0.25rem;
   overflow: hidden;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
-}
-
-.outer-frame #mobileMinimized {
-  justify-self: flex-start;
-  margin: 0.75rem;
-  margin-top: 1.25rem;
-}
-
-.outer-frame-btns#mobileMinimized {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-}
-
-.outer-frame-btns {
-  display: -ms-grid;
-  display: grid;
-  width: calc(100% - 1rem);
-  height: calc(100% - 0.5rem);
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  margin: 0;
-  position: absolute;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  z-index: 99999;
 }
 
 .outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left {
@@ -1156,6 +1126,12 @@ a:active {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  z-index: 999;
+}
+
+.outer-frame-btns-top-left button {
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
 }
 
 .outer-frame-btns-bottom-right {
@@ -1171,6 +1147,11 @@ a:active {
   grid-row: 2;
 }
 
+.outer-frame-btns-bottom-right button {
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
 .outer-frame-btns-bottom-left {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1183,6 +1164,11 @@ a:active {
   -ms-flex-item-align: end;
       align-self: flex-end;
   text-decoration: none;
+}
+
+.outer-frame-btns-bottom-left button {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
 }
 
 .outer-frame-btns-bottom-left-icon {
@@ -1415,6 +1401,7 @@ a:active {
 .content-container {
   display: -ms-grid;
   display: grid;
+  pointer-events: none;
   grid-column-gap: 2rem;
   display: grid;
   -ms-grid-columns: (1fr)[12];
@@ -1440,6 +1427,7 @@ a:active {
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2/12;
+  left: 0;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1457,6 +1445,10 @@ a:active {
   color: #EAE5E2;
   overflow-y: scroll !important;
   overflow-x: hidden;
+}
+
+.content-container .content-hero h1, .content-container .content-hero h2 {
+  z-index: -2;
 }
 
 @media (max-width: 600px) {
@@ -1516,7 +1508,7 @@ a:active {
 }
 
 .content-container .content .mockupIMG-container .mockupIMG {
-  height: 100%;
+  width: 100%;
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1718,7 +1710,6 @@ a:active {
   width: 100%;
   top: 2rem;
   left: 0;
-  z-index: 1;
   background-color: #1f1f1f;
   opacity: 0.9;
 }
