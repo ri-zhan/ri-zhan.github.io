@@ -1041,7 +1041,12 @@ a:active {
   -ms-grid-row-align: center;
       align-self: center;
   overflow: visible;
-  z-index: -999;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.outer-frame-border.minimized .outer-frame-btns.minimized {
+  z-index: 999;
 }
 
 .outer-frame-border.minimized .outer-frame-btns.minimized .btn-individual.minimized .outer-frame-text {
@@ -1424,7 +1429,7 @@ a:active {
 }
 
 .content-container .content-cover {
-  z-index: 998;
+  z-index: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2/12;
@@ -1432,6 +1437,7 @@ a:active {
   position: absolute;
   height: 100%;
   width: 100%;
+  pointer-events: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
@@ -2076,6 +2082,7 @@ a:active {
   text-decoration: none;
   color: #EAE5E2;
   background-color: #1f1f1f;
+  z-index: 999;
   -webkit-transition: -webkit-transform 200ms ease-out;
   transition: -webkit-transform 200ms ease-out;
   transition: transform 200ms ease-out;
