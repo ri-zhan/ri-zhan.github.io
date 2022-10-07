@@ -121,6 +121,31 @@ contentHeroSize();
 
 
 
+function mobileViewUnavail() {
+  if($(window).width() <= 600) {
+    $('.mobileViewUnavail').addClass('show');
+
+    $('.inner-box').css({
+      'z-index': '0',
+    });
+
+    $('.doNotShow').css({
+      'display': 'none'
+    });
+
+  } else {
+    $('.mobileViewUnavail').removeClass('show');
+    $('.inner-box').css({
+      'z-index': ''
+    });
+
+    $('.doNotShow').css({
+      'display': ''
+    });
+  };
+}
+
+mobileViewUnavail();
 // const moveSlide = document.querySelectorAll('.slidesContainer');
 
 // const appearAt = {
@@ -361,31 +386,28 @@ if ($('.inner-frame').hasClass('stylized')) {
 
 /////////////////mobile navbar
 
-function mobileNavBarSize() {
+function navBarSize() {
   if($(window).width() <= 600) { 
-
     $( document ).ready(function() {
       $('#mobileMinimized').css({
-        // 'height': $('#dropDowntBtn').outerHeight() + 'px',
         'width': $('#dropDownBtn').outerWidth() + 'px',
       });
     });
-
-    // $('#mobileMinimized').css({
-    //   // 'height': $('#dropDowntBtn').height() + 'px',
-    //   'width': $('#dropDownBtn').width() + 12 + 'px',
-    // });
   
-    let mobileNavBar = true;
+    let mobileNavBar = false;
     
     $('#minimized').css({
       'display': 'none',
     })
     
     $('#mobileMinimized').css({
-      'display': '',
+      'display': 'flex',
     })
 
+    $('#minimized').removeClass('minimized');
+    $('#mobileMinimized').removeClass('mobileMinimized');
+
+    // mobile dropdown button
     $('#dropDownBtn').click(function(){
       if (mobileNavBar == true) {
 
@@ -433,18 +455,23 @@ function mobileNavBarSize() {
       };
   
     });
-  } else {
+
+
+  } else if($(window).width() >= 600){
     $('#minimized').css({
-      'display': '',
-    })
+      'display': 'grid',
+    });
     
     $('#mobileMinimized').css({
       'display': 'none',
-    })
+    });
+
+    $('#minimized').addClass('minimized');
+    $('#mobileMinimized').addClass('mobileMinimized');
   }
 }
 
-mobileNavBarSize();
+navBarSize();
 
 
 
@@ -509,19 +536,19 @@ GIFcontainerSize();
 
 
 
-function navBar(){
-  if($(window).width() >= 481) {
-    // $('.outer-frame').removeClass('minimized');
+// function navBar(){
+//   if($(window).width() >= 481) {
+//     // $('.outer-frame').removeClass('minimized');
 
-  } else {
-    // small phone
-    $('.outer-frame-btns').addClass('minimized');
-    $('#minimized').addClass('minimized');
-    $('#mobileMinimized').addClass('mobileMinimized');
+//   } else {
+//     // small phone
+//     $('.outer-frame-btns').addClass('minimized');
+//     $('#minimized').addClass('minimized');
+//     $('#mobileMinimized').addClass('mobileMinimized');
 
-  };
-};
-navBar();
+//   };
+// };
+// navBar();
 
 
 function outerFrameSize() {
@@ -539,7 +566,6 @@ function outerFrameSize() {
       'width': '100%',
     });
 
-
   } else if($(window).width() >= 481) {
     //phone size
     $('.outer-frame-border-individual').css({
@@ -553,12 +579,6 @@ function outerFrameSize() {
       'height': 1 + 'rem',
       'width': 1 +'rem'
     });
-
-
-    $('#mobileMinimized').css({
-      'width': $('.content').innerWidth() + 'px',
-      'height': $('.outer-frame').height() - 4+ 'px',
-    })
   }
 };
 
@@ -568,17 +588,17 @@ outerFrameSize();
 
 
 $(window).resize(function() {
+  mobileViewUnavail();
+
+  navBarSize();
+
   outerFrameSize();
 
   GIFcontainerSize();
 
   contentHeroSize();
 
-  innerBorderPos();
-  
-  navBar();
-  
-  mobileNavBarSize();
+  innerBorderPos();  
 });
 
 
@@ -714,25 +734,89 @@ expandHeading.forEach(expandHeading =>{
 
 
 
+let playPos;
+let playHeight;
+let playWidth;
 
+$('.play-cards')
+
+function playCardPos() {
+  $('.play-card').css({
+    'top': $('.play-cards')/4,
+    /////position left data-horizontal * .play-card width + column-gap
+    'left': $(this).attr('data-horizontal') * $('.play-card').width(),
+  });
+  // console.log($('.play-card').attr('data-horizontal'))
+
+}
+
+playCardPos();
+
+$( document ).ready(function() {
+  let playPos = $('.play-card').position();
+
+  let playHeight = $('.play-card').height();
+  let playWidth = $('.play-card').width();
+
+
+});
 
 $('.play-card').click(function() {
-  if ($(this).hasClass('play-card-expand')) {
-    $('.play-card').removeClass('play-card-expand')
+
+
+
+  console.log(playPos)
+  console.log(playHeight)
+
+  console.log(playWidth)
+
+
+  if ($(this).hasClass('expand')) {
+    $(this).removeClass('expand');
+
     $(this).css({
-      'width': '',
-    });
-    $(this).delay(500).queue(function() { 
-      $(this).css('z-index','').dequeue();
-    });
+      'position': 'absolute',
+      'top': playPos.top + 'px',
+      'bottom': playPos.left + 'px',
+      'height': playHeight + 'px',
+      'width': playWidth + 'px'
+    }) 
+
   } else {
-    $(this).addClass('play-card-expand')
-    let expandedWidth = $('.play-container').width() - $('.play-card').outerWidth() - 16 + 'px';
+    $(this).addClass('expand');
+
     $(this).css({
-      'width': expandedWidth,
-      'z-index': '999999',
-    });
-  }
+      'position': 'absolute',
+      'width': '',
+      'height': '',
+      'top': 0,
+      'bottom': 0
+    }) 
+    // let expandedWidth = $('.play-container').width() - $('.play-card').outerWidth() - 16 + 'px';
+    // $(this).css({
+    //   'width': expandedWidth,
+    //   'z-index': '999999',
+    // });
+
+    // $('.play-card').css({
+    //   'grid-column': '1/1',
+    //   'grid-row': '1/1',
+    //   'width': '0',
+    //   'height': '0'
+    // });
+
+    // $('.play-card.expand').css({
+    //   'grid-column': '1/5',
+    //   'grid-row': '1/3',
+    //   'width': '100%',
+    //   'height': '100%'
+    // });
+
+    // $('.play-description').css({
+    //   'grid-column': '5/6',
+    //   'grid-row': '1/3',
+    // });
+  };
 });
 
 
@@ -745,188 +829,3 @@ document.addEventListener("wheel", function(e){
   // scroll the div
   target.scrollBy(e.deltaX, e.deltaY);
 })
-
-
-
-// $(".expand").css({
-//   'width': ((($(".play-column").width() + 16) * 4) - 16 + 'px'),
-//   'position': 'absolute',
-//   'left': '0'
-// });
-
-// $(".play-card").css({
-//     'width': $('.play-column'),
-//     'left': 'auto'
-//   });
-
-
-// $('.play-card').each(function() {
-//   var playCardTag = $('.play-card-text');
-//   var playCard = $( this );
-//   var playDescription = $('.play-description')
-//   playCard.click(function() {
-//     playCardTag.find($('.tag')).hasClass($('.art-history'));
-    // $('.art-history').css("display", "flex");
-//   });
-// });
-
-
-
-
-
-
-
-// function myFunction() {
-//   let date = $('.play-date')
-//   var x = document.getElementById("myDIV");
-//   if (x.innerHTML === "Hello") {
-//     x.innerHTML = "Swapped text!";
-//   } else {
-//     x.innerHTML = "Hello";
-//   }
-// }
-
-
-
-
-
-
-
-///////////////////////////////////////////////// infinite scroll loop
-// var doc = window.document,
-//   context = doc.querySelector('.js-loop'),
-//   clones = context.querySelectorAll('.is-clone'),
-//   disableScroll = false,
-//   scrollHeight = 0,
-//   scrollPos = 0,
-//   clonesHeight = 0,
-//   i = 0;
-
-// function getScrollPos () {
-//   return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
-// }
-
-// function setScrollPos (pos) {
-//   context.scrollTop = pos;
-// }
-
-// function getClonesHeight () {
-//   clonesHeight = 0;
-
-//   for (i = 0; i < clones.length; i += 1) {
-//     clonesHeight = clonesHeight + clones[i].offsetHeight;
-//   }
-
-//   return clonesHeight;
-// }
-
-// function reCalc () {
-//   scrollPos = getScrollPos();
-//   scrollHeight = context.scrollHeight;
-//   clonesHeight = getClonesHeight();
-
-//   if (scrollPos <= 0) {
-//     setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
-//   }
-// }
-
-// function scrollUpdate () {
-//   if (!disableScroll) {
-//     scrollPos = getScrollPos();
-
-//     if (clonesHeight + scrollPos >= scrollHeight) {
-//       // Scroll to the top when you’ve reached the bottom
-//       setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
-//       disableScroll = true;
-//     } else if (scrollPos <= 0) {
-//       // Scroll to the bottom when you reach the top
-//       setScrollPos(scrollHeight - clonesHeight);
-//       disableScroll = true;
-//     }
-//   }
-
-//   if (disableScroll) {
-//     // Disable scroll-jumping for a short time to avoid flickering
-//     window.setTimeout(function () {
-//       disableScroll = false;
-//     }, 40);
-//   }
-// }
-
-// function init () {
-//   reCalc();
-  
-//   context.addEventListener('scroll', function () {
-//     window.requestAnimationFrame(scrollUpdate);
-//   }, false);
-
-//   window.addEventListener('resize', function () {
-//     window.requestAnimationFrame(reCalc);
-//   }, false);
-// }
-
-// if (document.readyState !== 'loading') {
-//   init()
-// } else {
-//   doc.addEventListener('DOMContentLoaded', init, false)
-// }
-
-
-
-
-// /*content-imgs scroll*/
-// var page = document.getElementById('content-imgs-loop');
-// var last_loop = page.getElementsByClassName('loop');
-// last_loop = last_loop[last_loop.length-1];
-// var dummy_x = null;
-
-// window.onscroll = function () {
-//   // content-imgs Scroll.
-//   var y = document.body.getBoundingClientRect().top;
-//   page.scrollLeft = -y;
-  
-//   // Looping Scroll.
-//   var diff = window.scrollY - dummy_x;
-//   if (diff > 0) {
-//     window.scrollTo(0, diff);
-//   }
-//   else if (window.scrollY == 0) {
-//     window.scrollTo(0, dummy_x);
-//   }
-// }
-// // Adjust the body height if the window resizes.
-// window.onresize = resize;
-// // Initial resize.
-// resize();
-
-// // Reset window-based vars
-// function resize() {
-//   var w = page.scrollWidth-window.innerWidth+window.innerHeight;
-//   document.body.style.height = w + 'px';
-  
-//   dummy_x = last_loop.getBoundingClientRect().left+window.scrollY;
-// }
-
-
-
-// let slideIndex = 1;
-// showSlides(slideIndex)
-
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//  showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
- //  if  (n > $('.slides').length) {slideIndex = 1}
-// if (n < 1) {slideIndex = $('.slides').length}
- // for (i = 0; i < $('.slides').length; i++){
-  //  $('.slides')[i].style.display = "none";
- // }
-//  $('.slides')[slideIndex-1].style.display = "block";
-// }
-
