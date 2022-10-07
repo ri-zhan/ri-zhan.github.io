@@ -588,6 +588,9 @@ outerFrameSize();
 
 
 $(window).resize(function() {
+
+  playCardPos();
+
   mobileViewUnavail();
 
   navBarSize();
@@ -738,84 +741,62 @@ let playPos;
 let playHeight;
 let playWidth;
 
-$('.play-cards')
-
 function playCardPos() {
-  $('.play-card').css({
-    'top': $('.play-cards')/4,
-    /////position left data-horizontal * .play-card width + column-gap
-    'left': $(this).attr('data-horizontal') * $('.play-card').width(),
+  $('.play-card').each(function(){
+    playWidth = ($('.play-cards').width() / 4);
+    playHeight = ($('.play-cards').height() / 2);
+    console.log(playWidth);
+    // if ($(this).attr('data-vertical') == 1) {
+      $(this).css({
+        'left': (playWidth * $(this).attr('data-horizontal')) + ($(this).attr('data-horizontal') * 4),
+        'top': (playHeight * $(this).attr('data-vertical')) + ($(this).attr('data-vertical') * 8),
+      });
+    // } else {
+    //   $(this).css({
+    //     'background-color': 'yellow',
+    //     'z-index': '99999',
+    //     'top': 0,
+    //     'left': (playWidth *  $(this).attr('data-horizontal')) + ($(this).attr('data-horizontal') * 4),
+    //   });
+    // };
   });
-  // console.log($('.play-card').attr('data-horizontal'))
-
 }
 
 playCardPos();
 
-$( document ).ready(function() {
-  let playPos = $('.play-card').position();
-
-  let playHeight = $('.play-card').height();
-  let playWidth = $('.play-card').width();
-
-
-});
 
 $('.play-card').click(function() {
-
-
-
-  console.log(playPos)
-  console.log(playHeight)
-
-  console.log(playWidth)
-
 
   if ($(this).hasClass('expand')) {
     $(this).removeClass('expand');
 
+    playCardPos();
     $(this).css({
-      'position': 'absolute',
-      'top': playPos.top + 'px',
-      'bottom': playPos.left + 'px',
-      'height': playHeight + 'px',
-      'width': playWidth + 'px'
-    }) 
+      'background-color': '',
+      'position': '',
+      'width': '',
+      'height': '',
+    });
+
+    $(this).on(
+      "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+      function() {
+          $(this).css({
+            'z-index': '',
+          });
+    });
 
   } else {
     $(this).addClass('expand');
 
     $(this).css({
-      'position': 'absolute',
-      'width': '',
-      'height': '',
-      'top': 0,
-      'bottom': 0
-    }) 
-    // let expandedWidth = $('.play-container').width() - $('.play-card').outerWidth() - 16 + 'px';
-    // $(this).css({
-    //   'width': expandedWidth,
-    //   'z-index': '999999',
-    // });
-
-    // $('.play-card').css({
-    //   'grid-column': '1/1',
-    //   'grid-row': '1/1',
-    //   'width': '0',
-    //   'height': '0'
-    // });
-
-    // $('.play-card.expand').css({
-    //   'grid-column': '1/5',
-    //   'grid-row': '1/3',
-    //   'width': '100%',
-    //   'height': '100%'
-    // });
-
-    // $('.play-description').css({
-    //   'grid-column': '5/6',
-    //   'grid-row': '1/3',
-    // });
+      'background-color': 'yellow',
+      'width': '100%',
+      'height': '100%',
+      'top': '0',
+      'left': '0',
+      'z-index': '999',
+    });
   };
 });
 

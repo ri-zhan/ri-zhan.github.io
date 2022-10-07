@@ -106,8 +106,8 @@ button {
   text-transform: uppercase;
   height: 2.5rem;
   width: auto;
-  padding: 0.75rem;
   margin: 0.75rem;
+  padding: 0;
   border: 0.0625rem solid #EAE5E2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,6 +122,44 @@ button {
   background-color: #1f1f1f;
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
+  z-index: 99999;
+  pointer-events: all;
+}
+
+button .btn-individual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0.75rem;
+}
+
+button.prototype-btn {
+  grid-column: span 10;
+  margin-bottom: 5.625rem;
+}
+
+button.prototype-btn .btn-individual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 button:hover {
@@ -1768,6 +1806,7 @@ a:active {
   grid-column: 2/10;
   -ms-grid-row: 3;
   grid-row: 3;
+  width: 100%;
 }
 
 .content-container .content .column-1-1 > .section-heading {
@@ -1824,6 +1863,13 @@ a:active {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .content-container .content .column-5-5 {
@@ -1955,9 +2001,9 @@ a:active {
       grid-template-columns: repeat(7, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
-  row-gap: 2rem;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 1rem;
   height: 30rem;
   width: 100%;
   background-color: none;
@@ -1969,8 +2015,8 @@ a:active {
   -ms-grid-column-span: 1;
   grid-column: 6/7;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1983,6 +2029,30 @@ a:active {
       -ms-flex-align: end;
           align-items: flex-end;
   text-align: right;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.play-container .play-description button {
+  pointer-events: all;
+  margin: 0;
+  z-index: 99999;
+}
+
+.play-container .play-description .btn-individual {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
 }
 
 .play-container .play-cards {
@@ -1991,8 +2061,8 @@ a:active {
   -ms-grid-column-span: 4;
   grid-column: 2/6;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
   height: 100%;
   width: 100%;
   color: #EAE5E2;
@@ -2004,13 +2074,22 @@ a:active {
 }
 
 .play-container .play-cards .play-card {
-  background-color: darkred;
+  position: absolute;
+  background-color: #E63223;
   padding: 1rem;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
-  width: calc(100%/4 - 1rem);
-  height: calc(100vh/2 - 1rem);
+  width: calc(100%/4 - 0.75rem);
+  height: calc(100%/2 - 0.5rem);
   margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .play-container .play-cards .play-card.expand {
@@ -2020,5 +2099,6 @@ a:active {
   z-index: 9999;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
+  overflow-y: scroll;
 }
 /*# sourceMappingURL=style.css.map */
