@@ -249,22 +249,10 @@ section {
   }
 }
 
-.slidesContainer {
-  grid-column: span 10;
-  display: flex;
-  position: relative;
-  height: 24rem;
-  overflow: hidden;
-  margin-top: 2rem;
-  .slides {
-    img {
-      height: 100%;
-    }
-  }
-}
 
 .GIFcontainer, .slidesContainer {
   width: 5rem;
+  height: 24rem;
   grid-column: span 10;
   // min-height: 30rem;
   overflow: hidden;
@@ -1243,34 +1231,24 @@ a:active {
         grid-column: 4/11;
         width: 100%;
         object-fit: cover;
-        // img {
-        //   width: 10px;
-        //   height: 100%;
-        // }
       }
       .column-4 {
         height: 100%;
         grid-column: 1/4;
         grid-column-gap: 2rem;
-        .row {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          justify-content: space-between;
-          .row-section {
-            margin-bottom: 1rem;
-            &:last-child {
-              margin-bottom: 0;
-            }
-            h3 {
-              margin-bottom: 0.2rem;
-            }
-            p {
-              margin-bottom: 0;
-              &:last-child {
-                margin-bottom: 0;
-              }
-            }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        h3 {
+          margin-bottom: 0.2rem;
+        }
+        p {
+          margin-bottom: 2rem;
+          &:last-child {
+            margin-bottom: 0;
           }
         }
       }
