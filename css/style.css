@@ -122,7 +122,7 @@ button {
   background-color: #1f1f1f;
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
-  z-index: 99999;
+  z-index: 99;
   pointer-events: all;
 }
 
@@ -147,6 +147,18 @@ button.prototype-btn {
   grid-column: span 10;
   width: 100%;
   margin: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button.prototype-btn:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin: 0;
+  -webkit-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
+  background-color: #EAE5E2;
+  color: #1f1f1f;
 }
 
 button.prototype-btn .btn-individual {
@@ -1071,7 +1083,8 @@ a:active {
   -ms-grid-row-align: center;
       align-self: center;
   overflow: visible;
-  z-index: -999;
+  z-index: 999;
+  pointer-events: none;
 }
 
 .outer-frame-border.minimized .outer-frame-btns.minimized .btn-individual.minimized .outer-frame-text {
@@ -1103,10 +1116,12 @@ a:active {
       justify-self: center;
   -ms-grid-row-align: center;
       align-self: center;
+  z-index: 99999;
+  pointer-events: none;
 }
 
 .outer-frame-btns .outer-frame-btns-bottom-right, .outer-frame-btns .outer-frame-btns-bottom-left, .outer-frame-btns .outer-frame-btns-top-left {
-  z-index: 999;
+  pointer-events: all;
 }
 
 .outer-frame-btns#mobileMinimized {
@@ -1501,7 +1516,7 @@ a:active {
   position: absolute;
   height: 100%;
   width: 100%;
-  pointer-events: nonegit;
+  pointer-events: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }

@@ -105,7 +105,7 @@ button {
   text-decoration: none;
   background-color: $black;
   transition: all 100ms ease-out;
-  z-index: 99999;
+  z-index: 99;
   pointer-events: all;
   .btn-individual {
     display: flex;
@@ -120,7 +120,16 @@ button {
     grid-column: span 10;
     width: 100%;
     margin: 0;
+    z-index: 1;
+    overflow: hidden;
     // margin-bottom: 5.625rem;
+    &:hover {
+      transform: scale(1);
+      margin: 0;
+      transition: all 100ms ease-out;
+      background-color: $white;
+      color: $black;
+    }
     .btn-individual {
       display: flex;
       column-gap: 0.5rem;
@@ -771,7 +780,8 @@ a:active {
   justify-self: center;
   align-self: center;
   overflow: visible;
-  z-index: -999;
+  z-index: 999;
+  pointer-events: none;
   &.minimized {
     .outer-frame-btns.minimized {
       .btn-individual.minimized {
@@ -805,9 +815,11 @@ a:active {
   position: fixed;
   justify-self: center;
   align-self: center;
-  // z-index: -99999;
+  z-index: 99999;
+  pointer-events: none;
   .outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left {
-    z-index: 999;
+    // z-index: 999999;
+    pointer-events: all;
   }
   &#mobileMinimized {
     display: flex;
@@ -1153,7 +1165,7 @@ a:active {
     position: absolute;
     height: 100%;
     width: 100%;
-    pointer-events: nonegit ;
+    pointer-events: none;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.5),);
   }
   .content {
