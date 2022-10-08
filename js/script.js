@@ -20,6 +20,24 @@ function onScroll(){
     }
 }
 
+
+$('.inner-box, a').on({
+  mouseenter: function () {
+      $('.follower-center').css({
+        'width': '2rem',
+        'height': '2rem'
+      });
+  },
+  mouseleave: function () {
+    $('.follower-center').css({
+      'width': '',
+      'height': ''
+    });
+  }
+});
+
+
+
 // $('.inner-border').hover(function(){
 //   $(this).addClass('inner-border show');
 // });

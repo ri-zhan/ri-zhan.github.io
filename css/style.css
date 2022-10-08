@@ -439,7 +439,7 @@ section img {
 }
 
 .follower {
-  z-index: 99;
+  z-index: 9999999999;
   position: absolute;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1817,12 +1817,6 @@ a:active {
   grid-row: 2;
 }
 
-.content-container .content .design-system {
-  grid-column: span 10;
-  width: 100%;
-  height: auto;
-}
-
 .content-container .content .section-heading {
   color: #EAE5E2;
   grid-column: span 10;
@@ -1843,6 +1837,8 @@ a:active {
   margin-bottom: 2.5rem;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content-container .content .section-heading.expand {

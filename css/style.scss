@@ -345,7 +345,7 @@ section {
 
 
 .follower {
-  z-index: 99;
+  z-index: 9999999999;
   position: absolute;
   border-radius: 50%;
   transform:translate(-50%,-50%);
@@ -1392,11 +1392,11 @@ a:active {
       // }
     }
     ///////////////////change this
-    .design-system {
-      grid-column: span 10;
-      width: 100%;
-      height: auto;
-    }
+    // .design-system {
+    //   grid-column: span 10;
+    //   width: 100%;
+    //   height: auto;
+    // }
     .section-heading {
       // background-color: $white;
       color: $white;
@@ -1409,6 +1409,8 @@ a:active {
       align-items: center;
       margin-bottom: 2.5rem;
       transition: all 500ms ease-in-out;
+      white-space: nowrap;
+      overflow: hidden;
       &.expand {
         width: 100%;
         transition: all 500ms ease-in-out;
