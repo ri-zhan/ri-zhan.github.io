@@ -145,7 +145,8 @@ button .btn-individual {
 
 button.prototype-btn {
   grid-column: span 10;
-  margin-bottom: 5.625rem;
+  width: 100%;
+  margin: 0;
 }
 
 button.prototype-btn .btn-individual {
@@ -234,6 +235,10 @@ section:first-child {
   margin-top: 6rem;
 }
 
+section:last-child {
+  margin-bottom: 0;
+}
+
 section img {
   width: 100%;
   grid-column: span 10;
@@ -261,6 +266,7 @@ section img {
   position: relative;
   -webkit-transition: all 500ms ease-in-out, height 200ms ease-in;
   transition: all 500ms ease-in-out, height 200ms ease-in;
+  margin-top: 0;
 }
 
 .footer.show {
@@ -1516,6 +1522,14 @@ a:active {
   z-index: -2;
 }
 
+.content-container .content-hero-img {
+  z-index: -999999;
+}
+
+.content-container .content #contentIMG {
+  position: inherit;
+}
+
 @media (max-width: 600px) {
   .content-container .content {
     -ms-grid-columns: (1fr)[4];
@@ -1636,6 +1650,10 @@ a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.content-container .content .column-4-6 .column-4 > div {
+  margin-bottom: 2rem;
 }
 
 .content-container .content .column-4-6 .column-4:last-child {

@@ -81,8 +81,12 @@ showFooterLine.forEach(showFooterLine =>{
 $('.content').scroll(function(){
   // slowScroll($('.contentHero'));
   var scrolledAmount = ($('.content').scrollTop());
-  $('.content-hero-img').css({
+  $('#contentIMGtext').css({
     'transform': 'translateY(' + scrolledAmount * 0.105 + 'px',
+  });
+
+  $('#contentIMG').css({
+    'transform': 'translateY(' + scrolledAmount * 0.1 + 'px',
   });
 
   var slidesContainerPosition = $('.slidesContainer').position();

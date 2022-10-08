@@ -118,7 +118,9 @@ button {
   }
   &.prototype-btn {
     grid-column: span 10;
-    margin-bottom: 5.625rem;
+    width: 100%;
+    margin: 0;
+    // margin-bottom: 5.625rem;
     .btn-individual {
       display: flex;
       column-gap: 0.5rem;
@@ -192,6 +194,9 @@ section {
   &:first-child {
     margin-top: 6rem;
   }
+  &:last-child {
+    margin-bottom: 0;
+  }
   img {
     width: 100%;
     grid-column: span 10;
@@ -210,6 +215,7 @@ section {
   margin-bottom: 6rem;
   position: relative;
   transition: all 500ms ease-in-out, height 200ms ease-in;
+  margin-top: 0;
   &.show {
     transition: all 500ms ease-in-out, height 200ms ease-in;
     #footer-section-heading-line {
@@ -1163,6 +1169,12 @@ a:active {
       h1, h2 {
         z-index: -2;
       }
+      &-img {
+        z-index: -999999;
+      }
+    }
+    #contentIMG {
+      position: inherit;
     }
     @media (max-width: 600px) {
       grid-template-columns: repeat(4, 1fr);
@@ -1239,6 +1251,9 @@ a:active {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        > div {
+          margin-bottom: 2rem;
+        }
         &:last-child {
           margin-bottom: 0;
         }
