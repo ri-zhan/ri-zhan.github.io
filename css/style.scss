@@ -1110,8 +1110,22 @@ a:active {
 
 
 
+.pageUnavail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  text-align: center;
+}
 
-.mobileViewUnavail {
+
+.mobileViewUnavail{
   display: none;
   &.show {
     position: absolute;
@@ -1125,7 +1139,7 @@ a:active {
       text-align: center;
     }
     @media (max-width: 600px) {
-      z-index: 1;
+      z-index: 999999;
       background-color: $black;
       height: 100%;
       // width: 100%;

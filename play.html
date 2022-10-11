@@ -24,10 +24,26 @@
         <link rel="stylesheet" href="https://use.typekit.net/cih5xvy.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
 <body> 
     <!-- <span class="follower-center follower"></span>
     <span class="follower-around follower"></span> -->
+    <div class="mobileViewUnavail">
+        <h2>Woop! Mobile view isn't available yet (still coding it!), switch to a laptop to view!</h2>
+    </div>
+
+    <div class="pageUnavail show">
+        <h2>Oops, this page is not available (yet! Still coding it!) Check back another time!</h2>
+        <button style="z-index:999">
+            <a onclick="history.back()" class="btn-individual" style="display: flex; column-gap: 0.5rem;">
+                <p class="material-symbols-outlined btn-icon">chevron_left</p>
+                <span class="outer-frame-text top-left-name">go back</span>
+            </a>
+        </button>
+    </div>
+
+
     <div class="play-container">
             <div class="play-cards">
                 <div class="play-card" data-horizontal="0" data-vertical="0">
@@ -91,10 +107,10 @@
         </div>
 
         <div class="play-description">
-            <button>
-                <a href="index.html" class="btn-individual">
-                    <p class="material-symbols-outlined btn-icon">home</p>
-                    <span class="outer-frame-text top-left-name">home</span>
+            <button style="z-index:999">
+                <a onclick="history.back()" class="btn-individual" style="display: flex; column-gap: 0.5rem;">
+                    <p class="material-symbols-outlined btn-icon">chevron_left</p>
+                    <span class="outer-frame-text top-left-name">go back</span>
                 </a>
             </button>
             <p class="play-description-text">

@@ -141,7 +141,11 @@ $( document ).ready(function() {
 
   contentHeroSize();
 
-
+  if  ($('.mobileViewUnavail').hasClass('show')) {
+    $('.pageUnavail.show').css({
+      'display': 'none'
+    })
+  }
 
 
   function mobileViewUnavail() {
