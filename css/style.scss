@@ -750,7 +750,34 @@ a:active {
   }
 }
 
-
+.typewriterDiv {
+  display: flex;
+  column-gap: 0.35rem;
+  align-items: baseline;
+  position: absolute;
+  left: 10.75rem;
+  align-self: flex-start;
+  justify-self: flex-start;
+  white-space: nowrap;
+  overflow: hi;
+  h2, span {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  > span {
+    font-family: ivymode,sans-serif;
+    font-size: 1.75rem;
+    color: $white;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 2.375rem;
+    @media (max-width: 600px) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
 
 // .outer-frame {
 //   z-index: 999;

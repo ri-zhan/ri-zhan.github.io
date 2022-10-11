@@ -1068,6 +1068,46 @@ a:active {
   left: -3.4375rem;
 }
 
+.typewriterDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.35rem;
+          column-gap: 0.35rem;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  position: absolute;
+  left: 10.75rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  justify-self: flex-start;
+  white-space: nowrap;
+  overflow: hi;
+}
+
+.typewriterDiv h2, .typewriterDiv span {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.typewriterDiv > span {
+  font-family: ivymode,sans-serif;
+  font-size: 1.75rem;
+  color: #EAE5E2;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 2.375rem;
+}
+
+@media (max-width: 600px) {
+  .typewriterDiv > span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 .outer-frame-border {
   width: calc(100% - 1rem);
   height: calc(100% - 1rem);
