@@ -222,6 +222,10 @@ section a {
   text-decoration: underline;
 }
 
+section .prototype-btn a {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   section {
     display: -webkit-box;

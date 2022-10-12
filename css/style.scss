@@ -196,6 +196,11 @@ section {
   a {
     text-decoration: underline;
   }
+  .prototype-btn {
+    a {
+      text-decoration: none;
+    }
+  }
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
