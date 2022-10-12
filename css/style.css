@@ -218,6 +218,10 @@ section {
   margin-bottom: 5.625rem;
 }
 
+section a {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   section {
     display: -webkit-box;
@@ -314,7 +318,7 @@ footer h2 {
   z-index: 2;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   footer h2 {
     white-space: normal;
     padding-right: 0;
@@ -1134,7 +1138,7 @@ a:active {
       justify-self: center;
   -ms-grid-row-align: center;
       align-self: center;
-  z-index: 99999;
+  z-index: 999;
   pointer-events: none;
 }
 
@@ -1156,7 +1160,6 @@ a:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 3;
 }
 
 .outer-frame-btns#mobileMinimized button {
@@ -1554,10 +1557,21 @@ a:active {
   }
 }
 
+.content-cover {
+  z-index: 1;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
 .content-container {
   display: -ms-grid;
   display: grid;
-  pointer-events: none;
   grid-column-gap: 2rem;
   display: grid;
   -ms-grid-columns: (1fr)[12];
@@ -1576,20 +1590,6 @@ a:active {
             column-gap: 1rem;
     margin: 0 2rem;
   }
-}
-
-.content-container .content-cover {
-  z-index: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 10;
-  grid-column: 2/12;
-  left: 0;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
 .content-container .content {

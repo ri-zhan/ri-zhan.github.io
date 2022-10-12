@@ -919,7 +919,7 @@ $( document ).ready(function() {
     $.extend({
       teletype: {
         defaults: {
-          delay: 100,
+          delay: 80,
           pause: 2000,
           text: []
         }
@@ -932,7 +932,8 @@ $( document ).ready(function() {
   
   $('#typewriter').teletype({
     text: [
-      'adding alt texts properly',
+      'looking at summer 2023 design internships',
+      'adding in alt texts properly',
       'finishing the play section',
       'learning python',
       'drinking bubble tea',
