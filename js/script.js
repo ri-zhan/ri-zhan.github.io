@@ -502,14 +502,14 @@ $( document ).ready(function() {
 
 
 
-  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left')).mouseenter(function() {
+  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseenter(function() {
     $('.btn-individual').toggleClass('minimized');
     $('#minimized').css({
       'z-index': '999',
     })
   });
 
-  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left')).mouseleave(function() {
+  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseleave(function() {
     $('.btn-individual').toggleClass('minimized');
     $('#minimized').css({
       'z-index': '',
@@ -839,10 +839,10 @@ $( document ).ready(function() {
   });
 
 
-  $('.typewriterDiv').css({
-    'left': $('.outer-frame-btns-top-left').outerWidth(),
-    'width': $('.outer-frame-btns').width() - ($('.outer-frame-btns-top-left').outerWidth()),
-  });
+  // $('.typewriterDiv').css({
+  //   // 'left': $('.outer-frame-btns-top-left').outerWidth(),
+  //   'max-width': $('.outer-frame-btns').width() - ($('.outer-frame-btns-top-left').outerWidth()),
+  // });
   
   
   /*** Plugin ***/

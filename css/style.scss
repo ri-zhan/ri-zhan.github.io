@@ -60,14 +60,15 @@ h3 {
   text-transform: uppercase;
 }
 
-h4 {
-  font-family: 'Darker Grotesque', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin: 0;
-}
+// h4 {
+//   font-family: neue-haas-grotesk-display, sans-serif;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 1rem;
+//   line-height: 1.75rem;
+//   color: $white;
+//   margin: 0;
+// }
 
 p {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -138,7 +139,7 @@ button {
     }
   }
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 100ms ease-out;
     background-color: $white;
     color: $black;
@@ -212,7 +213,7 @@ section {
   }
 }
 
-.footer {
+footer {
   grid-column: span 10;
   display: flex;
   column-gap: 1rem;
@@ -220,21 +221,30 @@ section {
   color: $white;
   max-height: fit-content;
   justify-self: center;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 6rem;
   position: relative;
-  transition: all 500ms ease-in-out, height 200ms ease-in;
+  transition: all 1000ms ease-out;
   margin-top: 0;
+  background-color: none;
+  z-index: 0;
+  button {
+    margin-bottom: 0;
+  }
+  #footer-section-heading-line {
+    width: 0%;
+    height: 0rem;
+    border: solid $white;
+    border-width: 0 0 0 0;
+    transition: all 1000ms ease-out;
+  }
   &.show {
-    transition: all 500ms ease-in-out, height 200ms ease-in;
+    transition: all 2000ms ease-out;
     #footer-section-heading-line {
-      margin-top: 2rem;
-      top: -0.75rem;
+      top: 0.75rem;
       width: 100%;
-      height: 3rem;
-      border: solid $white;
-      border-width: 0.0625rem 0.0625rem 0 0;
-      transition: all 500ms ease-in-out, height 500ms ease-in;
+      border-width: 0.0625rem 0 0 0;
+      transition: all 2000ms ease-out;
       @media (max-width: 600px) {
         top: 1.25rem;
         z-index: 9;
@@ -245,22 +255,11 @@ section {
     margin-bottom: 0;
     padding-right: 1rem;
     white-space: nowrap;
-    background-color: $black;
     z-index: 2;
     @media (max-width: 850px) {
       white-space: normal;
       padding-right: 0;
     }
-  }
-  #footer-section-heading-line {
-    margin-top: 0rem;
-    position: absolute;
-    top: 1.25rem;
-    width: 60%;
-    height: 0rem;
-    border: solid $white;
-    border-width: 0 0 0 0;
-    transition: all 500ms ease-in-out, height 50ms ease-in;
   }
 }
 
@@ -522,7 +521,7 @@ a:active {
         grid-row: span 1;
         transition: all 300ms ease-in-out;
       }
-      h3 {
+      h2 {
         margin-top: 0.625rem;
         margin-bottom: 0;
         text-align: center;
@@ -755,27 +754,20 @@ a:active {
   column-gap: 0.35rem;
   align-items: baseline;
   position: absolute;
-  left: 10.75rem;
-  align-self: flex-start;
+  // left: 10.75rem;
+  left: 1.25rem;
+  bottom: 1rem;
+  align-self: flex-end;
   justify-self: flex-start;
   white-space: nowrap;
-  overflow: hi;
-  h2, span {
+  overflow: hidden;
+  background-color: $white;
+  color: $black;
+  padding: 0 0.5rem;
+  p {
     margin-bottom: 0;
     white-space: nowrap;
-  }
-  > span {
-    font-family: ivymode,sans-serif;
-    font-size: 1.75rem;
-    color: $white;
-    margin-top: 0.75rem;
-    font-weight: 600;
-    font-style: normal;
-    line-height: 2.375rem;
-    @media (max-width: 600px) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
+    color: $black;
   }
 }
 
@@ -844,15 +836,15 @@ a:active {
   align-self: center;
   z-index: 99999;
   pointer-events: none;
-  .outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left {
+  .outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left {
     // z-index: 999999;
     pointer-events: all;
   }
   &#mobileMinimized {
     display: flex;
     justify-content: flex-start;
-    top: 16px;
-    left: 32px;
+    top: 1rem;
+    left: 2rem;
     overflow: hidden;
     flex-direction: column;
     z-index: 3;
@@ -888,14 +880,29 @@ a:active {
         }
     }
   }
-  &-bottom-right, &-bottom-left, &-top-left {
+  &-bottom-right, &-bottom-left, &-top-left, &-top-right {
     height: fit-content;
     width: fit-content;
     z-index: 999;
   }
   &-top-left {
+    display: flex;
+    justify-self: flex-start;
+    align-self: flex-start;
+    grid-column: 1;
+    grid-row: 1;
     button {
       transform-origin: top left;
+    }
+  }
+  &-bottom-left {
+    display: flex;
+    justify-self: flex-start;
+    align-self: flex-end;
+    grid-column: 1;
+    grid-row: 2;
+    button {
+      transform-origin: bottom left;
     }
   }
   &-bottom-right {
@@ -908,30 +915,53 @@ a:active {
       transform-origin: bottom right;
     }
   }
-  &-bottom-left {
+  &-top-right {
     display: flex;
-    // margin: 0 0 1rem 1rem;
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: flex-start;
-    align-self: flex-end;
-    text-decoration: none;
+    justify-self: flex-end;
+    align-self: flex-start;
+    grid-column: 2;
+    grid-row: 1;
     button {
-      transform-origin: bottom left;
+      transform-origin: top right;
+      margin-left: 0;
     }
-    &-icon {
+    .top-right-icon {
       display: inline-block;
       height: 1.5rem;
       width: 1.5rem;
       border-radius: 50%;
       background-color: $red;
-      margin-right: 0.5rem;
+      // margin-right: 0.5rem;
       transition: all 100ms ease-in-out;
     }
     &-name {
       opacity: 0;
     }
   }
+  // &-bottom-left {
+  //   display: flex;
+  //   // margin: 0 0 1rem 1rem;
+  //   grid-column: 1;
+  //   grid-row: 2;
+  //   justify-self: flex-start;
+  //   align-self: flex-end;
+  //   text-decoration: none;
+  //   button {
+  //     transform-origin: bottom left;
+  //   }
+  //   &-icon {
+  //     display: inline-block;
+  //     height: 1.5rem;
+  //     width: 1.5rem;
+  //     border-radius: 50%;
+  //     background-color: $red;
+  //     margin-right: 0.5rem;
+  //     transition: all 100ms ease-in-out;
+  //   }
+  //   &-name {
+  //     opacity: 0;
+  //   }
+  // }
   .btn-individual {
     display: flex;
     width: fit-content;
@@ -1241,7 +1271,7 @@ a:active {
       }
       &::-webkit-scrollbar-track { /* Background */
         background: $black;
-        margin-bottom: 7rem;
+        margin-bottom: 4rem;
         margin-top: 6rem;
       }
     }
@@ -1257,7 +1287,7 @@ a:active {
     }
     &::-webkit-scrollbar-track { /* Background */
       background: $black;
-      margin-bottom: 7rem;
+      margin-bottom: 6rem;
       margin-top: 6rem;
     }
     .mockupIMG-container {
@@ -1306,9 +1336,9 @@ a:active {
         justify-content: space-between;
         > div {
           margin-bottom: 2rem;
-        }
-        &:last-child {
-          margin-bottom: 0;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
         h3 {
           margin-bottom: 0.2rem;

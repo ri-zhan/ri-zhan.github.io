@@ -69,15 +69,6 @@ h3 {
   text-transform: uppercase;
 }
 
-h4 {
-  font-family: 'Darker Grotesque', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin: 0;
-}
-
 p {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-style: normal;
@@ -176,8 +167,8 @@ button.prototype-btn .btn-individual {
 }
 
 button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
   background-color: #EAE5E2;
@@ -256,7 +247,7 @@ section img {
   grid-column: span 10;
 }
 
-.footer {
+footer {
   grid-column: span 10;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,64 +262,63 @@ section img {
   max-height: -moz-fit-content;
   max-height: fit-content;
   justify-self: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 6rem;
   position: relative;
-  -webkit-transition: all 500ms ease-in-out, height 200ms ease-in;
-  transition: all 500ms ease-in-out, height 200ms ease-in;
+  -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
   margin-top: 0;
+  background-color: none;
+  z-index: 0;
 }
 
-.footer.show {
-  -webkit-transition: all 500ms ease-in-out, height 200ms ease-in;
-  transition: all 500ms ease-in-out, height 200ms ease-in;
+footer button {
+  margin-bottom: 0;
 }
 
-.footer.show #footer-section-heading-line {
-  margin-top: 2rem;
-  top: -0.75rem;
-  width: 100%;
-  height: 3rem;
+footer #footer-section-heading-line {
+  width: 0%;
+  height: 0rem;
   border: solid #EAE5E2;
-  border-width: 0.0625rem 0.0625rem 0 0;
-  -webkit-transition: all 500ms ease-in-out, height 500ms ease-in;
-  transition: all 500ms ease-in-out, height 500ms ease-in;
+  border-width: 0 0 0 0;
+  -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
+}
+
+footer.show {
+  -webkit-transition: all 2000ms ease-out;
+  transition: all 2000ms ease-out;
+}
+
+footer.show #footer-section-heading-line {
+  top: 0.75rem;
+  width: 100%;
+  border-width: 0.0625rem 0 0 0;
+  -webkit-transition: all 2000ms ease-out;
+  transition: all 2000ms ease-out;
 }
 
 @media (max-width: 600px) {
-  .footer.show #footer-section-heading-line {
+  footer.show #footer-section-heading-line {
     top: 1.25rem;
     z-index: 9;
   }
 }
 
-.footer h2 {
+footer h2 {
   margin-bottom: 0;
   padding-right: 1rem;
   white-space: nowrap;
-  background-color: #1f1f1f;
   z-index: 2;
 }
 
 @media (max-width: 850px) {
-  .footer h2 {
+  footer h2 {
     white-space: normal;
     padding-right: 0;
   }
-}
-
-.footer #footer-section-heading-line {
-  margin-top: 0rem;
-  position: absolute;
-  top: 1.25rem;
-  width: 60%;
-  height: 0rem;
-  border: solid #EAE5E2;
-  border-width: 0 0 0 0;
-  -webkit-transition: all 500ms ease-in-out, height 50ms ease-in;
-  transition: all 500ms ease-in-out, height 50ms ease-in;
 }
 
 .GIFcontainer, .slidesContainer {
@@ -769,14 +759,14 @@ a:active {
   transition: all 300ms ease-in-out;
 }
 
-.inner-frame-container .inner-frame.simplified .inner-box h3 {
+.inner-frame-container .inner-frame.simplified .inner-box h2 {
   margin-top: 0.625rem;
   margin-bottom: 0;
   text-align: center;
 }
 
 @media (max-width: 600px) {
-  .inner-frame-container .inner-frame.simplified .inner-box h3 {
+  .inner-frame-container .inner-frame.simplified .inner-box h2 {
     margin-top: 0;
   }
 }
@@ -1078,34 +1068,22 @@ a:active {
       -ms-flex-align: baseline;
           align-items: baseline;
   position: absolute;
-  left: 10.75rem;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  left: 1.25rem;
+  bottom: 1rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   justify-self: flex-start;
   white-space: nowrap;
-  overflow: hi;
+  overflow: hidden;
+  background-color: #EAE5E2;
+  color: #1f1f1f;
+  padding: 0 0.5rem;
 }
 
-.typewriterDiv h2, .typewriterDiv span {
+.typewriterDiv p {
   margin-bottom: 0;
   white-space: nowrap;
-}
-
-.typewriterDiv > span {
-  font-family: ivymode,sans-serif;
-  font-size: 1.75rem;
-  color: #EAE5E2;
-  margin-top: 0.75rem;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 2.375rem;
-}
-
-@media (max-width: 600px) {
-  .typewriterDiv > span {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+  color: #1f1f1f;
 }
 
 .outer-frame-border {
@@ -1160,7 +1138,7 @@ a:active {
   pointer-events: none;
 }
 
-.outer-frame-btns .outer-frame-btns-bottom-right, .outer-frame-btns .outer-frame-btns-bottom-left, .outer-frame-btns .outer-frame-btns-top-left {
+.outer-frame-btns .outer-frame-btns-top-right, .outer-frame-btns .outer-frame-btns-bottom-left, .outer-frame-btns .outer-frame-btns-top-left {
   pointer-events: all;
 }
 
@@ -1171,8 +1149,8 @@ a:active {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  top: 16px;
-  left: 32px;
+  top: 1rem;
+  left: 2rem;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1206,7 +1184,7 @@ a:active {
   transition: all 300ms ease-in-out;
 }
 
-.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left {
+.outer-frame-btns-bottom-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-top-right {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1216,9 +1194,40 @@ a:active {
   z-index: 999;
 }
 
+.outer-frame-btns-top-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
 .outer-frame-btns-top-left button {
   -webkit-transform-origin: top left;
           transform-origin: top left;
+}
+
+.outer-frame-btns-bottom-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-start;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.outer-frame-btns-bottom-left button {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
 }
 
 .outer-frame-btns-bottom-right {
@@ -1239,37 +1248,36 @@ a:active {
           transform-origin: bottom right;
 }
 
-.outer-frame-btns-bottom-left {
+.outer-frame-btns-top-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  justify-self: flex-start;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  text-decoration: none;
+  justify-self: flex-end;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
 }
 
-.outer-frame-btns-bottom-left button {
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+.outer-frame-btns-top-right button {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  margin-left: 0;
 }
 
-.outer-frame-btns-bottom-left-icon {
+.outer-frame-btns-top-right .top-right-icon {
   display: inline-block;
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
   background-color: #E63223;
-  margin-right: 0.5rem;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
 
-.outer-frame-btns-bottom-left-name {
+.outer-frame-btns-top-right-name {
   opacity: 0;
 }
 
@@ -1626,7 +1634,7 @@ a:active {
   .content-container .content::-webkit-scrollbar-track {
     /* Background */
     background: #1f1f1f;
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
     margin-top: 6rem;
   }
 }
@@ -1647,7 +1655,7 @@ a:active {
 .content-container .content::-webkit-scrollbar-track {
   /* Background */
   background: #1f1f1f;
-  margin-bottom: 7rem;
+  margin-bottom: 6rem;
   margin-top: 6rem;
 }
 
@@ -1734,7 +1742,7 @@ a:active {
   margin-bottom: 2rem;
 }
 
-.content-container .content .column-4-6 .column-4:last-child {
+.content-container .content .column-4-6 .column-4 > div:last-child {
   margin-bottom: 0;
 }
 
