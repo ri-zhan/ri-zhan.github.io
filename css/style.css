@@ -134,7 +134,7 @@ button .btn-individual {
   margin: 0.75rem;
 }
 
-button.prototype-btn {
+button.external-btn {
   grid-column: span 10;
   width: 100%;
   margin: 0;
@@ -142,7 +142,7 @@ button.prototype-btn {
   overflow: hidden;
 }
 
-button.prototype-btn:hover {
+button.external-btn:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
   margin: 0;
@@ -152,7 +152,7 @@ button.prototype-btn:hover {
   color: #1f1f1f;
 }
 
-button.prototype-btn .btn-individual {
+button.external-btn .btn-individual {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,7 +222,7 @@ section a {
   text-decoration: underline;
 }
 
-section .prototype-btn a {
+section .external-btn a {
   text-decoration: none;
 }
 

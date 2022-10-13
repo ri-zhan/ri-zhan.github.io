@@ -117,7 +117,7 @@ button {
     height: 100%;
     margin: 0.75rem;
   }
-  &.prototype-btn {
+  &.external-btn {
     grid-column: span 10;
     width: 100%;
     margin: 0;
@@ -196,7 +196,7 @@ section {
   a {
     text-decoration: underline;
   }
-  .prototype-btn {
+  .external-btn {
     a {
       text-decoration: none;
     }
