@@ -1608,6 +1608,10 @@ a:active {
   overflow-x: hidden;
 }
 
+.content-container .content-hero {
+  height: 30rem;
+}
+
 .content-container .content-hero h1, .content-container .content-hero h2 {
   z-index: -2;
 }
