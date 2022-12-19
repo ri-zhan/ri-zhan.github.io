@@ -1,4 +1,26 @@
 $( document ).ready(function() {  
+
+  $(function(){
+    $.each(document.images, function(){
+               var this_image = this;
+               var src = $(this_image).attr('src') || '' ;
+               if(!src.length > 0){
+                   //this_image.src = options.loading; // show loading
+                   var lsrc = $(this_image).attr('lsrc') || '' ;
+                   if(lsrc.length > 0){
+                       var img = new Image();
+                       img.src = lsrc;
+                       $(img).load(function() {
+                           this_image.src = this.src;
+                       });
+                   }
+               }
+           });
+  });
+
+
+
+
   $(document).mousemove(function(e){
     $(".follower-around").css({left: e.pageX, top:e.pageY});
   });
@@ -93,16 +115,20 @@ $( document ).ready(function() {
     var slidesContainerPosition = $('.slidesContainer').position();
     var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
 
-    $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
-      'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
+    // $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+    //   'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
+    //   'right': 0,
+    // });
+
+    // $("#slideShowRow:nth-child(odd)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+    //   'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.025 + 'px',
+    //   'left': 0,
+    // });
+
+    $(('.slidesContainer.openGIF')).find($('.slides')).css({
+      'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.025 + 'px',
       'right': 0,
     });
-
-    $("#slideShowRow:nth-child(odd)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
-      'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.025 + 'px',
-      'left': 0,
-    });
-
     
     var mockupIMGposition = $('.mockupIMG-container').position();
     var scrolledAmountRelativeMockup = ($('.content').scrollTop()) - (mockupIMGposition.top);
@@ -331,11 +357,6 @@ $( document ).ready(function() {
     });
   });
 
-
-
-
-
-
   //////////////////////// inner container hover //////////////////
   if ($('.inner-frame').hasClass('stylized')) {
     $('.inner-border-bottom-left').hover(
@@ -500,21 +521,65 @@ $( document ).ready(function() {
 
   navBarSize();
 
+  function outerFrameState(){
+    if ( window.location.pathname == '/index.html' ){
+      // Index (home) page
+    } else {
+        $('.outer-frame').addClass('minimized');
+    }
+  };
+  outerFrameState();
+
+  // '.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right'
+
+  //   if($(window).width() >= 1025) {
+  //     //desktop size
+  //   } else if($(window).width() >= 961) {
+  //     //tablet size
+  //     $('.outer-frame').addClass()
+
+  //     $('.GIFcontainer > img').css({
+  //       'width': $('.content').width() - 48 + 'px',
+  //     });
+  //   } else if($(window).width() >= 481) {
+  //     //phone size
+  //     $('.GIFcontainer').css({
+  //       'height': $('.content').height()/2 + 'px',
+  //       'width': $('.content').width() - 20 + 'px',
+  //     });
+
+  //     $('.GIFcontainer > img').css({
+  //       'width': $('.content').width() - 64 + 'px',
+  //     });
+  //   } else {
+  //     $('.GIFcontainer').css({
+  //       'height': $('.content').height()/2.5 + 'px',
+  //       'width': $('.content').width() - 20 + 'px',
+  //     });
+
+  //     $('.GIFcontainer > img').css({
+  //       'width': $('.content').width() - 32 + 'px',
+  //     });
+  //   };
+  // };
+  // outerFrameState();
 
 
-  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseenter(function() {
-    $('.btn-individual').toggleClass('minimized');
-    $('#minimized').css({
-      'z-index': '999',
-    })
-  });
 
-  $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseleave(function() {
-    $('.btn-individual').toggleClass('minimized');
-    $('#minimized').css({
-      'z-index': '',
-    })
-  });
+
+  // $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseenter(function() {
+  //   $('.btn-individual').toggleClass('minimized');
+  //   $('#minimized').css({
+  //     'z-index': '999',
+  //   })
+  // });
+
+  // $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseleave(function() {
+  //   $('.btn-individual').toggleClass('minimized');
+  //   $('#minimized').css({
+  //     'z-index': '',
+  //   })
+  // });
 
 
   function GIFcontainerSize(){
