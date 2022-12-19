@@ -19,8 +19,6 @@ $( document ).ready(function() {
   });
 
 
-
-
   $(document).mousemove(function(e){
     $(".follower-around").css({left: e.pageX, top:e.pageY});
   });
