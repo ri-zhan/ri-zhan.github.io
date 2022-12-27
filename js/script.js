@@ -1,4 +1,4 @@
-$( document ).ready(function() {  
+$(window).on("load", function() {
 
   $(function(){
     $.each(document.images, function(){
