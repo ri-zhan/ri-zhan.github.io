@@ -773,6 +773,25 @@ a:active {
     white-space: nowrap;
     color: $black;
   }
+  .movingText {
+    display: flex;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 89%;
+    .movingText{
+      display: flex;
+      flex-direction: row;
+      p{
+        overflow-wrap: normal;
+        white-space: normal;
+      }
+      #cursor{
+        display: none;
+      }
+    }
+  }
 }
 
 .outer-frame {
@@ -819,7 +838,7 @@ a:active {
       z-index: 999;
       margin: 0;
       &#dropDownBtn {
-        transition: all 600ms ease-in-out;
+        transition: all 100ms ease-in-out;
       }
       &:first-child {
         z-index: 9999;         
@@ -972,6 +991,92 @@ a:active {
       }
       &-name {
         opacity: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      z-index: 999999;
+      width: 3rem;
+      color: $white;
+      border: 0.0625rem solid $white;   
+      background-color: $black;
+      pointer-events: all;
+      margin: 1.25rem;
+      padding: 0;
+      overflow: hidden;
+      transition: all 300ms ease-in-out;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      .outer-frame-text {
+        width: 100%;
+        white-space: nowrap;
+      }
+      #dropDownBtnIcon{
+        transition: all 200ms ease-in-out;
+        justify-self: flex-start;
+      }
+      &.open{
+        transition: all 300ms ease-in-out;
+        width: 10rem;
+        #dropDownBtnIcon{
+          transform: rotate(180deg);
+          transition: all 200ms ease-in-out;
+        }
+        .outer-frame-text {
+          width: 100%;
+        }
+      }
+      button{
+        color: $white;
+        transform-origin: bottom left;
+        border: none;
+        background-color: none;
+        margin-left: 0;
+        transform: none;
+        justify-content: center;
+      }
+      #dropDownBtn {
+        display: flex;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+      .outer-frame-btns-top-right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        .btn-individual {
+          justify-content: flex-start;
+        }
+      }
+      .outer-frame-btns-top-left {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        .btn-individual {
+          justify-content: flex-start;
+        }
+      }
+      .outer-frame-btns-bottom-left {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        .btn-individual {
+          justify-content: flex-start;
+        }
+      }
+      .outer-frame-btns-bottom-right {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        .btn-individual {
+          justify-content: flex-start;
+        }
       }
     }
   }

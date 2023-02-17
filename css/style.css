@@ -1089,6 +1089,41 @@ a:active {
   color: #1f1f1f;
 }
 
+.typewriterDiv .movingText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .typewriterDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 89%;
+  }
+  .typewriterDiv .movingText {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .typewriterDiv .movingText p {
+    overflow-wrap: normal;
+    white-space: normal;
+  }
+  .typewriterDiv .movingText #cursor {
+    display: none;
+  }
+}
+
 .outer-frame {
   position: absolute;
   left: 0;
@@ -1142,8 +1177,8 @@ a:active {
 }
 
 .outer-frame.minimized button#dropDownBtn {
-  -webkit-transition: all 600ms ease-in-out;
-  transition: all 600ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .outer-frame.minimized button:first-child {
@@ -1390,6 +1425,138 @@ a:active {
 
 .outer-frame .outer-frame-btns-top-right-name {
   opacity: 0;
+}
+
+@media (max-width: 600px) {
+  .outer-frame .outer-frame-btns {
+    z-index: 999999;
+    width: 3rem;
+    color: #EAE5E2;
+    border: 0.0625rem solid #EAE5E2;
+    background-color: #1f1f1f;
+    pointer-events: all;
+    margin: 1.25rem;
+    padding: 0;
+    overflow: hidden;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-text {
+    width: 100%;
+    white-space: nowrap;
+  }
+  .outer-frame .outer-frame-btns #dropDownBtnIcon {
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    justify-self: flex-start;
+  }
+  .outer-frame .outer-frame-btns.open {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    width: 10rem;
+  }
+  .outer-frame .outer-frame-btns.open #dropDownBtnIcon {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  }
+  .outer-frame .outer-frame-btns.open .outer-frame-text {
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns button {
+    color: #EAE5E2;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+    border: none;
+    background-color: none;
+    margin-left: 0;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .outer-frame .outer-frame-btns #dropDownBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-right .btn-individual {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-left .btn-individual {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-left .btn-individual {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-right .btn-individual {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .content-border {

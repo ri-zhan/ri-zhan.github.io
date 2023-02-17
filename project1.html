@@ -34,9 +34,9 @@
     <span class="follower-center follower"></span>
     <span class="follower-around follower"></span>
 
-    <div class="mobileViewUnavail">
+    <!-- <div class="mobileViewUnavail">
         <h2>Woop! Mobile view isn't available yet (still coding it!), switch to a laptop to view!</h2>
-    </div>
+    </div> -->
 
 
     <div class="content-container">
@@ -329,9 +329,9 @@
 
         <div class="outer-frame-btns">
             <button id="dropDownBtn">
-                <div class="btn-individual minimized" id="dropDownBtnIcon">
-                    <p class="material-symbols-outlined btn-icon">arrow_drop_down</span>
-                </div>
+                <a class="btn-individual" style="justify-content: flex-start;">
+                    <span class="material-symbols-outlined btn-icon" id="dropDownBtnIcon">arrow_drop_down</span>
+                </a>
             </button>
 
             <div class="outer-frame-btns-top-left">
@@ -367,6 +367,14 @@
                 
             </div>  
             
+            <div class="outer-frame-btns-bottom-right">
+                <button>
+                    <a href="https://www.figma.com/proto/85JUvKY05ABciW5kRU4bTH/TCLIbrary-Yashiri-(Copy)?page-id=0%3A1&node-id=25%3A184&viewport=209%2C12%2C0.17&scaling=scale-down&starting-point-node-id=25%3A184&show-proto-sidebar=1" class="btn-individual minimized" target="_blank">
+                        <p class="material-symbols-outlined btn-icon">open_in_new</p>
+                        <span class="outer-frame-text top-left-name">TCLIbrary</span>
+                    </a>
+                </button>
+            </div> 
             <div class="outer-frame-btns-bottom-left">
                 <button>
                     <a onclick="history.back()" class="btn-individual minimized" style="display: flex; column-gap: 0.5rem;">
@@ -375,15 +383,7 @@
                     </a>
                 </button>
             </div> 
-    
-            <div class="outer-frame-btns-bottom-right">
-                <button>
-                    <a href="https://www.figma.com/proto/85JUvKY05ABciW5kRU4bTH/TCLIbrary-Yashiri-(Copy)?page-id=0%3A1&node-id=25%3A184&viewport=209%2C12%2C0.17&scaling=scale-down&starting-point-node-id=25%3A184&show-proto-sidebar=1" class="btn-individual minimized" target="_blank">
-                    <p class="material-symbols-outlined btn-icon">open_in_new</p>
-                    <span class="outer-frame-text top-left-name">TCLIbrary</span>
-                </a>
-            </button>
-            </div> 
+
         </div>            
     </div>
     
