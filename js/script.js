@@ -149,34 +149,37 @@ clickMenu();
 
 let position;
 
-
-
-
 const showFooterLine = document.querySelectorAll('.footer');
 
 const appearBottom = {
   rootMargin: '-96px'
 };
 
-const appeatWhenEnter = new IntersectionObserver
+const appearWhenEnter = new IntersectionObserver
 (function(
   entries, 
-  appeatWhenEnter
+  appearWhenEnter
   ) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        entry.target.classList.add('show');
+        if($(window).width() >= 600) {
+            entry.target.classList.add('show');
+        }
+       
 
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        entry.target.classList.remove('show');
+        if($(window).width() >= 600) {
+
+          entry.target.classList.remove('show');
+        }
       }
     })
   }, appearBottom);
 
 showFooterLine.forEach(showFooterLine =>{
-  appeatWhenEnter.observe(showFooterLine);
+  appearWhenEnter.observe(showFooterLine);
 });
 
 
@@ -239,11 +242,11 @@ function contentHeroSize(){
   } else if($(window).width() >= 481) {
     //phone size
     $('#content-hero').css({
-      'height': 'fit-content',
+      'height': '20rem',
     });
   } else {
     $('#content-hero').css({
-      'height': 'fit-content',
+      'height': '20rem',
     });
   }
 };
@@ -383,11 +386,15 @@ const appearAtCenter = new IntersectionObserver
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        entry.target.classList.add('openGIF');
-
+        if($(window).width() >= 600) {
+          entry.target.classList.add('openGIF');
+        }
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        entry.target.classList.remove('openGIF');
+        if($(window).width() >= 600) {
+
+          entry.target.classList.remove('openGIF');
+        }
       }
     })
   }, appearWhen);
@@ -544,58 +551,6 @@ function navBarSize() {
       'height': $('#dropDownBtn').height(),
     });
 
-    // mobile dropdown button
-    // $('#dropDownBtn').click(function(){
-
-     
-    
-    //   if (mobileNavBar == true) {
-
-    //   //opening
-        
-    //   mobileNavBar = false;
-    //     $('#mobileMinimized').find($('button')).css({
-    //       'width': 'fit-content',
-    //       'position': 'initial',
-    //     });
-  
-    //     $('#dropDownBtnIcon').children($('.btn-icon')).css({
-    //       'transform': 'rotate(180deg)',
-    //     })
-  
-    //     $('#mobileMinimized').find($('.btn-individual')).toggleClass('minimized');
-  
-    //     $('#mobileMinimized').css({
-    //       'width': 'max-content',
-    //       'z-index': '999'
-    //     });
-  
-        
-    //   } else if (mobileNavBar == false)  {
-
-    //   //closing
-    //     mobileNavBar = true;        
-
-    //     $('#mobileMinimized').find($('button')).css({
-    //       'width': '',
-    //       'position': '',
-    //     });
-  
-    //     $('#dropDownBtnIcon').css({
-    //       'transform': '',
-    //     });
-  
-    //     $('#mobileMinimized').find($('.btn-individual')).toggleClass('minimized');
-  
-    //     $('#mobileMinimized').css({
-    //       'width': $('#dropDownBtn').outerWidth() + 'px',
-    //       'z-index': ''
-
-    //     });
-    //   };
-  
-    // });
-
 
   } else if($(window).width() >= 600){
     $('#minimized').css({
@@ -618,14 +573,17 @@ function navBarSize() {
 
 navBarSize();
 
-function outerFrameState(){
-  if ( window.location.pathname == '/index.html' ){
-    // Index (home) page
-  } else {
-      $('.outer-frame').addClass('minimized');
-  }
-};
-outerFrameState();
+// function outerFrameState(){
+//   if ( window.location.pathname != '/index.html' ){
+//     // Index (home) page
+//     $('.outer-frame').removeClass('minimized');
+
+//   } else {
+//     $('.outer-frame').addClass('minimized');
+
+//   }
+// };
+// outerFrameState();
 
 // '.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right'
 
@@ -677,7 +635,10 @@ outerFrameState();
 //     'z-index': '',
 //   })
 // });
+// if($(window).width() >= 600) {
 
+//   $('.GIFcontainer').addClass('openGIF');
+// }
 
 function GIFcontainerSize(){
   if($(window).width() >= 1025) {
@@ -710,6 +671,10 @@ function GIFcontainerSize(){
     $('.GIFcontainer > img').css({
       'width': $('.content').width() - 64 + 'px',
     });
+    $('.GIFcontainer').addClass('openGIF');
+    $('.slidesContainer').addClass('openGIF');
+
+
   } else {
     $('.GIFcontainer').css({
       'height': $('.content').height()/2.5 + 'px',
@@ -719,6 +684,10 @@ function GIFcontainerSize(){
     $('.GIFcontainer > img').css({
       'width': $('.content').width() - 32 + 'px',
     });
+    $('.GIFcontainer').addClass('openGIF');
+    $('.slidesContainer').addClass('openGIF');
+
+
   };
 };
 GIFcontainerSize();
@@ -922,11 +891,16 @@ const appearWhenCenter = new IntersectionObserver
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        entry.target.classList.add('expand');
-      
+        if($(window).width() >= 600) {
+
+          entry.target.classList.add('expand');
+        }
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        entry.target.classList.remove('expand');
+        if($(window).width() >= 600) {
+
+          entry.target.classList.remove('expand');
+        }
       }
     })
   }, appearOptions);

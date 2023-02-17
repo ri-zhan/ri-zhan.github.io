@@ -1990,6 +1990,12 @@ a:active {
   opacity: 0.9;
 }
 
+@media (max-width: 600px) {
+  .content-container .content .column-1-1 img {
+    top: 3rem;
+  }
+}
+
 .content-container .content .column-1-1 .column-1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -2036,6 +2042,12 @@ a:active {
   transition: all 500ms ease-in-out;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .content-container .content .section-heading {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1200px) {

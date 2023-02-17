@@ -179,6 +179,7 @@ button {
   }
 }
 
+
 //section class
 section {
   display: grid;
@@ -1394,6 +1395,9 @@ a:active {
         // z-index: 1;
         background-color: rgb(31, 31, 31);
         opacity: 0.9;
+        @media (max-width: 600px) {
+          top: 3rem;
+        }
       }
       .column-1 {
         align-items: center;
@@ -1444,6 +1448,9 @@ a:active {
       transition: all 500ms ease-in-out;
       white-space: nowrap;
       overflow: hidden;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
       h2 {
         @media (max-width: 1200px) {
           white-space: normal;
