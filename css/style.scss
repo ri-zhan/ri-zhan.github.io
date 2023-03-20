@@ -550,6 +550,8 @@ a:active {
         @media (max-width: 600px) {
           position: absolute;
           opacity: 0%;
+          align-self: center;
+          width: 40%;
         }
         img {
           width: 100%;

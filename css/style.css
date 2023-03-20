@@ -798,6 +798,10 @@ a:active {
   .inner-frame-container .inner-frame.simplified .inner-box-img {
     position: absolute;
     opacity: 0%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 40%;
   }
 }
 
