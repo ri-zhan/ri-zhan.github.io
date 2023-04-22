@@ -9,9 +9,9 @@ $black: #1f1f1f;
 body {
   background-color: $black;
   font-style: normal;
-  font-weight: 300;
-  font-family: neue-haas-grotesk-text, sans-serif;
-  font-size: 1rem;
+  // font-family: "lft-etica-mono";
+  // font-weight: 200;
+  font-size: 1.25rem;
   line-height: 1.35rem;
   color: $white;
   display: flex;
@@ -20,7 +20,6 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  font-family: 'Source Code Pro', monospace;
 }
 
 h1 {
@@ -34,7 +33,6 @@ h1 {
   @media (max-width: 600px) {
     font-size: 1.5rem;
   }
-  font-family: lust, serif;
 }
 
 h2 {
@@ -53,15 +51,19 @@ h2 {
 }
 
 h3 {
-  font-family: ivymode,sans-serif;
-  font-weight: 500;
+  // font-family: "itc-american-typewriter";
+  // font-weight: 300;
+  // letter-spacing: 0.125rem;
+  // font-size: 1rem;
+  font-family: "lft-etica-mono";
+  font-weight: 200;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 0.825rem;
   color: $white;
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 0.825rem 0;
+  // margin: 0 0 0 0;
   line-height: 1.75rem;
-  text-transform: uppercase;
-  font-family: lust, serif;
+  text-transform: lowercase;
 }
 
 // h4 {
@@ -75,14 +77,13 @@ h3 {
 // }
 
 p {
-  font-family: neue-haas-grotesk-text, sans-serif;
+  font-family: Antwerp, serif;
   font-style: normal;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
   color: $white;
   margin: 0;
-  font-family: 'Source Code Pro', monospace;
 }
 
 a {
@@ -1300,9 +1301,9 @@ a:active {
             margin-bottom: 0;
           }
         }
-        h3 {
-          margin-bottom: 0.2rem;
-        }
+        // h3 {
+        //   // margin-bottom: 0.2rem;
+        // }
         p {
           margin-bottom: 2rem;
           &:last-child {
