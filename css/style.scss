@@ -51,37 +51,39 @@ h2 {
 }
 
 h3 {
-  // font-family: "itc-american-typewriter";
-  // font-weight: 300;
-  // letter-spacing: 0.125rem;
-  // font-size: 1rem;
-  font-family: "lft-etica-mono";
-  font-weight: 200;
+  font-family: "itc-american-typewriter";
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  font-size: 0.875rem;
+  // font-family: "lft-etica-mono";
+  // font-weight: 200;
   font-style: normal;
-  font-size: 0.825rem;
+  // font-size: 0.825rem;
   color: $white;
-  margin: 0 0 0.825rem 0;
-  // margin: 0 0 0 0;
+  // margin: 0 0 0.825rem 0;
+  margin: 0 0 0 0;
   line-height: 1.75rem;
   text-transform: lowercase;
 }
 
-// h4 {
-//   font-family: neue-haas-grotesk-display, sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 1rem;
-//   line-height: 1.75rem;
-//   color: $white;
-//   margin: 0;
-// }
+h4 {
+  font-family: Paralucent, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 3.25rem;
+  // line-height: 3rem;
+  color: $white;
+  margin: 0;
+  padding: 0;
+}
 
 p {
-  font-family: Antwerp, serif;
+  font-family: Paralucent, sans-serif;
+  letter-spacing: 0.025rem;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.375rem;
-  line-height: 1.625rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   color: $white;
   margin: 0;
 }
@@ -185,7 +187,7 @@ button {
 section {
   display: grid;
   grid-column: span 10;
-  margin-bottom: 10.625rem;
+  // margin-bottom: 10.625rem;
   // &:last-child {
   //   margin-bottom: 6rem;
   // }
@@ -214,6 +216,39 @@ section {
   img {
     width: 100%;
     grid-column: span 10;
+  }
+  #first-sec, #second-sec, #third-sec, #fourth-sec {
+    // margin-top: 15vh;
+    margin-bottom: 170px;
+  }
+  // #first-sec{
+  //   margin-top: -15vh;
+  // }
+
+}
+
+.section-nav{
+  text-decoration: none;
+  margin-bottom: 2rem;
+  row-gap: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 100%;
+  &.selected {
+    opacity: 100%;
+  }
+  &.deselected {
+    opacity: 50%;
+  }
+  &:hover {
+    opacity: 100%;
+    h4{
+      color: $red;
+      opacity: 80%;
+    }
+    h3 {
+      color: $red;
+    }
   }
 }
 
@@ -1127,7 +1162,46 @@ a:active {
   }
 }
 
+// #section-num{
+//   position: sticky;
+// }
 
+.container111 {
+  display: grid;
+  grid-template-areas: "only";
+  justify-items: center;
+}
+
+.parent {
+  grid-area: only;
+  // background: grey;
+  position: sticky;
+  top: 160px; //must match 'pos' variable in jquery's section-nav function
+  // width: 90%;
+/*  one screen height  */
+  height: 85vh;
+  z-index: 999999999;
+  pointer-events: all;
+  .section-nav{
+    pointer-events: all;
+  }
+  scroll-behavior: smooth;
+}
+
+// .child {
+// /*  offset for parent  */
+//   // margin-top: 200px;
+//   // height: 200vh;
+//   // grid-area: only;
+//   background: linear-gradient(
+//     0deg,
+//     rgba(131, 58, 180, 1) 0%,
+//     rgba(253, 29, 29, 1) 50%,
+//     rgba(252, 176, 69, 1) 100%
+//   );
+//   // z-index: 2;
+//   // width: 80%;
+// }
 
 
 .pageUnavail {
@@ -1186,11 +1260,11 @@ a:active {
   display: grid;
   // pointer-events: none;
   // grid-template-columns: 1fr 3fr 1fr;
-  grid-column-gap: 2rem;
+  grid-column-gap: 3rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   // grid-template-rows: 1fr 8fr 1fr;
-  column-gap: 2rem;
+  column-gap: 3rem;
   // row-gap: 1em;
   height: 100%;
   width: 100%;
@@ -1236,9 +1310,9 @@ a:active {
         margin-top: 6rem;
       }
     }
-    p, h3 {
-      color: $white;
-    }
+    // p, h3 {
+    //   color: $white;
+    // }
     &::-webkit-scrollbar {
       // this needs to match with content padding
       width: 0.5rem; /* Mostly for vertical scrollbars */
@@ -1272,7 +1346,7 @@ a:active {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      column-gap: 2rem;
+      column-gap: 3rem;
       justify-content: space-between;
       margin-bottom: 2rem;
       @media (max-width: 600px) {
@@ -1291,7 +1365,7 @@ a:active {
       .column-4 {
         height: 100%;
         grid-column: 1/4;
-        grid-column-gap: 2rem;
+        grid-column-gap: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1312,13 +1386,155 @@ a:active {
         }
       }
     }
-    .fullRow {
+    .column-1-9 {
       display: grid;
       grid-column: span 10;
       width: 100%;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      column-gap: 3rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        // grid-column: span 4;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .column-9 {
+        grid-column: 2/11;
+        width: 100%;
+        object-fit: cover;
+      }
+      .column-1 {
+        // height: 100%;
+        grid-column: 1/2;
+        grid-column-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .side-title {
+          align-items: flex-end;
+          row-gap: 1rem;
+        }
+      }
+    }
+    .column-6-3 {
+      display: grid;
+      grid-column: span 9;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      column-gap: 3rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        // grid-column: span 4;
+      }
+      .column-6 {
+        grid-column-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-row-gap: 2rem;
+        grid-column: 1/7;
+        width: 100%;
+        object-fit: cover;
+        grid-row-gap: 2rem;
+      }
+      .column-3 {
+        // height: 100%;
+        grid-column: 7/10;
+        grid-column-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-row-gap: 2rem;
+      }
+    }
+    .column-3-6 {
+      display: grid;
+      grid-column: span 9;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      column-gap: 3rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        // grid-column: span 4;
+      }
+      .column-3 {
+        grid-column: 1/4;
+        width: 100%;
+        object-fit: cover;
+        grid-row-gap: 2rem;
+      }
+      .column-6 {
+        // height: 100%;
+        grid-column: 4/10;
+        grid-column-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-row-gap: 2rem;
+      }
+    }
+    .column-5-4 {
+      display: grid;
+      grid-column: span 9;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      column-gap: 3rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        // grid-column: span 4;
+      }
+      .column-5 {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1/6;
+        width: 100%;
+        object-fit: cover;
+        grid-row-gap: 2rem;
+      }
+      .column-4 {
+        // height: 100%;
+        grid-column: 6/10;
+        grid-column-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-row-gap: 2rem;
+        // h3 {
+        //   // margin-bottom: 0.2rem;
+        // }
+        p {
+          margin-bottom: 2rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .fullRow {
+      display: grid;
+      grid-column: span 9;
+      width: 100%;
       row-gap: 0.5rem;
       margin-bottom: 8.5rem;
-      overflow-x: hidden;
+      overflow: visible;
+      // overflow-x: hidden;
       @media (max-width: 600px) {
         display: grid;
         grid-column: span 6;
@@ -1348,7 +1564,7 @@ a:active {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      column-gap: 2rem;
+      column-gap: 3rem;
       justify-content: space-between;
       margin-bottom: 2rem;
       @media (max-width: 600px) {
@@ -1482,7 +1698,7 @@ a:active {
       grid-column: span 10;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
+      column-gap: 3rem;
       margin-bottom: 3.75rem;
       @media (max-width: 600px) {
         display: flex;

@@ -73,6 +73,176 @@ function onScroll(){
 }
 
 
+
+// $(".section-nav").click(function() {
+//   let destination = $("#first-sec, #second-sec, #third-sec, #fourth-sec").offset().top - '250px';
+//   $([document.documentElement, document.body]).animate({
+//       scrollTop: destination
+//   }, 2000); 
+// });
+
+
+// $(".section-nav").click(function() {
+//   // let destination = $("#first-sec").offset().top - '250px';
+//   if ($(this).data('num') === 'first-sec'){
+//     console.log('sec1 selected')
+//     $(".content").animate({
+//       scrollTop: $("#first-sec").offset().top
+//     }, 2000); 
+//   } else if ($(this).data('num') === 'second-sec'){
+//     console.log('sec2 selected')
+//     $(".content").animate({
+//       scrollTop: $("#second-sec").offset().top
+//     }, 2000); 
+//   } else if ($(this).data('num') === 'third-sec'){
+//     console.log('sec3 selected')
+//     $(".content").animate({
+//       scrollTop: $("#third-sec").offset().top
+//     }, 2000); 
+//   }
+// });
+
+// $('#first-sec-link').click = function() {
+//   $(document).scrollTo('#first-sec');
+// }
+
+
+// This is a functions that scrolls to #{blah}link
+// function goToByScroll(id){
+//     // Reove "link" from the ID
+//   id = id.replace("link", "");
+//   console.log('#'+id)
+//     // Scroll
+//   $('html,body').animate({
+//     scrollTop: $("#"+id).offset().top},
+//   'slow');
+// }
+
+
+
+// $("#sidebar > ul > li > a").click(function(e) 
+$(".section-nav").click(function(e) { 
+  $(window).scrollTop(0, 0);
+  // console.log($(this).attr('id') + ' clicked')
+  // Prevent a page reload when a link is pressed
+  e.preventDefault(); 
+  // Call the scroll function
+  // goToByScroll($(this).id);  
+  identifier = $(this).attr('id').replace("link", "");
+  console.log('offset' + $('#' + identifier).offset().top)
+
+  pos = -160
+    // Scroll
+  $('.content').stop(true,true).animate({
+    scrollTop: $('#' + identifier).position().top + pos + $(".content").scrollTop() + 'px'
+    // scrollTop: 200
+  }, 1000);      
+});
+
+
+
+
+/////////////// animate section-heading upon entering screen
+
+
+
+
+const sideBarprep = document.querySelectorAll('.child.column-9');
+
+const opacityChangeprep = {
+  rootMargin: '40% 0% -60% 0%'
+  //top right bottom left
+};
+
+const appearWhenInCenterprep = new IntersectionObserver
+(function(
+  entries,     
+  appearWhenInCenterprep
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        if($(window).width() >= 600) {
+          const sideBar = document.querySelectorAll('.child.column-9');
+
+          const opacityChange = {
+            rootMargin: '-50% 0% -50% 0%'
+          };
+          
+          const appearWhenInCenter = new IntersectionObserver
+          (function(
+            entries,     
+            appearWhenInCenter
+            ) {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+          
+                  if($(window).width() >= 600) {
+                      // entry.target.IDList.replace("link", "")
+                      // console.log( entry.target.classList)
+                      console.log(entry.target.id + 'link')
+                      thisDiv = '#' +entry.target.id + 'link'
+                      // console.log(jQuery(this))
+          
+                      // jQuery(this).attr('id', newID);
+                      jQuery(thisDiv).addClass('selected');
+                      jQuery(thisDiv).removeClass('selected');
+          
+                      jQuery(thisDiv).addClass('deselected');
+                      jQuery(thisDiv).removeClass('deselected');
+                  }
+                  
+                 
+          
+                  // appearWhenCenter.unobserve(entry, target);
+                } else {
+                  if($(window).width() >= 600) {
+          
+                    entry.target.classList.remove('selected');
+                                // console.log( entry.target.classList)
+                      console.log(entry.target.id + 'link')
+                      thisDiv = '#' +entry.target.id + 'link'
+                      // console.log(jQuery(this))
+          
+                      // jQuery(this).attr('id', newID);
+                      jQuery(thisDiv).removeClass('selected');
+                      jQuery(thisDiv).addClass('selected');
+          
+                      jQuery(thisDiv).removeClass('deselected');
+                      jQuery(thisDiv).addClass('deselected');
+          
+                  }
+                }
+              })
+            }, opacityChange);
+          
+            sideBar.forEach(sideBar =>{
+            appearWhenInCenter.observe(sideBar);
+            });
+
+        }
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        if($(window).width() >= 600) {
+          $('.section-nav').addClass('selected');
+          
+        }
+      }
+    })
+  }, opacityChangeprep);
+
+  sideBarprep.forEach(sideBarprep =>{
+  appearWhenInCenterprep.observe(sideBarprep);
+});
+
+
+
+
+
+
+
+
+
 $('.inner-box, a').on({
   mouseenter: function () {
       $('.follower-center').css({
@@ -87,18 +257,6 @@ $('.inner-box, a').on({
     });
   }
 });
-
-
-// function menuSize() {
-//   if($(window).width() <= 600) {
-//     $('.outer-frame-btns').css({
-//       'height': $('#dropDownBtn').height(),
-//     });
-//   } 
-// }
-// menuSize();
-
-
 
 function clickMenu() {
   
@@ -141,10 +299,6 @@ function clickMenu() {
 };
 clickMenu();
 
-// $('.inner-border').hover(function(){
-//   $(this).addClass('inner-border show');
-// });
-
 
 
 let position;
@@ -157,7 +311,7 @@ const appearBottom = {
 
 const appearWhenEnter = new IntersectionObserver
 (function(
-  entries, 
+  entries,     
   appearWhenEnter
   ) {
     entries.forEach(entry => {
