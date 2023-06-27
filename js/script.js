@@ -144,13 +144,10 @@ $(".section-nav").click(function(e) {
 
 /////////////// animate section-heading upon entering screen
 
-
-
-
 const sideBarprep = document.querySelectorAll('.child.column-9');
 
 const opacityChangeprep = {
-  rootMargin: '40% 0% -60% 0%'
+  rootMargin: '-40% 0% -60% 0%'
   //top right bottom left
 };
 
@@ -166,7 +163,7 @@ const appearWhenInCenterprep = new IntersectionObserver
           const sideBar = document.querySelectorAll('.child.column-9');
 
           const opacityChange = {
-            rootMargin: '-50% 0% -50% 0%'
+            rootMargin: '-30% 0% -50% 0%'
           };
           
           const appearWhenInCenter = new IntersectionObserver
