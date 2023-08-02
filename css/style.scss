@@ -115,6 +115,19 @@ button {
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
+  font-family: "itc-american-typewriter";
+  font-weight: 300;
+  letter-spacing: 0.125rem;
+  font-size: 0.875rem;
+  // font-family: "lft-etica-mono";
+  // font-weight: 200;
+  font-style: normal;
+  // font-size: 0.825rem;
+  color: $white;
+  // margin: 0 0 0.825rem 0;
+  margin: 0 0 0 0;
+  line-height: 1.75rem;
+  text-transform: lowercase;
   .btn-individual {
     display: flex;
     column-gap: 0.5rem;
@@ -122,7 +135,7 @@ button {
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin: 0.75rem;
+    padding: 0.75rem;
   }
   &.external-btn {
     grid-column: span 10;
@@ -539,6 +552,10 @@ a:active {
       border: 0.05rem solid $white;
       background-color: $black;
       transition: all 300ms ease-in-out;
+      box-shadow: 0px 0px 25px rgba(13, 13, 13, 1);
+      &:hover{
+      box-shadow: 0px 0px 50px rgba(13, 13, 13, 0.7);
+      }
       @media (max-width: 600px) {
         grid-column: span 1;
         grid-row: span 1;
@@ -849,6 +866,32 @@ a:active {
   z-index: 999;
   overflow: visible;
   pointer-events: none;
+  .btn-individual {
+    justify-content: flex-start;
+  }
+  .outer-frame-btns {
+    .btn-individual{
+      &.minimized {
+        opacity: 0.5;
+      }
+    }
+    &-bottom-right, &-top-left, &-bottom-left, &-top-right {
+      //remove line above if entire menu should open up on hover
+      &:hover{
+        .outer-frame-text{
+          white-space: nowrap;
+          width: auto;
+          margin: -0.25rem;
+          transition: all 100ms ease-in-out;
+        }
+        .btn-individual{
+          &.minimized {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  } 
   &.minimized {
     button {
       .outer-frame-text {
@@ -858,22 +901,22 @@ a:active {
         overflow: hidden;
         transition: all 100ms ease-in-out;
       }
-      &:hover {
-        transform: scale(1.05);
-        margin: 0;
-        transition: all 100ms ease-out;
-        // background-color: $white;
-        // color: $black;
-        // .material-symbols-outlined {
-        //   color: $black;
-        // }
-        .outer-frame-text {
-          white-space: nowrap;
-          width: auto;
-          margin: -0.25rem;
-          transition: all 100ms ease-in-out;
-        }
-      }
+      // &:hover {
+      //   transform: scale(1.05);
+      //   margin: 0;
+      //   transition: all 100ms ease-out;
+      //   // background-color: $white;
+      //   // color: $black;
+      //   // .material-symbols-outlined {
+      //   //   color: $black;
+      //   // }
+      //   .outer-frame-text {
+      //     white-space: nowrap;
+      //     width: auto;
+      //     margin: -0.25rem;
+      //     transition: all 100ms ease-in-out;
+      //   }
+      // }
       z-index: 999;
       margin: 0;
       &#dropDownBtn {
@@ -974,14 +1017,16 @@ a:active {
       display: none;
     }
     &-bottom-right, &-bottom-left, &-top-left, &-top-right {
+      display: flex;
+      flex-direction: column;
       height: fit-content;
       width: fit-content;
       z-index: 999;
       pointer-events: all;
       column-gap: 0.5rem;
+      grid-gap: 0.5rem;
     }
     &-top-left {
-      display: flex;
       justify-self: flex-start;
       align-self: flex-start;
       grid-column: 1;
@@ -991,7 +1036,6 @@ a:active {
       }
     }
     &-bottom-left {
-      display: flex;
       justify-self: flex-start;
       align-self: flex-end;
       grid-column: 1;
@@ -1001,7 +1045,6 @@ a:active {
       }
     }
     &-bottom-right {
-      display: flex;
       justify-self: flex-end;
       align-self: flex-end;
       grid-column: 2;
@@ -1011,7 +1054,6 @@ a:active {
       }
     }
     &-top-right {
-      display: flex;
       justify-self: flex-end;
       align-self: flex-start;
       grid-column: 2;
@@ -1080,42 +1122,33 @@ a:active {
         margin-bottom: 0.5rem;
         width: 100%;
       }
+      .btn-individual {
+        justify-content: flex-start;
+      }
       .outer-frame-btns-top-right {
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
         margin-bottom: 0.5rem;
         width: 100%;
-        .btn-individual {
-          justify-content: flex-start;
-        }
       }
       .outer-frame-btns-top-left {
         display: flex;
         flex-direction: column;
         margin-bottom: 0.5rem;
         width: 100%;
-        .btn-individual {
-          justify-content: flex-start;
-        }
       }
       .outer-frame-btns-bottom-left {
         display: flex;
         flex-direction: column;
         margin-bottom: 0.5rem;
         width: 100%;
-        .btn-individual {
-          justify-content: flex-start;
-        }
       }
       .outer-frame-btns-bottom-right {
         display: flex;
         flex-direction: column;
         margin-bottom: 0.5rem;
         width: 100%;
-        .btn-individual {
-          justify-content: flex-start;
-        }
       }
     }
   }
@@ -1176,7 +1209,7 @@ a:active {
   grid-area: only;
   // background: grey;
   position: sticky;
-  top: 160px; //must match 'pos' variable in jquery's section-nav function
+  top: 50%; //must match 'pos' variable in jquery's section-nav function
   // transform: translate(0%,-50%);
   // width: 90%;
 /*  one screen height  */

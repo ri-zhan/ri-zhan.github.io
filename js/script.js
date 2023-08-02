@@ -695,7 +695,7 @@ function navBarSize() {
 
     $('#minimized').removeClass('minimized');
     $('#mobileMinimized').removeClass('mobileMinimized');
-    $('.btn-individual').removeClass('minimized');
+    $('.a.button').removeClass('minimized');
 
 
     $('.outer-frame-btns').css({
@@ -714,7 +714,7 @@ function navBarSize() {
 
     $('#minimized').addClass('minimized');
     $('#mobileMinimized').addClass('mobileMinimized');
-    $('.btn-individual').addClass('minimized');
+    $('a.button').addClass('minimized');
 
     $('.outer-frame-btns').css({
       'height': '',
@@ -774,14 +774,14 @@ navBarSize();
 
 
 // $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseenter(function() {
-//   $('.btn-individual').toggleClass('minimized');
+//   $('.a.button').toggleClass('minimized');
 //   $('#minimized').css({
 //     'z-index': '999',
 //   })
 // });
 
 // $('.outer-frame-btns#minimized').find($('.outer-frame-btns-top-right, .outer-frame-btns-bottom-left, .outer-frame-btns-top-left, .outer-frame-btns-bottom-right')).mouseleave(function() {
-//   $('.btn-individual').toggleClass('minimized');
+//   $('.a.button').toggleClass('minimized');
 //   $('#minimized').css({
 //     'z-index': '',
 //   })
@@ -918,9 +918,9 @@ $(window).resize(function() {
   // menuSize();
 
   if($(window).width() <= 600) { 
-    $('.btn-individual').removeClass('minimized');
+    $('.a.button').removeClass('minimized');
   } else {
-    $('.btn-individual').addClass('minimized');
+    $('.a.button').addClass('minimized');
   }
 });
 
@@ -1230,7 +1230,7 @@ document.addEventListener("wheel", function(e){
 
 $('#typewriter').teletype({
   text: [
-    'looking at summer 2023 design internships',
+    'looking at summer 2024 design internships',
     'adding in alt texts properly',
     'finishing the play section',
     'learning python',
