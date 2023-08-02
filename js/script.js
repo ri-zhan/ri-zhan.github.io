@@ -144,7 +144,7 @@ $(".section-nav").click(function(e) {
 
 /////////////// animate section-heading upon entering screen
 
-const sideBarprep = document.querySelectorAll('.child.column-9');
+const sideBarprep = document.querySelectorAll('.child-section');
 
 const opacityChangeprep = {
   rootMargin: '-40% 0% -60% 0%'
@@ -160,7 +160,7 @@ const appearWhenInCenterprep = new IntersectionObserver
       if (entry.isIntersecting) {
 
         if($(window).width() >= 600) {
-          const sideBar = document.querySelectorAll('.child.column-9');
+          const sideBar = document.querySelectorAll('.child-section');
 
           const opacityChange = {
             rootMargin: '-30% 0% -50% 0%'
@@ -175,17 +175,20 @@ const appearWhenInCenterprep = new IntersectionObserver
                 if (entry.isIntersecting) {
           
                   if($(window).width() >= 600) {
+
+                      entry.target.classList.add('.selected');
+
                       // entry.target.IDList.replace("link", "")
                       // console.log( entry.target.classList)
-                      console.log(entry.target.id + 'link')
+                      // console.log(entry.target.id + 'link')
                       thisDiv = '#' +entry.target.id + 'link'
                       // console.log(jQuery(this))
           
                       // jQuery(this).attr('id', newID);
                       jQuery(thisDiv).addClass('selected');
-                      jQuery(thisDiv).removeClass('selected');
+                      // jQuery(thisDiv).removeClass('selected');
           
-                      jQuery(thisDiv).addClass('deselected');
+                      // jQuery(thisDiv).addClass('deselected');
                       jQuery(thisDiv).removeClass('deselected');
                   }
                   
@@ -195,17 +198,17 @@ const appearWhenInCenterprep = new IntersectionObserver
                 } else {
                   if($(window).width() >= 600) {
           
-                    entry.target.classList.remove('selected');
+                      entry.target.classList.remove('.selected');
                                 // console.log( entry.target.classList)
-                      console.log(entry.target.id + 'link')
+                      // console.log(entry.target.id + 'link')
                       thisDiv = '#' +entry.target.id + 'link'
                       // console.log(jQuery(this))
           
                       // jQuery(this).attr('id', newID);
                       jQuery(thisDiv).removeClass('selected');
-                      jQuery(thisDiv).addClass('selected');
+                      // jQuery(thisDiv).addClass('selected');
           
-                      jQuery(thisDiv).removeClass('deselected');
+                      // jQuery(thisDiv).removeClass('deselected');
                       jQuery(thisDiv).addClass('deselected');
           
                   }
@@ -1250,3 +1253,94 @@ $('#cursor').teletype({
 
 
 
+
+
+
+
+
+// $('.content').scroll(function(e) {
+//   var sscroll = $('.content').scrollTop()
+//   var sheight = $('.content').height()
+//     // filterVal = s === 0 ? 0 : Math.ceil((s / -900));
+//     filterVal = (sheight/sscroll)
+//     console.log(filterVal)
+
+//   $('.blur').css({
+//                    'filter'         : 'blur(' + filterVal + 'px)',
+//                    '-webkit-filter' : 'blur(' + filterVal + 'px)',
+//                    '-moz-filter'    : 'blur(' + filterVal + 'px)',
+//                    '-o-filter'      : 'blur(' + filterVal + 'px)',
+//                    '-ms-filter'     : 'blur(' + filterVal + 'px)'
+//                 });
+// });
+
+
+// $('.content').scroll(function(e) {
+//   let s = $('.content').scrollTop()
+//     // filterVal = s === 0 ? 0:Math.ceil((s / 50));
+
+//     // filterVal =       s != 0 ? 0:Math.ceil((s / 50));
+
+
+//     // if s is equal to 0 then set filterVal to 0. 
+//     // otherwise set filterVal to the ceiling (round 
+//     //   up the division result) of s divided by 10
+
+//     console.log(filterVal)
+//   $('.blur').css({
+//                    'filter'         : 'blur(' + filterVal + 'px)',
+//                    '-webkit-filter' : 'blur(' + filterVal + 'px)',
+//                    '-moz-filter'    : 'blur(' + filterVal + 'px)',
+//                    '-o-filter'      : 'blur(' + filterVal + 'px)',
+//                    '-ms-filter'     : 'blur(' + filterVal + 'px)'
+//                 });
+// });
+
+var noblur = 0;
+
+$(window).on('load', () => {
+  $('.content').children().each(function( index ) {
+    noblur += $(this).outerHeight() 
+  // console.log('noblur' +noblur)
+  });
+  noblur =  noblur += 96
+  // 96 is the 6rem padding on the container-container
+});
+
+
+$('.content').scroll(function() {
+  var mostblur = ($('.content').scrollTop() + $(window).height() + 0.03)
+  //windowheight to account for different
+  
+  // console.log('mostblur' +mostblur)
+  // console.log('noblur' +noblur)
+
+  var filterVal = 40 - ((mostblur  ) * 40 / (noblur))
+  console.log(filterVal)
+
+  $('.blur').css({
+    'filter'         : 'blur(' + filterVal + 'px)',
+    '-webkit-filter' : 'blur(' + filterVal + 'px)',
+    '-moz-filter'    : 'blur(' + filterVal + 'px)',
+    '-o-filter'      : 'blur(' + filterVal + 'px)',
+    '-ms-filter'     : 'blur(' + filterVal + 'px)'
+  });
+
+
+  $(('.focus-ring-background.one')).css({
+    'transform': 'translateX(' + (-1* filterVal) + 'px',
+  });
+
+  $(('.focus-ring-background.two')).css({
+    'transform': 'translateX(' + filterVal + 'px',
+  });
+
+
+
+});
+
+
+
+// scrolltop === blur 100px
+
+// bottom of page == blur 0px
