@@ -1309,27 +1309,46 @@ $('#cursor').teletype({
 
 
 
-var noblur = 0;
+var contentHeight = 0;
 
 $(window).on('load', () => {
   $('.content').children().each(function( index ) {
-    noblur += $(this).outerHeight() 
-  // console.log('noblur' +noblur)
+    contentHeight += $(this).outerHeight() 
+  // console.log('contentHeight' +contentHeight)
   });
-  noblur =  noblur += 96
+  contentHeight =  contentHeight += 96
   // 96 is the 6rem padding on the container-container
+  $('.focus-ring-shape').css({
+    'width': contentHeight,
+  })
+  
 });
 
 // var 
 
+// var offset = $(".focus-ring").offset();
+var $horizontal = $('.focus-ring');
 
-var offset = $(".focus-ring").offset();
+var window_width = $('.container111').outerWidth()  + ($('.focus-ring').width()) ;
 
+var document_height = contentHeight - $(window).height();
 
 $('.content').scroll(function() {
+  var scrollPos = ($('.content').scrollTop() + $(window).height() + 0.03)
+  //windowheight to account for different
 
-  var st = $(this).scrollTop();
-  $(".focus-ring").css("left", st + offset.left);
+
+
+
+  // var object_position_left = window_width * ($('.content').scrollTop() / contentHeight);
+
+  // $('.focus-ring').css({
+  //     'left': object_position_left 
+  // });
+
+
+
+var $horizontal = $('#horizontal');
 
   if ($('.content').scrollTop() < $('#content-hero').height())  {
     $('.parent').children().css({
@@ -1341,13 +1360,12 @@ $('.content').scroll(function() {
     })
   }
   // console.log($('.content').scrollTop())
-  var mostblur = ($('.content').scrollTop() + $(window).height() + 0.03)
-  //windowheight to account for different
-  
-  // console.log('mostblur' +mostblur)
-  // console.log('noblur' +noblur)
 
-  var filterVal = 10 - ((mostblur  ) * 10 / (noblur))
+  
+  // console.log('scrollPos' +scrollPos)
+  // console.log('contentHeight' +contentHeight)
+
+  var filterVal = 3 - ((scrollPos  ) * 3 / (contentHeight))
   // console.log(filterVal)
 
   $('.blur').css({
@@ -1357,6 +1375,17 @@ $('.content').scroll(function() {
     '-o-filter'      : 'blur(' + filterVal + 'px)',
     '-ms-filter'     : 'blur(' + filterVal + 'px)'
   });
+
+
+  var filterValforline = 1 - ((scrollPos  ) * 1 / (contentHeight))
+  $('.blurline').css({
+    'filter'         : 'blur(' + filterValforline + 'px)',
+    '-webkit-filter' : 'blur(' + filterValforline + 'px)',
+    '-moz-filter'    : 'blur(' + filterValforline + 'px)',
+    '-o-filter'      : 'blur(' + filterValforline + 'px)',
+    '-ms-filter'     : 'blur(' + filterValforline + 'px)'
+  });
+
 
 
   // $(('.focus-ring-background.one')).css({
@@ -1369,6 +1398,19 @@ $('.content').scroll(function() {
 
 
 
+  // var s = $(this).scrollTop(),
+  // d = $('.content').height(),
+  // c = contentHeight;
+
+  // scrollPercent = (s / (d - c));
+
+  // var position = (scrollPercent * ($('.content').width() - $horizontal.width()));
+
+  // $horizontal.css({
+  //   'left': position
+  // });
+
+
 });
 
 
@@ -1377,5 +1419,32 @@ $('.content').scroll(function() {
 
 // bottom of page == blur 0px
 
+$('.content').scroll(function () {
+  $('.focus-ring').scrollLeft($(this).scrollTop());
+});
 
 
+$('.focus-ring').scroll(function () {
+  $('.content').scrollTop($(this).scrollLeft());
+});
+
+// $(function () {
+//   $('#left').clone().attr('id', 'leftClone').css({
+//       'position': 'absolute',
+//           'top': $('#left').position().top,
+//           'left': $('#left').position().left,
+//       opacity: 0
+//   }).appendTo('body');
+//   $('#right').clone().attr('id', 'rightClone').css({
+//       'position': 'absolute',
+//           'top': $('#right').position().top,
+//           'left': $('#right').position().left,
+//       opacity: 0
+//   }).appendTo('body');
+//   $('#leftClone').scroll(function () {
+//       $('#right').scrollTop($(this).scrollTop());
+//   });
+//   $('#rightClone').scroll(function () {
+//       $('#left').scrollTop($(this).scrollTop());
+//   });
+// });

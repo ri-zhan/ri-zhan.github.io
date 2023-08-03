@@ -1135,9 +1135,10 @@ a:active {
   position: fixed;
   grid-column: 3/11;
   z-index: 999999999;
-  margin-top: 1.5rem;
-  height: 5rem;
+  padding-top: 1.5rem;
+  height: 6rem;
   width: 0px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 .container111-container {
   width: 100%;
@@ -1145,11 +1146,23 @@ a:active {
   justify-content: center;
   align-items: center;
   display: flex;
+  margin-left: 0rem;
+  margin-right: 1.5rem;
+  position: relative;
+}
+.container111 .focus-ring-line {
+  border-top: 0.05rem solid #EAE5E2;
+  width: 100%;
+  opacity: 0%;
+  bottom: 2rem;
+  position: absolute;
 }
 
 .parent {
-  bottom: 0;
+  top: 0;
   display: flex;
+  position: absolute;
+  padding: 0 4rem 0 4rem;
   width: 100%;
   /*  one screen height  */
   z-index: 999999999;
@@ -1193,11 +1206,25 @@ a:active {
 .focus-ring {
   position: absolute;
   height: 2rem;
-  width: 2rem;
-  left: 0;
-  top: 0;
+  width: 100%;
+  left: 0rem;
+  bottom: 0.5rem;
   z-index: 99999999999999;
   pointer-events: all;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.focus-ring::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-position: center;
+}
+.focus-ring::-webkit-scrollbar:horizontal {
+  height: 2rem;
+}
+.focus-ring::-webkit-scrollbar-thumb {
+  background: radial-gradient(circle farthest-corner, transparent 0%, transparent 40%, #E63223 40%, #E63223 50%, transparent 50%, transparent 100%) no-repeat;
+  background-size: 2.5rem;
+  background-position: center;
 }
 .focus-ring-background, .focus-ring-shape {
   margin: auto;
@@ -1230,8 +1257,8 @@ a:active {
 .focus-ring-background {
   position: absolute;
   border: 0.25rem solid #EAE5E2;
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
 }
 .focus-ring-shape {
@@ -1244,10 +1271,18 @@ a:active {
 
 .blur {
   opacity: 1;
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.blurline {
+  opacity: 1;
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
 }
 
 .pageUnavail {
@@ -1360,8 +1395,6 @@ a:active {
 }
 .content-container .content::-webkit-scrollbar-thumb {
   background-color: #E63223;
-  margin-bottom: 6rem;
-  margin-top: 6rem;
 }
 .content-container .content::-webkit-scrollbar-track { /* Background */
   background: #1f1f1f;

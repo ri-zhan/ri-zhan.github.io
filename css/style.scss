@@ -1185,10 +1185,13 @@ a:active {
   grid-column: 3/11;
   // grid-template-columns: repeat(12, 1fr);
   z-index: 999999999;
-  margin-top: 1.5rem;
-  height: 5rem;
+  padding-top: 1.5rem;
+  height: 6rem;
   width: 0px;
   // position: relative;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0),);
+  // background-color: $black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0),);
   &-container{
     width: 100%;
     grid-template-columns: repeat(8, 1fr);
@@ -1196,20 +1199,31 @@ a:active {
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-left: 0rem;
+    margin-right: 1.5rem;
+    position: relative;
+  
   }
 
+  .focus-ring-line{ 
+    border-top: 0.05rem solid $white;   
+    width: 100%;
+    opacity: 0%;
+    bottom: 2rem;
+    position: absolute;
+  }
 }
 
 
 
 .parent {
-  bottom: 0;
+  top: 0;
 
   // grid-area: only;
   // background: grey;
   display: flex;
-  // position: absolute;
-
+  position: absolute;
+  padding: 0 4rem 0 4rem;
   // top: 3rem; //must match 'pos' variable in jquery's section-nav function
   // transform: translate(0%,-50%);
   width: 100%;
@@ -1265,18 +1279,44 @@ a:active {
 
 
 .focus-ring {
+  // overflow-x: scroll;
+
   position: absolute;
   height: 2rem;
-  width: 2rem;
-  left:0;
+  width: 100%;
+  left: 0rem;
   // right:0;
-  top:0;
-  // bottom: 0;
+  // top:0;
+  bottom: 0.5rem;
   // margin: auto;
   // justify-content: center;
   // align-items: center;
   z-index: 99999999999999;
   pointer-events: all;
+  overflow-x: scroll;
+  // background-color: green;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background-position: center;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 2rem;
+    // width: 3rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    // border-radius: 50%;
+    // border: 2px solid white;
+    // background-color: rgba(0, 0, 0, .5);
+    // height: 2rem;
+    // width: 2rem;
+    background: radial-gradient(circle farthest-corner, transparent 0%, transparent 40%, $red 40%, $red 50%, transparent 50%, transparent 100%) no-repeat;
+    background-size: 2.5rem;
+    background-position: center;
+  }
+  // &::-webkit-scrollbar-track { 
+  //   background: linear-gradient(to top, transparent 0, transparent 45%, $white 5%, $white 5%, transparent 55%, transparent 100%);
+  // }
   &-background, &-shape {
     // left:0;
     // right:0;
@@ -1317,8 +1357,8 @@ a:active {
     // background-color: $red;
     border: 0.25rem solid $white;   
 
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
   }
   &-shape{
@@ -1334,11 +1374,21 @@ a:active {
 
 .blur {
   opacity: 1;
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+
+.blurline {
+  opacity: 1;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
 }
 
 // .focus-ring {
@@ -1535,8 +1585,6 @@ a:active {
     }
     &::-webkit-scrollbar-thumb {
       background-color: $red;
-      margin-bottom: 6rem;
-      margin-top: 6rem;
     }
     &::-webkit-scrollbar-track { /* Background */
       background: $black;
