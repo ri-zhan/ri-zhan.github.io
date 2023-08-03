@@ -207,6 +207,10 @@ section #first-sec, section #second-sec, section #third-sec, section #fourth-sec
 section #content-hero {
   margin-top: 6rem;
 }
+section #content-hero:before, section #content-hero:after {
+  height: 5rem; /* fixed header height*/
+  margin: -5rem 0 0; /* negative fixed header height */
+}
 
 footer {
   grid-column: span 8;
@@ -1130,15 +1134,22 @@ a:active {
   left: 0;
 }
 
+.container111-placeholder {
+  height: 6rem;
+  margin-bottom: 9rem;
+  position: static;
+}
+
 .container111 {
   justify-items: center;
-  position: fixed;
+  position: static;
   grid-column: 3/11;
   z-index: 999999999;
   padding-top: 1.5rem;
   height: 6rem;
   width: 0px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-color: #1f1f1f;
+  margin-bottom: 9rem;
 }
 .container111-container {
   width: 100%;
@@ -1149,6 +1160,7 @@ a:active {
   margin-left: 0rem;
   margin-right: 1.5rem;
   position: relative;
+  height: 100%;
 }
 .container111 .focus-ring-line {
   border-top: 0.05rem solid #EAE5E2;
@@ -1156,6 +1168,10 @@ a:active {
   opacity: 0%;
   bottom: 2rem;
   position: absolute;
+}
+.container111.fixed {
+  position: fixed;
+  top: 0;
 }
 
 .parent {
@@ -1222,7 +1238,7 @@ a:active {
   height: 2rem;
 }
 .focus-ring::-webkit-scrollbar-thumb {
-  background: radial-gradient(circle farthest-corner, transparent 0%, transparent 40%, #E63223 40%, #E63223 50%, transparent 50%, transparent 100%) no-repeat;
+  background: radial-gradient(circle farthest-corner, transparent 0%, transparent 40%, #EAE5E2 40%, #EAE5E2 50%, transparent 50%, transparent 100%) no-repeat;
   background-size: 2.5rem;
   background-position: center;
 }
@@ -1391,13 +1407,13 @@ a:active {
   }
 }
 .content-container .content::-webkit-scrollbar {
-  width: 0.5rem; /* Mostly for vertical scrollbars */
+  width: 0rem; /* Mostly for vertical scrollbars */
 }
 .content-container .content::-webkit-scrollbar-thumb {
-  background-color: #E63223;
+  background-color: none;
 }
 .content-container .content::-webkit-scrollbar-track { /* Background */
-  background: #1f1f1f;
+  background: none;
   margin-bottom: 6rem;
   margin-top: 6rem;
 }
