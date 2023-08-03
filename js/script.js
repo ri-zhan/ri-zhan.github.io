@@ -467,6 +467,13 @@ mobileViewUnavail();
 // });
 
 
+function topBarSize() {
+  $('.container111, .container111-container').css({
+    'width': $('.content').width(),
+  });
+}
+topBarSize();
+
 
 $('.openGIF.general-border > .GIF').css({
   'height': $('.content').height() - 96 + 'px',
@@ -918,6 +925,8 @@ $(window).resize(function() {
 
   innerBorderPos();  
 
+  topBarSize();
+
   // menuSize();
 
   if($(window).width() <= 600) { 
@@ -1296,6 +1305,10 @@ $('#cursor').teletype({
 //                 });
 // });
 
+
+
+
+
 var noblur = 0;
 
 $(window).on('load', () => {
@@ -1307,16 +1320,35 @@ $(window).on('load', () => {
   // 96 is the 6rem padding on the container-container
 });
 
+// var 
+
+
+var offset = $(".focus-ring").offset();
+
 
 $('.content').scroll(function() {
+
+  var st = $(this).scrollTop();
+  $(".focus-ring").css("left", st + offset.left);
+
+  if ($('.content').scrollTop() < $('#content-hero').height())  {
+    $('.parent').children().css({
+      'opacity': '100%',
+    })
+  } else {
+    $('.parent').children().css({
+      'opacity': '',
+    })
+  }
+  // console.log($('.content').scrollTop())
   var mostblur = ($('.content').scrollTop() + $(window).height() + 0.03)
   //windowheight to account for different
   
   // console.log('mostblur' +mostblur)
   // console.log('noblur' +noblur)
 
-  var filterVal = 40 - ((mostblur  ) * 40 / (noblur))
-  console.log(filterVal)
+  var filterVal = 10 - ((mostblur  ) * 10 / (noblur))
+  // console.log(filterVal)
 
   $('.blur').css({
     'filter'         : 'blur(' + filterVal + 'px)',
@@ -1327,13 +1359,13 @@ $('.content').scroll(function() {
   });
 
 
-  $(('.focus-ring-background.one')).css({
-    'transform': 'translateX(' + (-1* filterVal) + 'px',
-  });
+  // $(('.focus-ring-background.one')).css({
+  //   'transform': 'translateX(' + (-1* filterVal) + 'px',
+  // });
 
-  $(('.focus-ring-background.two')).css({
-    'transform': 'translateX(' + filterVal + 'px',
-  });
+  // $(('.focus-ring-background.two')).css({
+  //   'transform': 'translateX(' + filterVal + 'px',
+  // });
 
 
 
@@ -1344,3 +1376,6 @@ $('.content').scroll(function() {
 // scrolltop === blur 100px
 
 // bottom of page == blur 0px
+
+
+

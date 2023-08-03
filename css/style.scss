@@ -220,9 +220,9 @@ section {
       grid-column: span 6;
     }
   }
-  &:first-child {
-    margin-top: 6rem;
-  }
+  // &:first-child {
+  //   margin-top: 6rem;
+  // }
   &:last-child {
     margin-bottom: 0;
   }
@@ -234,9 +234,9 @@ section {
     // margin-top: 15vh;
     margin-bottom: 170px;
   }
-  // #first-sec{
-  //   margin-top: -15vh;
-  // }
+  #content-hero{
+    margin-top: 6rem;
+  }
 
 }
 
@@ -258,7 +258,7 @@ footer {
   background-color: none;
   z-index: 0;
   overflow: hidden;
-  height: 600px;
+  height: 40rem;
   button {
     margin-bottom: 0;
     margin-right: 0;
@@ -1178,20 +1178,41 @@ a:active {
 // }
 
 .container111 {
-  display: grid;
-  grid-template-areas: "only";
+  // display: flex;
+  // grid-template-areas: "only";
   justify-items: center;
+  position: fixed;         
+  grid-column: 3/11;
+  // grid-template-columns: repeat(12, 1fr);
+  z-index: 999999999;
+  margin-top: 1.5rem;
+  height: 5rem;
+  width: 0px;
+  // position: relative;
+  &-container{
+    width: 100%;
+    grid-template-columns: repeat(8, 1fr);
+    // background-color: $black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
 }
 
+
+
 .parent {
+  bottom: 0;
+
   // grid-area: only;
   // background: grey;
   display: flex;
-  position: fixed;
+  // position: absolute;
 
-  top: 3rem; //must match 'pos' variable in jquery's section-nav function
+  // top: 3rem; //must match 'pos' variable in jquery's section-nav function
   // transform: translate(0%,-50%);
-  // width: 90%;
+  width: 100%;
 /*  one screen height  */
   // height: 100vh;
   z-index: 999999999;
@@ -1202,7 +1223,7 @@ a:active {
   column-gap: 3rem;
   justify-content: space-between;
 
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   .section-nav{
     pointer-events: all;
 
@@ -1239,6 +1260,147 @@ a:active {
   }
   scroll-behavior: smooth;
 }
+
+
+
+
+.focus-ring {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  left:0;
+  // right:0;
+  top:0;
+  // bottom: 0;
+  // margin: auto;
+  // justify-content: center;
+  // align-items: center;
+  z-index: 99999999999999;
+  pointer-events: all;
+  &-background, &-shape {
+    // left:0;
+    // right:0;
+    // top:0;
+    // bottom: 0;
+    margin: auto;
+  }
+  &-heart{
+    position:relative; 
+    // background-color: red;
+    width:3rem; 
+    height:3rem;
+    margin-top:10px; /* leave some space above */
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 1.5rem;
+      height: 3rem;
+      border-radius: 50px 50px 0 0;
+      background: red;
+    // border: 0.0625rem solid $white;   
+
+    }
+    &:before{
+      left: 1.5rem;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    &:after{
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+  }
+  &-background{
+    position: absolute;
+    // background-color: $red;
+    border: 0.25rem solid $white;   
+
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+  }
+  &-shape{
+    position: absolute;
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    // border: 0.0625rem solid $white;   
+  }
+}
+
+
+.blur {
+  opacity: 1;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+// .focus-ring {
+//   position: absolute;
+//   height: 3rem;
+//   width: 3rem;
+//   left:0;
+//   right:0;
+//   top:0;
+//   bottom: 0;
+//   margin: auto;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: -9;
+
+//   .focus-ring-background-container, &-shape {
+//     left:0;
+//     right:0;
+//     top:0;
+//     bottom: 0;
+//     margin: auto;
+//   }
+//   .focus-ring-background-container {
+//     height: 3rem;
+//     width: 3rem;
+//     position: relative;
+//      .focus-ring-background.one {
+//       position: absolute;
+//       top: 0;
+//       background-color: $red;
+//       height: 1.5rem;
+//       width: 3rem;
+//       // w = 2*h
+//       // border-radius: 50%;
+//       border-radius: 3rem 3rem 0 0;
+//       transform: translateX(-40px);
+//       // left: 40px;
+//     }
+//     .focus-ring-background.two {
+//       bottom: 0;
+//       // right: 40px;
+//       position: absolute;
+//       background-color: $red;
+//       height: 1.5rem;
+//       width: 3rem;
+//       // w = 2*h
+//       // border-radius: 50%;
+//       border-radius: 0 0 3rem 3rem;
+//       transform: translateX(40px);
+//     }
+//   }
+ 
+//   &-shape{
+//     position: absolute;
+//     display: flex;
+//     height: 2rem;
+//     width: 2rem;
+//     border-radius: 50%;
+//     border: 0.0625rem solid $white;   
+//   }
+// }
+
 
 
 
@@ -1373,6 +1535,8 @@ a:active {
     }
     &::-webkit-scrollbar-thumb {
       background-color: $red;
+      margin-bottom: 6rem;
+      margin-top: 6rem;
     }
     &::-webkit-scrollbar-track { /* Background */
       background: $black;
@@ -2090,72 +2254,3 @@ a:active {
 
 
 
-.focus-ring {
-  position: absolute;
-  height: 3rem;
-  width: 3rem;
-  left:0;
-  right:0;
-  top:0;
-  bottom: 0;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  z-index: -9;
-
-  .focus-ring-background-container, &-shape {
-    left:0;
-    right:0;
-    top:0;
-    bottom: 0;
-    margin: auto;
-  }
-  .focus-ring-background-container {
-    height: 3rem;
-    width: 3rem;
-    position: relative;
-     .focus-ring-background.one {
-      position: absolute;
-      top: 0;
-      background-color: $red;
-      height: 1.5rem;
-      width: 3rem;
-      // w = 2*h
-      // border-radius: 50%;
-      border-radius: 3rem 3rem 0 0;
-      transform: translateX(-40px);
-      // left: 40px;
-    }
-    .focus-ring-background.two {
-      bottom: 0;
-      // right: 40px;
-      position: absolute;
-      background-color: $red;
-      height: 1.5rem;
-      width: 3rem;
-      // w = 2*h
-      // border-radius: 50%;
-      border-radius: 0 0 3rem 3rem;
-      transform: translateX(40px);
-    }
-  }
- 
-  &-shape{
-    position: absolute;
-    display: flex;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    border: 0.0625rem solid $white;   
-  }
-}
-
-
-.blur {
-  opacity: 1;
-  -webkit-filter: blur(40px);
-  -moz-filter: blur(40px);
-  -o-filter: blur(40px);
-  -ms-filter: blur(40px);
-  filter: blur(40px);
-}
