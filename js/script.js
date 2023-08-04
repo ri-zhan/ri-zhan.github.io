@@ -47,7 +47,7 @@ $(document).ready(function(e) {
         })
     });
 
-    menuSize();
+    // menuSize();
 })
 
 $(document).mousemove(function(e){
@@ -352,8 +352,15 @@ $('.content').scroll(function(){
     'transform': 'translateY(' + scrolledAmount * 0.1 + 'px',
   });
 
-  var slidesContainerPosition = $('.slidesContainer').position();
-  var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
+
+  var nav = $('.slidesContainer');
+  if (nav.length) {
+    // prevents the "uncaught typeeroor message in console"
+
+    var slidesContainerPosition = $('.slidesContainer').position();
+    var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
+
+  }
 
   // $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
   //   'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
@@ -370,8 +377,15 @@ $('.content').scroll(function(){
     'right': 0,
   });
   
+  
   var mockupIMGposition = $('.mockupIMG-container').position();
-  var scrolledAmountRelativeMockup = ($('.content').scrollTop()) - (mockupIMGposition.top);
+
+  var nav = $('.content');
+  if (nav.length) {
+    // prevents the "uncaught typeeroor message in console"
+    var scrolledAmountRelativeMockup = ($('.content').scrollTop()) - (mockupIMGposition.top);
+
+  }
 
   $('.mockupIMG').css({
     'transform': 'translateY(' + (scrolledAmountRelativeMockup * -1) * 0.08 + 'px',
@@ -379,6 +393,8 @@ $('.content').scroll(function(){
   });
   
 });
+
+
 
 
 
@@ -523,6 +539,7 @@ function GIFcontainerSize(){
     });
   }
 }
+
 GIFcontainerSize();
 
   
@@ -569,14 +586,20 @@ openGIF.forEach(openGIF =>{
 function innerBorderPos() {
   position = $('.inner-frame').children('.inner-box').eq(1).position();
 
-  $('.inner-frame').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
-    position = $('.inner-frame').children('.inner-box').eq(1).position();
-  });
-  $('.inner-border').css({
-    'left': position.left - 12 + 'px',
-    'top': position.top - 12 + 'px',
-    // 'transition': 'top 0s, left 0s;'
-  });
+  var nav = $('.inner-frame');
+  if (nav.length) {
+    // prevents the "uncaught typeeroor message in console"
+    $('.inner-frame').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
+      position = $('.inner-frame').children('.inner-box').eq(1).position();
+    });
+    $('.inner-border').css({
+      'left': position.left - 12 + 'px',
+      'top': position.top - 12 + 'px',
+      // 'transition': 'top 0s, left 0s;'
+    });
+  }
+
+
 
   //////////////////////// simplified inner container hover //////////////////
   $('.inner-border').css({
@@ -1142,7 +1165,7 @@ const target = document.getElementById("target");
 
 document.addEventListener("wheel", function(e){
   // prevent the default scrolling event
-  e.preventDefault();
+  // e.preventDefault();
 
   // scroll the div
   target.scrollBy(e.deltaX, e.deltaY);
@@ -1475,16 +1498,29 @@ var $navBar = $('.container111');
 var navPos = $navBar.offset().top;
 
 // on scroll
-$('.content').scroll(function() {
+$('#content-hero').ready(function(e) {
 
-    // get scroll position from top of the page
-    var scrollPos = $(this).scrollTop();
+  $('.content').scroll(function() {
 
-    // check if scroll position is >= the nav position
-    if (scrollPos >= navPos) {
-        $navBar.addClass('fixed');
-    } else {
-        $navBar.removeClass('fixed');
-    }
+      // get scroll position from top of the page
+      var scrollPos = $(this).scrollTop();
 
+      // check if scroll position is >= the nav position
+      if (scrollPos >= navPos) {
+          $navBar.addClass('fixed');
+      } else {
+          $navBar.removeClass('fixed');
+      }
+
+  });
+});
+
+
+
+
+
+
+
+$(document).ready(function(e) {
+  contentHeroSize();
 });
