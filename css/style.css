@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #1f1f1f;
+  background-color: #22201e;
   font-style: normal;
   font-size: 1.25rem;
   line-height: 1.35rem;
@@ -103,7 +103,7 @@ button {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
@@ -148,19 +148,19 @@ button:hover {
   transform: scale(1.05);
   transition: all 100ms ease-out;
   background-color: #EAE5E2;
-  color: #1f1f1f;
+  color: #22201e;
 }
 button:hover .btn-individual {
-  color: #1f1f1f;
+  color: #22201e;
 }
 button:hover .btn-individual .material-symbols-outlined {
-  color: #1f1f1f;
+  color: #22201e;
 }
 button:hover .btn-individual .bottom-left-icon {
-  background-color: #1f1f1f;
+  background-color: #22201e;
 }
 button:hover p {
-  color: #1f1f1f;
+  color: #22201e;
 }
 button:active {
   background-color: #E63223;
@@ -177,6 +177,7 @@ button .material-symbols-outlined {
 section {
   display: grid;
   grid-column: span 8;
+  margin-bottom: 10.625rem;
 }
 section a {
   text-decoration: underline;
@@ -200,9 +201,6 @@ section:last-child {
 section img {
   width: 100%;
   grid-column: span 10;
-}
-section #first-sec, section #second-sec, section #third-sec, section #fourth-sec {
-  margin-bottom: 170px;
 }
 section #content-hero {
   margin-top: 6rem;
@@ -274,7 +272,7 @@ footer h2 {
 .GIFcontainer, .slidesContainer {
   width: 5rem;
   height: 24rem;
-  grid-column: span 10;
+  grid-column: span 8;
   overflow: hidden;
   align-items: center;
   position: relative;
@@ -336,7 +334,7 @@ footer h2 {
 .GIFcontainer .general-border-container .general-border-cover, .slidesContainer .general-border-container .general-border-cover {
   width: 80%;
   height: 100%;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   transition: all 600ms ease-in-out;
 }
 .GIFcontainer .general-border-container .general-border, .slidesContainer .general-border-container .general-border {
@@ -517,7 +515,7 @@ a:active {
   width: 100%;
   height: 100%;
   border: 0.05rem solid #EAE5E2;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   transition: all 300ms ease-in-out;
   box-shadow: 0px 0px 25px rgb(13, 13, 13);
 }
@@ -620,7 +618,7 @@ a:active {
   font-size: 1.25rem;
   justify-self: center;
   align-self: center;
-  color: #1f1f1f;
+  color: #22201e;
   opacity: 0;
   transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
   pointer-events: none;
@@ -665,7 +663,7 @@ a:active {
   animation-iteration-count: infinite;
 }
 .inner-frame.stylized .inner-border-top-left:active {
-  border-color: #1f1f1f;
+  border-color: #22201e;
 }
 .inner-frame.stylized .inner-border-top-right {
   border: solid #EAE5E2;
@@ -680,7 +678,7 @@ a:active {
   animation-iteration-count: infinite;
 }
 .inner-frame.stylized .inner-border-top-right:active {
-  border-color: #1f1f1f;
+  border-color: #22201e;
 }
 .inner-frame.stylized .inner-border-bottom-right {
   border: solid #EAE5E2;
@@ -695,7 +693,7 @@ a:active {
   animation-iteration-count: infinite;
 }
 .inner-frame.stylized .inner-border-bottom-right:active {
-  border-color: #1f1f1f;
+  border-color: #22201e;
 }
 .inner-frame.stylized .inner-border-bottom-left {
   border: solid #EAE5E2;
@@ -710,7 +708,7 @@ a:active {
   animation-iteration-count: infinite;
 }
 .inner-frame.stylized .inner-border-bottom-left:active {
-  border-color: #1f1f1f;
+  border-color: #22201e;
 }
 .inner-frame.stylized .inner-border-top-left-name, .inner-frame.stylized .inner-border-top-right-name, .inner-frame.stylized .inner-border-bottom-right-name, .inner-frame.stylized .inner-border-bottom-left-name {
   z-index: -3;
@@ -718,7 +716,7 @@ a:active {
   font-size: 1.25rem;
   justify-self: center;
   align-self: center;
-  color: #1f1f1f;
+  color: #22201e;
   opacity: 0;
   transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
   pointer-events: none;
@@ -748,14 +746,14 @@ a:active {
   width: 5.9375rem;
   border-radius: 5.9375rem;
   border: 0.125rem solid #EAE5E2;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   position: absolute;
 }
 .inner-frame.stylized .circle-gap {
   width: 1rem;
   height: 0;
   transition: width 400ms ease-out;
-  background-color: #1f1f1f;
+  background-color: #22201e;
 }
 .inner-frame.stylized .circle-right {
   position: relative;
@@ -768,7 +766,7 @@ a:active {
   width: 5.9375rem;
   border-radius: 5.9375rem;
   border: 0.125rem solid #EAE5E2;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   position: absolute;
   left: -3.4375rem;
 }
@@ -786,13 +784,13 @@ a:active {
   white-space: nowrap;
   overflow: hidden;
   background-color: #EAE5E2;
-  color: #1f1f1f;
+  color: #22201e;
   padding: 0 0.5rem;
 }
 .typewriterDiv p {
   margin-bottom: 0;
   white-space: nowrap;
-  color: #1f1f1f;
+  color: #22201e;
 }
 .typewriterDiv .movingText {
   display: flex;
@@ -1019,7 +1017,7 @@ a:active {
     width: 3rem;
     color: #EAE5E2;
     border: 0.0625rem solid #EAE5E2;
-    background-color: #1f1f1f;
+    background-color: #22201e;
     pointer-events: all;
     margin: 1.25rem;
     padding: 0;
@@ -1138,36 +1136,43 @@ a:active {
   height: 6rem;
   margin-bottom: 9rem;
   position: static;
+  grid-column: 3/11;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .container111 {
   justify-items: center;
   position: static;
-  grid-column: 3/11;
+  grid-template-columns: repeat(8, 1fr);
   z-index: 999999999;
   padding-top: 1.5rem;
   height: 6rem;
   width: 0px;
-  background-color: #1f1f1f;
+  display: grid;
+  grid-column: span 8;
+  background-color: #22201e;
   margin-bottom: 9rem;
 }
 .container111-container {
+  display: grid;
   width: 100%;
   grid-template-columns: repeat(8, 1fr);
   justify-content: center;
-  align-items: center;
-  display: flex;
-  margin-left: 0rem;
-  margin-right: 1.5rem;
+  align-items: flex-start;
   position: relative;
   height: 100%;
+  grid-column: span 8;
 }
 .container111 .focus-ring-line {
-  border-top: 0.05rem solid #EAE5E2;
-  width: 100%;
-  opacity: 0%;
-  bottom: 2rem;
+  height: 0.025rem;
+  background: #EAE5E2;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
   position: absolute;
+  align-items: center;
+  grid-column: 2/8;
+  margin: auto;
 }
 .container111.fixed {
   position: fixed;
@@ -1175,10 +1180,9 @@ a:active {
 }
 
 .parent {
+  grid-column: 2/8;
   top: 0;
   display: flex;
-  position: absolute;
-  padding: 0 4rem 0 4rem;
   width: 100%;
   /*  one screen height  */
   z-index: 999999999;
@@ -1224,11 +1228,14 @@ a:active {
   height: 2rem;
   width: 100%;
   left: 0rem;
+  right: 0;
   bottom: 0.5rem;
+  margin: auto;
   z-index: 99999999999999;
   pointer-events: all;
   overflow-x: scroll;
   overflow-y: hidden;
+  grid-template-columns: repeat(8, 1fr);
 }
 .focus-ring::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -1306,7 +1313,7 @@ a:active {
   width: 100%;
   height: 100%;
   z-index: 9999999;
-  background-color: #1f1f1f;
+  background-color: #22201e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1333,7 +1340,7 @@ a:active {
 @media (max-width: 600px) {
   .mobileViewUnavail.show {
     z-index: 999999;
-    background-color: #1f1f1f;
+    background-color: #22201e;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -1401,7 +1408,7 @@ a:active {
     background-color: #E63223;
   }
   .content-container .content::-webkit-scrollbar-track { /* Background */
-    background: #1f1f1f;
+    background: #22201e;
     margin-bottom: 4rem;
     margin-top: 6rem;
   }
@@ -1552,7 +1559,7 @@ a:active {
 }
 .content-container .content .fullRow {
   display: grid;
-  grid-column: span 9;
+  grid-column: span 8;
   width: 100%;
   row-gap: 0.5rem;
   margin-bottom: 8.5rem;

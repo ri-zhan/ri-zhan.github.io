@@ -4,7 +4,7 @@
 
 $red: #E63223;
 $white: #EAE5E2;
-$black: #1f1f1f;
+$black: #22201e;
 
 body {
   background-color: $black;
@@ -200,7 +200,7 @@ button {
 section {
   display: grid;
   grid-column: span 8;
-  // margin-bottom: 10.625rem;
+  margin-bottom: 10.625rem;
   // &:last-child {
   //   margin-bottom: 6rem;
   // }
@@ -230,10 +230,10 @@ section {
     width: 100%;
     grid-column: span 10;
   }
-  #first-sec, #second-sec, #third-sec, #fourth-sec {
-    // margin-top: 15vh;
-    margin-bottom: 170px;
-  }
+  // #first-sec, #second-sec, #third-sec, #fourth-sec {
+  //   // margin-top: 15vh;
+  //   margin-bottom: 170px;
+  // }
   #content-hero{
     margin-top: 6rem;
     &:before, &:after{
@@ -302,7 +302,7 @@ footer {
 .GIFcontainer, .slidesContainer {
   width: 5rem;
   height: 24rem;
-  grid-column: span 10;
+  grid-column: span 8;
   // min-height: 30rem;
   overflow: hidden;
   align-items: center;
@@ -1184,6 +1184,8 @@ a:active {
   height: 6rem;
   margin-bottom: 9rem;
   position: static;
+  grid-column: 3/11;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .container111 {
@@ -1191,36 +1193,51 @@ a:active {
   // grid-template-areas: "only";
   justify-items: center;
   position: static;         
-  grid-column: 3/11;
-  // grid-template-columns: repeat(12, 1fr);
+  // grid-column: 3/11;
+  grid-template-columns: repeat(8, 1fr);
   z-index: 999999999;
   padding-top: 1.5rem;
   height: 6rem;
   width: 0px;
+  display: grid;
   // position: relative;
+  grid-column: span 8;
+
   // background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0),);
   background-color: $black;
     // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0),);
   margin-bottom: 9rem;
   &-container{
+    display: grid;
     width: 100%;
     grid-template-columns: repeat(8, 1fr);
     // background-color: $black;
     justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-left: 0rem;
-    margin-right: 1.5rem;
+    align-items: flex-start;
+    // display: flex;
+    // margin-left: 0rem;
+    
+    // margin-right: 1.5rem;
     position: relative;
     height: 100%;
+    grid-column: span 8;
   }
 
   .focus-ring-line{ 
-    border-top: 0.05rem solid $white;   
-    width: 100%;
-    opacity: 0%;
-    bottom: 2rem;
+    // border-top: 0.05rem solid $white;   
+    height: 0.025rem;
+    background: $white;
+    // width: 100%;
+    // opacity: 0%;
+    left: 0;
+    right: 0;
+    bottom: 1.5rem;
     position: absolute;
+    // margin: 0 4rem 0 4rem;
+    align-items: center;
+    // width: 200px;
+    grid-column: 2/8;
+    margin: auto;
   }
   &.fixed{
     position: fixed;
@@ -1231,13 +1248,15 @@ a:active {
 
 
 .parent {
+  grid-column: 2/8;
+
   top: 0;
 
   // grid-area: only;
   // background: grey;
   display: flex;
-  position: absolute;
-  padding: 0 4rem 0 4rem;
+  // position: absolute;
+  // padding: 0 4rem 0 4rem;
   // top: 3rem; //must match 'pos' variable in jquery's section-nav function
   // transform: translate(0%,-50%);
   width: 100%;
@@ -1250,6 +1269,7 @@ a:active {
   // padding-right: 0.25rem;
   column-gap: 3rem;
   justify-content: space-between;
+  
 
   // margin-bottom: 2rem;
   .section-nav{
@@ -1299,10 +1319,10 @@ a:active {
   height: 2rem;
   width: 100%;
   left: 0rem;
-  // right:0;
+  right:0;
   // top:0;
   bottom: 0.5rem;
-  // margin: auto;
+  margin: auto;
   // justify-content: center;
   // align-items: center;
   z-index: 99999999999999;
@@ -1310,6 +1330,9 @@ a:active {
   overflow-x: scroll;
   // background-color: green;
   overflow-y: hidden;
+  // grid-column: 2/8;
+  grid-template-columns: repeat(8, 1fr);
+
   &::-webkit-scrollbar {
     -webkit-appearance: none;
     background-position: center;
@@ -1988,7 +2011,7 @@ a:active {
 
     .fullRow {
       display: grid;
-      grid-column: span 9;
+      grid-column: span 8;
       width: 100%;
       row-gap: 0.5rem;
       margin-bottom: 8.5rem;

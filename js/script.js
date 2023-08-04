@@ -1318,13 +1318,31 @@ $(window).on('load', () => {
   });
   contentHeight =  contentHeight += 96
   // 96 is the 6rem padding on the container-container
+
+
+  // $('.focus-ring-line').css({
+  //   'width': $('.container111').width(),
+  // })
+  
   $('.focus-ring-shape').css({
     'width': contentHeight,
+  });
+
+
+  // Get the scrollbar width
+  var scrollbarWidth = $('.content').height()/contentHeight*($('.parent').width())
+  console.log(scrollbarWidth);
+
+  $('.focus-ring').css({
+    'width': $('.parent').width() + scrollbarWidth 
   })
-  
+  console.log($('.focus-ring-line').width())
 });
 
-// var 
+
+
+
+
 
 // var offset = $(".focus-ring").offset();
 var $horizontal = $('.focus-ring');
