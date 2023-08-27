@@ -381,7 +381,7 @@ footer h2 {
 .follower-around {
   width: 2.5rem;
   height: 2.5rem;
-  border: 0.125rem solid #E63223;
+  border: 0.075rem solid #E63223;
   transition: all 400ms ease-out;
 }
 
@@ -398,50 +398,6 @@ a:active {
   color: #E63223;
 }
 
-@keyframes top-left-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translate(-0.25rem, -0.25rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes top-right-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translate(0.25rem, -0.25rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes bottom-right-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translate(0.25rem, 0.25rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes bottom-left-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translate(-0.25rem, 0.25rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .general-border {
   width: 100%;
   grid-template-rows: 1fr 4fr 1fr;
@@ -525,13 +481,13 @@ a:active {
   display: grid;
   width: 100%;
   height: 100%;
-  border: 0.05rem solid #EAE5E2;
+  border: 0.025rem solid #EAE5E2;
   background-color: #22201e;
   transition: all 300ms ease-in-out;
-  box-shadow: 0px 0px 25px rgb(13, 13, 13);
+  box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
 }
 .inner-frame-container .inner-frame.simplified .inner-box:hover {
-  box-shadow: 0px 0px 50px rgba(13, 13, 13, 0.7);
+  box-shadow: 0px 0px 50px rgba(13, 13, 13, 0.5);
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-frame.simplified .inner-box {
@@ -1160,7 +1116,7 @@ a:active {
   width: 0px;
   display: grid;
   grid-column: span 8;
-  background-color: #22201e;
+  z-index: 99999999;
 }
 .container111-container {
   display: grid;
@@ -1186,6 +1142,7 @@ a:active {
 .container111.fixed {
   position: fixed;
   top: 0;
+  background: radial-gradient(90% 170% at 50% 0%, rgba(32, 24, 30, 0.35) 40%, transparent 60%);
 }
 
 .parent {
@@ -1213,9 +1170,6 @@ a:active {
 }
 .parent .section-nav.selected h5 {
   font-weight: 800;
-}
-.parent .section-nav.deselected {
-  opacity: 50%;
 }
 .parent .section-nav.deselected h5 {
   font-weight: 400;

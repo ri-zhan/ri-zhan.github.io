@@ -924,7 +924,7 @@ function outerFrameSize() {
     });
   }
 };
-
+outerFrameSize();
 
 
 
@@ -1485,6 +1485,7 @@ $( document ).ready(function() {
 
   GIFcontainerSize();
 
+  outerFrameSize();
 
   innerBorderPos();  
 
