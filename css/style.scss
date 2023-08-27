@@ -23,7 +23,8 @@ body {
 }
 
 h1 {
-  font-family: ivymode,sans-serif;
+  // font-family: ivymode,sans-serif;
+  font-family: "scotch-display", sans-serif;
   font-size: 3rem;
   color: $white;
   margin: 0 0 1.375rem 0;
@@ -36,7 +37,8 @@ h1 {
 }
 
 h2 {
-  font-family: ivymode,sans-serif;
+  // font-family: ivymode,sans-serif;
+  font-family: "scotch-display", sans-serif;
   font-size: 1.75rem;
   color: $white;
   margin: 0 0 1.375rem 0;
@@ -50,24 +52,12 @@ h2 {
   // font-family: lust, serif;
 }
 
-h4 {
-  font-family: "itc-american-typewriter";
-  font-weight: 300;
-  letter-spacing: 0.125rem;
-  font-size: 0.875rem;
-  // font-family: "lft-etica-mono";
-  // font-weight: 200;
-  font-style: normal;
-  // font-size: 0.825rem;
-  color: $white;
-  // margin: 0 0 0.825rem 0;
-  margin: 0 0 0 0;
-  line-height: 1.75rem;
-  text-transform: lowercase;
-}
+
 
 h3 {
-  font-family: Paralucent, sans-serif;
+  // font-family: Paralucent, sans-serif;
+  font-family: "apertura", sans-serif;
+
   font-style: normal;
   font-weight: 800;
   font-size: 3.25rem;
@@ -77,15 +67,59 @@ h3 {
   padding: 0;
 }
 
-p {
-  font-family: Paralucent, sans-serif;
-  letter-spacing: 0.025rem;
+
+h4 {
+  // font-family: "itc-american-typewriter";
+  font-family: neue-haas-grotesk-display, sans-serif;
+  // font-family: courier-prime, monospace; 
+  // font-weight: 200;
+  font-weight: 500;
+  // letter-spacing: 0.125rem;
+  font-size: 0.875rem;
+  // font-family: "lft-etica-mono";
+  // font-weight: 200;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.25rem;
+  // font-size: 0.875rem;
+  color: $white;
+  margin: 0 0 0.25rem 0;
+  // margin: 0 0 0 0;
+  line-height: 1.75rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05rem;
+}
+
+
+h5 {
+  // font-family: "odile", serif;
+  font-family: "scotch-display", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-style: normal;
+  color: $white;
+  margin: 0 0 0 0;
+  line-height: 1.75rem;
+  text-transform: lowercase;
+}
+
+
+
+
+p {
+  // font-family: neue-haas-grotesk-display, sans-serif;
+  // font-family: "odile", serif;
+  font-family: "scotch-display", sans-serif;
+  // font-family: "swear-display", serif;
+  // font-family: dunbar-tall, sans-serif;
+  // font-family: courier-prime, monospace;
+  // font-family: omnes-pro, sans-serif;
+  // font-family: "apertura", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   color: $white;
-  margin: 0;
+  margin: 0 0 0 0;
 }
 
 a {
@@ -106,7 +140,7 @@ button {
   height: 2.5rem;
   width: auto;
   padding: 0;
-  border: 0.0625rem solid $white;   
+  border: 0.025rem solid $white;   
   display: flex; 
   align-items: center;
   justify-content: center;
@@ -220,9 +254,9 @@ section {
       grid-column: span 6;
     }
   }
-  // &:first-child {
-  //   margin-top: 6rem;
-  // }
+  &:first-child {
+    margin-bottom: 0;
+  }
   &:last-child {
     margin-bottom: 0;
   }
@@ -235,14 +269,26 @@ section {
   //   margin-bottom: 170px;
   // }
   #content-hero{
+    height: 24rem;
     margin-top: 6rem;
-    &:before, &:after{
-      height: 5rem; /* fixed header height*/
-      margin: -5rem 0 0; /* negative fixed header height */
-    }
+    // &:before, &:after{
+    //   height: 5rem; /* fixed header height*/
+    //   margin: -5rem 0 0; /* negative fixed header height */
+    // }
   }
 }
 
+// #item {
+//   filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+//   filter: gray; /* IE5+ */
+//   -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+//   &:has( > href ):hover {
+//     #item {
+//       filter: none; /* IE5+ */
+//       -webkit-filter: none; /* Webkit Nightlies & Chrome Canary */
+//     }
+//   }
+// }
 
 
 footer {
@@ -261,7 +307,7 @@ footer {
   background-color: none;
   z-index: 0;
   overflow: hidden;
-  height: 40rem;
+  height: 20rem;
   button {
     margin-bottom: 0;
     margin-right: 0;
@@ -269,7 +315,7 @@ footer {
   #footer-section-heading-line {
     width: 0%;
     height: 0rem;
-    border: solid $white;
+    border: 0.025rem solid $white;
     border-width: 0 0 0 0;
     transition: all 1000ms ease-out;
   }
@@ -278,7 +324,7 @@ footer {
     #footer-section-heading-line {
       top: 0.75rem;
       width: 100%;
-      border-width: 0.0625rem 0 0 0;
+      border-width: 0.025rem 0 0 0;
       transition: all 2000ms ease-out;
       @media (max-width: 110px) {
         top: 1.25rem;
@@ -442,7 +488,7 @@ a:active {
 .general-border {
   width: 100%;
   grid-template-rows: 1fr 4fr 1fr;
-  --b: 0.125rem;   /* thickness of the border */
+  --b: 0.025rem;   /* thickness of the border */
   --c: white;   /* color of the border */
   --w: 1.25rem;  /* width of border */
 
@@ -1182,7 +1228,8 @@ a:active {
 
 .container111-placeholder{
   height: 6rem;
-  margin-bottom: 9rem;
+  ////DO YOU NEED THE MARGIN-BOTTOM???????????
+  // margin-bottom: 9rem;
   position: static;
   grid-column: 3/11;
   grid-template-columns: repeat(8, 1fr);
@@ -1206,7 +1253,9 @@ a:active {
   // background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0),);
   background-color: $black;
     // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0),);
-  margin-bottom: 9rem;
+
+  ////DO YOU NEED THIS MARGIN-BOTTOM????
+  // margin-bottom: 9rem;
   &-container{
     display: grid;
     width: 100%;
@@ -1283,23 +1332,19 @@ a:active {
     opacity: 100%;
     &.selected {
       opacity: 100%;
-      h4 {
+      h5 {
         font-weight: 800;
       }
     }
     &.deselected {
       opacity: 50%;
-      h4 {
+      h5 {
         font-weight: 400;
       }
     }
     &:hover {
       opacity: 100%;
-      h3{
-        color: $red;
-        opacity: 80%;
-      }
-      h4 {
+      h5 {
         color: $red;
         font-weight: 800;
         
@@ -1638,7 +1683,7 @@ a:active {
     }
     &::-webkit-scrollbar-track { /* Background */
       background: none;
-      margin-bottom: 6rem;
+      // margin-bottom: 6rem;
       margin-top: 6rem;
     }
     .mockupIMG-container {
@@ -1755,10 +1800,13 @@ a:active {
         // grid-column: span 4;
       }
       .column-3 {
+        display: flex;
+        flex-direction: column;
         grid-column: 1/4;
         width: 100%;
         object-fit: cover;
         grid-row-gap: 2rem;
+        grid-column-gap: 3rem;
       }
       .column-5 {
         // height: 100%;
@@ -2165,7 +2213,7 @@ a:active {
       &-line {
         width: 100%;
         height: -50%;
-        border-top: 1px solid $white;
+        border-top: 0.025rem solid $white;
       }
       >h2 {
         margin-bottom: 0;
@@ -2352,3 +2400,7 @@ a:active {
 
 
 
+.placeholder1010{
+  height: 40rem;
+  position: absolute;
+}

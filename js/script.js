@@ -1,5 +1,3 @@
-
-
 $(function(){
   $.each(document.images, function(){
               var this_image = this;
@@ -17,6 +15,8 @@ $(function(){
               }
           });
 });
+
+
 
 
 var totalImages = 0;
@@ -297,7 +297,7 @@ function clickMenu() {
     });
 
 };
-clickMenu();
+// clickMenu();
 
 
 
@@ -454,7 +454,7 @@ function mobileViewUnavail() {
   };
 }
 
-mobileViewUnavail();
+// mobileViewUnavail();
 // const moveSlide = document.querySelectorAll('.slidesContainer');
 
 // const appearAt = {
@@ -488,7 +488,7 @@ function topBarSize() {
     'width': $('.content').width(),
   });
 }
-topBarSize();
+// topBarSize();
 
 
 $('.openGIF.general-border > .GIF').css({
@@ -540,7 +540,7 @@ function GIFcontainerSize(){
   }
 }
 
-GIFcontainerSize();
+// GIFcontainerSize();
 
   
 
@@ -610,6 +610,7 @@ function innerBorderPos() {
 };
 
 $( document ).ready(function() {
+  
   innerBorderPos(this);
   
 
@@ -755,7 +756,7 @@ function navBarSize() {
   }
 }
 
-navBarSize();
+// navBarSize();
 
 // function outerFrameState(){
 //   if ( window.location.pathname != '/index.html' ){
@@ -874,7 +875,7 @@ function GIFcontainerSize(){
 
   };
 };
-GIFcontainerSize();
+
 
 
 
@@ -924,7 +925,7 @@ function outerFrameSize() {
   }
 };
 
-outerFrameSize();
+
 
 
 
@@ -973,10 +974,10 @@ $('.filmstrip').each(function(){
       "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
       function() {
           imgWidth = thisFilmstrip.find($('.filmstrip-img')).innerWidth();
-          console.log('width ' + imgWidth)
+          // console.log('width ' + imgWidth)
           
           imgCount = thisFilmstrip.find($('.filmstrip-imgs')).children().length;
-          console.log('img count is '+ imgCount)   
+          // console.log('img count is '+ imgCount)   
 
           $(this).css({
             'width': (imgWidth * (imgCount) + 24 +'px')
@@ -1280,92 +1281,40 @@ $('#cursor').teletype({
 });
 
 
-//////mobile///
-///menu button transformation//
-
-
-
-
-
-
-
-
-// $('.content').scroll(function(e) {
-//   var sscroll = $('.content').scrollTop()
-//   var sheight = $('.content').height()
-//     // filterVal = s === 0 ? 0 : Math.ceil((s / -900));
-//     filterVal = (sheight/sscroll)
-//     console.log(filterVal)
-
-//   $('.blur').css({
-//                    'filter'         : 'blur(' + filterVal + 'px)',
-//                    '-webkit-filter' : 'blur(' + filterVal + 'px)',
-//                    '-moz-filter'    : 'blur(' + filterVal + 'px)',
-//                    '-o-filter'      : 'blur(' + filterVal + 'px)',
-//                    '-ms-filter'     : 'blur(' + filterVal + 'px)'
-//                 });
-// });
-
-
-// $('.content').scroll(function(e) {
-//   let s = $('.content').scrollTop()
-//     // filterVal = s === 0 ? 0:Math.ceil((s / 50));
-
-//     // filterVal =       s != 0 ? 0:Math.ceil((s / 50));
-
-
-//     // if s is equal to 0 then set filterVal to 0. 
-//     // otherwise set filterVal to the ceiling (round 
-//     //   up the division result) of s divided by 10
-
-//     console.log(filterVal)
-//   $('.blur').css({
-//                    'filter'         : 'blur(' + filterVal + 'px)',
-//                    '-webkit-filter' : 'blur(' + filterVal + 'px)',
-//                    '-moz-filter'    : 'blur(' + filterVal + 'px)',
-//                    '-o-filter'      : 'blur(' + filterVal + 'px)',
-//                    '-ms-filter'     : 'blur(' + filterVal + 'px)'
-//                 });
-// });
-
-
-
 
 
 var contentHeight = 0;
 
 $(window).on('load', () => {
   $('.content').children().each(function( index ) {
-    contentHeight += $(this).outerHeight() 
+    contentHeight += ($(this).height() + 170)
+    //72 is 96/2 + 92/2/2, so 24 * 3
   // console.log('contentHeight' +contentHeight)
-  });
-  contentHeight =  contentHeight += 96
-  // 96 is the 6rem padding on the container-container
-
-
-  // $('.focus-ring-line').css({
-  //   'width': $('.container111').width(),
-  // })
   
+  // console.log($(this).outerHeight())
+  });
+  contentHeight =  contentHeight - 96
+  //2 section bottom paddings + bottom padding of footer
+  /////////// from before 96 is the 6rem padding on the container-container
+
+  
+  //make the line hidden in focus-ring match contentheight
   $('.focus-ring-shape').css({
     'width': contentHeight,
   });
 
-
   // Get the scrollbar width
   var scrollbarWidth = $('.content').height()/contentHeight*($('.parent').width())
-  console.log(scrollbarWidth);
 
+  //changes the focus-ring width to fit the line
   $('.focus-ring').css({
     'width': $('.parent').width() + scrollbarWidth 
   })
-  console.log($('.focus-ring-line').width())
 });
 
 
 
-
-
+//for going from blur to unblur
 
 // var offset = $(".focus-ring").offset();
 var $horizontal = $('.focus-ring');
@@ -1377,17 +1326,7 @@ var document_height = contentHeight - $(window).height();
 $('.content').scroll(function() {
   var scrollPos = ($('.content').scrollTop() + $(window).height() + 0.03)
   //windowheight to account for different
-
-
-
-
-  // var object_position_left = window_width * ($('.content').scrollTop() / contentHeight);
-
-  // $('.focus-ring').css({
-  //     'left': object_position_left 
-  // });
-
-
+  
 
 var $horizontal = $('#horizontal');
 
@@ -1400,13 +1339,8 @@ var $horizontal = $('#horizontal');
       'opacity': '',
     })
   }
-  // console.log($('.content').scrollTop())
 
-  
-  // console.log('scrollPos' +scrollPos)
-  // console.log('contentHeight' +contentHeight)
-
-  var filterVal = 3 - ((scrollPos  ) * 3 / (contentHeight))
+  var filterVal = 3 - ((scrollPos ) * 3 / (contentHeight))
   // console.log(filterVal)
 
   $('.blur').css({
@@ -1427,31 +1361,6 @@ var $horizontal = $('#horizontal');
     '-ms-filter'     : 'blur(' + filterValforline + 'px)'
   });
 
-
-
-  // $(('.focus-ring-background.one')).css({
-  //   'transform': 'translateX(' + (-1* filterVal) + 'px',
-  // });
-
-  // $(('.focus-ring-background.two')).css({
-  //   'transform': 'translateX(' + filterVal + 'px',
-  // });
-
-
-
-  // var s = $(this).scrollTop(),
-  // d = $('.content').height(),
-  // c = contentHeight;
-
-  // scrollPercent = (s / (d - c));
-
-  // var position = (scrollPercent * ($('.content').width() - $horizontal.width()));
-
-  // $horizontal.css({
-  //   'left': position
-  // });
-
-
 });
 
 
@@ -1460,42 +1369,38 @@ var $horizontal = $('#horizontal');
 
 // bottom of page == blur 0px
 
-$('.content').scroll(function () {
-  $('.focus-ring').scrollLeft($(this).scrollTop());
-});
-
-
-$('.focus-ring').scroll(function () {
-  $('.content').scrollTop($(this).scrollLeft());
-});
-
-// $(function () {
-//   $('#left').clone().attr('id', 'leftClone').css({
-//       'position': 'absolute',
-//           'top': $('#left').position().top,
-//           'left': $('#left').position().left,
-//       opacity: 0
-//   }).appendTo('body');
-//   $('#right').clone().attr('id', 'rightClone').css({
-//       'position': 'absolute',
-//           'top': $('#right').position().top,
-//           'left': $('#right').position().left,
-//       opacity: 0
-//   }).appendTo('body');
-//   $('#leftClone').scroll(function () {
-//       $('#right').scrollTop($(this).scrollTop());
-//   });
-//   $('#rightClone').scroll(function () {
-//       $('#left').scrollTop($(this).scrollTop());
-//   });
+// $('.content').scroll(function () {
+//   $('.focus-ring').scrollLeft($(this).scrollTop());
 // });
+
+
+// $('.focus-ring').scroll(function () {
+//   $('.content').scrollTop($(this).scrollLeft());
+// });
+
+
+function scrollBarLeft(){
+  // your base. I'm in it
+  $('.content').scroll(function () {
+    $('.focus-ring').scrollLeft($(this).scrollTop());
+  });
+  
+  
+  $('.focus-ring').scroll(function () {
+    $('.content').scrollTop($(this).scrollLeft());
+  });
+};
+
+
+
+
 
 
 // cache the element
 var $navBar = $('.container111');
 
 // find original navigation bar position
-var navPos = $navBar.offset().top;
+var navPos = $('.container111').offset().top;
 
 // on scroll
 $('#content-hero').ready(function(e) {
@@ -1519,8 +1424,70 @@ $('#content-hero').ready(function(e) {
 
 
 
+$(function(){
+  $.each(document.images, function(){
+    // scrollTopLeft();
+    var this_image = this;
+    var src = $(this_image).attr('src') || '' ;
+    
+    if(!src.length > 0){
+      //this_image.src = options.loading; // show loading
+      var lsrc = $(this_image).attr('lsrc') || '' ;
+      if(lsrc.length > 0){
+          var img = new Image();
+          img.src = lsrc;
+          $(img).load(function() {
+              this_image.src = this.src;
+          });
+      }
+        
+    }
+  });
+});
 
 
-$(document).ready(function(e) {
-  contentHeroSize();
+
+
+
+//makes image load before calculating the height of content-hero
+
+for (var i = document.images.length - 1; i >= 0; i--) {
+  var this_image = document.images[i];
+  var src = $(this_image).attr('src') || '' ;
+  if(!src.length > 0){
+    var lsrc = $(this_image).attr('lsrc') || '' ;
+    if(lsrc.length > 0){
+      $(this_image).attr("src",lsrc);
+    }
+  }
+  // scrollTopLeft();
+  // contentHeroSize();
+}
+
+
+
+
+$( document ).ready(function() {
+
+  // contentHeroSize();
+
+  scrollBarLeft();
+
+  clickMenu();
+  
+  playCardPos();
+
+  mobileViewUnavail();
+
+  navBarSize();
+
+  outerFrameSize();
+
+  GIFcontainerSize();
+
+
+  innerBorderPos();  
+
+  topBarSize();
+
 });
