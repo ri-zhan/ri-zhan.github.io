@@ -107,8 +107,8 @@ h5 {
 p {
   // font-family: neue-haas-grotesk-display, sans-serif;
   // font-family: "odile", serif;
-  font-family: "scotch-display", sans-serif;
-  // font-family: "swear-display", serif;
+  // font-family: "scotch-display", sans-serif;
+  font-family: "swear-display", serif;
   // font-family: dunbar-tall, sans-serif;
   // font-family: courier-prime, monospace;
   // font-family: omnes-pro, sans-serif;
@@ -228,6 +228,27 @@ button {
     // margin-right: 0.5rem;
   }
 }
+
+
+
+ul {
+  padding: 0;
+  margin: 0;
+  font-family: "swear-display", serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $white;
+  margin: 0 0 0 0;
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
 
 
 //section class

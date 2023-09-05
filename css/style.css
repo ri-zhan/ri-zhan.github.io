@@ -81,7 +81,7 @@ h5 {
 }
 
 p {
-  font-family: "scotch-display", sans-serif;
+  font-family: "swear-display", serif;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0.05rem;
@@ -183,6 +183,22 @@ button .material-symbols-outlined {
   font-size: 1.5rem;
   color: #EAE5E2;
   transition: font-size 100ms ease-in;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  font-family: "swear-display", serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #EAE5E2;
+  margin: 0 0 0 0;
+}
+ul li {
+  margin-bottom: 1rem;
 }
 
 section {
