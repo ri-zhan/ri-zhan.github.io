@@ -550,7 +550,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer');
+const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer, .borderclass');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1380,7 +1380,6 @@ var $horizontal = $('#horizontal');
 
 
 function scrollBarLeft(){
-  // your base. I'm in it
   $('.content').scroll(function () {
     $('.focus-ring').scrollLeft($(this).scrollTop());
   });
@@ -1463,6 +1462,100 @@ for (var i = document.images.length - 1; i >= 0; i--) {
   // scrollTopLeft();
   // contentHeroSize();
 }
+
+
+
+function returnToPos() {
+  $('.regimg').removeClass('regimgselected');
+
+  $('.regimg').css({
+    'top': '',
+    'left': '',
+    'transform-origin': '',
+    'position': '',
+    'transform': '',
+    'padding': '',
+    'z-index': '',
+    'width': ''
+  });
+
+  $('.container').css({
+    'overflow': '',
+  })
+  //enable scrolling
+}
+
+
+function stopScrolling (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+}
+
+$('.regimg').click( function() {
+
+  regimgposition = $(this).parent().position();
+  regimgwidth = $(this).parent().width();
+  
+  $(this).css({
+    'position':'fixed',
+    'top': regimgposition.top,
+    'left': regimgposition.left,
+    'width': regimgwidth
+  });
+
+  if ($(this).hasClass('regimgselected')) {
+    $(this).css({
+      'position':'fixed',
+      'transform': 'translate(0%, 0%)',
+      'top': regimgposition.top * 1/1.5,
+      'left': regimgposition.left,
+      'width': regimgwidth,
+    });
+
+
+    setTimeout(returnToPos, 305);
+
+
+
+
+  } else {
+    $( this ).addClass( "regimgselected" );
+
+    $('.container, #target').css({
+      'overflow-y': 'hidden',
+      'height': '100%'
+    })
+
+    $('body').off('scroll mousewheel touchmove', stopScrolling);
+
+    $(this).css({
+      'top': regimgposition.top,
+      'left': regimgposition.left,
+      'width': regimgwidth,
+    }).promise().done(function(){
+      // alert( 'color is yellow!' );
+      $(this).css({
+        'top': '50%',
+        'left': '50%',
+        'transform-origin': 'center',
+        'position': 'fixed',
+        'transform': 'translate(-50%, -50%)',
+        'padding': '0',
+        'z-index': '99999',
+        'width': $('.content').width()
+      });
+    });
+  }
+});
+
+
+/// get reg img position
+//disable scrolling in backgrosund
+//change reg img position
+//
+
+
 
 
 

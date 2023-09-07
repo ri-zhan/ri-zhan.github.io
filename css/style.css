@@ -81,8 +81,8 @@ h5 {
 }
 
 p {
-  font-family: "swear-display", serif;
-  font-weight: 300;
+  font-family: "miller-banner", serif;
+  font-weight: 100;
   font-style: normal;
   letter-spacing: 0.05rem;
   font-size: 1rem;
@@ -188,8 +188,8 @@ button .material-symbols-outlined {
 ul {
   padding: 0;
   margin: 0;
-  font-family: "swear-display", serif;
-  font-weight: 300;
+  font-family: "miller-banner", serif;
+  font-weight: 100;
   font-style: normal;
   letter-spacing: 0.05rem;
   font-size: 1rem;
@@ -296,7 +296,7 @@ footer h2 {
   }
 }
 
-.GIFcontainer, .slidesContainer {
+.GIFcontainer, .slidesContainer, .borderclass {
   width: 5rem;
   height: 24rem;
   grid-column: span 8;
@@ -308,14 +308,14 @@ footer h2 {
   justify-content: center;
   justify-self: center;
 }
-.GIFcontainer.openGIF, .slidesContainer.openGIF {
+.GIFcontainer.openGIF, .slidesContainer.openGIF, .borderclass.openGIF {
   width: 100%;
   transition: all 600ms ease-in-out;
 }
-.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover {
+.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover, .borderclass.openGIF .general-border-container .general-border-cover {
   width: 0;
 }
-.GIFcontainer .slides, .slidesContainer .slides {
+.GIFcontainer .slides, .slidesContainer .slides, .borderclass .slides {
   padding: 2rem 0;
   justify-content: space-between;
   position: absolute;
@@ -323,7 +323,7 @@ footer h2 {
   width: -moz-max-content;
   width: max-content;
 }
-.GIFcontainer .slides img, .slidesContainer .slides img {
+.GIFcontainer .slides img, .slidesContainer .slides img, .borderclass .slides img {
   align-items: flex-end;
   height: 100%;
   width: -moz-min-content;
@@ -332,10 +332,10 @@ footer h2 {
      object-fit: scale-down;
   margin-right: 1rem;
 }
-.GIFcontainer .slides img:last-child, .slidesContainer .slides img:last-child {
+.GIFcontainer .slides img:last-child, .slidesContainer .slides img:last-child, .borderclass .slides img:last-child {
   margin-right: 0;
 }
-.GIFcontainer .GIFimg, .slidesContainer .GIFimg {
+.GIFcontainer .GIFimg, .slidesContainer .GIFimg, .borderclass .GIFimg {
   position: absolute;
   justify-self: center;
   margin: 2rem 0 2rem 0;
@@ -344,13 +344,14 @@ footer h2 {
      object-fit: scale-down;
   transition: all 600ms ease-in-out;
 }
-.GIFcontainer.openGIF, .slidesContainer.openGIF {
+.GIFcontainer.openGIF, .slidesContainer.openGIF, .borderclass.openGIF {
   transition: all 600ms ease-in-out;
 }
-.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover {
+.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover, .borderclass.openGIF .general-border-container .general-border-cover {
   width: 0;
 }
-.GIFcontainer .general-border-container, .slidesContainer .general-border-container {
+
+.general-border-container {
   display: flex;
   width: 100%;
   justify-self: center;
@@ -358,16 +359,46 @@ footer h2 {
   position: absolute;
   height: 100%;
 }
-.GIFcontainer .general-border-container .general-border-cover, .slidesContainer .general-border-container .general-border-cover {
+.general-border-container .general-border-cover {
   width: 80%;
   height: 100%;
   background-color: #22201e;
   transition: all 600ms ease-in-out;
 }
-.GIFcontainer .general-border-container .general-border, .slidesContainer .general-border-container .general-border {
+.general-border-container .general-border {
   min-width: 5rem;
   height: 100%;
   transition: all 600ms ease-in-out;
+}
+
+.borderclass {
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-self: center;
+  transition: all 300ms ease-in-out;
+}
+
+.regimg {
+  padding: 0.5rem;
+  z-index: 99;
+  transition: all 300ms ease-in-out;
+  height: -moz-min-content;
+  height: min-content;
+  align-items: center;
+}
+.regimg:hover {
+  padding: 0;
+  transition: all 300ms ease-in-out;
+}
+.regimg-img {
+  display: flex;
+}
+.regimg .regimgselected {
+  position: fixed;
+}
+
+.column-4-4:has(> .borderclass) {
+  align-items: center;
 }
 
 #target {
@@ -1356,7 +1387,7 @@ a:active {
   grid-row: 2;
   height: 100%;
   color: #EAE5E2;
-  overflow-y: scroll !important;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 .content-container .content-hero {
@@ -1417,10 +1448,10 @@ a:active {
 }
 .content-container .content .column-4-4 {
   display: grid;
-  grid-column: span 9;
+  grid-column: span 8;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   justify-content: space-between;
@@ -1435,32 +1466,17 @@ a:active {
 .content-container .content .column-4-4:last-child {
   margin-bottom: 0;
 }
-.content-container .content .column-4-4 .column-4b {
-  grid-column: 5/9;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  justify-content: flex-start;
-}
 .content-container .content .column-4-4 .column-4a {
-  height: 100%;
   grid-column: 1/5;
   grid-column-gap: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
-.content-container .content .column-4-4 .column-4a > div {
-  margin-bottom: 2rem;
-}
-.content-container .content .column-4-4 .column-4a > div:last-child {
-  margin-bottom: 0;
-}
-.content-container .content .column-4-4 .column-4a p {
-  margin-bottom: 2rem;
-}
-.content-container .content .column-4-4 .column-4a p:last-child {
-  margin-bottom: 0;
+.content-container .content .column-4-4 .column-4b {
+  grid-column: 5/9;
+  grid-column-gap: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 .content-container .content .column-5-3 {
   display: grid;
