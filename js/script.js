@@ -243,7 +243,7 @@ const appearWhenInCenterprep = new IntersectionObserver
 
 
 
-$('.inner-box, a').on({
+$('.inner-box, a, .regimg').on({
   mouseenter: function () {
       $('.follower-center').css({
         'width': '2rem',
@@ -339,6 +339,9 @@ showFooterLine.forEach(showFooterLine =>{
 
 
 
+$('.slides-slides').css({
+  'height': '100%' - '16px',
+})
 
 
 $('.content').scroll(function(){
@@ -362,6 +365,10 @@ $('.content').scroll(function(){
 
   }
 
+  $('.slides').css({
+    'height': $('.slidesContainer').height() - 32,
+  })
+
   // $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
   //   'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
   //   'right': 0,
@@ -372,8 +379,8 @@ $('.content').scroll(function(){
   //   'left': 0,
   // });
 
-  $(('.slidesContainer.openGIF')).find($('.slides')).css({
-    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.025 + 'px',
+  $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
+    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.08 + 'px',
     'right': 0,
   });
   
@@ -550,7 +557,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer, .borderclass');
+const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1486,17 +1493,69 @@ function returnToPos() {
 }
 
 
-function stopScrolling (e) {
+
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
   e.preventDefault();
-  e.stopPropagation();
-  return false;
 }
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+ $('.content').scroll(preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 $('.regimg').click( function() {
 
   regimgposition = $(this).parent().position();
   regimgwidth = $(this).parent().width();
-  
+  bodyposition = $('body').position();
+
+
   $(this).css({
     'position':'fixed',
     'top': regimgposition.top,
@@ -1522,13 +1581,10 @@ $('.regimg').click( function() {
   } else {
     $( this ).addClass( "regimgselected" );
 
-    $('.container, #target').css({
-      'overflow-y': 'hidden',
-      'height': '100%'
-    })
 
-    $('body').off('scroll mousewheel touchmove', stopScrolling);
 
+    
+    // disableScroll();
     $(this).css({
       'top': regimgposition.top,
       'left': regimgposition.left,
