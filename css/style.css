@@ -386,6 +386,11 @@ footer h2 {
   transition: all 300ms ease-in-out;
 }
 
+#fullRowImg {
+  padding: 1rem;
+  pointer-events: none;
+}
+
 .regimg {
   padding: 0.5rem;
   z-index: 99;
@@ -402,11 +407,15 @@ footer h2 {
 .regimg-img {
   display: flex;
 }
-.regimg .regimgselected {
-  position: fixed;
+.regimg.regimgselected {
+  padding: 1rem;
 }
 
-.column-4-4:has(> .borderclass) {
+.column-4a:has(> .borderclass) {
+  align-items: center;
+}
+
+.column-4b:has(> .borderclass) {
   align-items: center;
 }
 
@@ -1495,9 +1504,6 @@ a:active {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   justify-content: space-between;
-}
-.content-container .content .column-1.borderclass {
-  padding: 1rem;
 }
 @media (max-width: 600px) {
   .content-container .content .column-1 {

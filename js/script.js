@@ -557,7 +557,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer');
+const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer, #fullRowImg');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1551,6 +1551,7 @@ function enableScroll() {
 
 $('.regimg').click( function() {
 
+  
   regimgposition = $(this).parent().position();
   regimgwidth = $(this).parent().width();
   bodyposition = $('body').position();
@@ -1579,11 +1580,7 @@ $('.regimg').click( function() {
 
 
   } else {
-    $( this ).addClass( "regimgselected" );
-
-
-
-    
+    $( this ).addClass( "regimgselected" );    
     // disableScroll();
     $(this).css({
       'top': regimgposition.top,
@@ -1597,7 +1594,7 @@ $('.regimg').click( function() {
         'transform-origin': 'center',
         'position': 'fixed',
         'transform': 'translate(-50%, -50%)',
-        'padding': '0',
+        'padding': '16px',
         'z-index': '99999',
         'width': $('.content').width()
       });
