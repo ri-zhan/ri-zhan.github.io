@@ -391,6 +391,18 @@ footer h2 {
   pointer-events: none;
 }
 
+.regimgbackground {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-color: #22201e;
+  opacity: 60%;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
 .regimg {
   padding: 0.5rem;
   z-index: 99;
@@ -409,6 +421,7 @@ footer h2 {
 }
 .regimg.regimgselected {
   padding: 1rem;
+  z-index: 999;
 }
 
 .column-4a:has(> .borderclass) {

@@ -483,6 +483,17 @@ footer {
   pointer-events: none;
 }
 
+.regimgbackground {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-color: $black;
+  opacity: 60%;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  display: none;
+}
 
 .regimg{
   padding: 0.5rem;
@@ -516,7 +527,7 @@ footer {
     // transform-origin: center center;
     // transform: translate(-50%, -50%);
     padding: 1rem;
-    // z-index: 99999;
+    z-index: 999;
   }
   // &-img { 
   //   .regimgselected {

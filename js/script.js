@@ -1573,6 +1573,9 @@ $('.regimg').click( function() {
       'width': regimgwidth,
     });
 
+    $('.regimgbackground').css({
+      'display': '',
+    })
 
     setTimeout(returnToPos, 305);
 
@@ -1581,6 +1584,9 @@ $('.regimg').click( function() {
 
   } else {
     $( this ).addClass( "regimgselected" );    
+    $('.regimgbackground').css({
+      'display': 'block',
+    })
     // disableScroll();
     $(this).css({
       'top': regimgposition.top,
