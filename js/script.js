@@ -369,15 +369,15 @@ $('.content').scroll(function(){
     'height': $('.slidesContainer').height() - 32,
   })
 
-  // $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
-  //   'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
-  //   'right': 0,
-  // });
+                // $("#slideShowRow:nth-child(even)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+                //   'transform': 'translateX(' + scrolledAmountRelativeSlides * 0.025 + 'px',
+                //   'right': 0,
+                // });
 
-  // $("#slideShowRow:nth-child(odd)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
-  //   'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.025 + 'px',
-  //   'left': 0,
-  // });
+                // $("#slideShowRow:nth-child(odd)").children($('.slidesContainer.openGIF')).find($('.slides')).css({
+                //   'transform': 'translateX(' + (scrolledAmountRelativeSlides * -1) * 0.025 + 'px',
+                //   'left': 0,
+                // });
 
   $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
     'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.08 + 'px',
@@ -405,16 +405,44 @@ $('.content').scroll(function(){
 
 
 
+function typewriterDivSize(){
+  if($(window).width() >= 1025) {
+    //desktop size
+    $('.typewriterDiv').css({
+      'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
+      'top': $('.inner-frame.simplified').position().top
+    });
+  } else if($(window).width() >= 961) {
+    //tablet size
+    $('.typewriterDiv').css({
+      'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
+      'top': $('.inner-frame.simplified').position().top
+    });
+  } else if($(window).width() >= 481) {
+    //phone size
+    $('.typewriterDiv').css({
+      'height': '20rem',
+    });
+  } else {
+    $('.typewriterDiv').css({
+      'height': '20rem',
+    });
+  }
+};
+
+
+
+
 function contentHeroSize(){
   if($(window).width() >= 1025) {
     //desktop size
     $('#content-hero').css({
-      'height': $('.content-hero-img').outerHeight() + 132 + 'px',
+      'height': $('.content-hero-img').outerHeight() + 170 + 'px',
     });
   } else if($(window).width() >= 961) {
     //tablet size
     $('#content-hero').css({
-      'height': $('.content-hero-img').outerHeight() + 132 + 'px',
+      'height': $('.content-hero-img').outerHeight() + 170 + 'px',
     });
   } else if($(window).width() >= 481) {
     //phone size

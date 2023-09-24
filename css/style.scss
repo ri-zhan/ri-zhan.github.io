@@ -605,7 +605,7 @@ a:active {
 .general-border {
   width: 100%;
   grid-template-rows: 1fr 4fr 1fr;
-  --b: 0.025rem;   /* thickness of the border */
+  --b: 0.075rem;   /* thickness of the border */
   --c: white;   /* color of the border */
   --w: 1.25rem;  /* width of border */
 
@@ -639,7 +639,7 @@ a:active {
     grid-column: 2/12;
     grid-row: 2/5;
     justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 2rem;
     @media (max-width: 600px) {
@@ -686,7 +686,7 @@ a:active {
       align-content: flex-start;
       align-content: space-between;
       z-index: 999998;
-      grid-column: span 1;
+      grid-column: span 2;
       grid-row: span 1;
       grid-row-start: 2;
       // grid-row: span 1;
@@ -798,6 +798,12 @@ a:active {
         transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
         pointer-events: none;
       }
+    }
+    #project1 {
+      grid-column: 2/4;
+    }
+    #project2 {
+      grid-column: 4/6;
     }
   }
 }  
@@ -960,14 +966,18 @@ a:active {
   position: absolute;
   // left: 10.75rem;
   left: 1.25rem;
-  bottom: 1rem;
   align-self: flex-end;
   justify-self: flex-start;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
   overflow: hidden;
   background-color: $white;
   color: $black;
   padding: 0 0.5rem;
+  right: 50%;
+  transform: translate(50%,-50%);
+
   p {
     margin-bottom: 0;
     white-space: nowrap;
@@ -1769,6 +1779,11 @@ a:active {
       }
       &-img {
         z-index: -999999;
+        max-height: 500px;
+        top: 2.75rem;
+      }
+      &-text {
+        text-shadow: 0 0 10px $black;
       }
     }
     #contentIMG {
@@ -2340,10 +2355,10 @@ a:active {
         margin: 0 0 1.875rem;
         object-fit: scale-down;
         width: 100%;
-        top: 2rem;
+        // top: 2rem;
         left: 0;
         // z-index: 1;
-        background-color: rgb(31, 31, 31);
+        // background-color: rgb(31, 31, 31);
         opacity: 0.9;
         @media (max-width: 600px) {
           top: 3rem;
