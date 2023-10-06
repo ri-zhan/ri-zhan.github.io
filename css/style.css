@@ -820,7 +820,7 @@ a:active {
        column-gap: 0.35rem;
   align-items: baseline;
   position: absolute;
-  left: 1.25rem;
+  top: 2rem;
   align-self: flex-end;
   justify-self: flex-start;
   align-items: center;

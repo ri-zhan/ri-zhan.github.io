@@ -409,26 +409,31 @@ function typewriterDivSize(){
   if($(window).width() >= 1025) {
     //desktop size
     $('.typewriterDiv').css({
-      'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
-      'top': $('.inner-frame.simplified').position().top
+      // 'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
+      'top': $('.inner-frame.simplified').position().top - 8 + 'px',
     });
   } else if($(window).width() >= 961) {
     //tablet size
     $('.typewriterDiv').css({
-      'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
+      // 'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
       'top': $('.inner-frame.simplified').position().top
     });
   } else if($(window).width() >= 481) {
     //phone size
     $('.typewriterDiv').css({
-      'height': '20rem',
+      'top': $('.inner-frame.simplified').position().top
+
     });
   } else {
     $('.typewriterDiv').css({
-      'height': '20rem',
+      'top': $('.inner-frame.simplified').position().top
+
     });
   }
 };
+
+// typewriterDivSize();
+
 
 
 
@@ -985,6 +990,8 @@ $(window).resize(function() {
   innerBorderPos();  
 
   topBarSize();
+
+  typewriterDivSize();
 
   // menuSize();
 
