@@ -127,6 +127,7 @@ button {
   margin: 0 0 0 0;
   line-height: 1.75rem;
   text-transform: lowercase;
+  overflow: none;
 }
 button .btn-individual {
   display: flex;
@@ -136,7 +137,10 @@ button .btn-individual {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0.75rem;
+  padding: 0.5rem;
+}
+button .specialboi {
+  display: block;
 }
 button.external-btn {
   grid-column: span 10;
@@ -883,31 +887,48 @@ a:active {
 .outer-frame .outer-frame-btns .btn-individual.minimized {
   opacity: 0.5;
 }
-.outer-frame .outer-frame-btns-bottom-right:hover .outer-frame-text, .outer-frame .outer-frame-btns-top-left:hover .outer-frame-text, .outer-frame .outer-frame-btns-bottom-left:hover .outer-frame-text, .outer-frame .outer-frame-btns-top-right:hover .outer-frame-text {
-  white-space: nowrap;
-  width: auto;
-  margin: -0.25rem;
-  transition: all 100ms ease-in-out;
+.outer-frame.minimized .outer-frame-btns-top-right {
+  transition: ease-in 100ms;
+  width: 40px;
 }
-.outer-frame .outer-frame-btns-bottom-right:hover .btn-individual.minimized, .outer-frame .outer-frame-btns-top-left:hover .btn-individual.minimized, .outer-frame .outer-frame-btns-bottom-left:hover .btn-individual.minimized, .outer-frame .outer-frame-btns-top-right:hover .btn-individual.minimized {
+.outer-frame.minimized .outer-frame-btns-top-right button {
+  overflow: hidden;
+  transition: ease-in 100ms;
+}
+.outer-frame.minimized .outer-frame-btns-top-right button:hover {
+  overflow: visible;
+  transition: ease-in 100ms;
   opacity: 1;
 }
-.outer-frame.minimized button {
-  z-index: 999;
-  margin: 0;
+.outer-frame.minimized .outer-frame-btns-top-right:hover {
+  transition: ease-in 100ms;
+  width: 112px;
 }
-.outer-frame.minimized button .outer-frame-text {
-  white-space: nowrap;
-  width: 0px;
-  margin: -0.25rem;
+.outer-frame.minimized .outer-frame-btns-top-right:hover .btn-individual {
+  opacity: 1;
+}
+.outer-frame.minimized .outer-frame-btns-top-right:hover .specialboi {
+  display: flex;
+}
+.outer-frame.minimized .outer-frame-btns-top-left {
+  transition: ease-in 100ms;
+  width: 40px;
+}
+.outer-frame.minimized .outer-frame-btns-top-left button {
   overflow: hidden;
-  transition: all 100ms ease-in-out;
+  transition: ease-in 100ms;
 }
-.outer-frame.minimized button#dropDownBtn {
-  transition: all 100ms ease-in-out;
+.outer-frame.minimized .outer-frame-btns-top-left button:hover {
+  overflow: visible;
+  transition: ease-in 100ms;
+  opacity: 1;
 }
-.outer-frame.minimized button:first-child {
-  z-index: 9999;
+.outer-frame.minimized .outer-frame-btns-top-left:hover {
+  transition: ease-in 100ms;
+  width: 132px;
+}
+.outer-frame.minimized .outer-frame-btns-top-left:hover .btn-individual {
+  opacity: 1;
 }
 .outer-frame .outer-frame-border {
   width: 100%;
@@ -1116,10 +1137,16 @@ a:active {
     margin-bottom: 0.5rem;
     width: 100%;
   }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-right button {
+    width: 100%;
+  }
   .outer-frame .outer-frame-btns .outer-frame-btns-top-left {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-top-left button {
     width: 100%;
   }
   .outer-frame .outer-frame-btns .outer-frame-btns-bottom-left {
@@ -1128,10 +1155,16 @@ a:active {
     margin-bottom: 0.5rem;
     width: 100%;
   }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-left button {
+    width: 100%;
+  }
   .outer-frame .outer-frame-btns .outer-frame-btns-bottom-right {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .outer-frame .outer-frame-btns .outer-frame-btns-bottom-right button {
     width: 100%;
   }
 }

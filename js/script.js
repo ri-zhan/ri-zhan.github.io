@@ -410,7 +410,7 @@ function typewriterDivSize(){
     //desktop size
     $('.typewriterDiv').css({
       // 'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
-      'top': $('.inner-frame.simplified').position().top - 8 + 'px',
+      'top': $('.inner-frame.simplified').position().top - 40 + 'px',
     });
   } else if($(window).width() >= 961) {
     //tablet size
@@ -637,6 +637,7 @@ function innerBorderPos() {
       'top': position.top - 12 + 'px',
       // 'transition': 'top 0s, left 0s;'
     });
+    typewriterDivSize();
   }
 
 
