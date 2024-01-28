@@ -505,7 +505,7 @@ a:active {
 }
 .inner-frame-container .inner-frame.simplified {
   display: grid;
-  grid-column: 2/12;
+  grid-column: 4/12;
   grid-row: 2/5;
   justify-items: center;
   grid-template-columns: repeat(6, 1fr);
@@ -549,7 +549,7 @@ a:active {
   align-content: flex-start;
   align-content: space-between;
   z-index: 999998;
-  grid-column: span 2;
+  grid-column: span 3;
   grid-row: span 1;
   grid-row-start: 2;
   display: grid;
@@ -663,12 +663,6 @@ a:active {
   opacity: 0;
   transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
   pointer-events: none;
-}
-.inner-frame-container .inner-frame.simplified #project1 {
-  grid-column: 2/4;
-}
-.inner-frame-container .inner-frame.simplified #project2 {
-  grid-column: 4/6;
 }
 
 .inner-frame.stylized {
@@ -1408,7 +1402,7 @@ a:active {
   justify-self: center;
   text-align: center;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .mobileViewUnavail.show {
     z-index: 999999;
     background-color: #22201e;
