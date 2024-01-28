@@ -505,7 +505,7 @@ a:active {
 }
 .inner-frame-container .inner-frame.simplified {
   display: grid;
-  grid-column: 4/12;
+  grid-column: 5/11;
   grid-row: 2/5;
   justify-items: center;
   grid-template-columns: repeat(6, 1fr);
