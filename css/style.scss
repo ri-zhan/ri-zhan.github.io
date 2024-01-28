@@ -56,12 +56,13 @@ h2 {
 
 h3 {
   // font-family: Paralucent, sans-serif;
-  font-family: "apertura", sans-serif;
+  // font-family: "apertura", sans-serif;
+  font-family: neue-haas-grotesk-display, sans-serif;
 
   font-style: normal;
   font-weight: 800;
   font-size: 3.25rem;
-  // line-height: 3rem;
+  line-height: 3.25rem;
   color: $white;
   margin: 0;
   padding: 0;
@@ -133,38 +134,32 @@ a {
 button {
   background-color: none; /* Green */
   text-align: center;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 0.8rem;
-  font-style: normal;
+  // font-family: 'Source Code Pro', monospace;
+  font-family: "scotch-display", sans-serif;
   font-weight: 400;
-  line-height: 1.25rem;
+  font-size: 0.875rem;
+  font-style: normal;
   color: $white;
-  gap: 0.5rem;
+  margin: 0 0 0 0;
+  line-height: 1.75rem;
+  text-transform: lowercase;
+  color: $white;
+  // gap: 0.5rem;
   text-transform: uppercase;
   height: 2.5rem;
   width: auto;
   padding: 0;
   border: 0.025rem solid $white;   
-  display: flex; 
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: $black;
+  background-color: transparent;
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
-  font-family: "itc-american-typewriter";
-  font-weight: 300;
-  letter-spacing: 0.125rem;
-  font-size: 0.875rem;
-  // font-family: "lft-etica-mono";
-  // font-weight: 200;
   font-style: normal;
-  // font-size: 0.825rem;
   color: $white;
-  // margin: 0 0 0.825rem 0;
   margin: 0 0 0 0;
-  line-height: 1.75rem;
   text-transform: lowercase;
   overflow: none;
   .btn-individual {
@@ -180,22 +175,22 @@ button {
     //// the red span circle won't appear without this because it ignores width
     display: block;
   }
-  &.external-btn {
-    grid-column: span 10;
-    width: 100%;
-    margin: 0;
-    z-index: 1;
-    overflow: hidden;
-    .btn-individual {
-      display: flex;
-      column-gap: 0.5rem;
-      align-items: center;
-      justify-content: center;
-    }
-    &:hover {
-      transform: scale(1);
-    }
-  }
+  // &.external-btn {
+  //   grid-column: span 10;
+  //   width: 100%;
+  //   margin: 0;
+  //   z-index: 1;
+  //   overflow: hidden;
+    // .btn-individual {
+    //   display: flex;
+    //   column-gap: 0.5rem;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
+    // &:hover {
+    //   transform: scale(1.05);
+    // }
+  // }
   &:hover {
     transform: scale(1.05);
     transition: all 100ms ease-out;
@@ -228,7 +223,7 @@ button {
   //   }
   // }
   .material-symbols-outlined {
-    font-family: 'Material Icons';
+    // font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 1.5rem;
@@ -335,31 +330,42 @@ footer {
   z-index: 0;
   overflow: hidden;
   height: 20rem;
+  transition: all 2000ms ease-out;
   button {
     margin-bottom: 0;
     margin-right: 0;
+    border: none;
   }
+  // #footer-section-heading-line {
+  //   width: 0%;
+  //   height: 0rem;
+  //   transition: all 1000ms ease-out;
+  // }
   #footer-section-heading-line {
-    width: 0%;
-    height: 0rem;
     border: 0.025rem solid $white;
-    border-width: 0 0 0 0;
-    transition: all 1000ms ease-out;
-  }
-  &.show {
+    top: 0.75rem;
+    width: 100%;
+    border-width: 0.025rem 0 0 0;
     transition: all 2000ms ease-out;
-    #footer-section-heading-line {
-      top: 0.75rem;
-      width: 100%;
-      border-width: 0.025rem 0 0 0;
-      transition: all 2000ms ease-out;
-      @media (max-width: 110px) {
-        top: 1.25rem;
-        z-index: 9;
-      }
+    @media (max-width: 110px) {
+      top: 1.25rem;
+      z-index: 9;
     }
   }
-  h2 {
+  // &.show {
+  //   transition: all 2000ms ease-out;
+  //   #footer-section-heading-line {
+  //     top: 0.75rem;
+  //     width: 100%;
+  //     border-width: 0.025rem 0 0 0;
+  //     transition: all 2000ms ease-out;
+  //     @media (max-width: 110px) {
+  //       top: 1.25rem;
+  //       z-index: 9;
+  //     }
+  //   }
+  // }
+  h4 {
     margin-bottom: 0;
     padding-right: 1rem;
     white-space: nowrap;
@@ -1328,10 +1334,10 @@ a:active {
       display: flex;
       flex-direction: column;
       // justify-content: center;
-      .outer-frame-text {
-        width: 100%;
-        white-space: nowrap;
-      }
+      // .outer-frame-text {
+      //   width: 100%;
+      //   white-space: nowrap;
+      // }
       #dropDownBtnIcon{
         transition: all 200ms ease-in-out;
         justify-self: flex-start;
@@ -1343,9 +1349,9 @@ a:active {
           transform: rotate(180deg);
           transition: all 200ms ease-in-out;
         }
-        .outer-frame-text {
-          width: 100%;
-        }
+        // .outer-frame-text {
+        //   width: 100%;
+        // }
       }
       button{
         color: $white;

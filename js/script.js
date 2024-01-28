@@ -301,40 +301,40 @@ function clickMenu() {
 
 
 
-let position;
+// let position;
 
-const showFooterLine = document.querySelectorAll('.footer');
+// const showFooterLine = document.querySelectorAll('.footer');
 
-const appearBottom = {
-  rootMargin: '-96px'
-};
+// const appearBottom = {
+//   rootMargin: '-96px'
+// };
 
-const appearWhenEnter = new IntersectionObserver
-(function(
-  entries,     
-  appearWhenEnter
-  ) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        if($(window).width() >= 600) {
-            entry.target.classList.add('show');
-        }
+// const appearWhenEnter = new IntersectionObserver
+// (function(
+//   entries,     
+//   appearWhenEnter
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         if($(window).width() >= 600) {
+//             entry.target.classList.add('show');
+//         }
        
 
-        // appearWhenCenter.unobserve(entry, target);
-      } else {
-        if($(window).width() >= 600) {
+//         // appearWhenCenter.unobserve(entry, target);
+//       } else {
+//         if($(window).width() >= 600) {
 
-          entry.target.classList.remove('show');
-        }
-      }
-    })
-  }, appearBottom);
+//           entry.target.classList.remove('show');
+//         }
+//       }
+//     })
+//   }, appearBottom);
 
-showFooterLine.forEach(showFooterLine =>{
-  appearWhenEnter.observe(showFooterLine);
-});
+// showFooterLine.forEach(showFooterLine =>{
+//   appearWhenEnter.observe(showFooterLine);
+// });
 
 
 

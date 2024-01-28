@@ -48,10 +48,11 @@ h2 {
 }
 
 h3 {
-  font-family: "apertura", sans-serif;
+  font-family: neue-haas-grotesk-display, sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 3.25rem;
+  line-height: 3.25rem;
   color: #EAE5E2;
   margin: 0;
   padding: 0;
@@ -98,34 +99,30 @@ a {
 button {
   background-color: none; /* Green */
   text-align: center;
-  font-family: "Source Code Pro", monospace;
-  font-size: 0.8rem;
-  font-style: normal;
+  font-family: "scotch-display", sans-serif;
   font-weight: 400;
-  line-height: 1.25rem;
-  color: #EAE5E2;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  height: 2.5rem;
-  width: auto;
-  padding: 0;
-  border: 0.025rem solid #EAE5E2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  background-color: #22201e;
-  transition: all 100ms ease-out;
-  z-index: 99;
-  pointer-events: all;
-  font-family: "itc-american-typewriter";
-  font-weight: 300;
-  letter-spacing: 0.125rem;
   font-size: 0.875rem;
   font-style: normal;
   color: #EAE5E2;
   margin: 0 0 0 0;
   line-height: 1.75rem;
+  text-transform: lowercase;
+  color: #EAE5E2;
+  text-transform: uppercase;
+  height: 2.5rem;
+  width: auto;
+  padding: 0;
+  border: 0.025rem solid #EAE5E2;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 100ms ease-out;
+  z-index: 99;
+  pointer-events: all;
+  font-style: normal;
+  color: #EAE5E2;
+  margin: 0 0 0 0;
   text-transform: lowercase;
   overflow: none;
 }
@@ -141,23 +138,6 @@ button .btn-individual {
 }
 button .specialboi {
   display: block;
-}
-button.external-btn {
-  grid-column: span 10;
-  width: 100%;
-  margin: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-button.external-btn .btn-individual {
-  display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-}
-button.external-btn:hover {
-  transform: scale(1);
 }
 button:hover {
   transform: scale(1.05);
@@ -181,7 +161,6 @@ button:active {
   background-color: #E63223;
 }
 button .material-symbols-outlined {
-  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: 1.5rem;
@@ -257,41 +236,34 @@ footer {
   z-index: 0;
   overflow: hidden;
   height: 20rem;
+  transition: all 2000ms ease-out;
 }
 footer button {
   margin-bottom: 0;
   margin-right: 0;
+  border: none;
 }
 footer #footer-section-heading-line {
-  width: 0%;
-  height: 0rem;
   border: 0.025rem solid #EAE5E2;
-  border-width: 0 0 0 0;
-  transition: all 1000ms ease-out;
-}
-footer.show {
-  transition: all 2000ms ease-out;
-}
-footer.show #footer-section-heading-line {
   top: 0.75rem;
   width: 100%;
   border-width: 0.025rem 0 0 0;
   transition: all 2000ms ease-out;
 }
 @media (max-width: 110px) {
-  footer.show #footer-section-heading-line {
+  footer #footer-section-heading-line {
     top: 1.25rem;
     z-index: 9;
   }
 }
-footer h2 {
+footer h4 {
   margin-bottom: 0;
   padding-right: 1rem;
   white-space: nowrap;
   z-index: 2;
 }
 @media (max-width: 1100px) {
-  footer h2 {
+  footer h4 {
     white-space: normal;
     padding-right: 0;
   }
@@ -1122,10 +1094,6 @@ a:active {
     display: flex;
     flex-direction: column;
   }
-  .outer-frame .outer-frame-btns .outer-frame-text {
-    width: 100%;
-    white-space: nowrap;
-  }
   .outer-frame .outer-frame-btns #dropDownBtnIcon {
     transition: all 200ms ease-in-out;
     justify-self: flex-start;
@@ -1137,9 +1105,6 @@ a:active {
   .outer-frame .outer-frame-btns.open #dropDownBtnIcon {
     transform: rotate(180deg);
     transition: all 200ms ease-in-out;
-  }
-  .outer-frame .outer-frame-btns.open .outer-frame-text {
-    width: 100%;
   }
   .outer-frame .outer-frame-btns button {
     color: #EAE5E2;
