@@ -217,33 +217,42 @@ section #content-hero {
   margin-top: 6rem;
 }
 
-footer {
+footer, .footer {
   grid-column: span 8;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   width: 100%;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  -moz-column-gap: 0;
+       column-gap: 0;
   justify-content: flex-start;
   color: #EAE5E2;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
   justify-self: center;
   align-items: center;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
   transition: all 1000ms ease-out;
   margin-top: 0;
   background-color: none;
   z-index: 0;
   overflow: hidden;
-  height: 20rem;
+  height: auto;
   transition: all 2000ms ease-out;
 }
-footer button {
+footer-info, footer-about, .footer-info, .footer-about {
+  display: flex;
+  align-items: center;
+}
+footer-info, .footer-info {
+  grid-column: span 5;
+}
+footer-about, .footer-about {
+  grid-column: span 3;
+}
+footer button, .footer button {
   margin-bottom: 0;
   margin-right: 0;
   border: none;
 }
-footer #footer-section-heading-line {
+footer #footer-section-heading-line, .footer #footer-section-heading-line {
   border: 0.025rem solid #EAE5E2;
   top: 0.75rem;
   width: 100%;
@@ -251,19 +260,19 @@ footer #footer-section-heading-line {
   transition: all 2000ms ease-out;
 }
 @media (max-width: 110px) {
-  footer #footer-section-heading-line {
+  footer #footer-section-heading-line, .footer #footer-section-heading-line {
     top: 1.25rem;
     z-index: 9;
   }
 }
-footer h4 {
+footer h4, .footer h4 {
   margin-bottom: 0;
   padding-right: 1rem;
   white-space: nowrap;
   z-index: 2;
 }
 @media (max-width: 1100px) {
-  footer h4 {
+  footer h4, .footer h4 {
     white-space: normal;
     padding-right: 0;
   }
@@ -1395,13 +1404,12 @@ a:active {
   top: 0;
   display: flex;
   flex-direction: column;
-  margin: 2rem;
 }
 .mobileViewUnavail.show h2 {
   justify-self: center;
   text-align: center;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .mobileViewUnavail.show {
     z-index: 999999;
     background-color: #22201e;
