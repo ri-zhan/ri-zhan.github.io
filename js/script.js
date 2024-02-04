@@ -1330,7 +1330,7 @@ var contentHeight = 0;
 
 $(window).on('load', () => {
   $('.content').children().each(function( index ) {
-    contentHeight += ($(this).height() + $('.footer').height() + 170)
+    contentHeight += ($(this).outerHeight() + 224)
     //72 is 96/2 + 92/2/2, so 24 * 3
   // console.log('contentHeight' +contentHeight)
   
