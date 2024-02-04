@@ -1330,13 +1330,13 @@ var contentHeight = 0;
 
 $(window).on('load', () => {
   $('.content').children().each(function( index ) {
-    contentHeight += ($(this).height() + 170)
+    contentHeight += ($(this).height() + $('.footer').height() + 170)
     //72 is 96/2 + 92/2/2, so 24 * 3
   // console.log('contentHeight' +contentHeight)
   
   // console.log($(this).outerHeight())
   });
-  contentHeight =  contentHeight - 96
+  contentHeight =  contentHeight - 48
   //2 section bottom paddings + bottom padding of footer
   /////////// from before 96 is the 6rem padding on the container-container
 
@@ -1347,79 +1347,66 @@ $(window).on('load', () => {
   });
 
   // Get the scrollbar width
-  var scrollbarWidth = $('.content').height()/contentHeight*($('.parent').width())
+  var scrollbarWidth = $('.content').height()/contentHeight*($('.parent').width());
 
   //changes the focus-ring width to fit the line
   $('.focus-ring').css({
     'width': $('.parent').width() + scrollbarWidth 
-  })
+  });
 });
 
 
 
 //for going from blur to unblur
 
-// var offset = $(".focus-ring").offset();
-var $horizontal = $('.focus-ring');
+// var $horizontal = $('.focus-ring');
 
-var window_width = $('.container111').outerWidth()  + ($('.focus-ring').width()) ;
+// var window_width = $('.container111').outerWidth()  + ($('.focus-ring').width()) ;
 
-var document_height = contentHeight - $(window).height();
+// var document_height = contentHeight - $(window).height();
 
-$('.content').scroll(function() {
-  var scrollPos = ($('.content').scrollTop() + $(window).height() + 0.03)
-  //windowheight to account for different
+// $('.content').scroll(function() {
+//   var scrollPos = ($('.content').scrollTop() + $(window).height() + 0.03)
+//   //windowheight to account for different
   
 
-var $horizontal = $('#horizontal');
+// var $horizontal = $('#horizontal');
 
-  if ($('.content').scrollTop() < $('#content-hero').height())  {
-    $('.parent').children().css({
-      'opacity': '100%',
-    })
-  } else {
-    $('.parent').children().css({
-      'opacity': '',
-    })
-  }
+//   if ($('.content').scrollTop() < $('#content-hero').height())  {
+//     $('.parent').children().css({
+//       'opacity': '100%',
+//     })
+//   } else {
+//     $('.parent').children().css({
+//       'opacity': '',
+//     })
+//   }
 
-  var filterVal = 3 - ((scrollPos ) * 3 / (contentHeight))
-  // console.log(filterVal)
+//   var filterVal = 3 - ((scrollPos ) * 3 / (contentHeight))
+//   // console.log(filterVal)
 
-  $('.blur').css({
-    'filter'         : 'blur(' + filterVal + 'px)',
-    '-webkit-filter' : 'blur(' + filterVal + 'px)',
-    '-moz-filter'    : 'blur(' + filterVal + 'px)',
-    '-o-filter'      : 'blur(' + filterVal + 'px)',
-    '-ms-filter'     : 'blur(' + filterVal + 'px)'
-  });
-
-
-  var filterValforline = 1 - ((scrollPos  ) * 1 / (contentHeight))
-  $('.blurline').css({
-    'filter'         : 'blur(' + filterValforline + 'px)',
-    '-webkit-filter' : 'blur(' + filterValforline + 'px)',
-    '-moz-filter'    : 'blur(' + filterValforline + 'px)',
-    '-o-filter'      : 'blur(' + filterValforline + 'px)',
-    '-ms-filter'     : 'blur(' + filterValforline + 'px)'
-  });
-
-});
+//   $('.blur').css({
+//     'filter'         : 'blur(' + filterVal + 'px)',
+//     '-webkit-filter' : 'blur(' + filterVal + 'px)',
+//     '-moz-filter'    : 'blur(' + filterVal + 'px)',
+//     '-o-filter'      : 'blur(' + filterVal + 'px)',
+//     '-ms-filter'     : 'blur(' + filterVal + 'px)'
+//   });
 
 
+//   var filterValforline = 1 - ((scrollPos  ) * 1 / (contentHeight))
+//   $('.blurline').css({
+//     'filter'         : 'blur(' + filterValforline + 'px)',
+//     '-webkit-filter' : 'blur(' + filterValforline + 'px)',
+//     '-moz-filter'    : 'blur(' + filterValforline + 'px)',
+//     '-o-filter'      : 'blur(' + filterValforline + 'px)',
+//     '-ms-filter'     : 'blur(' + filterValforline + 'px)'
+//   });
 
-// scrolltop === blur 100px
-
-// bottom of page == blur 0px
-
-// $('.content').scroll(function () {
-//   $('.focus-ring').scrollLeft($(this).scrollTop());
 // });
 
 
-// $('.focus-ring').scroll(function () {
-//   $('.content').scrollTop($(this).scrollLeft());
-// });
+
 
 
 function scrollBarLeft(){

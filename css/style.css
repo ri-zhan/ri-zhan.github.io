@@ -1322,6 +1322,9 @@ a:active {
   background-size: 2.5rem;
   background-position: center;
 }
+.focus-ring::-webkit-scrollbar-track {
+  background: none;
+}
 .focus-ring-background, .focus-ring-shape {
   margin: auto;
 }
@@ -1363,22 +1366,6 @@ a:active {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-}
-
-.blur {
-  opacity: 1;
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
-}
-
-.blurline {
-  opacity: 1;
-  -moz-filter: blur(1px);
-  -o-filter: blur(1px);
-  -ms-filter: blur(1px);
-  filter: blur(1px);
 }
 
 .pageUnavail {
@@ -1449,6 +1436,7 @@ a:active {
   }
 }
 .content-container .content {
+  scrollbar-width: none;
   grid-column: 3/11;
   grid-row: 2;
   height: 100%;

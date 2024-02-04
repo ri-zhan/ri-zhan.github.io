@@ -1652,9 +1652,10 @@ a:active {
     background-size: 2.5rem;
     background-position: center;
   }
-  // &::-webkit-scrollbar-track { 
-  //   background: linear-gradient(to top, transparent 0, transparent 45%, $white 5%, $white 5%, transparent 55%, transparent 100%);
-  // }
+  &::-webkit-scrollbar-track { 
+    // background: linear-gradient(to top, transparent 0, transparent 45%, $white 5%, $white 5%, transparent 55%, transparent 100%);
+    background: none;
+  }
   &-background, &-shape {
     // left:0;
     // right:0;
@@ -1710,24 +1711,24 @@ a:active {
 }
 
 
-.blur {
-  opacity: 1;
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
-}
+// .blur {
+//   opacity: 1;
+//   -webkit-filter: blur(3px);
+//   -moz-filter: blur(3px);
+//   -o-filter: blur(3px);
+//   -ms-filter: blur(3px);
+//   filter: blur(3px);
+// }
 
 
-.blurline {
-  opacity: 1;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  -o-filter: blur(1px);
-  -ms-filter: blur(1px);
-  filter: blur(1px);
-}
+// .blurline {
+//   opacity: 1;
+//   -webkit-filter: blur(1px);
+//   -moz-filter: blur(1px);
+//   -o-filter: blur(1px);
+//   -ms-filter: blur(1px);
+//   filter: blur(1px);
+// }
 
 // .focus-ring {
 //   position: absolute;
@@ -1879,6 +1880,7 @@ a:active {
   }
   .content {
     // padding-left: 0.5rem; //needs to match with scrollbard width
+    scrollbar-width: none;
     grid-column: 3/11;
     grid-row: 2;
     height: 100%;
