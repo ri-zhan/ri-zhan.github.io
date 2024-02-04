@@ -1473,37 +1473,16 @@ a:active {
 }
 
 .container111 {
-  // display: flex;
-  // grid-template-areas: "only";
   justify-items: center;
   position: static;         
-  // grid-column: 3/11;
   grid-template-columns: repeat(8, 1fr);
   z-index: 999999999;
   padding-top: 1.5rem;
   height: 6rem;
   width: 0px;
   display: grid;
-  // position: relative;
   grid-column: span 8;
   z-index: 99999999;
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
-  // background-color: rgba(32,34,30, 0.5);
-
-    // linear-gradient(to top, transparent 0%, $black 100%),
-    // linear-gradient(to bottom, $black 0%, transparent 100%),
-    // linear-gradient(to left, transparent 0%, $black 50%, transparent 100%);
-    
-
-
-
-
-  // // background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0),);
-  // background-color: $black;
-  //   // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0),);
-
-  ////DO YOU NEED THIS MARGIN-BOTTOM????
-  // margin-bottom: 9rem;
   &-container{
     display: grid;
     width: 100%;
@@ -1511,10 +1490,7 @@ a:active {
     // background-color: $black;
     justify-content: center;
     align-items: flex-start;
-    // display: flex;
-    // margin-left: 0rem;
-    
-    // margin-right: 1.5rem;
+    justify-items: center;
     position: relative;
     height: 100%;
     grid-column: span 8;
@@ -1550,32 +1526,19 @@ a:active {
 
 .parent {
   grid-column: 2/8;
-
   top: 0;
-
-  // grid-area: only;
-  // background: grey;
   display: flex;
-  // position: absolute;
-  // padding: 0 4rem 0 4rem;
-  // top: 3rem; //must match 'pos' variable in jquery's section-nav function
-  // transform: translate(0%,-50%);
   width: 100%;
-/*  one screen height  */
-  // height: 100vh;
   z-index: 999999999;
   pointer-events: all;
-  // border-right: 1px solid;
-  // border-color: rgba(234, 229, 226, 0.5);
-  // padding-right: 0.25rem;
   column-gap: 3rem;
   justify-content: space-between;
-  
-
   // margin-bottom: 2rem;
+  &.side-title {
+    width: 80%;
+  }
   .section-nav{
     pointer-events: all;
-
     text-decoration: none;
     // margin-bottom: 2rem;
     row-gap: 0.625rem;

@@ -1336,7 +1336,7 @@ $(window).on('load', () => {
   
   // console.log($(this).outerHeight())
   });
-  contentHeight =  contentHeight - 48
+  contentHeight =  contentHeight - 96
   //2 section bottom paddings + bottom padding of footer
   /////////// from before 96 is the 6rem padding on the container-container
 
@@ -1351,7 +1351,7 @@ $(window).on('load', () => {
 
   //changes the focus-ring width to fit the line
   $('.focus-ring').css({
-    'width': $('.parent').width() + scrollbarWidth 
+    'width': $('.focus-ring-line').width() + scrollbarWidth 
   });
 });
 

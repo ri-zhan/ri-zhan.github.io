@@ -1237,6 +1237,7 @@ a:active {
   grid-template-columns: repeat(8, 1fr);
   justify-content: center;
   align-items: flex-start;
+  justify-items: center;
   position: relative;
   height: 100%;
   grid-column: span 8;
@@ -1263,13 +1264,15 @@ a:active {
   top: 0;
   display: flex;
   width: 100%;
-  /*  one screen height  */
   z-index: 999999999;
   pointer-events: all;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   justify-content: space-between;
   scroll-behavior: smooth;
+}
+.parent.side-title {
+  width: 80%;
 }
 .parent .section-nav {
   pointer-events: all;
