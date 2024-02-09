@@ -439,26 +439,28 @@ function typewriterDivSize(){
 
 
 function contentHeroSize(){
-  if($(window).width() >= 1025) {
-    //desktop size
-    $('#content-hero').css({
-      'height': $('.content-hero-img').outerHeight() + 170 + 'px',
-    });
-  } else if($(window).width() >= 961) {
-    //tablet size
-    $('#content-hero').css({
-      'height': $('.content-hero-img').outerHeight() + 170 + 'px',
-    });
-  } else if($(window).width() >= 481) {
-    //phone size
-    $('#content-hero').css({
-      'height': '20rem',
-    });
-  } else {
-    $('#content-hero').css({
-      'height': '20rem',
-    });
-  }
+  setInterval(function () {
+    if($(window).width() >= 1025) {
+      //desktop size
+      $('#content-hero').css({
+        'height': $('.content-hero-img').outerHeight() + 170 + 'px',
+      });
+    } else if($(window).width() >= 961) {
+      //tablet size
+      $('#content-hero').css({
+        'height': $('.content-hero-img').outerHeight() + 170 + 'px',
+      });
+    } else if($(window).width() >= 481) {
+      //phone size
+      $('#content-hero').css({
+        'height': '20rem',
+      });
+    } else {
+      $('#content-hero').css({
+        'height': '20rem',
+      });
+    }
+}, 10);
 };
 
 contentHeroSize();
@@ -1487,7 +1489,6 @@ for (var i = document.images.length - 1; i >= 0; i--) {
     var lsrc = $(this_image).attr('lsrc') || '' ;
     if(lsrc.length > 0){
       $(this_image).attr("src",lsrc);
-      contentHeight();
     }
   }
   // scrollTopLeft();
