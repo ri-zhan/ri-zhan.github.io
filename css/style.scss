@@ -293,6 +293,12 @@ section {
   #content-hero{
     height: 24rem;
     margin-top: 6rem;
+    h1 {
+      margin-bottom: 15rem;
+    }
+    // img {
+    //   min-height: 500px;
+    // }
     // &:before, &:after{
     //   height: 5rem; /* fixed header height*/
     //   margin: -5rem 0 0; /* negative fixed header height */
@@ -2628,6 +2634,7 @@ a:active {
 //////////////////////////play section///////////////////////////////
 .play-container {
   display: grid;
+  grid-row: 2/9;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(3, 1fr);
   column-gap: 1rem;
