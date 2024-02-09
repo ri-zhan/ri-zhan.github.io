@@ -1433,7 +1433,6 @@ var navPos = $('.container111').offset().top;
 
 // on scroll
 $('#content-hero').ready(function(e) {
-  contentHeroSize();
 
   $('.content').scroll(function() {
 
@@ -1488,7 +1487,7 @@ for (var i = document.images.length - 1; i >= 0; i--) {
     var lsrc = $(this_image).attr('lsrc') || '' ;
     if(lsrc.length > 0){
       $(this_image).attr("src",lsrc);
-      contentHeroSize();
+      contentHeight();
     }
   }
   // scrollTopLeft();
