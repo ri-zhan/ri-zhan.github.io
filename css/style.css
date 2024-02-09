@@ -492,6 +492,8 @@ a:active {
          column-gap: 1rem;
     grid-row-gap: 1rem;
     margin: 0 2rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 .inner-frame-container .inner-frame.simplified {
@@ -506,11 +508,13 @@ a:active {
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-frame.simplified {
-    display: flex;
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
     flex-direction: column;
     grid-column: 1/7;
     grid-row: 2/7;
     grid-row-gap: 1rem;
+    max-width: 100%;
   }
 }
 .inner-frame-container .inner-frame.simplified .inner-border {
@@ -533,6 +537,15 @@ a:active {
   opacity: 1;
   transition: all 300ms ease-in-out;
 }
+.inner-frame-container .inner-frame.simplified .inner-box-container {
+  display: grid;
+  grid-column: 3/9;
+  grid-row: 3/7;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+}
 .inner-frame-container .inner-frame.simplified .inner-box {
   text-decoration: none;
   padding: 1rem;
@@ -540,8 +553,6 @@ a:active {
   justify-items: center;
   align-content: space-between;
   z-index: 999998;
-  grid-column: 3/8;
-  grid-row: 3/7;
   display: grid;
   width: 100%;
   height: 100%;
@@ -550,15 +561,16 @@ a:active {
   transition: all 300ms ease-in-out;
   grid-template-rows: repeat(5, 1fr);
   box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
+  grid-row: span 4;
+  grid-column: span 3;
 }
 .inner-frame-container .inner-frame.simplified .inner-box:hover {
   box-shadow: 0px 0px 50px rgba(13, 13, 13, 0.5);
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-frame.simplified .inner-box {
-    grid-column: span 1;
+    grid-column: 2/3;
     grid-row: span 1;
-    grid-row-start: 2;
     position: relative;
     align-content: center;
     transition: all 300ms ease-in-out;
@@ -655,18 +667,30 @@ a:active {
   transition: color 300ms ease-in, opactiy 1ms ease-in, z-index 1ms linear;
   pointer-events: none;
 }
-.inner-frame-container .inner-frame.simplified #project1 {
-  grid-column: 3/6;
-}
-.inner-frame-container .inner-frame.simplified #project2 {
-  grid-column: 6/9;
-}
 .inner-frame-container .intro {
   display: grid;
   grid-column: 1/8;
   grid-row: 1/3;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
+}
+@media (max-width: 600px) {
+  .inner-frame-container .intro {
+    grid-template-rows: 2fr 1fr;
+    grid-row: span 1;
+  }
+  .inner-frame-container .intro .intro-title {
+    grid-row: span 2;
+    grid-column: span 7;
+  }
+  .inner-frame-container .intro .intro-title h1 {
+    font-size: 4.5rem;
+    line-height: 4rem;
+  }
+  .inner-frame-container .intro .intro-description {
+    grid-row: span 1;
+    grid-column: 2/8;
+  }
 }
 .inner-frame-container .intro-title {
   grid-column: 1/5;

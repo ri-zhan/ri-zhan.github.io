@@ -626,13 +626,13 @@ openGIF.forEach(openGIF =>{
 
 
 function innerBorderPos() {
-  position = $('.inner-frame').children('.inner-box').eq(1).position();
+  position = $('.inner-box-container').children('.inner-box').eq(1).position();
 
-  var nav = $('.inner-frame');
+  var nav = $('.inner-box-container');
   if (nav.length) {
     // prevents the "uncaught typeeroor message in console"
-    $('.inner-frame').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
-      position = $('.inner-frame').children('.inner-box').eq(1).position();
+    $('.inner-box-container').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
+      position = $('.inner-box-container').children('.inner-box').eq(1).position();
     });
     $('.inner-border').css({
       'left': position.left - 12 + 'px',
