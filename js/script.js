@@ -270,6 +270,14 @@ $('.slides-slides').css({
 })
 
 
+$('.play-box').find($('.slidesContainer')).css({
+    'padding': '1rem 0rem'
+  })
+  
+$('.play-box').find($('.slides-slides')).css({
+  'left': '0',
+})
+
 $('.content').scroll(function(){
   // slowScroll($('.contentHero'));
   var scrolledAmount = ($('.content').scrollTop());
@@ -355,7 +363,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .slidesContainer, #fullRowImg');
+const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -421,7 +429,7 @@ $( document ).ready(function() {
   innerBorderPos(this);
   
   
-  $('.inner-box, .play-box').mouseenter(function(){
+  $('.inner-box').mouseenter(function(){
     $(this).css({'transform': 'scale(1.025)'});
     $('.inner-border, .play-border').addClass('show');
     position = $(this).position();
