@@ -282,10 +282,13 @@ footer h4, .footer h4 {
   }
 }
 
+.GIFcontainer, .slidesContainer {
+  min-height: 14rem;
+}
+
 .GIFcontainer, .slidesContainer, .borderclass {
   width: 5rem;
   height: 24rem;
-  min-height: 14rem;
   grid-column: span 8;
   overflow: hidden;
   align-items: center;
@@ -388,7 +391,6 @@ footer h4, .footer h4 {
   transition: all 600ms ease-in-out;
 }
 .general-border-container .general-border {
-  min-width: 5rem;
   height: 100%;
   transition: all 600ms ease-in-out;
 }
@@ -402,7 +404,6 @@ footer h4, .footer h4 {
 
 #fullRowImg {
   padding: 1rem;
-  pointer-events: none;
   background-color: transparent;
 }
 
@@ -428,10 +429,6 @@ footer h4, .footer h4 {
   pointer-events: all;
   background-color: transparent;
 }
-.regimg:hover {
-  padding: 0;
-  transition: all 300ms ease-in-out;
-}
 .regimg-img {
   display: flex;
   background-color: transparent;
@@ -445,7 +442,34 @@ footer h4, .footer h4 {
   overflow-y: scroll;
 }
 
+#target-area {
+  transition: all 100ms ease-out;
+  cursor: none;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  grid-column: span 8;
+  z-index: 99;
+  justify-self: center;
+  background-origin: content-box;
+  margin-top: 1rem;
+}
+
+#cursor-window {
+  transition: all 100ms ease-out;
+  display: none;
+  cursor: none;
+  position: absolute;
+  left: 0px;
+  top: 80px;
+  border-radius: 50%;
+  background-color: #22201e;
+  width: 15rem;
+  height: 15rem;
+}
+
 .follower {
+  transition: all 100ms ease-out;
   z-index: 9999999999;
   position: absolute;
   border-radius: 50%;
@@ -1599,10 +1623,11 @@ a:active {
   grid-column: span 8;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 1fr 1fr;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   justify-content: space-between;
+  transition: all 500ms ease-out;
 }
 @media (max-width: 600px) {
   .content-container .content .column-4-4 {
@@ -1613,17 +1638,25 @@ a:active {
 .content-container .content .column-4-4:last-child {
   margin-bottom: 0;
 }
-.content-container .content .column-4-4 .column-4a {
-  grid-column: 1/5;
+.content-container .content .column-4-4 .column-4a, .content-container .content .column-4-4 .column-4b {
+  grid-column: 1fr;
   grid-column-gap: 3rem;
   display: flex;
   flex-direction: column;
+  transition: all 500ms ease-out;
 }
-.content-container .content .column-4-4 .column-4b {
-  grid-column: 5/9;
-  grid-column-gap: 3rem;
-  display: flex;
-  flex-direction: column;
+.content-container .content .column-4-4 .column-4a img, .content-container .content .column-4-4 .column-4b img {
+  transition: all 500ms ease-out;
+}
+.content-container .content .column-4a-clicked, .content-container .content .column-4b-clicked {
+  pointer-events: all;
+  transition: all 500ms ease-out;
+}
+.content-container .content .column-4-4:has(#column-4a-expand:hover) {
+  grid-template-columns: 4fr 0fr;
+}
+.content-container .content .column-4-4:has(#column-4b-expand:hover) {
+  grid-template-columns: 0fr 4fr;
 }
 .content-container .content .column-1 {
   display: grid;

@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/ivl6exa.css">
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -222,13 +223,13 @@
                 <div class="fullRow">
                     <h4>personas</h4>
 
-                    <div class="column-4-4" style="align-items: center;">
+                    <div class="column-4-4">
                         <div class="column-4a">
                             <p>shirley</p>
 
                             <div class="regimgbackground"></div>
 
-                            <div class="borderclass regimg openGIF">
+                            <div class="borderclass regimg openGIF"  id="column-4a-expand">
                                 <img src="/images/hereafter/persona-shirley.png" class="regimg-img">
                                 <div class="general-border-container">
                                     <div class="general-border-cover"></div>
@@ -242,7 +243,7 @@
 
                         <div class="column-4b">
                             <p>patrick</p>
-                            <div class="regimg borderclass openGIF">
+                            <div class="regimg borderclass openGIF" id="column-4b-expand">
                                 <img src="/images/hereafter/persona-patrick.png" class="regimg-img">
 
                                 <div class="general-border-container">
@@ -377,27 +378,19 @@
                 <!-- user flow -->
                 <div class="fullRow">
                     <h4>user flow</h4>
-
-                    <!-- <div class="column-5-3">
-                        <div class="column-5">
-
-                            <p>
-                                We realized that the process to journal was incredibly stressful for individuals, 
-                                therefore we wanted to ensure that the experience of journaling was enjoyable and useful. 
-                            </p>
-
+                    <div class="column-1" >
+                        <div id="target-area" style="background: url('./images/hereafter/user-flow.png') no-repeat; background-size: 100%; background-origin: content-box;">
+                            <div id="cursor-window"></div>
                         </div>
-                    </div> -->
-                    <div class="column-1 borderclass regimg regimgselected" id="fullRowImg">
-                        <img src="/images/hereafter/user-flow.png" class="regimg-img ">
 
+                    </div>
+                    <div class="borderclass column-1 openGIF" style="top: 40px; background-color: transparent; z-index: 1;" id="border-zoom">
                         <div class="general-border-container">
                             <div class="general-border-cover"></div>
                             <div class="general-border"></div>
                             <div class="general-border-cover"></div>
-                        </div>      
+                        </div> 
                     </div>
-
                 </div>
 
 
