@@ -452,7 +452,6 @@ footer h4, .footer h4 {
   z-index: 99;
   justify-self: center;
   background-origin: content-box;
-  margin-top: 1rem;
 }
 
 #cursor-window {
@@ -461,7 +460,7 @@ footer h4, .footer h4 {
   cursor: none;
   position: absolute;
   left: 0px;
-  top: 80px;
+  top: 0px;
   border-radius: 50%;
   background-color: #22201e;
   width: 15rem;
@@ -480,6 +479,18 @@ footer h4, .footer h4 {
   .follower {
     display: none;
   }
+}
+
+.follower-center.zoom {
+  border: none;
+  background-color: transparent;
+  width: 5rem;
+  height: 5rem;
+}
+
+.follower-around.zoom {
+  width: 16.5rem;
+  height: 16.5rem;
 }
 
 .follower-center {

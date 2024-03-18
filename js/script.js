@@ -1735,37 +1735,8 @@ $target.mousemove(function (e) {
 });
 
 $('#target-area').mouseenter(function(){
-  $('.follower-center, .follower-around').css({    
-    'transform-origin': 'center'
-  });
-  $('.follower-center').css({
-    'border': '0.075rem solid #E63223',
-    'background-color': 'transparent',
-    'width': '15rem',
-    'height': '15rem'
-  });
-  $('.follower-around').css({
-    'width': '16.5rem',
-    'height': '16.5rem'
-  });
-})
-
-$('#target-area').mouseleave(function(){
-  $('.follower-center, .follower-around').css({    
-    'transform-origin': ''
-  })
-  $('.follower-center').css({
-    'border': '',
-    'background-color': '',
-    'width': '',
-    'height': ''
-  });
-  $('.follower-around').css({
-    'width': '',
-    'height': ''
-  });
-})
-
+  $('.follower-center, .follower-around').toggleClass('zoom');
+});
 
 $('#cursor-window').mouseleave(function(){
   $(this).css({
