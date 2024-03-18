@@ -639,8 +639,7 @@ footer, .footer {
   cursor: none; 
   position: relative; 
   left: 0px; 
-  top: 0px; 
-  // border: solid 1px black; 
+  top: 0px;  
   grid-column: span 8; 
   z-index: 99; 
   justify-self: center;
@@ -657,7 +656,7 @@ footer, .footer {
   left: 0px; 
   top: 0px;  
   border-radius: 50%; 
-  // border: 0.075rem solid #E63223; 
+  border: 0.075rem solid $red; 
   background-color: #22201e;
   width: 15rem;
   height: 15rem;
