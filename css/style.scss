@@ -616,7 +616,25 @@ footer, .footer {
 }
 
 
-#target-area {
+
+#ripple-zoom {
+  &-text {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+#ripple-zoom-border {
+  top: 40px; 
+  background-color: transparent; 
+  z-index: 999;
+  pointer-events: none;
+  .general-border-cover {
+    background-color: $black;
+  }
+}
+
+#ripple-zoom-area {
   transition: all 100ms ease-out;
   cursor: none; 
   position: relative; 
@@ -631,7 +649,7 @@ footer, .footer {
   // margin-top: 1rem;
 }
 
-#cursor-window {
+#ripple-zoom-area-window {
   transition: all 100ms ease-out;
   display: none; 
   cursor: none; 
@@ -2257,7 +2275,7 @@ a:active {
     }
 
     .fullRow {
-      background-color: $black;
+      background-color: transparent;
       display: grid;
       grid-column: span 8;
       width: 100%;

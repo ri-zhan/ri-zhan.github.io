@@ -394,7 +394,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
+const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg, #ripple-zoom-border');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1658,7 +1658,7 @@ $( document ).ready(function() {
 
 window.onload = function () {
   var imageSrc = document
-    .getElementById('target-area')
+    .getElementById('ripple-zoom-area')
     .style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2')
     .split(',')[0];
 
@@ -1671,19 +1671,19 @@ window.onload = function () {
     var width = image.width /  ($('#target').width()) * 100,
       height = image.height /  width * 100;
     // alert('width =' + width + ', height = ' + height);
-    $('#target-area').css('height', height - 32)
-    $('#target-area').css('width', $('#target').width() - 32)
+    $('#ripple-zoom-area').css('height', height - 32)
+    $('#ripple-zoom-area').css('width', $('#target').width() - 32)
 
-    // $('#target-area').css('width', width)
+    // $('#ripple-zoom-area').css('width', width)
 
-    let imgHeight = ($('#target-area').height() + 40)
-    $('#border-zoom').css({
-      'height': $('#target-area').height() + 32,
+    let imgHeight = ($('#ripple-zoom-area').height() + 40)
+    $('#ripple-zoom-border').css({
+      'height': $('#ripple-zoom-area').height() + 32,
       'width': '100%',
       'top': imgHeight * -1
     })
 
-    $('#target-area').parent($('.column-1')).parent($('.fullRow')).css({
+    $('#ripple-zoom-area').parent($('.column-1')).parent($('.fullRow')).css({
       'height': imgHeight
     })
   };
@@ -1694,8 +1694,8 @@ window.onload = function () {
 
 
 
-var $target = $("#target-area"),
-    $cursorWindow = $("#cursor-window"),
+var $target = $("#ripple-zoom-area"),
+    $cursorWindow = $("#ripple-zoom-area-window"),
     $coordsDisplay = $("#cursor-coord-disp");
 
 var zoomFactor = 3;
@@ -1734,11 +1734,11 @@ $target.mousemove(function (e) {
     }
 });
 
-$('#target-area').mouseenter(function(){
+$('#ripple-zoom-area').hover(function(){
   $('.follower-center, .follower-around').toggleClass('zoom');
 });
 
-$('#cursor-window').mouseleave(function(){
+$('#ripple-zoom-area-window').mouseleave(function(){
   $(this).css({
     'display': ''
   });
