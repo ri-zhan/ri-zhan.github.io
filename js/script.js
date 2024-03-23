@@ -1664,8 +1664,8 @@ window.onload = function () {
       var image = new Image();
       image.src = imageSrc;
       
-      var width = image.width /  ($('#target').width()) * 100,
-        height = image.height /  width * 100;
+      var width = image.width /  ($('#target').width()),
+        height = image.height /  width;
         rippleZoomDiv[i].style.height = height -32  +"px"
         rippleZoomDiv[i].style.width = width - 32  +"px"
 
@@ -1673,6 +1673,61 @@ window.onload = function () {
 }
 
 
+
+
+
+// window.onload = function () {
+
+//     let target = $(".ripple-zoom-area"),
+//       cursorWindow;
+
+//       var zoomFactor = 3;
+
+//       // console.log(cursorWindow)
+
+//       target.each(function(){
+//         cursorWindow = $(this).children($(".ripple-zoom-area-window"));
+//         // console.log($(this).css('background-image'))
+//         cursorWindow.css('background-image', target.css('background-image'));
+//         cursorWindow.css('background-repeat', target.css('background-repeat'));
+//         console.log(cursorWindow.css('background-image'))
+      
+//         target.mousemove(function (e) {
+//           var targetPosition = target.position();
+//           var cursX = e.pageX - targetPosition.left;
+//           var cursY = e.pageY - targetPosition.top;
+//           var imgX, imgY, imgW, imgH;
+      
+//           if (0 <= cursX && cursX <= target.outerWidth() && 0 <= cursY && cursY <= target.outerHeight()) {
+//               cursorWindow.css({
+//                   'left': cursX - cursorWindow.outerWidth() / 2,
+//                   'top': cursY - cursorWindow.outerHeight() / 2
+//               });
+//               cursorWindow.show();
+//               coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
+      
+//               imgX = -(cursX * zoomFactor) + cursorWindow.innerWidth() / 2;
+//               imgY = -(cursY * zoomFactor) + cursorWindow.innerHeight() / 2;
+      
+//               imgW = target.innerWidth() * zoomFactor;
+//               imgH = target.innerHeight() * zoomFactor;
+      
+//               // Change the position and size of the image in the zoom window
+//               // to show a magnified view of the image content under the cursor
+//               cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
+//               cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
+//           } else {
+//               cursorWindow.hide();
+//               coordsDisplay.text("");
+//           }
+//       });
+//       })
+//       // Copy the background image to the zoom window
+
+    
+  
+
+// };
 
 
 
