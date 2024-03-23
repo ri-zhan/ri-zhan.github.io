@@ -92,7 +92,7 @@ $(".section-nav").click(function(e) {
   // Call the scroll function
   // goToByScroll($(this).id);  
   identifier = $(this).attr('id').replace("link", "");
-  console.log('offset' + $('#' + identifier).offset().top)
+  // console.log('offset' + $('#' + identifier).offset().top)
 
   pos = -160
     // Scroll
@@ -394,7 +394,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg, #ripple-zoom-border');
+const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg, .ripple-zoom-border');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1655,48 +1655,31 @@ $( document ).ready(function() {
 
 
 
-
 window.onload = function () {
-  var imageSrc = document
-    .getElementById('ripple-zoom-area')
-    .style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2')
-    .split(',')[0];
 
-  // I just broke it up on newlines for readability
+  var rippleZoomDiv = document.getElementsByClassName('ripple-zoom-area');
+  for (var i = 0, ii = rippleZoomDiv.length; i < ii; i++) {
+    // console.dir(myElements[i].style);
+      var imageSrc = rippleZoomDiv[i].style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+      var image = new Image();
+      image.src = imageSrc;
+      
+      var width = image.width /  ($('#target').width()) * 100,
+        height = image.height /  width * 100;
+        rippleZoomDiv[i].style.height = height -32  +"px"
+        rippleZoomDiv[i].style.width = width - 32  +"px"
 
-  var image = new Image();
-  image.src = imageSrc;
-
-  image.onload = function () {
-    var width = image.width /  ($('#target').width()) * 100,
-      height = image.height /  width * 100;
-    // alert('width =' + width + ', height = ' + height);
-    $('#ripple-zoom-area').css('height', height - 32)
-    $('#ripple-zoom-area').css('width', $('#target').width() - 32)
-
-    // $('#ripple-zoom-area').css('width', width)
-
-    let imgHeight = ($('#ripple-zoom-area').height() + 40)
-    $('#ripple-zoom-border').css({
-      'height': $('#ripple-zoom-area').height() + 32,
-      'width': '100%',
-      'top': imgHeight * -1
-    })
-
-    $('#ripple-zoom-area').parent($('.column-1')).parent($('.fullRow')).css({
-      'height': imgHeight
-    })
   };
-};
+}
 
 
 
 
 
 
-var $target = $("#ripple-zoom-area"),
-    $cursorWindow = $("#ripple-zoom-area-window"),
-    $coordsDisplay = $("#cursor-coord-disp");
+var $target = $(".ripple-zoom-area"),
+    $cursorWindow = $(".ripple-zoom-area-window"),
+    $coordsDisplay = $(".cursor-coord-disp");
 
 var zoomFactor = 3;
 
@@ -1734,11 +1717,11 @@ $target.mousemove(function (e) {
     }
 });
 
-$('#ripple-zoom-area').hover(function(){
+$('.ripple-zoom-area').hover(function(){
   $('.follower-center, .follower-around').toggleClass('zoom');
 });
 
-$('#ripple-zoom-area-window').mouseleave(function(){
+$('.ripple-zoom-area-window').mouseleave(function(){
   $(this).css({
     'display': ''
   });
