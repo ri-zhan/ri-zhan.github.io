@@ -1760,7 +1760,7 @@ const appearWhenOnScreen = new IntersectionObserver
           equation = 0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight
           // console.log(equation)
           
-          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
+          if (equation == false) {
             $target.style.backgroundColor = '#ccc';
             $cursorWindow.style.position = 'absolute';
             $cursorWindow.style.display = 'block';
