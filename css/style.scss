@@ -2799,6 +2799,11 @@ a:active {
   height: 100%;
   // padding: 2rem;
   // margin-top: 1rem;
+  &.color {
+    border: green;
+    border-style: solid;
+    border-width: 2px;
+  }
 }
 
 .ripple-zoom-area-window {

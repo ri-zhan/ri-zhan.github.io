@@ -1675,102 +1675,182 @@ window.onload = function () {
 
 
 
+// var $target = $(".ripple-zoom-area"),
+//   $cursorWindow = $(".ripple-zoom-area-window"),
+//   $coordsDisplay = $(".cursor-coord-disp");
 
-// window.onload = function () {
+// var zoomFactor = 3;
 
-//     let target = $(".ripple-zoom-area"),
-//       cursorWindow;
+// // Copy the background image to the zoom window
+// $cursorWindow.css('background-image', $target.css('background-image'));
+// $cursorWindow.css('background-repeat', $target.css('background-repeat'));
 
-//       var zoomFactor = 3;
+// $target.mousemove(function (e) {
+//     var $targetPosition = $target.position();
+//     var cursX = e.pageX - $targetPosition.left;
+//     var cursY = e.pageY - $targetPosition.top;
+//     var imgX, imgY, imgW, imgH;
 
-//       // console.log(cursorWindow)
+//     if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
+//         $cursorWindow.css({
+//             'left': cursX - $cursorWindow.outerWidth() / 2,
+//             'top': cursY - $cursorWindow.outerHeight() / 2
+//         });
+//         $cursorWindow.show();
+//         $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
 
-//       target.each(function(){
-//         cursorWindow = $(this).children($(".ripple-zoom-area-window"));
-//         // console.log($(this).css('background-image'))
-//         cursorWindow.css('background-image', target.css('background-image'));
-//         cursorWindow.css('background-repeat', target.css('background-repeat'));
-//         console.log(cursorWindow.css('background-image'))
-      
-//         target.mousemove(function (e) {
-//           var targetPosition = target.position();
-//           var cursX = e.pageX - targetPosition.left;
-//           var cursY = e.pageY - targetPosition.top;
-//           var imgX, imgY, imgW, imgH;
-      
-//           if (0 <= cursX && cursX <= target.outerWidth() && 0 <= cursY && cursY <= target.outerHeight()) {
-//               cursorWindow.css({
-//                   'left': cursX - cursorWindow.outerWidth() / 2,
-//                   'top': cursY - cursorWindow.outerHeight() / 2
-//               });
-//               cursorWindow.show();
-//               coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
-      
-//               imgX = -(cursX * zoomFactor) + cursorWindow.innerWidth() / 2;
-//               imgY = -(cursY * zoomFactor) + cursorWindow.innerHeight() / 2;
-      
-//               imgW = target.innerWidth() * zoomFactor;
-//               imgH = target.innerHeight() * zoomFactor;
-      
-//               // Change the position and size of the image in the zoom window
-//               // to show a magnified view of the image content under the cursor
-//               cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
-//               cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
-//           } else {
-//               cursorWindow.hide();
-//               coordsDisplay.text("");
-//           }
-//       });
-//       })
-//       // Copy the background image to the zoom window
+//         imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
+//         imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
 
-    
-  
+//         imgW = $target.innerWidth() * zoomFactor;
+//         imgH = $target.innerHeight() * zoomFactor;
 
-// };
+//         // Change the position and size of the image in the zoom window
+//         // to show a magnified view of the image content under the cursor
+//         $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
+//         $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
+//     } else {
+//         $cursorWindow.hide();
+//         $coordsDisplay.text("");
+//     }
+// });
 
 
 
 
-var $target = $(".ripple-zoom-area"),
-    $cursorWindow = $(".ripple-zoom-area-window"),
-    $coordsDisplay = $(".cursor-coord-disp");
 
-var zoomFactor = 3;
+const rippleZoomCursor = document.querySelectorAll('.ripple-zoom-area');
 
-// Copy the background image to the zoom window
-$cursorWindow.css('background-image', $target.css('background-image'));
-$cursorWindow.css('background-repeat', $target.css('background-repeat'));
+const rippleZoomCursorShow = {
+  rootMargin: '-30% 0% -20% 0%'
+  //top right bottom left
+};
 
-$target.mousemove(function (e) {
-    var $targetPosition = $target.position();
-    var cursX = e.pageX - $targetPosition.left;
-    var cursY = e.pageY - $targetPosition.top;
-    var imgX, imgY, imgW, imgH;
+const appearWhenOnScreen = new IntersectionObserver
+(function(
+  entries,     
+  appearWhenOnScreen
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
 
-    if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
-        $cursorWindow.css({
-            'left': cursX - $cursorWindow.outerWidth() / 2,
-            'top': cursY - $cursorWindow.outerHeight() / 2
-        });
-        $cursorWindow.show();
-        $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
+        entry.target.classList.add('color');
 
-        imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
-        imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
+        var $target = entry.target,
+          $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
 
-        imgW = $target.innerWidth() * zoomFactor;
-        imgH = $target.innerHeight() * zoomFactor;
+        // console.log(entry.target.classList)
 
-        // Change the position and size of the image in the zoom window
-        // to show a magnified view of the image content under the cursor
-        $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
-        $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
-    } else {
-        $cursorWindow.hide();
-        $coordsDisplay.text("");
-    }
+        var zoomFactor = 3;
+
+        // Copy the background image to the zoom window
+        // $cursorWindow.css('background-image', $target.css('background-image'));
+        $cursorWindow.style.backgroundImage = $target.style.backgroundImage
+        $cursorWindow.style.backgroundRepeat= $target.style.backgroundRepeat
+
+
+        var targetPos = $target.getBoundingClientRect();
+        $target.onmousemove = (e) => {
+          
+          var cursX = e.pageX - $target.offsetLeft;
+          var cursY = Math.trunc(e.pageY - targetPos.top);
+          var imgX, imgY, imgW, imgH;
+          
+          // console.log(e.pageY - $target.getBoundingClientRect().top)
+          equation = 0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight
+          // console.log(equation)
+          
+          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
+            $target.style.backgroundColor = '#ccc';
+            $cursorWindow.style.position = 'absolute';
+            $cursorWindow.style.display = 'block';
+            
+            $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
+            $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
+            
+
+            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2  + 'px';
+            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2  + 'px';
+
+            imgW = $target.clientWidth * zoomFactor  + 'px';
+            imgH = $target.clientHeight * zoomFactor  + 'px';
+
+
+            // Change the position and size of the image in the zoom window
+            // to show a magnified view of the image content under the cursor
+            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
+            $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
+
+          } else {
+              $cursorWindow.style.display = 'none';
+              $target.style.backgroundColor = '';
+
+          }
+
+
+        };
+
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        entry.target.style.backgroundColor = '';
+
+
+        // if($(window).width() >= 600) {
+        //   $(this).addClass('color');
+        //   $('.ripple-zoom-area').addClass('color');
+        //   entry.target.classList.add('color');
+        //   $('.section-nav').addClass('selected');
+          
+        // }
+      }
+    })
+  }, rippleZoomCursorShow);
+
+  rippleZoomCursor.forEach(rippleZoomCursor =>{
+  appearWhenOnScreen.observe(rippleZoomCursor);
 });
+
+
+
+// var $target = $(".ripple-zoom-area"),
+//     $cursorWindow = $(".ripple-zoom-area-window"),
+//     $coordsDisplay = $(".cursor-coord-disp");
+
+// var zoomFactor = 3;
+
+// // Copy the background image to the zoom window
+// $cursorWindow.css('background-image', $target.css('background-image'));
+// $cursorWindow.css('background-repeat', $target.css('background-repeat'));
+
+// $target.mousemove(function (e) {
+//     var $targetPosition = $target.position();
+//     var cursX = e.pageX - $targetPosition.left;
+//     var cursY = e.pageY - $targetPosition.top;
+//     var imgX, imgY, imgW, imgH;
+
+//     if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
+//         $cursorWindow.css({
+//             'left': cursX - $cursorWindow.outerWidth() / 2,
+//             'top': cursY - $cursorWindow.outerHeight() / 2
+//         });
+//         $cursorWindow.show();
+//         $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
+
+//         imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
+//         imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
+
+//         imgW = $target.innerWidth() * zoomFactor;
+//         imgH = $target.innerHeight() * zoomFactor;
+
+//         // Change the position and size of the image in the zoom window
+//         // to show a magnified view of the image content under the cursor
+//         $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
+//         $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
+//     } else {
+//         $cursorWindow.hide();
+//         $coordsDisplay.text("");
+//     }
+// });
 
 $('.ripple-zoom-area').hover(function(){
   $('.follower-center, .follower-around').toggleClass('zoom');
