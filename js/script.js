@@ -1760,11 +1760,12 @@ const appearWhenOnScreen = new IntersectionObserver
           var cursY = Math.trunc((e.clientY - targetPos.top));
 
           // targetPos.top is calculating how far the div is from the top of the page
-          // e.pageY is how far the mouse is from the top of window
+          // e.pageY is how far the mouse is from the top of window????
+          // e.clinetY is  how far mouse is from top of browser window
 
 
           // console.log(cursY)
-          console.log(e.pageY)
+          // console.log(e.pageY)
 
           var imgX, imgY, imgW, imgH;
           
@@ -1777,13 +1778,13 @@ const appearWhenOnScreen = new IntersectionObserver
 
           if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
             $target.style.backgroundColor = '#ccc';
-            $cursorWindow.style.position = 'absolute';
+            // $cursorWindow.style.position = 'absolute';
             $cursorWindow.style.display = 'block';
             
             $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
             $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
             
-
+            console.log(cursX - $cursorWindow.offsetWidth / 2)
             imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2  + 'px';
             imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2  + 'px';
 
