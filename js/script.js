@@ -1734,12 +1734,10 @@ const appearWhenOnScreen = new IntersectionObserver
     entries.forEach(entry => {
       if (entry.isIntersecting) {
 
-        entry.target.classList.add('color');
-
+        // entry.target.classList.add('color');
+        // $target is correct, $cursorwindow is correct
         var $target = entry.target,
-          $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
-
-        // console.log(entry.target.classList)
+            $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
 
         var zoomFactor = 3;
 
@@ -1747,20 +1745,35 @@ const appearWhenOnScreen = new IntersectionObserver
         // $cursorWindow.css('background-image', $target.css('background-image'));
         $cursorWindow.style.backgroundImage = $target.style.backgroundImage
         $cursorWindow.style.backgroundRepeat= $target.style.backgroundRepeat
+        //both of these work
 
 
-        var targetPos = $target.getBoundingClientRect();
-        $target.onmousemove = (e) => {
+        
+        // console.log(targetPos)
+        $target.onmouseover = (e) => {
+          var targetPos = $target.getBoundingClientRect();
           
+
+          //FIX THIS IT IS CALCULATING WORNG ANNG GIVING NEGATIVE NUMBER
           var cursX = e.pageX - $target.offsetLeft;
-          var cursY = Math.trunc(e.pageY - targetPos.top);
+          var cursY = Math.trunc((targetPos.top / e.pageY));
+          // targetPos.top is calculating how far the div is from the top of the page
+          // e.pageY is how far the mouse is from the top of window
+
+
+          // console.log(cursY)
+          console.log(e.pageY)
+
           var imgX, imgY, imgW, imgH;
           
           // console.log(e.pageY - $target.getBoundingClientRect().top)
           equation = 0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight
           // console.log(equation)
           
-          if (equation == false) {
+          // console.log($target.offsetHeight)
+
+
+          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
             $target.style.backgroundColor = '#ccc';
             $cursorWindow.style.position = 'absolute';
             $cursorWindow.style.display = 'block';
@@ -1790,18 +1803,13 @@ const appearWhenOnScreen = new IntersectionObserver
 
         };
 
-        // appearWhenCenter.unobserve(entry, target);
+        // appearWhenOnScreen.unobserve(entry, target);
       } else {
         entry.target.style.backgroundColor = '';
-
-
-        // if($(window).width() >= 600) {
-        //   $(this).addClass('color');
-        //   $('.ripple-zoom-area').addClass('color');
-        //   entry.target.classList.add('color');
-        //   $('.section-nav').addClass('selected');
-          
-        // }
+        $cursorWindow.style.backgroundImage = ''
+        $cursorWindow.style.backgroundRepeat= ''
+        $cursorWindow.style.display = 'none';
+        $target.style.backgroundColor = '';
       }
     })
   }, rippleZoomCursorShow);
@@ -1812,45 +1820,45 @@ const appearWhenOnScreen = new IntersectionObserver
 
 
 
-// var $target = $(".ripple-zoom-area"),
-//     $cursorWindow = $(".ripple-zoom-area-window"),
-//     $coordsDisplay = $(".cursor-coord-disp");
+var $target = $(".ripple-zoom-area"),
+    $cursorWindow = $(".ripple-zoom-area-window"),
+    $coordsDisplay = $(".cursor-coord-disp");
 
-// var zoomFactor = 3;
+var zoomFactor = 3;
 
-// // Copy the background image to the zoom window
-// $cursorWindow.css('background-image', $target.css('background-image'));
-// $cursorWindow.css('background-repeat', $target.css('background-repeat'));
+// Copy the background image to the zoom window
+$cursorWindow.css('background-image', $target.css('background-image'));
+$cursorWindow.css('background-repeat', $target.css('background-repeat'));
 
-// $target.mousemove(function (e) {
-//     var $targetPosition = $target.position();
-//     var cursX = e.pageX - $targetPosition.left;
-//     var cursY = e.pageY - $targetPosition.top;
-//     var imgX, imgY, imgW, imgH;
+$target.mousemove(function (e) {
+    var $targetPosition = $target.position();
+    var cursX = e.pageX - $targetPosition.left;
+    var cursY = e.pageY - $targetPosition.top;
+    var imgX, imgY, imgW, imgH;
 
-//     if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
-//         $cursorWindow.css({
-//             'left': cursX - $cursorWindow.outerWidth() / 2,
-//             'top': cursY - $cursorWindow.outerHeight() / 2
-//         });
-//         $cursorWindow.show();
-//         $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
+    if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
+        $cursorWindow.css({
+            'left': cursX - $cursorWindow.outerWidth() / 2,
+            'top': cursY - $cursorWindow.outerHeight() / 2
+        });
+        $cursorWindow.show();
+        $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
 
-//         imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
-//         imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
+        imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
+        imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
 
-//         imgW = $target.innerWidth() * zoomFactor;
-//         imgH = $target.innerHeight() * zoomFactor;
+        imgW = $target.innerWidth() * zoomFactor;
+        imgH = $target.innerHeight() * zoomFactor;
 
-//         // Change the position and size of the image in the zoom window
-//         // to show a magnified view of the image content under the cursor
-//         $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
-//         $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
-//     } else {
-//         $cursorWindow.hide();
-//         $coordsDisplay.text("");
-//     }
-// });
+        // Change the position and size of the image in the zoom window
+        // to show a magnified view of the image content under the cursor
+        $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
+        $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
+    } else {
+        $cursorWindow.hide();
+        $coordsDisplay.text("");
+    }
+});
 
 $('.ripple-zoom-area').hover(function(){
   $('.follower-center, .follower-around').toggleClass('zoom');
