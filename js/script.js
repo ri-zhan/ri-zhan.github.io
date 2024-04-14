@@ -1780,22 +1780,35 @@ const appearWhenOnScreen = new IntersectionObserver
             $target.style.backgroundColor = '#ccc';
             // $cursorWindow.style.position = 'absolute';
             $cursorWindow.style.display = 'block';
+            // this is working
             
+
             $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
             $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
-            
-            console.log(cursX - $cursorWindow.offsetWidth / 2)
-            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2  + 'px';
-            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2  + 'px';
+            // left/top is being changed
 
-            imgW = $target.clientWidth * zoomFactor  + 'px';
-            imgH = $target.clientHeight * zoomFactor  + 'px';
+
+            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
+            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
+
+            console.log((cursX * zoomFactor) + $cursorWindow.clientWidth / 2);
+            imgW = $target.clienwitWidth * zoomFactor;
+            imgH = $target.clientHeight * zoomFactor;
 
 
             // Change the position and size of the image in the zoom window
             // to show a magnified view of the image content under the cursor
-            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
+            // $cursorWindow.style.backgroundPosition = imgX + 'px  ' + imgY + 'px';
+
+            // console.log(imgX + 'px  ' + imgY + 'px')
+            $cursorWindow.style.backgroundPositionX = imgX + 'px';
+            $cursorWindow.style.backgroundPositionY = imgY + 'px';
+            
+
+            // $cursorWindow.style.backgroundPosition = '5px 5px';
+            //backgorund position not working
             $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
+
 
           } else {
               $cursorWindow.style.display = 'none';
