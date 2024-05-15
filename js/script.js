@@ -1798,11 +1798,11 @@ const appearWhenOnScreen = new IntersectionObserver
 
             // Change the position and size of the image in the zoom window
             // to show a magnified view of the image content under the cursor
-            // $cursorWindow.style.backgroundPosition = imgX + 'px  ' + imgY + 'px';
+            $cursorWindow.style.backgroundPosition = imgX + 'px  ' + imgY + 'px';
 
             // console.log(imgX + 'px  ' + imgY + 'px')
-            $cursorWindow.style.backgroundPositionX = imgX + 'px';
-            $cursorWindow.style.backgroundPositionY = imgY + 'px';
+            // $cursorWindow.style.backgroundPositionX = imgX + 'px';
+            // $cursorWindow.style.backgroundPositionY = imgY + 'px';
             
 
             // $cursorWindow.style.backgroundPosition = '5px 5px';
