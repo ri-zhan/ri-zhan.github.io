@@ -185,6 +185,7 @@ section {
   display: grid;
   grid-column: span 8;
   margin-bottom: 15.625rem;
+  overflow-x: hidden;
 }
 section a {
   text-decoration: underline;
@@ -1633,7 +1634,6 @@ a:active {
 .content-container .content .column-1 {
   display: grid;
   grid-column: span 8;
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   -moz-column-gap: 3rem;
@@ -2228,6 +2228,9 @@ a:active {
 }
 .ripple-zoom-text {
   margin-bottom: 1.5rem;
+}
+.ripple-zoom > .column-1 {
+  margin: 1rem;
 }
 
 .ripple-zoom-border {

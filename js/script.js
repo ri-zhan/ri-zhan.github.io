@@ -394,7 +394,7 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg, .ripple-zoom-border');
+const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
 
 const appearWhen = {
   rootMargin: '10%'
@@ -1658,6 +1658,7 @@ $( document ).ready(function() {
 window.onload = function () {
 
   var rippleZoomDiv = document.getElementsByClassName('ripple-zoom-area');
+  var rippleZoomBorder = document.getElementsByClassName('ripple-zoom-border');
   for (var i = 0, ii = rippleZoomDiv.length; i < ii; i++) {
     // console.dir(myElements[i].style);
       var imageSrc = rippleZoomDiv[i].style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
@@ -1668,6 +1669,11 @@ window.onload = function () {
           height = image.height / width;
       rippleZoomDiv[i].style.height = height + 'px'
       // rippleZoomDiv[i].style.width = width - 32 + 'px'
+
+      rippleZoomBorder[i].style.height = 16 + height + 'px';
+      rippleZoomBorder[i].style.top = - 54 - height + 'px';
+      rippleZoomBorder[i].style.marginBottom = -height + 'px';
+
   };
 }
 
