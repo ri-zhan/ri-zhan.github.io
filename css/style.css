@@ -442,6 +442,7 @@ footer h4, .footer h4 {
 }
 
 .follower-center.zoom {
+  display: none;
   background-color: transparent;
   width: 15rem;
   height: 15rem;
@@ -2267,6 +2268,7 @@ a:active {
   left: 0px;
   top: 0px;
   border-radius: 50%;
+  border: 0.075rem solid #E63223;
   background-color: #22201e;
   width: 15rem;
   height: 15rem;

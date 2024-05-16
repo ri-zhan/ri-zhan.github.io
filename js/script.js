@@ -1754,7 +1754,6 @@ const appearWhenOnScreen = new IntersectionObserver
           var targetPos = $target.getBoundingClientRect();
           
 
-          //FIX THIS IT IS CALCULATING WORNG ANNG GIVING NEGATIVE NUMBER
           var cursX = e.pageX - $target.offsetLeft;
           // var cursY = Math.trunc((e.pageY + targetPos.top));
           var cursY = Math.trunc((e.clientY - targetPos.top));
@@ -1790,22 +1789,28 @@ const appearWhenOnScreen = new IntersectionObserver
 
             imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
             imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
+            // console.log(-(cursY * zoomFactor) + $cursorWindow.clientHeight / 2);
+            // console.log($cursorWindow.clientWidth / 2)
+            // console.log(-(cursX * zoomFactor))
 
-            console.log((cursX * zoomFactor) + $cursorWindow.clientWidth / 2);
-            imgW = $target.clienwitWidth * zoomFactor;
+
+            imgW = $target.clientWidth * zoomFactor;
             imgH = $target.clientHeight * zoomFactor;
+
+            // console.log(imgW)
 
 
             // Change the position and size of the image in the zoom window
             // to show a magnified view of the image content under the cursor
-            $cursorWindow.style.backgroundPosition = imgX + 'px  ' + imgY + 'px';
+            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
+            
 
             // console.log(imgX + 'px  ' + imgY + 'px')
             // $cursorWindow.style.backgroundPositionX = imgX + 'px';
             // $cursorWindow.style.backgroundPositionY = imgY + 'px';
             
 
-            // $cursorWindow.style.backgroundPosition = '5px 5px';
+            // $cursorWindow.style.backgroundPosition = '2509px 373px';
             //backgorund position not working
             $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
 

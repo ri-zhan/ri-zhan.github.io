@@ -594,11 +594,13 @@ footer, .footer {
 
 
 .follower-center.zoom {
+  display: none;
   background-color: transparent;
   width: 15rem;
   height: 15rem;
   border: 0.075rem solid $red; 
 }
+
 .follower-around.zoom {
   width:16.5rem;
   height: 16.5rem;
@@ -2785,7 +2787,7 @@ a:active {
   left: 0px; 
   top: 0px;  
   border-radius: 50%; 
-  // border: 0.075rem solid $red; 
+  border: 0.075rem solid $red; 
   background-color: #22201e;
   width: 15rem;
   height: 15rem;
