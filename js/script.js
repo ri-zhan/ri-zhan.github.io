@@ -1664,56 +1664,12 @@ window.onload = function () {
       var image = new Image();
       image.src = imageSrc;
       
-      var width = image.width /  ($('#target').width()),
-        height = image.height /  width;
-        rippleZoomDiv[i].style.height = height -32  +"px"
-        rippleZoomDiv[i].style.width = width - 32  +"px"
-
+      var width = image.width / ($('#target').width()),
+          height = image.height / width;
+      rippleZoomDiv[i].style.height = height + 'px'
+      // rippleZoomDiv[i].style.width = width - 32 + 'px'
   };
 }
-
-
-
-
-// var $target = $(".ripple-zoom-area"),
-//   $cursorWindow = $(".ripple-zoom-area-window"),
-//   $coordsDisplay = $(".cursor-coord-disp");
-
-// var zoomFactor = 3;
-
-// // Copy the background image to the zoom window
-// $cursorWindow.css('background-image', $target.css('background-image'));
-// $cursorWindow.css('background-repeat', $target.css('background-repeat'));
-
-// $target.mousemove(function (e) {
-//     var $targetPosition = $target.position();
-//     var cursX = e.pageX - $targetPosition.left;
-//     var cursY = e.pageY - $targetPosition.top;
-//     var imgX, imgY, imgW, imgH;
-
-//     if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
-//         $cursorWindow.css({
-//             'left': cursX - $cursorWindow.outerWidth() / 2,
-//             'top': cursY - $cursorWindow.outerHeight() / 2
-//         });
-//         $cursorWindow.show();
-//         $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
-
-//         imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
-//         imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
-
-//         imgW = $target.innerWidth() * zoomFactor;
-//         imgH = $target.innerHeight() * zoomFactor;
-
-//         // Change the position and size of the image in the zoom window
-//         // to show a magnified view of the image content under the cursor
-//         $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
-//         $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
-//     } else {
-//         $cursorWindow.hide();
-//         $coordsDisplay.text("");
-//     }
-// });
 
 
 
@@ -1760,23 +1716,14 @@ const appearWhenOnScreen = new IntersectionObserver
 
           // targetPos.top is calculating how far the div is from the top of the page
           // e.pageY is how far the mouse is from the top of window????
-          // e.clinetY is  how far mouse is from top of browser window
+          // e.clientY is  how far mouse is from top of browser window
 
-
-          // console.log(cursY)
-          // console.log(e.pageY)
 
           var imgX, imgY, imgW, imgH;
           
-          // console.log(e.pageY - $target.getBoundingClientRect().top)
-          equation = 0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight
-          // console.log(equation)
-          
-          // console.log($target.offsetHeight)
-
 
           if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
-            $target.style.backgroundColor = '#ccc';
+            // $target.style.backgroundColor = '#ccc';
             // $cursorWindow.style.position = 'absolute';
             $cursorWindow.style.display = 'block';
             // this is working
@@ -1789,29 +1736,17 @@ const appearWhenOnScreen = new IntersectionObserver
 
             imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
             imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
-            // console.log(-(cursY * zoomFactor) + $cursorWindow.clientHeight / 2);
-            // console.log($cursorWindow.clientWidth / 2)
-            // console.log(-(cursX * zoomFactor))
+
 
 
             imgW = $target.clientWidth * zoomFactor;
             imgH = $target.clientHeight * zoomFactor;
 
-            // console.log(imgW)
-
-
             // Change the position and size of the image in the zoom window
             // to show a magnified view of the image content under the cursor
             $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
             
-
-            // console.log(imgX + 'px  ' + imgY + 'px')
-            // $cursorWindow.style.backgroundPositionX = imgX + 'px';
-            // $cursorWindow.style.backgroundPositionY = imgY + 'px';
-            
-
-            // $cursorWindow.style.backgroundPosition = '2509px 373px';
-            //backgorund position not working
+            // changing the size of the image in the window
             $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
 
 
@@ -1840,46 +1775,6 @@ const appearWhenOnScreen = new IntersectionObserver
 });
 
 
-
-// var $target = $(".ripple-zoom-area"),
-//     $cursorWindow = $(".ripple-zoom-area-window"),
-//     $coordsDisplay = $(".cursor-coord-disp");
-
-// var zoomFactor = 3;
-
-// // Copy the background image to the zoom window
-// $cursorWindow.css('background-image', $target.css('background-image'));
-// $cursorWindow.css('background-repeat', $target.css('background-repeat'));
-
-// $target.mousemove(function (e) {
-//     var $targetPosition = $target.position();
-//     var cursX = e.pageX - $targetPosition.left;
-//     var cursY = e.pageY - $targetPosition.top;
-//     var imgX, imgY, imgW, imgH;
-
-//     if (0 <= cursX && cursX <= $target.outerWidth() && 0 <= cursY && cursY <= $target.outerHeight()) {
-//         $cursorWindow.css({
-//             'left': cursX - $cursorWindow.outerWidth() / 2,
-//             'top': cursY - $cursorWindow.outerHeight() / 2
-//         });
-//         $cursorWindow.show();
-//         $coordsDisplay.text("x: " + cursX.toFixed(0) + ", y: " + cursY.toFixed(0));
-
-//         imgX = -(cursX * zoomFactor) + $cursorWindow.innerWidth() / 2;
-//         imgY = -(cursY * zoomFactor) + $cursorWindow.innerHeight() / 2;
-
-//         imgW = $target.innerWidth() * zoomFactor;
-//         imgH = $target.innerHeight() * zoomFactor;
-
-//         // Change the position and size of the image in the zoom window
-//         // to show a magnified view of the image content under the cursor
-//         $cursorWindow.css('background-position', imgX.toFixed(0) + 'px ' + imgY.toFixed(0) + 'px');
-//         $cursorWindow.css('background-size', imgW.toFixed(0) + 'px ' + imgH.toFixed(0) + 'px');
-//     } else {
-//         $cursorWindow.hide();
-//         $coordsDisplay.text("");
-//     }
-// });
 
 $('.ripple-zoom-area').hover(function(){
   $('.follower-center, .follower-around').toggleClass('zoom');
