@@ -328,8 +328,8 @@ $('.content').scroll(function(){
     'height': $('.slidesContainer').height() - 32,
   })
 
-  $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
-    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.08 + 'px',
+  $(('.slidesContainer')).find($('.slides-slides')).css({
+    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
     // 'right': 0,
     // if (mobileSize) {
     //   $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
@@ -394,36 +394,36 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
+// const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
 
-const appearWhen = {
-  rootMargin: '10%'
-};
+// const appearWhen = {
+//   rootMargin: '10%'
+// };
 
-const appearAtCenter = new IntersectionObserver
-(function(
-  entries, 
-  appearAtCenter
-  ) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        // if($(window).width() >= 600) {
-          entry.target.classList.add('openGIF');
-          // }
-          // appearWhenCenter.unobserve(entry, target);
-        } else {
-          // if($(window).width() >= 600) {
+// const appearAtCenter = new IntersectionObserver
+// (function(
+//   entries, 
+//   appearAtCenter
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         // if($(window).width() >= 600) {
+//           entry.target.classList.add('openGIF');
+//           // }
+//           // appearWhenCenter.unobserve(entry, target);
+//         } else {
+//           // if($(window).width() >= 600) {
             
-            entry.target.classList.remove('openGIF');
-            // }
-          }
-        })
-      }, appearWhen);
+//             entry.target.classList.remove('openGIF');
+//             // }
+//           }
+//         })
+//       }, appearWhen);
       
-      openGIF.forEach(openGIF =>{
-        appearAtCenter.observe(openGIF);
-      });
+//       openGIF.forEach(openGIF =>{
+//         appearAtCenter.observe(openGIF);
+//       });
       
       
       

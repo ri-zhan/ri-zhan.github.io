@@ -376,7 +376,7 @@ footer, .footer {
 
 
 .GIFcontainer, .slidesContainer, .borderclass {
-  width: 5rem;
+  // width: 5rem;
   height: 24rem;
   grid-column: span 8;
   // min-height: 30rem;
@@ -389,21 +389,22 @@ footer, .footer {
   justify-self: center;
   background-color: $black;
   margin-top: 1rem;
+  width: 100%;
   @media (max-width: 600px) {
     height: 12rem;
   }
-  &.openGIF {
-    width: 100%;
-    transition: all 600ms ease-in-out;
-    .general-border-container {
-      .general-border-cover {
-        width: 0;
-        @media (max-width: 600px) {
-          width: 100%;
-        }
-      }
-    }
-  }
+  // &.openGIF {
+  //   width: 100%;
+  //   transition: all 600ms ease-in-out;
+  //   .general-border-container {
+  //     .general-border-cover {
+  //       width: 0;
+  //       @media (max-width: 600px) {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
   .slides {
     margin: 1rem;
     padding: 1rem;
@@ -424,17 +425,18 @@ footer, .footer {
       position: absolute;
       height: 100%;
       top: 0;
-      right: 0;
+      // right: 0;
       display: flex;
       column-gap: 1rem;
-      // left: -100%;
+      right: -100%;
       // width: 100%;
       @media (max-width: 600px) {
         justify-content: flex-end;
         right: 100%;
       }
       @-moz-document url-prefix() {
-        left: -150%;
+        // left: -150%;
+        left: 0;
         width: 100%;
       }
       img {
@@ -458,14 +460,14 @@ footer, .footer {
     object-fit: scale-down;
     transition: all 600ms ease-in-out;
   }
-  &.openGIF {
-  transition: all 600ms ease-in-out;
-    .general-border-container {
-      .general-border-cover {
-        width: 0;
-      }
-    }
-  }
+  // &.openGIF {
+  // transition: all 600ms ease-in-out;
+  //   .general-border-container {
+  //     .general-border-cover {
+  //       width: 0;
+  //     }
+  //   }
+  // }
 }
 
 
@@ -479,7 +481,8 @@ footer, .footer {
   position: absolute;
   height: 100%;
   .general-border-cover {
-    width: 80%;
+    // width: 80%;
+    width: 0;
     height: 100%;
     background-color: $black;
     transition: all 600ms ease-in-out;
@@ -603,8 +606,9 @@ footer, .footer {
 }
 
 .follower-around.zoom {
-  width:16.5rem;
+  width: 16.5rem;
   height: 16.5rem;
+  transition: all 500ms ease-out;
 }
 
 
@@ -614,6 +618,7 @@ footer, .footer {
   background-color: $red;
   transition: all 100ms ease-out;
 }
+
 .follower-around {
   width: 2.5rem;
   height: 2.5rem;
