@@ -185,6 +185,7 @@ section {
   display: grid;
   grid-column: span 8;
   margin-bottom: 15.625rem;
+  overflow-x: hidden;
 }
 section a {
   text-decoration: underline;
@@ -286,7 +287,6 @@ footer h4, .footer h4 {
 }
 
 .GIFcontainer, .slidesContainer, .borderclass {
-  width: 5rem;
   height: 24rem;
   grid-column: span 8;
   overflow: hidden;
@@ -298,22 +298,11 @@ footer h4, .footer h4 {
   justify-self: center;
   background-color: #22201e;
   margin-top: 1rem;
+  width: 100%;
 }
 @media (max-width: 600px) {
   .GIFcontainer, .slidesContainer, .borderclass {
     height: 12rem;
-  }
-}
-.GIFcontainer.openGIF, .slidesContainer.openGIF, .borderclass.openGIF {
-  width: 100%;
-  transition: all 600ms ease-in-out;
-}
-.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover, .borderclass.openGIF .general-border-container .general-border-cover {
-  width: 0;
-}
-@media (max-width: 600px) {
-  .GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover, .borderclass.openGIF .general-border-container .general-border-cover {
-    width: 100%;
   }
 }
 .GIFcontainer .slides, .slidesContainer .slides, .borderclass .slides {
@@ -331,10 +320,10 @@ footer h4, .footer h4 {
   position: absolute;
   height: 100%;
   top: 0;
-  right: 0;
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+  right: -100%;
 }
 @media (max-width: 600px) {
   .GIFcontainer .slides-slides, .slidesContainer .slides-slides, .borderclass .slides-slides {
@@ -344,7 +333,7 @@ footer h4, .footer h4 {
 }
 @-moz-document url-prefix() {
   .GIFcontainer .slides-slides, .slidesContainer .slides-slides, .borderclass .slides-slides {
-    left: -150%;
+    left: 0;
     width: 100%;
   }
 }
@@ -368,12 +357,6 @@ footer h4, .footer h4 {
      object-fit: scale-down;
   transition: all 600ms ease-in-out;
 }
-.GIFcontainer.openGIF, .slidesContainer.openGIF, .borderclass.openGIF {
-  transition: all 600ms ease-in-out;
-}
-.GIFcontainer.openGIF .general-border-container .general-border-cover, .slidesContainer.openGIF .general-border-container .general-border-cover, .borderclass.openGIF .general-border-container .general-border-cover {
-  width: 0;
-}
 
 .general-border-container {
   display: flex;
@@ -384,7 +367,7 @@ footer h4, .footer h4 {
   height: 100%;
 }
 .general-border-container .general-border-cover {
-  width: 80%;
+  width: 0;
   height: 100%;
   background-color: #22201e;
   transition: all 600ms ease-in-out;
@@ -442,6 +425,7 @@ footer h4, .footer h4 {
 }
 
 .follower-center.zoom {
+  display: none;
   background-color: transparent;
   width: 15rem;
   height: 15rem;
@@ -451,6 +435,7 @@ footer h4, .footer h4 {
 .follower-around.zoom {
   width: 16.5rem;
   height: 16.5rem;
+  transition: all 500ms ease-out;
 }
 
 .follower-center {
@@ -1632,7 +1617,6 @@ a:active {
 .content-container .content .column-1 {
   display: grid;
   grid-column: span 8;
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   -moz-column-gap: 3rem;
@@ -2228,6 +2212,9 @@ a:active {
 .ripple-zoom-text {
   margin-bottom: 1.5rem;
 }
+.ripple-zoom > .column-1 {
+  margin: 1rem;
+}
 
 .ripple-zoom-border {
   top: 40px;
@@ -2267,6 +2254,7 @@ a:active {
   left: 0px;
   top: 0px;
   border-radius: 50%;
+  border: 0.075rem solid #E63223;
   background-color: #22201e;
   width: 15rem;
   height: 15rem;

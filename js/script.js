@@ -328,8 +328,8 @@ $('.content').scroll(function(){
     'height': $('.slidesContainer').height() - 32,
   })
 
-  $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
-    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * 0.08 + 'px',
+  $(('.slidesContainer')).find($('.slides-slides')).css({
+    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
     // 'right': 0,
     // if (mobileSize) {
     //   $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
@@ -394,36 +394,36 @@ $('#slideshow').css({
 });
 
 
-const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg, .ripple-zoom-border');
+// const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
 
-const appearWhen = {
-  rootMargin: '10%'
-};
+// const appearWhen = {
+//   rootMargin: '10%'
+// };
 
-const appearAtCenter = new IntersectionObserver
-(function(
-  entries, 
-  appearAtCenter
-  ) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        // if($(window).width() >= 600) {
-          entry.target.classList.add('openGIF');
-          // }
-          // appearWhenCenter.unobserve(entry, target);
-        } else {
-          // if($(window).width() >= 600) {
+// const appearAtCenter = new IntersectionObserver
+// (function(
+//   entries, 
+//   appearAtCenter
+//   ) {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+//         // if($(window).width() >= 600) {
+//           entry.target.classList.add('openGIF');
+//           // }
+//           // appearWhenCenter.unobserve(entry, target);
+//         } else {
+//           // if($(window).width() >= 600) {
             
-            entry.target.classList.remove('openGIF');
-            // }
-          }
-        })
-      }, appearWhen);
+//             entry.target.classList.remove('openGIF');
+//             // }
+//           }
+//         })
+//       }, appearWhen);
       
-      openGIF.forEach(openGIF =>{
-        appearAtCenter.observe(openGIF);
-      });
+//       openGIF.forEach(openGIF =>{
+//         appearAtCenter.observe(openGIF);
+//       });
       
       
       
@@ -1652,3 +1652,142 @@ $( document ).ready(function() {
   topBarSize();
 
 });
+
+
+
+window.onload = function () {
+
+  var rippleZoomDiv = document.getElementsByClassName('ripple-zoom-area');
+  var rippleZoomBorder = document.getElementsByClassName('ripple-zoom-border');
+  for (var i = 0, ii = rippleZoomDiv.length; i < ii; i++) {
+    // console.dir(myElements[i].style);
+      var imageSrc = rippleZoomDiv[i].style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+      var image = new Image();
+      image.src = imageSrc;
+      
+      var width = image.width / ($('#target').width()),
+          height = image.height / width;
+      rippleZoomDiv[i].style.height = height + 'px'
+      // rippleZoomDiv[i].style.width = width - 32 + 'px'
+
+      rippleZoomBorder[i].style.height = 16 + height + 'px';
+      rippleZoomBorder[i].style.top = - 54 - height + 'px';
+      rippleZoomBorder[i].style.marginBottom = -height + 'px';
+
+  };
+}
+
+
+
+
+
+const rippleZoomCursor = document.querySelectorAll('.ripple-zoom-area');
+
+const rippleZoomCursorShow = {
+  rootMargin: '-30% 0% -20% 0%'
+  //top right bottom left
+};
+
+const appearWhenOnScreen = new IntersectionObserver
+(function(
+  entries,     
+  appearWhenOnScreen
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        // entry.target.classList.add('color');
+        // $target is correct, $cursorwindow is correct
+        var $target = entry.target,
+            $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
+
+        var zoomFactor = 3;
+
+        // Copy the background image to the zoom window
+        // $cursorWindow.css('background-image', $target.css('background-image'));
+        $cursorWindow.style.backgroundImage = $target.style.backgroundImage
+        $cursorWindow.style.backgroundRepeat= $target.style.backgroundRepeat
+        //both of these work
+
+
+        
+        // console.log(targetPos)
+        $target.onmousemove = (e) => {
+          var targetPos = $target.getBoundingClientRect();
+          
+
+          var cursX = e.pageX - $target.offsetLeft;
+          // var cursY = Math.trunc((e.pageY + targetPos.top));
+          var cursY = Math.trunc((e.clientY - targetPos.top));
+
+          // targetPos.top is calculating how far the div is from the top of the page
+          // e.pageY is how far the mouse is from the top of window????
+          // e.clientY is  how far mouse is from top of browser window
+
+
+          var imgX, imgY, imgW, imgH;
+          
+
+          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
+            // $target.style.backgroundColor = '#ccc';
+            // $cursorWindow.style.position = 'absolute';
+            $cursorWindow.style.display = 'block';
+            // this is working
+            
+
+            $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
+            $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
+            // left/top is being changed
+
+
+            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
+            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
+
+
+
+            imgW = $target.clientWidth * zoomFactor;
+            imgH = $target.clientHeight * zoomFactor;
+
+            // Change the position and size of the image in the zoom window
+            // to show a magnified view of the image content under the cursor
+            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
+            
+            // changing the size of the image in the window
+            $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
+
+
+          } else {
+              $cursorWindow.style.display = 'none';
+              $target.style.backgroundColor = '';
+
+          }
+
+
+        };
+
+        // appearWhenOnScreen.unobserve(rippleZoomCursor);
+      } else {
+        entry.target.style.backgroundColor = '';
+        // $cursorWindow.style.backgroundImage = ''
+        // $cursorWindow.style.backgroundRepeat= ''
+        // $cursorWindow.style.display = 'none';
+        // $target.style.backgroundColor = '';
+      }
+    })
+  }, rippleZoomCursorShow);
+
+  rippleZoomCursor.forEach(rippleZoomCursor =>{
+  appearWhenOnScreen.observe(rippleZoomCursor);
+});
+
+
+
+$('.ripple-zoom-area').hover(function(){
+  $('.follower-center, .follower-around').toggleClass('zoom');
+});
+
+$('.ripple-zoom-area-window').mouseleave(function(){
+  $(this).css({
+    'display': ''
+  });
+})
