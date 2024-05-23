@@ -134,6 +134,7 @@ button .btn-individual {
   justify-content: center;
   width: 100%;
   height: 100%;
+  border: 0.025rem solid #E5DDD4;
   padding: 0.5rem;
 }
 button .specialboi {
@@ -976,7 +977,7 @@ a:active {
 }
 .outer-frame.minimized .outer-frame-btns-top-right:hover {
   transition: ease-in 100ms;
-  width: 112px;
+  width: 118px;
 }
 .outer-frame.minimized .outer-frame-btns-top-right:hover .btn-individual {
   opacity: 1;
@@ -999,7 +1000,7 @@ a:active {
 }
 .outer-frame.minimized .outer-frame-btns-top-left:hover {
   transition: ease-in 100ms;
-  width: 132px;
+  width: 145px;
 }
 .outer-frame.minimized .outer-frame-btns-top-left:hover .btn-individual {
   opacity: 1;
