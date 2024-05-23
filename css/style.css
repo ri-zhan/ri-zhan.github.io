@@ -323,7 +323,7 @@ footer h4, .footer h4 {
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
-  right: -100%;
+  left: 0;
 }
 @media (max-width: 600px) {
   .GIFcontainer .slides-slides, .slidesContainer .slides-slides, .borderclass .slides-slides {

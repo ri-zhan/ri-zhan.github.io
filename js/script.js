@@ -328,16 +328,9 @@ $('.content').scroll(function(){
     'height': $('.slidesContainer').height() - 32,
   })
 
-  $(('.slidesContainer')).find($('.slides-slides')).css({
-    'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
-    // 'right': 0,
-    // if (mobileSize) {
-    //   $(('.slidesContainer.openGIF')).find($('.slides-slides')).css({
-    //     'transform': '',
-    //     'right': '',
-    //   })
-    // }
-  });
+  // $(('.slidesContainer')).find($('.slides-slides')).css({
+  //   'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
+  // });
   
   
   var mockupIMGposition = $('.mockupIMG-container').position();
@@ -355,10 +348,6 @@ $('.content').scroll(function(){
   });
   
 });
-
-
-
-
 
 
 
@@ -397,7 +386,7 @@ $('#slideshow').css({
 // const openGIF = document.querySelectorAll('.GIFcontainer, .fullRow > .slidesContainer, #fullRowImg');
 
 // const appearWhen = {
-//   rootMargin: '10%'
+//   rootMargin: '20%'
 // };
 
 // const appearAtCenter = new IntersectionObserver
@@ -410,22 +399,85 @@ $('#slideshow').css({
 //         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
 //         // if($(window).width() >= 600) {
 //           entry.target.classList.add('openGIF');
+
+//           openGIF.addEventListener('scroll', function() {
+//             $(('.slidesContainer')).find($('.slides-slides')).css({
+//               'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
+//               'background-color': 'red'
+//             });
+//           });
+    
+//           $('.content').scroll(function(){
+//             $(('.slidesContainer')).find($('.slides-slides')).css({
+//               'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
+//               'background-color': 'red'
+//             });
+//           });
 //           // }
 //           // appearWhenCenter.unobserve(entry, target);
-//         } else {
+//       } else {
 //           // if($(window).width() >= 600) {
             
 //             entry.target.classList.remove('openGIF');
 //             // }
-//           }
-//         })
-//       }, appearWhen);
+            
+//       }
+//     })
+//   }, appearWhen);
       
-//       openGIF.forEach(openGIF =>{
-//         appearAtCenter.observe(openGIF);
-//       });
+// openGIF.forEach(openGIF =>{
+//   appearAtCenter.observe(openGIF);
+// });
       
       
+
+ 
+
+const openGIF = document.querySelectorAll('.slides-slides');
+
+const appearWhen = {
+  rootMargin: '20%'
+};
+
+const appearAtCenter = new IntersectionObserver
+(function(
+  entries, 
+  appearAtCenter
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
+        // if($(window).width() >= 600) {
+          entry.target.classList.add('openGIF');
+
+
+          entry.translateX = (scrolledAmountRelativeSlides) * -0.08 + 'px'
+          entry.addEventListener('scroll', function() {
+            $(('.slidesContainer')).find($('.slides-slides')).css({
+              'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
+              'background-color': 'red'
+            });
+          });
+          // appearWhenCenter.unobserve(entry, target);
+      } else {
+                
+          entry.addEventListener('scroll', function() {
+            $(('.slidesContainer')).find($('.slides-slides')).css({
+              'transform': 'translateX(' + (scrolledAmountRelativeSlides) * -0.08 + 'px',
+              'background-color': 'red'
+            });
+          });
+            
+      }
+    })
+  }, appearWhen);
+      
+openGIF.forEach(openGIF =>{
+  appearAtCenter.observe(openGIF);
+});
+      
+
+
       
       
 function innerBorderPos() {
@@ -443,8 +495,6 @@ function innerBorderPos() {
         // 'transition': 'top 0s, left 0s;'
       });
     }
-    
-    
     
     //////////////////////// simplified inner container hover //////////////////
     
