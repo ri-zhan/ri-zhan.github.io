@@ -1280,10 +1280,10 @@ a:active {
 }
 
 .container111-placeholder {
-  height: 6rem;
   position: static;
   grid-column: 3/11;
   grid-template-columns: repeat(8, 1fr);
+  transition: all 300ms ease-in-out;
 }
 
 .container111 {
@@ -1296,6 +1296,7 @@ a:active {
   width: 0px;
   display: grid;
   grid-column: span 8;
+  transition: all 300ms ease-in-out;
   z-index: 99999999;
 }
 .container111-container {
@@ -1850,7 +1851,7 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8.5rem;
+  margin-bottom: 6.5rem;
   transition: all 500ms ease-in-out;
   white-space: nowrap;
   overflow: hidden;
