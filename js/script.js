@@ -450,7 +450,9 @@ const appearAtCenter = new IntersectionObserver
         // if($(window).width() >= 600) {
           entry.target.classList.add('openGIF');
 
-
+          var slidesContainerPosition = $('.slidesContainer').position();
+          var scrolledAmountRelativeSlides = ($('.content').scrollTop()) - (slidesContainerPosition.top);
+          console.log('working');
           entry.translateX = (scrolledAmountRelativeSlides) * -0.08 + 'px'
           entry.addEventListener('scroll', function() {
             $(('.slidesContainer')).find($('.slides-slides')).css({
