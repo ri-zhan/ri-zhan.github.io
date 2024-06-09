@@ -1701,7 +1701,8 @@ const appearWhenOnScreen = new IntersectionObserver
         var $target = entry.target,
             $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
 
-        var zoomFactor = 3;
+        // var zoomFactor = 3;
+        var zoomFactor = $target.dataset.zoom;
 
         // Copy the background image to the zoom window
         // $cursorWindow.css('background-image', $target.css('background-image'));
