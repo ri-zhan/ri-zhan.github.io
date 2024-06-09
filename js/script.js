@@ -707,13 +707,11 @@ function typewriterDivSize(){
   if($(window).width() >= 1025) {
     //desktop size
     $('.typewriterDiv').css({
-      // 'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
       'top': $('.inner-frame.simplified').position().top - 40 + 'px',
     });
   } else if($(window).width() >= 961) {
     //tablet size
     $('.typewriterDiv').css({
-      // 'width': $('#project1').width() + $('#project2').width() +$('#project3').width(),
       'top': $('.inner-frame.simplified').position().top
     });
   } else if($(window).width() >= 481) {
