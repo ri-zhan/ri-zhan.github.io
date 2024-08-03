@@ -438,8 +438,11 @@ function innerBorderPos() {
       //   position = $('.inner-box-container-container').children('.inner-box').eq(1).position();
       // });
       $('.inner-border').css({
-        'left': position.left - 12,
-        'top': position.top - 12,
+        // 'left': position.left - 12,
+        // 'top': position.top - 12,
+        'left': position.left,
+        'top': position.top,
+
         // 'transition': 'top 0s, left 0s;'
       });
     }
