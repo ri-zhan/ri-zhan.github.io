@@ -5,6 +5,19 @@ let mobileSize=($(window).width() <= 600);
     
 
 
+
+$('.intro-title, .intro-description').mouseenter(function(){
+  $('.intro-title, .intro-description').find('p, h1').css({
+    'color': '#E63223',
+  });
+});
+
+$('.intro-title, .intro-description').mouseleave(function(){
+  $('.intro-title, .intro-description').find('p, h1').css({
+    'color': '',
+  });
+});
+
 $(function(){
   $.each(document.images, function(){
               var this_image = this;
