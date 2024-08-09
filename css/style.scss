@@ -134,7 +134,7 @@ button, .btn-primary, .btn-secondary {
   column-gap: 12px;
   white-space: nowrap;
   &:hover {
-    transform: scale(1.05);
+    // transform: scale(1.05);
     transition: all 100ms ease-out;
   }
   // &:active {

@@ -125,7 +125,6 @@ button, .btn-primary, .btn-secondary {
   white-space: nowrap;
 }
 button:hover, .btn-primary:hover, .btn-secondary:hover {
-  transform: scale(1.05);
   transition: all 100ms ease-out;
 }
 button a, .btn-primary a, .btn-secondary a {
