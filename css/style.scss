@@ -11,8 +11,8 @@ $black: #22201e;
 body {
   background-color: $black;
   font-style: normal;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 20px;
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   color: $white;
   display: flex;
@@ -95,10 +95,10 @@ p, ul {
   color: $white;
   margin: 0 0 0 0;
   font-family: "Neue Haas Grotesk Display Pro";
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 25px; /* 138.889% */
+  line-height: 20px; /* 138.889% */
   letter-spacing: 0.36px;
 }
 
@@ -106,15 +106,13 @@ a {
   text-decoration: none;
 }
 
-button {
+button, .btn-primary, .btn-secondary {
   background-color: none; /* Green */
   text-align: center;
-  color: $white;
   margin: 0 0 0 0;
-  color: $white;
-  height: 2.5rem;
   width: auto;
-  padding: 0;
+  display: flex;
+  padding: 8px 12px;
   border: 0.025rem solid $white;   
   align-items: center;
   justify-content: center;
@@ -123,91 +121,74 @@ button {
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
-  font-style: normal;
-  color: $white;
   margin: 0 0 0 0;
-  overflow: none;
+  overflow: hidden;
 
   /* update/buttons */
   font-family: "Source Code Variable";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px; /* 125% */
   text-transform: lowercase;
-  .btn-primary, .btn-secondary {
-    transition: all 100ms ease-out;
-  }
-  .btn-primary {
-    background-color: $white;
-    color: $black;
-  }
-  .btn-secondary {
-    display: flex;
-    column-gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 0.025rem solid $white;   
-    padding: 0.5rem; 
-    // background-color: $black;
-    // color: $white;
-    // :hover {
-    //   background-color: $white;
-    //   color: $black;
-    // }
-  }
-  .specialboi {
-    //// the red span circle won't appear without this because it ignores width
-    display: block;
-  }
+  column-gap: 12px;
+  white-space: nowrap;
   &:hover {
     transform: scale(1.05);
     transition: all 100ms ease-out;
-    background-color: $white;
-    color: $black;
-    .btn-secondary {
-      color: $black;
-      .material-symbols-outlined {
-        color: $black;
-      }
-      .bottom-left-icon {
-        background-color: $black;
-      }
-    }
-    p {
-      color: $black;
-    }
-    // .btn-icon {
-    //   color: black;
-    //   background-color: $black;
-    // }
   }
-  &:active {
-    background-color: $red;
-  }
+  // &:active {
+  //   background-color: $red;
+  // }
   a {
     text-decoration: none;
   }
-  // @media (max-width: 600px) {
-  //   // padding: 0.5rem 0 0.5rem 0.5rem;
-  //   &:hover {
-  //     padding: 0.5rem;
-  //   }
-  // }
   .material-symbols-outlined {
-    // font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 1.5rem;
     color: $white;
     transition: font-size 100ms ease-in;
-    // margin-right: 0.5rem;
+  }
+  .btn-icon {
+    min-width: 1.5rem;
   }
 }
 
 
+.btn-primary, a.btn-primary {
+  background-color: $white;
+  color: $black;
+  p, .btn-icon {
+    color: $black;
+  }
+  &:hover {
+    background-color: $black;
+    color: $white;
+    p, .btn-icon {
+      color: $white;
+    }
+  }
+}
+
+.btn-secondary, a.btn-secondary {
+  background-color: $black;
+  color: $white;
+  p, .btn-icon {
+    color: $white;
+  }
+  &:hover {
+    background-color: $white;
+    color: $black;
+    p, .btn-icon {
+      color: $black;
+    }
+  }
+}
+
+.btn-primary.btn-footer, .btn-secondary.btn-footer {
+  width: 100%;
+}
 
 ul {
   padding: 0;
@@ -627,17 +608,19 @@ footer, .footer {
 }
 
 
+// a href styling
 a {
+  color: $white;
   text-decoration: underline;
 }
 
 a:link{
-  color: $white;
+  // color: $white;
   transition: all 100ms ease-out;
 }
 
 a:visited {
-  color: $white;
+  // color: $red;
   text-decoration: none;
   transition: all 100ms ease-out;
 }
@@ -648,7 +631,7 @@ a:hover {
 }
 
 a:active {
-  color: $red;
+  // color: $red;
   text-decoration: none;
   transition: all 100ms ease-out;
 }
@@ -1200,7 +1183,7 @@ a:active {
     .btn-secondary{
       ///using button minimized otherwise it affects homepage non-minimized buttons
       &.minimized {
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
     // &-bottom-right, &-top-left, &-bottom-left, &-top-right {
@@ -1256,51 +1239,21 @@ a:active {
   //   }
   // }
   &.minimized {
-    .outer-frame-btns-top-right{
+    .outer-frame-btns-top-right, .outer-frame-btns-top-left{
       transition: ease-in 100ms;
-      width: 40px;
-      button {
-        overflow: hidden;
-        transition: ease-in 100ms;
-        &:hover {
-          overflow: visible;
-          // width: 100%;
-          transition: ease-in 100ms;
-          opacity: 1;
-        }
-      }
+      // width: 40px;
+      width: 48px;
       &:hover {
         transition: ease-in 100ms;
         width: 118px;
         .btn-secondary{
           opacity: 1;
         }
-        .specialboi {
-        //// the red span circle won't appear without this because it ignores width
-          display: flex;
-        }
       }
     }
     .outer-frame-btns-top-left{
-      transition: ease-in 100ms;
-      width: 40px;
-      button {
-        overflow: hidden;
-        transition: ease-in 100ms;
-        &:hover {
-          overflow: visible;
-          // width: 100%;
-          transition: ease-in 100ms;
-          opacity: 1;
-        }
-      }
       &:hover {
-        transition: ease-in 100ms;
         width: 145px;
-        .btn-secondary{
-          opacity: 1;
-        }
-
       }
     }
   }
@@ -1442,7 +1395,7 @@ a:active {
       .top-right-icon {
         display: inline-block;
         height: 1.5rem;
-        width: 1.5rem;
+        min-width: 1.5rem;
         border-radius: 50%;
         background-color: $red;
         transition: all 100ms ease-in-out;

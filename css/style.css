@@ -6,8 +6,8 @@
 body {
   background-color: #22201e;
   font-style: normal;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 20px;
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   color: #E5DDD4;
   display: flex;
@@ -85,10 +85,10 @@ p, ul {
   color: #E5DDD4;
   margin: 0 0 0 0;
   font-family: "Neue Haas Grotesk Display Pro";
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 25px; /* 138.889% */
+  line-height: 20px; /* 138.889% */
   letter-spacing: 0.36px;
 }
 
@@ -96,15 +96,13 @@ a {
   text-decoration: none;
 }
 
-button {
+button, .btn-primary, .btn-secondary {
   background-color: none; /* Green */
   text-align: center;
-  color: #E5DDD4;
   margin: 0 0 0 0;
-  color: #E5DDD4;
-  height: 2.5rem;
   width: auto;
-  padding: 0;
+  display: flex;
+  padding: 8px 12px;
   border: 0.025rem solid #E5DDD4;
   align-items: center;
   justify-content: center;
@@ -113,69 +111,69 @@ button {
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
-  font-style: normal;
-  color: #E5DDD4;
   margin: 0 0 0 0;
-  overflow: none;
+  overflow: hidden;
   /* update/buttons */
   font-family: "Source Code Variable";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px; /* 125% */
   text-transform: lowercase;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  white-space: nowrap;
 }
-button .btn-primary, button .btn-secondary {
-  transition: all 100ms ease-out;
-}
-button .btn-primary {
-  background-color: #E5DDD4;
-  color: #22201e;
-}
-button .btn-secondary {
-  display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  border: 0.025rem solid #E5DDD4;
-  padding: 0.5rem;
-}
-button .specialboi {
-  display: block;
-}
-button:hover {
+button:hover, .btn-primary:hover, .btn-secondary:hover {
   transform: scale(1.05);
   transition: all 100ms ease-out;
-  background-color: #E5DDD4;
-  color: #22201e;
 }
-button:hover .btn-secondary {
-  color: #22201e;
-}
-button:hover .btn-secondary .material-symbols-outlined {
-  color: #22201e;
-}
-button:hover .btn-secondary .bottom-left-icon {
-  background-color: #22201e;
-}
-button:hover p {
-  color: #22201e;
-}
-button:active {
-  background-color: #E63223;
-}
-button a {
+button a, .btn-primary a, .btn-secondary a {
   text-decoration: none;
 }
-button .material-symbols-outlined {
+button .material-symbols-outlined, .btn-primary .material-symbols-outlined, .btn-secondary .material-symbols-outlined {
   font-weight: normal;
   font-style: normal;
   font-size: 1.5rem;
   color: #E5DDD4;
   transition: font-size 100ms ease-in;
+}
+button .btn-icon, .btn-primary .btn-icon, .btn-secondary .btn-icon {
+  min-width: 1.5rem;
+}
+
+.btn-primary, a.btn-primary {
+  background-color: #E5DDD4;
+  color: #22201e;
+}
+.btn-primary p, .btn-primary .btn-icon, a.btn-primary p, a.btn-primary .btn-icon {
+  color: #22201e;
+}
+.btn-primary:hover, a.btn-primary:hover {
+  background-color: #22201e;
+  color: #E5DDD4;
+}
+.btn-primary:hover p, .btn-primary:hover .btn-icon, a.btn-primary:hover p, a.btn-primary:hover .btn-icon {
+  color: #E5DDD4;
+}
+
+.btn-secondary, a.btn-secondary {
+  background-color: #22201e;
+  color: #E5DDD4;
+}
+.btn-secondary p, .btn-secondary .btn-icon, a.btn-secondary p, a.btn-secondary .btn-icon {
+  color: #E5DDD4;
+}
+.btn-secondary:hover, a.btn-secondary:hover {
+  background-color: #E5DDD4;
+  color: #22201e;
+}
+.btn-secondary:hover p, .btn-secondary:hover .btn-icon, a.btn-secondary:hover p, a.btn-secondary:hover .btn-icon {
+  color: #22201e;
+}
+
+.btn-primary.btn-footer, .btn-secondary.btn-footer {
+  width: 100%;
 }
 
 ul {
@@ -457,16 +455,15 @@ footer h4, .footer h4 {
 }
 
 a {
+  color: #E5DDD4;
   text-decoration: underline;
 }
 
 a:link {
-  color: #E5DDD4;
   transition: all 100ms ease-out;
 }
 
 a:visited {
-  color: #E5DDD4;
   text-decoration: none;
   transition: all 100ms ease-out;
 }
@@ -477,7 +474,6 @@ a:hover {
 }
 
 a:active {
-  color: #E63223;
   text-decoration: none;
   transition: all 100ms ease-out;
 }
@@ -1019,50 +1015,21 @@ a:active {
   justify-content: flex-start;
 }
 .outer-frame .outer-frame-btns .btn-secondary.minimized {
-  opacity: 0.5;
+  opacity: 0.7;
 }
-.outer-frame.minimized .outer-frame-btns-top-right {
+.outer-frame.minimized .outer-frame-btns-top-right, .outer-frame.minimized .outer-frame-btns-top-left {
   transition: ease-in 100ms;
-  width: 40px;
+  width: 48px;
 }
-.outer-frame.minimized .outer-frame-btns-top-right button {
-  overflow: hidden;
-  transition: ease-in 100ms;
-}
-.outer-frame.minimized .outer-frame-btns-top-right button:hover {
-  overflow: visible;
-  transition: ease-in 100ms;
-  opacity: 1;
-}
-.outer-frame.minimized .outer-frame-btns-top-right:hover {
+.outer-frame.minimized .outer-frame-btns-top-right:hover, .outer-frame.minimized .outer-frame-btns-top-left:hover {
   transition: ease-in 100ms;
   width: 118px;
 }
-.outer-frame.minimized .outer-frame-btns-top-right:hover .btn-secondary {
-  opacity: 1;
-}
-.outer-frame.minimized .outer-frame-btns-top-right:hover .specialboi {
-  display: flex;
-}
-.outer-frame.minimized .outer-frame-btns-top-left {
-  transition: ease-in 100ms;
-  width: 40px;
-}
-.outer-frame.minimized .outer-frame-btns-top-left button {
-  overflow: hidden;
-  transition: ease-in 100ms;
-}
-.outer-frame.minimized .outer-frame-btns-top-left button:hover {
-  overflow: visible;
-  transition: ease-in 100ms;
+.outer-frame.minimized .outer-frame-btns-top-right:hover .btn-secondary, .outer-frame.minimized .outer-frame-btns-top-left:hover .btn-secondary {
   opacity: 1;
 }
 .outer-frame.minimized .outer-frame-btns-top-left:hover {
-  transition: ease-in 100ms;
   width: 145px;
-}
-.outer-frame.minimized .outer-frame-btns-top-left:hover .btn-secondary {
-  opacity: 1;
 }
 .outer-frame .outer-frame-border {
   width: 100%;
@@ -1204,7 +1171,7 @@ a:active {
 .outer-frame .outer-frame-btns-top-right .top-right-icon {
   display: inline-block;
   height: 1.5rem;
-  width: 1.5rem;
+  min-width: 1.5rem;
   border-radius: 50%;
   background-color: #E63223;
   transition: all 100ms ease-in-out;
