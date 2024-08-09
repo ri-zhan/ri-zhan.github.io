@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, button {
-  font-family: "Source Code Variable", monospace;
+  font-family: source-code-variable, "source-code-variable", monospace;
   text-transform: lowercase;
   color: #E5DDD4;
 }
@@ -65,14 +65,14 @@ h4 {
   font-style: normal;
   color: #E5DDD4;
   margin: 0 0 0.25rem 0;
-  font-family: "Source Code Variable", monospace;
+  font-family: source-code-variable, "source-code-variable", monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
 }
 
 h5 {
-  font-family: "Source Code Variable", monospace;
+  font-family: source-code-variable, "source-code-variable", monospace;
   font-weight: 500;
   font-size: 18px;
   font-style: normal;
@@ -114,7 +114,7 @@ button, .btn-primary, .btn-secondary {
   margin: 0 0 0 0;
   overflow: hidden;
   /* update/buttons */
-  font-family: "Source Code Variable";
+  font-family: source-code-variable, "source-code-variable", monospace;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -123,6 +123,7 @@ button, .btn-primary, .btn-secondary {
   -moz-column-gap: 12px;
        column-gap: 12px;
   white-space: nowrap;
+  font-family: source-code-variable, "source-code-variable", monospace;
 }
 button:hover, .btn-primary:hover, .btn-secondary:hover {
   transition: all 100ms ease-out;
@@ -142,6 +143,7 @@ button .btn-icon, .btn-primary .btn-icon, .btn-secondary .btn-icon {
 }
 
 .btn-primary, a.btn-primary {
+  font-family: source-code-variable, "source-code-variable", monospace;
   background-color: #E5DDD4;
   color: #22201e;
 }
@@ -157,6 +159,7 @@ button .btn-icon, .btn-primary .btn-icon, .btn-secondary .btn-icon {
 }
 
 .btn-secondary, a.btn-secondary {
+  font-family: source-code-variable, "source-code-variable", monospace;
   background-color: #22201e;
   color: #E5DDD4;
 }
