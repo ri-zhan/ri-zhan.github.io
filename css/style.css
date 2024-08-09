@@ -53,10 +53,10 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 125% */
+  line-height: 22px; /* 125% */
   text-transform: lowercase;
   margin: 0 0 24px 0;
 }
@@ -166,6 +166,9 @@ button:hover p {
 }
 button:active {
   background-color: #E63223;
+}
+button a {
+  text-decoration: none;
 }
 button .material-symbols-outlined {
   font-weight: normal;
@@ -451,6 +454,10 @@ footer h4, .footer h4 {
   height: 2.5rem;
   border: 0.075rem solid #E63223;
   transition: all 400ms ease-out;
+}
+
+a {
+  text-decoration: underline;
 }
 
 a:link {
@@ -1808,6 +1815,10 @@ a:active {
   row-gap: 0.5rem;
   margin-bottom: 8.5rem;
   overflow: visible;
+}
+.content-container .content .fullRow h3 {
+  width: 100%;
+  white-space: nowrap;
 }
 @media (max-width: 600px) {
   .content-container .content .fullRow {
