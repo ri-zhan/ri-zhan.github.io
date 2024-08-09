@@ -172,7 +172,8 @@ button .btn-icon, .btn-primary .btn-icon, .btn-secondary .btn-icon {
 }
 
 .btn-primary.btn-footer, .btn-secondary.btn-footer {
-  width: 100%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 ul {
@@ -247,10 +248,10 @@ footer-info, footer-about, .footer-info, .footer-about {
   align-items: center;
 }
 footer-info, .footer-info {
-  grid-column: span 5;
+  grid-column: span 4;
 }
 footer-about, .footer-about {
-  grid-column: span 3;
+  grid-column: span 4;
 }
 footer button, .footer button {
   margin-bottom: 0;

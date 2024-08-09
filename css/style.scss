@@ -187,7 +187,7 @@ button, .btn-primary, .btn-secondary {
 }
 
 .btn-primary.btn-footer, .btn-secondary.btn-footer {
-  width: 100%;
+  min-width: fit-content;
 }
 
 ul {
@@ -299,10 +299,10 @@ footer, .footer {
     align-items: center;
   }
   &-info {
-    grid-column: span 5;
+    grid-column: span 4;
   }
   &-about {
-    grid-column: span 3;
+    grid-column: span 4;
   }
   button {
     margin-bottom: 0;
