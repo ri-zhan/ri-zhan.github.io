@@ -25,7 +25,7 @@ body {
 
 
 h1, h2, h3, h4, h5, button {
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   text-transform: lowercase;
   color: $white;
 }
@@ -68,7 +68,7 @@ h4 {
   font-style: normal;
   color: $white;
   margin: 0 0 0.25rem 0;
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
@@ -76,7 +76,7 @@ h4 {
 
 
 h5 {
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   // font-weight: 600;
   font-weight: 500;
   // font-size: 0.875rem;
@@ -125,7 +125,7 @@ button, .btn-primary, .btn-secondary {
   overflow: hidden;
 
   /* update/buttons */
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -153,12 +153,12 @@ button, .btn-primary, .btn-secondary {
   .btn-icon {
     min-width: 1.5rem;
   }
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
 }
 
 
 .btn-primary, a.btn-primary {
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   background-color: $white;
   color: $black;
   p, .btn-icon {
@@ -174,7 +174,7 @@ button, .btn-primary, .btn-secondary {
 }
 
 .btn-secondary, a.btn-secondary {
-  font-family: source-code-variable, "source-code-variable", monospace;
+  font-family: source-code-pro, "source-code-pro", monospace;
   background-color: $black;
   color: $white;
   p, .btn-icon {
