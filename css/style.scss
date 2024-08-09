@@ -25,7 +25,7 @@ body {
 
 
 h1, h2, h3, h4, h5, button {
-  font-family: "source-code-variable", monospace;
+  font-family: source-code-variable, monospace;
   text-transform: lowercase;
   color: $white;
 }
@@ -68,7 +68,7 @@ h4 {
   font-style: normal;
   color: $white;
   margin: 0 0 0.25rem 0;
-  font-family: "source-code-variable", monospace;
+  font-family: source-code-variable, monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
@@ -76,7 +76,7 @@ h4 {
 
 
 h5 {
-  font-family: "source-code-variable", monospace;
+  font-family: source-code-variable, monospace;
   // font-weight: 600;
   font-weight: 500;
   // font-size: 0.875rem;
@@ -125,7 +125,7 @@ button, .btn-primary, .btn-secondary {
   overflow: hidden;
 
   /* update/buttons */
-  font-family: "source-code-variable", monospace;
+  font-family: source-code-variable, monospace;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
