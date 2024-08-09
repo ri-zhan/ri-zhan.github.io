@@ -5,8 +5,9 @@
 body {
   background-color: #22201e;
   font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.35rem;
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   color: #E5DDD4;
   display: flex;
   justify-content: center;
@@ -16,14 +17,17 @@ body {
   margin: 0;
 }
 
-h1 {
-  font-family: "scotch-display", sans-serif;
-  font-size: 3rem;
+h1, h2, h3, h4, h5, button {
+  font-family: "Source Code Variable", monospace;
+  text-transform: lowercase;
   color: #E5DDD4;
-  margin: 0 0 1.375rem 0;
-  font-weight: 600;
+}
+
+h1 {
+  font-size: 48px;
   font-style: normal;
-  line-height: 2.375rem;
+  font-weight: 700;
+  line-height: 60px; /* 125% */
 }
 @media (max-width: 600px) {
   h1 {
@@ -32,15 +36,12 @@ h1 {
 }
 
 h2 {
-  color: #E5DDD4;
-  margin: 0 0 1.375rem 0;
-  /* h3 */
-  text-transform: uppercase;
-  font-family: "scotch-display", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 600;
+  text-align: center;
+  font-size: 24px;
   font-style: normal;
-  line-height: 2.375rem;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
 }
 @media (max-width: 600px) {
   h2 {
@@ -50,47 +51,43 @@ h2 {
 }
 
 h3 {
-  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 800;
-  font-size: 3.25rem;
-  line-height: 3.25rem;
-  color: #E5DDD4;
-  margin: 0;
-  padding: 0;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  text-transform: lowercase;
+  margin: 0 0 24px 0;
 }
 
 h4 {
   font-style: normal;
   color: #E5DDD4;
   margin: 0 0 0.25rem 0;
-  font-family: "elza", sans-serif;
+  font-family: "Source Code Variable", monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
-  text-transform: uppercase;
 }
 
 h5 {
-  font-family: "elza", sans-serif;
+  font-family: "Source Code Variable", monospace;
   font-weight: 500;
   font-size: 18px;
   font-style: normal;
   color: #E5DDD4;
   margin: 0 0 0 0;
   line-height: 110%;
-  text-transform: uppercase;
 }
 
 p, ul {
   color: #E5DDD4;
   margin: 0 0 0 0;
-  font-family: "elza", sans-serif;
-  font-size: 17px;
+  font-family: "Neue Haas Grotesk Display Pro";
+  font-size: 18px;
   font-style: normal;
-  font-weight: 200;
-  line-height: 115.7%;
-  letter-spacing: 0.34px;
+  font-weight: 500;
+  line-height: 25px; /* 138.889% */
+  letter-spacing: 0.36px;
 }
 
 a {
@@ -103,7 +100,6 @@ button {
   color: #E5DDD4;
   margin: 0 0 0 0;
   color: #E5DDD4;
-  text-transform: uppercase;
   height: 2.5rem;
   width: auto;
   padding: 0;
@@ -119,12 +115,13 @@ button {
   color: #E5DDD4;
   margin: 0 0 0 0;
   overflow: none;
-  font-family: "elza", sans-serif;
-  font-size: 17px;
+  /* update/buttons */
+  font-family: "Source Code Variable";
+  font-size: 16px;
   font-style: normal;
-  font-weight: 200;
-  line-height: 115.7%;
-  letter-spacing: 0.34px;
+  font-weight: 600;
+  line-height: 20px; /* 125% */
+  text-transform: lowercase;
 }
 button .btn-individual {
   display: flex;
@@ -1717,7 +1714,7 @@ a:active {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  grid-row-gap: 2rem;
+  grid-row-gap: 3.5rem;
 }
 .content-container .content .column-5-3 .column-3 {
   grid-column: 6/9;
@@ -1725,7 +1722,7 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  grid-row-gap: 2rem;
+  grid-row-gap: 3.5rem;
 }
 .content-container .content .column-3-5 {
   display: grid;

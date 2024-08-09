@@ -4,6 +4,9 @@ let tabletSize = ($(window).width() <= 1025 && $(window).width() >=600);
 let mobileSize=($(window).width() <= 600);
     
 
+$( "h1" ).prepend( "# " );
+$( "h2" ).prepend( "## " );
+$( "h3" ).prepend( "### " );
 
 
 $('.intro-title, .intro-description').mouseenter(function(){
