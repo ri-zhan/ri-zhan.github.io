@@ -9,6 +9,20 @@ $( "h2" ).prepend( "## " );
 $( "h3" ).prepend( "### " );
 
 
+// landing page to about me link hover function
+$('.intro-title, .intro-subtitle').mouseenter(function(){
+  $('.intro-icon').css({
+    'color': '#E63223',
+  });
+});
+
+$('.intro-title, .intro-subtitle').mouseleave(function(){
+  $('.intro-icon').css({
+    'color': '',
+  });
+});
+
+
 // smooth scrolling to div within page
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -19,6 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
   });
 });
+
 
 
 // load image before rest of the page loads
