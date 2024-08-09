@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-radius: 2px;
 }
 
 $red: #E63223;
@@ -137,7 +138,14 @@ button {
   font-weight: 600;
   line-height: 20px; /* 125% */
   text-transform: lowercase;
-  .btn-individual {
+  .btn-primary, .btn-secondary {
+    transition: all 100ms ease-out;
+  }
+  .btn-primary {
+    background-color: $white;
+    color: $black;
+  }
+  .btn-secondary {
     display: flex;
     column-gap: 0.5rem;
     align-items: center;
@@ -146,6 +154,12 @@ button {
     height: 100%;
     border: 0.025rem solid $white;   
     padding: 0.5rem; 
+    // background-color: $black;
+    // color: $white;
+    // :hover {
+    //   background-color: $white;
+    //   color: $black;
+    // }
   }
   .specialboi {
     //// the red span circle won't appear without this because it ignores width
@@ -156,7 +170,7 @@ button {
     transition: all 100ms ease-out;
     background-color: $white;
     color: $black;
-    .btn-individual {
+    .btn-secondary {
       color: $black;
       .material-symbols-outlined {
         color: $black;
@@ -1174,11 +1188,11 @@ a:active {
   z-index: 999;
   overflow: visible;
   pointer-events: none;
-  .btn-individual {
+  .btn-secondary {
     justify-content: flex-start;
   }
   .outer-frame-btns {
-    .btn-individual{
+    .btn-secondary{
       ///using button minimized otherwise it affects homepage non-minimized buttons
       &.minimized {
         opacity: 0.5;
@@ -1193,7 +1207,7 @@ a:active {
       //     // margin: -0.25rem;
       //     transition: all 100ms ease-in-out;
       //   }
-      //   .btn-individual{
+      //   .btn-secondary{
       //     &.minimized {
       //       opacity: 1;
       //     }
@@ -1253,7 +1267,7 @@ a:active {
       &:hover {
         transition: ease-in 100ms;
         width: 118px;
-        .btn-individual{
+        .btn-secondary{
           opacity: 1;
         }
         .specialboi {
@@ -1278,7 +1292,7 @@ a:active {
       &:hover {
         transition: ease-in 100ms;
         width: 145px;
-        .btn-individual{
+        .btn-secondary{
           opacity: 1;
         }
 
@@ -1480,7 +1494,7 @@ a:active {
         margin-bottom: 0.5rem;
         width: 100%;
       }
-      .btn-individual {
+      .btn-secondary {
         justify-content: flex-start;
       }
       .outer-frame-btns-top-right {
@@ -2580,7 +2594,7 @@ a:active {
       margin: 0;
       z-index: 99999;
     }
-    .btn-individual {
+    .btn-secondary {
       width: max-content;
       align-items: center;
       display: flex;

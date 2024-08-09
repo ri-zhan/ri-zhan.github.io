@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-radius: 2px;
 }
 
 body {
@@ -124,7 +125,14 @@ button {
   line-height: 20px; /* 125% */
   text-transform: lowercase;
 }
-button .btn-individual {
+button .btn-primary, button .btn-secondary {
+  transition: all 100ms ease-out;
+}
+button .btn-primary {
+  background-color: #E5DDD4;
+  color: #22201e;
+}
+button .btn-secondary {
   display: flex;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -144,13 +152,13 @@ button:hover {
   background-color: #E5DDD4;
   color: #22201e;
 }
-button:hover .btn-individual {
+button:hover .btn-secondary {
   color: #22201e;
 }
-button:hover .btn-individual .material-symbols-outlined {
+button:hover .btn-secondary .material-symbols-outlined {
   color: #22201e;
 }
-button:hover .btn-individual .bottom-left-icon {
+button:hover .btn-secondary .bottom-left-icon {
   background-color: #22201e;
 }
 button:hover p {
@@ -1000,10 +1008,10 @@ a:active {
   overflow: visible;
   pointer-events: none;
 }
-.outer-frame .btn-individual {
+.outer-frame .btn-secondary {
   justify-content: flex-start;
 }
-.outer-frame .outer-frame-btns .btn-individual.minimized {
+.outer-frame .outer-frame-btns .btn-secondary.minimized {
   opacity: 0.5;
 }
 .outer-frame.minimized .outer-frame-btns-top-right {
@@ -1023,7 +1031,7 @@ a:active {
   transition: ease-in 100ms;
   width: 118px;
 }
-.outer-frame.minimized .outer-frame-btns-top-right:hover .btn-individual {
+.outer-frame.minimized .outer-frame-btns-top-right:hover .btn-secondary {
   opacity: 1;
 }
 .outer-frame.minimized .outer-frame-btns-top-right:hover .specialboi {
@@ -1046,7 +1054,7 @@ a:active {
   transition: ease-in 100ms;
   width: 145px;
 }
-.outer-frame.minimized .outer-frame-btns-top-left:hover .btn-individual {
+.outer-frame.minimized .outer-frame-btns-top-left:hover .btn-secondary {
   opacity: 1;
 }
 .outer-frame .outer-frame-border {
@@ -1239,7 +1247,7 @@ a:active {
     margin-bottom: 0.5rem;
     width: 100%;
   }
-  .outer-frame .outer-frame-btns .btn-individual {
+  .outer-frame .outer-frame-btns .btn-secondary {
     justify-content: flex-start;
   }
   .outer-frame .outer-frame-btns .outer-frame-btns-top-right {
@@ -2063,7 +2071,7 @@ a:active {
   margin: 0;
   z-index: 99999;
 }
-.play-frame .play-description .btn-individual {
+.play-frame .play-description .btn-secondary {
   width: -moz-max-content;
   width: max-content;
   align-items: center;
