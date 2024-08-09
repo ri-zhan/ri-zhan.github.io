@@ -2217,7 +2217,7 @@ a:active {
       // overflow-x: hidden;
       h3 {
         width: 100%;
-        white-space: nowrap;
+        grid-column: span 8;
       }
       @media (max-width: 600px) {
         display: grid;
