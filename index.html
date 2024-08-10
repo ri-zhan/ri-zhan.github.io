@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Ri Zhan Portfolio</title>
+        <title>ri zhan</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,8 +36,8 @@
     <div class="mobileViewUnavail">
         <h2>Woop! Mobile view isn't available yet (still coding it!), switch to a laptop to view!</h2>
         <button style="z-index:999">
-            <a href="index.html" class="btn-individual" style="display: flex; column-gap: 0.5rem;">
-                <p class="material-symbols-outlined btn-icon">home</p>
+            <a href="index.html" class="btn-secondary" style="display: flex; column-gap: 0.5rem;">
+                <span class="material-symbols-outlined btn-icon">home</p>
                 <span class="outer-frame-text top-left-name">RI</span>
             </a>
         </button>
@@ -49,12 +49,17 @@
         <div class="inner-frame simplified">
             
             <div class="intro">
-                <div class="intro-title">
-                    <h4>the <a href="aboutme.html">ri</a>pple effect</h4>
-                </div>
-                <div class="intro-description">
-                    <p>"occurs when an initial disturbance to a system propagates outward to disturb an increasingly larger portion of the system"</p>
-                </div>                
+                <a href="aboutme.html" class="intro-title"><h1>the (ri)ipple effect</h1></a>
+                <a href="aboutme.html" class="intro-subtitle">
+                    <p>"occurs when an initial disturbance to a system propagates outward to disturb 
+                        an increasingly larger portion of the system"</p>
+                    <div class="to_about">
+                        <p>—my design philosophy</p>
+                        <span class="material-symbols-outlined intro-icon">
+                            north_east
+                        </span>
+                    </div>
+                </a>
             </div>
 
 
@@ -146,113 +151,35 @@
 
         <div class="outer-frame-btns">
             <!-- <button id="dropDownBtn">
-                <a class="btn-individual" style="justify-content: flex-start;">
+                <a class="btn-secondary" style="justify-content: flex-start;">
                     <span class="material-symbols-outlined btn-icon" id="dropDownBtnIcon">arrow_drop_down</span>
                 </a>
             </button> -->
 
             <div class="outer-frame-btns-top-left">
-                <button>
-                    <a href="index.html" class="btn-individual">
-                        <span class="material-symbols-outlined btn-icon">home</span>
-                        <span class="outer-frame-text top-left-name">RI</span>
-                    </a>
-                </button>
+                <a href="index.html" class="btn-secondary">
+                    <span class="material-symbols-outlined btn-icon">home</span>
+                    Ri
+                </a>
             </div>            
 
             <div class="outer-frame-btns-top-right">
-                <button>
-                    <a href="aboutme.html" class="btn-individual">
-                        <span class="material-symbols-outlined btn-icon">user_attributes</span>
-                        <span class="bottom-right-nav-text outer-frame-text">About</span>
-                    </a>
-                </button>
-                
-                <button>
-                    <a href="play.html" class="btn-individual">
-                        <span class="top-right-icon btn-icon"></span>
-                        <span class="outer-frame-text top-right-name">PLAY</span>
-                    </a>
-                </button>
-                
-                <button>
-                    <a href="https://drive.google.com/file/d/1Qnh4PQXWREJMvXRxp3mo3w4YMgOaEC89/view?usp=sharing" target="_blank" class="btn-individual">
-                        <span class="material-symbols-outlined btn-icon" style="transform: rotate(-45deg);">attach_file</span>
-                        <span class="bottom-right-nav-text outer-frame-text">Resumé</span>
-                    </a>
-                </button>
-                
-            </div>  
+                <a href="aboutme.html" class="btn-secondary">
+                    <span class="material-symbols-outlined btn-icon">user_attributes</span>
+                    about
+                </a>
             
-            <!-- <div class="outer-frame-btns-bottom-left">
-                <button>
-                    <a onclick="history.back()" class="btn-individual minimized" style="display: flex; column-gap: 0.5rem;">
-                        <span class="material-symbols-outlined btn-icon">chevron_left</span>
-                        <span class="outer-frame-text top-left-name">go back</span>
-                    </a>
-                </button>
-            </div>  -->
-
-            <!-- <div class="outer-frame-btns-bottom-right">
-                <button>
-                        <a href="https://www.figma.com/proto/kaJCUbrphvKO3OGjE2gt2J/Project-2-Final?page-id=117%3A31&node-id=212%3A671&viewport=-908%2C-26%2C0.1&scaling=min-zoom&starting-point-node-id=212%3A671&show-proto-sidebar=1" class="btn-individual minimized" target="_blank">
-                        <span class="material-symbols-outlined btn-icon"></span>
-                        <span class="outer-frame-text top-left-name"></span>
-                    </a>
-                </button>
-            </div>  -->
+                <a href="play.html" class="btn-secondary">
+                    <span class="top-right-icon btn-icon"></span>
+                    play
+                </a>
+            
+                <a href="https://drive.google.com/file/d/1Qnh4PQXWREJMvXRxp3mo3w4YMgOaEC89/view?usp=sharing" target="_blank" class="btn-secondary">
+                    <span class="material-symbols-outlined btn-icon" style="transform: rotate(-45deg);">attach_file</span>
+                    resumé
+                </a>
+            </div>  
         </div>            
-
-        <!-- <div class="outer-frame-btns doNotShow">
-            <div class="outer-frame-btns-top-left">
-                <button>
-                    <a href="index.html" class="btn-individual minimized">
-                        <span class="material-symbols-outlined btn-icon">home</span>
-                        <span class="outer-frame-text top-left-name">RI</span>
-                    </a>
-                </button>
-            </div>            
-
-            <div class="outer-frame-btns-top-right">
-                <button>
-                    <a href="aboutme.html" class="btn-individual minimized">
-                        <span class="material-symbols-outlined btn-icon">user_attributes</span>
-                        <span class="bottom-right-nav-text outer-frame-text">About</span>
-                    </a>
-                </button>
-                
-                <button>
-                    <a href="play.html" class="btn-individual minimized">
-                        <span class="top-right-icon btn-icon"></span>
-                        <span class="outer-frame-text top-right-name">PLAY</span>
-                    </a>
-                </button>
-                
-                <button>
-                    <a href="https://drive.google.com/file/d/1jWY_ObioE3Ih4I8NPp4L5lV4pbmn6Cfk/view?usp=sharing" target="_blank" class="btn-individual minimized">
-                        <span class="material-symbols-outlined btn-icon" style="transform: rotate(-45deg);">attach_file</span>
-                        <span class="bottom-right-nav-text outer-frame-text">Resumé</span>
-                    </a>
-                </button>
-                
-            </div>  
-            
-            <div class="outer-frame-btns-bottom-left">
-                <button>
-                    <a onclick="history.back()" class="btn-individual minimized" style="display: flex; column-gap: 0.5rem;">
-                        <span class="material-symbols-outlined btn-icon">chevron_left</span>
-                        <span class="outer-frame-text top-left-name">go back</span>
-                    </a>
-                </button>
-            </div>  -->
-
-            
-        <!-- </div> --> 
-        <!-- <div class="typewriterDiv">
-            <p>hey! it's ri, i'm currently</p>
-            <div class="movingText"><p id="typewriter"></p>
-            <p id="cursor"></p></div>
-        </div> -->
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 

@@ -4,7 +4,39 @@ let tabletSize = ($(window).width() <= 1025 && $(window).width() >=600);
 let mobileSize=($(window).width() <= 600);
     
 
+$( "h1" ).prepend( "# " );
+$( "h2" ).prepend( "## " );
+$( "h3" ).prepend( "### " );
 
+
+// landing page to about me link hover function
+$('.intro-title, .intro-subtitle').mouseenter(function(){
+  $('.intro-icon').css({
+    'color': '#E63223',
+  });
+});
+
+$('.intro-title, .intro-subtitle').mouseleave(function(){
+  $('.intro-icon').css({
+    'color': '',
+  });
+});
+
+
+// smooth scrolling to div within page
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+
+
+// load image before rest of the page loads
 $(function(){
   $.each(document.images, function(){
               var this_image = this;
@@ -81,7 +113,7 @@ function onScroll(){
 
 
 
-
+// scroll to sections using top bar
 
 // $("#sidebar > ul > li > a").click(function(e) 
 $(".section-nav").click(function(e) { 

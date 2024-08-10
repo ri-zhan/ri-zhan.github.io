@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-radius: 2px;
 }
 
 $red: #E63223;
@@ -10,10 +11,9 @@ $black: #22201e;
 body {
   background-color: $black;
   font-style: normal;
-  // font-family: "lft-etica-mono";
-  // font-weight: 200;
-  font-size: 1.25rem;
-  line-height: 1.35rem;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: neue-haas-grotesk-display, sans-serif;
   color: $white;
   display: flex;
   justify-content: center;
@@ -21,80 +21,63 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  letter-spacing: 0.4px;
+}
+
+
+h1, h2, h3, h4, h5, button {
+  font-family: source-code-variable, monospace;
+  text-transform: lowercase;
+  color: $white;
 }
 
 h1 {
-  // font-family: ivymode,sans-serif;
-  font-family: "scotch-display", sans-serif;
-  font-size: 3rem;
-  color: $white;
-  margin: 0 0 1.375rem 0;
-  font-weight: 600;
+  font-size: 48px;
   font-style: normal;
-  line-height: 2.375rem;
+  font-weight: 700;
+  line-height: 60px; /* 125% */
+  margin: 0;
   @media (max-width: 600px) {
     font-size: 1.5rem;
   }
 }
 
 h2 {
-  // font-family: ivymode,sans-serif;
-  color: $white;
-  margin: 0 0 1.375rem 0;
-  /* h3 */
-  // font-family: "elza", sans-serif;
-  // font-size: 32px;
-  // font-style: normal;
-  // font-weight: 600;
-  // line-height: 110%; /* 35.2px */
-  text-transform: uppercase;
-  font-family: "scotch-display", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 600;
+  text-align: center;
+  font-size: 24px;
   font-style: normal;
-  line-height: 2.375rem;
-
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
   @media (max-width: 600px) {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  // font-family: lust, serif;
 }
 
-
-
 h3 {
-  // font-family: Paralucent, sans-serif;
-  // font-family: "apertura", sans-serif;
-  font-family: neue-haas-grotesk-display, sans-serif;
-
+  font-size: 18px;
   font-style: normal;
-  font-weight: 800;
-  font-size: 3.25rem;
-  line-height: 3.25rem;
-  color: $white;
-  margin: 0;
-  padding: 0;
+  font-weight: 400;
+  line-height: 22px; /* 125% */
+  text-transform: lowercase;
+  margin: 0 0 24px 0;
 }
 
 
 h4 {
   font-style: normal;
   color: $white;
-  // margin: 0 0 0.25rem 0;
-  margin: 0;
-  font-family: "elza", sans-serif;
+  margin: 0 0 0.25rem 0;
+  font-family: source-code-variable, monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
-  text-transform: uppercase;
 }
 
 
 h5 {
-  // font-family: "odile", serif;
-  // font-family: "scotch-display", sans-serif;
-  font-family: "elza", sans-serif;
+  font-family: source-code-variable, monospace;
   // font-weight: 600;
   font-weight: 500;
   // font-size: 0.875rem;
@@ -104,7 +87,6 @@ h5 {
   margin: 0 0 0 0;
   // line-height: 1.75rem;
   line-height: 110%;
-  text-transform: uppercase;
 }
 
 
@@ -113,29 +95,25 @@ h5 {
 p, ul {
   color: $white;
   margin: 0 0 0 0;
-  font-family: "elza", sans-serif;
-  font-size: 15px;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 200;
-  line-height: 115.7%; 
-  // letter-spacing: 0.34px;
-  letter-spacing: 0.45px;
+  font-weight: 500;
+  line-height: 20px; /* 138.889% */
+  letter-spacing: 0.4px;
 }
 
 a {
   text-decoration: none;
 }
 
-button {
+button, .btn-primary, .btn-secondary {
   background-color: none; /* Green */
   text-align: center;
-  color: $white;
   margin: 0 0 0 0;
-  color: $white;
-  text-transform: uppercase;
-  height: 2.5rem;
   width: auto;
-  padding: 0;
+  display: flex;
+  padding: 8px 12px;
   border: 0.025rem solid $white;   
   align-items: center;
   justify-content: center;
@@ -144,73 +122,77 @@ button {
   transition: all 100ms ease-out;
   z-index: 99;
   pointer-events: all;
-  font-style: normal;
-  color: $white;
   margin: 0 0 0 0;
-  overflow: none;
-  font-family: "elza", sans-serif;
-  font-size: 17px;
+  overflow: hidden;
+
+  /* update/buttons */
+  font-family: source-code-variable, monospace;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 200;
-  line-height: 115.7%; 
-  letter-spacing: 0.34px;
-  .btn-individual {
-    display: flex;
-    column-gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 0.025rem solid $white;   
-    padding: 0.5rem; 
-  }
-  .specialboi {
-    //// the red span circle won't appear without this because it ignores width
-    display: block;
-  }
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  text-transform: lowercase;
+  column-gap: 12px;
+  white-space: nowrap;
   &:hover {
-    transform: scale(1.05);
+    // transform: scale(1.05);
     transition: all 100ms ease-out;
-    background-color: $white;
-    color: $black;
-    .btn-individual {
-      color: $black;
-      .material-symbols-outlined {
-        color: $black;
-      }
-      .bottom-left-icon {
-        background-color: $black;
-      }
-    }
-    p {
-      color: $black;
-    }
-    // .btn-icon {
-    //   color: black;
-    //   background-color: $black;
-    // }
   }
-  &:active {
-    background-color: $red;
-  }
-  // @media (max-width: 600px) {
-  //   // padding: 0.5rem 0 0.5rem 0.5rem;
-  //   &:hover {
-  //     padding: 0.5rem;
-  //   }
+  // &:active {
+  //   background-color: $red;
   // }
+  a {
+    text-decoration: none;
+  }
   .material-symbols-outlined {
-    // font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 1.5rem;
     color: $white;
     transition: font-size 100ms ease-in;
-    // margin-right: 0.5rem;
   }
+  .btn-icon {
+    min-width: 1.5rem;
+  }
+  font-family: source-code-variable, monospace;
 }
 
 
+.btn-primary, a.btn-primary {
+  font-family: source-code-variable, monospace;
+  background-color: $white;
+  color: $black;
+  p, .btn-icon {
+    color: $black;
+  }
+  &:hover {
+    background-color: $black;
+    color: $white;
+    p, .btn-icon {
+      color: $white;
+    }
+  }
+}
+
+.btn-secondary, a.btn-secondary {
+  font-family: source-code-variable, monospace;
+  background-color: $black;
+  color: $white;
+  p, .btn-icon {
+    color: $white;
+  }
+  &:hover {
+    background-color: $white;
+    color: $black;
+    p, .btn-icon {
+      color: $black;
+    }
+  }
+}
+
+.btn-primary.btn-footer, .btn-secondary.btn-footer {
+  min-width: fit-content;
+}
 
 ul {
   padding: 0;
@@ -238,14 +220,14 @@ section {
   // &:last-child {
   //   margin-bottom: 6rem;
   // }
-  a {
-    text-decoration: underline;
-  }
-  .external-btn {
-    a {
-      text-decoration: none;
-    }
-  }
+  // a {
+  //   text-decoration: underline;
+  // }
+  // .external-btn {
+  //   a {
+  //     text-decoration: none;
+  //   }
+  // }
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -321,10 +303,10 @@ footer, .footer {
     align-items: center;
   }
   &-info {
-    grid-column: span 5;
+    grid-column: span 4;
   }
   &-about {
-    grid-column: span 3;
+    grid-column: span 4;
   }
   button {
     margin-bottom: 0;
@@ -629,17 +611,33 @@ footer, .footer {
   transition: all 400ms ease-out;
 }
 
-a:link,
-a:visited {
+
+// a href styling
+a {
   color: $white;
+  text-decoration: underline;
+}
+
+a:link{
+  // color: $white;
+  transition: all 100ms ease-out;
+}
+
+a:visited {
+  // color: $red;
+  text-decoration: none;
+  transition: all 100ms ease-out;
 }
 
 a:hover {
-  color: $white;
+  color: $red;
+  transition: all 100ms ease-out;
 }
 
 a:active {
-  color: $red;
+  // color: $red;
+  text-decoration: none;
+  transition: all 100ms ease-out;
 }
 
 
@@ -794,8 +792,7 @@ a:active {
     .inner-box {
       display: grid;
       text-decoration: none;
-      // padding: 1rem;
-      padding: 1rem 1.25rem;
+      padding: 2.5rem;
       transition: all 300ms ease-in-out;
       justify-items: center;
       align-content: space-between;
@@ -806,7 +803,7 @@ a:active {
       background-color: $black;
       transition: all 300ms ease-in-out;
       grid-template-rows: repeat(5, 1fr);
-      // grid-row-gap: 1rem;
+      grid-row-gap: 0.5rem;
       box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
       grid-column: span 3;
       &:hover{
@@ -833,25 +830,20 @@ a:active {
         }
       }
       &-text {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         grid-row: 5/6;
         align-self: flex-end;
         transition: all 300ms ease-in-out;
+        justify-content: center;
+        align-items: center;
         @media (max-width: 600px) {
           grid-row: 3/4;
         }
-      }
-      h2 {
-        margin-top: 0.625rem;
-        margin-bottom: 0;
-        text-align: center;
-        @media (max-width: 600px) {
-          margin-top: 0;
+        h3, p {
+          width: fit-content;
         }
       }
-      // h4 {
-      //   text-align: center;
-      // }
       &-img{
         // height: 80%;
         display: flex;
@@ -920,15 +912,63 @@ a:active {
     }
   }
   .intro{
+    // display: grid;
     display: grid;
-    flex-direction: column;
-    grid-column: span 8;
-    grid-column-gap: 2rem;
-    // grid-row-gap: 1rem;  
-    grid-row: 1/2;
-    align-items: flex-end;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-column: 1/4;
+    column-gap: 2rem;
+    row-gap: 1rem;  
+    grid-row: 1/5;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    transition: all 100ms ease-in-out;
+    height: fit-content;
+    text-decoration: none;
+    @media (max-height: 600px) {
+      grid-column: 1/-1;
+      grid-template-columns: repeat(8, 1fr);
+    }
+    &-title {
+      display: grid;
+      // height: 100%;
+      // word-wrap: anywhere;
+      grid-row: 1/4;
+      grid-column: 1/3;
+      width: min-content;
+      text-decoration: none;
+      transition: all 100ms ease-in-out;
+      @media (max-height: 600px) {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        height: min-content;
+        align-self: flex-end;
+      }
+    }
+    &-subtitle {
+      margin-top: 1rem;
+      text-decoration: none;
+      padding-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      grid-row: 3/5;
+      row-gap: 1rem;
+      height: min-content;
+      grid-column: 1/3;
+      transition: all 100ms ease-in-out;
+      @media (max-height: 600px) {
+        grid-column: 1/3;
+        grid-row: 2/5;
+      }
+    }
+    .to_about {
+      display: flex;
+      column-gap: 6px;
+      transition: all 100ms ease-in-out;
+    }
+    .intro-icon {
+      transition: all 100ms ease-in-out;
+    }
     @media (max-width: 600px) {
       grid-template-columns: repeat(8, 1fr);
       grid-column: 1/9;
@@ -947,42 +987,6 @@ a:active {
       .intro-description {
         grid-row: span 1;
         // grid-column: 2/9;
-      }
-    }
-    &-title{
-      grid-column: 1/4;
-      // grid-row: 1/3;
-      grid-row: 1/2;
-      // align-self: flex-end;
-      h1 {
-        font-weight: 400;
-        font-size: 5.6rem;
-        line-height: 4.375rem;
-        margin-bottom: 0;
-        a {
-          font-weight: 700;
-          text-decoration: underline;
-          transition: all 100ms ease-in-out;
-          // &:hover{
-          //   transition: all 100ms ease-in-out;
-          //   background-color: $white;
-          //   color: $black;
-          // }
-          &:focus{
-            transition: all 100ms ease-in-out;
-            background-color: $white;
-            color: $black;
-          }
-        }
-      }
-    }
-    &-description{
-      // grid-column: 4/7;
-      grid-column: 1/4;
-      grid-row: 2/3;
-      align-self: flex-end;
-      h4 {
-        line-height: 1rem;
       }
     }
   }
@@ -1201,14 +1205,14 @@ a:active {
   z-index: 999;
   overflow: visible;
   pointer-events: none;
-  .btn-individual {
+  .btn-secondary {
     justify-content: flex-start;
   }
   .outer-frame-btns {
-    .btn-individual{
+    .btn-secondary{
       ///using button minimized otherwise it affects homepage non-minimized buttons
       &.minimized {
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
     // &-bottom-right, &-top-left, &-bottom-left, &-top-right {
@@ -1220,7 +1224,7 @@ a:active {
       //     // margin: -0.25rem;
       //     transition: all 100ms ease-in-out;
       //   }
-      //   .btn-individual{
+      //   .btn-secondary{
       //     &.minimized {
       //       opacity: 1;
       //     }
@@ -1264,51 +1268,21 @@ a:active {
   //   }
   // }
   &.minimized {
-    .outer-frame-btns-top-right{
+    .outer-frame-btns-top-right, .outer-frame-btns-top-left{
       transition: ease-in 100ms;
-      width: 40px;
-      button {
-        overflow: hidden;
-        transition: ease-in 100ms;
-        &:hover {
-          overflow: visible;
-          // width: 100%;
-          transition: ease-in 100ms;
-          opacity: 1;
-        }
-      }
+      // width: 40px;
+      width: 48px;
       &:hover {
         transition: ease-in 100ms;
         width: 118px;
-        .btn-individual{
+        .btn-secondary{
           opacity: 1;
-        }
-        .specialboi {
-        //// the red span circle won't appear without this because it ignores width
-          display: flex;
         }
       }
     }
     .outer-frame-btns-top-left{
-      transition: ease-in 100ms;
-      width: 40px;
-      button {
-        overflow: hidden;
-        transition: ease-in 100ms;
-        &:hover {
-          overflow: visible;
-          // width: 100%;
-          transition: ease-in 100ms;
-          opacity: 1;
-        }
-      }
       &:hover {
-        transition: ease-in 100ms;
         width: 145px;
-        .btn-individual{
-          opacity: 1;
-        }
-
       }
     }
   }
@@ -1450,7 +1424,7 @@ a:active {
       .top-right-icon {
         display: inline-block;
         height: 1.5rem;
-        width: 1.5rem;
+        min-width: 1.5rem;
         border-radius: 50%;
         background-color: $red;
         transition: all 100ms ease-in-out;
@@ -1507,7 +1481,7 @@ a:active {
         margin-bottom: 0.5rem;
         width: 100%;
       }
-      .btn-individual {
+      .btn-secondary {
         justify-content: flex-start;
       }
       .outer-frame-btns-top-right {
@@ -2049,6 +2023,7 @@ a:active {
       width: 100%;
       height: 30rem;
       overflow: hidden;
+      margin-top: 2rem;
       @media (max-width: 600px) {
         height: 15rem;
       }
@@ -2214,7 +2189,7 @@ a:active {
         grid-column: 1/6;
         width: 100%;
         object-fit: cover;
-        grid-row-gap: 2rem;
+        grid-row-gap: 3.5rem;
       }
       .column-3 {
         // height: 100%;
@@ -2223,7 +2198,7 @@ a:active {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        grid-row-gap: 2rem;
+        grid-row-gap: 3.5rem;
       }
     }
     .column-3-5 {
@@ -2269,6 +2244,10 @@ a:active {
       margin-bottom: 8.5rem;
       overflow: visible;
       // overflow-x: hidden;
+      h3 {
+        width: 100%;
+        grid-column: span 8;
+      }
       @media (max-width: 600px) {
         display: grid;
         grid-column: span 6;
@@ -2343,7 +2322,8 @@ a:active {
         margin: 0 0 1.875rem;
         object-fit: contain;
         width: 100%;
-        left: 0;
+        // left: 0;
+        align-self: center;
         // opacity: 0.9;
         min-height: 30rem;
         @media (max-width: 600px) {
@@ -2607,7 +2587,7 @@ a:active {
       margin: 0;
       z-index: 99999;
     }
-    .btn-individual {
+    .btn-secondary {
       width: max-content;
       align-items: center;
       display: flex;
