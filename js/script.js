@@ -1377,6 +1377,8 @@ $(window).on('load', () => {
 
 
 
+
+
 //for going from blur to unblur
 
 // var $horizontal = $('.focus-ring');
@@ -1434,9 +1436,17 @@ function scrollBarLeft(){
     $('.focus-ring').scrollLeft($(this).scrollTop());
   });
   
+  $('.inner-box-container-container').scroll(function () {
+    $('.focus-ring').scrollLeft($(this).scrollTop());
+  });
   
   $('.focus-ring').scroll(function () {
     $('.content').scrollTop($(this).scrollLeft());
+    $('.inner-box-container-container').scrollTop($(this).scrollLeft());
+  });
+
+  $('.focus-ring').scroll(function () {
+    $('.inner-box-container-container').scrollTop($(this).scrollLeft());
   });
 };
 
