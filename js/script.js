@@ -487,24 +487,19 @@ function innerBorderPos() {
         // 'transition': 'top 0s, left 0s;'
       });
     }
-    
-    
-    
-    //////////////////////// simplified inner container hover //////////////////
-    
-    $('.inner-border').css({
-      'width': ($(".inner-box").outerWidth() + 12 + 'px'),
-      'height': ($(".inner-box").outerHeight() + 12 + 'px')
-    });
-    
 };
-  
+
+
+// calculate inner-border position and size
 $( document ).ready(function() {
   
   innerBorderPos(this);
   
+  let currentBox;
   
   $('.inner-box').mouseenter(function(){
+    currentBox = $(this);
+
     $(this).css({
       'background-color': '#E5DDD4',
       'color': '#22201e',
@@ -512,18 +507,31 @@ $( document ).ready(function() {
     // $(this).css({'transform': 'scale(1.025)'});
     $(this).find('h3, p').css({'color': '#22201e',});
     $('.inner-border').addClass('show');
+
     position = $(this).position();
+    
     $('.inner-border').css({
       'left': position.left - 6 + 'px',
       'top': position.top - 6 + 'px',
       'transition': ''
     });
+
     if ($(this).hasClass('expand')) {
       $(this).css({'transform': 'scale(1)'});
       $('.inner-border').removeClass('show');
       // $('.play-border').addClass('show');
     }
+
+      //////////////////////// simplified inner container hover //////////////////
+    
+    $('.inner-border').css({
+      'width': ($(this).outerWidth() + 12 + 'px'),
+      'height': ($(this).outerHeight() + 12 + 'px')
+    });
+
   });
+
+
   
   $('.inner-box').mouseleave(function(){
     // $(this).css({'transform': ''});
