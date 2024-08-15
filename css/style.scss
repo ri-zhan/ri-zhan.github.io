@@ -694,7 +694,7 @@ a:active {
   .inner-box {
     // display: grid;
     text-decoration: none;
-    padding: 2.5rem;
+    padding: 2rem;
     transition: all 300ms ease-in-out;
     justify-items: center;
     align-content: space-between;
@@ -714,7 +714,20 @@ a:active {
     }
     &.small {
       grid-column: span 2;
-      padding: 1.5rem;
+      padding: 1.25rem;
+      height: 250px;
+      img {
+        height: 60%;
+        &.shrunk {
+          height: 40%;
+        }
+      }
+      .inner-box-text {
+        height: 0;
+        &.show{
+          height: 30%;
+        }
+      }
     }
     @media (max-width: 600px) {
       grid-column: span 7;
@@ -786,7 +799,7 @@ a:active {
       object-fit: scale-down;
       height: 70%;
       padding-bottom: 1rem;
-      &.small {
+      &.shrunk {
         height: 50%;
       }
       @media (max-width: 600px) {

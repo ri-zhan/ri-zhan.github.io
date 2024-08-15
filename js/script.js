@@ -1413,7 +1413,7 @@ $(window).on('load', () => {
 
 $('.inner-box').hover(function(){
   $(this).children('.project-description, .inner-box-text').toggleClass('show');
-  $(this).children('img').toggleClass('small');
+  $(this).children('img').toggleClass('shrunk');
 });
 
 // $('.inner-box').mouseenter(function(){
