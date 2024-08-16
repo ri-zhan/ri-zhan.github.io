@@ -533,16 +533,19 @@ a:active {
   display: flex;
 }
 .inner-frame-container .inner-box {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   padding: 2rem;
   transition: all 300ms ease-in-out;
-  justify-items: center;
-  align-content: space-between;
+  align-items: center;
+  justify-content: center;
   z-index: 999998;
-  height: 300px;
+  height: 450px;
   width: 100%;
   border: 0.025rem solid #E5DDD4;
   background-color: #22201e;
+  justify-content: space-between;
   transition: all 300ms ease-in-out;
   grid-row-gap: 0.5rem;
   box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
@@ -561,13 +564,13 @@ a:active {
   height: 60%;
 }
 .inner-frame-container .inner-box.small img.shrunk {
-  height: 40%;
+  height: 0%;
 }
 .inner-frame-container .inner-box.small .inner-box-text {
   height: 0;
 }
 .inner-frame-container .inner-box.small .inner-box-text.show {
-  height: 30%;
+  height: 80%;
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-box {
@@ -593,14 +596,16 @@ a:active {
   flex-direction: column;
   align-self: flex-end;
   transition: all 100ms ease-in-out;
-  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   height: 0%;
   text-align: center;
+  width: 100%;
+  vertical-align: top;
 }
 .inner-frame-container .inner-box-text.show {
-  height: 30%;
+  height: -moz-min-content;
+  height: min-content;
   overflow: visible;
   transition: all 100ms ease-in-out;
 }
@@ -612,7 +617,6 @@ a:active {
 .inner-frame-container .inner-box-text h3, .inner-frame-container .inner-box-text p {
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0;
 }
 .inner-frame-container .inner-box .project-description {
   transition: all 500ms ease-in-out;
@@ -621,7 +625,7 @@ a:active {
   text-overflow: truncate;
   display: grid;
   justify-self: flex-end;
-  vertical-align: bottom;
+  width: 100%;
 }
 .inner-frame-container .inner-box .project-description.show {
   height: -moz-min-content;
@@ -633,7 +637,6 @@ a:active {
   grid-template-rows: repeat(4, 1fr);
   transition: all 300ms ease-out;
   max-width: 100%;
-  width: 100%;
   max-height: 100%;
   -o-object-fit: scale-down;
      object-fit: scale-down;
@@ -641,7 +644,7 @@ a:active {
   padding-bottom: 1rem;
 }
 .inner-frame-container .inner-box img.shrunk {
-  height: 50%;
+  height: 60%;
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-box img {

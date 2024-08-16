@@ -692,17 +692,19 @@ a:active {
     }
   }
   .inner-box {
-    // display: grid;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     padding: 2rem;
     transition: all 300ms ease-in-out;
-    justify-items: center;
-    align-content: space-between;
+    align-items: center;
+    justify-content: center;
     z-index: 999998;
-    height: 300px;
+    height: 450px;
     width: 100%;
     border: 0.025rem solid $white;
     background-color: $black;
+    justify-content: space-between;
     transition: all 300ms ease-in-out;
     // grid-template-rows: repeat(5, 1fr);
     grid-row-gap: 0.5rem;
@@ -719,13 +721,13 @@ a:active {
       img {
         height: 60%;
         &.shrunk {
-          height: 40%;
+          height: 0%;
         }
       }
       .inner-box-text {
         height: 0;
         &.show{
-          height: 30%;
+          height: 80%;
         }
       }
     }
@@ -755,13 +757,15 @@ a:active {
       // grid-row: 5/6;
       align-self: flex-end;
       transition: all 100ms ease-in-out;
-      justify-content: space-between;
+      // justify-content: space-between;
       align-items: center;
       overflow: hidden;
       height: 0%;
       text-align: center;
+      width: 100%;
+      vertical-align: top;
       &.show{
-        height: 30%;
+        height: min-content;
         overflow: visible;
         transition: all 100ms ease-in-out;
       }
@@ -770,7 +774,7 @@ a:active {
       }
       h3, p {
         width: fit-content;
-        margin: 0;
+        // margin: 0;
       }
     }
     .project-description {
@@ -780,7 +784,8 @@ a:active {
       text-overflow: truncate;
       display: grid;
       justify-self: flex-end;
-      vertical-align: bottom;
+      // vertical-align: bottom;
+      width: 100%;
       &.show {
         height: min-content;
         transition: all 500ms ease-in-out;
@@ -794,13 +799,13 @@ a:active {
       transition: all 300ms ease-out;
       // grid-row: 1/4;
       max-width: 100%;
-      width: 100%;
+      // width: 100%;
       max-height: 100%;
       object-fit: scale-down;
       height: 70%;
       padding-bottom: 1rem;
       &.shrunk {
-        height: 50%;
+        height: 60%;
       }
       @media (max-width: 600px) {
         grid-row: 1/3;
