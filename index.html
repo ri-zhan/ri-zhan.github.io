@@ -46,50 +46,109 @@
 
     <!-- simplified frame -->
     <div class="inner-frame-container">
-        <div class="inner-frame simplified">
-            
-            <div class="intro">
-                <a href="aboutme.html" class="intro-title"><h1>the (ri)ipple effect</h1></a>
-                <a href="aboutme.html" class="intro-subtitle">
-                    <p>"occurs when an initial disturbance to a system propagates outward to disturb 
-                        an increasingly larger portion of the system"</p>
-                    <div class="to_about">
-                        <p>—my design philosophy</p>
-                        <span class="material-symbols-outlined intro-icon">
-                            north_east
-                        </span>
-                    </div>
-                </a>
-            </div>
+
+        <div class="intro">
+            <a href="aboutme.html" class="intro-title"><h1><span>the </span><span>(ri)pple </span><span>effect</span></h1></a>
+            <a href="aboutme.html" class="intro-subtitle">
+                <p>"occurs when an initial disturbance to a system propagates outward to disturb 
+                    an increasingly larger portion of the system"</p>
+                <div class="to_about">
+                    <p>—my design philosophy</p>
+                    <span class="material-symbols-outlined intro-icon">
+                        north_east
+                    </span>
+                </div>
+            </a>
+        </div>
+
+            <!-- projects, only occupies row 2 to 7, vertical overflow scrollsl overflow still visisble, 
+        use js to calculate the height of intro from top of screen as the top/bottom padding of this-->
+        <div class="projects" id="target">
+            <!-- projects container, is height of all of the content, extends outside of  -->
 
             <div class="inner-border"></div>
+        
+            
+            <a href="hereafter.html" class="inner-box" id="project1">
+                <img src="images/hereafter/Device/White.png">
+                <div class="inner-box-text show">
+                    <h3>here:after</h3>
+                    <p>RGD Award for UX Design winner!</p>
+                </div>
+                <div class="project-description">
+                    <p>A journaling application designed to support young adults in documenting their emotions and reflecting on past experiences. Here:after helps you reflect HERE, and think about it AFTER. </p>
+                </div>
+            </a>
 
-            <div class="inner-box-container">
-    
-                <a href="hereafter.html" class="inner-box" id="project1">
-                    <div class="inner-box-img">
-                        <img src="images/hereafter/Device/White.png">
-                    </div>
-                    <div class="inner-box-text">
-                        <h3>here:after</h3>
-                        <p>RGD tie winner for UX design!</p>
-                    </div>
-                </a>
-
-                <a href="tcli.html" class="inner-box" id="project2">
-                    <div class="inner-box-img">
-                        <img src="/images/tclibrary/TCLIbrary-cover.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
-                    </div>
-                    <div class="inner-box-text">
-                        <h3>TCLIbrary</h3>
-                        <p>User Research and Interface</p>
-                    </div>
-                </a>
+            <a href="tcli.html" class="inner-box" id="project2">
+                <img src="/images/tclibrary/TCLIbrary-cover.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+                <div class="inner-box-text show">
+                    <h3>TCLIbrary</h3>
+                    <p>Designathon Runner-up</p>
+                </div>
+                <div class="project-description">
+                    <p>An app aimed to improve access to different genres and categories rich in journals, literature, and books to aid reading and learning, placing as runner-up for Ada’s Base ProtoJam 2022 competition.</p>
+                </div>
+            </a>
+                
+            <div href="" class="inner-box" id="project2">
+                <img src="/images/mark/mark_thumbnail.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+                <div class="inner-box-text show">
+                    <h3>Mark</h3>
+                    <p>Interface and experience overhaul @ IBM</p>
+                </div>
+                <div class="project-description">
+                    <h3>[coming soon]</h3>
+                    <p>Mark is an AI-powered marking assistant that helps both authors and students in the assignment creation and completion process. 
+                    </p>
+                </div>
             </div>
 
-            <div class="content-cover"></div>
 
+            
+            <h2 class="projects-section">More works</h2>
+
+            
+<!--             
+            <div href="" class="inner-box small" id="project2">
+                <img src="/images/tclibrary/TCLIbrary-cover.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+                <div class="inner-box-text show">
+                    <h3>Skills Network Design System</h3>
+                </div>
+                <div class="project-description">
+                    <h3>[coming soon]</h3>
+                    <p>Author Workbench  
+                    </p>
+                </div>
+            </div> -->
+            
+            
+            <div href="" class="inner-box small" id="project2">
+                <img src="/images/more_works/unsdg/unsdg_expanded.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+                <div class="inner-box-text show">
+                    <h3>2 Decades of Progress [coming soon]</h3>
+                </div>
+                <div class="project-description">
+                    <p>Using data from the UN SDG, this project visualizes the progress over time and geograhpical locations.
+                    </p>
+                </div>
+            </div>
+
+            <div href="" class="inner-box small" id="project2">
+                <img src="/images/more_works/sea_urchin/sea_urchin_opening_page.png" alt="Onboarding screens for TCLibrary" class="content-hero-img" id="item">                    
+                <div class="inner-box-text show">
+                    <h3>Sea Urchin Invasion<br/>[coming soon]</h3>
+                </div>
+                <div class="project-description">
+                    <p>The consequneces of human intervention in the natural ecosystem visualized and gamified.
+                    </p>
+                </div>
+            </div>
         </div>
+
+
+        <div class="content-cover"></div>
+
     </div>
     
     <div class="outer-frame">

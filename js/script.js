@@ -35,6 +35,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+window.onload = function () {
+  introPos = $('.intro')
+  $('.projects').css({
+    'padding-top': introPos.position().top,
+    'padding-bottom': introPos.position().top,
+  })
+};
+
+
 
 // load image before rest of the page loads
 $(function(){
@@ -461,55 +470,76 @@ $('#slideshow').css({
       
       
 function innerBorderPos() {
-  position = $('.inner-box-container-container').children('.inner-box').position();
+  position = $('.projects').children('.inner-box').position();
   
-  var nav = $('.inner-box-container-container');
+  var nav = $('.projects');
   if (nav.length) {
     // prevents the "uncaught typeeroor message in console"
     // $('.inner-box-container-container').on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
       //   position = $('.inner-box-container-container').children('.inner-box').eq(1).position();
       // });
       $('.inner-border').css({
-        'left': position.left - 12,
-        'top': position.top - 12,
+        // 'left': position.left - 12,
+        // 'top': position.top - 12,
+        'left': position.left,
+        'top': position.top,
+
         // 'transition': 'top 0s, left 0s;'
       });
     }
-    
-    
-    
-    //////////////////////// simplified inner container hover //////////////////
-    
-    $('.inner-border').css({
-      'width': ($(".inner-box").outerWidth() + 24 + 'px'),
-      'height': ($(".inner-box").outerHeight() + 24 + 'px')
-    });
-    
 };
-  
+
+
+// calculate inner-border position and size
 $( document ).ready(function() {
   
   innerBorderPos(this);
   
+  let currentBox;
   
   $('.inner-box').mouseenter(function(){
-    $(this).css({'transform': 'scale(1.025)'});
+    currentBox = $(this);
+
+    $(this).css({
+      'background-color': '#E5DDD4',
+      'color': '#22201e',
+    });
+    // $(this).css({'transform': 'scale(1.025)'});
+    $(this).find('h3, p').css({'color': '#22201e',});
     $('.inner-border').addClass('show');
+
     position = $(this).position();
+    
     $('.inner-border').css({
-      'left': position.left - 12 + 'px',
-      'top': position.top - 12 + 'px',
+      'left': position.left - 6 + 'px',
+      'top': position.top - 6 + 'px',
       'transition': ''
     });
+
     if ($(this).hasClass('expand')) {
       $(this).css({'transform': 'scale(1)'});
       $('.inner-border').removeClass('show');
       // $('.play-border').addClass('show');
     }
+
+      //////////////////////// simplified inner container hover //////////////////
+    
+    $('.inner-border').css({
+      'width': ($(this).outerWidth() + 12 + 'px'),
+      'height': ($(this).outerHeight() + 12 + 'px')
+    });
+
   });
+
+
   
   $('.inner-box').mouseleave(function(){
-    $(this).css({'transform': ''});
+    // $(this).css({'transform': ''});
+    $(this).css({
+      'background-color': '',
+      'color': '',
+    });
+    $(this).find('h3, p').css({'color': '',});
     $('.inner-border').removeClass('show');
     // innerBorderPos(this);
   });
@@ -1372,7 +1402,31 @@ $(window).on('load', () => {
   });
 });
 
+{/* <div class="inner-box-text">
+<h3>here:after</h3>
+<p>RGD tie winner for UX design!</p>
+</div>
+<div class="project-description">
+<p>An app aimed to improve access to different genres and categories rich in journals, literature, and books to aid reading and learning, placing as runner-up for Ada’s Base ProtoJam 2022 competition.</p>
+</div> */}
 
+
+$('.inner-box').hover(function(){
+  $(this).children('.project-description, .inner-box-text').toggleClass('show');
+  $(this).children('img').toggleClass('shrunk');
+});
+
+// $('.inner-box').mouseenter(function(){
+//   $(this).children('.inner-box-text').css({
+//     'height': '0',
+//   })
+// });
+
+// $('.inner-box').mouseleave(function(){
+//   $(this).children('.inner-box-text').css({
+//     'height': '',
+//   })
+// });
 
 //for going from blur to unblur
 
@@ -1431,9 +1485,17 @@ function scrollBarLeft(){
     $('.focus-ring').scrollLeft($(this).scrollTop());
   });
   
+  $('.inner-box-container-container').scroll(function () {
+    $('.focus-ring').scrollLeft($(this).scrollTop());
+  });
   
   $('.focus-ring').scroll(function () {
     $('.content').scrollTop($(this).scrollLeft());
+    $('.inner-box-container-container').scrollTop($(this).scrollLeft());
+  });
+
+  $('.focus-ring').scroll(function () {
+    $('.inner-box-container-container').scrollTop($(this).scrollLeft());
   });
 };
 
