@@ -12,7 +12,7 @@ body {
   background-color: $black;
   font-style: normal;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 28px;
   font-family: neue-haas-grotesk-display, sans-serif;
   color: $white;
   display: flex;
@@ -26,7 +26,7 @@ body {
 
 
 h1, h2, h3, h4, h5, button {
-  font-family: source-code-variable, monospace;
+  font-family: source-code-pro, monospace;
   text-transform: lowercase;
   color: $white;
 }
@@ -43,19 +43,34 @@ h1 {
 }
 
 h2 {
-  text-align: center;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px; /* 125% */
+  margin: 0;
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+}
+
+
+h3 {
+  // text-align: center;
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 700;
+  line-height: 46px;
   margin: 0;
   @media (max-width: 600px) {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+  &.pop-out {
+    padding: 3rem 4.75rem;
+  }
 }
 
-h3 {
+h4 {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -65,18 +80,6 @@ h3 {
   margin: 0;
 }
 
-
-h4 {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 125% */
-  text-transform: lowercase;
-  margin: 0 0 24px 0;
-  margin: 0;
-}
-
-
 h5 {
   font-size: 16px;
   font-style: normal;
@@ -84,9 +87,26 @@ h5 {
   line-height: 20px; /* 125% */
   text-transform: lowercase;
   margin: 0;
+  &.pop-out {
+    padding: 1rem 1.75rem;
+  }
 }
 
-// h5 {
+
+h6 {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 125% */
+  // text-transform: lowercase;
+  margin: 0 0 24px 0;
+  margin: 0;
+}
+
+
+
+// h6 {
 //   font-family: source-code-variable, monospace;
 //   // font-weight: 600;
 //   font-weight: 500;
@@ -100,17 +120,61 @@ h5 {
 // }
 
 
+h1, h3, h4, h5, h6, p {
+  &.pop-out {
+    // padding: 1.5rem 2.25rem;
+    background-color: $white;
+    color: $black;
+    &.outline {
+      background-color: $black;
+      color: $white;  
+      border: solid 1px $white;
+    }
+  }
+}
 
-
-p, ul {
+p, ul, ol {
   color: $white;
   margin: 0 0 0 0;
   font-family: neue-haas-grotesk-display, sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 138.889% */
-  letter-spacing: 0.4px;
+  font-weight: 400;
+  line-height: 28px; /* 138.889% */
+  letter-spacing: 0.7px;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  color: $white;
+  margin: 0 0 0 0.875rem; 
+}
+
+ul {
+  li {
+    margin-bottom: 0.875rem;
+    gap: 1rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  img {
+    margin-top: 0.5rem;
+  }
+}
+
+
+ol {
+  li {
+    margin-bottom: 2rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  img {
+    margin-top: 0.5rem;
+  }
 }
 
 a {
@@ -204,18 +268,6 @@ button, .btn-primary, .btn-secondary {
   min-width: fit-content;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  color: $white;
-  margin: 0 0 0 0.875rem; 
-  li {
-    margin-bottom: 0.5rem;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 
 
 
@@ -352,7 +404,7 @@ footer, .footer {
   //     }
   //   }
   // }
-  h4 {
+  h5 {
     margin-bottom: 0;
     padding-right: 1rem;
     white-space: nowrap;
@@ -729,19 +781,26 @@ a:active {
       padding: 1.25rem;
       height: 250px;
       justify-content: space-between;
-      h3 {
+      h4 {
         margin: 0;
       }
       img {
-        height: 60%;
+        // height: 60%;
+        width: 100%;
         &.shrunk {
           height: 0%;
+          width: 0%;
         }
       }
       .inner-box-text {
         height: 0;
         padding-bottom: 0;
         &.show{
+          height: 100%;
+        }
+      }
+      .project-description {
+        &.show {
           height: min-content;
         }
       }
@@ -778,16 +837,16 @@ a:active {
       height: 0%;
       text-align: center;
       width: 100%;
-      vertical-align: top;
+      justify-content: flex-end;
       &.show{
-        height: min-content;
+        height: 20%;
         overflow: visible;
         transition: all 100ms ease-in-out;
       }
       @media (max-width: 600px) {
         grid-row: 3/4;
       }
-      h3, p {
+      h4, p {
         width: fit-content;
         // margin: 0;
       }
@@ -802,7 +861,7 @@ a:active {
       // vertical-align: bottom;
       width: 100%;
       &.show {
-        height: min-content;
+        height: 60%;
         transition: all 500ms ease-out;
       }
     }
@@ -811,13 +870,13 @@ a:active {
       display: flex;
       grid-template-rows: repeat(4, 1fr);
       // grid-row: 1/5;
-      transition: all 500ms ease-out;
+      transition: all 500ms ease-in-out;
       // grid-row: 1/4;
       max-width: 100%;
       // width: 100%;
       max-height: 100%;
       object-fit: scale-down;
-      height: 70%;
+      height: 80%;
       width: 100%;
       padding-bottom: 1rem;
       &.shrunk {
@@ -1658,19 +1717,19 @@ a:active {
     opacity: 100%;
     &.selected {
       opacity: 100%;
-      h5 {
+      h6 {
         font-weight: 500;
       }
     }
     &.deselected {
       // opacity: 50%;
-      h5 {
+      h6 {
         font-weight: 300;
       }
     }
     &:hover {
       opacity: 100%;
-      h5 {
+      h6 {
         color: $red;
         font-weight: 500;
         
@@ -1903,7 +1962,7 @@ a:active {
     display: flex;
     flex-direction: column;
     // margin: 2rem;
-    h2 {
+    h3 {
       justify-self: center;
       text-align: center;
     }
@@ -1960,7 +2019,7 @@ a:active {
     overflow-x: hidden;
     &-hero {
       height: 30rem;
-      h1, h2 {
+      h1, h3 {
         z-index: -2;
       }
       &-img {
@@ -1991,7 +2050,7 @@ a:active {
         margin-top: 6rem;
       }
     }
-    // p, h4 {
+    // p, h5 {
     //   color: $white;
     // }
     // &::-webkit-scrollbar {
@@ -2174,6 +2233,7 @@ a:active {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       column-gap: 3rem;
+      margin-bottom: 4rem;
       justify-content: space-between;
       // margin-bottom: 3rem;
       @media (max-width: 600px) {
@@ -2212,6 +2272,7 @@ a:active {
       row-gap: 1rem;
       justify-content: space-between;
       // margin-bottom: 3rem;
+      margin-bottom: 4rem;
       @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
@@ -2247,7 +2308,7 @@ a:active {
       overflow: visible;
       row-gap: 2rem;
       // overflow-x: hidden;
-      h3 {
+      h4 {
         width: 100%;
         grid-column: span 8;
       }
@@ -2385,7 +2446,7 @@ a:active {
       @media (max-width: 600px) {
         width: 100%;
       }
-      h2 {
+      h3 {
         @media (max-width: 1200px) {
           white-space: normal;
           padding-right: 0;
@@ -2400,7 +2461,7 @@ a:active {
         height: -50%;
         border-top: 0.025rem solid $white;
       }
-      >h2 {
+      >h3 {
         margin-bottom: 0;
         padding: 0 2rem;
         min-width: fit-content;
