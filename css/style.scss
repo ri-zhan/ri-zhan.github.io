@@ -7,6 +7,12 @@ $red: #E63223;
 // $white: #EAE5E2;
 $white: #E5DDD4;
 $black: #22201e;
+$lighter: #FFFAF4;
+
+.lighter {
+  font-weight: 600;
+  color: $lighter;
+}
 
 body {
   background-color: $black;
@@ -28,7 +34,7 @@ body {
 h1, h2, h3, h4, h5, button {
   font-family: source-code-pro, monospace;
   text-transform: lowercase;
-  color: $white;
+  color: $lighter;
 }
 
 h1 {
@@ -74,7 +80,7 @@ h4 {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 125% */
+  line-height: 36px; /* 125% */
   text-transform: lowercase;
   margin: 0 0 24px 0;
   margin: 0;
@@ -87,6 +93,7 @@ h5 {
   line-height: 20px; /* 125% */
   text-transform: lowercase;
   margin: 0;
+  color: $white;
   &.pop-out {
     padding: 1rem 1.75rem;
   }
