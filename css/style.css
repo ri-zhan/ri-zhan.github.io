@@ -5,7 +5,7 @@
 
 .lighter {
   font-weight: 600;
-  color: #FFFAF4;
+  color: #F9F1E8;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
 h1, h2, h3, h4, h5, button {
   font-family: source-code-pro, monospace;
   text-transform: lowercase;
-  color: #FFFAF4;
+  color: #F9F1E8;
 }
 
 h1 {
@@ -107,13 +107,13 @@ h6 {
 }
 
 h1.pop-out, h3.pop-out, h4.pop-out, h5.pop-out, h6.pop-out, p.pop-out {
-  background-color: #FFFAF4;
+  background-color: #F9F1E8;
   color: #22201e;
 }
 h1.pop-out.outline, h3.pop-out.outline, h4.pop-out.outline, h5.pop-out.outline, h6.pop-out.outline, p.pop-out.outline {
   background-color: #22201e;
-  color: #FFFAF4;
-  border: solid 1px #FFFAF4;
+  color: #F9F1E8;
+  border: solid 0.025rem #F9F1E8;
 }
 
 p, ul, ol {
@@ -1760,6 +1760,9 @@ a:active {
   margin-bottom: 4rem;
   justify-content: space-between;
 }
+.content-container .content .column-5-3:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 600px) {
   .content-container .content .column-5-3 {
     display: flex;
@@ -1798,6 +1801,9 @@ a:active {
   justify-content: space-between;
   margin-bottom: 4rem;
 }
+.content-container .content .column-3-5:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 600px) {
   .content-container .content .column-3-5 {
     display: flex;
@@ -1831,6 +1837,13 @@ a:active {
   margin-bottom: 8.5rem;
   overflow: visible;
   row-gap: 2rem;
+}
+.content-container .content .fullRow.divider {
+  height: 0px;
+  border-top: solid 0.025rem #F9F1E8;
+}
+.content-container .content .fullRow:last-child {
+  margin-bottom: 0;
 }
 .content-container .content .fullRow h4 {
   width: 100%;

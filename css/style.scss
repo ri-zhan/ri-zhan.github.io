@@ -6,7 +6,7 @@
 $red: #E63223;
 $white: #E5DDD4;
 $black: #22201e;
-$lighter: #FFFAF4;
+$lighter: #F9F1E8;
 
 .lighter {
   font-weight: 600;
@@ -134,7 +134,7 @@ h1, h3, h4, h5, h6, p {
     &.outline {
       background-color: $black;
       color: $lighter;  
-      border: solid 1px $lighter;
+      border: solid 0.025rem $lighter;
     }
   }
 }
@@ -2242,6 +2242,9 @@ a:active {
       margin-bottom: 4rem;
       justify-content: space-between;
       // margin-bottom: 3rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
       @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
@@ -2278,6 +2281,9 @@ a:active {
       row-gap: 1rem;
       justify-content: space-between;
       // margin-bottom: 3rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
       margin-bottom: 4rem;
       @media (max-width: 600px) {
         display: flex;
@@ -2313,6 +2319,13 @@ a:active {
       margin-bottom: 8.5rem;
       overflow: visible;
       row-gap: 2rem;
+      &.divider {
+        height: 0px;
+        border-top: solid 0.025rem $lighter; 
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
       // overflow-x: hidden;
       h4 {
         width: 100%;
