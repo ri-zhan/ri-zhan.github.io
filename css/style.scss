@@ -4,7 +4,6 @@
 }
 
 $red: #E63223;
-// $white: #EAE5E2;
 $white: #E5DDD4;
 $black: #22201e;
 $lighter: #FFFAF4;
@@ -130,12 +129,12 @@ h6 {
 h1, h3, h4, h5, h6, p {
   &.pop-out {
     // padding: 1.5rem 2.25rem;
-    background-color: $white;
+    background-color: $lighter;
     color: $black;
     &.outline {
       background-color: $black;
-      color: $white;  
-      border: solid 1px $white;
+      color: $lighter;  
+      border: solid 1px $lighter;
     }
   }
 }

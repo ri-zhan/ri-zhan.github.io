@@ -107,13 +107,13 @@ h6 {
 }
 
 h1.pop-out, h3.pop-out, h4.pop-out, h5.pop-out, h6.pop-out, p.pop-out {
-  background-color: #E5DDD4;
+  background-color: #FFFAF4;
   color: #22201e;
 }
 h1.pop-out.outline, h3.pop-out.outline, h4.pop-out.outline, h5.pop-out.outline, h6.pop-out.outline, p.pop-out.outline {
   background-color: #22201e;
-  color: #E5DDD4;
-  border: solid 1px #E5DDD4;
+  color: #FFFAF4;
+  border: solid 1px #FFFAF4;
 }
 
 p, ul, ol {
