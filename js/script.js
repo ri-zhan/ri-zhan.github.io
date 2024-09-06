@@ -5,9 +5,10 @@ let mobileSize=($(window).width() <= 600);
     
 
 $( "h1" ).prepend( "# " );
-$( "h2" ).prepend( "## " );
-$( "h3" ).prepend( "### " );
-$( "h4" ).prepend( "#### " );
+$( "h3" ).prepend( "## " );
+$( "h4" ).prepend( "### " );
+$( "h5" ).prepend( "#### " );
+// $( "h6" ).prepend( "##### " );
 
 
 // landing page to about me link hover function
@@ -506,7 +507,7 @@ $( document ).ready(function() {
       'color': '#22201e',
     });
     // $(this).css({'transform': 'scale(1.025)'});
-    $(this).find('h3, p').css({'color': '#22201e',});
+    $(this).find('h4, p').css({'color': '#22201e',});
     $('.inner-border').addClass('show');
 
     position = $(this).position();
@@ -540,7 +541,7 @@ $( document ).ready(function() {
       'background-color': '',
       'color': '',
     });
-    $(this).find('h3, p').css({'color': '',});
+    $(this).find('h4, p').css({'color': '',});
     $('.inner-border').removeClass('show');
     // innerBorderPos(this);
   });
@@ -1404,7 +1405,7 @@ $(window).on('load', () => {
 });
 
 {/* <div class="inner-box-text">
-<h3>here:after</h3>
+<h4>here:after</h4>
 <p>RGD tie winner for UX design!</p>
 </div>
 <div class="project-description">
