@@ -5,10 +5,10 @@ let mobileSize=($(window).width() <= 600);
     
 
 $( "h1" ).prepend( "# " );
-$( "h3" ).prepend( "## " );
-$( "h4" ).prepend( "### " );
-$( "h5" ).prepend( "#### " );
-// $( "h6" ).prepend( "##### " );
+$( "h2" ).prepend( "## " );
+$( "h3" ).prepend( "### " );
+$( "h4" ).prepend( "#### " );
+$( "h5" ).prepend( "##### " );
 
 
 // landing page to about me link hover function
