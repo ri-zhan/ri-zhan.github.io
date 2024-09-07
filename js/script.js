@@ -1167,13 +1167,13 @@ const appearWhenCenter = new IntersectionObserver
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        if($(window).width() >= 600) {
+        if($(window).width() >= 100) {
 
           entry.target.classList.add('expand');
         }
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        if($(window).width() >= 600) {
+        if($(window).width() >= 100) {
 
           entry.target.classList.remove('expand');
         }
@@ -1252,17 +1252,18 @@ expandHeading.forEach(expandHeading =>{
 
 
 
+if($(window).width() >= 600) {
+  const target = document.getElementById("target");
+  
+  document.addEventListener("wheel", function(e){
+    // prevent the default scrolling event
+    // e.preventDefault();
+  
+    // scroll the div
+    target.scrollBy(e.deltaX, e.deltaY);
+  });
+}
 
-
-const target = document.getElementById("target");
-
-document.addEventListener("wheel", function(e){
-  // prevent the default scrolling event
-  // e.preventDefault();
-
-  // scroll the div
-  target.scrollBy(e.deltaX, e.deltaY);
-});
 
 
 // $('.typewriterDiv').css({
