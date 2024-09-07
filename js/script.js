@@ -148,7 +148,7 @@ $(".section-nav").click(function(e) {
 
 
 
-/////////////// animate section-heading upon entering screen
+/////////////// 
 
 const sideBarprep = document.querySelectorAll('.child-section');
 
@@ -1153,7 +1153,7 @@ $('.filmstrip').each(function(){
 
 
 /////////////// animate section-heading upon entering screen
-const expandHeading = document.querySelectorAll('.section-heading');
+const expandHeading = document.querySelectorAll('.section-heading, .divider');
 
 const appearOptions = {
   rootMargin: '10%'
