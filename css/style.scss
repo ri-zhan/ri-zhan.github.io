@@ -42,9 +42,9 @@ h1 {
   font-weight: 700;
   line-height: 50px; /* 125% */
   margin: 0;
-  @media (max-width: 600px) {
-    font-size: 1.5rem;
-  }
+  // @media (max-width: 600px) {
+  //   font-size: 1.5rem;
+  // }
 }
 
 h2 {
@@ -53,9 +53,9 @@ h2 {
   font-weight: 700;
   line-height: 54px; /* 125% */
   margin: 0;
-  @media (max-width: 600px) {
-    font-size: 1.5rem;
-  }
+  // @media (max-width: 600px) {
+  //   font-size: 1.5rem;
+  // }
 }
 
 
@@ -67,11 +67,13 @@ h3 {
   line-height: 46px;
   margin: 0;
   @media (max-width: 600px) {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    text-wrap: wrap;
   }
   &.pop-out {
     padding: 3rem 4.75rem;
+    @media (max-width: 600px) {
+      padding: 1rem 2rem;
+    }  
   }
 }
 
@@ -221,6 +223,9 @@ button, .btn-primary, .btn-secondary {
   &.full {
     grid-column: span 8;
     padding: 0.75rem 2rem;
+    @media (max-width: 600px) {
+      grid-column: span 4;
+    }  
   }
   &:hover {
     // transform: scale(1.05);
@@ -429,6 +434,15 @@ footer, .footer {
     @media (max-width: 1100px) {
       white-space: normal;
       padding-right: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .footer-about {
+      gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 }
@@ -749,15 +763,6 @@ a:active {
   column-gap: 2rem;
   height: 100%;
   width: 100%;
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
-    margin: 0 1rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
   .projects {
     display: grid;
     grid-column: 5/11;
@@ -831,26 +836,26 @@ a:active {
         }
       }
     }
-    @media (max-width: 600px) {
-      grid-column: span 7;
-      grid-row: span 3;
-      // grid-row-start: 2;
-      grid-template-rows: repeat(3, 1fr);
-      position: relative;
-      align-content: center;
-      transition: all 300ms ease-in-out;
-      &:hover {
-        .inner-box-img {
-          opacity: 100%;
-          z-index: 9;
-          transition: all 300ms ease-in-out;
-        }
-        .inner-box-text {
-          opacity: 0.4;
-          transition: all 300ms ease-in-out;
-        }
-      }
-    }
+    // @media (max-width: 600px) {
+    //   grid-column: span 7;
+    //   grid-row: span 3;
+    //   // grid-row-start: 2;
+    //   grid-template-rows: repeat(3, 1fr);
+    //   position: relative;
+    //   align-content: center;
+    //   transition: all 300ms ease-in-out;
+    //   &:hover {
+    //     .inner-box-img {
+    //       opacity: 100%;
+    //       z-index: 9;
+    //       transition: all 300ms ease-in-out;
+    //     }
+    //     .inner-box-text {
+    //       opacity: 0.4;
+    //       transition: all 300ms ease-in-out;
+    //     }
+    //   }
+    // }
     &-text {
       display: flex;
       flex-direction: column;
@@ -869,9 +874,9 @@ a:active {
         overflow: visible;
         transition: all 100ms ease-in-out;
       }
-      @media (max-width: 600px) {
-        grid-row: 3/4;
-      }
+      // @media (max-width: 600px) {
+      //   grid-row: 3/4;
+      // }
       h4, p {
         width: fit-content;
         // margin: 0;
@@ -911,13 +916,13 @@ a:active {
         height: 50%;
         width: 80%;
       }
-      @media (max-width: 600px) {
-        grid-row: 1/3;
-        position: absolute;
-        // opacity: 0%;
-        align-self: center;
-        width: 40%;
-      }
+      // @media (max-width: 600px) {
+      //   grid-row: 1/3;
+      //   position: absolute;
+      //   // opacity: 0%;
+      //   align-self: center;
+      //   width: 40%;
+      // }
     }
 
     &-top-left, &-top-right, &-bottom-left, &-bottom-right {
@@ -1057,24 +1062,62 @@ a:active {
     .intro-icon {
       transition: all 100ms ease-in-out;
     }
-    @media (max-width: 600px) {
-      grid-template-columns: repeat(8, 1fr);
-      grid-column: 1/9;
-      grid-template-rows: 2fr 1fr;
-      grid-row: span 1;
-      grid-column-gap: 0.5rem;
-      grid-row-gap: 0.5rem;  
-      .intro-title {
-        grid-row: span 2;
-        grid-column: span 8;
-        h1 {
-          font-size: 4.5rem;
-          line-height: 4rem;
-        }
+    // @media (max-width: 600px) {
+    //   grid-template-columns: repeat(8, 1fr);
+    //   grid-column: 1/9;
+    //   grid-template-rows: 2fr 1fr;
+    //   grid-row: span 1;
+    //   grid-column-gap: 0.5rem;
+    //   grid-row-gap: 0.5rem;  
+    //   .intro-title {
+    //     grid-row: span 2;
+    //     grid-column: span 8;
+    //     h1 {
+    //       font-size: 4.5rem;
+    //       line-height: 4rem;
+    //     }
+    //   }
+    //   .intro-description {
+    //     grid-row: span 1;
+    //     // grid-column: 2/9;
+    //   }
+    // }
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    margin: 0 2rem;
+    padding: 8rem 0;
+    overflow-y: scroll;
+    height: 100vh;
+    #target {
+      overflow: visible;
+    }
+    .intro {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: none;
+      grid-row: none;
+      grid-column: 1/5;
+      display: flex;
+      flex-direction: column;
+      &-title {
+        grid-row: none;
       }
-      .intro-description {
-        grid-row: span 1;
-        // grid-column: 2/9;
+      &-subtitle {
+        grid-row: none;
+      }
+    }
+    .projects {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: 1/5;
+      column-gap: 0;
+      overflow: visible;
+      height: min-content;
+      .inner-box {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column: 1/5;
       }
     }
   }
@@ -1521,95 +1564,95 @@ a:active {
         opacity: 0;
       }
     }
-    @media (max-width: 600px) {
-      z-index: 999999;
-      width: 3rem;
-      color: $white;
-      border: 0.0625rem solid $white;   
-      background-color: $black;
-      pointer-events: all;
-      margin: 1.25rem;
-      padding: 0;
-      overflow: hidden;
-      transition: all 300ms ease-in-out;
-      height: 40px;
-      display: flex;
-      flex-direction: column;
-      // justify-content: center;
-      // .outer-frame-text {
-      //   width: 100%;
-      //   white-space: nowrap;
-      // }
-      #dropDownBtnIcon{
-        transition: all 200ms ease-in-out;
-        justify-self: flex-start;
-      }
-      &.open{
-        transition: all 300ms ease-in-out;
-        width: 10rem;
-        #dropDownBtnIcon{
-          transform: rotate(180deg);
-          transition: all 200ms ease-in-out;
-        }
-        // .outer-frame-text {
-        //   width: 100%;
-        // }
-      }
-      button{
-        color: $white;
-        transform-origin: bottom left;
-        border: none;
-        background-color: none;
-        margin-left: 0;
-        transform: none;
-        justify-content: center;
-      }
-      #dropDownBtn {
-        display: flex;
-        margin-bottom: 0.5rem;
-        width: 100%;
-      }
-      .btn-secondary {
-        justify-content: flex-start;
-      }
-      .outer-frame-btns-top-right {
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.5rem;
-        margin-bottom: 0.5rem;
-        width: 100%;
-        button {
-          width: 100%;
-        }
-      }
-      .outer-frame-btns-top-left {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0.5rem;
-        width: 100%;
-        button {
-          width: 100%;
-        }
-      }
-      .outer-frame-btns-bottom-left {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0.5rem;
-        width: 100%;
-        button {
-          width: 100%;
-        }
-      }
-      .outer-frame-btns-bottom-right {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0.5rem;
-        width: 100%;
-        button {
-          width: 100%;
-        }
-      }
-    }
+    // @media (max-width: 600px) {
+    //   z-index: 999999;
+    //   width: 3rem;
+    //   color: $white;
+    //   border: 0.0625rem solid $white;   
+    //   background-color: $black;
+    //   pointer-events: all;
+    //   margin: 1.25rem;
+    //   padding: 0;
+    //   overflow: hidden;
+    //   transition: all 300ms ease-in-out;
+    //   height: 40px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   // justify-content: center;
+    //   // .outer-frame-text {
+    //   //   width: 100%;
+    //   //   white-space: nowrap;
+    //   // }
+    //   #dropDownBtnIcon{
+    //     transition: all 200ms ease-in-out;
+    //     justify-self: flex-start;
+    //   }
+    //   &.open{
+    //     transition: all 300ms ease-in-out;
+    //     width: 10rem;
+    //     #dropDownBtnIcon{
+    //       transform: rotate(180deg);
+    //       transition: all 200ms ease-in-out;
+    //     }
+    //     // .outer-frame-text {
+    //     //   width: 100%;
+    //     // }
+    //   }
+    //   button{
+    //     color: $white;
+    //     transform-origin: bottom left;
+    //     border: none;
+    //     background-color: none;
+    //     margin-left: 0;
+    //     transform: none;
+    //     justify-content: center;
+    //   }
+    //   // #dropDownBtn {
+    //   //   display: flex;
+    //   //   margin-bottom: 0.5rem;
+    //   //   width: 100%;
+    //   // }
+    //   .btn-secondary {
+    //     justify-content: flex-start;
+    //   }
+    //   .outer-frame-btns-top-right {
+    //     display: flex;
+    //     flex-direction: column;
+    //     row-gap: 0.5rem;
+    //     margin-bottom: 0.5rem;
+    //     width: 100%;
+    //     button {
+    //       width: 100%;
+    //     }
+    //   }
+    //   .outer-frame-btns-top-left {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-bottom: 0.5rem;
+    //     width: 100%;
+    //     button {
+    //       width: 100%;
+    //     }
+    //   }
+    //   .outer-frame-btns-bottom-left {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-bottom: 0.5rem;
+    //     width: 100%;
+    //     button {
+    //       width: 100%;
+    //     }
+    //   }
+    //   .outer-frame-btns-bottom-right {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-bottom: 0.5rem;
+    //     width: 100%;
+    //     button {
+    //       width: 100%;
+    //     }
+    //   }
+    // }
   }
 }
 
@@ -1885,6 +1928,8 @@ a:active {
   text-align: center; 
   border-top: 0.025rem solid $white;
   border-bottom: 0.025rem solid $white;
+  padding: 1rem 0.5rem;
+  align-self: center;
   &.expand {
     width: 100%;
   }
@@ -2053,7 +2098,7 @@ a:active {
   height: 100%;
   width: 100%;
   @media (max-width: 600px) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 1rem;
     margin: 0 2rem;
   }
@@ -2087,6 +2132,7 @@ a:active {
     @media (max-width: 600px) {
       grid-template-columns: repeat(4, 1fr);
       grid-column: 1/7;
+      grid-column: span 4;
       &::-webkit-scrollbar {
         // this needs to match with content padding
         width: 0; /* Mostly for vertical scrollbars */
@@ -2623,10 +2669,19 @@ a:active {
   column-gap: 3rem;
   // .column-5-3
   // 5 column on left
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
   .col-3l, .col-3r, .col-5l, .col-5r {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @media (max-width: 600px) {
+      grid-column: span 4;
+    }
   }
   .col-5l {
     grid-column: 1/6;
@@ -2662,6 +2717,10 @@ a:active {
     }
   }
 }
+
+
+
+
 
 
 //////////////////////////play section///////////////////////////////
@@ -3014,4 +3073,18 @@ a:active {
   @media (max-width: 1000px) {
     display: none;
     }
+}
+
+
+@media (max-width: 600px) {
+  .mobile {
+    &-order-reverse {
+      flex-direction: column-reverse;
+    }
+    &-hidden {
+      display: none !important;
+      opacity: 0;
+      pointer-events: none;
+    }
+  } 
 }
