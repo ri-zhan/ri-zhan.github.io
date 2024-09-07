@@ -801,6 +801,7 @@ a:active {
       padding: 1.25rem;
       height: 250px;
       justify-content: space-between;
+      overflow: hidden;
       h4 {
         margin: 0;
       }
@@ -820,8 +821,13 @@ a:active {
         }
       }
       .project-description {
+        display: flex;
         &.show {
+          align-self: flex-end;
+          // p {
+          // }
           height: min-content;
+          max-height: min-content;
         }
       }
     }
@@ -882,6 +888,8 @@ a:active {
       width: 100%;
       &.show {
         height: 60%;
+        height: min-content;
+        max-height: min-content;
         transition: all 500ms ease-out;
       }
     }
@@ -900,8 +908,8 @@ a:active {
       width: 100%;
       padding-bottom: 1rem;
       &.shrunk {
-        height: 60%;
-        width: 90%;
+        height: 50%;
+        width: 80%;
       }
       @media (max-width: 600px) {
         grid-row: 1/3;

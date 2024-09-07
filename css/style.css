@@ -625,6 +625,7 @@ a:active {
   padding: 1.25rem;
   height: 250px;
   justify-content: space-between;
+  overflow: hidden;
 }
 .inner-frame-container .inner-box.small h4 {
   margin: 0;
@@ -643,9 +644,15 @@ a:active {
 .inner-frame-container .inner-box.small .inner-box-text.show {
   height: 100%;
 }
+.inner-frame-container .inner-box.small .project-description {
+  display: flex;
+}
 .inner-frame-container .inner-box.small .project-description.show {
+  align-self: flex-end;
   height: -moz-min-content;
   height: min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-box {
@@ -703,6 +710,10 @@ a:active {
 }
 .inner-frame-container .inner-box .project-description.show {
   height: 60%;
+  height: -moz-min-content;
+  height: min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
   transition: all 500ms ease-out;
 }
 .inner-frame-container .inner-box img {
@@ -718,8 +729,8 @@ a:active {
   padding-bottom: 1rem;
 }
 .inner-frame-container .inner-box img.shrunk {
-  height: 60%;
-  width: 90%;
+  height: 50%;
+  width: 80%;
 }
 @media (max-width: 600px) {
   .inner-frame-container .inner-box img {
