@@ -817,6 +817,7 @@ a:active {
         align-items: flex-end;
       }
       &.project-hover {
+        padding: 1rem 1.25rem;
         img {
           transition: all 500ms ease-out;
           height: 0;

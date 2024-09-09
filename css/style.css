@@ -633,6 +633,9 @@ a:active {
   display: grid;
   align-items: flex-end;
 }
+.inner-frame-container .inner-box.small.project-hover {
+  padding: 1rem 1.25rem;
+}
 .inner-frame-container .inner-box.small.project-hover img {
   transition: all 500ms ease-out;
   height: 0;
