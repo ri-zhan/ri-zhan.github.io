@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   border-radius: 2px;
-  touch-action: none;
 }
 
 $red: #E63223;
@@ -226,6 +225,9 @@ button, .btn-primary, .btn-secondary {
     padding: 0.75rem 2rem;
     @media (max-width: 600px) {
       grid-column: span 4;
+      &:hover {
+        touch-action: none;
+      }
     }  
   }
   &:hover {
@@ -803,6 +805,9 @@ a:active {
     grid-column: span 3;
     row-gap: 0;
     overflow: hidden;
+    @media (max-width: 600px) {
+      touch-action: none;
+    }
     &.small {
       grid-column: span 2;
       height: 250px;

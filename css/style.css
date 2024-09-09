@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   border-radius: 2px;
-  touch-action: none;
 }
 
 .lighter {
@@ -194,6 +193,9 @@ button.full, .btn-primary.full, .btn-secondary.full {
 @media (max-width: 600px) {
   button.full, .btn-primary.full, .btn-secondary.full {
     grid-column: span 4;
+  }
+  button.full:hover, .btn-primary.full:hover, .btn-secondary.full:hover {
+    touch-action: none;
   }
 }
 button:hover, .btn-primary:hover, .btn-secondary:hover {
@@ -618,6 +620,11 @@ a:active {
   grid-column: span 3;
   row-gap: 0;
   overflow: hidden;
+}
+@media (max-width: 600px) {
+  .inner-frame-container .inner-box {
+    touch-action: none;
+  }
 }
 .inner-frame-container .inner-box.small {
   grid-column: span 2;
