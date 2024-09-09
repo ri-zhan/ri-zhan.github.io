@@ -508,7 +508,10 @@ $( document ).ready(function() {
     });
     // $(this).css({'transform': 'scale(1.025)'});
     $(this).find('h4, p').css({'color': '#22201e',});
-    $('.inner-border').addClass('show');
+    if($(window).width() >= 600) {
+      $('.inner-border').addClass('show');
+    }
+  
 
     position = $(this).position();
     
@@ -521,7 +524,6 @@ $( document ).ready(function() {
     if ($(this).hasClass('expand')) {
       $(this).css({'transform': 'scale(1)'});
       $('.inner-border').removeClass('show');
-      // $('.play-border').addClass('show');
     }
 
       //////////////////////// simplified inner container hover //////////////////
@@ -1417,6 +1419,7 @@ $(window).on('load', () => {
 $('.inner-box').hover(function(){
   $(this).children('.project-description, .inner-box-text').toggleClass('show');
   $(this).children('img').toggleClass('shrunk');
+  $(this).toggleClass('project-hover');
 });
 
 // $('.inner-box').mouseenter(function(){
