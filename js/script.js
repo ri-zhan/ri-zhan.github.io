@@ -39,10 +39,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 window.onload = function () {
   introPos = $('.intro')
-  $('.projects').css({
-    'padding-top': introPos.position().top,
-    'padding-bottom': introPos.position().top,
-  })
+  
+  if($(window).width() >= 600) {
+    $('.projects').css({
+      'padding-top': introPos.position().top,
+      'padding-bottom': introPos.position().top,
+    })
+  }
 };
 
 

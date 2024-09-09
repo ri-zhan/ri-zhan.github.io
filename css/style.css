@@ -279,7 +279,7 @@ section img {
   grid-column: span 10;
 }
 section #content-hero {
-  height: 40rem;
+  height: 50rem;
   margin-top: 6rem;
 }
 section #content-hero h1 {
@@ -596,6 +596,11 @@ a:active {
   grid-column: span 6;
   display: flex;
 }
+@media (max-width: 600px) {
+  .inner-frame-container .projects {
+    padding-top: 4rem;
+  }
+}
 .inner-frame-container .inner-box {
   display: flex;
   flex-direction: column;
@@ -633,6 +638,18 @@ a:active {
 }
 .inner-frame-container .inner-box.small.project-hover .project-description {
   height: 100%;
+}
+@media (max-width: 600px) {
+  .inner-frame-container .inner-box.small {
+    height: 350px;
+    padding: 1.5rem 2rem;
+  }
+  .inner-frame-container .inner-box.small img {
+    height: 70%;
+  }
+  .inner-frame-container .inner-box.small .inner-box-text {
+    height: 30%;
+  }
 }
 .inner-frame-container .inner-box img {
   transition: all 500ms ease-out;

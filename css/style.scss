@@ -335,7 +335,7 @@ section {
   //   margin-bottom: 170px;
   // }
   #content-hero{
-    height: 40rem;
+    height: 50rem;
     margin-top: 6rem;
     h1 {
       margin-bottom: 15rem;
@@ -777,6 +777,9 @@ a:active {
       grid-column: span 6;
       display: flex;
     }
+    @media (max-width: 600px) {
+     padding-top: 4rem; 
+    }
   }
   .inner-box {
     display: flex;
@@ -819,6 +822,16 @@ a:active {
         }
         .project-description {
           height: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        height: 350px;
+        padding: 1.5rem 2rem;
+        img {
+          height: 70%;
+        }
+        .inner-box-text {
+          height: 30%;
         }
       }
     }
