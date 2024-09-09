@@ -621,11 +621,6 @@ a:active {
   row-gap: 0;
   overflow: hidden;
 }
-@media (max-width: 600px) {
-  .inner-frame-container .inner-box {
-    touch-action: none;
-  }
-}
 .inner-frame-container .inner-box.small {
   grid-column: span 2;
   height: 250px;

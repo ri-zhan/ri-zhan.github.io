@@ -805,9 +805,6 @@ a:active {
     grid-column: span 3;
     row-gap: 0;
     overflow: hidden;
-    @media (max-width: 600px) {
-      touch-action: none;
-    }
     &.small {
       grid-column: span 2;
       height: 250px;
