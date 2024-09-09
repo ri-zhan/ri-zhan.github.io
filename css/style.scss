@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   border-radius: 2px;
+  touch-action: none;
 }
 
 $red: #E63223;
@@ -801,6 +802,7 @@ a:active {
     box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
     grid-column: span 3;
     row-gap: 0;
+    overflow: hidden;
     &.small {
       grid-column: span 2;
       height: 250px;
@@ -857,12 +859,18 @@ a:active {
     &.project-hover {
       padding: 1.5rem 2rem;
       transition: all 500ms ease-out;
+      background-color: $white;
+      color: $black;
+      h4, p {
+        color: $black;
+      }
       img {
         transition: all 500ms ease-in-out;
         height: 50%;
         padding-bottom: 2rem;
       }
       .inner-box-text {
+        color: $black;
         transition: all 500ms ease-in-out;
         display: block;
         line-height:0;
@@ -871,6 +879,7 @@ a:active {
         opacity: 0%;
       }
       .project-description {
+        color: $black;
         transition: all 500ms ease-in-out;
         height: 50%;
         overflow: visible;

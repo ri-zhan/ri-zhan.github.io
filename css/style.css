@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   border-radius: 2px;
+  touch-action: none;
 }
 
 .lighter {
@@ -616,6 +617,7 @@ a:active {
   box-shadow: 0px 0px 25px rgba(13, 13, 13, 0.7);
   grid-column: span 3;
   row-gap: 0;
+  overflow: hidden;
 }
 .inner-frame-container .inner-box.small {
   grid-column: span 2;
@@ -674,6 +676,11 @@ a:active {
 .inner-frame-container .inner-box.project-hover {
   padding: 1.5rem 2rem;
   transition: all 500ms ease-out;
+  background-color: #E5DDD4;
+  color: #22201e;
+}
+.inner-frame-container .inner-box.project-hover h4, .inner-frame-container .inner-box.project-hover p {
+  color: #22201e;
 }
 .inner-frame-container .inner-box.project-hover img {
   transition: all 500ms ease-in-out;
@@ -681,6 +688,7 @@ a:active {
   padding-bottom: 2rem;
 }
 .inner-frame-container .inner-box.project-hover .inner-box-text {
+  color: #22201e;
   transition: all 500ms ease-in-out;
   display: block;
   line-height: 0;
@@ -689,6 +697,7 @@ a:active {
   opacity: 0%;
 }
 .inner-frame-container .inner-box.project-hover .project-description {
+  color: #22201e;
   transition: all 500ms ease-in-out;
   height: 50%;
   overflow: visible;

@@ -501,55 +501,59 @@ $( document ).ready(function() {
   innerBorderPos(this);
   
   let currentBox;
-  
-  $('.inner-box').mouseenter(function(){
-    currentBox = $(this);
+  if($(window).width() >= 600) {
 
-    $(this).css({
-      'background-color': '#E5DDD4',
-      'color': '#22201e',
-    });
-    // $(this).css({'transform': 'scale(1.025)'});
-    $(this).find('h4, p').css({'color': '#22201e',});
-    if($(window).width() >= 600) {
+    $('.inner-box').mouseenter(function(){
+      currentBox = $(this);
+
+      // $(this).css({
+        // 'background-color': '#E5DDD4',
+        // 'color': '#22201e',
+      // });
+      // $(this).css({'transform': 'scale(1.025)'});
+      // $(this).find('h4, p').css({'color': '#22201e',});
+
       $('.inner-border').addClass('show');
-    }
-  
 
-    position = $(this).position();
-    
-    $('.inner-border').css({
-      'left': position.left - 6 + 'px',
-      'top': position.top - 6 + 'px',
-      'transition': ''
+      $(this).toggleClass('project-hover');
+
+      position = $(this).position();
+      
+      $('.inner-border').css({
+        'left': position.left - 6 + 'px',
+        'top': position.top - 6 + 'px',
+        'transition': ''
+      });
+
+      if ($(this).hasClass('expand')) {
+        $(this).css({'transform': 'scale(1)'});
+        $('.inner-border').removeClass('show');
+      }
+
+        //////////////////////// simplified inner container hover //////////////////
+      
+      $('.inner-border').css({
+        'width': ($(this).outerWidth() + 12 + 'px'),
+        'height': ($(this).outerHeight() + 12 + 'px')
+      });
+
     });
 
-    if ($(this).hasClass('expand')) {
-      $(this).css({'transform': 'scale(1)'});
+    $('.inner-box').mouseleave(function(){
+      // $(this).css({'transform': ''});
+      $(this).css({
+        'background-color': '',
+        'color': '',
+      });
+      $(this).find('h4, p').css({'color': '',});
       $('.inner-border').removeClass('show');
-    }
+      // innerBorderPos(this);
 
-      //////////////////////// simplified inner container hover //////////////////
-    
-    $('.inner-border').css({
-      'width': ($(this).outerWidth() + 12 + 'px'),
-      'height': ($(this).outerHeight() + 12 + 'px')
+      $(this).toggleClass('project-hover');
     });
 
-  });
+  }
 
-
-  
-  $('.inner-box').mouseleave(function(){
-    // $(this).css({'transform': ''});
-    $(this).css({
-      'background-color': '',
-      'color': '',
-    });
-    $(this).find('h4, p').css({'color': '',});
-    $('.inner-border').removeClass('show');
-    // innerBorderPos(this);
-  });
 });
   
   
@@ -1418,12 +1422,6 @@ $(window).on('load', () => {
 <p>An app aimed to improve access to different genres and categories rich in journals, literature, and books to aid reading and learning, placing as runner-up for Ada’s Base ProtoJam 2022 competition.</p>
 </div> */}
 
-
-$('.inner-box').hover(function(){
-  $(this).children('.project-description, .inner-box-text').toggleClass('show');
-  $(this).children('img').toggleClass('shrunk');
-  $(this).toggleClass('project-hover');
-});
 
 // $('.inner-box').mouseenter(function(){
 //   $(this).children('.inner-box-text').css({
