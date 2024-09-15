@@ -37,18 +37,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-window.onload = function () {
-  introPos = $('.intro')
-  
-  if($(window).width() >= 600) {
-    $('.projects').css({
-      'padding-top': introPos.position().top,
-      'padding-bottom': introPos.position().top,
-    })
-  }
-};
-
-
 
 // load image before rest of the page loads
 $(function(){
@@ -496,8 +484,8 @@ function innerBorderPos() {
 
 
 $( document ).ready(function() {
-  
   // calculate inner-border position and size
+  
   innerBorderPos(this);
   
   let currentBox;
@@ -551,6 +539,16 @@ $( document ).ready(function() {
       $(document).find($('.section-heading, .divider')).addClass('expand');
     }
 
+
+    // add top and bottom padding to match intro text
+    introPos = $('.intro')
+  
+    if($(window).width() >= 600) {
+      $('.projects').css({
+        'padding-top': introPos.position().top,
+        'padding-bottom': introPos.position().top,
+      })
+    }
 });
   
   
