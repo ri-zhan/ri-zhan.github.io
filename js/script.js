@@ -37,18 +37,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-window.onload = function () {
-  introPos = $('.intro')
-  
-  if($(window).width() >= 600) {
-    $('.projects').css({
-      'padding-top': introPos.position().top,
-      'padding-bottom': introPos.position().top,
-    })
-  }
-};
-
-
 
 // load image before rest of the page loads
 $(function(){
@@ -495,8 +483,8 @@ function innerBorderPos() {
 };
 
 
-// calculate inner-border position and size
 $( document ).ready(function() {
+  // calculate inner-border position and size
   
   innerBorderPos(this);
   
@@ -506,12 +494,6 @@ $( document ).ready(function() {
     $('.inner-box').mouseenter(function(){
       currentBox = $(this);
 
-      // $(this).css({
-        // 'background-color': '#E5DDD4',
-        // 'color': '#22201e',
-      // });
-      // $(this).css({'transform': 'scale(1.025)'});
-      // $(this).find('h4, p').css({'color': '#22201e',});
 
       $('.inner-border').addClass('show');
 
@@ -540,20 +522,33 @@ $( document ).ready(function() {
     });
 
     $('.inner-box').mouseleave(function(){
-      // $(this).css({'transform': ''});
       $(this).css({
         'background-color': '',
         'color': '',
       });
       $(this).find('h4, p').css({'color': '',});
       $('.inner-border').removeClass('show');
-      // innerBorderPos(this);
 
       $(this).toggleClass('project-hover');
     });
 
   }
 
+    // disable dyanmic heading width on mobile
+    if($(window).width() <= 600) {
+      $(document).find($('.section-heading, .divider')).addClass('expand');
+    }
+
+
+    // add top and bottom padding to match intro text
+    introPos = $('.intro')
+  
+    if($(window).width() >= 600) {
+      $('.projects').css({
+        'padding-top': introPos.position().top,
+        'padding-bottom': introPos.position().top,
+      })
+    }
 });
   
   
@@ -1161,6 +1156,7 @@ $('.filmstrip').each(function(){
 // })
 
 
+
 /////////////// animate section-heading upon entering screen
 const expandHeading = document.querySelectorAll('.section-heading, .divider');
 
@@ -1176,13 +1172,13 @@ const appearWhenCenter = new IntersectionObserver
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // for first .content-imgs.enlarge in html, after it enlarges the width stays as enlarged width??
-        if($(window).width() >= 100) {
+        if($(window).width() >= 600) {
 
           entry.target.classList.add('expand');
         }
         // appearWhenCenter.unobserve(entry, target);
       } else {
-        if($(window).width() >= 100) {
+        if($(window).width() >= 600) {
 
           entry.target.classList.remove('expand');
         }
