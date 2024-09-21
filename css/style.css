@@ -2024,6 +2024,9 @@ a:active {
     grid-column: span 4;
   }
 }
+.col-full .col-8 {
+  grid-column: span 8;
+}
 .col-full .col-5l {
   grid-column: 1/6;
 }

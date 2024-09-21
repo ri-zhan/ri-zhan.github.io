@@ -2652,6 +2652,9 @@ a:active {
       grid-column: span 4;
     }
   }
+  .col-8 {
+    grid-column: span 8;
+  }
   .col-5l {
     grid-column: 1/6;
   }
