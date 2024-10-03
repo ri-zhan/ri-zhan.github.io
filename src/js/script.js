@@ -53,6 +53,87 @@ $(".toc-item").click(function(e) {
 
 
 
+//// detect when section is in view
+
+const tocNavPrep = document.querySelectorAll('section');
+
+const focusStateChangePrep = {
+  rootMargin: '50% 0% 50% 0%'
+  //top right bottom left
+};
+
+const updateWhenOnScreenPrep = new IntersectionObserver
+(function(
+  entries,     
+  updateWhenOnScreenPrep
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        if($(window).width() >= 600) {
+          const tocNav = document.querySelectorAll('section');
+
+          const focusStateChange = {
+            rootMargin: '30% 0% 50% 0%'
+          };
+          
+          const updateWhenOnScreen = new IntersectionObserver
+          (function(
+            entries,     
+            updateWhenOnScreen
+            ) {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+          
+                  if($(window).width() >= 600) {
+
+                      // entry.target.classList.toggle('.unfocused');
+                      thisDiv = '#' +entry.target.id + 'link'
+                      jQuery(thisDiv).addClass('focused');
+                      jQuery(thisDiv).removeClass('unfocused');
+                  }
+                            
+                  // updateWhenOnScreen.unobserve(entry, target);
+                } else {
+          
+                    thisDiv = '#' +entry.target.id + 'link'
+                    jQuery(thisDiv).addClass('unfocused');
+                    jQuery(thisDiv).removeClass('focused');
+
+          
+                }
+              })
+            }, focusStateChange);
+          
+            tocNav.forEach(tocNav =>{
+            updateWhenOnScreen.observe(tocNav);
+            });
+
+        }
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        // if($(window).width() >= 600) {
+          $(section).toggleClass('focused');
+          
+        // }
+      }
+    })
+  }, focusStateChangePrep);
+
+  tocNavPrep.forEach(tocNavPrep =>{
+  updateWhenOnScreenPrep.observe(tocNavPrep);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 let desktopSize = ($(window).width() >= 1025);
 let tabletSize = ($(window).width() <= 1025 && $(window).width() >=600);
