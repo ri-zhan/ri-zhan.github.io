@@ -1,13 +1,71 @@
-    
+////// style overhaul
+
+$(document).mousemove(function(e){
+  $(".cursor-around").css({left: e.pageX, top:e.pageY});
+});
+
+$(document).mousemove(function(e){
+  $(".cursor-center").css({left: e.pageX, top:e.pageY});
+});
+
+
+// target scroll outside of div 
+const target = document.getElementById("target");
+
+document.addEventListener("wheel", function(e){
+  // prevent the default scrolling event
+  e.preventDefault();
+
+  // scroll the div
+  target.scrollBy(e.deltaX, e.deltaY);
+});
+
+
+$(window).on('load', () => {
+  $('.toc').css({
+    'top': $('.title').outerHeight() + 46 + 24
+    // 46 is the padding, 24 is the spacing
+  });
+  
+});
+
+
+// scroll to sections using top bar
+
+// $("#sidebar > ul > li > a").click(function(e) 
+$(".toc-item").click(function(e) { 
+  $(window).scrollTop(0, 0);
+  // console.log($(this).attr('id') + ' clicked')
+  // Prevent a page reload when a link is pressed
+  e.preventDefault(); 
+  // Call the scroll function
+  // goToByScroll($(this).id);  
+  identifier = $(this).attr('id').replace("link", "");
+  // console.log('offset' + $('#' + identifier).offset().top)
+
+  pos = -160
+    // Scroll
+  $('.wrapper').stop(true,true).animate({
+    scrollTop: $('#' + identifier).position().top + pos + $(".wrapper").scrollTop() + 'px'
+    // scrollTop: 200
+  }, 1000);      
+});
+
+
+
+
 let desktopSize = ($(window).width() >= 1025);
 let tabletSize = ($(window).width() <= 1025 && $(window).width() >=600);
 let mobileSize=($(window).width() <= 600);
     
 
-$( "h1" ).prepend( "# " );
-$( "h2" ).prepend( "## " );
-$( "h3" ).prepend( "### " );
-$( "h4" ).prepend( "#### " );
+
+
+
+// $( "h1" ).prepend( "# " );
+// $( "h2" ).prepend( "## " );
+// $( "h3" ).prepend( "### " );
+// $( "h4" ).prepend( "#### " );
 // $( "h5" ).prepend( "##### " );
 
 
