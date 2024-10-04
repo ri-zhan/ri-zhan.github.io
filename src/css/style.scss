@@ -12,7 +12,16 @@ $lighter: #F9F1E8;
 ///// style overhaul
 $primary: #F0EFE8;
 $primary-dark: #000000;
+$red: #E63223;
 
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: $red;
+  > * {
+    text-decoration: underline;
+    text-decoration-color: $red;
+  }
+}
 
 // for scrolling outside of div //
 #target{
@@ -146,7 +155,7 @@ body {
   &:hover .home-page {
     opacity: 1;
   }
-  &:hover .current-page {
+  &:hover .return-page {
     opacity: 0;
   }
 }
@@ -155,7 +164,7 @@ body {
   opacity: 0;
 }
 
-.home-page, .current-page {
+.home-page, .return-page {
   position: absolute;
   top: 0;
   left: 0;

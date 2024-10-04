@@ -3,6 +3,15 @@
   border-radius: 6px;
 }
 
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #E63223;
+}
+a:hover > * {
+  text-decoration: underline;
+  text-decoration-color: #E63223;
+}
+
 #target {
   overflow-y: scroll;
   scroll-snap-type: mandatory;
@@ -128,7 +137,7 @@ body {
 .title:hover .home-page {
   opacity: 1;
 }
-.title:hover .current-page {
+.title:hover .return-page {
   opacity: 0;
 }
 
@@ -136,7 +145,7 @@ body {
   opacity: 0;
 }
 
-.home-page, .current-page {
+.home-page, .return-page {
   position: absolute;
   top: 0;
   left: 0;
