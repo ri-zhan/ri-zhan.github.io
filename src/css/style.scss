@@ -134,11 +134,33 @@ body {
 }
 
 .title {
-  position: fixed;
+  position: relative;
   grid-row: 1/2;
   grid-column: 1/2;
   width: min-content;
   // height: fit-content;
+  transition: all 300ms ease-in;
+  pointer-events: all;
+  z-index: 9999;
+  width: min-content;
+  // height: fit-content;
+  &:hover .home-page {
+    opacity: 1;
+  }
+  &:hover .current-page {
+    opacity: 0;
+  }
+}
+
+.home-page {
+  opacity: 0;
+}
+
+.home-page, .current-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 200ms ease-in-out;
 }
 
 .unfocused {
@@ -179,9 +201,8 @@ nav {
   //columns
   grid-template-columns: repeat(8, 1fr);
   column-gap: 3rem; //48px
-  // rows
-  // grid-template-rows: repeat(4, 1fr);
   row-gap: 60px;
+
   // both columns & rows
   padding: 0 4rem 0 2rem; // 64px
   
@@ -191,8 +212,6 @@ nav {
   overflow-y: scroll;
 
   // scroll snap
-  // scroll-padding-top: 4rem;
-  // scroll-padding-bottom: 4rem;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 
@@ -219,6 +238,7 @@ nav {
       object-fit: contain;
       max-width: 100%;
       max-height: 100%;
+      overflow: visible;
     }
     display: grid;
     grid-column: 1/9;
@@ -255,13 +275,7 @@ section {
   column-gap: 3rem; //48px
   row-gap: 1.5rem /* 24px */;
   width: 100%;
-  // min-height: 100vh;
-  // max-height: 100vh;
   height: fit-content;
-
-  // scroll snap
-  // scroll-snap-align: start;
-
 }
 
 // column layouts
@@ -346,20 +360,6 @@ section {
   transition: all 500ms ease-out;
 }
 
-.cursor-center {
-  width: 1rem;
-  height: 1rem;
-  border: 0.075rem solid $red;
-  transition: all 1ms ease-out;
-}
-
-.cursor-around {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 0.075rem solid $red;
-  transition: all 600ms ease-out;
-}
-
 .cursor {
   // transition: all 100ms ease-out;
   z-index: 9999999999;
@@ -370,6 +370,28 @@ section {
   @media (max-width: 1000px) {
     display: none;
     }
+}
+
+.cursor-center {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.075rem solid $red;
+  transition: left 1ms ease-out, top 1ms ease-out, width 200ms ease-in, height 200ms ease-in;
+  &.hover {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+.cursor-around {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 0.075rem solid $red;
+  transition: left 600ms ease-out, top 600ms ease-out, width 450ms ease-in, height 450ms ease-in;
+  &.hover {
+    width: 4.125em;
+    height: 4.125em;
+  }
 }
 
 

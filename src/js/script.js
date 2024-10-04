@@ -1,11 +1,24 @@
 ////// style overhaul
 
+
+// cursor
+
 $(document).mousemove(function(e){
   $(".cursor-around").css({left: e.pageX, top:e.pageY});
 });
 
 $(document).mousemove(function(e){
   $(".cursor-center").css({left: e.pageX, top:e.pageY});
+});
+
+// document.getElementsByTagName('a').onmouseover = function () {
+//   // window.ev = true;
+//   $('.cursor-center').addClass('hover')
+//   console.log('working')
+// }
+
+$('a').hover(function(){
+  $('.cursor-center, .cursor-around').toggleClass('hover')
 });
 
 
@@ -23,8 +36,8 @@ document.addEventListener("wheel", function(e){
 
 $(window).on('load', () => {
   $('.toc').css({
-    'top': $('.title').outerHeight() + 46 + 24
-    // 46 is the padding, 24 is the spacing
+    'top': $('.home-page').height() + 48 + 24
+    // 48 is the top padding, 24 is the row-gap
   });
   
 });
