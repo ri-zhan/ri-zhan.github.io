@@ -35,10 +35,21 @@ document.addEventListener("wheel", function(e){
 
 
 $(window).on('load', () => {
-  $('.toc').css({
-    'top': $('.home-page').height() + 48 + 24
-    // 48 is the top padding, 24 is the row-gap
-  });
+  
+  if($(window).width() >= 600) {
+    // if desktop
+
+    $('.toc').css({
+      'top': $('.home-page').height() + 48 + 24
+      // 48 is the top padding, 24 is the row-gap
+    });
+
+  } else {
+    $('.toc').css({
+      'top': $('.home-page').height() + 16 + 16
+      // 16 is the top padding, 16 is the row-gap
+    });
+  }
   
 });
 

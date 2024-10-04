@@ -17,6 +17,10 @@ $red: #E63223;
 // a styling
 a {
   text-decoration: none;
+  & p{
+    text-decoration: underline;
+    text-decoration-color: $red;
+  }
 }
 
 a:hover, a:hover > * {
@@ -26,6 +30,7 @@ a:hover, a:hover > * {
 
 a:visited {
   text-decoration: none;
+  color: $primary-dark;
 }
 
 a:link {
@@ -197,7 +202,7 @@ body {
   width: min-content;
   row-gap: 1.5rem; // 24px
   overflow: visible;
-  // grid-auto-rows: min-content; /* NEW */
+  z-index: 9999;
   .unfocused {
     opacity: 50%;
   }
@@ -214,6 +219,7 @@ nav {
   row-gap: 1.5rem; // 24px
   bottom: 4rem;
   height: min-content;
+  z-index: 9999;
 }
 
 #homepage {
@@ -483,6 +489,67 @@ section {
   }
 }
 
+// mobile styling
+@media (max-width: 600px) {
+
+  // .cursor {
+  //   display: none;
+  // }
+  
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+  }
+
+  // selecting all column layouts
+  [class^="col-"] {
+    grid-column: span 4;
+    width: 100%;
+  }
+  
+  .left {
+    width: 100vw;
+    // position: inherit;
+    padding: 1rem 2rem; /* 16px 32px */
+    column-gap: 1.5rem; /* 24px */
+  }
+
+  .toc {
+    row-gap: 1rem; /* 16px */
+    display: none;
+  }
+
+  nav {
+    row-gap: 1rem; /* 16px */
+    bottom: 2rem; /* 32px */
+    display: none;
+  }
+
+  .wrapper {
+    width: 100vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    padding: 0 2rem; /* 32px */
+    column-gap: 1.5rem; /* 24px */
+    &-boxes {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 4;  
+      &-box {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column: span 4;  
+      }
+    }
+    &-content {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 4;  
+    }
+    &-inner {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 4;  
+      width: 100%;
+    }
+  }
+}
 
 
 
