@@ -397,7 +397,7 @@ section {
 // column layouts
 // 4 col layouts
 .col-4l {
-  grid-column: 1/6;
+  grid-column: 1/5;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -406,7 +406,7 @@ section {
   }
 }
 .col-4r {
-  grid-column: 5/10;
+  grid-column: 5/9;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -473,7 +473,8 @@ section {
   }
   &.fake-table {
     height: min-content;
-    > * {
+    align-items: flex-start;
+    > [class^="col-"] {
       display: inherit;
       vertical-align: top;
     }

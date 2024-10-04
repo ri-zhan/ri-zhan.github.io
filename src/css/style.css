@@ -356,7 +356,7 @@ section img {
 }
 
 .col-4l {
-  grid-column: 1/6;
+  grid-column: 1/5;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -366,7 +366,7 @@ section img {
 }
 
 .col-4r {
-  grid-column: 5/10;
+  grid-column: 5/9;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -437,8 +437,9 @@ section img {
 .col-8.fake-table {
   height: -moz-min-content;
   height: min-content;
+  align-items: flex-start;
 }
-.col-8.fake-table > * {
+.col-8.fake-table > [class^=col-] {
   display: inherit;
   vertical-align: top;
 }
