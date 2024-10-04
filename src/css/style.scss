@@ -14,13 +14,26 @@ $primary: #F0EFE8;
 $primary-dark: #000000;
 $red: #E63223;
 
-a:hover {
+// a styling
+a {
+  text-decoration: none;
+}
+
+a:hover, a:hover > * {
   text-decoration: underline;
   text-decoration-color: $red;
-  > * {
-    text-decoration: underline;
-    text-decoration-color: $red;
-  }
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:active, a:active > *  {
+  color: $red;
 }
 
 // for scrolling outside of div //
@@ -249,34 +262,59 @@ nav {
     align-items: flex-start;
 
     &-box {
+      position: relative;
       display: grid;
       grid-column: span 2;
       row-gap: 1.5rem; /* 24px */
-      // align-self: flex-start;
       transition: all 500ms ease-in-out;
       &-img {
         overflow: hidden;
         min-height: 300px;
         max-height: 300px;
+        background-color: $primary;
       }
       img {
         object-fit: cover;
         // max-width: 100%;
         max-height: 100%;
         overflow: hidden;
-        scale: 1.5;
+        // scale: 1;
         filter: grayscale(95%);
         transition: all 500ms ease-in-out;
+        &[data-img-zoom-mark] {
+          scale: 1.7;
+          transform: translate(-10px, 40px);
+        }
+        &[data-img-zoom-hereafter] {
+          scale: 2.75;
+          transform: translate(-10px, -20px);
+        }
+        &[data-img-zoom-yads] {
+          scale: 1.4;
+        }
       }
       &:hover {
         img {
+          transform: translate(0);
           scale: 1;
           filter: grayscale(0%);
           transition: all 500ms ease-in-out;
         }
+        .help {
+          bottom: -174px;
+          transition: all 500ms ease-in-out;
+        }
+      }
+      .help {
+        height: 150px;
+        transition: all 500ms ease-in-out;
+        position: absolute;
+        bottom: 0px;
+        z-index: -9;
       }
     }
   }
+
 
   &-content {
     img {
@@ -1159,32 +1197,32 @@ footer, .footer {
 
 
 // a href styling
-a {
-  color: $white;
-  text-decoration: underline;
-}
+// a {
+//   color: $white;
+//   text-decoration: underline;
+// }
 
-a:link{
-  // color: $white;
-  transition: all 100ms ease-out;
-}
+// a:link{
+//   // color: $white;
+//   transition: all 100ms ease-out;
+// }
 
-a:visited {
-  // color: $red;
-  text-decoration: none;
-  transition: all 100ms ease-out;
-}
+// a:visited {
+//   // color: $red;
+//   text-decoration: none;
+//   transition: all 100ms ease-out;
+// }
 
-a:hover {
-  color: $red;
-  transition: all 100ms ease-out;
-}
+// a:hover {
+//   color: $red;
+//   transition: all 100ms ease-out;
+// }
 
-a:active {
-  // color: $red;
-  text-decoration: none;
-  transition: all 100ms ease-out;
-}
+// a:active {
+//   // color: $red;
+//   text-decoration: none;
+//   transition: all 100ms ease-out;
+// }
 
 
 .general-border {

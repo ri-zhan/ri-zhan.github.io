@@ -3,13 +3,25 @@
   border-radius: 6px;
 }
 
-a:hover {
+a {
+  text-decoration: none;
+}
+
+a:hover, a:hover > * {
   text-decoration: underline;
   text-decoration-color: #E63223;
 }
-a:hover > * {
-  text-decoration: underline;
-  text-decoration-color: #E63223;
+
+a:visited {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:active, a:active > * {
+  color: #E63223;
 }
 
 #target {
@@ -225,6 +237,7 @@ nav {
   align-items: flex-start;
 }
 .wrapper-boxes-box {
+  position: relative;
   display: grid;
   grid-column: span 2;
   row-gap: 1.5rem; /* 24px */
@@ -234,20 +247,43 @@ nav {
   overflow: hidden;
   min-height: 300px;
   max-height: 300px;
+  background-color: #F0EFE8;
 }
 .wrapper-boxes-box img {
   -o-object-fit: cover;
      object-fit: cover;
   max-height: 100%;
   overflow: hidden;
-  scale: 1.5;
   filter: grayscale(95%);
   transition: all 500ms ease-in-out;
 }
+.wrapper-boxes-box img[data-img-zoom-mark] {
+  scale: 1.7;
+  transform: translate(-10px, 40px);
+}
+.wrapper-boxes-box img[data-img-zoom-hereafter] {
+  scale: 2.75;
+  transform: translate(-10px, -20px);
+}
+.wrapper-boxes-box img[data-img-zoom-yads] {
+  scale: 1.4;
+}
 .wrapper-boxes-box:hover img {
+  transform: translate(0);
   scale: 1;
   filter: grayscale(0%);
   transition: all 500ms ease-in-out;
+}
+.wrapper-boxes-box:hover .help {
+  bottom: -174px;
+  transition: all 500ms ease-in-out;
+}
+.wrapper-boxes-box .help {
+  height: 150px;
+  transition: all 500ms ease-in-out;
+  position: absolute;
+  bottom: 0px;
+  z-index: -9;
 }
 .wrapper-content {
   display: grid;
@@ -761,30 +797,6 @@ footer h5, .footer h5 {
   height: 2.5rem;
   border: 0.075rem solid #E63223;
   transition: all 400ms ease-out;
-}
-
-a {
-  color: #e5ddd4;
-  text-decoration: underline;
-}
-
-a:link {
-  transition: all 100ms ease-out;
-}
-
-a:visited {
-  text-decoration: none;
-  transition: all 100ms ease-out;
-}
-
-a:hover {
-  color: #E63223;
-  transition: all 100ms ease-out;
-}
-
-a:active {
-  text-decoration: none;
-  transition: all 100ms ease-out;
 }
 
 .general-border {
