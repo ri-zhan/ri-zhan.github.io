@@ -17,7 +17,9 @@ $red: #E63223;
 // a styling
 a {
   text-decoration: none;
-  & p{
+
+  // for p tags that wrap around a tags, except for .captions, also apply a tag styling
+  & p :not(.caption){
     text-decoration: underline;
     text-decoration-color: $red;
   }
@@ -42,12 +44,12 @@ a:active, a:active > *  {
 }
 
 // for scrolling outside of div //
-#target{
-  overflow-y: scroll;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(300px);
-  scroll-snap-type: y mandatory;
-}
+// #target{
+//   overflow-y: scroll;
+//   scroll-snap-type: mandatory;
+//   scroll-snap-points-y: repeat(300px);
+//   scroll-snap-type: y mandatory;
+// }
 
 // typography
 h1, h2, h3, h4, h5, h6, p, .caption {
@@ -119,9 +121,26 @@ p, ul, ol, li {
   letter-spacing: 1px;
 }
 
-ul, ol, li {
+ul, ol {
+  list-style-position: inside;
+  list-style: none;
   padding: 0;
   margin: 0;
+}
+
+li {
+  // need this for multiple lines
+  padding-left: 0.4rem;
+  text-indent: -0.5rem;
+
+  margin-bottom: 0.375rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:before {
+    content: "• ";
+    color: red; /* or whatever color you prefer */
+  }
 }
 
 .caption {
@@ -170,19 +189,23 @@ body {
   pointer-events: all;
   z-index: 9999;
   white-space: nowrap;
-  &:hover .home-page {
+  &:hover .to-page {
     opacity: 1;
   }
-  &:hover .return-page {
+  &:hover .current-page {
     opacity: 0;
   }
 }
 
-.home-page {
+.to-page {
   opacity: 0;
 }
 
-.home-page, .return-page {
+.current-page {
+  opacity: 50%;
+}
+
+.to-page, .current-page {
   position: absolute;
   top: 0;
   left: 0;
@@ -321,7 +344,6 @@ nav {
     }
   }
 
-
   &-content {
     img {
       object-fit: contain;
@@ -351,8 +373,7 @@ nav {
   }
 
   &-inner {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     row-gap: 1.5rem /* 24px */;
   }
 }
@@ -439,6 +460,27 @@ section {
   flex-direction: column;
   justify-content: center;
 }
+// 8 col
+.col-8 {
+  display: grid;
+  grid-column: 1/9;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  column-gap: 1.5rem; /* 24px */
+  // the following code is just for the fake table
+  > .col-6l {
+    justify-content: flex-end;
+  }
+  &.fake-table {
+    height: min-content;
+    > * {
+      display: inherit;
+      vertical-align: top;
+    }
+  }
+}
+
+
 
 ////cursor
 .cursor-center.zoom {
@@ -496,15 +538,12 @@ section {
   //   display: none;
   // }
   
-  section {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: span 4;
-  }
 
   // selecting all column layouts
   [class^="col-"] {
     grid-column: span 4;
     width: 100%;
+    height: fit-content;
   }
   
   .left {
@@ -529,8 +568,11 @@ section {
     width: 100vw;
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
-    padding: 0 2rem; /* 32px */
+    padding: 4rem 2rem; /* 32px */
     column-gap: 1.5rem; /* 24px */
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 9rem;
+    row-gap: 30vh;
     &-boxes {
       grid-template-columns: repeat(4, 1fr);
       grid-column: span 4;  
@@ -540,14 +582,38 @@ section {
       }
     }
     &-content {
+      min-height: min-content;
+      max-height: fit-content;
+      padding: 1rem 0;
       grid-template-columns: repeat(4, 1fr);
       grid-column: span 4;  
+      row-gap: 3rem;
+      scroll-snap-align: start;
     }
     &-inner {
       grid-template-columns: repeat(4, 1fr);
       grid-column: span 4;  
       width: 100%;
+      > * {
+        width: 100%;
+        grid-column: span 4;
+      }
     }
+  }
+
+  // for mibile sizes, fake table has to span 4
+  .col-8 {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1.5rem; /* 24px*/
+    &.fake-table > * {
+      grid-column: span 4;
+    }
+  }
+
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    row-gap: 20vh;
   }
 }
 
