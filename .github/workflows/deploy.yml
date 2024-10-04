@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - actions
+      - main
 
 jobs:
   deploy:
@@ -15,5 +15,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .
-          clean-exclude: "pr-preview"
+          folder: src
+          clean-exclude: pr-preview/
+          force: false
