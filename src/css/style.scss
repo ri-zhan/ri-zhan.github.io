@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 6px;
   // cursor: none;
 }
 
@@ -100,10 +100,10 @@ ul, ol, li {
 .caption {
   color: $primary-dark;
   font-family: "Source Code Pro";
-  font-size: 12px;
+  font-size: 12.25px;
   font-style: normal;
   font-weight: 300;
-  line-height: 14px; /* 133.333% */
+  line-height: 18px; /* 133.333% */
   letter-spacing: -0.12px;
   text-transform: uppercase;
 }
@@ -114,7 +114,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .left {
@@ -142,8 +142,7 @@ body {
   transition: all 300ms ease-in;
   pointer-events: all;
   z-index: 9999;
-  width: min-content;
-  // height: fit-content;
+  white-space: nowrap;
   &:hover .home-page {
     opacity: 1;
   }
@@ -195,6 +194,9 @@ nav {
   height: min-content;
 }
 
+#homepage {
+  overflow-y: hidden;
+}
 
 .wrapper {
   display: grid;
@@ -227,10 +229,44 @@ nav {
     padding-bottom: 4rem;
   }
 
-  &-inner {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem /* 24px */;
+  &-boxes {
+    grid-column: 3/9;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 3rem; //48px
+    row-gap: 60px;
+    height: min-content;
+    align-self: center;
+    align-items: flex-start;
+
+    &-box {
+      display: grid;
+      grid-column: span 2;
+      row-gap: 1.5rem; /* 24px */
+      // align-self: flex-start;
+      transition: all 500ms ease-in-out;
+      &-img {
+        overflow: hidden;
+        min-height: 300px;
+        max-height: 300px;
+      }
+      img {
+        object-fit: cover;
+        // max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        scale: 1.5;
+        filter: grayscale(95%);
+        transition: all 500ms ease-in-out;
+      }
+      &:hover {
+        img {
+          scale: 1;
+          filter: grayscale(0%);
+          transition: all 500ms ease-in-out;
+        }
+      }
+    }
   }
 
   &-content {
@@ -259,6 +295,12 @@ nav {
       justify-content: center;
       flex-direction: column;
     }
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem /* 24px */;
   }
 }
 

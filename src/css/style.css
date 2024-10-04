@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 #target {
@@ -84,10 +84,10 @@ ul, ol, li {
 .caption {
   color: #000000;
   font-family: "Source Code Pro";
-  font-size: 12px;
+  font-size: 12.25px;
   font-style: normal;
   font-weight: 300;
-  line-height: 14px; /* 133.333% */
+  line-height: 18px; /* 133.333% */
   letter-spacing: -0.12px;
   text-transform: uppercase;
 }
@@ -97,7 +97,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .left {
@@ -123,7 +123,7 @@ body {
   transition: all 300ms ease-in;
   pointer-events: all;
   z-index: 9999;
-  width: min-content;
+  white-space: nowrap;
 }
 .title:hover .home-page {
   opacity: 1;
@@ -177,6 +177,10 @@ nav {
   height: min-content;
 }
 
+#homepage {
+  overflow-y: hidden;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -199,10 +203,42 @@ nav {
 .wrapper section:last-child {
   padding-bottom: 4rem;
 }
-.wrapper-inner {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+.wrapper-boxes {
+  grid-column: 3/9;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  row-gap: 60px;
+  height: -moz-min-content;
+  height: min-content;
+  align-self: center;
+  align-items: flex-start;
+}
+.wrapper-boxes-box {
+  display: grid;
+  grid-column: span 2;
+  row-gap: 1.5rem; /* 24px */
+  transition: all 500ms ease-in-out;
+}
+.wrapper-boxes-box-img {
+  overflow: hidden;
+  min-height: 300px;
+  max-height: 300px;
+}
+.wrapper-boxes-box img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100%;
+  overflow: hidden;
+  scale: 1.5;
+  filter: grayscale(95%);
+  transition: all 500ms ease-in-out;
+}
+.wrapper-boxes-box:hover img {
+  scale: 1;
+  filter: grayscale(0%);
+  transition: all 500ms ease-in-out;
 }
 .wrapper-content {
   display: grid;
@@ -230,6 +266,11 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.wrapper-inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
 }
 
 section {
