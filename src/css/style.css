@@ -161,7 +161,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 200ms ease-in-out;
+  transition: opacity 100ms ease-out;
 }
 
 .unfocused {
@@ -272,15 +272,15 @@ nav {
   transform: translate(0);
   scale: 1;
   filter: grayscale(0%);
-  transition: all 500ms ease-in-out;
+  transition: all 650ms ease-in-out;
 }
 .wrapper-boxes-box:hover .help {
-  bottom: -174px;
-  transition: all 500ms ease-in-out;
+  bottom: -300px;
+  transition: all 650ms ease-in-out;
 }
 .wrapper-boxes-box .help {
-  height: 150px;
-  transition: all 500ms ease-in-out;
+  height: 300px;
+  transition: all 650ms ease-in-out;
   position: absolute;
   bottom: 0px;
   z-index: -9;
