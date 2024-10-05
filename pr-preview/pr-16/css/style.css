@@ -15,34 +15,40 @@ body > * {
 }
 
 a {
+  transition: text-decoration-color 100ms ease-in;
   text-decoration: none;
-  text-decoration-color: #E63223;
+  text-decoration-color: transparent;
 }
 a p :not(.caption) {
   text-decoration: underline;
   text-decoration-color: #E63223;
+  transition: text-decoration-color 100ms ease-in;
 }
 
 a:visited, a:hover, a:hover > *:not(h4) {
   color: #000000;
   text-decoration: underline;
   text-decoration-color: #E63223;
+  transition: text-decoration-color 100ms ease-in;
 }
 
 a:active, a:active > * {
   text-decoration-color: #E63223;
   color: #E63223;
+  transition: text-decoration-color 100ms ease-in;
 }
 
 p a:link {
   text-decoration: underline;
   color: #000000;
   text-decoration-color: #E63223;
+  transition: text-decoration-color 100ms ease-in;
 }
 @media (hover: hover) {
   p a:link {
     text-decoration-color: #E63223;
     color: #E63223;
+    transition: text-decoration-color 100ms ease-in;
   }
 }
 
