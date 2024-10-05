@@ -141,7 +141,7 @@ li:before {
 
 .caption {
   color: #000000;
-  font-family: "Source Code Pro";
+  font-family: source-code-pro, monospace;
   font-size: 12.25px;
   font-style: normal;
   font-weight: 300;
