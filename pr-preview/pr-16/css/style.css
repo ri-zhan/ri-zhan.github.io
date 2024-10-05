@@ -16,6 +16,7 @@ body > * {
 
 a {
   text-decoration: none;
+  text-decoration-color: #E63223;
 }
 a p :not(.caption) {
   text-decoration: underline;
@@ -29,6 +30,7 @@ a:visited, a:hover, a:hover > *:not(h4) {
 }
 
 a:active, a:active > * {
+  text-decoration-color: #E63223;
   color: #E63223;
 }
 
@@ -39,6 +41,7 @@ p a:link {
 }
 @media (hover: hover) {
   p a:link {
+    text-decoration-color: #E63223;
     color: #E63223;
   }
 }
