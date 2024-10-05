@@ -41,7 +41,6 @@ window.onload = function () {
       // creates height base on window size and image size since the div itself doesn't have a size
       var width = image.width / rippleZoomDiv[i].parentNode.offsetWidth,
       height = image.height / width;
-      console.log(height)
       rippleZoomDiv[i].style.height = height + 'px'
 
   };
@@ -147,16 +146,16 @@ $('a').hover(function(){
 });
 
 
-// target scroll outside of div 
-const target = document.getElementById("target");
+// // target scroll outside of div 
+// const target = document.getElementById("target");
 
-document.addEventListener("wheel", function(e){
-  // prevent the default scrolling event
-  e.preventDefault();
+// document.addEventListener("wheel", function(e){
+//   // prevent the default scrolling event
+//   e.preventDefault();
 
-  // scroll the div
-  target.scrollBy(e.deltaX, e.deltaY);
-});
+//   // scroll the div
+//   target.scrollBy(e.deltaX, e.deltaY);
+// });
 
 
 $(window).on('load', () => {
@@ -951,7 +950,6 @@ function playCardPos() {
 if ($('.inner-frame').hasClass('stylized')) {
   $('.inner-border-bottom-left').hover(
     function(){
-      console.log('hover working')
       $('.inner-border-bottom-left-name').addClass('visible')
     }, function(){
       $('.inner-border-bottom-left-name').removeClass('visible')
