@@ -99,7 +99,7 @@ h5 {
   text-transform: uppercase;
 }
 
-p, ul, ol, li {
+body, p, ul, ol, li {
   color: #000;
   font-family: Neue-Haas-Grotesk-Display-Pro, sans-serif;
   font-size: 16px;
