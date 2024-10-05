@@ -28,7 +28,7 @@ body {
 // a styling
 a {
   text-decoration: none;
-
+  text-decoration-color: $red;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
   & p :not(.caption) {
     text-decoration: underline;
@@ -43,6 +43,7 @@ a:visited, a:hover, a:hover > *:not(h4) {
 }
 
 a:active, a:active > *  {
+  text-decoration-color: $red;
   color: $red;
 }
 
@@ -51,6 +52,7 @@ p a:link {
   color: $primary-dark;
   text-decoration-color: $red;
   @media (hover: hover) {
+    text-decoration-color: $red;
     color: $red;
   }
   // > * {
