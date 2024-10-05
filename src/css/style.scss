@@ -134,6 +134,14 @@ p, ul, ol, li {
   letter-spacing: 1px;
 }
 
+p {
+  display: inline-block;
+  &.col-overflow {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+}
+
 ul, ol {
   list-style-position: inside;
   list-style: none;
@@ -366,7 +374,7 @@ nav {
   &-hero {
     max-height: 100vh;
   }
-  
+
   &-content {
     img {
       object-fit: contain;
