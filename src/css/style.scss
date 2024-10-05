@@ -363,6 +363,10 @@ nav {
     }
   }
 
+  &-hero {
+    max-height: 100vh;
+  }
+  
   &-content {
     img {
       object-fit: contain;

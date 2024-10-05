@@ -319,6 +319,9 @@ nav {
   bottom: 0px;
   z-index: -9;
 }
+.wrapper-hero {
+  max-height: 100vh;
+}
 .wrapper-content {
   display: grid;
   grid-column: 1/9;
