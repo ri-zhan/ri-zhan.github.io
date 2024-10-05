@@ -1,13 +1,300 @@
-    
+////// style overhaul
+
+
+// cursor
+
+$(document).mousemove(function(e){
+  $(".cursor-around").css({left: e.pageX, top:e.pageY});
+});
+
+$(document).mousemove(function(e){
+  $(".cursor-center").css({left: e.pageX, top:e.pageY});
+});
+
+$('.ripple-zoom-area').hover(function(){
+  $('.cursor-center, .cursor-around').toggleClass('zoom');
+  // $('.ripple-zoom-area-window').css({
+  //   'height': 240 + 'px',
+  //   'width': 240 + 'px'
+  // })
+});
+
+$('.ripple-zoom-area-window').mouseleave(function(){
+  $(this).css({
+    'display': '',
+    'height': '',
+    'width': ''
+  });
+})
+
+
+window.onload = function () {
+
+  var rippleZoomDiv = document.getElementsByClassName('ripple-zoom-area');
+  for (var i = 0, ii = rippleZoomDiv.length; i < ii; i++) {
+    // console.dir(myElements[i].style);
+      var imageSrc = rippleZoomDiv[i].style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+      var image = new Image();
+
+      image.src = imageSrc;
+      
+      // creates height base on window size and image size since the div itself doesn't have a size
+      var width = image.width / rippleZoomDiv[i].parentNode.offsetWidth,
+      height = image.height / width;
+      rippleZoomDiv[i].style.height = height + 'px'
+
+  };
+}
+
+
+const rippleZoomCursor = document.querySelectorAll('.ripple-zoom-area');
+
+const rippleZoomCursorShow = {
+  rootMargin: '-30% 0% -20% 0%'
+  //top right bottom left
+};
+
+const appearWhenOnScreen = new IntersectionObserver
+(function(
+  entries,     
+  appearWhenOnScreen
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        // entry.target.classList.add('color');
+        // $target is correct, $cursorwindow is correct
+        var $target = entry.target,
+            $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
+
+        // var zoomFactor = 3;
+        var zoomFactor = $target.dataset.zoom;
+
+        // Copy the background image to the zoom window
+        // $cursorWindow.css('background-image', $target.css('background-image'));
+        $cursorWindow.style.backgroundImage = $target.style.backgroundImage
+        $cursorWindow.style.backgroundRepeat= $target.style.backgroundRepeat
+        
+
+        $target.onmousemove = (e) => {
+          var targetPos = $target.getBoundingClientRect();
+          
+
+          var cursX = e.pageX - targetPos.left;
+          // var cursY = Math.trunc((e.pageY + targetPos.top));
+          var cursY = Math.trunc((e.clientY - targetPos.top));
+
+          // targetPos.top is calculating how far the div is from the top of the page
+          // e.pageY is how far the mouse is from the top of window????
+          // e.clientY is how far mouse is from top of browser window
+
+
+          var imgX, imgY, imgW, imgH;
+          
+
+          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
+
+            $cursorWindow.style.display = 'block';
+            
+
+            $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
+            $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
+            // left/top is being changed
+
+
+            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
+            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
+
+
+
+            imgW = $target.clientWidth * zoomFactor;
+            imgH = $target.clientHeight * zoomFactor;
+
+            // Change the position and size of the image in the zoom window
+            // to show a magnified view of the image content under the cursor
+            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
+            
+            // changing the size of the image in the window
+            $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
+
+
+          } else {
+              $cursorWindow.style.display = 'none';
+              $target.style.backgroundColor = '';
+          }
+        };
+
+        // appearWhenOnScreen.unobserve(rippleZoomCursor);
+      } else {
+        entry.target.style.backgroundColor = '';
+      }
+    })
+  }, rippleZoomCursorShow);
+
+  rippleZoomCursor.forEach(rippleZoomCursor =>{
+  appearWhenOnScreen.observe(rippleZoomCursor);
+});
+
+// document.getElementsByTagName('a').onmouseover = function () {
+//   // window.ev = true;
+//   $('.cursor-center').addClass('hover')
+//   console.log('working')
+// }
+
+$('a').hover(function(){
+  $('.cursor-center, .cursor-around').toggleClass('hover')
+});
+
+
+// // target scroll outside of div 
+// const target = document.getElementById("target");
+
+// document.addEventListener("wheel", function(e){
+//   // prevent the default scrolling event
+//   e.preventDefault();
+
+//   // scroll the div
+//   target.scrollBy(e.deltaX, e.deltaY);
+// });
+
+
+$(window).on('load', () => {
+  
+  if($(window).width() >= 600) {
+    // if desktop
+
+    $('.toc').css({
+      'top': $('.to-page').height() + 48 + 24
+      // 48 is the top padding, 24 is the row-gap
+    });
+
+  } else {
+    $('.toc').css({
+      'top': $('.to-page').height() + 16 + 16
+      // 16 is the top padding, 16 is the row-gap
+    });
+  }
+  
+});
+
+
+// scroll to sections using top bar
+
+// $("#sidebar > ul > li > a").click(function(e) 
+$(".toc-item").click(function(e) { 
+  $(window).scrollTop(0, 0);
+  // console.log($(this).attr('id') + ' clicked')
+  // Prevent a page reload when a link is pressed
+  e.preventDefault(); 
+  // Call the scroll function
+  // goToByScroll($(this).id);  
+  identifier = $(this).attr('id').replace("link", "");
+  // console.log('offset' + $('#' + identifier).offset().top)
+
+  pos = -160
+    // Scroll
+  $('.wrapper').stop(true,true).animate({
+    scrollTop: $('#' + identifier).position().top + pos + $(".wrapper").scrollTop() + 'px'
+    // scrollTop: 200
+  }, 1000);      
+});
+
+
+
+//// detect when section is in view
+
+const tocNavPrep = document.querySelectorAll('section');
+
+const focusStateChangePrep = {
+  rootMargin: '50% 0% 50% 0%'
+  //top right bottom left
+};
+
+const updateWhenOnScreenPrep = new IntersectionObserver
+(function(
+  entries,     
+  updateWhenOnScreenPrep
+  ) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        if($(window).width() >= 600) {
+          const tocNav = document.querySelectorAll('section');
+
+          const focusStateChange = {
+            rootMargin: '30% 0% 50% 0%'
+          };
+          
+          const updateWhenOnScreen = new IntersectionObserver
+          (function(
+            entries,     
+            updateWhenOnScreen
+            ) {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+          
+                  if($(window).width() >= 600) {
+
+                      // entry.target.classList.toggle('.unfocused');
+                      thisDiv = '#' +entry.target.id + 'link'
+                      jQuery(thisDiv).addClass('focused');
+                      jQuery(thisDiv).removeClass('unfocused');
+                  }
+                            
+                  // updateWhenOnScreen.unobserve(entry, target);
+                } else {
+          
+                    thisDiv = '#' +entry.target.id + 'link'
+                    jQuery(thisDiv).addClass('unfocused');
+                    jQuery(thisDiv).removeClass('focused');
+
+          
+                }
+              })
+            }, focusStateChange);
+          
+            tocNav.forEach(tocNav =>{
+            updateWhenOnScreen.observe(tocNav);
+            });
+
+        }
+        // appearWhenCenter.unobserve(entry, target);
+      } else {
+        // if($(window).width() >= 600) {
+          $(section).toggleClass('focused');
+          
+        // }
+      }
+    })
+  }, focusStateChangePrep);
+
+  tocNavPrep.forEach(tocNavPrep =>{
+  updateWhenOnScreenPrep.observe(tocNavPrep);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 let desktopSize = ($(window).width() >= 1025);
 let tabletSize = ($(window).width() <= 1025 && $(window).width() >=600);
 let mobileSize=($(window).width() <= 600);
     
 
-$( "h1" ).prepend( "# " );
-$( "h2" ).prepend( "## " );
-$( "h3" ).prepend( "### " );
-$( "h4" ).prepend( "#### " );
+
+
+
+// $( "h1" ).prepend( "# " );
+// $( "h2" ).prepend( "## " );
+// $( "h3" ).prepend( "### " );
+// $( "h4" ).prepend( "#### " );
 // $( "h5" ).prepend( "##### " );
 
 
@@ -663,7 +950,6 @@ function playCardPos() {
 if ($('.inner-frame').hasClass('stylized')) {
   $('.inner-border-bottom-left').hover(
     function(){
-      console.log('hover working')
       $('.inner-border-bottom-left-name').addClass('visible')
     }, function(){
       $('.inner-border-bottom-left-name').removeClass('visible')
@@ -1752,140 +2038,4 @@ $( document ).ready(function() {
 
 
 
-window.onload = function () {
 
-  var rippleZoomDiv = document.getElementsByClassName('ripple-zoom-area');
-  var rippleZoomBorder = document.getElementsByClassName('ripple-zoom-border');
-  for (var i = 0, ii = rippleZoomDiv.length; i < ii; i++) {
-    // console.dir(myElements[i].style);
-      var imageSrc = rippleZoomDiv[i].style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
-      var image = new Image();
-      image.src = imageSrc;
-      
-      var width = image.width / ($('#target').width()),
-          height = image.height / width;
-      rippleZoomDiv[i].style.height = height + 'px'
-      // rippleZoomDiv[i].style.width = width - 32 + 'px'
-
-      rippleZoomBorder[i].style.height = 16 + height + 'px';
-      rippleZoomBorder[i].style.top = - 54 - height + 'px';
-      rippleZoomBorder[i].style.marginBottom = -height + 'px';
-
-  };
-}
-
-
-
-
-
-const rippleZoomCursor = document.querySelectorAll('.ripple-zoom-area');
-
-const rippleZoomCursorShow = {
-  rootMargin: '-30% 0% -20% 0%'
-  //top right bottom left
-};
-
-const appearWhenOnScreen = new IntersectionObserver
-(function(
-  entries,     
-  appearWhenOnScreen
-  ) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-
-        // entry.target.classList.add('color');
-        // $target is correct, $cursorwindow is correct
-        var $target = entry.target,
-            $cursorWindow = $target.querySelector('.ripple-zoom-area-window');
-
-        // var zoomFactor = 3;
-        var zoomFactor = $target.dataset.zoom;
-
-        // Copy the background image to the zoom window
-        // $cursorWindow.css('background-image', $target.css('background-image'));
-        $cursorWindow.style.backgroundImage = $target.style.backgroundImage
-        $cursorWindow.style.backgroundRepeat= $target.style.backgroundRepeat
-        //both of these work
-
-
-        
-        // console.log(targetPos)
-        $target.onmousemove = (e) => {
-          var targetPos = $target.getBoundingClientRect();
-          
-
-          var cursX = e.pageX - $target.offsetLeft;
-          // var cursY = Math.trunc((e.pageY + targetPos.top));
-          var cursY = Math.trunc((e.clientY - targetPos.top));
-
-          // targetPos.top is calculating how far the div is from the top of the page
-          // e.pageY is how far the mouse is from the top of window????
-          // e.clientY is  how far mouse is from top of browser window
-
-
-          var imgX, imgY, imgW, imgH;
-          
-
-          if (0 <= cursX && cursX <= $target.offsetWidth && 0 <= cursY && cursY <= $target.offsetHeight) {
-            // $target.style.backgroundColor = '#ccc';
-            // $cursorWindow.style.position = 'absolute';
-            $cursorWindow.style.display = 'block';
-            // this is working
-            
-
-            $cursorWindow.style.left = cursX - $cursorWindow.offsetWidth / 2 + 'px';
-            $cursorWindow.style.top = cursY - $cursorWindow.offsetHeight / 2 + 'px';
-            // left/top is being changed
-
-
-            imgX = -(cursX * zoomFactor) + $cursorWindow.clientWidth / 2;
-            imgY = -(cursY * zoomFactor) + $cursorWindow.clientHeight / 2;
-
-
-
-            imgW = $target.clientWidth * zoomFactor;
-            imgH = $target.clientHeight * zoomFactor;
-
-            // Change the position and size of the image in the zoom window
-            // to show a magnified view of the image content under the cursor
-            $cursorWindow.style.backgroundPosition = imgX + 'px ' + imgY + 'px';
-            
-            // changing the size of the image in the window
-            $cursorWindow.style.backgroundSize =  imgW + 'px ' + imgH + 'px';
-
-
-          } else {
-              $cursorWindow.style.display = 'none';
-              $target.style.backgroundColor = '';
-
-          }
-
-
-        };
-
-        // appearWhenOnScreen.unobserve(rippleZoomCursor);
-      } else {
-        entry.target.style.backgroundColor = '';
-        // $cursorWindow.style.backgroundImage = ''
-        // $cursorWindow.style.backgroundRepeat= ''
-        // $cursorWindow.style.display = 'none';
-        // $target.style.backgroundColor = '';
-      }
-    })
-  }, rippleZoomCursorShow);
-
-  rippleZoomCursor.forEach(rippleZoomCursor =>{
-  appearWhenOnScreen.observe(rippleZoomCursor);
-});
-
-
-
-$('.ripple-zoom-area').hover(function(){
-  $('.follower-center, .follower-around').toggleClass('zoom');
-});
-
-$('.ripple-zoom-area-window').mouseleave(function(){
-  $(this).css({
-    'display': ''
-  });
-})
