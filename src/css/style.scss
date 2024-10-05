@@ -3,6 +3,7 @@
   border-radius: 6px;
   // cursor: none;
   background-color: transparent;
+  cursor: none;
 }
 
 $red: #E63223;
@@ -47,7 +48,7 @@ p a:link {
   text-decoration: underline;
   color: $primary-dark;
   text-decoration-color: $red;
-  :hover {
+  @media (hover: hover) {
     color: $red;
   }
   // > * {
@@ -215,11 +216,13 @@ body {
   pointer-events: all;
   z-index: 9999;
   white-space: nowrap;
-  &:hover .to-page {
-    opacity: 1;
-  }
-  &:hover .current-page {
-    opacity: 0;
+  @media (hover: hover) {
+    &:hover .to-page {
+      opacity: 1;
+    }
+    &:hover .current-page {
+      opacity: 0;
+    }
   }
 }
 
@@ -349,16 +352,18 @@ nav {
           scale: 1.4;
         }
       }
-      &:hover {
-        img {
-          transform: translate(0);
-          scale: 1;
-          filter: grayscale(0%);
-          transition: all 650ms ease-in-out;
-        }
-        .help {
-          bottom: -300px;
-          transition: all 650ms ease-in-out;
+      @media (hover: hover) {
+        &:hover {
+          img {
+            transform: translate(0);
+            scale: 1;
+            filter: grayscale(0%);
+            transition: all 650ms ease-in-out;
+          }
+          .help {
+            bottom: -300px;
+            transition: all 650ms ease-in-out;
+          }
         }
       }
       .help {
@@ -603,10 +608,6 @@ section {
 
 // mobile styling
 @media (max-width: 600px) {
-
-  // .cursor {
-  //   display: none;
-  // }
 
   .left {
     width: 100vw;

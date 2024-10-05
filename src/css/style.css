@@ -3,6 +3,7 @@
   box-sizing: border-box;
   border-radius: 6px;
   background-color: transparent;
+  cursor: none;
 }
 
 body {
@@ -35,8 +36,10 @@ p a:link {
   color: #000000;
   text-decoration-color: #E63223;
 }
-p a:link :hover {
-  color: #E63223;
+@media (hover: hover) {
+  p a:link {
+    color: #E63223;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p, .caption {
@@ -183,11 +186,13 @@ body {
   z-index: 9999;
   white-space: nowrap;
 }
-.title:hover .to-page {
-  opacity: 1;
-}
-.title:hover .current-page {
-  opacity: 0;
+@media (hover: hover) {
+  .title:hover .to-page {
+    opacity: 1;
+  }
+  .title:hover .current-page {
+    opacity: 0;
+  }
 }
 
 .to-page {
@@ -312,15 +317,17 @@ nav {
 .wrapper-boxes-box img[data-img-zoom-yads] {
   scale: 1.4;
 }
-.wrapper-boxes-box:hover img {
-  transform: translate(0);
-  scale: 1;
-  filter: grayscale(0%);
-  transition: all 650ms ease-in-out;
-}
-.wrapper-boxes-box:hover .help {
-  bottom: -300px;
-  transition: all 650ms ease-in-out;
+@media (hover: hover) {
+  .wrapper-boxes-box:hover img {
+    transform: translate(0);
+    scale: 1;
+    filter: grayscale(0%);
+    transition: all 650ms ease-in-out;
+  }
+  .wrapper-boxes-box:hover .help {
+    bottom: -300px;
+    transition: all 650ms ease-in-out;
+  }
 }
 .wrapper-boxes-box .help {
   height: 300px;
