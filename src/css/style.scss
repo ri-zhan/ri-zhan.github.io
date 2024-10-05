@@ -27,29 +27,34 @@ a {
   text-decoration: none;
 
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
-  & p :not(.caption){
+  & p :not(.caption) {
     text-decoration: underline;
     text-decoration-color: $red;
   }
 }
 
-a:hover, a:hover > * {
+a:visited, a:hover, a:hover > *:not(h4) {
+  color: $primary-dark;
   text-decoration: underline;
   text-decoration-color: $red;
-}
-
-a:visited {
-  text-decoration: none;
-  color: $primary-dark;
-}
-
-a:link {
-  text-decoration: none;
 }
 
 a:active, a:active > *  {
   color: $red;
 }
+
+p a:link {
+  text-decoration: underline;
+  color: $primary-dark;
+  text-decoration-color: $red;
+  :hover {
+    color: $red;
+  }
+  // > * {
+  //   text-decoration: none;
+  // }
+}
+
 
 // for scrolling outside of div //
 // #target{
@@ -329,8 +334,8 @@ nav {
           transform: translate(-10px, 40px);
         }
         &[data-img-zoom-hereafter] {
-          scale: 2.75;
-          transform: translate(-10px, -20px);
+          scale: 1.5;
+          transform: translate(10px, 20px);
         }
         &[data-img-zoom-yads] {
           scale: 1.4;
@@ -408,6 +413,14 @@ section {
   height: fit-content;
 }
 
+
+[class^="col-"] {
+  &.center {
+    align-items: center;
+    align-self: center;
+  }
+}
+
 // column layouts
 // 4 col layouts
 .col-4l {
@@ -415,18 +428,13 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  &.center {
-    align-items: center;
-  }
+
 }
 .col-4r {
   grid-column: 5/9;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  &.center {
-    align-items: center;
-  }
 }
 
 // 6 col layouts
@@ -434,18 +442,12 @@ section {
   grid-column: 1/7;
   display: flex;
   flex-direction: column;
-  &.center {
-    align-items: center;
-  }
 }
 .col-6r {
   grid-column: 3/10;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  &.center {
-    align-items: center;
-  }
 }
 
 // 2 col layouts

@@ -20,21 +20,22 @@ a p :not(.caption) {
   text-decoration-color: #E63223;
 }
 
-a:hover, a:hover > * {
+a:visited, a:hover, a:hover > *:not(h4) {
+  color: #000000;
   text-decoration: underline;
   text-decoration-color: #E63223;
 }
 
-a:visited {
-  text-decoration: none;
-  color: #000000;
-}
-
-a:link {
-  text-decoration: none;
-}
-
 a:active, a:active > * {
+  color: #E63223;
+}
+
+p a:link {
+  text-decoration: underline;
+  color: #000000;
+  text-decoration-color: #E63223;
+}
+p a:link :hover {
   color: #E63223;
 }
 
@@ -295,8 +296,8 @@ nav {
   transform: translate(-10px, 40px);
 }
 .wrapper-boxes-box img[data-img-zoom-hereafter] {
-  scale: 2.75;
-  transform: translate(-10px, -20px);
+  scale: 1.5;
+  transform: translate(10px, 20px);
 }
 .wrapper-boxes-box img[data-img-zoom-yads] {
   scale: 1.4;
@@ -368,14 +369,16 @@ section img {
   max-height: 100%;
 }
 
+[class^=col-].center {
+  align-items: center;
+  align-self: center;
+}
+
 .col-4l {
   grid-column: 1/5;
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.col-4l.center {
-  align-items: center;
 }
 
 .col-4r {
@@ -384,17 +387,11 @@ section img {
   justify-content: center;
   flex-direction: column;
 }
-.col-4r.center {
-  align-items: center;
-}
 
 .col-6l {
   grid-column: 1/7;
   display: flex;
   flex-direction: column;
-}
-.col-6l.center {
-  align-items: center;
 }
 
 .col-6r {
@@ -402,9 +399,6 @@ section img {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.col-6r.center {
-  align-items: center;
 }
 
 .col-2l {
