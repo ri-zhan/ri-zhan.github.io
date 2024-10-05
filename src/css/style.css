@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://use.typekit.net/ivl6exa.css");
 * {
   box-sizing: border-box;
   border-radius: 6px;
@@ -49,7 +50,7 @@ h1, h2, h3, h4, h5, h6, p, .caption {
 
 h1 {
   color: #000000;
-  font-family: "IvyOra Display";
+  font-family: "IvyOra Display", serif;
   font-size: 72px;
   font-style: normal;
   font-weight: 100;
@@ -59,7 +60,7 @@ h1 {
 
 h2 {
   color: #000000;
-  font-family: "IvyOra Display";
+  font-family: "IvyOra Display", serif;
   font-size: 64px;
   font-style: normal;
   font-weight: 100;
@@ -69,7 +70,7 @@ h2 {
 
 h3 {
   color: #000000;
-  font-family: "IvyOra Display";
+  font-family: "IvyOra Display", serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 100;
@@ -79,7 +80,7 @@ h3 {
 
 h4 {
   color: #000000;
-  font-family: "IvyOra Display";
+  font-family: "IvyOra Display", serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
@@ -89,7 +90,7 @@ h4 {
 
 h5 {
   color: #000000;
-  font-family: "Source Code Pro";
+  font-family: "Source Code Pro", monospace;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -100,7 +101,7 @@ h5 {
 
 p, ul, ol, li {
   color: #000;
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 350;
