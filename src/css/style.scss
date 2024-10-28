@@ -15,7 +15,7 @@ $lighter: #F9F1E8;
 
 ///// style overhaul
 $primary: #F0EFE8;
-$primary-dark: #000000;
+$primary-dark: #1A0F04;
 $red: #E63223;
 
 body {
@@ -229,9 +229,11 @@ body {
   @media (hover: hover) {
     &:hover .to-page {
       opacity: 1;
+      transition: opacity 100ms ease-out;
     }
     &:hover .current-page {
       opacity: 0;
+      transition: opacity 100ms ease-out;
     }
   }
 }
@@ -469,6 +471,15 @@ section {
   grid-column: 1/7;
   display: flex;
   flex-direction: column;
+  &.row-display {
+    flex-direction: row;
+    column-gap: 3rem;
+    img {
+      height: min-content;
+      width: 100%;
+      align-self: center;
+    }
+  }
 }
 .col-6r {
   grid-column: 3/10;
@@ -502,6 +513,27 @@ section {
   flex-direction: column;
   justify-content: center;
 }
+
+// 3 col
+.col-3l {
+  grid-column: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-3m {
+  grid-column: 5/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-3r {
+  grid-column: 6/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 // 8 col
 .col-8 {
   display: grid;
@@ -523,7 +555,9 @@ section {
   }
 }
 
-
+.img-caption {
+  gap: 3rem;
+}
 
 ////cursor
 .cursor-center.zoom {
