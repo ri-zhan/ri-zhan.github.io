@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-31NZ82XM5H"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-31NZ82XM5H');
+        </script>
+        <title>YADS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta property="og:title" content="#">
+        <meta property="og:description" name="description" content="#">
+        <meta property="og:image" name="image" content="#">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://use.typekit.net/ivl6exa.css">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    </head>
+<body>
+    <span class="cursor-center cursor"></span>
+    <span class="cursor-around cursor"></span>
+
+    <div class="left">
+
+        <nav>
+            <a href="about.html"><h4>About</h4></a>
+            <h4 style="text-decoration: line-through;">Play</h4>
+            <a href="https://drive.google.com/file/d/1Qnh4PQXWREJMvXRxp3mo3w4YMgOaEC89/view?usp=sharing" target="_blank">
+                <h4>Resume</h4>
+            </a>
+        </nav>
+
+        <a href="index.html" class="title">
+            <h1 class="current-page">YADS</h1>
+            <h1 class="to-page">Home</h1>
+        </a>
+
+        <div class="toc" style="width: min-content;">
+            <a href="#" class="toc-item" id="first-seclink"><h4>Summary</h4></a>
+            <a href="#" class="toc-item" id="second-seclink"><h4>Introduction</h4></a>
+            <a href="#" class="toc-item" id="third-seclink"><h4>Methodology</h4></a>
+            <a href="#" class="toc-item" id="fourth-seclink"><h4>Foundations</h4></a>
+            <a href="#" class="toc-item" id="sixth-seclink"><h4>Components</h4></a>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <section id="first-sec">
+
+            <div class="wrapper-content">
+                <div class="col-6l wrapper-hero">
+                    <img src="images/yads/yads-hero-img.png" alt="">
+                </div>
+                <div class="col-2r">
+                    <div class="wrapper-inner">
+                        <h5>My role</h5>
+                        <ul>
+                            <li>User interface design</li>
+                            <li>Implementation QA</li>
+                            <li>Style guide</li>
+                            <li>Wiki</li>
+                            <li>Design tokens</li>
+                            <li>Pattern library</li>
+                        </ul>
+                    </div>
+                    <div class="wrapper-inner">
+                        <h5>Tool</h5>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Docusaurus</li>
+                            <li>Tailwind CSS</li>
+                            <li>Javascript</li>
+                        </ul>
+                    </div>
+                    <div class="wrapper-inner">
+                        <h5>Info+</h5>
+                        <p>For the IBM Skills Network Team.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="second-sec">
+            <div class="wrapper-content">
+                <h3 class="col-4l">The problem.</h3>
+                <div class="col-4r">As an agile software team, quick turnaround and development was key. I identified that one of the major factors slowing us down was the lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a problem which magnified over the years due to the discrepancy between the team members’ interpretation the non-existent brand style.</div>
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-4l">Thus,</h3>
+                <div class="col-4r">A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</div>
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-6l">So what if we had a centralized place for both designers and developers to reference when communicating design needs so to speed up the development process and eliminates redundancy and inconsistency?</h3>
+            </div>
+        </section>
+
+
+        <section id="third-sec">
+
+            <div class="wrapper-content">
+                <h3 class="col-6l">Methodology (in progress)</h3>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="col-6l img-caption"  style="align-self: center;">
+                    <img src="images/yads/yads-consolidation.png" alt="All of the purple/blue/violet shades I found on just one web page of one of our products." style="padding-top: 0.5rem;">
+                    <p class="caption">All of the purple/blue/violet shades I found on just one web page of one of our products.</p>
+                </div>
+                <p class="col-2r">This design system creation started by consolidating existing designs and consulting users to understand what best represented the current brand and what could best serve the brand in the future. First, I acquired all existing design files, which gave me an overview of the most used interfaces.</p>
+            </div>
+
+
+            <!-- <div class="wrapper-content">
+                <div class="col-8 wrapper-inner" style="align-self: center; align-items: flex-start;">
+                    <div class="col-4l">
+                        <p>After the style was defined, I got to creating Figma components and developing working code immediately. The following foundations and components were identified to be the most important for development:</p>
+                    </div>
+                    <div class="wrapper-inner col-2l">
+                        <p>Foundations</p>
+                        <ul>
+                            <li>Color</li>
+                            <li>Typography</li>
+                            <li>Iconography</li>
+                        </ul>
+                    </div>
+                    <div class="wrapper-inner col-2ml">
+                        <p>Components</p>
+                        <ul>
+                            <li>Buttons</li>
+                            <li>Input fields</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+
+        </section>
+
+
+        <!-- <section id="fourth-sec">
+            <div class="wrapper-content">
+                <h3 class="col-6l">The developer experience</h3>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-ss-btns-code-mockup.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Working code</h5>
+                    <p>Yes, I actually made working HTML code for ALL of the components for the developers.</p>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="fourth-sec">
+            <div class="wrapper-content">
+                <h3 class="col-6l">Foundations (in progress)</h3>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-colors-light.png" class="">
+                    <img src="images/yads/yads-colors-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Colors</h5>
+                    <p>Defining the primary, neutral, and semantic colors.</p>
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-typography.png" class="" style="padding: 0.5rem;">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Typography</h5>
+                    <!-- <p>One of the first components I worked on.</p> -->
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-grid.png" class="" style="padding: 0.5rem;">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Grid</h5>
+                    <!-- <p>One of the first components I worked on.</p> -->
+                </div>
+            </div>
+
+        </section>
+
+        <section id="sixth-sec">
+            <div class="wrapper-content">
+                <h3 class="col-6l">Components (in progress)</h3>
+            </div>
+
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-btns-light.png" class="">
+                    <img src="images/yads/yads-btns-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Buttons</h5>
+                    <!-- <p>One of the first components I worked on.</p> -->
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-badges-light.png" class="">
+                    <img src="images/yads/yads-badges-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Badges</h5>
+                    <!-- <p>One of the first components I worked on.</p> -->
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-input-light.png" class="">
+                    <img src="images/yads/yads-input-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Input field</h5>
+                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
+                </div>
+            </div>
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l row-display">
+                    <img src="images/yads/yads-breadcrumb-light.png" class="">
+                    <img src="images/yads/yads-breadcrumb-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Breadcrumb</h5>
+                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
+                </div>
+            </div>
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <img src="images/yads/yads-toggle-light.png" class="">
+                    <img src="images/yads/yads-toggle-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Toggle field</h5>
+                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
+                </div>
+            </div>
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l row-display">
+                    <img src="images/yads/yads-hyperlink-light.png" class="">
+                    <img src="images/yads/yads-hyperlink-dark.png" class="">
+                </div>
+                <div class="col-2r wrapper-inner">
+                    <h5>Hyperlink field</h5>
+                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-6l">Case study in progress.</h3>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="js/script.js"></script>
+</body>
+</html>

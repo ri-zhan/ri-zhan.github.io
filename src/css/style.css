@@ -26,7 +26,7 @@ a p :not(.caption) {
 }
 
 a:visited, a:hover, a:hover > *:not(h4) {
-  color: #000000;
+  color: #1A0F04;
   text-decoration: underline;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in;
@@ -40,7 +40,7 @@ a:active, a:active > * {
 
 p a:link {
   text-decoration: underline;
-  color: #000000;
+  color: #1A0F04;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in;
 }
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, p, .caption {
 }
 
 h1 {
-  color: #000000;
+  color: #1A0F04;
   font-family: ivyora-display, sans-serif;
   font-size: 72px;
   font-style: normal;
@@ -68,7 +68,7 @@ h1 {
 }
 
 h2 {
-  color: #000000;
+  color: #1A0F04;
   font-family: ivyora-display, sans-serif;
   font-size: 64px;
   font-style: normal;
@@ -78,7 +78,7 @@ h2 {
 }
 
 h3 {
-  color: #000000;
+  color: #1A0F04;
   font-family: ivyora-display, sans-serif;
   font-size: 36px;
   font-style: normal;
@@ -88,7 +88,7 @@ h3 {
 }
 
 h4 {
-  color: #000000;
+  color: #1A0F04;
   font-family: ivyora-display, sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -98,7 +98,7 @@ h4 {
 }
 
 h5 {
-  color: #000000;
+  color: #1A0F04;
   font-family: source-code-pro, monospace;
   font-size: 16px;
   font-style: normal;
@@ -149,7 +149,7 @@ li:before {
 }
 
 .caption {
-  color: #000000;
+  color: #1A0F04;
   font-family: source-code-pro, monospace;
   font-size: 12.25px;
   font-style: normal;
@@ -160,7 +160,7 @@ li:before {
 }
 
 body {
-  color: #000000 !important;
+  color: #1A0F04 !important;
   margin: 0;
   height: 100vh;
   width: 100%;
@@ -199,9 +199,11 @@ body {
 @media (hover: hover) {
   .title:hover .to-page {
     opacity: 1;
+    transition: opacity 100ms ease-out;
   }
   .title:hover .current-page {
     opacity: 0;
+    transition: opacity 100ms ease-out;
   }
 }
 
@@ -229,8 +231,8 @@ body {
   position: fixed;
   flex-direction: column;
   grid-column: 1/2;
-  -moz-columns: #000000;
-       columns: #000000;
+  -moz-columns: #1A0F04;
+       columns: #1A0F04;
   width: -moz-min-content;
   width: min-content;
   row-gap: 1.5rem;
@@ -423,6 +425,17 @@ section img {
   display: flex;
   flex-direction: column;
 }
+.col-6l.row-display {
+  flex-direction: row;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+.col-6l.row-display img {
+  height: -moz-min-content;
+  height: min-content;
+  width: 100%;
+  align-self: center;
+}
 
 .col-6r {
   grid-column: 3/10;
@@ -459,6 +472,27 @@ section img {
   justify-content: center;
 }
 
+.col-3l {
+  grid-column: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-3m {
+  grid-column: 5/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-3r {
+  grid-column: 6/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .col-8 {
   display: grid;
   grid-column: 1/9;
@@ -478,6 +512,10 @@ section img {
 .col-8.fake-table > [class^=col-] {
   display: inherit;
   vertical-align: top;
+}
+
+.img-caption {
+  gap: 3rem;
 }
 
 .cursor-center.zoom {
