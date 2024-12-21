@@ -461,7 +461,7 @@ section img {
 }
 
 .col-6r {
-  grid-column: 3/10;
+  grid-column: 5/11;
   display: flex;
 }
 
