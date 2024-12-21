@@ -444,8 +444,9 @@ section {
 }
 
 
-[class^="col-"] {
-  flex-direction: columns;
+div[class^="col-"], div[class*="col-"] {
+  // applies to all div with said class, no idea what the * does but it's a wild card
+  flex-direction: column;
   height: min-content;
   justify-content: center;
   &.center {
@@ -460,8 +461,14 @@ section {
   grid-column: 1/5;
   display: flex;
 }
+
+.col-4m {
+  grid-column: 3/7;
+  display: flex;
+}
+
 .col-4r {
-  grid-column: 5/9;
+  grid-column: 7/11;
   display: flex;
 }
 
