@@ -406,6 +406,7 @@ section img {
   flex-direction: columns;
   height: -moz-min-content;
   height: min-content;
+  justify-content: center;
 }
 [class^=col-].center {
   align-items: center;
@@ -415,35 +416,26 @@ section img {
 .col-4l {
   grid-column: 1/5;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-4r {
   grid-column: 5/9;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-5l {
   grid-column: 1/6;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-5r {
   grid-column: 6/11;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-6l {
   grid-column: 1/7;
   display: flex;
-  flex-direction: column;
 }
 .col-6l.row-display {
   flex-direction: row;
@@ -460,64 +452,47 @@ section img {
 .col-6r {
   grid-column: 3/10;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-2l {
   grid-column: 1/3;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-2ml {
   grid-column: 3/5;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-2mr {
   grid-column: 5/7;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-2r {
   grid-column: 7/9;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3l {
   grid-column: 1/5;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3m {
   grid-column: 5/9;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3r {
   grid-column: 6/9;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-8 {
   display: grid;
   grid-column: 1/11;
   grid-template-columns: repeat(10, 1fr);
-  justify-content: center;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem; /* 24px */
 }
