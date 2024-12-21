@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6, p, .caption {
 h1 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 100;
   line-height: 96px; /* 133.333% */
@@ -117,10 +117,10 @@ h3 {
 h4 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 26px; /* 125% */
+  line-height: 24px;
   letter-spacing: 1px;
 }
 
@@ -199,12 +199,12 @@ body {
   display: grid;
   //columns
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 3rem; //48px
+  column-gap: 2rem; //48px
   // rows
   grid-template-rows: repeat(4, 1fr);
   row-gap: 3rem; // 48px
   // both columns & rows
-  padding: 4rem 2rem 4rem 4rem; // 64px
+  padding: 4rem 1rem 4rem 4rem; // 64px
   position: absolute;
   height: 100%;
   width: 20vw;
@@ -293,12 +293,12 @@ nav {
 .wrapper {
   display: grid;
   //columns
-  grid-template-columns: repeat(8, 1fr);
-  column-gap: 3rem; //48px
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: 2rem; //48px
   row-gap: 60px;
 
   // both columns & rows
-  padding: 0 4rem; // 64px
+  padding: 0 4rem 0 2rem; // 0 64px 0 32px
   
   //row
   grid-row: 1/5;
@@ -323,10 +323,10 @@ nav {
   }
 
   &-boxes {
-    grid-column: 3/9;
+    grid-column: 2/11;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 3rem; //48px
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 2rem; //48px
     row-gap: 60px;
     height: min-content;
     align-self: center;
@@ -335,7 +335,7 @@ nav {
     &-box {
       position: relative;
       display: grid;
-      grid-column: span 2;
+      grid-column: span 3;
       row-gap: 1.5rem; /* 24px */
       transition: all 500ms ease-in-out;
       &-img {
@@ -400,14 +400,15 @@ nav {
       overflow: visible;
     }
     display: grid;
-    grid-column: 1/9;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 3rem; //48px
+    grid-column: 1/11;
+    grid-template-columns: repeat(10, 1fr);
+    column-gap: 2rem; //48px
     row-gap: 1.5rem /* 24px */;
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
     height: fit-content;
+    align-content: center;
   
     // scroll snap
     scroll-snap-align: center;
@@ -434,9 +435,9 @@ section {
     max-height: 100%;
   }
   display: grid;
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
-  column-gap: 3rem; //48px
+  grid-column: 1/11;
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: 2rem; //48px
   row-gap: 1.5rem /* 24px */;
   width: 100%;
   height: fit-content;
@@ -444,6 +445,8 @@ section {
 
 
 [class^="col-"] {
+  flex-direction: columns;
+  height: min-content;
   &.center {
     align-items: center;
     align-self: center;
@@ -466,6 +469,21 @@ section {
   flex-direction: column;
 }
 
+// 5 col layouts
+.col-5l {
+  grid-column: 1/6;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.col-5r {
+  grid-column: 6/11;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 // 6 col layouts
 .col-6l {
   grid-column: 1/7;
@@ -473,7 +491,7 @@ section {
   flex-direction: column;
   &.row-display {
     flex-direction: row;
-    column-gap: 3rem;
+    column-gap: 2rem;
     img {
       height: min-content;
       width: 100%;
@@ -537,8 +555,8 @@ section {
 // 8 col
 .col-8 {
   display: grid;
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
+  grid-column: 1/11;
+  grid-template-columns: repeat(10, 1fr);
   justify-content: center;
   column-gap: 1.5rem; /* 24px */
   // the following code is just for the fake table
@@ -2501,7 +2519,7 @@ footer, .footer {
   width: 100%;
   z-index: 999999999;
   pointer-events: all;
-  column-gap: 3rem;
+  column-gap: 2rem;
   justify-content: space-between;
   // margin-bottom: 2rem;
   &.side-title {
@@ -2818,11 +2836,11 @@ footer, .footer {
   display: grid;
   // pointer-events: none;
   // grid-template-columns: 1fr 3fr 1fr;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   // grid-template-rows: 1fr 8fr 1fr;
-  column-gap: 3rem;
+  column-gap: 2rem;
   // row-gap: 1em;
   height: 100%;
   width: 100%;
@@ -2926,7 +2944,7 @@ footer, .footer {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 3rem;
+      column-gap: 2rem;
       justify-content: space-between;
       transition: all 500ms ease-out;
       row-gap: 2rem;
@@ -2942,7 +2960,7 @@ footer, .footer {
 
       .column-4a, .column-4b {
         grid-column: 1fr;
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         transition: all 500ms ease-out;
@@ -2993,7 +3011,7 @@ footer, .footer {
       // width: 100%;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      column-gap: 3rem;
+      column-gap: 2rem;
       justify-content: space-between;
       // padding: 0.5rem;
       // &.borderclass {
@@ -3012,7 +3030,7 @@ footer, .footer {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      column-gap: 3rem;
+      column-gap: 2rem;
       justify-content: space-between;
       // margin-bottom: 2rem;
       @media (max-width: 600px) {
@@ -3021,7 +3039,7 @@ footer, .footer {
         // grid-column: span 4;
       }
       .column-2 {
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3031,7 +3049,7 @@ footer, .footer {
         row-gap: 3rem;
       }
       .column-3a {
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3043,7 +3061,7 @@ footer, .footer {
       .column-3b {
         // height: 100%;
         grid-column: 6/9;
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3056,7 +3074,7 @@ footer, .footer {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      column-gap: 3rem;
+      column-gap: 2rem;
       // margin-bottom: 4rem;
       justify-content: space-between;
       row-gap: 2rem;
@@ -3070,7 +3088,7 @@ footer, .footer {
         // grid-column: span 4;
       }
       .column-5 {
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3082,7 +3100,7 @@ footer, .footer {
       .column-3 {
         // height: 100%;
         grid-column: span 3;
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3095,7 +3113,7 @@ footer, .footer {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      column-gap: 3rem;
+      column-gap: 2rem;
       row-gap: 3rem;
       justify-content: space-between;
       // margin-bottom: 3rem;
@@ -3114,12 +3132,12 @@ footer, .footer {
         width: 100%;
         object-fit: cover;
         row-gap: 2rem;
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
       }
       .column-5 {
         // height: 100%;
         grid-column: span 5;
-        grid-column-gap: 3rem;
+        grid-column-gap: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -3162,7 +3180,7 @@ footer, .footer {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      column-gap: 3rem;
+      column-gap: 2rem;
       justify-content: space-between;
       margin-bottom: 2rem;
       @media (max-width: 600px) {
@@ -3395,7 +3413,7 @@ footer, .footer {
   grid-column: span 8;
   grid-template-columns: repeat(8, 1fr);
   row-gap: 4rem;
-  column-gap: 3rem;
+  column-gap: 2rem;
   // .column-5-3
   // 5 column on left
   @media (max-width: 600px) {
@@ -3734,7 +3752,7 @@ footer, .footer {
 //   display: grid;
 //   grid-column: span 8;
 //   grid-template-columns: repeat(8, 1fr);
-//   column-gap: 3rem;
+//   column-gap: 2rem;
 //   .title {
 //     grid-column: span 5;
 //   }
