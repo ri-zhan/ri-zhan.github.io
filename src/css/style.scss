@@ -453,6 +453,12 @@ div[class^="col-"], div[class*="col-"] {
     align-items: center;
     align-self: center;
   }
+  &.center-y {
+    align-self: center;
+  }
+  &.center-x {
+    align-items: center;
+  }
 }
 
 // column layouts

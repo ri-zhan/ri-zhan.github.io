@@ -412,6 +412,12 @@ div[class^=col-].center, div[class*=col-].center {
   align-items: center;
   align-self: center;
 }
+div[class^=col-].center-y, div[class*=col-].center-y {
+  align-self: center;
+}
+div[class^=col-].center-x, div[class*=col-].center-x {
+  align-items: center;
+}
 
 .col-4l {
   grid-column: 1/5;
