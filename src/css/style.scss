@@ -444,7 +444,7 @@ section {
 }
 
 
-div[class^="col-"], div[class*="col-"] {
+*[class^="col-"], *[class*="col-"] {
   // applies to all div with said class, no idea what the * does but it's a wild card
   flex-direction: column;
   height: min-content;

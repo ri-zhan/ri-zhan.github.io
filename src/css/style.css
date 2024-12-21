@@ -402,20 +402,20 @@ section img {
   max-height: 100%;
 }
 
-div[class^=col-], div[class*=col-] {
+*[class^=col-], *[class*=col-] {
   flex-direction: column;
   height: -moz-min-content;
   height: min-content;
   justify-content: center;
 }
-div[class^=col-].center, div[class*=col-].center {
+*[class^=col-].center, *[class*=col-].center {
   align-items: center;
   align-self: center;
 }
-div[class^=col-].center-y, div[class*=col-].center-y {
+*[class^=col-].center-y, *[class*=col-].center-y {
   align-self: center;
 }
-div[class^=col-].center-x, div[class*=col-].center-x {
+*[class^=col-].center-x, *[class*=col-].center-x {
   align-items: center;
 }
 
