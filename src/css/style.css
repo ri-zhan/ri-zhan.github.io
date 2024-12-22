@@ -136,15 +136,17 @@ ul, ol {
 }
 
 li {
+  padding-left: 0.5rem;
+  text-indent: -0.25rem;
   margin-bottom: 0.375rem;
   text-align: left;
 }
 li:before {
   display: inline-block;
-  width: 2.5rem;
-  text-align: right;
-  margin-left: -3rem;
-  margin-right: 0.5em;
+  width: 0.5rem;
+  text-align: left;
+  margin-left: -0.5rem;
+  margin-right: 0.25rem;
 }
 li:last-child {
   margin-bottom: 0;
@@ -155,12 +157,25 @@ ul > li:before {
   color: red; /* or whatever color you prefer */
 }
 
-ol > li {
-  counter-increment: li;
+ol {
+  counter-reset: item;
 }
+
 ol > li:before {
-  content: counter(li) ". ";
+  content: counters(item, ".") " ";
+  counter-increment: item;
   color: red; /* or whatever color you prefer */
+}
+ol > li li {
+  padding-left: 1.75rem;
+  text-indent: 0rem;
+}
+ol > li li::before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  width: 1.75rem;
+  margin-left: -1.75rem;
+  margin-right: 0rem;
 }
 
 .caption {

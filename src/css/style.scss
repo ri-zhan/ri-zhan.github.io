@@ -163,20 +163,20 @@ ul, ol {
 
 li {
   // need this for multiple lines
-  // padding-left: 0.4rem;
-  // text-indent: -0.5rem;
+  padding-left: 0.5rem;
+  // li padding-left, &:before width and (-)margin-left need to match
+  
+  text-indent: -0.25rem;
+  // li (0)text-indent and &:before margin-right need to match
 
   margin-bottom: 0.375rem;
   text-align: left;
   &:before {
     display: inline-block;
-    width: 2.5rem;
-    text-align: right;
-    // direction: rtl;
-    margin-left: -3rem;
-
-    // adds space to right
-    margin-right: 0.5em;
+    width: 0.5rem;
+    text-align: left;
+    margin-left: -0.5rem;
+    margin-right: 0.25rem;
   }
   &:last-child {
     margin-bottom: 0;
@@ -190,12 +190,29 @@ ul > li {
   }
 }
 
+ol {
+  counter-reset: item;
+}
 
 ol > li {
-  counter-increment: li;
+  // counter-increment: li;
   &:before {
-    content: counter(li) ". ";
+    // content: counter(li) ". ";
+    content: counters(item, ".") " "; counter-increment: item;
     color: red; /* or whatever color you prefer */
+  }
+  li {
+    padding-left: 1.75rem;
+    // li padding-left, &:before width and (-)margin-left need to match
+    text-indent: -0rem;
+    // li (0)text-indent and &:before margin-right need to match
+    
+    &::before {
+      content: counters(item, ".") " "; counter-increment: item;
+      width: 1.75rem;
+      margin-left: -1.75rem;
+      margin-right: 0rem;
+    }
   }
 }
 
