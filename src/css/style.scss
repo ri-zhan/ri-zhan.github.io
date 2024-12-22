@@ -157,7 +157,8 @@ ul, ol {
   list-style-position: inside;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 0.5rem;
+  // margin left should match li padding-left and &:before width and (-)margin left
 }
 
 
@@ -201,11 +202,17 @@ ol > li {
     content: counters(item, ".") " "; counter-increment: item;
     color: red; /* or whatever color you prefer */
   }
+  ol {
+    margin: 0 0 0 0;
+    // counteracting the ol margin-right in first-level list items, could aadd in margin-top on first-level list item to add back in space
+  }
   li {
     padding-left: 1.75rem;
     // li padding-left, &:before width and (-)margin-left need to match
     text-indent: -0rem;
     // li (0)text-indent and &:before margin-right need to match
+
+    margin-bottom: 0;
     
     &::before {
       content: counters(item, ".") " "; counter-increment: item;
