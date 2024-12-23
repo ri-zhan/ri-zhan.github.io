@@ -576,15 +576,15 @@ section {
 
 // 3 col
 .col-3l {
-  grid-column: 1/5;
+  grid-column: 1/4;
   display: flex;
 }
 .col-3m {
-  grid-column: 5/9;
+  grid-column: 4/7;
   display: flex;
 }
 .col-3r {
-  grid-column: 6/9;
+  grid-column: 7/10;
   display: flex;
 }
 
