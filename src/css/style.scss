@@ -805,6 +805,20 @@ section {
     }
   }
 
+  // 6 col layouts
+  .col-6l {
+    grid-template-columns: repeat(4, 1fr);
+    &.row-display {
+      flex-direction: column;
+      grid-column: span 4;
+      img {
+        height: min-content;
+        width: 100%;
+        align-self: center;
+      }
+    }
+  }
+
   section {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
