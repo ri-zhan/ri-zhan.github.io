@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6, p, .caption {
 h1 {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 100;
   line-height: 96px; /* 133.333% */
@@ -90,10 +90,10 @@ h3 {
 h4 {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 26px; /* 125% */
+  line-height: 24px;
   letter-spacing: 1px;
 }
 
@@ -132,20 +132,54 @@ ul, ol {
   list-style-position: inside;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 0.5rem;
 }
 
 li {
-  padding-left: 0.4rem;
-  text-indent: -0.5rem;
+  padding-left: 0.5rem;
+  text-indent: -0.25rem;
   margin-bottom: 0.375rem;
+  text-align: left;
+}
+li:before {
+  display: inline-block;
+  width: 0.5rem;
+  text-align: left;
+  margin-left: -0.5rem;
+  margin-right: 0.25rem;
 }
 li:last-child {
   margin-bottom: 0;
 }
-li:before {
+
+ul > li:before {
   content: "• ";
   color: red; /* or whatever color you prefer */
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol > li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  color: red; /* or whatever color you prefer */
+}
+ol > li ol {
+  margin: 0 0 0 0;
+}
+ol > li li {
+  padding-left: 1.75rem;
+  text-indent: 0rem;
+  margin-bottom: 0;
+}
+ol > li li::before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  width: 1.75rem;
+  margin-left: -1.75rem;
+  margin-right: 0rem;
 }
 
 .caption {
@@ -170,11 +204,11 @@ body {
 .left {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   grid-template-rows: repeat(4, 1fr);
   row-gap: 3rem;
-  padding: 4rem 2rem 4rem 4rem;
+  padding: 4rem 1rem 4rem 4rem;
   position: absolute;
   height: 100%;
   width: 20vw;
@@ -264,11 +298,11 @@ nav {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  grid-template-columns: repeat(10, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   row-gap: 60px;
-  padding: 0 4rem;
+  padding: 0 4rem 0 2rem;
   grid-row: 1/5;
   height: 100%;
   overflow-y: scroll;
@@ -286,11 +320,11 @@ nav {
   padding-bottom: 4rem;
 }
 .wrapper-boxes {
-  grid-column: 3/9;
+  grid-column: 2/11;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  grid-template-columns: repeat(9, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   row-gap: 60px;
   height: -moz-min-content;
   height: min-content;
@@ -300,7 +334,7 @@ nav {
 .wrapper-boxes-box {
   position: relative;
   display: grid;
-  grid-column: span 2;
+  grid-column: span 3;
   row-gap: 1.5rem; /* 24px */
   transition: all 500ms ease-in-out;
 }
@@ -353,16 +387,17 @@ nav {
 }
 .wrapper-content {
   display: grid;
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  grid-column: 1/11;
+  grid-template-columns: repeat(10, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   row-gap: 1.5rem;
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
   height: -moz-fit-content;
   height: fit-content;
+  align-content: center;
   scroll-snap-align: center;
 }
 .wrapper-content img {
@@ -385,10 +420,10 @@ nav {
 
 section {
   display: grid;
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  grid-column: 1/11;
+  grid-template-columns: repeat(10, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   row-gap: 1.5rem;
   width: 100%;
   height: -moz-fit-content;
@@ -401,34 +436,56 @@ section img {
   max-height: 100%;
 }
 
-[class^=col-].center {
+*[class^=col-], *[class*=col-] {
+  flex-direction: column;
+  height: -moz-min-content;
+  height: min-content;
+  justify-content: center;
+}
+*[class^=col-].center, *[class*=col-].center {
   align-items: center;
   align-self: center;
+}
+*[class^=col-].center-y, *[class*=col-].center-y {
+  align-self: center;
+}
+*[class^=col-].center-x, *[class*=col-].center-x {
+  align-items: center;
 }
 
 .col-4l {
   grid-column: 1/5;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+}
+
+.col-4m {
+  grid-column: 3/7;
+  display: flex;
 }
 
 .col-4r {
-  grid-column: 5/9;
+  grid-column: 7/11;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+}
+
+.col-5l {
+  grid-column: 1/6;
+  display: flex;
+}
+
+.col-5r {
+  grid-column: 6/11;
+  display: flex;
 }
 
 .col-6l {
   grid-column: 1/7;
   display: flex;
-  flex-direction: column;
 }
 .col-6l.row-display {
   flex-direction: row;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 .col-6l.row-display img {
   height: -moz-min-content;
@@ -438,66 +495,49 @@ section img {
 }
 
 .col-6r {
-  grid-column: 3/10;
+  grid-column: 5/11;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-2l {
   grid-column: 1/3;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .col-2ml {
   grid-column: 3/5;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-2mr {
   grid-column: 5/7;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-2r {
   grid-column: 7/9;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3l {
-  grid-column: 1/5;
+  grid-column: 1/4;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3m {
-  grid-column: 5/9;
+  grid-column: 4/7;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-3r {
-  grid-column: 6/9;
+  grid-column: 7/10;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .col-8 {
   display: grid;
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
-  justify-content: center;
+  grid-column: 1/11;
+  grid-template-columns: repeat(10, 1fr);
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem; /* 24px */
 }
@@ -1837,8 +1877,8 @@ footer h5, .footer h5 {
   width: 100%;
   z-index: 999999999;
   pointer-events: all;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
   scroll-behavior: smooth;
 }
@@ -2015,11 +2055,11 @@ footer h5, .footer h5 {
 
 .content-container {
   display: grid;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   height: 100%;
   width: 100%;
 }
@@ -2109,8 +2149,8 @@ footer h5, .footer h5 {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
   transition: all 500ms ease-out;
   row-gap: 2rem;
@@ -2126,7 +2166,7 @@ footer h5, .footer h5 {
 }
 .content-container .content .column-4-4 .column-4a, .content-container .content .column-4-4 .column-4b {
   grid-column: 1fr;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   transition: all 500ms ease-out;
@@ -2150,8 +2190,8 @@ footer h5, .footer h5 {
   grid-column: span 8;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
 }
 @media (max-width: 600px) {
@@ -2165,8 +2205,8 @@ footer h5, .footer h5 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
 }
 @media (max-width: 600px) {
@@ -2176,7 +2216,7 @@ footer h5, .footer h5 {
   }
 }
 .content-container .content .column-2-3-3 .column-2 {
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2187,7 +2227,7 @@ footer h5, .footer h5 {
   row-gap: 3rem;
 }
 .content-container .content .column-2-3-3 .column-3a {
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2199,7 +2239,7 @@ footer h5, .footer h5 {
 }
 .content-container .content .column-2-3-3 .column-3b {
   grid-column: 6/9;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2211,8 +2251,8 @@ footer h5, .footer h5 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
   row-gap: 2rem;
 }
@@ -2226,7 +2266,7 @@ footer h5, .footer h5 {
   }
 }
 .content-container .content .column-5-3 .column-5 {
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2238,7 +2278,7 @@ footer h5, .footer h5 {
 }
 .content-container .content .column-5-3 .column-3 {
   grid-column: span 3;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2250,8 +2290,8 @@ footer h5, .footer h5 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   row-gap: 3rem;
   justify-content: space-between;
 }
@@ -2272,11 +2312,11 @@ footer h5, .footer h5 {
   -o-object-fit: cover;
      object-fit: cover;
   row-gap: 2rem;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
 }
 .content-container .content .column-3-5 .column-5 {
   grid-column: span 5;
-  grid-column-gap: 3rem;
+  grid-column-gap: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2318,8 +2358,8 @@ footer h5, .footer h5 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   justify-content: space-between;
   margin-bottom: 2rem;
 }
@@ -2494,8 +2534,8 @@ footer h5, .footer h5 {
   grid-column: span 8;
   grid-template-columns: repeat(8, 1fr);
   row-gap: 4rem;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 @media (max-width: 600px) {
   .col-full {

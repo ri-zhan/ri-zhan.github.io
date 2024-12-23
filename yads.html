@@ -57,10 +57,10 @@
         <section id="first-sec">
 
             <div class="wrapper-content">
-                <div class="col-6l wrapper-hero">
+                <div class="col-6l wrapper-hero center-y">
                     <img src="images/yads/yads-hero-img.png" alt="">
                 </div>
-                <div class="col-2r">
+                <div class="col-4r center-y">
                     <div class="wrapper-inner">
                         <h5>My role</h5>
                         <ul>
@@ -93,58 +93,107 @@
 
         <section id="second-sec">
             <div class="wrapper-content">
-                <h3 class="col-4l">The problem.</h3>
-                <div class="col-4r">As an agile software team, quick turnaround and development was key. I identified that one of the major factors slowing us down was the lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a problem which magnified over the years due to the discrepancy between the team members’ interpretation the non-existent brand style.</div>
+                <h3 class="col-5l">The problem.</h3>
+                <div class="col-5r">As an agile software team, quick turnaround and development was key. I identified that one of the major factors slowing us down was the lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a problem which magnified over the years due to the discrepancy between the team members’ interpretation the non-existent brand style.</div>
             </div>
 
             <div class="wrapper-content">
-                <h3 class="col-4l">Thus,</h3>
-                <div class="col-4r">A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</div>
+                <h3 class="col-5l">Thus,</h3>
+                <div class="col-5r">A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</div>
             </div>
 
             <div class="wrapper-content">
                 <h3 class="col-6l">So what if we had a centralized place for both designers and developers to reference when communicating design needs so to speed up the development process and eliminates redundancy and inconsistency?</h3>
             </div>
+
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-8">
+                    <h3 class="col-6l">Understanding the existing system and processes were key to the successful development integration of YADS, which brings us to the key objectives</h3>
+                    <div class="col-8 fake-table">
+                        <div class="wrapper-inner col-5l">
+                            <h5>/1</h5>
+                            <p>Create a design system that brought visual consistency to Skills Network products, and</p>
+                        </div>
+                        <div class="wrapper-inner col-5r">
+                            <h5>/2</h5>
+                            <p>Optimize but not disrupt the existing production process.</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
         </section>
 
 
         <section id="third-sec">
-
             <div class="wrapper-content">
-                <h3 class="col-6l">Methodology (in progress)</h3>
+                <h3 class="col-6l">Methodology</h3>
             </div>
 
             <div class="wrapper-content">
-                <div class="col-6l img-caption"  style="align-self: center;">
-                    <img src="images/yads/yads-consolidation.png" alt="All of the purple/blue/violet shades I found on just one web page of one of our products." style="padding-top: 0.5rem;">
-                    <p class="caption">All of the purple/blue/violet shades I found on just one web page of one of our products.</p>
+                <h3 class="col-4l">The current design process:</h3>
+                <div class="col-6r">
+                    <ul>
+                        <li>recreating components every time a new component or product feature was requested</li>
+                        <li>making independent decisions on what the primary color should be</li>
+                        <li>not having a standardized method of communicating feedback to developers or a SSOT to share with developers</li>
+                        <li>having to do manual accessibility checks for every new design</li>
+                        <li>guessing the dark mode equivalent of each color or just ignoring the dark mode design all together and hoping the auto dark mode does its thing properly</li>
+                    </ul>
                 </div>
-                <p class="col-2r">This design system creation started by consolidating existing designs and consulting users to understand what best represented the current brand and what could best serve the brand in the future. First, I acquired all existing design files, which gave me an overview of the most used interfaces.</p>
             </div>
 
-
-            <!-- <div class="wrapper-content">
-                <div class="col-8 wrapper-inner" style="align-self: center; align-items: flex-start;">
-                    <div class="col-4l">
-                        <p>After the style was defined, I got to creating Figma components and developing working code immediately. The following foundations and components were identified to be the most important for development:</p>
-                    </div>
-                    <div class="wrapper-inner col-2l">
-                        <p>Foundations</p>
-                        <ul>
-                            <li>Color</li>
-                            <li>Typography</li>
-                            <li>Iconography</li>
-                        </ul>
-                    </div>
-                    <div class="wrapper-inner col-2ml">
-                        <p>Components</p>
-                        <ul>
-                            <li>Buttons</li>
-                            <li>Input fields</li>
-                        </ul>
+            <div class="wrapper-content">
+                <h3 class="col-4l">The current developer workflow:</h3>
+                <div class="col-6r">
+                    <div class="wrapper-inner">
+                        <p>As I had been on the team for a bit and contribute to repositories, I had a loose understanding of the developer workflow. I further consulted with the front-end focused developers on the team and learned more about the front-end development process.</p>
+                        <ol>
+                            <li>Be told what to make by a stakeholder or manager</li>
+                            <li>Go on Tailwind CSS Components and copy a usable component (loosely defined)</li>
+                            <li>Make it fit the existing website layout without iteration or feedback</li>
+                            <li>Have a slightly-ugly and mostly functional product pushed to production, as they had to spend more time than necessary on the visual component.</li>
+                        </ol>
                     </div>
                 </div>
-            </div> -->
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-4l">The NEW developer workflow:</h3>
+                <div class="col-6r">
+                    <div class="wrapper-inner">
+                        <p>Rather than disrupting the existing workflow entirely, YADS simply provided a better guideline for developers to follow.</p>
+                        <ol>
+                            <li>Be told what to make either by a stakeholder or manager</li>
+                            <li>Consult the designer
+                                <ol>
+                                    <li>The designer will pull components from the design system</li>
+                                    <li>Eliminate the creative process for developers</li>
+                                </ol>
+                            </li>
+                            <li>Go to the internal Skills Network Wiki and copy-paste code from there (which is based off of Tailwind CSS Component codes)</li>
+                            <li>Have an on-brand design and fully functional product ready for production.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="wrapper-content">
+                <div class="col-6l img-caption">
+                    <img src="images/yads/yads-color-consolidation.png" alt="An extremely simplified visaulization of the consolidation process: (Some) Tailwind CSS colors -> logo analysis -> color scale choice -> accessibiliy checks -> final primary palette.">
+                    <p class="caption">An extremely simplified visaulization of the consolidation process: (Some) Tailwind CSS colors -> logo analysis -> color scale choice -> accessibiliy checks -> final primary palette.</p>
+                </div>
+                <p class="col-4r">The first part of the process was understanding the existing design style of Skills Network. Once I understood the style, I began to consolidate.</p>
+            </div>
+
+            <div class="wrapper-content">
+                <div class="col-6l img-caption">
+                    <img src="images/yads/yads-working-code.png" alt="Screenshot of the Skills Network's design wiki: the button page and its working code.">
+                    <p class="caption">Screenshot of the Skills Network's design wiki: the button page and its working code.</p>
+                </div>
+                <p class="col-4r">Beyond assessing components based off of visuals, I also referenced the Tailwind CSS code to ensure developers would have access to working code they could easily cross reference with the original Tailwind CSS code. I also included the pure CSS.</p>
+            </div>
 
         </section>
 
@@ -158,7 +207,7 @@
                 <div class="wrapper-inner col-6l">
                     <img src="images/yads/yads-ss-btns-code-mockup.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Working code</h5>
                     <p>Yes, I actually made working HTML code for ALL of the components for the developers.</p>
                 </div>
@@ -175,7 +224,7 @@
                     <img src="images/yads/yads-colors-light.png" class="">
                     <img src="images/yads/yads-colors-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Colors</h5>
                     <p>Defining the primary, neutral, and semantic colors.</p>
                 </div>
@@ -185,7 +234,7 @@
                 <div class="wrapper-inner col-6l">
                     <img src="images/yads/yads-typography.png" class="" style="padding: 0.5rem;">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Typography</h5>
                     <!-- <p>One of the first components I worked on.</p> -->
                 </div>
@@ -195,7 +244,7 @@
                 <div class="wrapper-inner col-6l">
                     <img src="images/yads/yads-grid.png" class="" style="padding: 0.5rem;">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Grid</h5>
                     <!-- <p>One of the first components I worked on.</p> -->
                 </div>
@@ -214,7 +263,7 @@
                     <img src="images/yads/yads-btns-light.png" class="">
                     <img src="images/yads/yads-btns-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Buttons</h5>
                     <!-- <p>One of the first components I worked on.</p> -->
                 </div>
@@ -225,7 +274,7 @@
                     <img src="images/yads/yads-badges-light.png" class="">
                     <img src="images/yads/yads-badges-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Badges</h5>
                     <!-- <p>One of the first components I worked on.</p> -->
                 </div>
@@ -236,7 +285,7 @@
                     <img src="images/yads/yads-input-light.png" class="">
                     <img src="images/yads/yads-input-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Input field</h5>
                     <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
                 </div>
@@ -246,7 +295,7 @@
                     <img src="images/yads/yads-breadcrumb-light.png" class="">
                     <img src="images/yads/yads-breadcrumb-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Breadcrumb</h5>
                     <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
                 </div>
@@ -256,7 +305,7 @@
                     <img src="images/yads/yads-toggle-light.png" class="">
                     <img src="images/yads/yads-toggle-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Toggle field</h5>
                     <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
                 </div>
@@ -266,7 +315,7 @@
                     <img src="images/yads/yads-hyperlink-light.png" class="">
                     <img src="images/yads/yads-hyperlink-dark.png" class="">
                 </div>
-                <div class="col-2r wrapper-inner">
+                <div class="col-4r wrapper-inner">
                     <h5>Hyperlink field</h5>
                     <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
                 </div>
