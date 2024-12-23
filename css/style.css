@@ -741,6 +741,19 @@ section img {
   .col-8.fake-table > * {
     grid-column: span 4;
   }
+  .col-6l {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .col-6l.row-display {
+    flex-direction: column;
+    grid-column: span 4;
+  }
+  .col-6l.row-display img {
+    height: -moz-min-content;
+    height: min-content;
+    width: 100%;
+    align-self: center;
+  }
   section {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
