@@ -470,7 +470,7 @@ nav {
 
     &.together {
       // scroll snap
-      scroll-snap-align: end;
+      scroll-snap-align: center;
       max-height: min-content;
       height: min-content;
       min-height: min-content;
@@ -521,6 +521,40 @@ section {
 
 // column layouts
 
+// 2 col layouts
+.col-2l {
+  grid-column: 1/3;
+  display: flex;
+}
+.col-2ml {
+  grid-column: 3/5;
+  display: flex;
+}
+.col-2mr {
+  grid-column: 5/7;
+  display: flex;
+}
+.col-2r {
+  grid-column: 7/9;
+  display: flex;
+}
+
+
+// 3 col
+.col-3l {
+  grid-column: 1/4;
+  display: flex;
+}
+.col-3m {
+  grid-column: 4/7;
+  display: flex;
+}
+.col-3r {
+  grid-column: 7/10;
+  display: flex;
+}
+
+
 // 4 col layouts
 .col-4l {
   grid-column: 1/5;
@@ -569,43 +603,16 @@ section {
 
 
 // 7 col layouts
+.col-7l {
+  grid-column: 1/8;
+  display: flex;
+}
+
 .col-7r {
   grid-column: 4/11;
   display: flex;
 }
 
-
-// 2 col layouts
-.col-2l {
-  grid-column: 1/3;
-  display: flex;
-}
-.col-2ml {
-  grid-column: 3/5;
-  display: flex;
-}
-.col-2mr {
-  grid-column: 5/7;
-  display: flex;
-}
-.col-2r {
-  grid-column: 7/9;
-  display: flex;
-}
-
-// 3 col
-.col-3l {
-  grid-column: 1/4;
-  display: flex;
-}
-.col-3m {
-  grid-column: 4/7;
-  display: flex;
-}
-.col-3r {
-  grid-column: 7/10;
-  display: flex;
-}
 
 // 8 col
 .col-8 {
