@@ -51,7 +51,7 @@ a:active, a:active > *  {
   transition: text-decoration-color 100ms ease-in;
 }
 
-p a:link {
+p  a:link, h3 a:link, h2 > a {
   text-decoration: underline;
   color: $primary-dark;
   text-decoration-color: $red;

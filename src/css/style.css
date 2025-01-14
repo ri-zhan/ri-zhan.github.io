@@ -38,14 +38,14 @@ a:active, a:active > * {
   transition: text-decoration-color 100ms ease-in;
 }
 
-p a:link {
+p a:link, h3 a:link, h2 > a {
   text-decoration: underline;
   color: #1A0F04;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in;
 }
 @media (hover: hover) {
-  p a:link {
+  p a:link, h3 a:link, h2 > a {
     text-decoration-color: #E63223;
     color: #E63223;
     transition: text-decoration-color 100ms ease-in;
