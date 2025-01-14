@@ -293,9 +293,9 @@ let mobileSize=($(window).width() <= 600);
 
 // $( "h1" ).prepend( "# " );
 // $( "h2" ).prepend( "## " );
-// $( "h3" ).prepend( "### " );
-// $( "h4" ).prepend( "#### " );
-// $( "h5" ).prepend( "##### " );
+// $( "h2" ).prepend( "### " );
+// $( "h3" ).prepend( "#### " );
+// $( "h4" ).prepend( "##### " );
 
 
 // landing page to about me link hover function
@@ -813,7 +813,7 @@ $( document ).ready(function() {
         'background-color': '',
         'color': '',
       });
-      $(this).find('h4, p').css({'color': '',});
+      $(this).find('h3, p').css({'color': '',});
       $('.inner-border').removeClass('show');
 
       $(this).toggleClass('project-hover');
@@ -1697,7 +1697,7 @@ $(window).on('load', () => {
 });
 
 {/* <div class="inner-box-text">
-<h4>here:after</h4>
+<h3>here:after</h3>
 <p>RGD tie winner for UX design!</p>
 </div>
 <div class="project-description">

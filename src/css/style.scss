@@ -38,7 +38,7 @@ a {
   }
 }
 
-a:visited, a:hover, a:hover > *:not(h4) {
+a:visited, a:hover, a:hover > *:not(h3) {
   color: $primary-dark;
   text-decoration: underline;
   text-decoration-color: $red;
@@ -76,7 +76,7 @@ p a:link {
 // }
 
 // typography
-h1, h2, h3, h4, h5, h6, p, .caption {
+h1, h2, h2, h3, h4, h5, p, .caption {
   margin: 0;
   padding: 0;
 }
@@ -92,18 +92,18 @@ h1 {
 }
 
 // big enough to be heading
-h2 {
-  color: $primary-dark;
-  font-family: ivyora-display, sans-serif;
-  font-size: 52px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 60px; /* 134.375% */
-  letter-spacing: 1px;
-}
+// h2 {
+//   color: $primary-dark;
+//   font-family: ivyora-display, sans-serif;
+//   font-size: 52px;
+//   font-style: normal;
+//   font-weight: 100;
+//   line-height: 60px; /* 134.375% */
+//   letter-spacing: 1px;
+// }
 
 // big questions
-h3 {
+h2 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
   font-size: 36px;
@@ -114,17 +114,17 @@ h3 {
 }
 
 // toc, nav
-h4 {
+h3 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 22px;
+  line-height: 24px;
   letter-spacing: 1px;
 }
 
-h5 {
+h4 {
   color: $primary-dark;
   font-family: source-code-pro, monospace;
   font-size: 16px;
@@ -892,7 +892,7 @@ section {
 // }
 
 
-// h1, h2, h3, h4, h5, button {
+// h1, h2, h2, h3, h4, button {
 //   font-family: source-code-pro, monospace;
 //   text-transform: lowercase;
 //   color: $lighter;
@@ -921,7 +921,7 @@ section {
 // }
 
 
-// h3 {
+// h2 {
 //   // text-align: center;
 //   font-size: 24px;
 //   font-style: normal;
@@ -939,7 +939,7 @@ section {
 //   }
 // }
 
-// h4 {
+// h3 {
 //   font-size: 20px;
 //   font-style: normal;
 //   font-weight: 600;
@@ -949,7 +949,7 @@ section {
 //   margin: 0;
 // }
 
-// h5 {
+// h4 {
 //   font-size: 16px;
 //   font-style: normal;
 //   font-weight: 400;
@@ -963,7 +963,7 @@ section {
 // }
 
 
-// h6 {
+// h5 {
 //   font-family: neue-haas-grotesk-display, sans-serif;
 //   font-size: 18px;
 //   font-style: normal;
@@ -976,7 +976,7 @@ section {
 
 
 
-// // h6 {
+// // h5 {
 // //   font-family: source-code-variable, monospace;
 // //   // font-weight: 600;
 // //   font-weight: 500;
@@ -990,7 +990,7 @@ section {
 // // }
 
 
-// h1, h3, h4, h5, h6, p {
+// h1, h2, h3, h4, h5, p {
 //   &.pop-out {
 //     display: flex;
 //     // padding: 1.5rem 2.25rem;
@@ -1291,7 +1291,7 @@ footer, .footer {
   //     }
   //   }
   // }
-  h5 {
+  h4 {
     margin-bottom: 0;
     padding-right: 1rem;
     white-space: nowrap;
@@ -1722,7 +1722,7 @@ footer, .footer {
       transition: all 500ms ease-out;
       background-color: $white;
       color: $black;
-      h4, p {
+      h3, p {
         color: $black;
       }
       img {
@@ -2615,19 +2615,19 @@ footer, .footer {
     opacity: 100%;
     &.selected {
       opacity: 100%;
-      h6 {
+      h5 {
         font-weight: 500;
       }
     }
     &.deselected {
       // opacity: 50%;
-      h6 {
+      h5 {
         font-weight: 300;
       }
     }
     &:hover {
       opacity: 100%;
-      h6 {
+      h5 {
         color: $red;
         font-weight: 500;
         
@@ -2884,7 +2884,7 @@ footer, .footer {
     display: flex;
     flex-direction: column;
     // margin: 2rem;
-    h3 {
+    h2 {
       justify-self: center;
       text-align: center;
     }
@@ -2941,7 +2941,7 @@ footer, .footer {
     overflow-x: hidden;
     &-hero {
       height: 30rem;
-      h1, h3 {
+      h1, h2 {
         z-index: -2;
       }
       &-img {
@@ -2973,7 +2973,7 @@ footer, .footer {
         margin-top: 6rem;
       }
     }
-    // p, h5 {
+    // p, h4 {
     //   color: $white;
     // }
     // &::-webkit-scrollbar {
@@ -3240,7 +3240,7 @@ footer, .footer {
         margin-bottom: 0;
       }
       // overflow-x: hidden;
-      h4 {
+      h3 {
         width: 100%;
         grid-column: span 8;
       }
