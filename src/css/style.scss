@@ -124,7 +124,18 @@ h3 {
   letter-spacing: 1px;
 }
 
+
 h4 {
+  color: $primary-dark;
+  font-family: ivyora-display, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+h5 {
   color: $primary-dark;
   font-family: source-code-pro, monospace;
   font-size: 16px;
@@ -134,6 +145,8 @@ h4 {
   letter-spacing: -0.16px;
   text-transform: uppercase;
 }
+
+
 
 body, p, ul, ol, li {
   color: #000;
