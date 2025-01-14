@@ -95,10 +95,10 @@ h1 {
 h2 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 64px;
+  font-size: 52px;
   font-style: normal;
   font-weight: 100;
-  line-height: 86px; /* 134.375% */
+  line-height: 60px; /* 134.375% */
   letter-spacing: 1px;
 }
 
@@ -117,10 +117,10 @@ h3 {
 h4 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 22px;
   letter-spacing: 1px;
 }
 
@@ -138,11 +138,11 @@ h5 {
 body, p, ul, ol, li {
   color: #000;
   font-family: neue-haas-grotesk-display, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 350;
-  line-height: 26px; /* 160.952% */
-  letter-spacing: 1.6px;
+  line-height: 24px; /* 160.952% */
+  letter-spacing: 1.4px;
 }
 
 p {
@@ -226,10 +226,10 @@ ol > li {
 .caption {
   color: $primary-dark;
   font-family: source-code-pro, monospace;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 300;
-  line-height: 18px; /* 133.333% */
+  line-height: 16px; /* 133.333% */
   letter-spacing: -0.12px;
   text-transform: uppercase;
 }
@@ -474,7 +474,11 @@ nav {
       max-height: min-content;
       height: min-content;
       min-height: min-content;
-      padding: 3rem 0;
+      padding: 3.5rem 0;
+      &.heading {
+        margin-top: 50vh;
+        padding-top: 0;
+      }
     }
   }
 
