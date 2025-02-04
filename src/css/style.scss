@@ -38,7 +38,7 @@ a {
   }
 }
 
-a:visited, a:hover, a:hover > *:not(h4) {
+a:visited, a:hover, a:hover > *:not(h4, h3) {
   color: $primary-dark;
   text-decoration: underline;
   text-decoration-color: $red;
@@ -359,10 +359,19 @@ nav {
 }
 
 
+.video-grid {
+  margin-bottom: 5rem;
+}
+
 video {
   height: auto;
-  border-bottom: 1px solid transparent;
-  background: transparent;
+  // border-bottom: 1px solid transparent;
+  // background: transparent;
+  box-shadow: none;
+  > source {
+    padding-bottom: 1rem;
+    box-shadow: none;
+  }
 }
 
 .wrapper {
@@ -390,8 +399,12 @@ video {
   right: 0;
   position: absolute;
 
+  // hero section
   section:first-child {
     padding-top: 4rem;
+    min-height: 100vh; 
+    height: auto; 
+    align-content: center;
   }
 
   section:last-child {

@@ -25,7 +25,7 @@ a p :not(.caption) {
   transition: text-decoration-color 100ms ease-in;
 }
 
-a:visited, a:hover, a:hover > *:not(h4) {
+a:visited, a:hover, a:hover > *:not(h4, h3) {
   color: #1A0F04;
   text-decoration: underline;
   text-decoration-color: #E63223;
@@ -301,10 +301,17 @@ nav {
   overflow-y: hidden;
 }
 
+.video-grid {
+  margin-bottom: 5rem;
+}
+
 video {
   height: auto;
-  border-bottom: 1px solid transparent;
-  background: transparent;
+  box-shadow: none;
+}
+video > source {
+  padding-bottom: 1rem;
+  box-shadow: none;
 }
 
 .wrapper {
@@ -325,6 +332,9 @@ video {
 }
 .wrapper section:first-child {
   padding-top: 4rem;
+  min-height: 100vh;
+  height: auto;
+  align-content: center;
 }
 .wrapper section:last-child {
   padding-bottom: 4rem;

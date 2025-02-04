@@ -48,7 +48,7 @@
             <a href="#" class="toc-item" id="second-seclink"><h4>Introduction</h4></a>
             <a href="#" class="toc-item" id="third-seclink"><h4>Methodology</h4></a>
             <a href="#" class="toc-item" id="fourth-seclink"><h4>Foundations</h4></a>
-            <a href="#" class="toc-item" id="sixth-seclink"><h4>Components</h4></a>
+            <a href="#" class="toc-item" id="fifth-seclink"><h4>Components</h4></a>
         </div>
     </div>
 
@@ -93,13 +93,17 @@
 
         <section id="second-sec">
             <div class="wrapper-content">
-                <h2 class="col-5l">The problem.</h2>
-                <div class="col-5r">As an agile software team, quick turnaround and development was key. I identified that one of the major factors slowing us down was the lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a problem which magnified over the years due to the discrepancy between the team members’ interpretation the non-existent brand style.</div>
+                <div class="wrapper-inner col-6l">
+                    <h2>The problem.</h2>
+                    <div>As an agile software team, quick turnaround and development was key. I identified that one of the major factors slowing us down was the lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a problem which magnified over the years due to the discrepancy between the team members’ interpretation the non-existent brand style.</div>
+                </div>
             </div>
 
             <div class="wrapper-content">
-                <h2 class="col-5l">Thus,</h2>
-                <div class="col-5r">A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</div>
+                <div class="wrapper-inner col-6l">
+                    <h3>Thus,</h3>
+                    <div>A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</div>
+                </div>
             </div>
 
             <div class="wrapper-content">
@@ -134,11 +138,11 @@
                 <h3 class="col-4l">The current design process:</h3>
                 <div class="col-6r">
                     <ul>
-                        <li>recreating components every time a new component or product feature was requested</li>
-                        <li>making independent decisions on what the primary color should be</li>
-                        <li>not having a standardized method of communicating feedback to developers or a SSOT to share with developers</li>
-                        <li>having to do manual accessibility checks for every new design</li>
-                        <li>guessing the dark mode equivalent of each color or just ignoring the dark mode design all together and hoping the auto dark mode does its thing properly</li>
+                        <li>Recreating components every time a new component or product feature was requested</li>
+                        <li>Making independent decisions on what the primary color should be</li>
+                        <li>Not having a standardized method of communicating feedback to developers or a SSOT to share with developers</li>
+                        <li>Having to do manual accessibility checks for every new design</li>
+                        <li>Guessing the dark mode equivalent of each color or just ignoring the dark mode design all together and hoping the auto dark mode does its thing properly</li>
                     </ul>
                 </div>
             </div>
@@ -159,10 +163,27 @@
             </div>
 
             <div class="wrapper-content">
-                <h3 class="col-4l">The NEW developer workflow:</h3>
+                <h2 class="col-6l">With all of this in mind, a hypothesis for a new way of working was formed:</h2>
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-4l">The new design process:</h3>
+                <div class="col-6r">
+                    <ul>
+                        <li>Upon receiving a design request, check out a design system for existing components or guidance on designing</li>
+                        <li>Make informed design decisions and no double-guessing the primary color</li>
+                        <li>Providing feedback to developers and referencing a SSOT</li>
+                        <li>Be confident that if not all, then most, designs following this system have good accessibility</li>
+                        <li>Have dark mode variants ready to go without having to redesign from scratch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wrapper-content">
+                <h3 class="col-4l">The new developer workflow:</h3>
                 <div class="col-6r">
                     <div class="wrapper-inner">
-                        <p>Rather than disrupting the existing workflow entirely, YADS simply provided a better guideline for developers to follow.</p>
+                        <p>Rather than disrupting the existing workflow entirely, YADS would simply provided a better guideline for developers to follow.</p>
                         <ol>
                             <li>Be told what to make either by a stakeholder or manager</li>
                             <li>Consult the designer
@@ -178,6 +199,11 @@
                 </div>
             </div>
             
+
+            <div class="wrapper-content">
+                <h2 class="col-6l">And thus the process begun.</h2>
+            </div>
+
 
             <div class="wrapper-content">
                 <div class="col-6l img-caption">
@@ -216,155 +242,158 @@
 
         <section id="fourth-sec">
             <div class="wrapper-content">
-                <h2 class="col-6l">Foundations (in progress)</h2>
+                <h2 class="col-6l">Foundations</h2>
             </div>
 
             <div class="wrapper-content">
                 <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-colors-light.png" class="">
-                    <img src="images/yads/yads-colors-dark.png" class="">
+                    <img src="images/yads/yads-color.png" class="">
                 </div>
                 <div class="col-4r wrapper-inner">
                     <h4>Colors</h4>
-                    <p>Defining the primary, neutral, and semantic colors.</p>
+                    <p>Defining the primary, neutral, and semantic colors. A tokening system had yet to be introduced as a standardized system was 
+                        a new concept for the team. Furthermore, as we were heavily relying on Tailwind CSS, it had yet to make sense for the entire team 
+                        to migrate to a Skills-Network-specific token system.
+                    </p>
                 </div>
             </div>
 
             <div class="wrapper-content">
                 <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-typography.png" class="" style="padding: 0.5rem;">
+                    <img src="images/yads/yads-typography.png" class="">
                 </div>
                 <div class="col-4r wrapper-inner">
                     <h4>Typography</h4>
-                    <!-- <p>One of the first components I worked on.</p> -->
+                    <p>Consolidating the typography system was one of the most difficult challenges due to the huge variance across all the products. 
+                        The only aspect that was certain was to use IBM Plex Sans, since, you know, it's an IBM team. From a page of 12 
+                        fonts with different point sizes, leading, and even color, I was able to reach a point of standardization. 
+                        <br/>
+                        In this process, I learned about creating a scalable and adjustable system: 
+                        <br/>
+                        As I was nearing what I thought was the end of this consolidation process, 
+                        I was told by multiple team members that everything was too small. At first, fear took over—What if 
+                        I made a bad decision that will make the rest of the system seem illegitimate? What if this ruins the designer-developer 
+                        trust?
+                        <br/>
+                        Obviously, I was overthinking. An overall bigger font size was implemented and it elevated the friendly aesthetic.
+                        But, this made me realize the importance of having a system that can adapt for new scenarios. A rigid design system 
+                        benefits no one.
+                    </p>
                 </div>
             </div>
 
             <div class="wrapper-content">
                 <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-grid.png" class="" style="padding: 0.5rem;">
+                    <img src="images/yads/yads-grid.png" class="">
                 </div>
                 <div class="col-4r wrapper-inner">
                     <h4>Grid</h4>
-                    <!-- <p>One of the first components I worked on.</p> -->
+                    <p>Utilizing a grid was a new concept that I introduced to the team. Rather than relying on max-width, the team could be certain 
+                        that each page utilized the same amount of space using a grid. Introducing this grid provided visual consistency 
+                        across all of the pages without having to cross-reference each time a new page was created. 
+                        <br/>
+                        The concept of "don't make me think" was signifiacntly utilized in creating this, as I provided all of the code 
+                        necessary to establish and utilize the grid, as well as written guidance on how to utilize it if one were to 
+                        think about it.
+                    </p>
                 </div>
             </div>
 
         </section>
 
-        <section id="sixth-sec">
-            <div class="wrapper-content">
-                <h2 class="col-6l">Components (in progress)</h2>
-            </div>
-
-
+        <section id="fifth-sec">
             <div class="wrapper-content">
                 <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-btns-light.png" class="">
-                    <img src="images/yads/yads-btns-dark.png" class="">
-                </div>
-                <div class="col-4r wrapper-inner">
-                    <h4>Buttons</h4>
-                    <!-- <p>One of the first components I worked on.</p> -->
-                </div>
-            </div>
-
-            <div class="wrapper-content">
-                <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-badges-light.png" class="">
-                    <img src="images/yads/yads-badges-dark.png" class="">
-                </div>
-                <div class="col-4r wrapper-inner">
-                    <h4>Badges</h4>
-                    <!-- <p>One of the first components I worked on.</p> -->
+                    <h2>Components</h2>
+                    <p>Through my audit of the existing components in our products, I identified key components that had to be standardized. 
+                        <br/>
+                        With all design systems, components must be reusable.
+                        However, with this team there was an even more important aspect: integration with different programming languages. 
+                        I was working very closely with developers so I knew the struggles they had with implementation.
+                        <br/>
+                        So in this process, not only did I audit the visual aspect of these components, I also audited the code that these 
+                        components were using. In our team's wiki, I outlined the basic HTML structure for each component and where to insert 
+                        new code if needed (such as an input field for the text field, or a backend response on a button).
+                        <br/>
+                        Here are just some of the component variants that I created in my time at IBM.
+                    </p>
                 </div>
             </div>
 
             <div class="wrapper-content">
-                <div class="wrapper-inner col-6l">
-                    <img src="images/yads/yads-input-light.png" class="">
-                    <img src="images/yads/yads-input-dark.png" class="">
-                </div>
-                <div class="col-4r wrapper-inner">
-                    <h4>Input field</h4>
-                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
-                </div>
-            </div>
-            <div class="wrapper-content">
-                <div class="wrapper-inner col-6l row-display">
-                    <img src="images/yads/yads-breadcrumb-light.png" class="">
-                    <img src="images/yads/yads-breadcrumb-dark.png" class="">
-                </div>
-                <div class="col-4r wrapper-inner">
-                    <h4>Breadcrumb</h4>
-                    <!-- <p>Defining the primary, neutral, and semantic colors.</p> -->
-                </div>
-            </div>
-            <div class="wrapper-content">
-                <div class="wrapper-inner col-5l">
+                <div class="wrapper-inner col-5l video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-toggle.webm" type="video/webm"/>
                     </video>
-                    <p class="caption">Toggle fields</p>
+                    <p class="caption">Toggle</p>
                 </div>
 
-                <div class="wrapper-inner col-5r">
+                <div class="wrapper-inner col-5r video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-breadcrumb.webm" type="video/webm"/>
                     </video>
                     <p class="caption">Breadcrumb</p>
                 </div>
 
-                <div class="wrapper-inner col-5l">
+                <div class="wrapper-inner col-5l video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-button.webm" type="video/webm"/>
                     </video>
                     <p class="caption">Button</p>
                 </div>
 
-                <div class="wrapper-inner col-5r">
+                <div class="wrapper-inner col-5r video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-card.webm" type="video/webm"/>
                     </video>
                     <p class="caption">Card</p>
                 </div>
 
-                <div class="wrapper-inner col-5l">
+                <div class="wrapper-inner col-5l video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-text-field.webm" type="video/webm"/>
                     </video>
-                    <p class="caption">Button</p>
+                    <p class="caption">Text field</p>
                 </div>
 
-                <div class="wrapper-inner col-5r">
+                <div class="wrapper-inner col-5r video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-notification.webm" type="video/webm"/>
                     </video>
                     <p class="caption">Notification</p>
                 </div>
 
-                <div class="wrapper-inner col-5l">
+                <div class="wrapper-inner col-5l video-grid">
                     <video autoplay loop muted preload="none">
                         <source src="images/yads/yads-radio.webm" type="video/webm"/>
                     </video>
                     <p class="caption">Radio button</p>
                 </div>
 
-                <div class="wrapper-inner col-5r">
+                <div class="wrapper-inner col-5r video-grid">
                     <video autoplay loop muted preload="none">
-                        <source src="images/yads/yads-text-field.webm" type="video/webm"/>
+                        <source src="images/yads/yads-dropdown.webm" type="video/webm"/>
                     </video>
-                    <p class="caption">Text field</p>
+                    <p class="caption">Dropdown</p>
                 </div>
-            </div>
-
-            <div class="wrapper-content">
-                <h2 class="col-6l">Case study in progress.</h2>
             </div>
 
         </section>
 
+
+        <section id="sixth-sec">
+            <div class="wrapper-content">
+                <div class="wrapper-inner col-6l">
+                    <h2>Case study in progress.</h2>
+                    <p>Want to read about what I'm doing? Check out <a href="about.html">my current shenanigans.</a></p>
+                </div>
+            </div>
+        </section>
+
+
     </div>
+
+
 
 
 
