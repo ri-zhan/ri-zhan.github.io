@@ -25,7 +25,7 @@ a p :not(.caption) {
   transition: text-decoration-color 100ms ease-in;
 }
 
-a:visited, a:hover, a:hover > *:not(h3) {
+a:visited, a:hover, a:hover > *:not(h4) {
   color: #1A0F04;
   text-decoration: underline;
   text-decoration-color: #E63223;
@@ -80,17 +80,17 @@ h2 {
 h3 {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 18px;
+  font-size: 26px;
   font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
+  font-weight: 100;
+  line-height: 30px;
   letter-spacing: 1px;
 }
 
 h4 {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 22px;
@@ -201,6 +201,12 @@ body {
   overflow: hidden;
 }
 
+br {
+  display: block;
+  content: "";
+  margin-top: 0.5rem;
+}
+
 .left {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -295,19 +301,24 @@ nav {
   overflow-y: hidden;
 }
 
+video {
+  height: auto;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   -moz-column-gap: 2rem;
        column-gap: 2rem;
-  row-gap: 60px;
   padding: 0 4rem 0 2rem;
   grid-row: 1/5;
   height: 100%;
   overflow-y: scroll;
   overflow-x: visible;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   width: 80vw;
   right: 0;
   position: absolute;
@@ -392,10 +403,9 @@ nav {
        column-gap: 2rem;
   row-gap: 1.5rem;
   width: 100%;
-  min-height: 100vh;
-  max-height: 100vh;
   height: -moz-fit-content;
   height: fit-content;
+  margin-bottom: 10rem;
   align-content: center;
   scroll-snap-align: center;
 }
@@ -441,6 +451,7 @@ section {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  margin-bottom: 12rem;
 }
 section img {
   -o-object-fit: contain;
