@@ -38,7 +38,7 @@ a {
   }
 }
 
-a:visited, a:hover, a:hover > *:not(h3) {
+a:visited, a:hover, a:hover > *:not(h4, h3) {
   color: $primary-dark;
   text-decoration: underline;
   text-decoration-color: $red;
@@ -117,10 +117,10 @@ h2 {
 h3 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 18px;
+  font-size: 26px;
   font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
+  font-weight: 100;
+  line-height: 30px;
   letter-spacing: 1px;
 }
 
@@ -128,7 +128,7 @@ h3 {
 h4 {
   color: $primary-dark;
   font-family: ivyora-display, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 22px;
@@ -256,6 +256,13 @@ body {
   overflow: hidden;
 }
 
+
+br {
+  display: block;
+  content: "";
+  margin-top: 0.5rem;
+}
+
 .left {
   display: grid;
   //columns
@@ -351,12 +358,28 @@ nav {
   overflow-y: hidden;
 }
 
+
+.video-grid {
+  margin-bottom: 5rem;
+}
+
+video {
+  height: auto;
+  // border-bottom: 1px solid transparent;
+  // background: transparent;
+  box-shadow: none;
+  > source {
+    padding-bottom: 1rem;
+    box-shadow: none;
+  }
+}
+
 .wrapper {
   display: grid;
   //columns
   grid-template-columns: repeat(10, 1fr);
   column-gap: 2rem; //48px
-  row-gap: 60px;
+  // row-gap: 60px;
 
   // both columns & rows
   padding: 0 4rem 0 2rem; // 0 64px 0 32px
@@ -368,15 +391,20 @@ nav {
   overflow-x: visible;
 
   // scroll snap
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 
   width: 80vw;
   right: 0;
   position: absolute;
 
+  // hero section
   section:first-child {
     padding-top: 4rem;
+    min-height: 100vh; 
+    height: auto; 
+    align-content: center;
   }
 
   section:last-child {
@@ -466,9 +494,10 @@ nav {
     column-gap: 2rem; //48px
     row-gap: 1.5rem /* 24px */;
     width: 100%;
-    min-height: 100vh;
-    max-height: 100vh;
+    // min-height: 100vh;
+    // max-height: 100vh;
     height: fit-content;
+    margin-bottom: 10rem;
     align-content: center;
   
     // scroll snap
@@ -516,6 +545,7 @@ section {
   row-gap: 1.5rem /* 24px */;
   width: 100%;
   height: fit-content;
+  margin-bottom: 12rem;
 }
 
 
