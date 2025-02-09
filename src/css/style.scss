@@ -779,6 +779,10 @@ section {
 
 // mobile styling
 @media (max-width: 600px) {
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
   h1 {
     font-size: 56px;
@@ -786,7 +790,7 @@ section {
   }
 
   #left-content {
-    width: 100vw;
+    width: 100%;
     padding: 0; 
     column-gap: 1.5rem; /* 24px */
     grid-column: span 4;
@@ -827,12 +831,13 @@ section {
     grid-column: span 4;
   }
 
-  #homepage {
-    overflow-y: scroll;
-    // padding-top: 40vh;
-  }
+  // #homepage {
+  //   overflow-y: scroll;
+  //   padding-top: 40vh;
+  // }
 
   .wrapper {
+    height: min-content;
     width: 100vw;
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;

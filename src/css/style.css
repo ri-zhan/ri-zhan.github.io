@@ -694,12 +694,16 @@ section img {
 }
 
 @media (max-width: 600px) {
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
   h1 {
     font-size: 56px;
     line-height: 80px;
   }
   #left-content {
-    width: 100vw;
+    width: 100%;
     padding: 0;
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem; /* 24px */
@@ -734,10 +738,9 @@ section img {
     display: none;
     grid-column: span 4;
   }
-  #homepage {
-    overflow-y: scroll;
-  }
   .wrapper {
+    height: -moz-min-content;
+    height: min-content;
     width: 100vw;
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
