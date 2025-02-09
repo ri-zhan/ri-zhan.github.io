@@ -238,7 +238,7 @@ br {
   white-space: nowrap;
 }
 @media (hover: hover) {
-  .title:hover .to-page {
+  .title:hover #to-page {
     opacity: 1;
     transition: opacity 100ms ease-out;
   }
@@ -248,7 +248,7 @@ br {
   }
 }
 
-.to-page {
+#to-page {
   opacity: 0;
 }
 
@@ -256,7 +256,7 @@ h1#current-page, #current-page > h1 {
   opacity: 50%;
 }
 
-.to-page, #current-page {
+#to-page, #current-page {
   position: absolute;
   top: 0;
   left: 0;

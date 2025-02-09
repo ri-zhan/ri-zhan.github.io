@@ -164,13 +164,13 @@ $(window).on('load', () => {
     // if desktop
 
     $('.toc').css({
-      'top': $('.to-page').height() + 48 + 24
+      'top': $('#to-page').height() + 48 + 24
       // 48 is the top padding, 24 is the row-gap
     });
 
   } else {
     $('.toc').css({
-      'top': $('.to-page').height() + 16 + 16
+      'top': $('#to-page').height() + 16 + 16
       // 16 is the top padding, 16 is the row-gap
     });
   }
