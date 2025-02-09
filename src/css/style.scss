@@ -310,9 +310,10 @@ br {
   opacity: 0;
 }
 
-.current-page {
+h1.current-page, .current-page > h1 {
   opacity: 50%;
 }
+
 
 .to-page, .current-page {
   position: absolute;
