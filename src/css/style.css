@@ -704,6 +704,7 @@ section img {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem; /* 24px */
     grid-column: span 4;
+    position: static;
   }
   .title {
     position: static;
@@ -735,7 +736,6 @@ section img {
   }
   #homepage {
     overflow-y: scroll;
-    padding-top: 40vh;
   }
   .wrapper {
     width: 100vw;

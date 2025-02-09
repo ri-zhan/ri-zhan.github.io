@@ -790,6 +790,7 @@ section {
     padding: 0; 
     column-gap: 1.5rem; /* 24px */
     grid-column: span 4;
+    position: static;
   }
 
   .title {
@@ -828,7 +829,7 @@ section {
 
   #homepage {
     overflow-y: scroll;
-    padding-top: 40vh;
+    // padding-top: 40vh;
   }
 
   .wrapper {
