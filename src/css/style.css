@@ -207,7 +207,7 @@ br {
   margin-top: 0.5rem;
 }
 
-.left {
+#left-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   -moz-column-gap: 2rem;
@@ -221,7 +221,7 @@ br {
   left: 0;
   background-color: transparent;
 }
-.left > * {
+#left-content > * {
   background-color: transparent;
   width: calc(20vw - 80px);
 }
@@ -698,7 +698,7 @@ section img {
     font-size: 56px;
     line-height: 80px;
   }
-  .left {
+  #left-content {
     width: 100vw;
     padding: 0;
     -moz-column-gap: 1.5rem;

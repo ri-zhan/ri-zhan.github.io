@@ -263,7 +263,7 @@ br {
   margin-top: 0.5rem;
 }
 
-.left {
+#left-content {
   display: grid;
   //columns
   grid-template-columns: repeat(2, 1fr);
@@ -785,7 +785,7 @@ section {
     line-height: 80px;   
   }
 
-  .left {
+  #left-content {
     width: 100vw;
     padding: 0; 
     column-gap: 1.5rem; /* 24px */
