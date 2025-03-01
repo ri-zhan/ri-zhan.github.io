@@ -6,6 +6,15 @@
   cursor: none;
 }
 
+// primary colors
+$primary: #F0EFE8;
+$primary-light: #F7F6F0;
+$primary-dark: #C3C0AD;
+$primary-bg: #E9E7E0;
+
+$red: #E63223; 
+$text-primary: #1A0F04; 
+
 
 body {
   background-color: $primary;
@@ -3969,19 +3978,23 @@ section {
   cursor: none;
 }
 
+
+// primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
 $primary-dark: #C3C0AD;
 $primary-bg: #E9E7E0;
 
 $higlight: #E63223; 
-$text: #1A0F04; 
+$text-primary: #1A0F04; 
 
+
+// radius
 $radius-sm: 4px;
 $radius-md: 6px;
 $radius-lg: 12px;
 
-
+// spacing
 $spacing-xxxs: 4px;
 $spacing-xxs: 6px;
 $spacing-xs: 8px;
@@ -3993,3 +4006,192 @@ $spacing-xxl: 48px;
 $spacing-xxxl: 64px;
 
 $spacing-section: 222px;
+
+.header-text {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.header-text > * {
+  color: $text-primary;
+  font-family: ivyora-display, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 36px;
+  letter-spacing: 1px;
+}
+
+.header-text-project {
+  font-weight: 400;
+}
+
+// typography
+h1, h2, h2, h3, h4, h5, p, .caption {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $text-primary;
+  font-family: ivyora-display, sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 80px; /* 125% */
+}
+
+// 
+h2 {
+  color: $text-primary;
+  font-family: ivyora-display, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 48px; /* 133.333% */
+}
+
+// idk it's not being used rn
+h3 {
+  color: $text-primary;
+  font-family: ivyora-display, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 30px; /* 115.385% */
+}
+
+// nav and paragraph headings
+h4 {
+  color: $text-primary;
+  font-family: ivyora-display, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px; /* 122.222% */
+  text-transform: lowercase;
+}
+
+
+// unused
+h5 {
+  color: $text-primary;
+  font-family: source-code-pro, monospace;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+}
+
+
+
+body, p, ul, ol, li {
+  color: $text-primary;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: 0.8px;
+}
+
+header {
+  grid-column: 1/13; 
+  padding: 0 0 16px 0;
+  .header-tagline {
+    color: $text-primary;
+  }
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  padding: 32px;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.hero {
+  height: 80vh;
+  align-self: flex-end;
+  //columns
+  grid-template-columns: repeat(12, 1fr);
+  // rows
+  grid-template-rows: repeat(6, 1fr);
+  gap: 24px;
+}
+
+
+.landing {
+  display: grid;
+
+  // placement
+  grid-column: 1/13;
+  grid-row: 3/7;
+
+  // set grid
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 24px;
+
+  // set items to stick to bottom
+  align-items: flex-end;
+  transition: 300ms ease-in-out;
+  &-item {
+    border-radius: $radius-md;
+    transition: 300ms ease-in-out;
+    &:hover { 
+      transition: 300ms ease-in-out;
+      .landing-item-thumbnail {
+        transition: 300ms ease-in-out;
+        background-color: transparent;
+      }
+    }
+    display: grid;
+    // set placement
+    grid-column: span 4;
+    grid-row: span 4;
+
+    // set grid
+    grid-template-rows: repeat(4, 1fr);
+    gap: 24px;
+    &-text {
+      display: flex;
+      flex-direction: column;
+      // set placement
+      grid-row: span 1;
+      justify-content: flex-end;
+      h3 {
+        margin-bottom: $spacing-xs;
+      }
+    }
+    &-thumbnail {
+      grid-row: span 3;
+      background-color: $primary-bg;
+      padding: 32px;
+      transition: 300ms ease-in-out;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+
+.col-10 {
+  display: grid;
+  grid-column: 2/12;
+  //columns
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: 24px; 
+}
+
+
