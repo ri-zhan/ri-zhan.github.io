@@ -1591,34 +1591,34 @@ section {
 
 
 
-.follower-center.zoom {
-  display: none;
-  background-color: transparent;
-  width: 15rem;
-  height: 15rem;
-  border: 0.075rem solid $red; 
-}
+// .follower-center.zoom {
+//   display: none;
+//   background-color: transparent;
+//   width: 15rem;
+//   height: 15rem;
+//   border: 0.075rem solid $red; 
+// }
 
-.follower-around.zoom {
-  width: 16.5rem;
-  height: 16.5rem;
-  transition: all 500ms ease-out;
-}
+// .follower-around.zoom {
+//   width: 16.5rem;
+//   height: 16.5rem;
+//   transition: all 500ms ease-out;
+// }
 
 
-.follower-center {
-  width: 1rem;
-  height: 1rem;
-  background-color: $red;
-  transition: all 100ms ease-out;
-}
+// .follower-center {
+//   width: 1rem;
+//   height: 1rem;
+//   background-color: $red;
+//   transition: all 100ms ease-out;
+// }
 
-.follower-around {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 0.075rem solid $red;
-  transition: all 400ms ease-out;
-}
+// .follower-around {
+//   width: 2.5rem;
+//   height: 2.5rem;
+//   border: 0.075rem solid $red;
+//   transition: all 400ms ease-out;
+// }
 
 
 // a href styling
