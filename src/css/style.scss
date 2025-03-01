@@ -25,14 +25,14 @@ body {
 
 // a styling
 a {
-  transition: text-decoration-color 100ms ease-in;
+  transition: text-decoration-color 100ms ease-in-out;
   text-decoration: none;
   text-decoration-color: transparent;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
   & p :not(.caption) {
     text-decoration: underline;
     text-decoration-color: $red;
-    transition: text-decoration-color 100ms ease-in;
+    transition: text-decoration-color 100ms ease-in-out;
   }
 }
 
@@ -40,24 +40,24 @@ a:visited, a:hover, a:hover > *:not(h4, h3) {
   color: $primary-dark;
   text-decoration: underline;
   text-decoration-color: $red;
-  transition: text-decoration-color 100ms ease-in;
+  transition: text-decoration-color 100ms ease-in-out;
 }
 
 a:active, a:active > *  {
   text-decoration-color: $red;
   color: $red;
-  transition: text-decoration-color 100ms ease-in;
+  transition: text-decoration-color 100ms ease-in-out;
 }
 
 p  a:link, h3 a:link, h2 > a {
   text-decoration: underline;
   color: $primary-dark;
   text-decoration-color: $red;
-  transition: text-decoration-color 100ms ease-in;
+  transition: text-decoration-color 100ms ease-in-out;
   @media (hover: hover) {
     text-decoration-color: $red;
     color: $red;
-    transition: text-decoration-color 100ms ease-in;
+    transition: text-decoration-color 100ms ease-in-out;
   }
   // > * {
   //   text-decoration: none;
@@ -342,16 +342,16 @@ h1#current-page, #current-page > h1 {
   }
 }
 
-nav {
-  position: fixed;
-  display: grid;
-  grid-column: 1/2;
-  grid-row: 4/5;
-  row-gap: 1.5rem; // 24px
-  bottom: 4rem;
-  height: min-content;
-  z-index: 9999;
-}
+// nav {
+//   position: fixed;
+//   display: grid;
+//   grid-column: 1/2;
+//   grid-row: 4/5;
+//   row-gap: 1.5rem; // 24px
+//   bottom: 4rem;
+//   height: min-content;
+//   z-index: 9999;
+// }
 
 #homepage {
   overflow-y: hidden;
@@ -4101,10 +4101,35 @@ body, p, ul, ol, li {
 header {
   grid-column: 1/13; 
   padding: 0 0 16px 0;
+  .header-row {
+    display: grid;
+  
+    // placement
+    grid-column: 1/13;
+  
+    // set grid
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  
+    transition: 300ms ease-in-out;
+    .header-text {
+      color: $text-primary;
+      grid-column: 1/10;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+  
+      // placement
+      grid-column: 10/13;
+    }
+  }
   .header-tagline {
     color: $text-primary;
   }
 }
+
+
 
 body {
   display: grid;
@@ -4113,7 +4138,7 @@ body {
   padding: 32px;
   height: 100vh;
   width: 100vw;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 .hero {
@@ -4141,15 +4166,13 @@ body {
 
   // set items to stick to bottom
   align-items: flex-end;
-  transition: 300ms ease-in-out;
   &-item {
     border-radius: $radius-md;
-    transition: 300ms ease-in-out;
     &:hover { 
-      transition: 300ms ease-in-out;
       .landing-item-thumbnail {
-        transition: 300ms ease-in-out;
-        background-color: transparent;
+        transition: 100ms linear;
+        // background-color: transparent;
+        border: 1px solid $higlight;
       }
     }
     display: grid;
@@ -4174,7 +4197,8 @@ body {
       grid-row: span 3;
       background-color: $primary-bg;
       padding: 32px;
-      transition: 300ms ease-in-out;
+      transition: 60ms linear;
+      border: 1px solid $primary-bg;
       img {
         width: 100%;
         height: 100%;
