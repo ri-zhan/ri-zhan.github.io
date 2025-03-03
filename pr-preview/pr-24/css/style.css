@@ -632,8 +632,11 @@ li {
 
 header {
   grid-column: 1/13;
-  padding: 0 0 16px 0;
-  margin-bottom: 64px;
+  padding: 32px 32px 16px 32px;
+  background-color: #E9E7E0;
+  position: absolute;
+  width: 100vw;
+  z-index: 2;
 }
 header .header-row {
   display: grid;
@@ -655,15 +658,17 @@ header .header-tagline {
   color: #1A0F04;
 }
 
-body {
+.content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   -moz-column-gap: 24px;
        column-gap: 24px;
   padding: 32px;
+  padding-top: 130px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
+  z-index: 1;
 }
 
 .landing {
@@ -714,6 +719,8 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
 }
 section *[class^=col-], section *[class*=col-] {
   -moz-column-gap: 24px;
@@ -730,6 +737,9 @@ section .col-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
+}
+section .col-wrapper.col-6 {
+  margin-bottom: 0;
 }
 section .col-10 {
   display: grid;
