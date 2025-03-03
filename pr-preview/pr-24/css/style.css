@@ -301,294 +301,6 @@ video > source {
   box-shadow: none;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  padding: 0 4rem 0 2rem;
-  grid-row: 1/5;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: visible;
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-  width: 80vw;
-  right: 0;
-  position: absolute;
-}
-.wrapper section:first-child {
-  padding-top: 4rem;
-  min-height: 100vh;
-  height: auto;
-  align-content: center;
-}
-.wrapper section:last-child {
-  padding-bottom: 4rem;
-}
-.wrapper-boxes {
-  grid-column: 2/11;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 60px;
-  height: -moz-min-content;
-  height: min-content;
-  align-self: center;
-  align-items: flex-start;
-}
-.wrapper-boxes-box {
-  position: relative;
-  display: grid;
-  grid-column: span 3;
-  row-gap: 1.5rem; /* 24px */
-  transition: all 500ms ease-in-out;
-}
-.wrapper-boxes-box-img {
-  overflow: hidden;
-  min-height: 300px;
-  max-height: 300px;
-  background-color: #F0EFE8;
-}
-.wrapper-boxes-box img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-height: 100%;
-  overflow: hidden;
-  filter: grayscale(95%);
-  transition: all 500ms ease-in-out;
-}
-.wrapper-boxes-box img[data-img-zoom-mark] {
-  scale: 1.7;
-  transform: translate(-10px, 40px);
-}
-.wrapper-boxes-box img[data-img-zoom-hereafter] {
-  scale: 1.5;
-  transform: translate(10px, 20px);
-}
-.wrapper-boxes-box img[data-img-zoom-yads] {
-  scale: 1.4;
-}
-@media (hover: hover) {
-  .wrapper-boxes-box:hover img {
-    transform: translate(0);
-    scale: 1;
-    filter: grayscale(0%);
-    transition: all 650ms ease-in-out;
-  }
-  .wrapper-boxes-box:hover .help {
-    bottom: -300px;
-    transition: all 650ms ease-in-out;
-  }
-}
-.wrapper-boxes-box .help {
-  height: 300px;
-  transition: all 650ms ease-in-out;
-  position: absolute;
-  bottom: 0px;
-  z-index: -9;
-}
-.wrapper-hero {
-  max-height: 100vh;
-}
-.wrapper-content {
-  display: grid;
-  grid-column: 1/11;
-  grid-template-columns: repeat(10, 1fr);
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 1.5rem;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 10rem;
-  align-content: center;
-  scroll-snap-align: center;
-}
-.wrapper-content img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: visible;
-}
-.wrapper-content > * {
-  row-gap: 120px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.wrapper-content.together {
-  scroll-snap-align: center;
-  max-height: -moz-min-content;
-  max-height: min-content;
-  height: -moz-min-content;
-  height: min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
-  padding: 3.5rem 0;
-}
-.wrapper-content.together.heading {
-  margin-top: 50vh;
-  padding-top: 0;
-}
-.wrapper-inner {
-  display: grid;
-  row-gap: 1.5rem;
-}
-
-section {
-  display: grid;
-  grid-column: 1/11;
-  grid-template-columns: repeat(10, 1fr);
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 1.5rem;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 12rem;
-}
-section img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-*[class^=col-], *[class*=col-] {
-  flex-direction: column;
-  height: -moz-min-content;
-  height: min-content;
-  justify-content: center;
-}
-*[class^=col-].center, *[class*=col-].center {
-  align-items: center;
-  align-self: center;
-}
-*[class^=col-].center-y, *[class*=col-].center-y {
-  align-self: center;
-}
-*[class^=col-].center-x, *[class*=col-].center-x {
-  align-items: center;
-}
-
-.col-2l {
-  grid-column: 1/3;
-  display: flex;
-}
-
-.col-2ml {
-  grid-column: 3/5;
-  display: flex;
-}
-
-.col-2mr {
-  grid-column: 5/7;
-  display: flex;
-}
-
-.col-2r {
-  grid-column: 7/9;
-  display: flex;
-}
-
-.col-3l {
-  grid-column: 1/4;
-  display: flex;
-}
-
-.col-3m {
-  grid-column: 4/7;
-  display: flex;
-}
-
-.col-3r {
-  grid-column: 7/10;
-  display: flex;
-}
-
-.col-4l {
-  grid-column: 1/5;
-  display: flex;
-}
-
-.col-4m {
-  grid-column: 3/7;
-  display: flex;
-}
-
-.col-4r {
-  grid-column: 7/11;
-  display: flex;
-}
-
-.col-5l {
-  grid-column: 1/6;
-  display: flex;
-}
-
-.col-5r {
-  grid-column: 6/11;
-  display: flex;
-}
-
-.col-6l {
-  grid-column: 1/7;
-  display: flex;
-}
-.col-6l.row-display {
-  flex-direction: row;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
-.col-6l.row-display img {
-  height: -moz-min-content;
-  height: min-content;
-  width: 100%;
-  align-self: center;
-}
-
-.col-6r {
-  grid-column: 5/11;
-  display: flex;
-}
-
-.col-7l {
-  grid-column: 1/8;
-  display: flex;
-}
-
-.col-7r {
-  grid-column: 4/11;
-  display: flex;
-}
-
-.col-8 {
-  display: grid;
-  grid-column: 1/11;
-  grid-template-columns: repeat(10, 1fr);
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem; /* 24px */
-}
-.col-8 > .col-6l {
-  justify-content: flex-end;
-}
-.col-8.fake-table {
-  height: -moz-min-content;
-  height: min-content;
-  align-items: flex-start;
-}
-.col-8.fake-table > [class^=col-] {
-  display: inherit;
-  vertical-align: top;
-}
-
-.img-caption {
-  gap: 3rem;
-}
-
 .cursor-center.zoom {
   display: none;
   background-color: transparent;
@@ -850,7 +562,7 @@ h2 {
   line-height: 48px; /* 133.333% */
 }
 h2.col-6 {
-  margin-bottom: 64px;
+  margin-bottom: 0;
 }
 
 h3 {
@@ -1001,10 +713,14 @@ section {
   grid-column: 2/12;
   margin-bottom: 180px;
   display: grid;
+  row-gap: 64px;
 }
 section *[class^=col-], section *[class*=col-] {
   -moz-column-gap: 24px;
        column-gap: 24px;
+}
+section *[class^=col-]:last-child, section *[class*=col-]:last-child {
+  margin-bottom: 0;
 }
 section .align-x {
   align-items: center;
@@ -1046,7 +762,14 @@ section .mobile-layout > img {
   height: auto;
   filter: drop-shadow(2.171px 4.342px 15.523px rgba(0, 0, 0, 0.05));
 }
+section .no-mb {
+  margin-bottom: 0;
+}
 
+img {
+  width: 100%;
+  height: auto;
+}
 img.padded-bg {
   background-color: #E9E7E0;
   padding: 32px;
