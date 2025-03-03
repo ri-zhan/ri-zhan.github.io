@@ -1009,8 +1009,14 @@ section *[class^=col-], section *[class*=col-] {
 section .align-x {
   align-items: center;
 }
-section .col-48 {
+section .col-wrapper-48 {
   margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+section .col-64 {
+  margin-bottom: 64px;
   display: flex;
   flex-direction: column;
   row-gap: 6px;

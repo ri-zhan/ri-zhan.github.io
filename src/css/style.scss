@@ -4259,6 +4259,12 @@ section {
     flex-direction: column;
     row-gap: 6px;
   }
+  .col-64 {
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
   .col-10 {
     display: grid;
     // grid-column: 2/12;
