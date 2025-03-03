@@ -1146,6 +1146,7 @@ header {
 
   // set items to stick to bottom
   align-items: flex-end;
+
   &-item {
     border-radius: $radius-md;
     &:hover { 
@@ -1271,4 +1272,53 @@ img {
 .mobile-reverse {
   display: flex;
   flex-direction: column-reverse;
+}
+
+
+
+@media (max-width: 600px) { 
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  header {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 64px;
+    // display: flex;
+    .header-row {
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-direction: column-reverse;
+      .header-text {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .landing {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    row-gap: 64px;
+  }
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    *[class^="col-"], *[class*="col-"] {
+      grid-column: span 4;
+    }
+    .col-10 {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 4;
+    }
+  }
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    row-gap: 64px;
+  }
 }
