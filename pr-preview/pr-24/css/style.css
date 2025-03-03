@@ -637,6 +637,8 @@ header {
   position: absolute;
   width: 100vw;
   z-index: 2;
+  left: 0;
+  top: 0;
 }
 header .header-row {
   display: grid;
@@ -788,4 +790,50 @@ img.padded-bg {
 .mobile-reverse {
   display: flex;
   flex-direction: column-reverse;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  header {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 64px;
+  }
+  header .header-row {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  header .header-row .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .landing {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    row-gap: 64px;
+  }
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+  }
+  section *[class^=col-], section *[class*=col-] {
+    grid-column: span 4;
+  }
+  section .col-10 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+  }
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+    row-gap: 64px;
+  }
 }/*# sourceMappingURL=style.css.map */
