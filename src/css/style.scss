@@ -4247,6 +4247,7 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
+  column-gap: 24px;
   *[class^="col-"], *[class*="col-"] {
     // margin-bottom: 64px;
     column-gap: 24px; 
@@ -4262,6 +4263,9 @@ section {
     display: flex;
     flex-direction: column;
     row-gap: 6px;
+    &.col-6 {
+      margin-bottom: 0;
+    }
   }
   .col-10 {
     display: grid;

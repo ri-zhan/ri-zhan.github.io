@@ -714,6 +714,8 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
 }
 section *[class^=col-], section *[class*=col-] {
   -moz-column-gap: 24px;
@@ -730,6 +732,9 @@ section .col-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
+}
+section .col-wrapper.col-6 {
+  margin-bottom: 0;
 }
 section .col-10 {
   display: grid;
