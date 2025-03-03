@@ -613,6 +613,9 @@ body.caption, p.caption, ul.caption, ol.caption, li.caption {
   letter-spacing: -0.12px;
   text-transform: uppercase;
 }
+body b, p b, ul b, ol b, li b {
+  font-weight: 400;
+}
 
 .caption {
   font-family: "Source Code Pro";
