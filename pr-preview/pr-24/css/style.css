@@ -889,10 +889,36 @@ body, p, ul, ol, li {
   line-height: 26px; /* 162.5% */
   letter-spacing: 0.8px;
 }
+body.caption, p.caption, ul.caption, ol.caption, li.caption {
+  font-family: "Source Code Pro";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.12px;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: "Source Code Pro";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.12px;
+  text-transform: uppercase;
+  color: #1A0F04;
+}
+
+li {
+  line-height: 26px; /* 162.5% */
+  margin-bottom: 6px;
+}
 
 header {
   grid-column: 1/13;
   padding: 0 0 16px 0;
+  margin-bottom: 64px;
 }
 header .header-row {
   display: grid;
@@ -922,14 +948,7 @@ body {
   padding: 32px;
   height: 100vh;
   width: 100vw;
-}
-
-.hero {
-  height: 80vh;
-  align-self: flex-end;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 24px;
+  overflow-y: scroll;
 }
 
 .landing {
@@ -951,7 +970,7 @@ body {
 }
 .landing-item:hover .landing-item-thumbnail {
   transition: 100ms linear;
-  border: 1px solid #E63223;
+  background-color: #E4E1D8;
 }
 .landing-item-text {
   display: flex;
@@ -967,7 +986,6 @@ body {
   background-color: #E9E7E0;
   padding: 32px;
   transition: 60ms linear;
-  border: 1px solid #E9E7E0;
 }
 .landing-item-thumbnail img {
   width: 100%;
@@ -975,10 +993,48 @@ body {
      object-fit: cover;
 }
 
-.col-10 {
-  display: grid;
+section {
+  grid-template-columns: repeat(10, 1fr);
   grid-column: 2/12;
+  margin-bottom: 222px;
+  display: grid;
+}
+section *[class^=col-], section *[class*=col-] {
+  margin-bottom: 64px;
+}
+section .align-x {
+  align-items: center;
+}
+section .col-wrapper {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+section .col-10 {
+  display: grid;
+  grid-column: span 10;
   grid-template-columns: repeat(10, 1fr);
   -moz-column-gap: 24px;
        column-gap: 24px;
+  row-gap: 64px;
+}
+section .col-3 {
+  grid-column: span 3;
+}
+section .col-6 {
+  grid-column: span 6;
+}
+section .col-7 {
+  grid-column: span 7;
+}
+
+img.padded-bg {
+  background-color: #E9E7E0;
+  padding: 32px;
+}
+
+.mobile-reverse {
+  display: flex;
+  flex-direction: column-reverse;
 }/*# sourceMappingURL=style.css.map */
