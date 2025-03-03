@@ -4138,6 +4138,8 @@ header {
   position: absolute;
   width: 100vw;
   z-index: 2;
+  left: 0;
+  top: 0;
   .header-row {
     display: grid;
   
@@ -4168,27 +4170,27 @@ header {
 
 
 
-// body {
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   column-gap: 24px;
-//   padding: 32px;
-//   height: 100vh;
-//   width: 100vw;
-//   overflow-y: scroll;
-// }
-
-.content {
+body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
   padding: 32px;
-  padding-top: 130px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
-  z-index: 1;
 }
+
+// .content {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   column-gap: 24px;
+//   padding: 32px;
+//   padding-top: 130px;
+//   height: 100vh;
+//   width: 100vw;
+//   overflow-y: scroll;
+//   z-index: 1;
+// }
 
 .landing {
   display: grid;
