@@ -25,7 +25,7 @@ a p :not(.caption) {
 }
 
 a:visited, a:hover, a:hover > *:not(h4, h3) {
-  color: #C3C0AD;
+  color: #1A0F04;
   text-decoration: underline;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
@@ -39,7 +39,7 @@ a:active, a:active > * {
 
 p a:link, h3 a:link, h2 > a {
   text-decoration: underline;
-  color: #C3C0AD;
+  color: #1A0F04;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
 }
@@ -57,7 +57,7 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 }
 
 h1 {
-  color: #C3C0AD;
+  color: #1A0F04;
   font-family: ivyora-display, sans-serif;
   font-size: 64px;
   font-style: normal;
@@ -849,6 +849,9 @@ h2 {
   font-weight: 100;
   line-height: 48px; /* 133.333% */
 }
+h2.col-6 {
+  margin-bottom: 64px;
+}
 
 h3 {
   color: #1A0F04;
@@ -996,11 +999,12 @@ body {
 section {
   grid-template-columns: repeat(10, 1fr);
   grid-column: 2/12;
-  margin-bottom: 222px;
+  margin-bottom: 180px;
   display: grid;
 }
 section *[class^=col-], section *[class*=col-] {
-  margin-bottom: 64px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
 }
 section .align-x {
   align-items: center;
@@ -1017,16 +1021,30 @@ section .col-10 {
   grid-template-columns: repeat(10, 1fr);
   -moz-column-gap: 24px;
        column-gap: 24px;
-  row-gap: 64px;
 }
 section .col-3 {
   grid-column: span 3;
+}
+section .col-5 {
+  grid-column: span 5;
 }
 section .col-6 {
   grid-column: span 6;
 }
 section .col-7 {
   grid-column: span 7;
+}
+section .mobile-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+section .mobile-layout > img {
+  display: flex;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(2.171px 4.342px 15.523px rgba(0, 0, 0, 0.05));
 }
 
 img.padded-bg {

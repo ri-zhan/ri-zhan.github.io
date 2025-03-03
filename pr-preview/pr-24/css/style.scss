@@ -37,7 +37,7 @@ a {
 }
 
 a:visited, a:hover, a:hover > *:not(h4, h3) {
-  color: $primary-dark;
+  color: $text-primary;
   text-decoration: underline;
   text-decoration-color: $red;
   transition: text-decoration-color 100ms ease-in-out;
@@ -51,7 +51,7 @@ a:active, a:active > *  {
 
 p  a:link, h3 a:link, h2 > a {
   text-decoration: underline;
-  color: $primary-dark;
+  color: $text-primary;
   text-decoration-color: $red;
   transition: text-decoration-color 100ms ease-in-out;
   @media (hover: hover) {
@@ -80,7 +80,7 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 }
 
 h1 {
-  color: $primary-dark;
+  color: $text-primary;
   font-family: ivyora-display, sans-serif;
   font-size: 64px;
   font-style: normal;
@@ -4007,8 +4007,9 @@ $spacing-xxxl: 64px;
 
 $spacing-section: 222px;
 
-$shadow-sm: 0px 0px 3.5px 0px rgba(0, 0, 0, 0.03);
-$shadow-lg: 2px 4px 14.3px 0px rgba(0, 0, 0, 0.05);
+// use filter for shadows
+$shadow-sm: drop-shadow(2.171px 4.342px 15.523px rgba(0, 0, 0, 0.05));
+$shadow-lg: drop-shadow(2px 4px 14.3px rgba(0, 0, 0, 0.05));
 
 
 .header-text {
@@ -4054,6 +4055,9 @@ h2 {
   font-style: normal;
   font-weight: 100;
   line-height: 48px; /* 133.333% */
+  &.col-6 {
+    margin-bottom: 64px;
+  }
 }
 
 // idk it's not being used rn
@@ -4240,10 +4244,11 @@ body {
 section {
   grid-template-columns: repeat(10, 1fr);
   grid-column: 2/12;
-  margin-bottom: 222px;
+  margin-bottom: 180px;
   display: grid;
   *[class^="col-"], *[class*="col-"] {
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
+    column-gap: 24px; 
   }
   .align-x {
     align-items: center;
@@ -4262,10 +4267,13 @@ section {
     //columns
     grid-template-columns: repeat(10, 1fr);
     column-gap: 24px; 
-    row-gap: 64px;
+    // row-gap: 48px;
   }
   .col-3 {
     grid-column: span 3;
+  }
+  .col-5 {
+    grid-column: span 5;
   }
   .col-6 {
     grid-column: span 6;
@@ -4273,12 +4281,27 @@ section {
   .col-7 {
     grid-column: span 7;
   }
+  .mobile-layout {
+    // grid-column: span 10;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // height: min-content;
+    > img {
+      display: flex;
+      width: 100%;
+      height: auto;  
+      filter: drop-shadow(2.171px 4.342px 15.523px rgba(0, 0, 0, 0.05));
+    }
+  }
 }
 
 
 img.padded-bg {
   background-color: $primary-bg;
   padding: 32px;
+  // margin-bottom: 64px;
 }
 
 
