@@ -1009,7 +1009,7 @@ section *[class^=col-], section *[class*=col-] {
 section .align-x {
   align-items: center;
 }
-section .col-wrapper {
+section .col-48 {
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
