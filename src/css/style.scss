@@ -1053,7 +1053,11 @@ body, p, ul, ol, li {
     letter-spacing: -0.12px;
     text-transform: uppercase;
   }
+  b {
+    font-weight: 400;
+  }
 }
+
 .caption {
   font-family: "Source Code Pro";
   font-size: 12px;
