@@ -637,6 +637,8 @@ header {
   position: absolute;
   width: 100vw;
   z-index: 2;
+  left: 0;
+  top: 0;
 }
 header .header-row {
   display: grid;
