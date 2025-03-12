@@ -1288,9 +1288,15 @@ img {
   flex-direction: column-reverse;
 }
 
+.ahref-fix {
+  white-space: nowrap;
+}
 
 
 @media (max-width: 600px) { 
+  .ahref-fix {
+    white-space: inherit;
+  }
   h1 {
     font-size: 32px;
     line-height: 40px;
