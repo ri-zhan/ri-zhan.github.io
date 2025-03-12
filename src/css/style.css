@@ -691,7 +691,7 @@ header .header-tagline {
 }
 .landing-item:hover .landing-item-thumbnail {
   transition: 100ms linear;
-  background-color: #E4E1D8;
+  background-color: #E1DED7;
 }
 .landing-item-text {
   display: flex;
