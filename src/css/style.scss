@@ -358,9 +358,9 @@ h1#current-page, #current-page > h1 {
 }
 
 
-.video-grid {
-  margin-bottom: 5rem;
-}
+// .video-grid {
+//   margin-bottom: 5rem;
+// }
 
 video {
   height: auto;
@@ -1150,7 +1150,6 @@ header {
 
   // set items to stick to bottom
   align-items: flex-end;
-
   &-item {
     border-radius: $radius-md;
     &:hover { 
@@ -1175,6 +1174,8 @@ header {
       // set placement
       grid-row: span 1;
       justify-content: flex-end;
+      align-self: flex-end;
+      height: min-content;
       h3 {
         margin-bottom: $spacing-xs;
       }
@@ -1229,8 +1230,17 @@ section {
     column-gap: 24px; 
     // row-gap: 48px;
   }
+  .col-1 {
+    grid-column: span 1;
+  }
+  .col-2 {
+    grid-column: span 2;
+  }
   .col-3 {
     grid-column: span 3;
+  }
+  .col-4 {
+    grid-column: span 4;
   }
   .col-5 {
     grid-column: span 5;
@@ -1324,5 +1334,8 @@ img {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
     row-gap: 64px;
+  }
+  .hide-on-mobile {
+    display: none;
   }
 }
