@@ -922,7 +922,7 @@ video {
 // primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
-$primary-dark: #C3C0AD;
+$primary-dark: #C3C0AD; // stroke
 $primary-bg: #E9E7E0;
 
 $higlight: #E63223; 
@@ -1157,7 +1157,7 @@ header {
         transition: 100ms linear;
         // background-color: transparent;
         // border: 1px solid $higlight;
-        background-color: #E4E1D8;
+        background-color: #E1DED7;
       }
     }
     display: grid;
