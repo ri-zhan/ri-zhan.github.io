@@ -1,8 +1,4 @@
-////// style overhaul
-
-
-// cursor
-
+// custom curso
 $(document).mousemove(function(e){
   $(".cursor-around").css({left: e.pageX, top:e.pageY});
 });
@@ -11,12 +7,11 @@ $(document).mousemove(function(e){
   $(".cursor-center").css({left: e.pageX, top:e.pageY});
 });
 
+
+// ripple zoom for images
+
 $('.ripple-zoom-area').hover(function(){
   $('.cursor-center, .cursor-around').toggleClass('zoom');
-  // $('.ripple-zoom-area-window').css({
-  //   'height': 240 + 'px',
-  //   'width': 240 + 'px'
-  // })
 });
 
 $('.ripple-zoom-area-window').mouseleave(function(){
@@ -27,6 +22,7 @@ $('.ripple-zoom-area-window').mouseleave(function(){
   });
 })
 
+// riiple zoom getting all the images that need the function
 
 window.onload = function () {
 
@@ -46,6 +42,7 @@ window.onload = function () {
   };
 }
 
+// detecting when to ripple zoom
 
 const rippleZoomCursor = document.querySelectorAll('.ripple-zoom-area');
 
@@ -135,100 +132,9 @@ const appearWhenOnScreen = new IntersectionObserver
   appearWhenOnScreen.observe(rippleZoomCursor);
 });
 
-// document.getElementsByTagName('a').onmouseover = function () {
-//   // window.ev = true;
-//   $('.cursor-center').addClass('hover')
-//   console.log('working')
-// }
-
 $('a').hover(function(){
   $('.cursor-center, .cursor-around').toggleClass('hover')
 });
-
-
-//// detect when section is in view
-
-// const tocNavPrep = document.querySelectorAll('section');
-
-// const focusStateChangePrep = {
-//   rootMargin: '50% 0% 50% 0%'
-//   //top right bottom left
-// };
-
-// const updateWhenOnScreenPrep = new IntersectionObserver
-// (function(
-//   entries,     
-//   updateWhenOnScreenPrep
-//   ) {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-
-//         if($(window).width() >= 600) {
-//           const tocNav = document.querySelectorAll('section');
-
-//           const focusStateChange = {
-//             rootMargin: '30% 0% 50% 0%'
-//           };
-          
-//           const updateWhenOnScreen = new IntersectionObserver
-//           (function(
-//             entries,     
-//             updateWhenOnScreen
-//             ) {
-//               entries.forEach(entry => {
-//                 if (entry.isIntersecting) {
-          
-//                   if($(window).width() >= 600) {
-
-//                       // entry.target.classList.toggle('.unfocused');
-//                       thisDiv = '#' +entry.target.id + 'link'
-//                       jQuery(thisDiv).addClass('focused');
-//                       jQuery(thisDiv).removeClass('unfocused');
-//                   }
-                            
-//                   // updateWhenOnScreen.unobserve(entry, target);
-//                 } else {
-          
-//                     thisDiv = '#' +entry.target.id + 'link'
-//                     jQuery(thisDiv).addClass('unfocused');
-//                     jQuery(thisDiv).removeClass('focused');
-
-          
-//                 }
-//               })
-//             }, focusStateChange);
-          
-//             tocNav.forEach(tocNav =>{
-//             updateWhenOnScreen.observe(tocNav);
-//             });
-
-//         }
-//         // appearWhenCenter.unobserve(entry, target);
-//       } else {
-//         // if($(window).width() >= 600) {
-//           $(section).toggleClass('focused');
-          
-//         // }
-//       }
-//     })
-//   }, focusStateChangePrep);
-
-//   tocNavPrep.forEach(tocNavPrep =>{
-//   updateWhenOnScreenPrep.observe(tocNavPrep);
-// });
-
-
-
-
-
-$(document).mousemove(function(e){
-  $(".follower-around").css({left: e.pageX, top:e.pageY});
-});
-
-$(document).mousemove(function(e){
-  $(".follower-center").css({left: e.pageX, top:e.pageY});
-});
-
 
 
 
