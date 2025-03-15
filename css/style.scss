@@ -18,9 +18,9 @@ $text-primary: #1A0F04;
 
 body {
   background-color: $primary;
-  > * {
-    background-color: transparent !important;
-  }
+  // > * {
+  //   background-color: transparent !important;
+  // }
 }
 
 // a styling
@@ -1078,7 +1078,7 @@ header {
   grid-column: 1/13; 
   padding: 32px 32px 16px 32px;
   // margin-bottom: 32px;
-  background-color: $primary-bg;
+  background-color: $primary;
   position: absolute;
   width: 100vw;
   z-index: 2;
@@ -1150,6 +1150,20 @@ header {
 
   // set items to stick to bottom
   align-items: flex-end;
+
+  // play page landing
+  &.play {
+    grid-row: 3/6;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+    .landing-item {
+      grid-template-rows: repeat(3, 1fr);
+      grid-row: span 3;
+      &-thumbnail {
+        grid-row: span 2;
+      }
+    }
+  }
   &-item {
     border-radius: $radius-md;
     &:hover { 
@@ -1178,6 +1192,12 @@ header {
       height: min-content;
       h3 {
         margin-bottom: $spacing-xs;
+      }
+      // :nth-child(2) {
+      //   text-transform: lowercase;
+      // }
+      :not(:first-child) {
+        color: #716C4B;
       }
     }
     &-thumbnail {
@@ -1309,6 +1329,7 @@ img {
     grid-template-columns: repeat(4, 1fr);
     row-gap: 64px;
     // display: flex;
+    background-color: $primary;
     .header-row {
       width: 100%;
       grid-template-columns: repeat(4, 1fr);
