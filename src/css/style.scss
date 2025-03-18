@@ -29,16 +29,18 @@ a {
   text-decoration: none;
   text-decoration-color: transparent;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
-  & p :not(.caption) {
+  & p :not(.caption), p:not(.caption) > a {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-decoration-color: $red;
     transition: text-decoration-color 100ms ease-in-out;
   }
 }
 
-a:visited, a:hover, a:hover > *:not(h4, h3) {
+a:visited, a:hover, a:hover > *:not(h4, h3), li > a:visited {
   color: $text-primary;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-decoration-color: $red;
   transition: text-decoration-color 100ms ease-in-out;
 }
@@ -49,8 +51,9 @@ a:active, a:active > *  {
   transition: text-decoration-color 100ms ease-in-out;
 }
 
-p  a:link, h3 a:link, h2 > a {
+p a:link, h3 a:link, h2 > a, li a:link {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   color: $text-primary;
   text-decoration-color: $red;
   transition: text-decoration-color 100ms ease-in-out;
@@ -59,9 +62,6 @@ p  a:link, h3 a:link, h2 > a {
     color: $red;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  // > * {
-  //   text-decoration: none;
-  // }
 }
 
 
