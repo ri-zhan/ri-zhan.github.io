@@ -15,15 +15,17 @@ a {
   text-decoration: none;
   text-decoration-color: transparent;
 }
-a p :not(.caption) {
+a p :not(.caption), a p:not(.caption) > a {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
 }
 
-a:visited, a:hover, a:hover > *:not(h4, h3) {
+a:visited, a:hover, a:hover > *:not(h4, h3), li > a:visited {
   color: #1A0F04;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
 }
@@ -34,14 +36,15 @@ a:active, a:active > * {
   transition: text-decoration-color 100ms ease-in-out;
 }
 
-p a:link, h3 a:link, h2 > a {
+p a:link, h3 a:link, h2 > a, li a:link {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   color: #1A0F04;
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
 }
 @media (hover: hover) {
-  p a:link, h3 a:link, h2 > a {
+  p a:link, h3 a:link, h2 > a, li a:link {
     text-decoration-color: #E63223;
     color: #E63223;
     transition: text-decoration-color 100ms ease-in-out;
