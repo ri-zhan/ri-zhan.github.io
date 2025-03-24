@@ -641,6 +641,7 @@ header .header-row {
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   transition: 300ms ease-in-out;
+  margin-bottom: 8px;
 }
 header .header-row .header-text {
   color: #1A0F04;
