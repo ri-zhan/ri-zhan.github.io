@@ -539,10 +539,10 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 h1 {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 64px;
+  font-size: 56px;
   font-style: normal;
   font-weight: 100;
-  line-height: 80px; /* 125% */
+  line-height: 72px; /* 125% */
 }
 
 h2 {
