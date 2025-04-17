@@ -1295,6 +1295,7 @@ section {
 img {
   width: 100%;
   height: auto;
+  object-fit: contain;
   &.padded-bg {
    background-color: $primary-bg;
    padding: 32px;
