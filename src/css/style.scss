@@ -1363,8 +1363,10 @@ img {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
     row-gap: 64px;
-    > img:first-child {
-      height: min-content;
+    > section:first-child {
+      img:first-child {
+        height: min-content;
+      }
     }
   }
   .hide-on-mobile {
