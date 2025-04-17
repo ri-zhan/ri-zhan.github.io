@@ -869,6 +869,10 @@ img.padded-bg {
     grid-column: span 4;
     row-gap: 64px;
   }
+  .content > img:first-child {
+    height: -moz-min-content;
+    height: min-content;
+  }
   .hide-on-mobile {
     display: none;
   }
