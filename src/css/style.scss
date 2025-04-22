@@ -1309,6 +1309,35 @@ section {
   }
 }
 
+.section-links-container {
+  padding: 0;
+  header {
+    display: flex;
+    justify-content: center;
+    .header-text {
+      display: flex;
+      align-items: center;
+      align-self: center;
+    }
+  }
+  .section-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    row-gap: 24px;
+    grid-column: 2/12;
+    // height: 100%;
+    align-items: center;
+    align-self: center;
+    // justify-self: center;
+    margin-bottom: 64px;
+    padding: 32px;
+  }
+  footer {
+    position: fixed; bottom:0; padding: 32px 32px; width: 100%;
+  }
+}
 
 img {
   width: 100%;
@@ -1384,6 +1413,24 @@ img {
     > section:first-child {
       img:first-child {
         height: min-content;
+      }
+    }
+    &.section-links-container {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      header {
+        position: static;
+      }
+      .section-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+      footer {
+        position: static;
+        grid-column: span 4;
       }
     }
   }
