@@ -931,15 +931,15 @@ img.padded-bg {
   .content.section-links-container header {
     position: static;
   }
+  .content.section-links-container header .header-text {
+    display: flex;
+    flex-direction: column;
+  }
   .content.section-links-container .section-links {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 32px;
-  }
-  .content.section-links-container footer {
-    position: static;
-    grid-column: span 4;
   }
   .hide-on-mobile {
     display: none;

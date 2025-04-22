@@ -1421,16 +1421,16 @@ img {
       overflow-y: scroll;
       header {
         position: static;
+        .header-text {
+          display: flex;
+          flex-direction: column;
+        }
       }
       .section-links {
         width: 100%;
         display: flex;
         flex-direction: column;
         row-gap: 32px;
-      }
-      footer {
-        position: static;
-        grid-column: span 4;
       }
     }
   }
