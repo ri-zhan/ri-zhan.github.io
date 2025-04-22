@@ -1390,4 +1390,8 @@ img {
   .hide-on-mobile {
     display: none;
   }
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -895,4 +895,8 @@ img.padded-bg {
   .hide-on-mobile {
     display: none;
   }
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
