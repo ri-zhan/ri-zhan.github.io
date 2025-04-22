@@ -844,12 +844,6 @@ section .no-mb {
   margin-bottom: 64px;
   padding: 32px;
 }
-.section-links-container footer {
-  position: fixed;
-  bottom: 0;
-  padding: 32px 32px;
-  width: 100%;
-}
 
 img {
   width: 100%;
@@ -904,15 +898,16 @@ img.padded-bg {
     row-gap: 64px;
   }
   section {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     grid-column: span 4;
   }
   section *[class^=col-], section *[class*=col-] {
-    grid-column: span 4;
+    row-gap: 16px;
   }
   section .col-10 {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
   }
   .content {
     grid-template-columns: repeat(4, 1fr);
@@ -945,6 +940,7 @@ img.padded-bg {
     display: none;
   }
   footer {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
   }
