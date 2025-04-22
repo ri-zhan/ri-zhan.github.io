@@ -1114,6 +1114,24 @@ header {
 }
 
 
+footer {
+  display: grid;
+  grid-column: 1/13;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-self: flex-end;
+  z-index: 2;
+  background-color: $primary;
+  .description {
+    width: max-content;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 10/13;
+  }
+}
+
 
 // body {
 //   display: grid;

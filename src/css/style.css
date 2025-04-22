@@ -656,6 +656,25 @@ header .header-tagline {
   color: #1A0F04;
 }
 
+footer {
+  display: grid;
+  grid-column: 1/13;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-self: flex-end;
+  z-index: 2;
+  background-color: #F0EFE8;
+}
+footer .description {
+  width: -moz-max-content;
+  width: max-content;
+}
+footer .footer-links {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 10/13;
+}
+
 .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
