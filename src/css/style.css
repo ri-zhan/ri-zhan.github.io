@@ -21,6 +21,15 @@ a p :not(.caption), a p:not(.caption) > a {
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
 }
+a .accessory {
+  display: flex;
+  gap: 12px;
+}
+a .accessory p {
+  white-space: nowrap;
+  width: -moz-min-content;
+  width: min-content;
+}
 
 a:visited, a:hover, a:hover > *:not(h4, h3), li > a:visited {
   color: #1A0F04;
@@ -63,16 +72,6 @@ h1 {
   font-style: normal;
   font-weight: 100;
   line-height: 96px; /* 133.333% */
-  letter-spacing: 1px;
-}
-
-h2 {
-  color: #C3C0AD;
-  font-family: ivyora-display, sans-serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 48px; /* 126.667% */
   letter-spacing: 1px;
 }
 
@@ -556,6 +555,9 @@ h2 {
 h2.col-6 {
   margin-bottom: 0;
 }
+h2 b {
+  font-weight: 150;
+}
 
 h3 {
   color: #1A0F04;
@@ -680,31 +682,43 @@ footer .footer-links {
   grid-template-columns: repeat(12, 1fr);
   -moz-column-gap: 24px;
        column-gap: 24px;
-  padding: 32px;
+  row-gap: 32px;
+  padding: 32px 48px;
   padding-top: 130px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
   z-index: 1;
 }
+.content .hero {
+  grid-template-columns: repeat(10, 1fr);
+  min-height: 60vh;
+  height: -moz-min-content;
+  height: min-content;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.content .hero .col-wrapper {
+  margin: 0;
+}
+.content .hero-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
 
 .landing {
-  display: grid;
-  grid-column: 1/13;
-  grid-row: 3/7;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 24px;
-  align-items: flex-end;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  row-gap: 32px;
 }
 .landing.play {
   grid-row: 3/6;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 16px;
-}
-.landing.play .landing-item {
-  grid-template-rows: repeat(3, 1fr);
-  grid-row: span 3;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  row-gap: 48px;
 }
 .landing.play .landing-item-thumbnail {
   grid-row: span 2;
@@ -712,9 +726,7 @@ footer .footer-links {
 .landing-item {
   border-radius: 6px;
   display: grid;
-  grid-column: span 4;
-  grid-row: span 4;
-  grid-template-rows: repeat(4, 1fr);
+  grid-column: span 5;
   gap: 24px;
 }
 .landing-item:hover .landing-item-thumbnail {
@@ -771,7 +783,7 @@ section .col-wrapper {
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
-  row-gap: 6px;
+  row-gap: 12px;
 }
 section .col-wrapper.col-6 {
   margin-bottom: 0;
@@ -854,6 +866,10 @@ img {
 img.padded-bg {
   background-color: #E9E7E0;
   padding: 32px;
+}
+img .icon .small {
+  height: 12px;
+  width: 12px;
 }
 
 .mobile-reverse {
