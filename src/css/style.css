@@ -10,22 +10,24 @@ body {
   background-color: #F0EFE8;
 }
 
-a {
+a, a.landing-item > .landing-item-text > p {
   transition: text-decoration-color 100ms ease-in-out;
   text-decoration: none;
   text-decoration-color: transparent;
 }
-a p :not(.caption), a p:not(.caption) > a {
+a p:not(.caption), a p:not(.caption) > a, a > p:not(.caption), a.landing-item > .landing-item-text > p p:not(.caption), a.landing-item > .landing-item-text > p p:not(.caption) > a, a.landing-item > .landing-item-text > p > p:not(.caption) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: #E63223;
+  text-decoration-color: #CBC6B8;
   transition: text-decoration-color 100ms ease-in-out;
 }
-a .accessory {
+a .with-accessory, a.landing-item > .landing-item-text > p .with-accessory {
   display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 12px;
 }
-a .accessory p {
+a .with-accessory p, a.landing-item > .landing-item-text > p .with-accessory p {
   white-space: nowrap;
   width: -moz-min-content;
   width: min-content;
@@ -76,7 +78,7 @@ h1 {
 }
 
 h3 {
-  color: #C3C0AD;
+  color: #CBC6B8;
   font-family: ivyora-display, sans-serif;
   font-size: 26px;
   font-style: normal;
@@ -86,7 +88,7 @@ h3 {
 }
 
 h4 {
-  color: #C3C0AD;
+  color: #CBC6B8;
   font-family: ivyora-display, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -96,7 +98,7 @@ h4 {
 }
 
 h5 {
-  color: #C3C0AD;
+  color: #CBC6B8;
   font-family: source-code-pro, monospace;
   font-size: 16px;
   font-style: normal;
@@ -181,7 +183,7 @@ ol > li li::before {
 }
 
 .caption {
-  color: #C3C0AD;
+  color: #CBC6B8;
   font-family: source-code-pro, monospace;
   font-size: 12px;
   font-style: normal;
@@ -192,7 +194,7 @@ ol > li li::before {
 }
 
 body {
-  color: #C3C0AD !important;
+  color: #CBC6B8 !important;
   margin: 0;
   height: 100vh;
   width: 100%;
@@ -270,8 +272,8 @@ h1#current-page, #current-page > h1 {
   position: fixed;
   flex-direction: column;
   grid-column: 1/2;
-  -moz-columns: #C3C0AD;
-       columns: #C3C0AD;
+  -moz-columns: #CBC6B8;
+       columns: #CBC6B8;
   row-gap: 1.5rem;
   overflow: visible;
   z-index: 9999;
@@ -519,7 +521,7 @@ video > source {
 .header-text > * {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 100;
   line-height: 36px;
@@ -629,7 +631,7 @@ li {
 
 header {
   grid-column: 1/13;
-  padding: 32px 32px 16px 32px;
+  padding: 32px 48px 16px 48px;
   background-color: #F0EFE8;
   position: absolute;
   width: 100vw;
@@ -648,6 +650,12 @@ header .header-row {
 header .header-row .header-text {
   color: #1A0F04;
   grid-column: 1/10;
+  display: flex;
+  align-items: center;
+}
+header .header-row .header-text .favicon {
+  height: auto;
+  width: 24px;
 }
 header .header-row nav {
   display: flex;
@@ -680,11 +688,12 @@ footer .footer-links {
 .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
   row-gap: 32px;
   padding: 32px 48px;
   padding-top: 130px;
+  padding-bottom: 40px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
@@ -695,8 +704,8 @@ footer .footer-links {
   min-height: 60vh;
   height: -moz-min-content;
   height: min-content;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
   align-items: center;
   margin-bottom: 100px;
 }
@@ -710,9 +719,9 @@ footer .footer-links {
 }
 
 .landing {
-  -moz-column-gap: 24px;
-       column-gap: 24px;
-  row-gap: 32px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  row-gap: 48px;
 }
 .landing.play {
   grid-row: 3/6;
@@ -746,7 +755,7 @@ footer .footer-links {
   margin-bottom: 8px;
 }
 .landing-item-text :not(:first-child) {
-  color: #716C4B;
+  color: #8B8676;
 }
 .landing-item-thumbnail {
   grid-row: span 3;
@@ -766,8 +775,8 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
 }
 section *[class^=col-], section *[class*=col-] {
   -moz-column-gap: 24px;

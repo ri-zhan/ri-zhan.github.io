@@ -9,8 +9,9 @@
 // primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
-$primary-dark: #C3C0AD;
+$primary-dark: #CBC6B8;
 $primary-bg: #E9E7E0;
+$primary-code: #8B8676;
 
 $red: #E63223; 
 $text-primary: #1A0F04; 
@@ -24,21 +25,24 @@ body {
 }
 
 // a styling
-a {
+a, a.landing-item > .landing-item-text > p {
   transition: text-decoration-color 100ms ease-in-out;
   text-decoration: none;
   text-decoration-color: transparent;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
-  & p :not(.caption), p:not(.caption) > a {
+  & p:not(.caption), p:not(.caption) > a, > p:not(.caption) {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-decoration-color: $red;
+    text-decoration-color: $primary-dark;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  .accessory {
-    display: flex; gap: 12px;
+  .with-accessory {
+    display: flex; 
+    width: fit-content;
+    gap: 12px;
     p {
-      white-space: nowrap; width: min-content;
+      white-space: nowrap; 
+      width: min-content;
     }
   }
 }
@@ -932,7 +936,7 @@ video {
 // primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
-$primary-dark: #C3C0AD; // stroke
+$primary-dark: #CBC6B8; // stroke
 $primary-bg: #E9E7E0;
 
 $higlight: #E63223; 
@@ -971,7 +975,7 @@ $shadow-lg: drop-shadow(2px 4px 14.3px rgba(0, 0, 0, 0.05));
 .header-text > * {
   color: $text-primary;
   font-family: ivyora-display, sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 100;
   line-height: 36px;
@@ -1089,7 +1093,7 @@ li {
 
 header {
   grid-column: 1/13; 
-  padding: 32px 32px 16px 32px;
+  padding: 32px 48px 16px 48px;
   // margin-bottom: 32px;
   background-color: $primary;
   position: absolute;
@@ -1111,6 +1115,12 @@ header {
     .header-text {
       color: $text-primary;
       grid-column: 1/10;
+      display: flex;
+      align-items: center;
+      .favicon {
+        height: auto;
+        width: 24px;
+      }
     }
     nav {
       display: flex;
@@ -1146,23 +1156,14 @@ footer {
 }
 
 
-// body {
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   column-gap: 24px;
-//   padding: 32px;
-//   height: 100vh;
-//   width: 100vw;
-//   overflow-y: scroll;
-// }
-
 .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  column-gap: 32px;
   row-gap: 32px;
   padding: 32px 48px;
   padding-top: 130px;
+  padding-bottom: 40px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
@@ -1171,7 +1172,7 @@ footer {
     grid-template-columns: repeat(10, 1fr);
     min-height: 60vh;
     height: min-content;
-    column-gap: 24px;
+    column-gap: 32px;
     align-items: center;
     margin-bottom: 100px;
     .col-wrapper {
@@ -1186,8 +1187,8 @@ footer {
 }
 
 .landing {
-  column-gap: 24px;
-  row-gap: 32px;
+  column-gap: 32px;
+  row-gap: 48px;
 
   // play page landing
   &.play {
@@ -1236,7 +1237,7 @@ footer {
       //   text-transform: lowercase;
       // }
       :not(:first-child) {
-        color: #716C4B;
+        color: $primary-code;
       }
     }
     &-thumbnail {
@@ -1259,7 +1260,7 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
-  column-gap: 24px;
+  column-gap: 32px;
   *[class^="col-"], *[class*="col-"] {
     // margin-bottom: 64px;
     column-gap: 24px; 
