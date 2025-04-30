@@ -904,18 +904,22 @@ img .icon .small {
   }
   header {
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 64px;
     background-color: #F0EFE8;
   }
   header .header-row {
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    row-gap: 8px;
   }
   header .header-row .header-text {
     display: flex;
-    flex-direction: column;
+    align-self: center;
+  }
+  .content .hero {
+    min-height: auto;
+    height: auto;
   }
   .landing {
     grid-template-columns: repeat(4, 1fr);
@@ -965,8 +969,12 @@ img .icon .small {
     display: none;
   }
   footer {
+    row-gap: 16px;
     grid-column: span 4;
     display: flex;
     flex-direction: column;
+  }
+  footer h4 {
+    align-self: center;
   }
 }/*# sourceMappingURL=style.css.map */
