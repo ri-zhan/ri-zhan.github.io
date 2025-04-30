@@ -9,8 +9,9 @@
 // primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
-$primary-dark: #C3C0AD;
+$primary-dark: #CBC6B8;
 $primary-bg: #E9E7E0;
+$primary-code: #8B8676;
 
 $red: #E63223; 
 $text-primary: #1A0F04; 
@@ -24,16 +25,25 @@ body {
 }
 
 // a styling
-a {
+a, a.landing-item > .landing-item-text > p {
   transition: text-decoration-color 100ms ease-in-out;
   text-decoration: none;
   text-decoration-color: transparent;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
-  & p :not(.caption), p:not(.caption) > a {
+  & p:not(.caption), p:not(.caption) > a, > p:not(.caption) {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-decoration-color: $red;
+    text-decoration-color: $primary-dark;
     transition: text-decoration-color 100ms ease-in-out;
+  }
+  .with-accessory {
+    display: flex; 
+    width: fit-content;
+    gap: 12px;
+    p {
+      white-space: nowrap; 
+      width: min-content;
+    }
   }
 }
 
@@ -101,15 +111,18 @@ h1 {
 // }
 
 // big questions
-h2 {
-  color: $primary-dark;
-  font-family: ivyora-display, sans-serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 48px; /* 126.667% */
-  letter-spacing: 1px;
-}
+// h2 {
+//   color: $primary-dark;
+//   font-family: ivyora-display, sans-serif;
+//   font-size: 36px;
+//   font-style: normal;
+//   font-weight: 100;
+//   line-height: 48px; /* 126.667% */
+//   letter-spacing: 1px;
+//   b {
+//     font-weight: 150;
+//   }
+// }
 
 // toc, nav
 h3 {
@@ -684,6 +697,7 @@ video {
 //   gap: 3rem;
 // }
 
+
 ////cursor
 .cursor-center.zoom {
   display: none;
@@ -922,7 +936,7 @@ video {
 // primary colors
 $primary: #F0EFE8;
 $primary-light: #F7F6F0;
-$primary-dark: #C3C0AD; // stroke
+$primary-dark: #CBC6B8; // stroke
 $primary-bg: #E9E7E0;
 
 $higlight: #E63223; 
@@ -961,7 +975,7 @@ $shadow-lg: drop-shadow(2px 4px 14.3px rgba(0, 0, 0, 0.05));
 .header-text > * {
   color: $text-primary;
   font-family: ivyora-display, sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 100;
   line-height: 36px;
@@ -997,6 +1011,9 @@ h2 {
   line-height: 48px; /* 133.333% */
   &.col-6 {
     margin-bottom: 0;
+  }
+  b {
+    font-weight: 150;
   }
 }
 
@@ -1076,7 +1093,7 @@ li {
 
 header {
   grid-column: 1/13; 
-  padding: 32px 32px 16px 32px;
+  padding: 32px 48px 16px 48px;
   // margin-bottom: 32px;
   background-color: $primary;
   position: absolute;
@@ -1098,6 +1115,12 @@ header {
     .header-text {
       color: $text-primary;
       grid-column: 1/10;
+      display: flex;
+      align-items: center;
+      .favicon {
+        height: auto;
+        width: 24px;
+      }
     }
     nav {
       display: flex;
@@ -1133,51 +1156,49 @@ footer {
 }
 
 
-// body {
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   column-gap: 24px;
-//   padding: 32px;
-//   height: 100vh;
-//   width: 100vw;
-//   overflow-y: scroll;
-// }
-
 .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
-  padding: 32px;
+  column-gap: 32px;
+  row-gap: 32px;
+  padding: 32px 48px;
   padding-top: 130px;
+  padding-bottom: 40px;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
   z-index: 1;
+  .hero {
+    grid-template-columns: repeat(10, 1fr);
+    min-height: 60vh;
+    height: min-content;
+    column-gap: 32px;
+    align-items: center;
+    margin-bottom: 100px;
+    .col-wrapper {
+      margin: 0;
+    }
+    &-content { 
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+    }
+  }
 }
 
 .landing {
-  display: grid;
-
-  // placement
-  grid-column: 1/13;
-  grid-row: 3/7;
-
-  // set grid
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 24px;
-
-  // set items to stick to bottom
-  align-items: flex-end;
+  column-gap: 32px;
+  row-gap: 48px;
 
   // play page landing
   &.play {
     grid-row: 3/6;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
+    // grid-template-rows: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 48px;
     .landing-item {
-      grid-template-rows: repeat(3, 1fr);
-      grid-row: span 3;
+      // grid-template-rows: repeat(3, 1fr);
+      // grid-row: span 3;
       &-thumbnail {
         grid-row: span 2;
       }
@@ -1195,11 +1216,11 @@ footer {
     }
     display: grid;
     // set placement
-    grid-column: span 4;
-    grid-row: span 4;
+    grid-column: span 5;
+    // grid-row: span 2;
 
     // set grid
-    grid-template-rows: repeat(4, 1fr);
+    // grid-template-rows: repeat(4, 1fr);
     gap: 24px;
     &-text {
       display: flex;
@@ -1216,7 +1237,7 @@ footer {
       //   text-transform: lowercase;
       // }
       :not(:first-child) {
-        color: #716C4B;
+        color: $primary-code;
       }
     }
     &-thumbnail {
@@ -1239,7 +1260,7 @@ section {
   margin-bottom: 180px;
   display: grid;
   row-gap: 64px;
-  column-gap: 24px;
+  column-gap: 32px;
   *[class^="col-"], *[class*="col-"] {
     // margin-bottom: 64px;
     column-gap: 24px; 
@@ -1254,7 +1275,7 @@ section {
     margin-bottom: 48px;
     display: flex;
     flex-direction: column;
-    row-gap: 6px;
+    row-gap: $spacing-sm;
     &.col-6 {
       margin-bottom: 0;
     }
@@ -1343,7 +1364,12 @@ img {
   &.padded-bg {
    background-color: $primary-bg;
    padding: 32px;
-   // margin-bottom: 64px;
+  }
+  .icon {
+    .small {
+      height: $spacing-sm; 
+      width: $spacing-sm;
+    }
   }
 }
 
@@ -1373,18 +1399,27 @@ img {
   }
   header {
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 64px;
     // display: flex;
     background-color: $primary;
+    // display: flex;
+    // flex-direction: column-reverse;
     .header-row {
       width: 100%;
       grid-template-columns: repeat(4, 1fr);
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
+      row-gap: 8px;
       .header-text {
         display: flex;
-        flex-direction: column;
+        align-self: center;
+        // flex-direction: column;
       }
+    }
+  }
+  .content {
+    .hero {
+      min-height: auto;
+      height: auto;
     }
   }
   .landing {
@@ -1436,6 +1471,10 @@ img {
     display: none;
   }
   footer {
+    row-gap: 16px;
+    h4 {
+      align-self: center;
+    }
     grid-column: span 4;
     display: flex;
     flex-direction: column;
