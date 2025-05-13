@@ -1091,6 +1091,18 @@ li {
   margin-bottom: 6px;
 }
 
+.favicon {
+  transition: ease-in-out 150ms all;
+  @media (hover: hover) {
+    &:hover {
+      // filter: invert(29%) sepia(82%) saturate(7377%) hue-rotate(356deg) brightness(104%) contrast(80%);
+      // filter: invert(37%) sepia(79%) saturate(6814%) hue-rotate(353deg) brightness(97%) contrast(85%);
+      filter: brightness(20%);
+      transition: ease-in-out 150ms all;
+    }
+  }
+}
+
 header {
   grid-column: 1/13; 
   padding: 32px 48px 16px 48px;
@@ -1117,6 +1129,10 @@ header {
       grid-column: 1/10;
       display: flex;
       align-items: center;
+      > a {
+        display: flex;
+        align-items: center;
+      }
       .favicon {
         height: auto;
         width: 24px;
