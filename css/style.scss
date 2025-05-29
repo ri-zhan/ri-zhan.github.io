@@ -30,10 +30,16 @@ a, a.landing-item > .landing-item-text > p {
   text-decoration: none;
   text-decoration-color: transparent;
   // for p tags that wrap around a tags, except for .captions, also apply a tag styling
-  & p:not(.caption), p:not(.caption) > a, > p:not(.caption) {
+  & p:not(.caption), p:not(.caption) > a, > p:not(.caption), h2 {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: $primary-dark;
+    transition: text-decoration-color 100ms ease-in-out;
+  }
+  & *:is(p, h3, h4) {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: transparent;
     transition: text-decoration-color 100ms ease-in-out;
   }
   .with-accessory {
@@ -47,7 +53,8 @@ a, a.landing-item > .landing-item-text > p {
   }
 }
 
-a:visited, a:hover, a:hover > *:not(h4, h3), li > a:visited {
+//a:hover > *:not(h4, h3), 
+a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited {
   color: $text-primary;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -65,7 +72,7 @@ p a:link, h3 a:link, h2 > a, li a:link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   color: $text-primary;
-  text-decoration-color: $red;
+  text-decoration-color: $primary-dark;
   transition: text-decoration-color 100ms ease-in-out;
   @media (hover: hover) {
     text-decoration-color: $red;

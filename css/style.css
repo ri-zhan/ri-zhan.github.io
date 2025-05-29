@@ -15,10 +15,16 @@ a, a.landing-item > .landing-item-text > p {
   text-decoration: none;
   text-decoration-color: transparent;
 }
-a p:not(.caption), a p:not(.caption) > a, a > p:not(.caption), a.landing-item > .landing-item-text > p p:not(.caption), a.landing-item > .landing-item-text > p p:not(.caption) > a, a.landing-item > .landing-item-text > p > p:not(.caption) {
+a p:not(.caption), a p:not(.caption) > a, a > p:not(.caption), a h2, a.landing-item > .landing-item-text > p p:not(.caption), a.landing-item > .landing-item-text > p p:not(.caption) > a, a.landing-item > .landing-item-text > p > p:not(.caption), a.landing-item > .landing-item-text > p h2 {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: #CBC6B8;
+  transition: text-decoration-color 100ms ease-in-out;
+}
+a *:is(p, h3, h4), a.landing-item > .landing-item-text > p *:is(p, h3, h4) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
   transition: text-decoration-color 100ms ease-in-out;
 }
 a .with-accessory, a.landing-item > .landing-item-text > p .with-accessory {
@@ -33,7 +39,7 @@ a .with-accessory p, a.landing-item > .landing-item-text > p .with-accessory p {
   width: min-content;
 }
 
-a:visited, a:hover, a:hover > *:not(h4, h3), li > a:visited {
+a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited {
   color: #1A0F04;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -51,7 +57,7 @@ p a:link, h3 a:link, h2 > a, li a:link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   color: #1A0F04;
-  text-decoration-color: #E63223;
+  text-decoration-color: #CBC6B8;
   transition: text-decoration-color 100ms ease-in-out;
 }
 @media (hover: hover) {
