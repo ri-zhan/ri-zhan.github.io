@@ -21,7 +21,7 @@ a p:not(.caption), a p:not(.caption) > a, a > p:not(.caption), a h2, a.landing-i
   text-decoration-color: #CBC6B8;
   transition: text-decoration-color 100ms ease-in-out;
 }
-a *:is(p, h3, h4), a.landing-item > .landing-item-text > p *:is(p, h3, h4) {
+a *:is(p, h3, h4, .header-text-home-name), a.landing-item > .landing-item-text > p *:is(p, h3, h4, .header-text-home-name) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: transparent;
@@ -39,7 +39,7 @@ a .with-accessory p, a.landing-item > .landing-item-text > p .with-accessory p {
   width: min-content;
 }
 
-a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited {
+a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited {
   color: #1A0F04;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -518,26 +518,6 @@ video > source {
   cursor: none;
 }
 
-.header-text {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-}
-
-.header-text > * {
-  color: #1A0F04;
-  font-family: ivyora-display, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 36px;
-  letter-spacing: 1px;
-}
-
-.header-text-project {
-  font-weight: 400;
-}
-
 h1, h2, h2, h3, h4, h5, p, .caption {
   margin: 0;
   padding: 0;
@@ -635,16 +615,6 @@ li {
   margin-bottom: 6px;
 }
 
-.favicon {
-  transition: ease-in-out 150ms all;
-}
-@media (hover: hover) {
-  .favicon:hover {
-    filter: brightness(20%);
-    transition: ease-in-out 150ms all;
-  }
-}
-
 header {
   grid-column: 1/13;
   padding: 32px 48px 16px 48px;
@@ -668,6 +638,33 @@ header .header-row .header-text {
   grid-column: 1/10;
   display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+header .header-row .header-text * {
+  color: #1A0F04;
+  font-family: ivyora-display, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 36px;
+  letter-spacing: 1px;
+}
+header .header-row .header-text-project {
+  font-weight: 400;
+}
+header .header-row .header-text .favicon {
+  transition: ease-in-out 150ms all;
+}
+@media (hover: hover) {
+  header .header-row .header-text:hover .favicon {
+    filter: brightness(20%);
+    transition: ease-in-out 150ms all;
+  }
+}
+header .header-row .header-text-home {
+  gap: 6px;
 }
 header .header-row .header-text > a {
   display: flex;
