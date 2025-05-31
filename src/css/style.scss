@@ -36,7 +36,7 @@ a, a.landing-item > .landing-item-text > p {
     text-decoration-color: $primary-dark;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  & *:is(p, h3, h4) {
+  & *:is(p, h3, h4, .header-text-home-name) {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: transparent;
@@ -54,7 +54,7 @@ a, a.landing-item > .landing-item-text > p {
 }
 
 //a:hover > *:not(h4, h3), 
-a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited {
+a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited {
   color: $text-primary;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -972,27 +972,6 @@ $spacing-section: 222px;
 $shadow-sm: drop-shadow(2.171px 4.342px 15.523px rgba(0, 0, 0, 0.05));
 $shadow-lg: drop-shadow(2px 4px 14.3px rgba(0, 0, 0, 0.05));
 
-
-.header-text {
-  display: flex;
-  flex-direction: row;
-  gap: $spacing-xs;
-}
-
-.header-text > * {
-  color: $text-primary;
-  font-family: ivyora-display, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 36px;
-  letter-spacing: 1px;
-}
-
-.header-text-project {
-  font-weight: 400;
-}
-
 // typography
 h1, h2, h2, h3, h4, h5, p, .caption {
   margin: 0;
@@ -1098,17 +1077,7 @@ li {
   margin-bottom: 6px;
 }
 
-.favicon {
-  transition: ease-in-out 150ms all;
-  @media (hover: hover) {
-    &:hover {
-      // filter: invert(29%) sepia(82%) saturate(7377%) hue-rotate(356deg) brightness(104%) contrast(80%);
-      // filter: invert(37%) sepia(79%) saturate(6814%) hue-rotate(353deg) brightness(97%) contrast(85%);
-      filter: brightness(20%);
-      transition: ease-in-out 150ms all;
-    }
-  }
-}
+
 
 header {
   grid-column: 1/13; 
@@ -1136,6 +1105,37 @@ header {
       grid-column: 1/10;
       display: flex;
       align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-xs;
+      & * {
+        color: $text-primary;
+        font-family: ivyora-display, sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 36px;
+        letter-spacing: 1px;
+      }
+      &-project {
+        font-weight: 400;
+      }
+      .favicon {
+        transition: ease-in-out 150ms all;
+      }
+      @media (hover: hover) {
+        &:hover {
+          .favicon {
+            // filter: invert(29%) sepia(82%) saturate(7377%) hue-rotate(356deg) brightness(104%) contrast(80%);
+            // filter: invert(37%) sepia(79%) saturate(6814%) hue-rotate(353deg) brightness(97%) contrast(85%);
+            filter: brightness(20%);
+            transition: ease-in-out 150ms all;
+          }
+        }
+      }
+      &-home {
+        gap: $spacing-xxs;
+      }
       > a {
         display: flex;
         align-items: center;
