@@ -25,7 +25,7 @@ body {
 }
 
 // a styling
-a, a.landing-item > .landing-item-text > p {
+a, a.landing-item > .landing-item-text > p:not(.landing-item-text), a > .landing-item-text {
   transition: text-decoration-color 100ms ease-in-out;
   text-decoration: none;
   text-decoration-color: transparent;
@@ -36,7 +36,7 @@ a, a.landing-item > .landing-item-text > p {
     text-decoration-color: $primary-dark;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  & *:is(p, h3, h4, .header-text-home-name) {
+  & *:is(p, h3, h4, .header-text-home-name), a > .landing-item-text {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: transparent;
@@ -54,7 +54,7 @@ a, a.landing-item > .landing-item-text > p {
 }
 
 //a:hover > *:not(h4, h3), 
-a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited {
+a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited, a:hover > .landing-item-text {
   color: $text-primary;
   text-decoration: underline;
   text-decoration-thickness: 1px;
