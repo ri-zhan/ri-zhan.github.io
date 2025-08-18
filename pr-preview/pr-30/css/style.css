@@ -656,14 +656,14 @@ header .header-row .header-text-project {
 header .header-row .header-text .favicon {
   transition: ease-in-out 150ms all;
 }
+header .header-row .header-text-home {
+  gap: 6px;
+}
 @media (hover: hover) {
-  header .header-row .header-text:hover .favicon {
+  header .header-row .header-text-home:hover .favicon {
     filter: brightness(20%);
     transition: ease-in-out 150ms all;
   }
-}
-header .header-row .header-text-home {
-  gap: 6px;
 }
 header .header-row .header-text > a {
   display: flex;
@@ -729,6 +729,9 @@ body .hero-content {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+}
+body section:first-of-type {
+  padding-top: 130px;
 }
 
 .landing {
