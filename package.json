@@ -4,7 +4,7 @@
     "@11ty/eleventy": "^3.1.2"
   },
   "scripts": {
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/your-repo-name/"
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/ri-zhan.gitub.io/"
   }
 }
 
