@@ -1210,6 +1210,9 @@ body {
       row-gap: 32px;
     }
   }
+  section:first-of-type {
+    padding-top: 130px;
+  }
 }
 
 .landing {
@@ -1230,6 +1233,7 @@ body {
       }
     }
   }
+  
   &-item {
     border-radius: $radius-md;
     &:hover { 

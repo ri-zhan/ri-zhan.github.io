@@ -730,6 +730,9 @@ body .hero-content {
   flex-direction: column;
   row-gap: 32px;
 }
+body section:first-of-type {
+  padding-top: 130px;
+}
 
 .landing {
   -moz-column-gap: 32px;
