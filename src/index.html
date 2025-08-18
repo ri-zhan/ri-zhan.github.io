@@ -1,153 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-31NZ82XM5H"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+---
+layout: default
+title: Home
+header-info-display: false
+---
 
-            gtag('config', 'G-31NZ82XM5H');
-        </script>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-        <meta property="og:title" content="Ri Zhan">
-        <meta property="og:description" content="Product designer who codes.">
-        <meta property="og:image" content="https://ri.works/images/ri_portfolio_cover.png">
-        <meta property="og:type" content="website"/> 
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-        <link rel="stylesheet" href="https://use.typekit.net/ivl6exa.css">
-    </head>
-<body style="background-color: #F0EFE8;">
-    <span class="cursor-center cursor"></span>
-    <span class="cursor-around cursor"></span>
-
-    <header>
-        <div class="header-row">
-            <div class="header-text">
-                <a href="index.html" class="header-text-home">
-                    <img class="favicon" src="images/monogram.svg" alt="">
-                    <span class="header-text-home-name">Ri Zhan</span>
-                </a>     
-                <!-- <p class="header-text-project">
-                    Placeholder
-                </p> -->
+<div class="content">
+    <section class="hero">
+        <div class="hero-content col-6">
+            <h2>Hi, I'm <b>Ri</b> 詹! I'm a <b>product designer who codes</b>, ri-imagining and designing <b>intuitive human experiences</b> while fostering community and seeking mentorship.</h2>
+            <div class="col-wrapper">
+                <h4>Currently</h4>
+                <div>
+                    <p>1Password, Product Design Intern, Design Systems</p>
+                </div>
             </div>
-            <nav>
-                <a href="index.html">
-                    <h4>Home</h4>
-                </a>
-                <a href="play.html">
-                    <h4>Play</h4>
-                </a>
-                <a href="about.html">
-                    <h4>Me</h4>
-                </a>
-                <a href="https://drive.google.com/file/d/1Cfn1SDgth__OWwvJ3uAtb3d2765z3qRC/view?usp=drive_link" target="_blank">
-                    <h4>Resumé</h4>
-                </a>
-            </nav>
+            <div class="col-wrapper">
+                <h4>Previously</h4>
+                <div>
+                    <p>IBM, UX Design & Development Intern, Skills Network</p>
+                    <br>
+                    <p>Design at York University</p>
+                </div>
+            </div>
+            <a class="with-accessory" href="https://drive.google.com/file/d/1Cfn1SDgth__OWwvJ3uAtb3d2765z3qRC/view?usp=drive_link" target="_blank" style="width: fit-content;">
+                <p>See resumé</p>
+                <img class="icon small" style="height: 12px; width: 12px;" src="images/chevron-right.svg" alt="Right chevron.">
+            </a>
         </div>
-    </header>
+        <div class="col-1"></div>
+        <div class="hero-illustration col-3">
+            <video autoplay loop muted preload="none" style="width: 100%;">
+                <source src="images/monogram.webm" type="video/webm"/>
+            </video>
+        </div>
+    </section>
 
-    <div class="content">
-        <section class="hero">
-            <div class="hero-content col-6">
-                <h2>Hi, I'm <b>Ri</b> 詹! I'm a <b>product designer who codes</b>, ri-imagining and designing <b>intuitive human experiences</b> while fostering community and seeking mentorship.</h2>
-                <div class="col-wrapper">
-                    <h4>Currently</h4>
-                    <div>
-                        <p>1Password, Junior Product Designer, Design Systems</p>
-                    </div>
-                </div>
-                <div class="col-wrapper">
-                    <h4>Previously</h4>
-                    <div>
-                        <p>IBM, UX Design & Development Intern, Skills Network</p>
-                        <br>
-                        <p>Design at York University</p>
-                    </div>
-                </div>
-                <a class="with-accessory" href="https://drive.google.com/file/d/1Cfn1SDgth__OWwvJ3uAtb3d2765z3qRC/view?usp=drive_link" target="_blank" style="width: fit-content;">
-                    <p>See resumé</p>
-                    <img class="icon small" style="height: 12px; width: 12px;" src="images/chevron-right.svg" alt="Right chevron.">
-                </a>
+    <section class="landing">
+        <h2 class="col-6">Featured works</h2>
+        <a href="mark" class="landing-item">
+            <div class="landing-item-text">
+                <h3>Mark</h3>
+                <p>Web application, Figma, user research & testing, QA</p>
+                <p>IBM, 2024</p>
             </div>
-            <div class="col-1"></div>
-            <div class="hero-illustration col-3">
-                <video autoplay loop muted preload="none" style="width: 100%;">
-                    <source src="images/monogram.webm" type="video/webm"/>
-                </video>
+            <div class="landing-item-thumbnail">
+                <img src="images/mark/landing-item-thumbnail.png" alt="">
             </div>
-        </section>
+        </a>
 
-        <section class="landing">
-            <h2 class="col-6">Featured works</h2>
-            <a href="mark.html" class="landing-item">
-                <div class="landing-item-text">
-                    <h3>Mark</h3>
-                    <p>Web application, Figma, user research & testing, QA</p>
-                    <p>IBM, 2024</p>
-                </div>
-                <div class="landing-item-thumbnail">
-                    <img src="images/mark/landing-item-thumbnail.png" alt="">
-                </div>
-            </a>
-
-            <a href="hereafter.html" class="landing-item">
-                <div class="landing-item-text">
-                    <h3>here:after</h3>
-                    <p>Mobile application, Figma</p>
-                    <p>Awarded by RGD, 2023</p>
-                </div>
-                <div class="landing-item-thumbnail">
-                    <img src="images/hereafter/landing-item-thumbnail.png" alt="">
-                </div>
-            </a>
-
-            <a href="yads.html" class="landing-item">
-                <div class="landing-item-text">
-                    <h3>YADS</h3>
-                    <p>Design system, Figma, front-end development</p>
-                    <p>IBM Skills Network, 2024</p>
-                </div>
-                <div class="landing-item-thumbnail">
-                    <img src="images/yads/landing-item-thumbnail.png" alt="">
-                </div>
-            </a>
-
-            <a href="thesis.html" class="landing-item" style="pointer-events: none;">
-                <div class="landing-item-text">
-                    <h3>My Home is Nowhere</h3>
-                    <p style="opacity: 0.5;">Game experience built in Unity, modelled in Blender</p>
-                    <p style="opacity: 0.5;">Undergraduate thesis, 2025</p>
-                </div>
-                <div class="landing-item-thumbnail" style="pointer-events: none; opacity: 0.5;">
-                    <img src="images/thesis/landing-item-thumbnail.png" alt="">
-                </div>
-            </a>
-        </section>
-
-        <footer>
-            <h4 class="description">Coded by Ri : )</h4>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/rizhan/">
-                    <h4>LinkedIn</h4>
-                </a>
-                <a href="https://github.com/ri-zhan">
-                    <h4>GitHub</h4>
-                </a>
-                <a href="mailto:hello@ri.works">
-                    <h4>Email</h4>
-                </a>
+        <a href="hereafter" class="landing-item">
+            <div class="landing-item-text">
+                <h3>here:after</h3>
+                <p>Mobile application, Figma</p>
+                <p>Awarded by RGD, 2023</p>
             </div>
-        </footer>
-    </div>
+            <div class="landing-item-thumbnail">
+                <img src="images/hereafter/landing-item-thumbnail.png" alt="">
+            </div>
+        </a>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="js/script.js"></script>
-</body>
-</html>
+        <a href="yads" class="landing-item">
+            <div class="landing-item-text">
+                <h3>YADS</h3>
+                <p>Design system, Figma, front-end development</p>
+                <p>IBM Skills Network, 2024</p>
+            </div>
+            <div class="landing-item-thumbnail">
+                <img src="images/yads/landing-item-thumbnail.png" alt="">
+            </div>
+        </a>
+
+        <a href="thesis" class="landing-item" style="pointer-events: none;">
+            <div class="landing-item-text">
+                <h3>My Home is Nowhere</h3>
+                <p style="opacity: 0.5;">Game experience built in Unity, modelled in Blender</p>
+                <p style="opacity: 0.5;">Undergraduate thesis, 2025</p>
+            </div>
+            <div class="landing-item-thumbnail" style="pointer-events: none; opacity: 0.5;">
+                <img src="images/thesis/landing-item-thumbnail.png" alt="">
+            </div>
+        </a>
+    </section>
+
+    <!-- <footer>
+      <h4 class="description">Coded by Ri : )</h4>
+      <div class="footer-links">
+          <a href="https://www.linkedin.com/in/rizhan/">
+              <h4>LinkedIn</h4>
+          </a>
+          <a href="https://github.com/ri-zhan">
+              <h4>GitHub</h4>
+          </a>
+          <a href="mailto:hello@ri.works">
+              <h4>Email</h4>
+          </a>
+      </div>
+    </footer> -->
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script type="text/js" src="js/script.js"></script>
+<!-- </body> -->
+<!-- </html> -->
