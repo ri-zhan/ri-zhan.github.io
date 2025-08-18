@@ -12,16 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build 11ty
+      - name: Build
+        uses: TartanLlama/actions-eleventy@master
+
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: _site 
+          publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: src
+          folder: site
           clean-exclude: pr-preview/
           force: false
   
