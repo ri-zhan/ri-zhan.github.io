@@ -18,3 +18,11 @@ jobs:
           folder: src
           clean-exclude: pr-preview/
           force: false
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: _site
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}    
+          cname: ri.works
