@@ -1080,12 +1080,13 @@ li {
 
 
 header {
+  position: fixed;
   grid-column: 1/13; 
-  padding: 32px 48px 16px 48px;
+  // padding: 32px 48px 16px 48px;
+  padding: 32px 48px 8px 48px;
   // margin-bottom: 32px;
-  background-color: $primary;
-  position: absolute;
   width: 100vw;
+  background-color: $primary;
   z-index: 2;
   left: 0;
   top: 0;
@@ -1107,7 +1108,7 @@ header {
       align-items: center;
       display: flex;
       flex-direction: row;
-      gap: $spacing-xs;
+      // gap: $spacing-xs;
       & * {
         color: $text-primary;
         font-family: ivyora-display, sans-serif;
@@ -1161,6 +1162,7 @@ header {
 
 
 footer {
+  padding: 0 0 $spacing-xl 0px;
   display: grid;
   grid-column: 1/13;
   grid-template-columns: repeat(12, 1fr);
@@ -1179,16 +1181,17 @@ footer {
 }
 
 
-.content {
+body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 32px;
   row-gap: 32px;
-  padding: 32px 48px;
-  padding-top: 130px;
-  padding-bottom: 40px;
-  height: 100vh;
-  width: 100vw;
+  // padding: 32px 48px;
+  // padding-top: 130px;
+  // padding-bottom: 40px;
+  padding: 0 48px;
+  // height: 100vh;
+  // width: 100vw;
   overflow-y: scroll;
   z-index: 1;
   .hero {

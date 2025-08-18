@@ -616,11 +616,11 @@ li {
 }
 
 header {
+  position: fixed;
   grid-column: 1/13;
-  padding: 32px 48px 16px 48px;
-  background-color: #F0EFE8;
-  position: absolute;
+  padding: 32px 48px 8px 48px;
   width: 100vw;
+  background-color: #F0EFE8;
   z-index: 2;
   left: 0;
   top: 0;
@@ -640,7 +640,6 @@ header .header-row .header-text {
   align-items: center;
   display: flex;
   flex-direction: row;
-  gap: 8px;
 }
 header .header-row .header-text * {
   color: #1A0F04;
@@ -684,6 +683,7 @@ header .header-tagline {
 }
 
 footer {
+  padding: 0 0 32px 0px;
   display: grid;
   grid-column: 1/13;
   grid-template-columns: repeat(12, 1fr);
@@ -702,21 +702,17 @@ footer .footer-links {
   grid-column: 10/13;
 }
 
-.content {
+body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   -moz-column-gap: 32px;
        column-gap: 32px;
   row-gap: 32px;
-  padding: 32px 48px;
-  padding-top: 130px;
-  padding-bottom: 40px;
-  height: 100vh;
-  width: 100vw;
+  padding: 0 48px;
   overflow-y: scroll;
   z-index: 1;
 }
-.content .hero {
+body .hero {
   grid-template-columns: repeat(10, 1fr);
   min-height: 60vh;
   height: -moz-min-content;
@@ -726,10 +722,10 @@ footer .footer-links {
   align-items: center;
   margin-bottom: 100px;
 }
-.content .hero .col-wrapper {
+body .hero .col-wrapper {
   margin: 0;
 }
-.content .hero-content {
+body .hero-content {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
