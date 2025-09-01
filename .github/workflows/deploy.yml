@@ -4,42 +4,54 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: deploy-${{ github.ref }}
 
 jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
+        uses: actions/setup-node@v4
 
       - name: Persist npm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
 
       - name: Persist Eleventy .cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-      - run: npm install
-      - run: npm run build-ghpages
+      - name: Install and Build
+        if: github.event_name != 'pull_requst' || (github.event_name == 'pull_requst' && github.event.action != 'closed')
+        run: |
+          npm install
+          npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy Preview
+        if: github.event_name == 'pull_requst'
+        uses: rossjrw/pr-preview-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-  
+          source-dir: _site
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          clean-exclude: pr-preview/
+          force: false
