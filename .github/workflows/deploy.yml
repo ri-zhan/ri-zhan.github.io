@@ -36,17 +36,25 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-      - name: Install and Build
-        if: github.event_name != 'pull_request' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+      - name: Install and Build Preview
+        if: github.event_name == 'pull_request' && github.event.action != 'closed'
+        env:
+          PR_NUMBER: ${{ github.event.number }}
         run: |
           npm install
-          npm run build
+          npm run build-preview
 
       - name: Deploy Preview
         if: github.event_name == 'pull_request'
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: _site
+
+      - name: Install and Build
+        if: github.event_name == 'push'
+        run: |
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
