@@ -3,11 +3,10 @@ layout: default
 title: YADS
 header-info-display: true
 header-info: YADS
-permalink: "/yads.html"
 ---
 
 <section>
-    <img class="col-10" src="images/yads/yads-hero.png" alt="">
+    <img class="col-10" src="/images/yads/yads-hero.png" alt="">
     <h1 class="col-7">A design system is nothing new. Yet Another Design System (YADS) for the IBM Skills Network team, on the other hand, is completely new.</h1>
     <div class="col-3">
         <div class="col-wrapper">
@@ -45,7 +44,7 @@ permalink: "/yads.html"
         <p>As an agile software team, quick turnaround and development was  key. I identified that one of the major factors slowing us down was the  lack of guidelines and reusable design components so the wheel was being reinvented every time. Furthermore, our various products did not follow one design style despite supposedly being part of the same brand, a  problem which magnified over the years due to the discrepancy between  the team members’ interpretation the non-existent brand style.
             <br/>Look how many shades are in the violet/indigo range just on the screen here:</p>
     </div>
-    <img class="padded-bg col-10" src="images/yads/yads-pre-yads.png" alt="">
+    <img class="padded-bg col-10" src="/images/yads/yads-pre-yads.png" alt="">
     <div class="col-6 col-wrapper">
         <h4>Thus,</h4>
         <p>A system had to be created that could bring cohesion to the team’s existing and future products’ visual language, restricting interpretation but still allowing creative freedom. Methodologically, this system needed to enable designers to quickly iterated designs and then hand off to developers for development, with both designers and developers using a system they could reference as a source of truth. Additionally, as the team expands, it is important that the design  system remains scalable but cohesive—guardrails must be put in place so that there was still creative freedom despite the restrictions.</p>
@@ -71,10 +70,10 @@ permalink: "/yads.html"
     <div class="col-6 col-wrapper">
         <p>The first part of the process was  understanding the existing design style of Skills Network. Once I  understood the style, I began to consolidate.</p>
     </div>
-    <img class="col-10 padded-bg col-wrapper" src="images/yads/yads-color-consolidation.png" alt="">
-    <img class="padded-bg col-7" src="images/yads/yads-live-code.png" alt="">
+    <img class="col-10 padded-bg col-wrapper" src="/images/yads/yads-color-consolidation.png" alt="">
+    <img class="padded-bg col-7" src="/images/yads/yads-live-code.png" alt="">
     <div class="col-3 col-wrapper">
-        <h4>Don’t forget the developers!</h4>
+        <h4>Don't forget the developers!</h4>
         <p>Beyond assessing components based off  of visuals, I also referenced the Tailwind CSS code to ensure developers would have access to working code they could easily cross reference  with the original Tailwind CSS code. I also included the pure CSS.</p>
     </div>
 </section>
@@ -86,10 +85,10 @@ permalink: "/yads.html"
             <h4>Colors</h4>
             <p>Defining the primary, neutral, and semantic colors. A tokening system  had yet to be introduced as a standardized system was  a new concept for the team. Furthermore, as we  were heavily relying on Tailwind CSS, it had yet to make sense for the  entire team  to migrate to a Skills-Network-specific token system.</p>
         </div>
-        <img class="col-7 padded-bg" src="images/yads/yads-color.png" alt="">
+        <img class="col-7 padded-bg" src="/images/yads/yads-color.png" alt="">
     </div>
     <div class="col-10 align-x">
-        <img class="col-7 padded-bg" src="images/yads/yads-typography.png" alt="">
+        <img class="col-7 padded-bg" src="/images/yads/yads-typography.png" alt="">
         <div class="col-3 col-wrapper">
             <h4>Typography</h4>
             <p>Consolidating the typography system was one of the most difficult challenges due to the huge variance across all the products.  The only aspect that was certain was to use IBM  Plex Sans, since, you know, it's an IBM team. From a page of 12  fonts with different point sizes, leading, and  even color, I was able to reach a point of standardization. In this process, I learned about creating a scalable and adjustable system, which you can read at the end of this case study!</p>
@@ -101,70 +100,70 @@ permalink: "/yads.html"
             <p>Utilizing a grid was a new concept that I introduced to the team. Rather than relying on max-width, the team could be certain  that each page utilized the same amount of space using a grid. Introducing this grid provided visual consistency  across all of the pages without having to  cross-reference each time a new page was created.
                 The concept of "don't make me think" was  signifiacntly utilized in creating this, as I provided all of the code  necessary to establish and utilize the grid, as  well as written guidance on how to utilize it if one were to  think about it.</p>
         </div>
-        <img class="col-7 padded-bg" src="images/yads/yads-grid.png" alt="">
+        <img class="col-7 padded-bg" src="/images/yads/yads-grid.png" alt="">
     </div>
 </section>
 
 
 <section>
     <h2 class="col-6">Supplying the components</h2>
-    <p class="col-6">Through my audit of the existing components in our products, I identified key components that had to be standardized.    With all design systems, components must be  reusable. However, with this team there was an even more  important aspect: integration with different programming languages.  I was working very closely with developers so I  knew the struggles they had with implementation.
+    <p class="col-6">Through my audit of the existing components in our products, I identified key components that had to be standardized. With all design systems, components must be  reusable. However, with this team there was an even more  important aspect: integration with different programming languages.  I was working very closely with developers so I  knew the struggles they had with implementation.
         <br/>So in this process, not only did I audit the  visual aspect of these components, I also audited the code that these  components were using. In our team's wiki, I  outlined the basic HTML structure for each component and where to insert  new code if needed (such as an input field for  the text field, or a backend response on a button).
         <br/>Here are just some of the component variants that I created in my time at IBM.</p>
 
     <div class="col-10">
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-toggle.webm" type="video/webm"/>
+                <source src="/images/yads/yads-toggle.webm" type="video/webm"/>
             </video>
             <p class="caption">Toggle</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-breadcrumb.webm" type="video/webm"/>
+                <source src="/images/yads/yads-breadcrumb.webm" type="video/webm"/>
             </video>
             <p class="caption">Breadcrumb</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-button.webm" type="video/webm"/>
+                <source src="/images/yads/yads-button.webm" type="video/webm"/>
             </video>
             <p class="caption">Button</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-card.webm" type="video/webm"/>
+                <source src="/images/yads/yads-card.webm" type="video/webm"/>
             </video>
             <p class="caption">Card</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-text-field.webm" type="video/webm"/>
+                <source src="/images/yads/yads-text-field.webm" type="video/webm"/>
             </video>
             <p class="caption">Text field</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-notification.webm" type="video/webm"/>
+                <source src="/images/yads/yads-notification.webm" type="video/webm"/>
             </video>
             <p class="caption">Notification</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-radio.webm" type="video/webm"/>
+                <source src="/images/yads/yads-radio.webm" type="video/webm"/>
             </video>
             <p class="caption">Radio button</p>
         </div>
 
         <div class="col-wrapper col-5 video-grid">
             <video autoplay loop muted preload="none">
-                <source src="images/yads/yads-dropdown.webm" type="video/webm"/>
+                <source src="/images/yads/yads-dropdown.webm" type="video/webm"/>
             </video>
         </div>
     <div>
@@ -184,7 +183,7 @@ permalink: "/yads.html"
             </ul>
         </div>
         <div class="col-1 align-x hide-on-mobile" style="margin: -4px;">
-            <img class="" src="images/yads/yads-arrow.png" alt="">
+            <img class="" src="/images/yads/yads-arrow.png" alt="">
         </div>
         <div class="col-4 col-wrapper">
             <h4>The new design process</h4>
@@ -210,7 +209,7 @@ permalink: "/yads.html"
             </ol>
         </div>
         <div class="col-1 align-x hide-on-mobile" style="margin: -4px;">
-            <img class="" src="images/yads/yads-arrow.png" alt="">
+            <img class="" src="/images/yads/yads-arrow.png" alt="">
         </div>
         <div class="col-4 col-wrapper">
             <h4>The new development process</h4>
@@ -232,7 +231,7 @@ permalink: "/yads.html"
         <h4 class="col-6">By the way,</h4>
         <p class="col-6">Remember that screen from the beginning? Check out what it looks like now:</p>
     </div>
-    <img class="col-10 padded-bg" src="images/yads/yads-comparison.png" alt="">
+    <img class="col-10 padded-bg" src="/images/yads/yads-comparison.png" alt="">
     
 </section>
 
