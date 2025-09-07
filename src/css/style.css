@@ -712,26 +712,23 @@ body {
   overflow-y: scroll;
   z-index: 1;
 }
-body .hero {
-  grid-template-columns: repeat(10, 1fr);
-  min-height: 60vh;
-  height: -moz-min-content;
-  height: min-content;
+body section:first-of-type {
+  padding-top: 130px;
+}
+
+.hero {
   -moz-column-gap: 32px;
        column-gap: 32px;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 8rem;
 }
-body .hero .col-wrapper {
+.hero .col-wrapper {
   margin: 0;
 }
-body .hero-content {
+.hero-content {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
-}
-body section:first-of-type {
-  padding-top: 130px;
 }
 
 .landing {
