@@ -1194,24 +1194,22 @@ body {
   // width: 100vw;
   overflow-y: scroll;
   z-index: 1;
-  .hero {
-    grid-template-columns: repeat(10, 1fr);
-    min-height: 60vh;
-    height: min-content;
-    column-gap: 32px;
-    align-items: center;
-    margin-bottom: 100px;
-    .col-wrapper {
-      margin: 0;
-    }
-    &-content { 
-      display: flex;
-      flex-direction: column;
-      row-gap: 32px;
-    }
-  }
   section:first-of-type {
     padding-top: 130px;
+  }
+}
+
+.hero {
+  column-gap: 32px;
+  align-items: center;
+  margin-bottom: 8rem;
+  .col-wrapper {
+    margin: 0;
+  }
+  &-content { 
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
   }
 }
 
