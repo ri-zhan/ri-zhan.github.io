@@ -112,7 +112,7 @@
     <div class="col-6 col-wrapper no-mb">
         <h4>user research</h4>
         <p>The ask from our users was that the default line height was too tight and they would like the default to be larger. Currently, designers were detaching typography styles then arbitrarily deciding a larger line height for their specific work. This was extra unnecessary effort.
-            The current Knox line height was set to line-height: normal; which meant it was defaulting to whatever browser or platform default it was, typically 120%. This was a problem to be address later, as this would involve developer expenditure to figure out the iOS and Android considerations, a capacity that we did not have.
+            The current Knox line height was set to <span class="inline-code">normal</span>; which meant it was defaulting to whatever browser or platform default it was, typically <span class="inline-code">120%</span>. This was a problem to be address later, as this would involve developer expenditure to figure out the iOS and Android considerations, a capacity that we did not have.
             The reason the line height was so tight to begin with was because of two main reasons:
             <span>
                 <ol>
@@ -149,9 +149,9 @@
         <img class="padded-bg col-10" src="/pr-preview/pr-31/images/knox-typography/knox-typography-explorations.png" alt="">
         <p class="col-6">Informed by internal audits, user research, and external research, I began my visual explorations. I pulled common components and layouts that involved 2 or more lines or sentences. 
             <br>
-            I did various explorations of different line height sizes—standalone and in contrast with our current line height. From 1.3 to `1.7`, I did it all. After a round of feedback, I was asked to make in between sizes, such as `1.45` and `1.625`. I landed with 2 competing sizes: `1.5 and 1.65`.
+            I did various explorations of different line height sizes—standalone and in contrast with our current line height. From <span class="inline-code">130%</span> to <span class="inline-code">170%</span>, I did it all. After a round of feedback, I was asked to make in between sizes, such as <span class="inline-code">145%</span> and <span class="inline-code">162.5%</span>. I landed with 2 competing sizes: <span class="inline-code">1.5</span> and <span class="inline-code">165%</span>.
             <br>
-            Although the larger line height at `1.65` looked wonderful in multi-line paragraphs, it was not the most common use case. Furthermore, I had to consider existing Knox font sizes were `12px`, `14px`, and `16px`, which, using `1.65` would result in respective line heights of `19.8`, `23.1`, and `26.4`. In comparison, `1.5` worked better for the 1Password—1-2 lines. Additionally, a `1.5` line height result in `18px`, `21px`, and `24px`, which were nicer round values. ATTACH SOMETHING ABOUT PIXEL ALIGNMENT IN UI DESIGN.</p>
+            Although the larger line height at <span class="inline-code">165%</span> looked wonderful in multi-line paragraphs, it was not the most common use case. Furthermore, I had to consider existing Knox font sizes were <span class="inline-code">12px</span>, <span class="inline-code">14px</span>, and <span class="inline-code">16px</span>, which, using <span class="inline-code">165%</span> would result in respective line heights of <span class="inline-code">19.8px</span>, <span class="inline-code">23.1px</span>, and <span class="inline-code">26.4px</span>. In comparison, <span class="inline-code">150%</span> worked better for the 1Password—1-2 lines. Additionally, a <span class="inline-code">150%</span> line height result in <span class="inline-code">18px</span>, <span class="inline-code">21px</span>, and <span class="inline-code">24px</span>, which were nicer round values.</p>
     </div>
 </section>
 
@@ -166,7 +166,7 @@
             <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-top-left-radius: 4px;">
                 <h4>Option 1</h4>
                 <div class="col-6 col-wrapper">
-                    <p>Change the current typography to use 150% line height and not retroactively update all UIs.</p>
+                    <p>Change the current typography to use <span class="inline-code">150%</span> line height and not retroactively update all UIs.</p>
                     <ol>
                         <li>Benefits: Gets the job done and it’s the least amount of work.</li>
                         <li>Implications: It would not be a breaking change but an annoying one, as all existing UIs would have a different height.</li>
@@ -176,7 +176,7 @@
             <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-top-right-radius: 4px;">
                 <h4>Option 2</h4>
                 <div class="col-6 col-wrapper">
-                    <p>Change the current typography to use the 150% line height and retroactively update all UIs to use 120% line height.</p>
+                    <p>Change the current typography to use the <span class="inline-code">150%</span> line height and retroactively update all UIs to use <span class="inline-code">120%</span> line height.</p>
                     <ol>
                         <li>Benefits: This would meet the ask from designers to replace the current default typography with a more comfortable line height.</li>
                         <li>Implications: It would not be a breaking change but an annoying one, as all existing UIs would have a different height, but we would intentionally dedicate time to update old UIs.</li>
@@ -186,7 +186,7 @@
             <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-bottom-left-radius: 4px;">
                 <h4>Option 3</h4>
                 <div class="col-6 col-wrapper">
-                    <p>Keep the current typography that uses 120% line height and add in new typography styles that use the 150% line height</p>
+                    <p>Keep the current typography that uses <span class="inline-code">120%</span> line height and add in new typography styles that use the <span class="inline-code">150%</span> line height</p>
                     <ol>
                         <li>Benefits: This brings in a new reusable set of typography styles without breaking existing styles.</li>
                         <li>Implications: Designers would have to go back and update UIs that need the new typography style.</li>
@@ -217,7 +217,7 @@
 
     <div class="col-6 col-wrapper no-mb">
         <h4>Naming</h4>
-        <p>An additional consideration was naming: paragraph , comfortable, large, reading, natural , long-form were all options. We landed on paragraph as it most accurately described the purpose of this new typography style.</p>
+        <p>An additional consideration was naming: "paragraph", "comfortable", "large", "reading", "natural", "long-form" were all options. We landed on "paragraph" as it most accurately described the purpose of this new typography style.</p>
     </div>
 
     <div class="col-6 col-wrapper no-mb">
@@ -233,11 +233,11 @@
     <div class="col-6 col-wrapper">
         <p class="col-6">As part of my interests, I decided to pursue implementing the base tokens and the alias tokens myself. I will not bore you with the specifics, but this is what I did for Web (TypeScript), iOS (Apple), and Android (Kotlin):</p>
         <ol class="col-6">
-            <li>Implement a line-height token</li>
-            <li>Provide two values for the line-height prop: default (which is normal) and paragraph (which is 1.5)</li>
-            <li>Add the line-height prop to the text component</li>
-            <li>Specify line-height = default for the existing typography components</li>
-            <li>Create new typography components with line-height = paragraph</li>
+            <li>Implement a <span class="inline-code">line-height</span> token</li>
+            <li>Provide two values for the <span class="inline-code">line-height</span> prop: <span class="inline-code">default</span> (which is <span class="inline-code">normal</span>) and <span class="inline-code">paragraph</span> (which is <span class="inline-code">1.5</span>)</li>
+            <li>Add the <span class="inline-code">line-height</span> prop to the text component</li>
+            <li>Specify <span class="inline-code">line-height = default</span> for the existing typography components</li>
+            <li>Create new typography components with <span class="inline-code">line-height = paragraph</span></li>
         </ol>
         <p class="col-6">It was very cool : )</p>
     </div>
