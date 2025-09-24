@@ -599,6 +599,14 @@ body b, p b, ul b, ol b, li b {
   font-weight: 400;
 }
 
+.inline-code {
+  font-family: "Courier New", Courier, monospace;
+  color: #756052;
+  font-size: 18.75px;
+  line-height: 26px;
+  padding: 0 2px;
+}
+
 .caption {
   font-family: "Source Code Pro";
   font-size: 12px;
