@@ -731,6 +731,10 @@ body section:first-of-type {
   row-gap: 32px;
 }
 
+.center-y {
+  align-items: center;
+}
+
 .landing {
   -moz-column-gap: 32px;
        column-gap: 32px;
