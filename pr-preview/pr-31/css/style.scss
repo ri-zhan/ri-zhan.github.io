@@ -1255,10 +1255,13 @@ body {
       display: flex;
       flex-direction: column;
       // set placement
-      grid-row: span 1;
+      // grid-row: span 1;
       justify-content: flex-end;
       align-self: flex-end;
       height: min-content;
+      &-detail {
+        color: $primary-code;
+      }
       h3 {
         margin-bottom: $spacing-xs;
       }
@@ -1270,9 +1273,10 @@ body {
       }
     }
     &-thumbnail {
-      grid-row: span 3;
+      // grid-row: span 3;
       background-color: $primary-bg;
       padding: 32px;
+      display: inline-flex;
       transition: 60ms linear;
       // border: 1px solid $primary-bg;
       img {
