@@ -87,12 +87,8 @@
 <section>
     <h2 class="col-6">Users asked, we answered.</h2>
     <div class="col-6 col-wrapper no-mb">
-        <h4>I, an end user,</h4>
-        <p>Want to be able to read multi-line paragraphs more comfortably.</p>
-    </div>
-    <div class="col-6 col-wrapper no-mb">
         <h4>I, a designer,</h4>
-        <p>Want to design for multiple use cases quickly by having existing typography standards.</p>
+        <p>Want to design for multi-line use cases quickly by having existing typography standards.</p>
     </div>
     <div class="col-6 col-wrapper no-mb">
         <h4>I, a developer,</h4>
@@ -105,14 +101,14 @@
     <div class="col-10 col-wrapper">
         <div class="col-6 col-wrapper no-mb">
             <h4>Internal audit</h4>
-            <p>The current and sole typography style was suited for one-liners—such as tables, buttons, list items—because it had a tight line height which would not have additional bottom padding. Those used to be the majority content in 1Password’s products. However, as 1Password expanded into uncharted territory, such as Extended Access Management (XAM) and AI, the product need changed which means the design system had to take a look at itself as well.</p>
+            <p>The current and sole typography style was suited for one-liners—such as tables, buttons, list items—because it had a tight line height which would not have additional bottom padding. Those elements used to be the majority content in 1Password’s products. However, as 1Password expanded into uncharted territory, such as Extended Access Management (XAM) and AI, the product needs changed, which means the design system had to take a look at itself as well.</p>
         </div>   
         <img class="padded-bg col-10" src="/pr-preview/pr-31/images/knox-typography/knox-typography-internal-audit.png" alt="">
     </div>
     <div class="col-6 col-wrapper no-mb">
         <h4>user research</h4>
-        <p>The ask from our users was that the default line height was too tight and they would like the default to be larger. Currently, designers were detaching typography styles then arbitrarily deciding a larger line height for their specific work. This was extra unnecessary effort.
-            The current Knox line height was set to <span class="inline-code">normal</span>; which meant it was defaulting to whatever browser or platform default it was, typically <span class="inline-code">120%</span>. This was a problem to be address later, as this would involve developer expenditure to figure out the iOS and Android considerations, a capacity that we did not have.
+        <p>The ask from our users was that the default line height was too tight and they would like the default to be larger. Largely, designers were detaching typography styles then arbitrarily deciding a larger line height for their specific work. This was extra unnecessary effort.
+            The current Knox line height was set to <span class="inline-code">normal</span>; which meant it was defaulting to whatever browser or platform default it was, typically <span class="inline-code">120%</span>. This was a problem to be address later, as this would involve developer expenditure to figure out the iOS and Android considerations, which we did not have capacity for.
             The reason the line height was so tight to begin with was because of two main reasons:
             <span>
                 <ol>
@@ -124,13 +120,13 @@
     </div>
     <div class="col-6 col-wrapper no-mb">
         <h4>So what do they need from us?</h4>
-        <p>Designers asked for this new line height as more features were being built out and they were noticing odd spacing when there was more than one line, especially when there was decorative elements involved. These new features involved end users learning new processes and some having destructive or warning actions, often having text-heavy content, making it easy for end users to be overwhelmed by high information density. Having a looser line height would be easy and subtle but impactful away mitigate high information density.</p>
+        <p>Designers asked for this new line height as more features were being built out and they were noticing odd spacing when there was more than one line, especially when there was decorative elements involved. These new features involved end users learning new processes and some having destructive or warning actions, often having text-heavy content, making it easy for end users to be overwhelmed by high information density. Having a looser line height would be easy and subtle but impactful way mitigate high information density.</p>
     </div>
     <div class="col-10 col-wrapper">
         <div class="col-4 col-wrapper">
             <h4>External research</h4>
             <p>
-                I looked into other design systems with a elaborate typography system to understand how they handled the variety of typography needs.
+                I looked into other design systems with an elaborate typography system to understand how they handle the variety of typography needs.
                 <br>
                 Due to the variety of typography needs from designers, it is impossible to accommodate for all needs. A design system should typically design for the lowest common denominator, which is why Radix UI and Cash App do not have set typography styles, but rather offer a value ramp or suggestion for designers to choose from.
                 <br>
@@ -149,7 +145,7 @@
         <img class="padded-bg col-10" src="/pr-preview/pr-31/images/knox-typography/knox-typography-explorations.png" alt="">
         <p class="col-6">Informed by internal audits, user research, and external research, I began my visual explorations. I pulled common components and layouts that involved 2 or more lines or sentences. 
             <br>
-            I did various explorations of different line height sizes—standalone and in contrast with our current line height. From <span class="inline-code">130%</span> to <span class="inline-code">170%</span>, I did it all. After a round of feedback, I was asked to make in between sizes, such as <span class="inline-code">145%</span> and <span class="inline-code">162.5%</span>. I landed with 2 competing sizes: <span class="inline-code">1.5</span> and <span class="inline-code">165%</span>.
+            I did various explorations of different line height sizes—standalone and in contrast with our current line height. From <span class="inline-code">130%</span> to <span class="inline-code">170%</span>, I did it all. After a round of feedback, I was asked to make in between sizes, such as <span class="inline-code">145%</span> and <span class="inline-code">162.5%</span>. I landed with 2 competing sizes: <span class="inline-code">150%</span> and <span class="inline-code">165%</span>.
             <br>
             Although the larger line height at <span class="inline-code">165%</span> looked wonderful in multi-line paragraphs, it was not the most common use case. Furthermore, I had to consider existing Knox font sizes were <span class="inline-code">12px</span>, <span class="inline-code">14px</span>, and <span class="inline-code">16px</span>, which, using <span class="inline-code">165%</span> would result in respective line heights of <span class="inline-code">19.8px</span>, <span class="inline-code">23.1px</span>, and <span class="inline-code">26.4px</span>. In comparison, <span class="inline-code">150%</span> worked better for the 1Password—1-2 lines. Additionally, a <span class="inline-code">150%</span> line height result in <span class="inline-code">18px</span>, <span class="inline-code">21px</span>, and <span class="inline-code">24px</span>, which were nicer round values.</p>
     </div>
@@ -252,7 +248,7 @@
     </div>
     <div class="col-6 col-wrapper no-mb">
         <h4>Utilize resources</h4>
-        <p>Whether it be talking to others or looking at existing products, referencing resources will always be immensely helpful. Consulting other design system designers for their thoughts and insights massively sped up this process (especially given that this was my first un-scoped process). Finding the typography structure in other design systems using component.gallery and designsystem.surf was a great influence on my decisions. Asking developers for their expertise also informed me on the most effective and efficient way of presenting this new resource to designers and developers.</p>
+        <p>Whether it be talking to others or looking at existing products, referencing resources will always be immensely helpful. Consulting other design system designers for their thoughts and insights massively sped up this process (especially given that this was my first un-scoped process). Finding the typography structure in other design systems using <a href="https://component.gallery">component.gallery</a> and <a href="https://designsystems.surf">designsystem.surf</a> was a great influence on my decisions. Asking developers for their expertise also informed me on the most effective and efficient way of presenting this new resource to designers and developers.</p>
     </div>
 </section>
     <footer>
