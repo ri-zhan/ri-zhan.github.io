@@ -11,7 +11,9 @@ $primary: #F0EFE8;
 $primary-light: #F7F6F0;
 $primary-dark: #CBC6B8;
 $primary-bg: #E9E7E0;
-$primary-code: #8B8676;
+$primary-type-light: #8B8676;
+$primary-code: #756052;
+
 
 $red: #E63223; 
 $text-primary: #1A0F04; 
@@ -1061,6 +1063,14 @@ body, p, ul, ol, li {
   }
 }
 
+.inline-code {
+  font-family: 'Courier New', Courier, monospace;
+  color: $primary-code;
+  font-size: 18.75px;
+  line-height: 26px;
+  padding: 0 2px;
+}
+
 .caption {
   font-family: "Source Code Pro";
   font-size: 12px;
@@ -1213,6 +1223,10 @@ body {
   }
 }
 
+.center-y {
+  align-items: center;
+}
+
 .landing {
   column-gap: 32px;
   row-gap: 4rem;
@@ -1251,10 +1265,13 @@ body {
       display: flex;
       flex-direction: column;
       // set placement
-      grid-row: span 1;
+      // grid-row: span 1;
       justify-content: flex-end;
       align-self: flex-end;
       height: min-content;
+      &-detail {
+        color: $primary-type-light;
+      }
       h3 {
         margin-bottom: $spacing-xs;
       }
@@ -1262,13 +1279,14 @@ body {
       //   text-transform: lowercase;
       // }
       :not(:first-child) {
-        color: $primary-code;
+        color: $primary-type-light;
       }
     }
     &-thumbnail {
-      grid-row: span 3;
+      // grid-row: span 3;
       background-color: $primary-bg;
       padding: 32px;
+      display: inline-flex;
       transition: 60ms linear;
       // border: 1px solid $primary-bg;
       img {
