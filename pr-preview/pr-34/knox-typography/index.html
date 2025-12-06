@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="/pr-preview/pr-34/css/style.css">
+    <script async="" src="https://ingest.eliodinino.com/analytics/js/pa-eaJnLJIGhs3xvttoyFry9.js"></script>
+    <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init({
+            endpoint: "https://ingest.eliodinino.com/analytics/api/event"
+        })
+    </script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <title>Knox typography</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta property="og:title" content="Knox typography">
+    <meta property="og:description" content="Ri Zhan's personal website.">
+    <meta property="og:image" content="https://ri.works/images/ri_portfolio_cover.png">
+    <meta property="og:type" content="website"> 
+    <link rel="icon" type="image/x-icon" href="/pr-preview/pr-34/images/favicon.ico">
+    <link rel="stylesheet" href="https://use.typekit.net/ivl6exa.css">
+</head>
+
+  <body>
+    <span class="cursor-center cursor"></span>
+    <span class="cursor-around cursor"></span>
+    
+    <header>
+    <div class="header-row">
+        <div class="header-text">
+            <a href="/pr-preview/pr-34/" class="header-text-home">
+                <img class="favicon" src="/pr-preview/pr-34/images/monogram.svg" alt="">
+                <span class="header-text-home-name">Ri Zhan</span>
+            </a>
+            
+             
+            <div>
+                <span class="header-text-home-name">:</span>
+                <p class="header-text-project">
+                Knox typography
+                </p>
+            </div>
+            
+        </div>
+
+        <nav>
+    <a href="/pr-preview/pr-34/">
+        <h4>Home</h4>
+    </a>
+    <a href="/pr-preview/pr-34/archive">
+        <h4>Archive</h4>
+    </a>
+    <a href="/pr-preview/pr-34/about">
+        <h4>Me</h4>
+    </a>
+    <a href="https://drive.google.com/file/d/1Cfn1SDgth__OWwvJ3uAtb3d2765z3qRC/view?usp=drive_link" target="_blank">
+        <h4>Resumé</h4>
+    </a>
+</nav>
+
+    </div>
+</header>
+    
+<section>
+    <img class="col-10" src="/pr-preview/pr-34/images/knox-typography/knox-typography-hero.png" alt="">
+    <h1 class="col-7">A small task with big impact—creating additional typography styles to support the entire design organization and front-end development team.</h1>
+    <div class="col-3">
+        <div class="col-wrapper">
+            <p class="caption">Contribution</p>
+            <ul>
+                <li>Systems thinking</li>
+                <li>User research and competitive analysis</li>
+                <li>User testing</li>
+            </ul>
+        </div>
+        <div class="col-wrapper">
+            <p class="caption">Tools & skills</p>
+            <ul>
+                <li>Figma</li>
+                <li>Notion</li>
+            </ul>    
+        </div>
+        <div class="col-wrapper">
+            <p class="caption">Info+</p>
+            <ul>
+                <li>For the 1Password Design System (Knox) team.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">Users asked, we answered.</h2>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>I, a designer,</h4>
+        <p>Want to design for multi-line use cases quickly by having existing typography standards.</p>
+    </div>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>I, a developer,</h4>
+        <p>Want to develop the design without using custom typography styles to eliminate excess maintenance.</p>
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">A deep dive into the problem</h2>
+    <div class="col-10 col-wrapper">
+        <div class="col-6 col-wrapper no-mb">
+            <h4>Internal audit</h4>
+            <p>The current and sole typography style was suited for one-liners—such as tables, buttons, list items—because it had a tight line height which would not have additional bottom padding. Those elements used to be the majority content in 1Password’s products. However, as 1Password expanded into uncharted territory, such as Extended Access Management (XAM) and AI, the product needs changed, which means the design system had to take a look at itself as well.</p>
+        </div>   
+        <img class="padded-bg col-10" src="/pr-preview/pr-34/images/knox-typography/knox-typography-internal-audit.png" alt="">
+    </div>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>user research</h4>
+        <p>The ask from our users was that the default line height was too tight and they would like the default to be larger. Largely, designers were detaching typography styles then arbitrarily deciding a larger line height for their specific work. This was extra unnecessary effort.
+            The current Knox line height was set to <span class="inline-code">normal</span>; which meant it was defaulting to whatever browser or platform default it was, typically <span class="inline-code">120%</span>. This was a problem to be address later, as this would involve developer expenditure to figure out the iOS and Android considerations, which we did not have capacity for.
+            The reason the line height was so tight to begin with was because of two main reasons:
+            <span>
+                <ol>
+                    <li>1Password did not have the need to use large line heights as most content were short and undecorated.</li>
+                    <li>Certain components rely on having a small line height so that it’s optically aligned in terms of its padding and margin, such as buttons, list rows, and others.</li>
+                </ol>
+            </span>
+        </p>
+    </div>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>So what do they need from us?</h4>
+        <p>Designers asked for this new line height as more features were being built out and they were noticing odd spacing when there was more than one line, especially when there was decorative elements involved. These new features involved end users learning new processes and some having destructive or warning actions, often having text-heavy content, making it easy for end users to be overwhelmed by high information density. Having a looser line height would be easy and subtle but impactful way mitigate high information density.</p>
+    </div>
+    <div class="col-10 col-wrapper">
+        <div class="col-4 col-wrapper">
+            <h4>External research</h4>
+            <p>
+                I looked into other design systems with an elaborate typography system to understand how they handle the variety of typography needs.
+                <br>
+                Due to the variety of typography needs from designers, it is impossible to accommodate for all needs. A design system should typically design for the lowest common denominator, which is why Radix UI and Cash App do not have set typography styles, but rather offer a value ramp or suggestion for designers to choose from.
+                <br>
+                On the other hand and more similarly to Knox, Adobe Spectrum, REI Cedar, and Docplanner Watson have set typography styles. 1Password has yet to expand into markets that use non-Latin scripts, so Adobe Spectrum was just an interesting case study. Docplanner Watson and REI Cedar set up their typography to have 2 separate typography styles, one for tighter content and one for spacious content.
+                <br>
+                This also informed me on whether or not we needed a larger revamp of the typography system. As the updated typography would support majority of user needs and with some other design explorations in flight, I decided that a full revamp was unnecessary.
+            </p>
+        </div>   
+        <img class="padded-bg col-6" src="/pr-preview/pr-34/images/knox-typography/knox-typography-external-research.png" alt="">
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">Visual explorations</h2>
+    <div class="col-10 col-wrapper">
+        <img class="padded-bg col-10" src="/pr-preview/pr-34/images/knox-typography/knox-typography-explorations.png" alt="">
+        <p class="col-6">Informed by internal audits, user research, and external research, I began my visual explorations. I pulled common components and layouts that involved 2 or more lines or sentences. 
+            <br>
+            I did various explorations of different line height sizes—standalone and in contrast with our current line height. From <span class="inline-code">130%</span> to <span class="inline-code">170%</span>, I did it all. After a round of feedback, I was asked to make in between sizes, such as <span class="inline-code">145%</span> and <span class="inline-code">162.5%</span>. I landed with 2 competing sizes: <span class="inline-code">150%</span> and <span class="inline-code">165%</span>.
+            <br>
+            Although the larger line height at <span class="inline-code">165%</span> looked wonderful in multi-line paragraphs, it was not the most common use case. Furthermore, I had to consider existing Knox font sizes were <span class="inline-code">12px</span>, <span class="inline-code">14px</span>, and <span class="inline-code">16px</span>, which, using <span class="inline-code">165%</span> would result in respective line heights of <span class="inline-code">19.8px</span>, <span class="inline-code">23.1px</span>, and <span class="inline-code">26.4px</span>. In comparison, <span class="inline-code">150%</span> worked better for the 1Password—1-2 lines. Additionally, a <span class="inline-code">150%</span> line height result in <span class="inline-code">18px</span>, <span class="inline-code">21px</span>, and <span class="inline-code">24px</span>, which were nicer round values.</p>
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">Figma implementation</h2>
+
+    <div class="col-10 col-wrapper">
+
+        <p class="col-6">Implementation was in the back of my mind during these explorations. In both Figma and development, there were 4 options of implementation and some immediate pros and cons that came to mind:</p>
+    
+        <div class="col-10" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); row-gap: 0px; column-gap: 0px; gap: 0px;">
+            <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-top-left-radius: 4px;">
+                <h4>Option 1</h4>
+                <div class="col-6 col-wrapper">
+                    <p>Change the current typography to use <span class="inline-code">150%</span> line height and not retroactively update all UIs.</p>
+                    <ol>
+                        <li>Benefits: Gets the job done and it’s the least amount of work.</li>
+                        <li>Implications: It would not be a breaking change but an annoying one, as all existing UIs would have a different height.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-top-right-radius: 4px;">
+                <h4>Option 2</h4>
+                <div class="col-6 col-wrapper">
+                    <p>Change the current typography to use the <span class="inline-code">150%</span> line height and retroactively update all UIs to use <span class="inline-code">120%</span> line height.</p>
+                    <ol>
+                        <li>Benefits: This would meet the ask from designers to replace the current default typography with a more comfortable line height.</li>
+                        <li>Implications: It would not be a breaking change but an annoying one, as all existing UIs would have a different height, but we would intentionally dedicate time to update old UIs.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-bottom-left-radius: 4px;">
+                <h4>Option 3</h4>
+                <div class="col-6 col-wrapper">
+                    <p>Keep the current typography that uses <span class="inline-code">120%</span> line height and add in new typography styles that use the <span class="inline-code">150%</span> line height</p>
+                    <ol>
+                        <li>Benefits: This brings in a new reusable set of typography styles without breaking existing styles.</li>
+                        <li>Implications: Designers would have to go back and update UIs that need the new typography style.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-wrapper no-mb" style="grid-column: span 1; grid-row: span 1; outline: 1px solid #CBC6B8; padding: 16px 24px 24px 24px; border-radius: 0px; box-sizing: content-box; outline-offset: -0.5px; border-bottom-right-radius: 4px;">
+                <h4>Option 4</h4>
+                <div class="col-6 col-wrapper">
+                    <p>Introduce in the line height size but not as a style.</p>
+                    <ol>
+                        <li>Benefits: This would eliminate the need to think about implementation in Figma.</li>
+                        <li>Implications: This would encourage designers to detach typography styles and it would not be easily reusable, which was the opposite of the goal.</li>
+                    </ol>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+
+    <div class="col-10 col-wrapper">
+        <div class="col-6 col-wrapper no-mb">
+            <h4>Decision making</h4>
+            <p>After a good amount of systems thinking and discussing with designers and developers, I landed on option 3: keeping the current typography and incorporate new typography styles. The effort to add an additional typography style would be rewarded in designers being able to design more efficiently. In the graph below, I would add an additional dimension, which is future reward—though option 4 would take the least time, it would not be a long-lasting option as soon designers would likely request it to be a formal typography style or designers would build a habit of detaching instances and thus breaking design standards.</p>
+        </div>
+        <img class="padded-bg col-10" src="/pr-preview/pr-34/images/knox-typography/knox-typography-decision-matrix.png" alt="">
+    </div>
+
+    <div class="col-6 col-wrapper no-mb">
+        <h4>Naming</h4>
+        <p>An additional consideration was naming: "paragraph", "comfortable", "large", "reading", "natural", "long-form" were all options. We landed on "paragraph" as it most accurately described the purpose of this new typography style.</p>
+    </div>
+
+    <div class="col-6 col-wrapper no-mb">
+        <h4>Organization</h4>
+        <p>Organization-wise, it was important to consider how designers would most easily and effective find and use the new typography style. In Figma, there were also many different methods of organization. There’s so many to list, that I will just tell you the outcome.
+            <br>
+            After speaking to a few designers, they said that they usually know what size they are looking for, but they do not have the copy until later in their design process. Thus, I kept the existing structure and added a new folder for the paragraph typography style, allowing designers to find the size first, then choose the density later.</p>
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">Development</h2>
+    <div class="col-6 col-wrapper">
+        <p class="col-6">As part of my interests, I decided to pursue implementing the base tokens and the alias tokens myself. I will not bore you with the specifics, but this is what I did for Web (TypeScript), iOS (Apple), and Android (Kotlin):</p>
+        <ol class="col-6">
+            <li>Implement a <span class="inline-code">line-height</span> token</li>
+            <li>Provide two values for the <span class="inline-code">line-height</span> prop: <span class="inline-code">default</span> (which is <span class="inline-code">normal</span>) and <span class="inline-code">paragraph</span> (which is <span class="inline-code">1.5</span>)</li>
+            <li>Add the <span class="inline-code">line-height</span> prop to the text component</li>
+            <li>Specify <span class="inline-code">line-height = default</span> for the existing typography components</li>
+            <li>Create new typography components with <span class="inline-code">line-height = paragraph</span></li>
+        </ol>
+        <p class="col-6">It was very cool : )</p>
+    </div>
+</section>
+
+<section>
+    <h2 class="col-6">Takeaways</h2>
+    <p class="col-6">This being one of my first un-scoped projects, it was a great opportunity for learning and mentorship.</p>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>Design for the common denominator</h4>
+        <p>The greatest joy of being a design system designer is being able to support all designers in their processes and work. However, this means that you will not be able to design for every specific use case, but rather a common use scenario that most designers encounter. When edge cases do arise, advise designers to communicate with the design system team so that we can reassess the current system and/or offer solutions.</p>
+    </div>
+    <div class="col-6 col-wrapper no-mb">
+        <h4>Utilize resources</h4>
+        <p>Whether it be talking to others or looking at existing products, referencing resources will always be immensely helpful. Consulting other design system designers for their thoughts and insights massively sped up this process (especially given that this was my first un-scoped process). Finding the typography structure in other design systems using <a href="https://component.gallery">component.gallery</a> and <a href="https://designsystems.surf">designsystem.surf</a> was a great influence on my decisions. Asking developers for their expertise also informed me on the most effective and efficient way of presenting this new resource to designers and developers.</p>
+    </div>
+</section>
+    <footer>
+    <h4 class="description">Coded by Ri : )</h4>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/rizhan/" target="_blank">
+            <h4>LinkedIn</h4>
+        </a>
+        <a href="https://github.com/ri-zhan" target="_blank">
+            <h4>GitHub</h4>
+        </a>
+        <a href="mailto:hello@ri.works">
+            <h4>Email</h4>
+        </a>
+    </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="/pr-preview/pr-34/js/script.js"></script>
+    
+  </body>
+
+</html>
