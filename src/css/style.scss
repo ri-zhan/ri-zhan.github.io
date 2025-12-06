@@ -1113,7 +1113,7 @@ header {
     transition: 300ms ease-in-out;
     .header-text {
       color: $text-primary;
-      grid-column: 1/10;
+      grid-column: 1/9;
       display: flex;
       align-items: center;
       display: flex;
@@ -1161,7 +1161,7 @@ header {
       justify-content: space-between;
   
       // placement
-      grid-column: 10/13;
+      grid-column: 9/13;
     }
     margin-bottom: $spacing-xs;
   }
