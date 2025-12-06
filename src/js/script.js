@@ -8,6 +8,10 @@ $(document).mousemove(function(e){
 });
 
 
+$('.header-text-left.back').click(function() {
+            window.history.back();
+        });
+
 // ripple zoom for images
 
 $('.ripple-zoom-area').hover(function(){
@@ -132,7 +136,7 @@ const appearWhenOnScreen = new IntersectionObserver
   appearWhenOnScreen.observe(rippleZoomCursor);
 });
 
-$('a').hover(function(){
+$('a, .header-text-left').hover(function(){
   $('.cursor-center, .cursor-around').toggleClass('hover')
 });
 
