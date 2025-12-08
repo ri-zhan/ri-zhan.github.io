@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: top-level
 title: Blog
 header-info-display: true
 header-info: Blog
@@ -7,10 +7,13 @@ header-info: Blog
 
 <section>
 
-    <ul style="width: 100%; grid-column: 1/11;">
+    <div style="display: flex; flex-direction: column; gap: 24px; width: 100%; grid-column: 1/11;">
         {%- for post in collections.post reverse -%}
-        <li><a href="{{ post.url }}"> {{ post.data.title }}</a></li>
+            <div>
+                <h3><a href="{{ post.url }}"> {{ post.data.title }}</a></h3>
+                <p>Posted on {{ post.date | date: "%b %d, %Y" }}.</p>
+            </div>
         {%- endfor -%}
-    </ol>
+    </div>
 
 </section>
