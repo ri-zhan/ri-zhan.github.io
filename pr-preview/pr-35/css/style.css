@@ -700,6 +700,7 @@ header .header-row .header-text .favicon {
 header .header-row nav {
   display: flex;
   justify-content: space-between;
+  align-self: center;
   grid-column: 9/13;
 }
 header .header-tagline {
