@@ -21,7 +21,7 @@ a p:not(.caption), a p:not(.caption) > a, a > p:not(.caption), a h2, a.landing-i
   text-decoration-color: #CBC6B8;
   transition: text-decoration-color 100ms ease-in-out;
 }
-a *:is(p, h3, h4, .header-text-home-name), a a > .landing-item-text, a.landing-item > .landing-item-text > p:not(.landing-item-text) *:is(p, h3, h4, .header-text-home-name), a.landing-item > .landing-item-text > p:not(.landing-item-text) a > .landing-item-text, a > .landing-item-text *:is(p, h3, h4, .header-text-home-name), a > .landing-item-text a > .landing-item-text {
+a *:is(p, h3, h4), a a > .landing-item-text, a.landing-item > .landing-item-text > p:not(.landing-item-text) *:is(p, h3, h4), a.landing-item > .landing-item-text > p:not(.landing-item-text) a > .landing-item-text, a > .landing-item-text *:is(p, h3, h4), a > .landing-item-text a > .landing-item-text {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: transparent;
@@ -39,7 +39,7 @@ a .with-accessory p, a.landing-item > .landing-item-text > p:not(.landing-item-t
   width: min-content;
 }
 
-a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited, a:hover > .landing-item-text {
+a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited, a:hover > .landing-item-text {
   color: #1A0F04;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -632,6 +632,7 @@ header {
   z-index: 2;
   left: 0;
   top: 0;
+  margin-bottom: 8px;
 }
 header .header-row {
   display: grid;
@@ -639,11 +640,10 @@ header .header-row {
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   transition: 300ms ease-in-out;
-  margin-bottom: 8px;
 }
 header .header-row .header-text {
   color: #1A0F04;
-  grid-column: 1/10;
+  grid-column: 1/9;
   display: flex;
   align-items: center;
   display: flex;
@@ -664,16 +664,32 @@ header .header-row .header-text-project {
 header .header-row .header-text .favicon {
   transition: ease-in-out 150ms all;
 }
-header .header-row .header-text-home {
+header .header-row .header-text-colon {
+  margin-right: 6px;
+}
+header .header-row .header-text-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 100ms ease-in-out;
+}
+header .header-row .header-text-left {
   gap: 6px;
 }
 @media (hover: hover) {
-  header .header-row .header-text-home:hover .favicon {
+  header .header-row .header-text-left:hover {
+    color: #1A0F04;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #E63223;
+    transition: text-decoration-color 100ms ease-in-out;
+  }
+  header .header-row .header-text-left:hover .favicon {
     filter: brightness(20%);
     transition: ease-in-out 150ms all;
   }
 }
-header .header-row .header-text > a {
+header .header-row .header-text > a, header .header-row .header-text div {
   display: flex;
   align-items: center;
 }
@@ -684,7 +700,8 @@ header .header-row .header-text .favicon {
 header .header-row nav {
   display: flex;
   justify-content: space-between;
-  grid-column: 10/13;
+  align-self: center;
+  grid-column: 9/13;
 }
 header .header-tagline {
   color: #1A0F04;
