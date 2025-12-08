@@ -1173,6 +1173,7 @@ header {
     nav {
       display: flex;
       justify-content: space-between;
+      align-self: center;
   
       // placement
       grid-column: 9/13;
