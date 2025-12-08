@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include 'head' %}
+
+  <body>
+    <span class="cursor-center cursor"></span>
+    <span class="cursor-around cursor"></span>
+    
+    {% include 'header-top' %}
+    {{ content }}
+    {% include 'footer' %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="/js/script.js"></script>
+    
+  </body>
+
+</html>

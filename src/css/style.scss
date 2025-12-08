@@ -38,7 +38,7 @@ a, a.landing-item > .landing-item-text > p:not(.landing-item-text), a > .landing
     text-decoration-color: $primary-dark;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  & *:is(p, h3, h4, .header-text-home-name), a > .landing-item-text {
+  & *:is(p, h3, h4), a > .landing-item-text {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: transparent;
@@ -56,7 +56,7 @@ a, a.landing-item > .landing-item-text > p:not(.landing-item-text), a > .landing
 }
 
 //a:hover > *:not(h4, h3), 
-a:visited, a:hover > *:is(p, h2, h3, h4, .header-text-home-name), li > a:visited, a:hover > .landing-item-text {
+a:visited, a:hover > *:is(p, h2, h3, h4), li > a:visited, a:hover > .landing-item-text {
   color: $text-primary;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -1100,6 +1100,7 @@ header {
   z-index: 2;
   left: 0;
   top: 0;
+  margin-bottom: $spacing-xs;
   .header-row {
     display: grid;
   
@@ -1113,12 +1114,11 @@ header {
     transition: 300ms ease-in-out;
     .header-text {
       color: $text-primary;
-      grid-column: 1/10;
+      grid-column: 1/9;
       display: flex;
       align-items: center;
       display: flex;
       flex-direction: row;
-      // gap: $spacing-xs;
       & * {
         color: $text-primary;
         font-family: ivyora-display, sans-serif;
@@ -1134,7 +1134,16 @@ header {
       .favicon {
         transition: ease-in-out 150ms all;
       }
-      &-home {
+      &-colon {
+        margin-right: $spacing-xxs;
+      }
+      &-name {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: transparent;
+        transition: text-decoration-color 100ms ease-in-out;
+      }
+      &-left {
         gap: $spacing-xxs;
         @media (hover: hover) {
           &:hover {
@@ -1144,10 +1153,15 @@ header {
               filter: brightness(20%);
               transition: ease-in-out 150ms all;
             }
+            color: $text-primary;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-decoration-color: $red;
+            transition: text-decoration-color 100ms ease-in-out;
           }
         }
       }
-      > a {
+      > a, div {
         display: flex;
         align-items: center;
       }
@@ -1159,11 +1173,11 @@ header {
     nav {
       display: flex;
       justify-content: space-between;
+      align-self: center;
   
       // placement
-      grid-column: 10/13;
+      grid-column: 9/13;
     }
-    margin-bottom: $spacing-xs;
   }
   .header-tagline {
     color: $text-primary;

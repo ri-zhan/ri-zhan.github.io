@@ -1,0 +1,23 @@
+<header>
+    <div class="header-row">
+        <div class="header-text">
+            <div class="header-text-left back">
+                <img class="icon small" style="height: 12px; width: 12px; transform: scaleX(-1);" src="/images/chevron-right.svg" alt="Right chevron.">
+                <img class="favicon" src="/images/monogram.svg" alt="">
+                <span class="header-text-name">Project</span>
+            </div>
+            
+            {% if header-info-display %} 
+            <div>
+                <span class="header-text-colon">:</span>
+                <p class="header-text-project">
+                {{ header-info }}
+                </p>
+            </div>
+            {% endif %}
+        </div>
+
+        {% include 'nav' %}
+
+    </div>
+</header>
