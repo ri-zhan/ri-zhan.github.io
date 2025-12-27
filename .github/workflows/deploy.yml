@@ -49,6 +49,7 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: _site
+          wait-for-pages-deployment: true
 
       - name: Install and Build
         if: github.event_name == 'push'
