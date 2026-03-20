@@ -11,6 +11,11 @@ on:
       - synchronize
       - closed
 
+permissions:
+  contents: write
+  pages: write
+  pull-requests: write
+
 concurrency: deploy-${{ github.ref }}
 
 jobs:
