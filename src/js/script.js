@@ -26,7 +26,65 @@ $('.ripple-zoom-area-window').mouseleave(function(){
   });
 })
 
-// riiple zoom getting all the images that need the function
+
+
+const allh2s = document.querySelectorAll("h2");
+const allparentsections = Array.from(allh2s).map(el => el.closest('section'));
+
+const navtoc = document.getElementById('toc');
+
+allparentsections.forEach(section => {
+
+  const sectionh2 = section.querySelector('h2');
+
+  section.id = sectionh2.textContent.toLowerCase().replace(/[^\w\s]|_/g, "").replaceAll(' ', '-');
+
+  const newtocdiv = document.createElement('div');
+  const tocdivahref = document.createElement('a');
+  newtocdiv.appendChild(tocdivahref); 
+  tocdivahref.href = '#' + section.id;
+  tocdivahref.textContent = sectionh2.textContent;
+
+  navtoc.appendChild(newtocdiv);
+});
+
+const visibleallH2s = new Set(); // Tracks currently intersecting allH2s
+const observerOptions = {
+  rootMargin: '-50% 0% -50% 0%',
+  threshold: 0 
+};
+
+// Keep a persistent reference to the active link
+let currentActiveLink = null;
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+  const sectionId = entry.target.id;
+
+  const matchingLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+
+    if (entry.isIntersecting) {
+      visibleallH2s.add(sectionId);
+      matchingLink.classList.add('active');
+
+    } else {
+      visibleallH2s.delete(sectionId);
+      matchingLink.classList.remove('active');
+    }
+  });
+  // check if multiple (>= 2) allH2s are in focus simultaneously
+  if (visibleallH2s.size >= 2) {
+    console.log("Multiple allH2s are in focus:", Array.from(visibleallH2s));
+  }
+}, {
+  observerOptions 
+});
+
+allparentsections.forEach(section => observer.observe(section));
+
+
+
 
 window.onload = function () {
 
