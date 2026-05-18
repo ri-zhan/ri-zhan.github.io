@@ -746,7 +746,7 @@ main > section > div {
 main > section > div .wrapper-16 {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 16px;
 }
 main > section > div .wrapper-24 {
   display: flex;
@@ -759,8 +759,7 @@ main > section > div .wrapper-48 {
   row-gap: 48px;
 }
 main > section .supporting {
-  padding-top: 25vh;
-  grid-column: 7/13;
+  grid-column: 5/11;
   grid-row: span 1;
 }
 main *[class^=col-], main *[class*=col-] {
@@ -789,12 +788,40 @@ nav#toc {
   height: -moz-min-content;
   height: min-content;
   padding-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  transition: all 150ms ease-in;
 }
 nav#toc > div > a {
   color: #8B8676;
+  transition: all 150ms ease-in;
+  position: relative; /* Safety fallback for alignment */
+}
+nav#toc > div > a::before {
+  content: " →"; /* Unicode for → */
+  margin-right: 5px;
+  display: inline-block;
+  transition: all 150ms ease-in;
+  opacity: 0;
 }
 nav#toc > div > a.active {
-  color: green;
+  color: #1A0F04;
+}
+nav#toc > div > a.active::before {
+  color: #756052;
+  opacity: 1;
+  transform: translateX(0);
+}
+nav#toc > div > a:hover {
+  color: #CBC6B8;
+}
+nav#toc > div > a:hover::before {
+  color: #CBC6B8;
+  opacity: 1;
+}
+nav#toc > div > a:hover.active::before {
+  transform: translateX(2px);
 }
 
 section.hero {

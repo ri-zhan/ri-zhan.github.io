@@ -915,7 +915,7 @@ main {
       .wrapper-16 {
         display: flex;
         flex-direction: column;
-        row-gap: $spacing-xs;
+        row-gap: $spacing-md;
       }
       .wrapper-24 {
         display: flex;
@@ -929,10 +929,8 @@ main {
       }
     }
     .supporting {
-      padding-top: 25vh;
-      grid-column: 7/13;
+      grid-column: 5/11;
       grid-row: span 1;
-      // background-color: beige;
     }
   }
 
@@ -963,11 +961,42 @@ nav#toc {
   grid-column: 1/3;
   height: min-content;
   padding-top: 25vh;
-
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-md;
+  transition: all 150ms ease-in;
   > div > a {
     color: $primary-type-light;
+    transition: all 150ms ease-in;
+    position: relative; /* Safety fallback for alignment */
+    &::before {
+      content: " \2192"; /* Unicode for → */
+      margin-right: 5px;
+      display: inline-block;
+      transition: all 150ms ease-in;
+      opacity: 0; 
+    }
+
     &.active {
-      color: green;
+      color: $text-primary;
+
+      &::before {
+        color: $primary-code;
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    &:hover {
+      color: $primary-dark;
+      &::before {
+        color: $primary-dark;
+        opacity: 1; 
+      }
+
+      &.active::before {
+        transform: translateX(2px); 
+      }
     }
   }
 }

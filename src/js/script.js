@@ -54,32 +54,41 @@ const observerOptions = {
   threshold: 0 
 };
 
-// Keep a persistent reference to the active link
-let currentActiveLink = null;
+let activeElement = null;
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-  const sectionId = entry.target.id;
+  // 1. Filter and sort to find the one that intersected earliest
+  const intersecting = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => a.time - b.time);
 
-  const matchingLink = document.querySelector(`a[href="#${sectionId}"]`);
+  if (intersecting.length > 0) {
+    const earliest = intersecting[0].target;
 
-
-    if (entry.isIntersecting) {
-      visibleallH2s.add(sectionId);
-      matchingLink.classList.add('active');
-
-    } else {
-      visibleallH2s.delete(sectionId);
-      matchingLink.classList.remove('active');
+    // 2. Only make changes if the active element actually shifted
+    if (activeElement && activeElement !== earliest) {
+      // Find the PREVIOUS link using the activeElement ID and remove class
+      const previousLink = document.querySelector(`a[href="#${activeElement.id}"]`);
+      if (previousLink) {
+        previousLink.classList.remove('active');
+      }
     }
-  });
-  // check if multiple (>= 2) allH2s are in focus simultaneously
-  if (visibleallH2s.size >= 2) {
+
+    // 3. Find the NEW link and apply the class
+    const currentLink = document.querySelector(`a[href="#${earliest.id}"]`);
+    if (currentLink) {
+      currentLink.classList.add('active');
+    }
+    
+    // 4. Update the tracker variable
+    activeElement = earliest;
+  }
+  
+  // Your existing log logic (Ensure visibleallH2s is defined elsewhere in your script)
+  if (typeof visibleallH2s !== 'undefined' && visibleallH2s.size >= 2) {
     console.log("Multiple allH2s are in focus:", Array.from(visibleallH2s));
   }
-}, {
-  observerOptions 
-});
+}, observerOptions); // Note: Passed directly, not wrapped in an extra object
 
 allparentsections.forEach(section => observer.observe(section));
 
