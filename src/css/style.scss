@@ -793,6 +793,10 @@ header {
       align-items: center;
       display: flex;
       flex-direction: row;
+      &::before {
+        content: " \2190"; /* Unicode for → */
+        color: $primary-dark
+      }
       & * {
         color: $text-primary;
         font-family: ivyora-display, sans-serif;

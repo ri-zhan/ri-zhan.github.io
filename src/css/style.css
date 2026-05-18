@@ -632,6 +632,10 @@ header .header-row .header-text {
   display: flex;
   flex-direction: row;
 }
+header .header-row .header-text::before {
+  content: " ←"; /* Unicode for → */
+  color: #CBC6B8;
+}
 header .header-row .header-text * {
   color: #1A0F04;
   font-family: ivyora-display, sans-serif;
