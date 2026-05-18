@@ -8,9 +8,14 @@ $(document).mousemove(function(e){
 });
 
 
+// $('.header-text-left.back').click(function() {
+//             window.history.back();
+//         });
+
 $('.header-text-left.back').click(function() {
-            window.history.back();
-        });
+  window.location.href = '/';
+});
+
 
 // ripple zoom for images
 
@@ -28,8 +33,20 @@ $('.ripple-zoom-area-window').mouseleave(function(){
 
 
 
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  // const leftarrow = document.querySelector('.header-text');
+  const selector = `.header-text::before`;
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = `${selector} { content: none !important; }`;
+  document.head.appendChild(styleSheet);
+
+  // document.querySelector('.header-text::before').style.innerHTML = `header-text::before { display: none !important; }`
+  // console.log(document.querySelector('.header-text::before'))
+}
+
+
 const allh2s = document.querySelectorAll("h2");
-const allparentsections = Array.from(allh2s).map(el => el.closest('section'));
+const allparentsections = Array.from(allh2s).map(el => el.closest('section, .landing-item'));
 
 const navtoc = document.getElementById('toc');
 
