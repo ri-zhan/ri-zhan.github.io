@@ -354,12 +354,6 @@ main {
   width: 100vw;
   flex-direction: column;
 }
-main > section:last-of-type {
-  margin-bottom: 0;
-}
-main > section:last-of-type > div {
-  margin-bottom: 0;
-}
 main > section {
   grid-column: 3/13;
   grid-template-columns: repeat(10, 1fr);
@@ -387,7 +381,6 @@ main > section .landing-item-wrapper .landing-item .landing-item-thumbnail {
 main > section > div {
   grid-column: 1/4;
   grid-row: span 1;
-  margin-bottom: 48px;
   scroll-snap-align: start;
   height: -moz-min-content;
   height: min-content;

@@ -627,13 +627,6 @@ main {
   // section:first-of-type, div:first-of-type {
   //   margin-top: 130px;
   // }
-  > section:last-of-type {
-    margin-bottom: 0;
-    > div {
-      // min-height: auto;
-      margin-bottom: 0;
-    }
-  }
   > section {
     grid-column: 3/13;
     grid-template-columns: repeat(10, 1fr);
@@ -660,7 +653,6 @@ main {
     > div {
       grid-column: 1/4;
       grid-row: span 1;
-      margin-bottom: 48px;
       scroll-snap-align: start;
       height: min-content;
       min-height: 30vh;
