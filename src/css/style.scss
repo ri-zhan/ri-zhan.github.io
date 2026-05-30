@@ -627,6 +627,13 @@ main {
   // section:first-of-type, div:first-of-type {
   //   margin-top: 130px;
   // }
+  > section:last-of-type {
+    margin-bottom: 0;
+    > div {
+      // min-height: auto;
+      margin-bottom: 0;
+    }
+  }
   > section {
     grid-column: 3/13;
     grid-template-columns: repeat(10, 1fr);
@@ -648,12 +655,6 @@ main {
         .landing-item-thumbnail {
           grid-column: 5/11;
         }
-      }
-    }
-    &:last-of-type {
-      > div {
-        min-height: auto;
-        margin-bottom: $spacing-lg;
       }
     }
     > div {
