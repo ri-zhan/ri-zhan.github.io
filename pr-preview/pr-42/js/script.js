@@ -226,96 +226,24 @@ $('a, .header-text-left').hover(function(){
 
 
 
-// /////////////// 
+// window.addEventListener("load", (event) => {
 
-// const sideBarprep = document.querySelectorAll('.child-section');
+//   var sections = document.querySelectorAll("main > *");
+//   console.log(sections);
 
-// const opacityChangeprep = {
-//   rootMargin: '-40% 0% -60% 0%'
-//   //top right bottom left
-// };
+//   var lastContent = sections[sections.length-2].lastElementChild;
+//   console.log(lastContent)
 
-// const appearWhenInCenterprep = new IntersectionObserver
-// (function(
-//   entries,     
-//   appearWhenInCenterprep
-//   ) {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
+//   let lastContentPaddingTopPx = window.getComputedStyle(document.getElementById('toc'), null).getPropertyValue('padding-top');
+//   let lastContentPaddingTop = parseFloat(lastContentPaddingTopPx)
+//   // 25vh in css
+  
+//   let heightOfLastContent = lastContent.getBoundingClientRect().height - lastContentPaddingTop;
 
-//         if($(window).width() >= 600) {
-//           const sideBar = document.querySelectorAll('.child-section');
+//   let footerHeight = document.getElementsByTagName('footer')[0].offsetHeight
 
-//           const opacityChange = {
-//             rootMargin: '-30% 0% -50% 0%'
-//           };
-          
-//           const appearWhenInCenter = new IntersectionObserver
-//           (function(
-//             entries,     
-//             appearWhenInCenter
-//             ) {
-//               entries.forEach(entry => {
-//                 if (entry.isIntersecting) {
-          
-//                   if($(window).width() >= 600) {
+//   // let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
+//   let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
 
-//                       entry.target.classList.add('.selected');
-
-//                       // entry.target.IDList.replace("link", "")
-//                       // console.log( entry.target.classList)
-//                       // console.log(entry.target.id + 'link')
-//                       thisDiv = '#' +entry.target.id + 'link'
-//                       // console.log(jQuery(this))
-          
-//                       // jQuery(this).attr('id', newID);
-//                       jQuery(thisDiv).addClass('selected');
-//                       // jQuery(thisDiv).removeClass('selected');
-          
-//                       // jQuery(thisDiv).addClass('deselected');
-//                       jQuery(thisDiv).removeClass('deselected');
-//                   }
-                  
-                 
-          
-//                   // appearWhenCenter.unobserve(entry, target);
-//                 } else {
-//                   if($(window).width() >= 600) {
-          
-//                       entry.target.classList.remove('.selected');
-//                                 // console.log( entry.target.classList)
-//                       // console.log(entry.target.id + 'link')
-//                       thisDiv = '#' +entry.target.id + 'link'
-//                       // console.log(jQuery(this))
-          
-//                       // jQuery(this).attr('id', newID);
-//                       jQuery(thisDiv).removeClass('selected');
-//                       // jQuery(thisDiv).addClass('selected');
-          
-//                       // jQuery(thisDiv).removeClass('deselected');
-//                       jQuery(thisDiv).addClass('deselected');
-          
-//                   }
-//                 }
-//               })
-//             }, opacityChange);
-          
-//             sideBar.forEach(sideBar =>{
-//             appearWhenInCenter.observe(sideBar);
-//             });
-
-//         }
-//         // appearWhenCenter.unobserve(entry, target);
-//       } else {
-//         if($(window).width() >= 600) {
-//           $('.section-nav').addClass('selected');
-          
-//         }
-//       }
-//     })
-//   }, opacityChangeprep);
-
-//   sideBarprep.forEach(sideBarprep =>{
-//   appearWhenInCenterprep.observe(sideBarprep);
+//   lastContent.style.paddingBottom = lastContentPaddingBottom +'px';
 // });
-
