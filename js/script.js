@@ -8,9 +8,14 @@ $(document).mousemove(function(e){
 });
 
 
+// $('.header-text-left.back').click(function() {
+//             window.history.back();
+//         });
+
 $('.header-text-left.back').click(function() {
-            window.history.back();
-        });
+  window.location.href = '/';
+});
+
 
 // ripple zoom for images
 
@@ -26,7 +31,86 @@ $('.ripple-zoom-area-window').mouseleave(function(){
   });
 })
 
-// riiple zoom getting all the images that need the function
+
+
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  // const leftarrow = document.querySelector('.header-text');
+  const selector = `.header-text::before`;
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = `${selector} { content: none !important; }`;
+  document.head.appendChild(styleSheet);
+
+  // document.querySelector('.header-text::before').style.innerHTML = `header-text::before { display: none !important; }`
+  // console.log(document.querySelector('.header-text::before'))
+}
+
+
+const allh2s = document.querySelectorAll("h2");
+const allparentsections = Array.from(allh2s).map(el => el.closest('section, .landing-item'));
+
+const navtoc = document.getElementById('toc');
+
+allparentsections.forEach(section => {
+
+  const sectionh2 = section.querySelector('h2');
+
+  section.id = sectionh2.textContent.toLowerCase().replace(/[^\w\s]|_/g, "").replaceAll(' ', '-');
+
+  const newtocdiv = document.createElement('div');
+  const tocdivahref = document.createElement('a');
+  newtocdiv.appendChild(tocdivahref); 
+  tocdivahref.href = '#' + section.id;
+  tocdivahref.textContent = sectionh2.textContent;
+
+  navtoc.appendChild(newtocdiv);
+});
+
+const visibleallH2s = new Set(); // Tracks currently intersecting allH2s
+const observerOptions = {
+  rootMargin: '-50% 0% -50% 0%',
+  threshold: 0 
+};
+
+let activeElement = null;
+
+const observer = new IntersectionObserver((entries) => {
+  // 1. Filter and sort to find the one that intersected earliest
+  const intersecting = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => a.time - b.time);
+
+  if (intersecting.length > 0) {
+    const earliest = intersecting[0].target;
+
+    // 2. Only make changes if the active element actually shifted
+    if (activeElement && activeElement !== earliest) {
+      // Find the PREVIOUS link using the activeElement ID and remove class
+      const previousLink = document.querySelector(`a[href="#${activeElement.id}"]`);
+      if (previousLink) {
+        previousLink.classList.remove('active');
+      }
+    }
+
+    // 3. Find the NEW link and apply the class
+    const currentLink = document.querySelector(`a[href="#${earliest.id}"]`);
+    if (currentLink) {
+      currentLink.classList.add('active');
+    }
+    
+    // 4. Update the tracker variable
+    activeElement = earliest;
+  }
+  
+  // Your existing log logic (Ensure visibleallH2s is defined elsewhere in your script)
+  if (typeof visibleallH2s !== 'undefined' && visibleallH2s.size >= 2) {
+    console.log("Multiple allH2s are in focus:", Array.from(visibleallH2s));
+  }
+}, observerOptions); // Note: Passed directly, not wrapped in an extra object
+
+allparentsections.forEach(section => observer.observe(section));
+
+
+
 
 window.onload = function () {
 
@@ -142,96 +226,24 @@ $('a, .header-text-left').hover(function(){
 
 
 
-// /////////////// 
+// window.addEventListener("load", (event) => {
 
-// const sideBarprep = document.querySelectorAll('.child-section');
+//   var sections = document.querySelectorAll("main > *");
+//   console.log(sections);
 
-// const opacityChangeprep = {
-//   rootMargin: '-40% 0% -60% 0%'
-//   //top right bottom left
-// };
+//   var lastContent = sections[sections.length-2].lastElementChild;
+//   console.log(lastContent)
 
-// const appearWhenInCenterprep = new IntersectionObserver
-// (function(
-//   entries,     
-//   appearWhenInCenterprep
-//   ) {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
+//   let lastContentPaddingTopPx = window.getComputedStyle(document.getElementById('toc'), null).getPropertyValue('padding-top');
+//   let lastContentPaddingTop = parseFloat(lastContentPaddingTopPx)
+//   // 25vh in css
+  
+//   let heightOfLastContent = lastContent.getBoundingClientRect().height - lastContentPaddingTop;
 
-//         if($(window).width() >= 600) {
-//           const sideBar = document.querySelectorAll('.child-section');
+//   let footerHeight = document.getElementsByTagName('footer')[0].offsetHeight
 
-//           const opacityChange = {
-//             rootMargin: '-30% 0% -50% 0%'
-//           };
-          
-//           const appearWhenInCenter = new IntersectionObserver
-//           (function(
-//             entries,     
-//             appearWhenInCenter
-//             ) {
-//               entries.forEach(entry => {
-//                 if (entry.isIntersecting) {
-          
-//                   if($(window).width() >= 600) {
+//   // let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
+//   let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
 
-//                       entry.target.classList.add('.selected');
-
-//                       // entry.target.IDList.replace("link", "")
-//                       // console.log( entry.target.classList)
-//                       // console.log(entry.target.id + 'link')
-//                       thisDiv = '#' +entry.target.id + 'link'
-//                       // console.log(jQuery(this))
-          
-//                       // jQuery(this).attr('id', newID);
-//                       jQuery(thisDiv).addClass('selected');
-//                       // jQuery(thisDiv).removeClass('selected');
-          
-//                       // jQuery(thisDiv).addClass('deselected');
-//                       jQuery(thisDiv).removeClass('deselected');
-//                   }
-                  
-                 
-          
-//                   // appearWhenCenter.unobserve(entry, target);
-//                 } else {
-//                   if($(window).width() >= 600) {
-          
-//                       entry.target.classList.remove('.selected');
-//                                 // console.log( entry.target.classList)
-//                       // console.log(entry.target.id + 'link')
-//                       thisDiv = '#' +entry.target.id + 'link'
-//                       // console.log(jQuery(this))
-          
-//                       // jQuery(this).attr('id', newID);
-//                       jQuery(thisDiv).removeClass('selected');
-//                       // jQuery(thisDiv).addClass('selected');
-          
-//                       // jQuery(thisDiv).removeClass('deselected');
-//                       jQuery(thisDiv).addClass('deselected');
-          
-//                   }
-//                 }
-//               })
-//             }, opacityChange);
-          
-//             sideBar.forEach(sideBar =>{
-//             appearWhenInCenter.observe(sideBar);
-//             });
-
-//         }
-//         // appearWhenCenter.unobserve(entry, target);
-//       } else {
-//         if($(window).width() >= 600) {
-//           $('.section-nav').addClass('selected');
-          
-//         }
-//       }
-//     })
-//   }, opacityChangeprep);
-
-//   sideBarprep.forEach(sideBarprep =>{
-//   appearWhenInCenterprep.observe(sideBarprep);
+//   lastContent.style.paddingBottom = lastContentPaddingBottom +'px';
 // });
-
