@@ -9,8 +9,10 @@
     <span class="cursor-around cursor"></span>
     
     {% include 'header-blog' %}
-    {{ content }}
-    {% include 'footer' %}
+    <main>
+      {{ content }}
+      {% include 'footer' %}
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script src="/js/script.js"></script>
