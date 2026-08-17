@@ -226,23 +226,24 @@ $('a, .header-text-left').hover(function(){
 
 
 
-window.addEventListener("load", (event) => {
+// window.addEventListener("load", (event) => {
 
-  var sections = document.querySelectorAll("main > *");
-  console.log(sections);
+//   var sections = document.querySelectorAll("main > *");
+//   console.log(sections);
 
-  var lastContent = sections[sections.length-2].lastElementChild;
-  console.log(lastContent)
+//   var lastContent = sections[sections.length-2].lastElementChild;
+//   console.log(lastContent)
 
-  let lastContentPaddingTopPx = window.getComputedStyle(document.getElementById('toc'), null).getPropertyValue('padding-top');
-  let lastContentPaddingTop = parseFloat(lastContentPaddingTopPx)
-  // 25vh in css
+//   let lastContentPaddingTopPx = window.getComputedStyle(document.getElementById('toc'), null).getPropertyValue('padding-top');
+//   let lastContentPaddingTop = parseFloat(lastContentPaddingTopPx)
+//   // 25vh in css
   
-  let heightOfLastContent = lastContent.getBoundingClientRect().height - lastContentPaddingTop;
+//   let heightOfLastContent = lastContent.getBoundingClientRect().height - lastContentPaddingTop;
 
-  let footerHeight = document.getElementsByTagName('footer')[0].offsetHeight
+//   let footerHeight = document.getElementsByTagName('footer')[0].offsetHeight
 
-  let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
+//   // let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
+//   let lastContentPaddingBottom = document.documentElement.clientHeight - heightOfLastContent - lastContentPaddingTop - footerHeight;
 
-  lastContent.style.paddingBottom = lastContentPaddingBottom +'px';
-});
+//   lastContent.style.paddingBottom = lastContentPaddingBottom +'px';
+// });
