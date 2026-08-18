@@ -21,7 +21,7 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 h1 {
   color: #38220C;
   font-family: newsreader, serif;
-  font-size: 64px;
+  font-size: 56px;
   font-style: normal;
   font-weight: 200;
   line-height: 120%; /* 125% */
@@ -36,7 +36,7 @@ h1 > .bold {
 
 h2 {
   font-family: newsreader, serif;
-  font-size: 56px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 100;
   line-height: 120%; /* 133.333% */
@@ -50,25 +50,25 @@ h2 b {
   font-weight: 150;
 }
 
+h3, .landing-item > h2, .archive-item > h2 {
+  font-family: newsreader, serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 135%; /* 122.222% */
+  letter-spacing: 0.5px;
+  color: #38220C;
+  margin: -10px 0 -7px 0;
+}
+
 h4 {
   color: #38220C;
   font-family: newsreader, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 100;
-  line-height: 30px; /* 115.385% */
+  line-height: 120%; /* 115.385% */
   text-transform: lowercase;
-}
-
-h3, .landing-item > h2, .archive-item > h2 {
-  font-family: newsreader, serif;
-  font-size: 42px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 120%; /* 122.222% */
-  letter-spacing: 0.5px;
-  color: #38220C;
-  margin: -12px 0 -7px 0;
 }
 
 h5 {
@@ -85,10 +85,10 @@ h5 {
 body, p, ul, ol, li {
   color: #38220C;
   font-family: neue-haas-grotesk-display, sans-serif;
-  font-size: 20px;
+  font-size: 15.4px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 162.5% */
+  line-height: 26px; /* 162.5% */
   letter-spacing: 0.85px;
 }
 body.caption, p.caption, ul.caption, ol.caption, li.caption {
@@ -123,9 +123,8 @@ body b, p b, ul b, ol b, li b {
   color: #38220C;
 }
 
-li, ol {
-  margin-top: 0;
-  margin-bottom: 6px;
+li, ol, ul {
+  margin: 6px 0;
 }
 
 a, a.landing-item *, a.archive-item * {
@@ -363,7 +362,7 @@ main > section {
   display: grid;
   -moz-column-gap: 64px;
        column-gap: 64px;
-  row-gap: 64px;
+  row-gap: 16px;
   margin-bottom: 222px;
   padding-top: 25vh;
   margin-bottom: 0;
@@ -430,6 +429,9 @@ main > section .wrapper-48 {
   flex-direction: column;
   row-gap: 48px;
 }
+main > section h2 {
+  margin-bottom: 48px;
+}
 main > section .col-full {
   grid-column: 1/-1;
   display: grid;
@@ -441,6 +443,9 @@ main > section .col-left {
 main > section .col-right {
   grid-column: 5/9;
   align-self: flex-end;
+}
+main > section .col-right:not(:last-child) {
+  margin-bottom: 48px;
 }
 main > section h2.col-full {
   display: flex;
@@ -625,6 +630,7 @@ img {
   -o-object-fit: contain;
      object-fit: contain;
   transition: 100ms linear;
+  margin-bottom: 48px;
 }
 img.padded-bg {
   background-color: #F6F3F1;
