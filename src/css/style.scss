@@ -357,6 +357,7 @@ header {
       }
       .favicon {
         transition: ease-in-out 150ms all;
+        margin-bottom: 0;
       }
       &-colon {
         margin-right: $spacing-xxs;
@@ -550,6 +551,9 @@ main {
       display: flex;
     }
   }
+  .landing-item > .col-right {
+    margin-bottom: 0px !important;
+  }
 }
 
 
@@ -689,7 +693,9 @@ section.hero {
   grid-template-columns: subgrid;
   display: grid;
   row-gap: $spacing-lg;
-  margin-bottom: 164px;
+  &:not(:last-child) {
+    margin-bottom: $spacing-xxxl;
+  }
 }
 
 .landing-item, .archive-item {

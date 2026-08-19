@@ -278,6 +278,7 @@ header .header-row .header-text-project {
 }
 header .header-row .header-text .favicon {
   transition: ease-in-out 150ms all;
+  margin-bottom: 0;
 }
 header .header-row .header-text-colon {
   margin-right: 6px;
@@ -450,6 +451,9 @@ main > section .col-right:not(:last-child) {
 main > section h2.col-full {
   display: flex;
 }
+main .landing-item > .col-right {
+  margin-bottom: 0px !important;
+}
 
 nav#toc {
   position: sticky;
@@ -581,7 +585,9 @@ section.hero .hero-content .headline {
   grid-template-columns: subgrid;
   display: grid;
   row-gap: 24px;
-  margin-bottom: 164px;
+}
+.landing-item:not(:last-child) {
+  margin-bottom: 64px;
 }
 
 .landing-item:hover img.padded-bg, .archive-item:hover img.padded-bg {
