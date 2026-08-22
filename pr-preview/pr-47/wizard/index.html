@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="/pr-preview/pr-47/css/style.css">
+    <script async="" src="https://ingest.eliodinino.com/analytics/js/pa-eaJnLJIGhs3xvttoyFry9.js"></script>
+    <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init({
+            endpoint: "https://ingest.eliodinino.com/analytics/api/event"
+        })
+    </script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <title>Wizard pattern</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta property="og:title" content="Wizard pattern">
+    <meta property="og:description" content="Ri Zhan's personal website.">
+    <meta property="og:image" content="https://ri.works/images/ri_portfolio_cover.png">
+    <meta property="og:type" content="website"> 
+    <link rel="icon" type="image/x-icon" href="/pr-preview/pr-47/images/favicon.ico">
+    <link rel="stylesheet" href="https://use.typekit.net/ivl6exa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+</head>
+
+  <body>
+    <span class="cursor-center cursor"></span>
+    <span class="cursor-around cursor"></span>
+    
+    <header>
+    <div class="header-row">
+        <div class="header-text">
+            <div class="header-text-left back">
+                <img class="favicon" src="/pr-preview/pr-47/images/monogram.svg" alt="">
+                <span class="header-text-name">Project</span>
+            </div>
+            
+             
+            <div>
+                <span class="header-text-colon">:</span>
+                <p class="header-text-project">
+                Wizard pattern
+                </p>
+            </div>
+            
+        </div>
+
+        <nav>
+    <a href="/pr-preview/pr-47/">
+        <h4>Home</h4>
+    </a>
+    <a href="/pr-preview/pr-47/archive">
+        <h4>Archive</h4>
+    </a>
+    
+    <a href="/pr-preview/pr-47/about">
+        <h4>About</h4>
+    </a>
+    <a href="https://drive.google.com/file/d/1Cfn1SDgth__OWwvJ3uAtb3d2765z3qRC/view?usp=drive_link" target="_blank">
+        <h4>Resumé</h4>
+    </a>
+</nav>
+
+    </div>
+</header>
+    <main>
+      
+<section class="hero">
+    <img src="/pr-preview/pr-47/images/wizard/wizard-hero.png" alt="">
+    <div class="hero-content">
+        <div class="headline wrapper-32">
+            <h1 class="col-left">Sometimes you just need a little magic: the Wizard of Knox, a multi-step form with a step tracker.</h1>
+            <div class="wrapper-8">
+                <h4>Contribution</h4>
+                <p>Systems thinking, user research, user testing.</p>
+            </div>
+            <div class="wrapper-8">
+                <h4>Tools & skills</h4>
+                <p>Figma, Notion.</p>   
+            </div>
+            <div class="wrapper-8">
+                <h4>Info+</h4>
+                <p>For the 1Password Design System (Knox) team.</p>
+                <p>4 weeks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav id="toc">
+    <h4>Jump to...</h4>
+</nav>
+
+<section>
+    <h2>Defining the problem</h2>
+
+    <h3 class="col-left">I, as a Knox user,</h3>
+    <p class="col-right">Have trouble configuring a multi-step form for our users and have to spend excessive thinking critically about how to organize the form when I start designing.</p>
+
+    <h3 class="col-left">I, as a 1Password customer,</h3>
+    <p class="col-right">Want to complete a task that requires a lot of steps and it is overwhelming when it is all listed at once.</p>
+
+    <img class="padded-bg" src="/pr-preview/pr-47/images/wizard/wizard-internal-audit.png" alt="">
+
+    <h3 class="col-left">Wizards were most commonly used for set up, ranging from specific feature set ups to general onboarding.</h3>
+    <span class="col-right wrapper-16">
+        <p>In order to understand the wizards use cases throughout 1Password products, I had to understand the general form use cases throughout 1Password products as well. I conducted an audit for both regular forms and wizards, across all of 1Password products, include the Extended Password Manager, the SaaS Manager, Device Trust, and the consumer apps.
+        </p><p>I found that Wizards were most commonly used for set up, ranging from specific feature set ups to general onboarding.</p>
+        <p>Thus, the goal was to create a repeatable pattern that guides users with a through a large task with multiple steps and external actions in a digestible way.</p>
+    </span>
+
+    <h3 class="col-left">I found that very few public design systems had wizard guidance.</h3>
+    <span class="col-right wrapper-16">
+        <p>If they did, they were very abstract or high-level. Knox wanted a more in-depth pattern for our designers, so I took a lot of influence for UX research.</p>
+        <p>I learned that wizards should not be used as tutorials or to teach users on how to interact with certain features. This was an insight that informed the development of the Coachmark component and the Feature discovery pattern. This insight also reminded me of a UX note in game design, where if a game needs a tutorial, it might not be a good game or it might not be intuitive.</p>
+        <p>Another decision was to guide users to not put Wizards in modals as modals are best for focused, singular actions, while wizards are often complex, multi-step tasks. Additionally, putting wizards in modals might introduce bad design decisions such as a modal on modal when a user tries to exit a wizard.</p>
+    </span>
+</section>
+
+<section>
+    <h2>Designing</h2>
+
+    <h3 class="col-left">“As a 1Password user, I want to know what page I am on and then know what I’m specifically looking at”.</h3>
+    <p class="col-right">To frame the wizard in my mind, I separated the content of a page with wizard into 2 parts: Page-level information and form-specific information. Since the wizard is basically a new form on every page, hierarchical emphasis should be on the wizard, while the page-level information would be become a static, repeating block that users could ignore over each page.</p>
+
+    <img class="padded-bg" src="/pr-preview/pr-47/images/wizard/wizard-hierarchy.png" alt="">
+
+    <span class="col-right wrapper-16">
+        <p>As I did more iteration, it become clear that in addition to separating the page-level and form- specific information, there should also between a separate between the two, which introduced the Step tracker component.</p>
+        <p>The final hierarchical balance looked more like this:</p>
+        <ol>
+            <li>Wizard</li>
+            <li>Step tracker</li>
+            <li>Page header</li>
+        </ol>
+    </span>
+
+    <h3 class="col-left">Define and design the new Step tracker component.</h3>
+    <div class="col-right wrapper-16">
+        <p>Previously, this project was derailed by months due to the step tracker being a difficult component to design for and due to an overwhelming amount of differing feedback.</p>
+        <p>This time around, I defined the purpose of the Step tracker in the Wizard in order for us to determine the Step tracker’s design, which also allowed others giving feedback to know what to look for:</p>
+        <ul>
+            <li>Help users keep track of steps (current, inactive/incomplete, completed)</li>
+            <li>Be secondary to the form content (not draw too much attention)</li>
+            <li>Act as a divider between the high-level info and the page-specific info</li>
+        </ul>
+        At this point, we brought in a developer to start to understand the limitations and constraints around what we can and cannot do.<p></p>
+        <p>After determining the lay out, I handed off the component to an intern as an opportunity to mentor and help them learn. During this process, I guided the intern on how to make design decisions and provided my insights on how to present for feedback. This allowed the intern to quickly complete the project.</p>
+    </div>
+
+    <h3 class="col-left">Using the system to solve systematic issues: Enforcing an action in a wizard.</h3>
+    <span class="col-right wrapper-16">
+        <p>Each wizard was consistently encountering the problem of enforcing a mandatory action that the user had to take. Designers found various creative ways to ensure users would perform action, from boxing users into a modal dialog, disabling the progressing button, or using warnings.</p>
+        <p>Through iterating and critique, I concluded that the best and most simple way to enforce an action was to rely on the existing Knox form component validation capabilities. If the input was wrong or missing, the Form within the Wizard would error, where the input would have its own error text and a callout with deep links to the errored input(s) at the start of the form would show which inputs needed to be fixed before continuing. This was the most simple and effective way to enforce an action.</p>
+    </span>
+
+    <img class="padded-bg" src="/pr-preview/pr-47/images/wizard/wizard-enforce-action.png" alt="">
+</section>
+
+<section>
+    <h2>Systems thinking</h2>
+
+    <h3 class="col-left">Designing systematically, not for exclusive use cases.</h3>
+    <span class="col-right wrapper-16">
+        <p>In addition to determining the visual hierarchy of the Wizard in reference to the page content (our intern designed the common shell template so I didn’t have to worry about the page template size), i.e. the page-level content like the page header and tab groups and the Step tracker, I also had to determine the hierarchy within the Wizard, which was basically a form. Since Knox did not have a form component, I was tasked with designing one.</p>
+        <p>Rather than designing a form for the exclusive use within the Wizard, I applied a system thinking approach, designing for uses cases beyond the Wizard.</p>
+        <p>I learned that it was important to distinguish between a basic form and a section form, for usability but especially for accessibility. If there were inputs or content being grouped together, it was best to have individual section headings for clarity. Even though, visually, the two form layouts only differed in spacing and content, the actuality is that the usability greatly increases when a user is able to scan content more effectively.</p>
+    </span>
+
+    <h3 class="col-left">Re-building the existing system foundations by re-designing the Form pattern.</h3>
+    <p class="col-right">As design systems are meant to work for the common denominator, I sought to understand the form content within the wizard. This led to re-evaluating the foundational form pattern, which, I found, was out of date.</p>
+
+    <img class="padded-bg" src="/pr-preview/pr-47/images/wizard/wizard-form-redesign.png" alt="">
+    
+    <p class="col-right">In order to provide a comprehensive wizard guidance to users, I could not rely on the existing, outdated form pattern. Thus, I wrote some content for a new form pattern within the wizard pattern. This included error state, validation, and confirmation guidance. By designing the sprinkles of the form pattern within the wizard pattern systematically, I was able to copy the form guidance over to the form pattern and did not have to rewrite it to work for the form pattern specifically.</p>
+
+    <h3 class="col-left">Ensuring accessibility at a system level.</h3>
+    <span class="col-right wrapper-16">
+        <p>Design for a wide audience often means designing for the common denominator, which might not work for every instance. The question here was: “How do we enable flexibility while maintaining consistency”.</p>
+        <p>For the Wizard, the high-level solution was to provide a default variant, and a custom variant. This also follows the convention of Knox components.</p>
+    </span>
+
+    <img class="padded-bg" src="/pr-preview/pr-47/images/wizard/wizard-accessibility.png" alt="">
+
+    <span class="col-right wrapper-16">
+        <p>The outer container sizing was relatively easy to determine. We put a box that fit 4 columns of a grid (that I introduced into the Knox design system!) which fit most, if not all, of the content that was already found in our products. Then, I found a number that was divisible by our 8pt baseline unit.</p>
+        <p>The real difficulty was determining the default of the inner content. We went back on forth between a lot of numbers, but we ended up with a number that was divisible by our 8pt baseline unit and kept to 60–80 characters or glyphs per line for accessibility and readability.</p>
+        <p>As part of the Form pattern work, I made it so that the form heading and section heading could keep the default sizing for accessibility and readability, while the content could be a variable size, though it was set to the default size upon instance insertion in Figma and in code.</p>
+    </span>
+</section>
+
+<section>
+    <h2 class="col-left">Implementation</h2>
+    <p class="col-right">As the design component rolled out, I worked with one of our Knox developers to discuss the development side. We determined it was not ideal for Knox to maintain a wizard component since it was so variable, but it was a low lift to update the local wizards so that future developers could copy and paste the styling and logic of the other wizards to speed up the development process.</p>
+</section>
+      <footer>
+    <h4 class="description">Coded by Ri : )</h4>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/rizhan/" target="_blank">
+            <h4>LinkedIn</h4>
+        </a>
+        <a href="https://github.com/ri-zhan" target="_blank">
+            <h4>GitHub</h4>
+        </a>
+        <a href="mailto:hello@ri.works">
+            <h4>Email</h4>
+        </a>
+    </div>
+</footer>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="/pr-preview/pr-47/js/script.js"></script>
+    
+  </body>
+
+</html>
