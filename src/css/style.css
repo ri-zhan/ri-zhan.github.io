@@ -3,7 +3,6 @@
   box-sizing: border-box;
   border-radius: 6px;
   background-color: transparent;
-  cursor: none;
   scroll-behavior: smooth;
 }
 
@@ -189,51 +188,6 @@ p a:link, h3 a:link, h2 > a, li a:link {
   }
 }
 
-.cursor-center.zoom {
-  display: none;
-  background-color: transparent;
-  width: 15rem;
-  height: 15rem;
-  border: 0.075rem solid #E63223;
-}
-
-.cursor-around.zoom {
-  width: 16.5rem;
-  height: 16.5rem;
-  transition: all 500ms ease-out;
-}
-
-.cursor {
-  z-index: 9999999999;
-  position: absolute;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-@media (max-width: 1000px) {
-  .cursor {
-    display: none;
-  }
-}
-
-.cursor-center {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 0.075rem solid #E63223;
-  transition: left 1ms ease-out, top 1ms ease-out, width 350ms ease-in, height 350ms ease-in;
-}
-.cursor-center.hover {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.cursor-around {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.075rem solid #E63223;
-  transition: left 550ms ease-out, top 550ms ease-out, width 350ms ease-in, height 350ms ease-in;
-}
-
 header {
   position: fixed;
   grid-column: 1/13;
@@ -361,11 +315,11 @@ main > section {
   grid-column: 3/11;
   grid-template-columns: repeat(8, 1fr);
   display: grid;
-  -moz-column-gap: 64px;
-       column-gap: 64px;
+  -moz-column-gap: 48px;
+       column-gap: 48px;
   row-gap: 16px;
   margin-bottom: 222px;
-  padding-top: 25vh;
+  padding-top: 10rem;
   margin-bottom: 0;
 }
 main > section:last-of-type {
@@ -558,15 +512,7 @@ section.hero .hero-content .headline {
 
 .archive {
   grid-template-columns: subgrid;
-  grid-column: 1/-1;
-}
-.archive .archive-content {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column: 1/13;
-  scroll-snap-type: none;
-  padding-bottom: 15vh;
-  row-gap: 64px;
+  grid-column: 3/11;
 }
 
 .archive-item {
@@ -578,6 +524,11 @@ section.hero .hero-content .headline {
   align-self: flex-end;
   margin-bottom: 0px;
   padding-top: 0;
+}
+.archive-item img {
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .landing-item {
@@ -759,4 +710,13 @@ img .icon .small {
 }
 .hereafter-imgs .hereafter-img {
   width: 25%;
+}
+
+.callout {
+  margin-top: 120px;
+  grid-column: 1/-1;
+  padding: 24px 32px;
+  background-color: #F6F3F1;
+  border: #E8E3E0 1px solid;
+  border-radius: 6px;
 }/*# sourceMappingURL=style.css.map */
