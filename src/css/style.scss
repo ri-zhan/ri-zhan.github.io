@@ -642,7 +642,7 @@ section.hero {
     grid-template-rows: repeat(1, 1fr);
     column-gap: $spacing-xxxl;
     display: grid;
-    padding-top: 128px;
+    padding-top: $spacing-xxxl;
     .hero-details {
       // grid-column: 1/3;
       display: flex;
@@ -652,12 +652,19 @@ section.hero {
     }
     .headline {
       grid-column: 1/-1;
-      // grid-row: 1/2;
       ul:first-of-type {
         margin-top: 0;
         li:first-of-type {
           margin-top: 0;
         }
+      }
+      .col-full {
+        grid-template-columns: subgrid;
+        column-gap: $spacing-xxl;
+      }
+      .col-left, .col-right {
+        margin-bottom: $spacing-lg;
+        align-self: flex-start;
       }
     }
   }
