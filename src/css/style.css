@@ -500,6 +500,12 @@ section.hero .hero-content .hero-details {
 section.hero .hero-content .headline {
   grid-column: 1/-1;
 }
+section.hero .hero-content .headline ul:first-of-type {
+  margin-top: 0;
+}
+section.hero .hero-content .headline ul:first-of-type li:first-of-type {
+  margin-top: 0;
+}
 
 .video-grid {
   display: grid;

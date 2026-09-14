@@ -653,6 +653,12 @@ section.hero {
     .headline {
       grid-column: 1/-1;
       // grid-row: 1/2;
+      ul:first-of-type {
+        margin-top: 0;
+        li:first-of-type {
+          margin-top: 0;
+        }
+      }
     }
   }
 }
