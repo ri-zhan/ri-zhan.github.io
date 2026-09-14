@@ -79,15 +79,15 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 h1 {
   color: $text-default;
   font-family: newsreader, serif;
-  font-size: 56px;
+  font-size: 46px;
   font-style: normal;
   font-weight: 200;
-  line-height: 120%; /* 125% */
+  line-height: 135%; /* 125% */
   // text-transform: lowercase;
   > .bold {
     font-family: "newsreader", sans-serif;
     font-style: italic;
-    font-size: 58px;
+    font-size: 48px;
     font-weight: 300;
     padding: 0 3px;
   }
@@ -696,13 +696,39 @@ section.hero {
 }
 
 .landing-item {
-  grid-column: 1/-1;
+  grid-column: span 8;
   grid-template-columns: subgrid;
   display: grid;
-  row-gap: $spacing-lg;
+  row-gap: $spacing-xxs;
+  align-content: flex-end;
   &:not(:last-child) {
     margin-bottom: $spacing-xxxl;
   }
+  &-details {
+    display: flex;
+    flex-direction: row;
+    grid-column: 1/-1;
+    column-gap: $spacing-xxxs;
+    &.left {
+      display: flex;
+      grid-column: none;
+    }
+    &.right{
+      display: flex;
+      grid-column: none;
+      color: $text-higher;
+      margin-bottom: $spacing-xxs;
+    }
+  }
+  img {
+    margin-bottom: 0;
+  }
+}
+
+#featured {
+  grid-template-columns: subgrid;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .landing-item, .archive-item {
