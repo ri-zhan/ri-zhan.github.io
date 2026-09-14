@@ -490,7 +490,7 @@ section.hero .hero-content {
   -moz-column-gap: 64px;
        column-gap: 64px;
   display: grid;
-  padding-top: 128px;
+  padding-top: 64px;
 }
 section.hero .hero-content .hero-details {
   display: flex;
@@ -499,6 +499,21 @@ section.hero .hero-content .hero-details {
 }
 section.hero .hero-content .headline {
   grid-column: 1/-1;
+}
+section.hero .hero-content .headline ul:first-of-type {
+  margin-top: 0;
+}
+section.hero .hero-content .headline ul:first-of-type li:first-of-type {
+  margin-top: 0;
+}
+section.hero .hero-content .headline .col-full {
+  grid-template-columns: subgrid;
+  -moz-column-gap: 48px;
+       column-gap: 48px;
+}
+section.hero .hero-content .headline .col-left, section.hero .hero-content .headline .col-right {
+  margin-bottom: 24px;
+  align-self: flex-start;
 }
 
 .video-grid {
