@@ -20,15 +20,15 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 h1 {
   color: #38220C;
   font-family: newsreader, serif;
-  font-size: 56px;
+  font-size: 46px;
   font-style: normal;
   font-weight: 200;
-  line-height: 120%; /* 125% */
+  line-height: 135%; /* 125% */
 }
 h1 > .bold {
   font-family: "newsreader", sans-serif;
   font-style: italic;
-  font-size: 58px;
+  font-size: 48px;
   font-weight: 300;
   padding: 0 3px;
 }
@@ -541,13 +541,40 @@ section.hero .hero-content .headline {
 }
 
 .landing-item {
-  grid-column: 1/-1;
+  grid-column: span 8;
   grid-template-columns: subgrid;
   display: grid;
-  row-gap: 24px;
+  row-gap: 6px;
+  align-content: flex-end;
 }
 .landing-item:not(:last-child) {
   margin-bottom: 64px;
+}
+.landing-item-details {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1/-1;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+.landing-item-details.left {
+  display: flex;
+  grid-column: none;
+}
+.landing-item-details.right {
+  display: flex;
+  grid-column: none;
+  color: #958D86;
+  margin-bottom: 6px;
+}
+.landing-item img {
+  margin-bottom: 0;
+}
+
+#featured {
+  grid-template-columns: subgrid;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .landing-item:hover img.padded-bg, .archive-item:hover img.padded-bg {
