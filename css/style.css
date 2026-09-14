@@ -20,15 +20,15 @@ h1, h2, h2, h3, h4, h5, p, .caption {
 h1 {
   color: #38220C;
   font-family: newsreader, serif;
-  font-size: 56px;
+  font-size: 46px;
   font-style: normal;
   font-weight: 200;
-  line-height: 120%; /* 125% */
+  line-height: 135%; /* 125% */
 }
 h1 > .bold {
   font-family: "newsreader", sans-serif;
   font-style: italic;
-  font-size: 58px;
+  font-size: 48px;
   font-weight: 300;
   padding: 0 3px;
 }
@@ -65,7 +65,7 @@ h4 {
   font-family: newsreader, sans-serif;
   font-size: 18px;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 120%; /* 115.385% */
   text-transform: lowercase;
 }
@@ -122,8 +122,16 @@ body b, p b, ul b, ol b, li b {
   color: #38220C;
 }
 
-li, ol, ul {
+ol, ul {
   margin: 6px 0;
+  padding-inline-start: 14px;
+}
+ol li, ul li {
+  margin: 8px 0;
+}
+
+ol > ul, ul > ol {
+  padding-inline-start: 16px;
 }
 
 a, a.landing-item *, a.archive-item * {
@@ -392,14 +400,15 @@ main > section .col-full {
   display: grid;
   grid-template-columns: subgrid;
 }
+main > section .col-full.applied {
+  grid-template-columns: none;
+}
 main > section .col-left {
   grid-column: 1/5;
 }
 main > section .col-right {
   grid-column: 5/9;
   align-self: flex-end;
-}
-main > section .col-right:not(:last-child) {
   margin-bottom: 48px;
 }
 main > section h2.col-full {
@@ -415,7 +424,7 @@ nav#toc {
   grid-column: 1/3;
   height: -moz-min-content;
   height: min-content;
-  padding-top: 25vh;
+  padding-top: 18vh;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -481,7 +490,7 @@ section.hero .hero-content {
   -moz-column-gap: 64px;
        column-gap: 64px;
   display: grid;
-  padding-top: 140px;
+  padding-top: 64px;
 }
 section.hero .hero-content .hero-details {
   display: flex;
@@ -490,6 +499,21 @@ section.hero .hero-content .hero-details {
 }
 section.hero .hero-content .headline {
   grid-column: 1/-1;
+}
+section.hero .hero-content .headline ul:first-of-type {
+  margin-top: 0;
+}
+section.hero .hero-content .headline ul:first-of-type li:first-of-type {
+  margin-top: 0;
+}
+section.hero .hero-content .headline .col-full {
+  grid-template-columns: subgrid;
+  -moz-column-gap: 48px;
+       column-gap: 48px;
+}
+section.hero .hero-content .headline .col-left, section.hero .hero-content .headline .col-right {
+  margin-bottom: 24px;
+  align-self: flex-start;
 }
 
 .video-grid {
@@ -532,13 +556,40 @@ section.hero .hero-content .headline {
 }
 
 .landing-item {
-  grid-column: 1/-1;
+  grid-column: span 8;
   grid-template-columns: subgrid;
   display: grid;
-  row-gap: 24px;
+  row-gap: 6px;
+  align-content: flex-end;
 }
 .landing-item:not(:last-child) {
   margin-bottom: 64px;
+}
+.landing-item-details {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1/-1;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+.landing-item-details.left {
+  display: flex;
+  grid-column: none;
+}
+.landing-item-details.right {
+  display: flex;
+  grid-column: none;
+  color: #958D86;
+  margin-bottom: 6px;
+}
+.landing-item img {
+  margin-bottom: 0;
+}
+
+#featured {
+  grid-template-columns: subgrid;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .landing-item:hover img.padded-bg, .archive-item:hover img.padded-bg {
