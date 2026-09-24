@@ -151,17 +151,6 @@ a *:is(p, h3, h4), a a > .landing-item-text, a.landing-item * *:is(p, h3, h4), a
   text-decoration-color: transparent;
   transition: text-decoration-color 100ms ease-in-out;
 }
-a .with-accessory, a.landing-item * .with-accessory, a.archive-item * .with-accessory {
-  display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
-  gap: 12px;
-}
-a .with-accessory p, a.landing-item * .with-accessory p, a.archive-item * .with-accessory p {
-  white-space: nowrap;
-  width: -moz-min-content;
-  width: min-content;
-}
 
 a:visited, a:hover, li > a:visited, a.landing-item:hover *, a.archive-item:hover * {
   text-decoration: underline;
@@ -169,6 +158,23 @@ a:visited, a:hover, li > a:visited, a.landing-item:hover *, a.archive-item:hover
   text-decoration-color: #E63223;
   transition: text-decoration-color 100ms ease-in-out;
   color: #38220C;
+}
+
+a.with-accessory {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+a.with-accessory p {
+  white-space: nowrap;
+  width: -moz-min-content;
+  width: min-content;
+}
+a.with-accessory img {
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 0;
 }
 
 a:visited {

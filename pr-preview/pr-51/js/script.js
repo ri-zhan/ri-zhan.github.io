@@ -13,7 +13,8 @@ $(document).mousemove(function(e){
 //         });
 
 $('.header-text-left.back').click(function() {
-  window.location.href = '/';
+  // window.location.href = '/';
+  window.history.back();
 });
 
 
