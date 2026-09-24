@@ -221,19 +221,6 @@ a, a.landing-item *, a.archive-item * {
     text-decoration-color: transparent;
     transition: text-decoration-color 100ms ease-in-out;
   }
-  .with-accessory {
-    display: flex; 
-    width: fit-content;
-    gap: 12px;
-    p {
-      white-space: nowrap; 
-      width: min-content;
-      // &::after {
-      //   content: " \2190"; /* Unicode for → */
-      //   color: $primary-dark
-      // }
-    }
-  }
 }
 
 //a:hover > *:not(h4, h3), 
@@ -244,6 +231,24 @@ a:visited, a:hover, li > a:visited, a.landing-item:hover *, a.archive-item:hover
   transition: text-decoration-color 100ms ease-in-out;
   color: $text-default;
 }
+
+a.with-accessory {
+    display: flex; 
+    align-items: center;
+    column-gap: $spacing-xs;
+    p {
+      white-space: nowrap; 
+      width: min-content;
+      // &::after {
+      //   content: " \2190"; /* Unicode for → */
+      //   color: $primary-dark
+      // }
+    }
+    img {
+      height: min-content;
+      margin-bottom: 0;
+    }
+  }
 
 a:visited {
   text-decoration-color: $text-high;
